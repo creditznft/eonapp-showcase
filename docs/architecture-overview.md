@@ -1,12 +1,47 @@
 # Architecture Overview
 
-EONAPP is presented as a set of trust-critical systems:
+EONAPP can be understood as a few layered systems rather than a random collection of pages.
 
-1. **EON City** — visual game/world entry and flagship user experience.
-2. **EONBOT** — guide and command operator for navigation, help, rewards, and app actions.
-3. **Vault** — local-first storage, encrypted backup direction, API key safety.
-4. **Reward Center** — verified rewarded ads, referrals, Sponsor Boost, and unlock policy.
-5. **Telegram Mini App** — lightweight gateway into rewards and onboarding.
-6. **Code Showcase** — public-safe snippets and architecture explanations.
+## Layer 1: User entry
 
-The public repository shows simplified examples only. The production implementation remains private.
+- Home
+- Telegram gateway
+- EONBOT chat
+
+These surfaces reduce friction and route the user into the right part of the app.
+
+## Layer 2: Operational workspace
+
+- AI Cockpit
+- Creator/automation tools
+- Code and content flows
+
+This is where the app behaves like a working AI business cockpit.
+
+## Layer 3: Trust and ownership
+
+- Vault
+- Trust Explorer
+- public-safe Code Showcase
+
+These surfaces communicate how user control, evidence handling, and approval boundaries are meant to work.
+
+## Layer 4: Growth and monetization
+
+- Reward Center
+- Telegram reward entry
+- Sponsor Boost
+- Market and starter-drop catalog
+- Plans and payment guidance
+
+This is the most sensitive layer and therefore the one that most clearly requires explicit approval and verification rules.
+
+## Layer 5: Flagship experience
+
+- EON City / Realm
+
+The flagship world is not just decoration. It is meant to make discovery, navigation, and future product depth feel unique.
+
+## Public boundary
+
+This repository shows curated parts of those layers only. The full implementation remains private.
