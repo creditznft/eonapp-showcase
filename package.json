@@ -1,0 +1,13 @@
+{
+  "name": "eonapp-public-showcase",
+  "version": "1.0.0",
+  "private": false,
+  "description": "Public-safe EONAPP trust showcase with curated snippets, screenshots, and architecture notes.",
+  "type": "module",
+  "scripts": {
+    "test": "node scripts/secret-scan.mjs && node scripts/showcase-boundary-check.mjs",
+    "scan": "node scripts/secret-scan.mjs"
+  },
+  "keywords": ["eonapp", "ai", "trust", "showcase", "code-preview", "source-available"],
+  "license": "SEE LICENSE.md"
+}

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+<defs><radialGradient id="g" cx="25%" cy="15%" r="70%"><stop stop-color="#38bdf8" stop-opacity=".35"/><stop offset=".55" stop-color="#0f172a"/><stop offset="1" stop-color="#020617"/></radialGradient><filter id="shadow"><feDropShadow dx="0" dy="24" stdDeviation="28" flood-color="#000" flood-opacity=".55"/></filter></defs>
+<rect width="1200" height="675" fill="url(#g)"/>
+<rect x="56" y="52" width="1088" height="571" rx="38" fill="rgba(2,6,23,.72)" stroke="#38bdf8" stroke-opacity=".55" filter="url(#shadow)"/>
+<text x="95" y="132" fill="#38bdf8" font-size="24" font-family="Inter,system-ui,sans-serif" font-weight="900" letter-spacing="4">EONAPP PUBLIC SHOWCASE</text>
+<text x="95" y="205" fill="#e0f2fe" font-size="58" font-family="Inter,system-ui,sans-serif" font-weight="900">Telegram Mini App Gateway</text>
+<text x="98" y="253" fill="#bae6fd" font-size="26" font-family="Inter,system-ui,sans-serif">Simple Telegram entry, full browser for heavy app</text>
+<rect x="230" y="250" width="540" height="265" rx="42" fill="#0f172a" stroke="#38bdf8"/><text x="300" y="325" fill="#e0f2fe" font-size="36" font-weight="800">@EonAppsBot</text><rect x="330" y="370" width="340" height="62" rx="31" fill="#0284c7"/><text x="410" y="410" fill="#fff" font-size="24" font-weight="700">Open App</text>
+<text x="95" y="585" fill="#94a3b8" font-size="22" font-family="Inter,system-ui,sans-serif">Open App • Earn Rewards • Join Channel</text>
+</svg>

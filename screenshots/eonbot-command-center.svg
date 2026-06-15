@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+<defs><radialGradient id="g" cx="25%" cy="15%" r="70%"><stop stop-color="#a78bfa" stop-opacity=".35"/><stop offset=".55" stop-color="#0f172a"/><stop offset="1" stop-color="#020617"/></radialGradient><filter id="shadow"><feDropShadow dx="0" dy="24" stdDeviation="28" flood-color="#000" flood-opacity=".55"/></filter></defs>
+<rect width="1200" height="675" fill="url(#g)"/>
+<rect x="56" y="52" width="1088" height="571" rx="38" fill="rgba(2,6,23,.72)" stroke="#a78bfa" stroke-opacity=".55" filter="url(#shadow)"/>
+<text x="95" y="132" fill="#a78bfa" font-size="24" font-family="Inter,system-ui,sans-serif" font-weight="900" letter-spacing="4">EONAPP PUBLIC SHOWCASE</text>
+<text x="95" y="205" fill="#e0f2fe" font-size="58" font-family="Inter,system-ui,sans-serif" font-weight="900">EONBOT Command Center</text>
+<text x="98" y="253" fill="#bae6fd" font-size="26" font-family="Inter,system-ui,sans-serif">Text + voice app operator</text>
+<circle cx="300" cy="315" r="80" fill="#1e1b4b" stroke="#a78bfa"/><circle cx="270" cy="300" r="12" fill="#e0f2fe"/><circle cx="330" cy="300" r="12" fill="#e0f2fe"/><rect x="255" y="335" width="90" height="14" rx="7" fill="#a78bfa"/><rect x="490" y="255" width="300" height="50" rx="18" fill="#0f172a" stroke="#a78bfa"/><text x="515" y="287" fill="#e0f2fe" font-size="20">open EON City</text><rect x="490" y="325" width="350" height="50" rx="18" fill="#0f172a" stroke="#a78bfa"/><text x="515" y="357" fill="#e0f2fe" font-size="20">enable Sponsor Boost?</text>
+<text x="95" y="585" fill="#94a3b8" font-size="22" font-family="Inter,system-ui,sans-serif">Open City • Rewards • Vault • Sponsor Boost</text>
+</svg>

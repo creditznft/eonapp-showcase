@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+<defs><radialGradient id="g" cx="25%" cy="15%" r="70%"><stop stop-color="#34d399" stop-opacity=".35"/><stop offset=".55" stop-color="#0f172a"/><stop offset="1" stop-color="#020617"/></radialGradient><filter id="shadow"><feDropShadow dx="0" dy="24" stdDeviation="28" flood-color="#000" flood-opacity=".55"/></filter></defs>
+<rect width="1200" height="675" fill="url(#g)"/>
+<rect x="56" y="52" width="1088" height="571" rx="38" fill="rgba(2,6,23,.72)" stroke="#34d399" stroke-opacity=".55" filter="url(#shadow)"/>
+<text x="95" y="132" fill="#34d399" font-size="24" font-family="Inter,system-ui,sans-serif" font-weight="900" letter-spacing="4">EONAPP PUBLIC SHOWCASE</text>
+<text x="95" y="205" fill="#e0f2fe" font-size="58" font-family="Inter,system-ui,sans-serif" font-weight="900">Code Explorer</text>
+<text x="98" y="253" fill="#bae6fd" font-size="26" font-family="Inter,system-ui,sans-serif">Curated public-safe snippets</text>
+<rect x="135" y="250" width="730" height="250" rx="22" fill="#020617" stroke="#34d399"/><text x="175" y="305" fill="#34d399" font-size="20">function evaluateTrust(action) {</text><text x="205" y="350" fill="#e0f2fe" font-size="20">return action.requiresApproval;</text><text x="175" y="395" fill="#34d399" font-size="20">}</text><rect x="625" y="285" width="190" height="54" rx="18" fill="#064e3b"/><text x="655" y="320" fill="#e0f2fe" font-size="18">Safe Preview</text>
+<text x="95" y="585" fill="#94a3b8" font-size="22" font-family="Inter,system-ui,sans-serif">Architecture • Trust • Sandbox preview</text>
+</svg>

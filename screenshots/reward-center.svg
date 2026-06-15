@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+<defs><radialGradient id="g" cx="25%" cy="15%" r="70%"><stop stop-color="#fbbf24" stop-opacity=".35"/><stop offset=".55" stop-color="#0f172a"/><stop offset="1" stop-color="#020617"/></radialGradient><filter id="shadow"><feDropShadow dx="0" dy="24" stdDeviation="28" flood-color="#000" flood-opacity=".55"/></filter></defs>
+<rect width="1200" height="675" fill="url(#g)"/>
+<rect x="56" y="52" width="1088" height="571" rx="38" fill="rgba(2,6,23,.72)" stroke="#fbbf24" stroke-opacity=".55" filter="url(#shadow)"/>
+<text x="95" y="132" fill="#fbbf24" font-size="24" font-family="Inter,system-ui,sans-serif" font-weight="900" letter-spacing="4">EONAPP PUBLIC SHOWCASE</text>
+<text x="95" y="205" fill="#e0f2fe" font-size="58" font-family="Inter,system-ui,sans-serif" font-weight="900">Unified Reward Center</text>
+<text x="98" y="253" fill="#bae6fd" font-size="26" font-family="Inter,system-ui,sans-serif">Verified rewards + optional Sponsor Boost</text>
+<rect x="170" y="255" width="170" height="150" rx="24" fill="#1f2937" stroke="#fbbf24"/><text x="195" y="315" fill="#e0f2fe" font-size="22" font-weight="700">Verified</text><text x="195" y="350" fill="#bae6fd" font-size="16">postback</text><rect x="390" y="255" width="170" height="150" rx="24" fill="#1f2937" stroke="#fbbf24"/><text x="415" y="315" fill="#e0f2fe" font-size="22" font-weight="700">Direct</text><text x="415" y="350" fill="#bae6fd" font-size="16">tap only</text><rect x="610" y="255" width="170" height="150" rx="24" fill="#1f2937" stroke="#fbbf24"/><text x="635" y="315" fill="#e0f2fe" font-size="22" font-weight="700">MultiTag</text><text x="635" y="350" fill="#bae6fd" font-size="16">opt-in</text>
+<text x="95" y="585" fill="#94a3b8" font-size="22" font-family="Inter,system-ui,sans-serif">Rewarded ads • Direct Link • MultiTag opt-in</text>
+</svg>
