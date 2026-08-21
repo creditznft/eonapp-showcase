@@ -1,0 +1,50 @@
+name: RT92 Encrypted Transfer Release
+
+on:
+  push:
+    branches:
+      - transfer/rt92-backup-20260821
+    paths:
+      - .github/workflows/rt92-encrypted-transfer-release.yml
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      BASE_URL: https://rt92-xfer-949047d-20260821.pages.dev
+      PART_COUNT: '27'
+      EXPECTED_SHA256: f43a7e70add87ba741e9aa93cac1355a9a56a06bdee8c79388cbeef9bbcd2331
+      EXPECTED_BYTES: '560442491'
+      ASSET: EONAPP_RT92_SOURCE_AND_HISTORY_2026-08-21.tar.gz.gpg
+      TAG: rt92-backup-xfer-20260821
+    steps:
+      - name: Reassemble encrypted payload from isolated Pages chunks
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/rt92parts
+          for i in $(seq -w 0 26); do
+            p="part-0${i}"
+            curl --fail --location --retry 5 --retry-all-errors \
+              "$BASE_URL/$p" -o "/tmp/rt92parts/$p"
+          done
+          cat /tmp/rt92parts/part-* > "/tmp/$ASSET"
+          test "$(stat -c %s "/tmp/$ASSET")" = "$EXPECTED_BYTES"
+          echo "$EXPECTED_SHA256  /tmp/$ASSET" | sha256sum -c -
+
+      - name: Publish temporary encrypted release asset
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh release delete "$TAG" --cleanup-tag --yes >/dev/null 2>&1 || true
+          gh release create "$TAG" "/tmp/$ASSET" \
+            --repo "$GITHUB_REPOSITORY" \
+            --title 'Temporary encrypted RT92 backup transfer' \
+            --notes 'PGP-encrypted owner backup transfer only. No plaintext EONAPP source or private key is included. Delete after verified reconstruction.'
+          echo "DOWNLOAD=https://github.com/$GITHUB_REPOSITORY/releases/download/$TAG/$ASSET"
