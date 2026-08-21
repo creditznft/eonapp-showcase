@@ -1,0 +1,35 @@
+# Temporary encrypted RT92 backup transfer
+
+This temporary file exists only to bridge a PGP-encrypted backup into the owner session. It contains no source code, private key, API key, Cloudflare secret, or plaintext backup data.
+
+- [MANIFEST.txt](https://rt92-xfer-949047d-20260821.pages.dev/MANIFEST.txt)
+- [SHA256SUMS.txt](https://rt92-xfer-949047d-20260821.pages.dev/SHA256SUMS.txt)
+- [part-000](https://rt92-xfer-949047d-20260821.pages.dev/part-000)
+- [part-001](https://rt92-xfer-949047d-20260821.pages.dev/part-001)
+- [part-002](https://rt92-xfer-949047d-20260821.pages.dev/part-002)
+- [part-003](https://rt92-xfer-949047d-20260821.pages.dev/part-003)
+- [part-004](https://rt92-xfer-949047d-20260821.pages.dev/part-004)
+- [part-005](https://rt92-xfer-949047d-20260821.pages.dev/part-005)
+- [part-006](https://rt92-xfer-949047d-20260821.pages.dev/part-006)
+- [part-007](https://rt92-xfer-949047d-20260821.pages.dev/part-007)
+- [part-008](https://rt92-xfer-949047d-20260821.pages.dev/part-008)
+- [part-009](https://rt92-xfer-949047d-20260821.pages.dev/part-009)
+- [part-010](https://rt92-xfer-949047d-20260821.pages.dev/part-010)
+- [part-011](https://rt92-xfer-949047d-20260821.pages.dev/part-011)
+- [part-012](https://rt92-xfer-949047d-20260821.pages.dev/part-012)
+- [part-013](https://rt92-xfer-949047d-20260821.pages.dev/part-013)
+- [part-014](https://rt92-xfer-949047d-20260821.pages.dev/part-014)
+- [part-015](https://rt92-xfer-949047d-20260821.pages.dev/part-015)
+- [part-016](https://rt92-xfer-949047d-20260821.pages.dev/part-016)
+- [part-017](https://rt92-xfer-949047d-20260821.pages.dev/part-017)
+- [part-018](https://rt92-xfer-949047d-20260821.pages.dev/part-018)
+- [part-019](https://rt92-xfer-949047d-20260821.pages.dev/part-019)
+- [part-020](https://rt92-xfer-949047d-20260821.pages.dev/part-020)
+- [part-021](https://rt92-xfer-949047d-20260821.pages.dev/part-021)
+- [part-022](https://rt92-xfer-949047d-20260821.pages.dev/part-022)
+- [part-023](https://rt92-xfer-949047d-20260821.pages.dev/part-023)
+- [part-024](https://rt92-xfer-949047d-20260821.pages.dev/part-024)
+- [part-025](https://rt92-xfer-949047d-20260821.pages.dev/part-025)
+- [part-026](https://rt92-xfer-949047d-20260821.pages.dev/part-026)
+
+Delete this transfer branch after verified reconstruction.
