@@ -81,6 +81,11 @@ test('W635 source gate passes while production and physical evidence remain pend
   assert.match(result.limitations.join(' '), /cloudflare|installed|device/i);
 });
 
+test('W635 build accounting excludes protocol-relative third-party provider resources from the local candidate graph', () => {
+  const gate = read('scripts/w635-performance-cache-update-safety-gate.mjs');
+  assert.match(gate, /https\?:\|data:\|#\|\\\/\\\//);
+});
+
 test('W759 keeps the bounded install page on its focused explicit PWA controller', () => {
   const install = read('install.html');
   const controller = read('assets/js/install-page.js');

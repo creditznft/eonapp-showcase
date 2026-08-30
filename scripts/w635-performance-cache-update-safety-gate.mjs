@@ -66,7 +66,10 @@ function getAttr(tag, attribute) {
   return match ? match[1] : '';
 }
 function normalizeAsset(value) {
-  if (!value || /^(?:https?:|data:|#)/i.test(value)) return null;
+  // Only same-origin files belong in the candidate filesystem. Protocol-relative
+  // provider scripts (for example the reviewed guide-only Infolinks loader) are
+  // external initial resources, not missing local build assets.
+  if (!value || /^(?:https?:|data:|#|\/\/)/i.test(value)) return null;
   return value.split('#')[0].split('?')[0].replace(/^\/+/, '');
 }
 function initialAssets(html) {

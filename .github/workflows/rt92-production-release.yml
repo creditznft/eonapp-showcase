@@ -226,7 +226,6 @@ jobs:
           test -f "$DEPLOY_ROOT/functions/api/billing/webhooks/dodo.js"
           test -f "$DEPLOY_ROOT/rewards/index.html"
           test -f "$DEPLOY_ROOT/assets/media/sponsor-terminal/eonapp-sponsor-terminal-tail.mp4"
-          grep -R -F -q --include='*.js' 'eonapp.monetization.sponsor-terminal.rt92.v2' "$DEPLOY_ROOT/assets"
           echo "root=$DEPLOY_ROOT" >> "$GITHUB_OUTPUT"
 
       - name: Capture rollback Production deployment

@@ -215,17 +215,16 @@ test('RT98 EON City exposes Reward Center by explicit navigation only', () => {
   assert.doesNotMatch(city, /data-eon-sponsored-slot|a\.magsrv\.com|cdn\.fluidplayer\.com/);
 });
 
-test('RT92 protected release certifies the bundled Sponsor Terminal runtime and emitted same-origin tail media', () => {
+test('RT98 protected release retains legacy Sponsor Terminal compatibility media without loading its inactive runtime', () => {
   const sync = read('scripts/sync-public-assets.mjs');
   const build = read('scripts/build-production.mjs');
   const workflow = read('.github/workflows/rt92-production-release.yml');
   const rewards = read('assets/js/access/rewards-status-page.js');
   assert.match(rewards, /from '\.\.\/monetization\/eon-sponsor-terminal\.js'/);
   assert.match(sync, /\['assets\/media\/sponsor-terminal', 'assets\/media\/sponsor-terminal'\]/);
-  assert.match(build, /eonapp\.monetization\.sponsor-terminal\.rt92\.v2/);
   assert.match(build, /eonapp-sponsor-terminal-tail\.mp4/);
   assert.match(workflow, /rewards\/index\.html/);
   assert.match(workflow, /assets\/media\/sponsor-terminal\/eonapp-sponsor-terminal-tail\.mp4/);
-  assert.match(workflow, /eonapp\.monetization\.sponsor-terminal\.rt92\.v2/);
   assert.doesNotMatch(workflow, /test -f .*assets\/js\/monetization\/eon-sponsor-terminal\.js/);
+  assert.doesNotMatch(workflow, /grep -R -F -q --include='\*\.js' 'eonapp\.monetization\.sponsor-terminal\.rt92\.v2'/);
 });

@@ -140,9 +140,10 @@ function verifyDist() {
     }
   }
   const emittedScripts = findFiles(path.join(DIST, 'assets'), (file) => file.endsWith('.js'));
-  if (!anyFileContains(emittedScripts, 'eonapp.monetization.sponsor-terminal.rt92.v2')) {
-    throw new Error('RT92 Sponsor Terminal runtime was not emitted into the production JavaScript assets');
-  }
+  // RT98 keeps the legacy Sponsor Terminal implementation only for compatibility
+  // boundaries. The active Reward Center is the MyLead server-postback rail, so
+  // production must retain the same-origin compatibility media without forcing an
+  // inactive legacy runtime into the current bundle.
   if (!anyFileContains(emittedScripts, 'eonapp.quick-command.surface.w724.v1')) {
     throw new Error('Quick Command surface was not emitted into the production JavaScript assets');
   }
