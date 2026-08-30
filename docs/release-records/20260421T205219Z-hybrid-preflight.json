@@ -1,0 +1,15 @@
+{
+  "createdAt": "2026-04-21T20:52:19.850Z",
+  "track": "hybrid",
+  "label": "preflight",
+  "notes": "",
+  "gitCommit": "15dc88af11551340e52bededd75fea77f641d4bd",
+  "artifacts": {
+    "arweave": {
+      "present": false
+    },
+    "ipfsIpns": {
+      "present": false
+    }
+  }
+}

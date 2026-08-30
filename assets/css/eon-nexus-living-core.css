@@ -1,0 +1,100 @@
+/* W661C Living Core: lazy Babylon enhancement inside the existing Live Nexus. */
+.eon-nexus-living-core {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: .96;
+  background:
+    radial-gradient(circle at 50% 48%, rgba(34,211,238,.13), transparent 28%),
+    radial-gradient(circle at 50% 50%, rgba(139,92,246,.08), transparent 55%);
+}
+.eon-nexus-living-core__canvas { width: 100%; height: 100%; display: block; touch-action: none; pointer-events: auto; }
+.eon-nexus-live[data-living-core='true'] .eon-nexus-live__visual-grid { z-index: 1; opacity: .58; transform: rotate(var(--eon-nexus-live-rotation)) scale(calc(var(--eon-nexus-live-zoom,1) * .82)); }
+.eon-nexus-live[data-living-core='true'] .eon-nexus-live__command-field,
+.eon-nexus-live[data-living-core='true'] .eon-nexus-live__rotate-controls { position: relative; z-index: 2; }
+.eon-nexus-living-core[data-renderer='dom-static'] { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  .eon-nexus-living-core { display: none; }
+  .eon-nexus-live[data-living-core='true'] .eon-nexus-live__visual-grid { opacity: 1; transform: none; transition: none; }
+}
+@media (max-width: 899px) {
+  .eon-nexus-living-core { opacity: .78; }
+  .eon-nexus-live[data-living-core='true'] .eon-nexus-live__visual-grid { opacity: .72; }
+}
+
+/* W668 — Babylon enhancement inherits the exact same flagship projection. */
+.eon-nexus-living-core {
+  --eon-nexus-accent: #22d3ee;
+  --eon-nexus-secondary: #8b5cf6;
+  --eon-nexus-energy: .38;
+  background:
+    radial-gradient(circle at 50% 48%, color-mix(in srgb, var(--eon-nexus-accent) 18%, transparent), transparent 28%),
+    radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--eon-nexus-secondary) 12%, transparent), transparent 55%);
+}
+.eon-nexus-living-core[data-shape='decision-gate'] { filter: contrast(1.08); }
+.eon-nexus-living-core[data-shape='dormant-core'] { filter: grayscale(.55); opacity: .62; }
+
+/* W706/W719.13 — Babylon is the primary spatial command field and visible renderer. The DOM graph
+   remains in the accessibility tree and returns only when WebGL is unavailable. */
+.eon-nexus-live[data-spatial-renderer='ready'] .eon-nexus-living-core { z-index:1; opacity:1; pointer-events:auto; }
+.eon-nexus-live[data-spatial-renderer='ready'] .eon-nexus-live__visual-grid { z-index:0; opacity:0; visibility:hidden; pointer-events:none; transform:none; }
+.eon-nexus-live[data-spatial-renderer='ready'] .eon-nexus-live__command-field,
+.eon-nexus-live[data-spatial-renderer='ready'] .eon-nexus-live__rotate-controls { z-index:3; }
+.eon-nexus-live[data-spatial-renderer='ready'][data-active-tab='atlas'] .eon-nexus-atlas__spatial { display:none; }
+.eon-nexus-live[data-spatial-renderer='ready'][data-active-tab='atlas'] .eon-nexus-atlas__entry,
+.eon-nexus-live[data-spatial-renderer='ready'][data-active-tab='atlas'] .eon-nexus-atlas__summary,
+.eon-nexus-live[data-spatial-renderer='ready'][data-active-tab='atlas'] .eon-nexus-atlas__details { position:relative; z-index:2; }
+.eon-nexus-live[data-spatial-renderer='loading'] .eon-nexus-live__visual-grid { opacity:.34; }
+.eon-nexus-live[data-spatial-renderer='fallback'] .eon-nexus-live__visual-grid,
+.eon-nexus-live[data-spatial-renderer='failed'] .eon-nexus-live__visual-grid { opacity:1; }
+.eon-nexus-living-core[data-layout='compact'] { opacity:.88; }
+.eon-nexus-living-core[data-layout='full'] { opacity:1; }
+.eon-nexus-living-core[data-primary-renderer='true'] .eon-nexus-living-core__canvas { cursor:grab; filter:saturate(1.12) contrast(1.05); }
+.eon-nexus-living-core[data-primary-renderer='true'] .eon-nexus-living-core__canvas:active { cursor:grabbing; }
+@media (max-width:899px){.eon-nexus-live[data-spatial-renderer='ready'] .eon-nexus-live__visual-grid{opacity:0}}
+
+/* W719.13 — keep the spatial field visually dominant once Babylon is ready. */
+.eon-nexus-live[data-spatial-renderer='ready'] .eon-nexus-live__visual {
+  grid-template-rows:minmax(0,1fr) auto;
+  padding:clamp(.75rem,1.8vw,1.5rem);
+}
+.eon-nexus-live[data-spatial-renderer='ready'] .eon-nexus-live__command-field {
+  position:absolute;
+  left:50%;
+  bottom:3.8rem;
+  transform:translateX(-50%);
+  width:min(35rem,calc(100% - 2rem));
+  padding:.62rem .78rem;
+  gap:.18rem;
+  background:linear-gradient(145deg,rgba(3,10,24,.74),rgba(9,20,42,.64));
+  box-shadow:0 14px 34px rgba(0,0,0,.24);
+  backdrop-filter:blur(12px);
+}
+.eon-nexus-live[data-spatial-renderer='ready'] .eon-nexus-live__command-field>span {
+  font-size:.72rem;
+  line-height:1.3;
+}
+.eon-nexus-live[data-spatial-renderer='ready'] .eon-nexus-live__command-actions {
+  margin-top:.18rem;
+}
+.eon-nexus-live[data-spatial-renderer='ready'] .eon-nexus-live__rotate-controls {
+  position:absolute;
+  left:50%;
+  bottom:.55rem;
+  transform:translateX(-50%);
+  z-index:4;
+  margin:0;
+  width:max-content;
+  max-width:calc(100% - 1rem);
+}
+@media (prefers-reduced-motion:reduce){
+  .eon-nexus-live[data-spatial-renderer='ready'] .eon-nexus-living-core{display:block;filter:none}
+  .eon-nexus-live[data-spatial-renderer='ready'] .eon-nexus-living-core__canvas{filter:none}
+}
+@media (max-width:899px){
+  .eon-nexus-live[data-spatial-renderer='ready'] .eon-nexus-live__command-field{bottom:3.55rem;width:calc(100% - 1rem);padding:.55rem .62rem}
+  .eon-nexus-live[data-spatial-renderer='ready'] .eon-nexus-live__command-field>span{display:none}
+  .eon-nexus-live[data-spatial-renderer='ready'] .eon-nexus-live__command-actions{gap:.3rem}
+}

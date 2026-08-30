@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024"><defs>
+      <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071526"/><stop offset=".5" stop-color="#132642"/><stop offset="1" stop-color="#050b17"/></linearGradient>
+      <radialGradient id="glow" cx=".5" cy=".45" r=".7"><stop stop-color="#62f4ff" stop-opacity=".35"/><stop offset="1" stop-color="#0d1930" stop-opacity="0"/></radialGradient>
+      <linearGradient id="violet" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c4a4ff"/><stop offset="1" stop-color="#5030bb"/></linearGradient>
+      <linearGradient id="mint" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c4ffdf"/><stop offset="1" stop-color="#1f9f82"/></linearGradient>
+      <linearGradient id="amber" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffe2a2"/><stop offset="1" stop-color="#c36a1c"/></linearGradient>
+    </defs><rect width="1024" height="1024" fill="url(#bg)"/><rect width="1024" height="1024" fill="url(#glow)"/>
+        <g fill="none" stroke="#a9f8ff" stroke-opacity=".34" stroke-width="4"><path d="M-90 188 182 -42l260 230 256-230 298 230"/><path d="M-90 510 182 280l260 230 256-230 298 230"/><path d="M-90 832 182 602l260 230 256-230 298 230"/></g>
+        <g fill="url(#violet)" fill-opacity=".25" stroke="#77f6ff" stroke-opacity=".48" stroke-width="3"><path d="M182 280 442 188l-90 252z"/><path d="M442 510 698 418l-92 256z"/><path d="M698 832 954 740l-92 256z"/></g></svg>

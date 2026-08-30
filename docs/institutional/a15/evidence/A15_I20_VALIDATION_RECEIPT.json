@@ -1,0 +1,67 @@
+{
+  "schema": "eonapp.a15.i20.validation-receipt.v1",
+  "generatedAt": "2026-08-05T01:50:48+05:30",
+  "wave": "I20",
+  "status": "pass-source",
+  "focused": {
+    "tests": 25,
+    "passed": 25,
+    "failed": 0
+  },
+  "maintainedSource": {
+    "filesMaintained": 381,
+    "filesRunnable": 372,
+    "tests": 1491,
+    "passed": 1444,
+    "intentionalSkips": 47,
+    "failed": 0,
+    "exactDependencyFilesDeferred": 9
+  },
+  "w766ir2SourceCertification": {
+    "passed": true,
+    "criteriaPassed": 10,
+    "criteriaTotal": 10,
+    "browserCertified": false,
+    "authenticatedOfflineCertified": false,
+    "builtArtifactCertified": false
+  },
+  "boundary": {
+    "coreRoutesReachingCityImplementation": 0,
+    "cityModulesReachingCoreImplementation": 0,
+    "contractOnly": true
+  },
+  "trustSupportAuthority": {
+    "privateSupportCaseIds": true,
+    "oneTimeAccessTokenReturned": true,
+    "storedAccessTokenPlaintext": false,
+    "operatorConfigurationFailClosed": true,
+    "paidLaunchBlockedWithoutOperatorIdentity": true,
+    "refundWithdrawalCancellationPolicyPublished": true,
+    "privacyRightsWorkflowPublished": true,
+    "publicIncidentStatusContainsPrivateContent": false,
+    "requestTimeDdl": false,
+    "supportCanMutateBillingOrEntitlement": false,
+    "humanResponseTimeCertified": false
+  },
+  "repositoryAuthority": {
+    "trackedFiles": 5551,
+    "activeModules": 542,
+    "missingImportFilesQuarantined": 194,
+    "secretScanTextFiles": 5228
+  },
+  "claims": {
+    "operatorIdentityConfiguredInProduction": false,
+    "legalCounselApproved": false,
+    "liveHumanCaseCompleted": false,
+    "liveIncidentDrillCompleted": false,
+    "productionBuildPassed": false,
+    "previewDeployed": false,
+    "productionDeployed": false
+  },
+  "externalBlockers": [
+    "Private registry still returns 404 for locked ws@7.5.11.",
+    "Installed npm is 10.9.2 while the repository requires npm 11.12.1.",
+    "Built-artifact certification remains blocked by unavailable postcss/esbuild dependencies.",
+    "Operator legal identity, live human case evidence, authenticated browsers, Preview and Production evidence remain pending."
+  ]
+}

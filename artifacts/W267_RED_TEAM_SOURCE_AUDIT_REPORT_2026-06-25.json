@@ -1,0 +1,25 @@
+{
+  "schema": "eonapp.w267.red-team-source-audit-report.v1",
+  "ok": true,
+  "generatedAt": "2026-08-09T00:57:36.860Z",
+  "interpretation": "PASS proves current source boundaries and an honest pending-evidence board. It is not an independent red-team, browser, Cloudflare, legal or release approval.",
+  "localStaticLanes": [
+    "truthful-capability-copy",
+    "secret-protection",
+    "approval-first-actions",
+    "local-first-diagnostics",
+    "commercial-and-chain-firewall",
+    "invite-and-milestone-fail-closed"
+  ],
+  "boardDecision": "NO_GO_PENDING_INDEPENDENT_REVIEW",
+  "w260Verdict": "NO_GO",
+  "externalEvidenceState": {
+    "independent-threat-model-review": "not-collected",
+    "prompt-injection-and-abuse-exercise": "not-collected",
+    "preview-live-network-and-csp-review": "not-collected",
+    "git-history-and-environment-secret-review": "not-collected",
+    "privacy-retention-and-user-rights-review": "not-collected",
+    "rollback-and-kill-switch-tabletop": "not-collected"
+  },
+  "errors": []
+}

@@ -1,0 +1,744 @@
+{
+  "schema": "eonapp.non-certifying-test-archive.w624d.2026-07-11.v1",
+  "wave": "W624D",
+  "classification": "superseded-exact-copy",
+  "certifying": false,
+  "releaseGate": false,
+  "archiveRoot": "archive/tests/superseded-exact-copy/W624D_2026-07-11",
+  "sourcePolicy": "Untouched copies are retained for archaeology. Current source files carry explicit test.skip markers and named maintained replacements.",
+  "fileCount": 36,
+  "assertionCount": 47,
+  "files": [
+    {
+      "sourceFile": "tests/unit/commercial-retirement.test.mjs",
+      "archiveFile": "archive/tests/superseded-exact-copy/W624D_2026-07-11/tests/unit/commercial-retirement.test.mjs",
+      "sha256": "34c09510b1bfc49fe44e23b3f329cb7bb1aebae44248efdae150466fa8107047",
+      "assertionCount": 2,
+      "assertions": [
+        {
+          "id": "archived-01",
+          "name": "COMMERCIAL-RETIREMENT locks ads, Telegram reward mechanics and trading execution outside launch scope",
+          "reason": "Superseded by the live Dodo, subscriptions-only, and current commercial-truth contracts.",
+          "replacements": [
+            "tests/unit/w621-live-dodo-cloudflare-rollout.test.mjs",
+            "tests/unit/w623c-canonical-commercial-truth.test.mjs"
+          ]
+        },
+        {
+          "id": "archived-02",
+          "name": "COMMERCIAL-RETIREMENT source gate retains a transparent legacy route without active campaigns",
+          "reason": "Superseded by the live Dodo, subscriptions-only, and current commercial-truth contracts.",
+          "replacements": [
+            "tests/unit/w621-live-dodo-cloudflare-rollout.test.mjs",
+            "tests/unit/w623c-canonical-commercial-truth.test.mjs"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceFile": "tests/unit/w180-w181-chat-first-shell.test.mjs",
+      "archiveFile": "archive/tests/superseded-exact-copy/W624D_2026-07-11/tests/unit/w180-w181-chat-first-shell.test.mjs",
+      "sha256": "58aff8109c63c579f21f6409e0d2a21875b880b9111e47fcee17024ac26d5cdb",
+      "assertionCount": 2,
+      "assertions": [
+        {
+          "id": "archived-03",
+          "name": "W380 ships a compact reusable app shell and intentional app destinations",
+          "reason": "Superseded by the Create-first information architecture and current production-reachability contract.",
+          "replacements": [
+            "tests/unit/w623e-information-architecture.test.mjs",
+            "tests/unit/w623d-production-reachability.test.mjs"
+          ]
+        },
+        {
+          "id": "archived-04",
+          "name": "W380 makes root the canonical chat document and keeps the generated redirects synchronized",
+          "reason": "Superseded by the Create-first information architecture and current production-reachability contract.",
+          "replacements": [
+            "tests/unit/w623e-information-architecture.test.mjs",
+            "tests/unit/w623d-production-reachability.test.mjs"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceFile": "tests/unit/w199-public-route-retirement.test.mjs",
+      "archiveFile": "archive/tests/superseded-exact-copy/W624D_2026-07-11/tests/unit/w199-public-route-retirement.test.mjs",
+      "sha256": "18189448acc32e0bf6e0c0fa91cd669e28bbdc6b6523682827f419f0a61c3e03",
+      "assertionCount": 1,
+      "assertions": [
+        {
+          "id": "archived-05",
+          "name": "W199 now delegates legacy retirement to the W217 route contract",
+          "reason": "Superseded by the Create-first information architecture and current production-reachability contract.",
+          "replacements": [
+            "tests/unit/w623e-information-architecture.test.mjs",
+            "tests/unit/w623d-production-reachability.test.mjs"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceFile": "tests/unit/w212-market-stateless-links.test.mjs",
+      "archiveFile": "archive/tests/superseded-exact-copy/W624D_2026-07-11/tests/unit/w212-market-stateless-links.test.mjs",
+      "sha256": "776306b619784a482ca770e648034fd1765419cf5f43aeb93daaa3ebe176ef3e",
+      "assertionCount": 2,
+      "assertions": [
+        {
+          "id": "archived-06",
+          "name": "W212 has no Cloudflare short-link registry and no central write on link open",
+          "reason": "Superseded by the live Dodo, subscriptions-only, and current commercial-truth contracts.",
+          "replacements": [
+            "tests/unit/w621-live-dodo-cloudflare-rollout.test.mjs",
+            "tests/unit/w623c-canonical-commercial-truth.test.mjs"
+          ]
+        },
+        {
+          "id": "archived-07",
+          "name": "W212 Preview Studio has explicit private generation and server-truth commercial safeguards with no checkout or exchange claim",
+          "reason": "Superseded by the live Dodo, subscriptions-only, and current commercial-truth contracts.",
+          "replacements": [
+            "tests/unit/w621-live-dodo-cloudflare-rollout.test.mjs",
+            "tests/unit/w623c-canonical-commercial-truth.test.mjs"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceFile": "tests/unit/w213-calm-city-trade.test.mjs",
+      "archiveFile": "archive/tests/superseded-exact-copy/W624D_2026-07-11/tests/unit/w213-calm-city-trade.test.mjs",
+      "sha256": "06748cc6a678f762927b821008b0974134b7600fee73ef99882354485a98f743",
+      "assertionCount": 1,
+      "assertions": [
+        {
+          "id": "archived-08",
+          "name": "W213/W224/W360 keep City Overview resilient and use an explicit WebGL device gate",
+          "reason": "Superseded by the one-runtime City architecture and current Command District/Wayfinder contracts.",
+          "replacements": [
+            "tests/unit/w624b-city-runtime-consolidation.test.mjs",
+            "tests/unit/w624c-command-district-vertical-slice.test.mjs",
+            "tests/unit/w624d-wayfinder-camera.test.mjs"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceFile": "tests/unit/w216-local-finalization.test.mjs",
+      "archiveFile": "archive/tests/superseded-exact-copy/W624D_2026-07-11/tests/unit/w216-local-finalization.test.mjs",
+      "sha256": "c72cd1e8b53ef3db764c931432a7754a82f52c68b95080624edf88cd59dc9eaa",
+      "assertionCount": 2,
+      "assertions": [
+        {
+          "id": "archived-09",
+          "name": "W216/W392 keep direct EON City entry, City Map fallback, and command-space preview isolated",
+          "reason": "Superseded by the one-runtime City architecture and current Command District/Wayfinder contracts.",
+          "replacements": [
+            "tests/unit/w624b-city-runtime-consolidation.test.mjs",
+            "tests/unit/w624c-command-district-vertical-slice.test.mjs",
+            "tests/unit/w624d-wayfinder-camera.test.mjs"
+          ]
+        },
+        {
+          "id": "archived-10",
+          "name": "retired legacy Realm and commercial URLs cannot become competing share or campaign surfaces",
+          "reason": "Superseded by the live Dodo, subscriptions-only, and current commercial-truth contracts.",
+          "replacements": [
+            "tests/unit/w621-live-dodo-cloudflare-rollout.test.mjs",
+            "tests/unit/w623c-canonical-commercial-truth.test.mjs"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceFile": "tests/unit/w217-route-contract.test.mjs",
+      "archiveFile": "archive/tests/superseded-exact-copy/W624D_2026-07-11/tests/unit/w217-route-contract.test.mjs",
+      "sha256": "e909bcea48f45f4d508b272eb055a6a89211e847634d21a882d11f889082e0c4",
+      "assertionCount": 2,
+      "assertions": [
+        {
+          "id": "archived-11",
+          "name": "W380 defines one valid root-first route contract",
+          "reason": "Superseded by the Create-first information architecture and current production-reachability contract.",
+          "replacements": [
+            "tests/unit/w623e-information-architecture.test.mjs",
+            "tests/unit/w623d-production-reachability.test.mjs"
+          ]
+        },
+        {
+          "id": "archived-12",
+          "name": "legacy aliases remain explicit and rewards stay outside primary routing",
+          "reason": "Superseded by the live Dodo, subscriptions-only, and current commercial-truth contracts.",
+          "replacements": [
+            "tests/unit/w621-live-dodo-cloudflare-rollout.test.mjs",
+            "tests/unit/w623c-canonical-commercial-truth.test.mjs"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceFile": "tests/unit/w218-chat-first-shell-v2.test.mjs",
+      "archiveFile": "archive/tests/superseded-exact-copy/W624D_2026-07-11/tests/unit/w218-chat-first-shell-v2.test.mjs",
+      "sha256": "805621681289f8aca68ad6161b0c1b28e91ca88c8bedcf58a4e4c36d65634b3b",
+      "assertionCount": 1,
+      "assertions": [
+        {
+          "id": "archived-13",
+          "name": "W218 share surface creates a signed public invite only and keeps private data out of scope",
+          "reason": "Superseded by the Create-first information architecture and current production-reachability contract.",
+          "replacements": [
+            "tests/unit/w623e-information-architecture.test.mjs",
+            "tests/unit/w623d-production-reachability.test.mjs"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceFile": "tests/unit/w219-eonbot-local-ai-workspace.test.mjs",
+      "archiveFile": "archive/tests/superseded-exact-copy/W624D_2026-07-11/tests/unit/w219-eonbot-local-ai-workspace.test.mjs",
+      "sha256": "aaabf3ea5d21dd1fc236cc125c882288a519f6bea33a08bd28b2e4275be01fce",
+      "assertionCount": 2,
+      "assertions": [
+        {
+          "id": "archived-14",
+          "name": "W219 removes chat credential capture while preserving secure Vault configuration routing",
+          "reason": "Superseded by the Create-first information architecture and current production-reachability contract.",
+          "replacements": [
+            "tests/unit/w623e-information-architecture.test.mjs",
+            "tests/unit/w623d-production-reachability.test.mjs"
+          ]
+        },
+        {
+          "id": "archived-15",
+          "name": "W219 positions Workspace as AI Cockpit and keeps Local AI truthful",
+          "reason": "Superseded by the Create-first information architecture and current production-reachability contract.",
+          "replacements": [
+            "tests/unit/w623e-information-architecture.test.mjs",
+            "tests/unit/w623d-production-reachability.test.mjs"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceFile": "tests/unit/w220-market-generation-vertical-slice.test.mjs",
+      "archiveFile": "archive/tests/superseded-exact-copy/W624D_2026-07-11/tests/unit/w220-market-generation-vertical-slice.test.mjs",
+      "sha256": "12ed2bae86490422a8d109c024f453fe9e51bbb934061984457eb13e1f97fb7e",
+      "assertionCount": 1,
+      "assertions": [
+        {
+          "id": "archived-16",
+          "name": "W220 Preview Studio UI declares empty start, explicit generation, progressive reveal, safe resume, and a non-marketplace boundary",
+          "reason": "Superseded by the live Dodo, subscriptions-only, and current commercial-truth contracts.",
+          "replacements": [
+            "tests/unit/w621-live-dodo-cloudflare-rollout.test.mjs",
+            "tests/unit/w623c-canonical-commercial-truth.test.mjs"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceFile": "tests/unit/w221-cityworldstate-2d-rpg.test.mjs",
+      "archiveFile": "archive/tests/superseded-exact-copy/W624D_2026-07-11/tests/unit/w221-cityworldstate-2d-rpg.test.mjs",
+      "sha256": "d0e4227cae891720962bb85534e8244b9a337ffb32c20691bbfe24f54f9f99ad",
+      "assertionCount": 1,
+      "assertions": [
+        {
+          "id": "archived-17",
+          "name": "W221 ships an actual canvas-based 2D City input contract with no hidden economy or legacy 3D boot",
+          "reason": "Superseded by the one-runtime City architecture and current Command District/Wayfinder contracts.",
+          "replacements": [
+            "tests/unit/w624b-city-runtime-consolidation.test.mjs",
+            "tests/unit/w624c-command-district-vertical-slice.test.mjs",
+            "tests/unit/w624d-wayfinder-camera.test.mjs"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceFile": "tests/unit/w223-invite-share-center.test.mjs",
+      "archiveFile": "archive/tests/superseded-exact-copy/W624D_2026-07-11/tests/unit/w223-invite-share-center.test.mjs",
+      "sha256": "865050d0fd0818836754f4492f4b656b9c9a2fca73a4a84361b245cf9e8d2e80",
+      "assertionCount": 1,
+      "assertions": [
+        {
+          "id": "archived-18",
+          "name": "W223 user-facing EON Share copy keeps private chat, public stores, rewards and payouts out of scope",
+          "reason": "Superseded by the live Dodo, subscriptions-only, and current commercial-truth contracts.",
+          "replacements": [
+            "tests/unit/w621-live-dodo-cloudflare-rollout.test.mjs",
+            "tests/unit/w623c-canonical-commercial-truth.test.mjs"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceFile": "tests/unit/w224-cityworldstate-3d-parity.test.mjs",
+      "archiveFile": "archive/tests/superseded-exact-copy/W624D_2026-07-11/tests/unit/w224-cityworldstate-3d-parity.test.mjs",
+      "sha256": "99c5e5ede33ad6a2cee3109165fcae242fc803441319d9d667a148375f8b20f1",
+      "assertionCount": 1,
+      "assertions": [
+        {
+          "id": "archived-19",
+          "name": "W224 replaces the CSS portal-only route with an explicit dynamically-loaded WebGL renderer sharing 2D district routes",
+          "reason": "Superseded by the one-runtime City architecture and current Command District/Wayfinder contracts.",
+          "replacements": [
+            "tests/unit/w624b-city-runtime-consolidation.test.mjs",
+            "tests/unit/w624c-command-district-vertical-slice.test.mjs",
+            "tests/unit/w624d-wayfinder-camera.test.mjs"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceFile": "tests/unit/w225-account-catalog-foundations.test.mjs",
+      "archiveFile": "archive/tests/superseded-exact-copy/W624D_2026-07-11/tests/unit/w225-account-catalog-foundations.test.mjs",
+      "sha256": "458d8bd770a7f8e0a64c190c5a14e3ce2806db9ef19ca5b42e8a299dab6b97a3",
+      "assertionCount": 1,
+      "assertions": [
+        {
+          "id": "archived-20",
+          "name": "W225 source and UI stay design-only: no fetch, no browser storage, no connect or checkout action",
+          "reason": "Superseded by the live Dodo, subscriptions-only, and current commercial-truth contracts.",
+          "replacements": [
+            "tests/unit/w621-live-dodo-cloudflare-rollout.test.mjs",
+            "tests/unit/w623c-canonical-commercial-truth.test.mjs"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceFile": "tests/unit/w226-commercial-decision-gate.test.mjs",
+      "archiveFile": "archive/tests/superseded-exact-copy/W624D_2026-07-11/tests/unit/w226-commercial-decision-gate.test.mjs",
+      "sha256": "7630b8c3bd2ab412a454e976d64fa827569c2cf6c49d8986185b6f73561f4e18",
+      "assertionCount": 1,
+      "assertions": [
+        {
+          "id": "archived-21",
+          "name": "W226 source, Billing UI, and server contract remain non-operative and do not contain activation controls",
+          "reason": "Superseded by the live Dodo, subscriptions-only, and current commercial-truth contracts.",
+          "replacements": [
+            "tests/unit/w621-live-dodo-cloudflare-rollout.test.mjs",
+            "tests/unit/w623c-canonical-commercial-truth.test.mjs"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceFile": "tests/unit/w227-release-certification.test.mjs",
+      "archiveFile": "archive/tests/superseded-exact-copy/W624D_2026-07-11/tests/unit/w227-release-certification.test.mjs",
+      "sha256": "066267a656d6bd732eb2f22be4c2bb70598f7751839e7cbe5c16cb41dd11b344",
+      "assertionCount": 1,
+      "assertions": [
+        {
+          "id": "archived-22",
+          "name": "W228 maps every public and retired route to a permitted product state with source evidence",
+          "reason": "Superseded by the Create-first information architecture and current production-reachability contract.",
+          "replacements": [
+            "tests/unit/w623e-information-architecture.test.mjs",
+            "tests/unit/w623d-production-reachability.test.mjs"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceFile": "tests/unit/w231-eon-city-flagship.test.mjs",
+      "archiveFile": "archive/tests/superseded-exact-copy/W624D_2026-07-11/tests/unit/w231-eon-city-flagship.test.mjs",
+      "sha256": "eb8fcf19c27a6973832e21c344670d84fb046c761388b29ebdf72a8376e171ef",
+      "assertionCount": 1,
+      "assertions": [
+        {
+          "id": "archived-23",
+          "name": "W231 ships a premium asset-free 2D RPG presentation with a routeable objective HUD and no fake population or economy",
+          "reason": "Superseded by the one-runtime City architecture and current Command District/Wayfinder contracts.",
+          "replacements": [
+            "tests/unit/w624b-city-runtime-consolidation.test.mjs",
+            "tests/unit/w624c-command-district-vertical-slice.test.mjs",
+            "tests/unit/w624d-wayfinder-camera.test.mjs"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceFile": "tests/unit/w239-w240-release-foundation.test.mjs",
+      "archiveFile": "archive/tests/superseded-exact-copy/W624D_2026-07-11/tests/unit/w239-w240-release-foundation.test.mjs",
+      "sha256": "6d8774387116a46b9a2ffb2cf6d057ffdd278cb7d350edb0b282bd9e03036d79",
+      "assertionCount": 1,
+      "assertions": [
+        {
+          "id": "archived-24",
+          "name": "W239 quarantines nested legacy Tool and Game routes before production output",
+          "reason": "Superseded by the Create-first information architecture and current production-reachability contract.",
+          "replacements": [
+            "tests/unit/w623e-information-architecture.test.mjs",
+            "tests/unit/w623d-production-reachability.test.mjs"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceFile": "tests/unit/w243-chat-navigation-theme.test.mjs",
+      "archiveFile": "archive/tests/superseded-exact-copy/W624D_2026-07-11/tests/unit/w243-chat-navigation-theme.test.mjs",
+      "sha256": "e4a9f0b50a2ac7fd5dc7c98fc0c05289871c116294b527c43c409b0d0bd3c584",
+      "assertionCount": 2,
+      "assertions": [
+        {
+          "id": "archived-25",
+          "name": "W243 keeps a simple ChatGPT-style public navigation with one canonical EONAPP hierarchy",
+          "reason": "Superseded by the Create-first information architecture and current production-reachability contract.",
+          "replacements": [
+            "tests/unit/w623e-information-architecture.test.mjs",
+            "tests/unit/w623d-production-reachability.test.mjs"
+          ]
+        },
+        {
+          "id": "archived-26",
+          "name": "W243 applies Graphite, Obsidian, or Neon Night before core-route styles render",
+          "reason": "Superseded by the Create-first information architecture and current production-reachability contract.",
+          "replacements": [
+            "tests/unit/w623e-information-architecture.test.mjs",
+            "tests/unit/w623d-production-reachability.test.mjs"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceFile": "tests/unit/w247-economic-commercial-firewall.test.mjs",
+      "archiveFile": "archive/tests/superseded-exact-copy/W624D_2026-07-11/tests/unit/w247-economic-commercial-firewall.test.mjs",
+      "sha256": "76571cb956139f80db7eff093537c82f3395faef7d4b85f50c74943744c0ca46",
+      "assertionCount": 1,
+      "assertions": [
+        {
+          "id": "archived-27",
+          "name": "W247 keeps Market/reward value systems absent while allowing the canonical Dodo subscription rail",
+          "reason": "Superseded by the live Dodo, subscriptions-only, and current commercial-truth contracts.",
+          "replacements": [
+            "tests/unit/w621-live-dodo-cloudflare-rollout.test.mjs",
+            "tests/unit/w623c-canonical-commercial-truth.test.mjs"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceFile": "tests/unit/w248-city-mode-contract.test.mjs",
+      "archiveFile": "archive/tests/superseded-exact-copy/W624D_2026-07-11/tests/unit/w248-city-mode-contract.test.mjs",
+      "sha256": "4b46e175c5ad767fa098d09dfe4a35415842d62d81e2016efd5686c1da193944",
+      "assertionCount": 1,
+      "assertions": [
+        {
+          "id": "archived-28",
+          "name": "W248/W360 keep the identity-gated City entry, City Overview and Three.js Spatial Command Space distinct",
+          "reason": "Superseded by the one-runtime City architecture and current Command District/Wayfinder contracts.",
+          "replacements": [
+            "tests/unit/w624b-city-runtime-consolidation.test.mjs",
+            "tests/unit/w624c-command-district-vertical-slice.test.mjs",
+            "tests/unit/w624d-wayfinder-camera.test.mjs"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceFile": "tests/unit/w249-babylon-play-proof-spike.test.mjs",
+      "archiveFile": "archive/tests/superseded-exact-copy/W624D_2026-07-11/tests/unit/w249-babylon-play-proof-spike.test.mjs",
+      "sha256": "ab1939e4ed298ee669cc87cc3541ea51c858a81321c75d0e3f1d81fd8f88c42c",
+      "assertionCount": 1,
+      "assertions": [
+        {
+          "id": "archived-29",
+          "name": "W249 Immersive Work Mode is full-screen and landscape-first with accessible touch controls and a safe fallback",
+          "reason": "Superseded by the one-runtime City architecture and current Command District/Wayfinder contracts.",
+          "replacements": [
+            "tests/unit/w624b-city-runtime-consolidation.test.mjs",
+            "tests/unit/w624c-command-district-vertical-slice.test.mjs",
+            "tests/unit/w624d-wayfinder-camera.test.mjs"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceFile": "tests/unit/w405-live-ux-city-rescue.test.mjs",
+      "archiveFile": "archive/tests/superseded-exact-copy/W624D_2026-07-11/tests/unit/w405-live-ux-city-rescue.test.mjs",
+      "sha256": "26878df153e49fca7d273ab326bae129aa7357ccec825dd058c37bc833f27ea9",
+      "assertionCount": 1,
+      "assertions": [
+        {
+          "id": "archived-30",
+          "name": "W423 source gate passes and remains source-only",
+          "reason": "Superseded by the one-runtime City architecture and current Command District/Wayfinder contracts.",
+          "replacements": [
+            "tests/unit/w624b-city-runtime-consolidation.test.mjs",
+            "tests/unit/w624c-command-district-vertical-slice.test.mjs",
+            "tests/unit/w624d-wayfinder-camera.test.mjs"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceFile": "tests/unit/w450-dodo-approval-readiness.test.mjs",
+      "archiveFile": "archive/tests/superseded-exact-copy/W624D_2026-07-11/tests/unit/w450-dodo-approval-readiness.test.mjs",
+      "sha256": "6a64da523fc8820e2b795fb5f092232066df75c555167b512c8434cb92e8fe67",
+      "assertionCount": 1,
+      "assertions": [
+        {
+          "id": "archived-31",
+          "name": "W450 source gate proves Dodo readiness remains a no-network, fail-closed boundary",
+          "reason": "Superseded by the live Dodo, subscriptions-only, and current commercial-truth contracts.",
+          "replacements": [
+            "tests/unit/w621-live-dodo-cloudflare-rollout.test.mjs",
+            "tests/unit/w623c-canonical-commercial-truth.test.mjs"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceFile": "tests/unit/w450a-dodo-catalogue-envelope.test.mjs",
+      "archiveFile": "archive/tests/superseded-exact-copy/W624D_2026-07-11/tests/unit/w450a-dodo-catalogue-envelope.test.mjs",
+      "sha256": "b19cd420b67c74dfa5e08e86b510c30d5659e6f0e7aa80e498f28f1e0dc89ee1",
+      "assertionCount": 1,
+      "assertions": [
+        {
+          "id": "archived-32",
+          "name": "W450.1 keeps pricing, trial and checkout out of public billing until external proof",
+          "reason": "Superseded by the live Dodo, subscriptions-only, and current commercial-truth contracts.",
+          "replacements": [
+            "tests/unit/w621-live-dodo-cloudflare-rollout.test.mjs",
+            "tests/unit/w623c-canonical-commercial-truth.test.mjs"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceFile": "tests/unit/w452-app-shell-quality.test.mjs",
+      "archiveFile": "archive/tests/superseded-exact-copy/W624D_2026-07-11/tests/unit/w452-app-shell-quality.test.mjs",
+      "sha256": "3f388eb145d5d4b1376a403458b504c671e73323df88487b102eefc8b32c8b6e",
+      "assertionCount": 1,
+      "assertions": [
+        {
+          "id": "archived-33",
+          "name": "W452 keeps root Chat canonical, removes active legacy Chat links, and preserves transparent live billing copy",
+          "reason": "Superseded by the live Dodo, subscriptions-only, and current commercial-truth contracts.",
+          "replacements": [
+            "tests/unit/w621-live-dodo-cloudflare-rollout.test.mjs",
+            "tests/unit/w623c-canonical-commercial-truth.test.mjs"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceFile": "tests/unit/w452b-production-route-emission-cleanup.test.mjs",
+      "archiveFile": "archive/tests/superseded-exact-copy/W624D_2026-07-11/tests/unit/w452b-production-route-emission-cleanup.test.mjs",
+      "sha256": "09177034ca6532a6cca1a9e6c6524b2e9ef685776b85b516aa0584e37b02dd05",
+      "assertionCount": 1,
+      "assertions": [
+        {
+          "id": "archived-34",
+          "name": "W452.2 finds no retired alias emitted by current HTML or reachable runtime modules",
+          "reason": "Superseded by the Create-first information architecture and current production-reachability contract.",
+          "replacements": [
+            "tests/unit/w623e-information-architecture.test.mjs",
+            "tests/unit/w623d-production-reachability.test.mjs"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceFile": "tests/unit/w462-trust-accessibility-source-audit.test.mjs",
+      "archiveFile": "archive/tests/superseded-exact-copy/W624D_2026-07-11/tests/unit/w462-trust-accessibility-source-audit.test.mjs",
+      "sha256": "ccf61d4d1aa1b68700f5e7d9aacc104ebdd371d0f55c58190d225aff83f166aa",
+      "assertionCount": 2,
+      "assertions": [
+        {
+          "id": "archived-35",
+          "name": "W462.1 consolidates current a11y, language, voice and security source controls without claiming external proof",
+          "reason": "The exact historical snapshot no longer represents the canonical product contract.",
+          "replacements": [
+            "tests/unit/w623d-production-reachability.test.mjs",
+            "tests/unit/w623e-information-architecture.test.mjs",
+            "tests/unit/w624d-current-contract-alignment.test.mjs"
+          ]
+        },
+        {
+          "id": "archived-36",
+          "name": "W462.1 static gate preserves the source-only external-evidence fence",
+          "reason": "Retained as historical evidence only; current release truth is certified by explicit maintained gates.",
+          "replacements": [
+            "tests/unit/w623d-production-reachability.test.mjs",
+            "tests/unit/w623f-certification-v2.test.mjs",
+            "tests/unit/w624d-current-contract-alignment.test.mjs"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceFile": "tests/unit/w487-institutional-code-closure.test.mjs",
+      "archiveFile": "archive/tests/superseded-exact-copy/W624D_2026-07-11/tests/unit/w487-institutional-code-closure.test.mjs",
+      "sha256": "e29e3004b620f37984b43ea37c8cd1765c41a90d64b78b0566bb632fa489164d",
+      "assertionCount": 1,
+      "assertions": [
+        {
+          "id": "archived-37",
+          "name": "W487 source gate protects the current institutional code-closure boundary",
+          "reason": "Retained as historical evidence only; current release truth is certified by explicit maintained gates.",
+          "replacements": [
+            "tests/unit/w623d-production-reachability.test.mjs",
+            "tests/unit/w623f-certification-v2.test.mjs",
+            "tests/unit/w624d-current-contract-alignment.test.mjs"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceFile": "tests/unit/w520-core-modularisation.test.mjs",
+      "archiveFile": "archive/tests/superseded-exact-copy/W624D_2026-07-11/tests/unit/w520-core-modularisation.test.mjs",
+      "sha256": "daa5b11fcfaeb63d59bc281e949acd6f3d7ccce1d8e0020b53554d69679c037b",
+      "assertionCount": 2,
+      "assertions": [
+        {
+          "id": "archived-38",
+          "name": "W520 core seams reduce all four orchestrators and add no boundary cycle",
+          "reason": "The exact historical snapshot no longer represents the canonical product contract.",
+          "replacements": [
+            "tests/unit/w623d-production-reachability.test.mjs",
+            "tests/unit/w623e-information-architecture.test.mjs",
+            "tests/unit/w624d-current-contract-alignment.test.mjs"
+          ]
+        },
+        {
+          "id": "archived-39",
+          "name": "W520 shell contract preserves canonical routes and keyboard-native navigation markup",
+          "reason": "Superseded by the Create-first information architecture and current production-reachability contract.",
+          "replacements": [
+            "tests/unit/w623e-information-architecture.test.mjs",
+            "tests/unit/w623d-production-reachability.test.mjs"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceFile": "tests/unit/w524-portability-handover-gate.test.mjs",
+      "archiveFile": "archive/tests/superseded-exact-copy/W624D_2026-07-11/tests/unit/w524-portability-handover-gate.test.mjs",
+      "sha256": "d30422058f10224e8be758accd0fc0fe5add39e062c81e5fe4b316bf50718555",
+      "assertionCount": 1,
+      "assertions": [
+        {
+          "id": "archived-40",
+          "name": "W524 portability handover gate keeps one current entrypoint, historical provenance and LF redirect mirrors",
+          "reason": "Retained as historical evidence only; current release truth is certified by explicit maintained gates.",
+          "replacements": [
+            "tests/unit/w623d-production-reachability.test.mjs",
+            "tests/unit/w623f-certification-v2.test.mjs",
+            "tests/unit/w624d-current-contract-alignment.test.mjs"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceFile": "tests/unit/w525b-account-vault-ux.test.mjs",
+      "archiveFile": "archive/tests/superseded-exact-copy/W624D_2026-07-11/tests/unit/w525b-account-vault-ux.test.mjs",
+      "sha256": "22f977e139a82ba98fd1e4a8ee21fce1f398802e7f453de8f505a576e81ad06f",
+      "assertionCount": 1,
+      "assertions": [
+        {
+          "id": "archived-41",
+          "name": "W525B keeps the original Drive foundation separately consented while W536 may add a later explicit adapter",
+          "reason": "The exact historical snapshot no longer represents the canonical product contract.",
+          "replacements": [
+            "tests/unit/w623d-production-reachability.test.mjs",
+            "tests/unit/w623e-information-architecture.test.mjs",
+            "tests/unit/w624d-current-contract-alignment.test.mjs"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceFile": "tests/unit/w528-machine-evidence.test.mjs",
+      "archiveFile": "archive/tests/superseded-exact-copy/W624D_2026-07-11/tests/unit/w528-machine-evidence.test.mjs",
+      "sha256": "c3c73820755a53ec4d4252faa65a1cd551d3e6fd0686736cc7fae8a552cbe3c3",
+      "assertionCount": 2,
+      "assertions": [
+        {
+          "id": "archived-42",
+          "name": "W528 prepares source and emulated-browser coverage without starting a browser or claiming a device result",
+          "reason": "Retained as historical evidence only; current release truth is certified by explicit maintained gates.",
+          "replacements": [
+            "tests/unit/w623d-production-reachability.test.mjs",
+            "tests/unit/w623f-certification-v2.test.mjs",
+            "tests/unit/w624d-current-contract-alignment.test.mjs"
+          ]
+        },
+        {
+          "id": "archived-43",
+          "name": "W528 source gate remains local-only and rejects runtime evidence inflation",
+          "reason": "Retained as historical evidence only; current release truth is certified by explicit maintained gates.",
+          "replacements": [
+            "tests/unit/w623d-production-reachability.test.mjs",
+            "tests/unit/w623f-certification-v2.test.mjs",
+            "tests/unit/w624d-current-contract-alignment.test.mjs"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceFile": "tests/unit/w534-historical-documentation.test.mjs",
+      "archiveFile": "archive/tests/superseded-exact-copy/W624D_2026-07-11/tests/unit/w534-historical-documentation.test.mjs",
+      "sha256": "81fe9c4f7dc4f8aa3ea8397a89cb938918c6d02f8093fd46e7171fc26352797a",
+      "assertionCount": 2,
+      "assertions": [
+        {
+          "id": "archived-44",
+          "name": "W534 generated index is deterministic and preserves historical material without treating it as a release instruction",
+          "reason": "Retained as historical evidence only; current release truth is certified by explicit maintained gates.",
+          "replacements": [
+            "tests/unit/w623d-production-reachability.test.mjs",
+            "tests/unit/w623f-certification-v2.test.mjs",
+            "tests/unit/w624d-current-contract-alignment.test.mjs"
+          ]
+        },
+        {
+          "id": "archived-45",
+          "name": "W534 physically quarantines the obsolete P2P e2e diagnostic",
+          "reason": "Retained as historical evidence only; current release truth is certified by explicit maintained gates.",
+          "replacements": [
+            "tests/unit/w623d-production-reachability.test.mjs",
+            "tests/unit/w623f-certification-v2.test.mjs",
+            "tests/unit/w624d-current-contract-alignment.test.mjs"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceFile": "tests/unit/w535-release-truth-reaudit.test.mjs",
+      "archiveFile": "archive/tests/superseded-exact-copy/W624D_2026-07-11/tests/unit/w535-release-truth-reaudit.test.mjs",
+      "sha256": "e93be018872b44935166bf738bf74c1a607882b974888de8b25b72b6d7e35cb2",
+      "assertionCount": 1,
+      "assertions": [
+        {
+          "id": "archived-46",
+          "name": "W535 returns an evidence-bounded limited-preview board for a green local source candidate",
+          "reason": "Retained as historical evidence only; current release truth is certified by explicit maintained gates.",
+          "replacements": [
+            "tests/unit/w623d-production-reachability.test.mjs",
+            "tests/unit/w623f-certification-v2.test.mjs",
+            "tests/unit/w624d-current-contract-alignment.test.mjs"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceFile": "tests/unit/w623-ceo-grand-audit.test.mjs",
+      "archiveFile": "archive/tests/superseded-exact-copy/W624D_2026-07-11/tests/unit/w623-ceo-grand-audit.test.mjs",
+      "sha256": "4261a7e3a42a46bb48497532839f72bcf36b5390418d5c587f5758d37317b057",
+      "assertionCount": 1,
+      "assertions": [
+        {
+          "id": "archived-47",
+          "name": "W623 deterministic CEO source gate passes",
+          "reason": "Retained as historical evidence only; current release truth is certified by explicit maintained gates.",
+          "replacements": [
+            "tests/unit/w623d-production-reachability.test.mjs",
+            "tests/unit/w623f-certification-v2.test.mjs",
+            "tests/unit/w624d-current-contract-alignment.test.mjs"
+          ]
+        }
+      ]
+    }
+  ]
+}

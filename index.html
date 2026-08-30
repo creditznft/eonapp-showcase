@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#111411" />
+  <script src="/assets/js/eon-theme-bootstrap.js?release=w722-2026-07-27"></script>
+  <meta name="description" content="EONAPP is a guest-first AI creation workspace. Ask EONBOT, build a project, create assets, or enter EON City." />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/favicon.ico" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="preload" href="/assets/css/base.css" as="style" />
+  <link rel="stylesheet" href="/assets/css/base.css" />
+  <link rel="stylesheet" href="/assets/css/eonbot-home.css" />
+  <script type="module" src="/assets/js/localStorage-shim.js"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"EONAPP","applicationCategory":"AIApplication","operatingSystem":"Web","url":"https://eonapp.ch/","description":"A guest-first AI creation workspace for conversations, projects, visual assets and EON City."}</script>
+  <meta property="og:site_name" content="EONAPP" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="EONAPP — Ask. Make. Enter." />
+  <meta property="og:description" content="Start with EONBOT, build real projects, create assets and enter the Living Nexus." />
+  <meta property="og:url" content="https://eonapp.ch/" />
+  <meta property="og:image" content="https://eonapp.ch/assets/media/social/eonapp-home-1200x630-social-v1.png?v=social-v1" />
+  <meta property="og:image:secure_url" content="https://eonapp.ch/assets/media/social/eonapp-home-1200x630-social-v1.png?v=social-v1" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="EONAPP — Ask. Make. Enter. social preview" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="EONAPP — Ask. Make. Enter." />
+  <meta name="twitter:description" content="Start with EONBOT, build real projects, create assets and enter the Living Nexus." />
+  <meta name="twitter:image" content="https://eonapp.ch/assets/media/social/eonapp-home-1200x630-social-v1.png?v=social-v1" />
+  <meta name="twitter:image:alt" content="EONAPP — Ask. Make. Enter. social preview" />
+  <meta name="eon:social-square" content="https://eonapp.ch/assets/media/social/eonapp-home-1080x1080-social-v1.png?v=social-v1" />
+  <title>EONAPP — Ask. Make. Enter.</title>
+  <meta name="google-adsense-account" content="ca-pub-6759380023085970">
+  <link rel="canonical" href="https://eonapp.ch/" />
+  <meta name="robots" content="index, follow" />
+  <!-- Bidvertiser2106784 -->
+</head>
+<body data-page-type="home" data-eon-app-shell="1" data-eon-app-page="chat" class="page-shell-pending eonbot-home" data-eon-analytics="off">
+  <a href="#main" class="skip-to-content">Skip to chat</a>
+  <main id="main" class="chat-page-main eonbot-home-main">
+    <h1 class="eon-chat-page-title">EONBOT</h1>
+    <section class="chat-container eonbot-home-container" aria-label="EONBOT chat">
+      <header class="chat-inner-header eonbot-home-header">
+        <div class="chat-bot-avatar-large" aria-hidden="true">✦</div>
+        <div class="chat-inner-header-info">
+          <strong id="chat-runtime-name">EONBOT</strong>
+          <div class="chat-status-line"><div class="chat-status-dot"></div><span id="chat-runtime-label">Ready to help</span></div>
+        </div>
+        <div id="chat-provider-badge" class="di-provider-badge" aria-hidden="true"></div>
+        <a class="chat-model-settings-link" href="/profile#ai-setup">AI setup</a>
+        <button type="button" id="chat-voice-toggle" class="chat-voice-btn" aria-label="Use Voice — have a live conversation with EONBOT" title="Use Voice — have a live conversation with EONBOT">🎤</button>
+        <button type="button" id="chat-voice-mode" class="chat-voice-btn" aria-label="Toggle continuous voice mode" aria-pressed="false">∞</button>
+        <button type="button" id="chat-tts-toggle" class="chat-voice-btn" aria-label="Toggle voice output" aria-pressed="true">🔊</button>
+      </header>
+
+      <div id="eonbot-emotion-strip" class="eonbot-emotion-strip" data-emotion-state="ready" aria-live="polite" aria-label="EONBOT status">
+        <div class="eonbot-emotion-main"><span id="eonbot-emotion-emoji" class="eonbot-emotion-emoji" aria-hidden="true">✦</span><div><strong id="eonbot-emotion-label">Ready</strong><span id="eonbot-emotion-detail">EONBOT is ready when you are.</span></div></div>
+        <div class="eonbot-emotion-chips" aria-hidden="true"><span id="eonbot-voice-chip" class="eonbot-status-chip">Voice ready</span><span id="eonbot-model-chip" class="eonbot-status-chip">AI setup optional</span><span id="eonbot-mission-chip" class="eonbot-status-chip">Project ready</span></div>
+      </div>
+
+      <div class="eonbot-home-stage">
+        <div class="chat-messages eonbot-home-messages" id="chat-messages" role="log" aria-live="polite" aria-label="Chat messages">
+          <section class="eonbot-home-welcome" data-eonbot-home-welcome>
+            <p class="eonbot-home-kicker">EONAPP</p>
+            <h2>What would you like to make?</h2>
+            <p>Start with a message. EONBOT helps you plan, create and continue real work—opening Create, Projects, Library, EON City or your private settings only when you choose.</p><p class="eonbot-home-hierarchy" data-eonbot-product-hierarchy><strong>Ask naturally.</strong><span>Type or speak in your language. Your work stays local by default.</span></p>
+            <div class="eonbot-home-suggestions" aria-label="Suggested ways to start">
+              <button type="button" data-eonbot-home-prompt="Help me plan a project">Plan a project</button>
+              <button type="button" data-eonbot-home-prompt="Help me build a website">Build a website</button>
+              <button type="button" data-eonbot-home-prompt="Help me create visual ideas for a campaign">Create visuals</button>
+              <button type="button" data-eonbot-home-prompt="Help me research an idea">Research an idea</button>
+            </div>
+            <nav class="eonbot-home-public-links" aria-label="Learn about EONAPP">
+              <a href="/guides">Guides</a>
+              <a href="/about">About</a>
+              <a href="/local-ai">Local AI</a>
+              <a href="/insights">Insights</a>
+              <a href="/help">Help</a>
+              <a href="/privacy">Privacy</a>
+            </nav>
+          </section>
+        </div>
+      </div>
+
+      <div id="eonbot-attachment-tray" class="eonbot-attachment-tray" aria-live="polite" hidden></div>
+      <div class="chat-input-bar eonbot-home-composer" data-eonbot-home-composer>
+        <button type="button" id="chat-attach" class="chat-voice-btn" aria-label="Attach local files" title="Attach local files">＋</button>
+        <button type="button" id="chat-voice-send" class="chat-voice-btn" aria-label="Dictate — turn speech into editable text" title="Dictate — turn speech into editable text">🎙️</button>
+        <textarea id="chat-input" class="chat-input-field" placeholder="Message EONBOT…" maxlength="4000" rows="1" autocomplete="off" spellcheck="true" aria-label="Message EONBOT"></textarea>
+        <button type="button" class="eonbot-home-mode" data-eonbot-home-open-setup aria-label="Open AI setup">Auto</button>
+        <button type="button" id="chat-send" class="chat-send-btn" aria-label="Send message">➤</button>
+      </div>
+      <p class="eonbot-home-composer-note">Local-first · Files stay local. Text and code are included only when you press Send.</p>
+      <p class="chat-voice-route-note" data-eon-voice-route role="status" aria-live="polite" hidden></p>
+      <p id="chat-speech-support-note" class="chat-speech-support-note" role="status" aria-live="polite" hidden></p>
+      <input id="chat-attachment-input" type="file" hidden multiple accept="image/*,audio/*,video/*,.txt,.md,.markdown,.json,.csv,.tsv,.xml,.yaml,.yml,.html,.htm,.css,.js,.mjs,.cjs,.jsx,.ts,.tsx,.vue,.svelte,.py,.go,.java,.rb,.php,.sql,.sh,.bash,.zsh,.ps1,.toml,.ini,.conf,.log,.pdf,.doc,.docx,.rtf,.odt,.ppt,.pptx,.xls,.xlsx,.xlsm,.ods,.odp" />
+      <div class="eonbot-file-drop-zone" data-eonbot-file-drop-zone aria-live="polite" aria-hidden="true"><strong>Drop files to attach</strong><span>Files stay on this device. Text and code can be included with your next message.</span></div>
+    </section>
+  </main>
+
+  <dialog class="eon-voice-review-dialog" data-eon-voice-review aria-labelledby="eon-voice-review-title">
+    <div class="eon-voice-review-head">
+      <div><p class="eon-voice-review-kicker">Browser-assisted voice</p><h2 id="eon-voice-review-title">Voice Conversation (Beta)</h2></div>
+      <button type="button" class="eon-voice-review-close" data-eon-voice-review-cancel aria-label="Cancel Voice Conversation">×</button>
+    </div>
+    <p>Voice Conversation listens only after you choose Start. Each final spoken turn is sent automatically to the selected AI route, and listening continues after the reply until you tap Stop.</p>
+    <p class="eon-voice-review-route"><strong>Current route:</strong> <span data-eon-voice-review-route>Checking…</span></p>
+    <p class="eon-voice-review-privacy" data-eon-voice-review-privacy>Browser speech support varies by device.</p>
+    <label class="eon-voice-review-ack"><input type="checkbox" data-eon-voice-review-ack /> <span>I understand that final spoken turns send automatically and the microphone can restart for the next turn until I tap Stop.</span></label>
+    <p class="eon-voice-review-alternative"><strong>Prefer review first?</strong> Use Dictate. It places editable text in the composer and never sends by itself.</p>
+    <div class="eon-voice-review-actions"><button type="button" data-eon-voice-review-cancel>Cancel</button><button type="button" class="is-primary" data-eon-voice-review-start disabled>Start Voice Conversation</button></div>
+  </dialog>
+
+  <dialog class="eonbot-home-setup-dialog" data-eonbot-home-setup aria-labelledby="eonbot-home-setup-title">
+    <div class="eonbot-home-dialog-head"><div><p class="eonbot-home-kicker">AI setup</p><h2 id="eonbot-home-setup-title">Choose how EONBOT helps</h2></div><button type="button" class="eonbot-home-dialog-close" data-eonbot-home-close-setup aria-label="Close AI setup">×</button></div>
+    <p class="eonbot-home-dialog-copy">Auto is the normal choice. Choose Make Local AI ready for private on-device replies, or connect a provider explicitly when you want that separate route.</p>
+    <section class="chat-controls-panel eonbot-home-controls" id="chat-controls" data-ready="0" aria-label="AI setup"></section>
+    <div class="eonbot-home-account-note"><strong>Account &amp; backup</strong><span>Google sign-in is optional. It never silently uploads your chats, files, Vault data, projects or City progress.</span><a href="/profile#eon-profile-account-foundation">Open account &amp; backup</a></div>
+  </dialog>
+
+  <!-- V01: the guest-first EONBOT start surface is immediately usable. Full chat,
+       shell and attachment/voice code load only after an explicit interaction. -->
+  <script type="module" src="/assets/js/eonbot-home-bootstrap.js"></script>
+</body>
+</html>

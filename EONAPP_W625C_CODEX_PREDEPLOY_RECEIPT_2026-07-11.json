@@ -1,0 +1,196 @@
+{
+  "schema": "eonapp.codex-predeploy-receipt.w625c-source-batch.2026-07-11.v1",
+  "wave": "W625C-source-batch",
+  "ok": true,
+  "startedAt": "2026-07-11T07:06:10.706Z",
+  "finishedAt": "2026-07-11T07:08:52.558Z",
+  "sourceFingerprint": {
+    "algorithm": "sha256",
+    "digest": "f89898d0e0c6345efac6cd2f757900eb9462fe930e410be26a00b638f1ca57a4",
+    "fileCount": 3544
+  },
+  "resumedStepCount": 1,
+  "stepCount": 29,
+  "steps": [
+    {
+      "script": "test:unit",
+      "args": [],
+      "status": 0,
+      "durationMs": 34026
+    },
+    {
+      "script": "qa:w621-live-dodo-cloudflare-rollout",
+      "args": [],
+      "status": 0,
+      "durationMs": 466
+    },
+    {
+      "script": "qa:w623c-commercial-truth",
+      "args": [],
+      "status": 0,
+      "durationMs": 289
+    },
+    {
+      "script": "qa:w623d-production-reachability",
+      "args": [],
+      "status": 0,
+      "durationMs": 697
+    },
+    {
+      "script": "qa:w623e-information-architecture",
+      "args": [],
+      "status": 0,
+      "durationMs": 448
+    },
+    {
+      "script": "qa:w623h-minimal-referral-ledger",
+      "args": [],
+      "status": 0,
+      "durationMs": 483
+    },
+    {
+      "script": "qa:w623i-referral-scale",
+      "args": [],
+      "status": 0,
+      "durationMs": 482
+    },
+    {
+      "script": "qa:w624a-city-art-bible",
+      "args": [],
+      "status": 0,
+      "durationMs": 442
+    },
+    {
+      "script": "qa:w624b-city-runtime",
+      "args": [],
+      "status": 0,
+      "durationMs": 454
+    },
+    {
+      "script": "qa:w624c-command-district",
+      "args": [],
+      "status": 0,
+      "durationMs": 468
+    },
+    {
+      "script": "qa:w624d-wayfinder-camera",
+      "args": [],
+      "status": 0,
+      "durationMs": 445
+    },
+    {
+      "script": "qa:w624e-eonbot-orbit",
+      "args": [],
+      "status": 0,
+      "durationMs": 463
+    },
+    {
+      "script": "qa:w624f-command-district-npcs",
+      "args": [],
+      "status": 0,
+      "durationMs": 457
+    },
+    {
+      "script": "qa:w624g-productive-rpg-loop",
+      "args": [],
+      "status": 0,
+      "durationMs": 447
+    },
+    {
+      "script": "qa:w624h-truthful-command-center",
+      "args": [],
+      "status": 0,
+      "durationMs": 527
+    },
+    {
+      "script": "qa:w624i-genuine-agent-theatre",
+      "args": [],
+      "status": 0,
+      "durationMs": 521
+    },
+    {
+      "script": "qa:w624j-sharing-center",
+      "args": [],
+      "status": 0,
+      "durationMs": 488
+    },
+    {
+      "script": "qa:w624k-accessibility-device",
+      "args": [],
+      "status": 0,
+      "durationMs": 448
+    },
+    {
+      "script": "qa:w624l-flagship-certification",
+      "args": [],
+      "status": 0,
+      "durationMs": 455
+    },
+    {
+      "script": "qa:w625a-real-local-image-tooling",
+      "args": [],
+      "status": 0,
+      "durationMs": 471
+    },
+    {
+      "script": "qa:w625b-local-image-workflow-registry",
+      "args": [],
+      "status": 0,
+      "durationMs": 418
+    },
+    {
+      "script": "qa:w625c-image-creation-foundation",
+      "args": [],
+      "status": 0,
+      "durationMs": 433
+    },
+    {
+      "script": "qa:w624d-current-contract-alignment",
+      "args": [],
+      "status": 0,
+      "durationMs": 564
+    },
+    {
+      "script": "qa:w624d-test-archive",
+      "args": [],
+      "status": 0,
+      "durationMs": 478
+    },
+    {
+      "script": "lint",
+      "args": [
+        "--",
+        "--max-warnings=0"
+      ],
+      "status": 0,
+      "durationMs": 6815
+    },
+    {
+      "script": "security:secret-scan",
+      "args": [
+        "--",
+        "--allow-no-history"
+      ],
+      "status": 0,
+      "durationMs": 850
+    },
+    {
+      "script": "build",
+      "args": [],
+      "status": 0,
+      "durationMs": 10768
+    },
+    {
+      "script": "smoke:build",
+      "args": [],
+      "status": 0,
+      "durationMs": 319
+    },
+    {
+      "script": "qa:w623f-certification-v2",
+      "args": [],
+      "status": 0,
+      "durationMs": 626
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schema": "eonapp.a15.i18.referrals-eonkeys-sharing-gate-receipt.v1",
+  "generatedAt": "2026-08-04T19:46:23.814Z",
+  "wave": "I18",
+  "status": "pass",
+  "authority": {
+    "oneLevelReferral": true,
+    "freeActivationRequiresVerifiedUsefulMilestone": true,
+    "retainedPaidDays": 14,
+    "paidGrantSequence": [
+      "builder",
+      "builder",
+      "power"
+    ],
+    "paidYearlyCap": 3,
+    "browserCanGrantOrConsume": false,
+    "reversalsRevokeGrantAndUnlock": true,
+    "eonKeysCreateCashOrSubscription": false,
+    "directPublishing": false,
+    "automaticPosting": false,
+    "clickOrShareQualifies": false,
+    "reconciliationMode": "signed-in-status-read-no-background-runner"
+  },
+  "sourceFiles": [
+    "assets/js/referrals/eon-referral-server-runtime.js",
+    "assets/js/referrals/eon-keys-catalog.js",
+    "assets/js/billing/eon-dodo-live-runtime.js",
+    "functions/api/referrals.js",
+    "functions/api/capabilities/status.js",
+    "assets/js/share/eon-output-share-handoff.js",
+    "assets/js/share/eon-share-pack.js",
+    "assets/js/contracts/creator/eon-creator-capture.js"
+  ],
+  "claims": {
+    "realReferralAccountsExercised": false,
+    "realDodoRetentionPeriodElapsed": false,
+    "socialPostCreated": false,
+    "providerAccountConnected": false,
+    "previewDeployed": false,
+    "productionDeployed": false
+  },
+  "errors": [],
+  "digest": "29fe4544ab58de51377053d19b9a058215119f1a5bb91c21367c7efefb48557d"
+}

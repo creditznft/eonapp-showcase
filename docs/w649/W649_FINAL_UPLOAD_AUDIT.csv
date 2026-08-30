@@ -1,0 +1,13 @@
+uploaded_package,character,clip_count,classification,disposition,reason
+Meshy_AI_Vault_Steward_Rig_biped (1).zip,Vault Steward,6,repeat,Excluded,Already preserved in B10 optimized checkpoint; member names and sizes match preserved six-clip package
+Meshy_AI_EON_Civilian_Creator__biped (1).zip,EON Civilian Creator,13,repeat,Excluded,Already preserved in B05 optimized checkpoint
+Meshy_AI_EONCITY_Creator_Trade_biped (1).zip,Creator Trade,6,repeat,Excluded,Already preserved in B06 optimized checkpoint
+Meshy_AI_EONCITY_Creator_Trade_biped (2).zip,Creator Trade,6,duplicate of copy 1,Excluded,"Same member names, sizes, and clip set as copy 1"
+Meshy_AI_Security_Sentinel_Rig_biped.zip,Security Sentinel,6,new,Kept,New rigged/animated replacement for earlier static candidate
+Meshy_AI_Forge_Device_Lab_Spec_biped.zip,Forge Device Lab Specialist,6,new,Kept,New animated specialist
+Meshy_AI_Citizen_Variant_Rig_biped.zip,Citizen Variant,6,new,Kept,New animated ambient citizen
+Meshy_AI_Navigator_Archive_Vau_biped (1).zip,Navigator Archive Vault,6,repeat,Excluded,Already preserved in B09–B15 checkpoint
+Meshy_AI_EONCITY_Pathfinder_Pr_biped (1).zip,Pathfinder Prime,11,repeat,Excluded,Already preserved in B02–B03 Pathfinder checkpoint
+Meshy_AI_Holo_Interface_Operat_biped (1).zip,Holo Interface Operator,6,repeat,Excluded,Already preserved in B09–B15 checkpoint
+Meshy_AI_EONCITY_EON_X1_Worker_biped (2).zip,EON X1 Worker,9,updated,Kept,Adds Idle 12 to prior eight-clip optimized master
+Meshy_AI_EONCITY_EON_Architect_biped (1).zip,EON Architect,12,repeat,Excluded,Already preserved in B07 optimized checkpoint

@@ -1,0 +1,22 @@
+{
+  "schema": "eonapp.sync-basic-foundation.v1",
+  "status": "planned-local-schema-only",
+  "enabled": false,
+  "googleLoginIsSync": false,
+  "automaticUpload": false,
+  "backgroundSync": false,
+  "publicEndpoints": [],
+  "futureStorageDesign": {
+    "d1": "identity and record-index metadata only; not provisioned by this contract",
+    "r2": "encrypted large safe blobs only when a later explicit feature is proven; not provisioned by this contract"
+  },
+  "recordFields": ["id", "type", "updatedAt", "version", "originDeviceId", "deletedAt", "contentHash"],
+  "safeTypes": ["preferences", "chat-metadata", "chat-text", "project-metadata", "project-text", "share-remix-metadata"],
+  "excluded": ["Vault/API keys", "recovery material", "raw media", "model binaries", "browser caches"],
+  "conflictPolicy": {
+    "lowRiskPreferences": "last-write-wins only after a later release explicitly asks the user to review",
+    "text": "revision conflict copy; never silent overwrite",
+    "deletion": "tombstone retained for later controlled propagation"
+  },
+  "releaseGate": "W412 two-device proof plus separate Secure Vault Sync E2EE threat-model/recovery proof"
+}

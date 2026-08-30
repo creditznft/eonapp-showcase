@@ -1,0 +1,12 @@
+import fs from 'node:fs';
+import path from 'node:path';
+const outputDir=process.env.W98_OUTPUT_DIR||path.resolve('CodexAuditPack/W98_SESSION8');
+const read=name=>JSON.parse(fs.readFileSync(path.join(outputDir,name),'utf8'));
+const desktop=read('W98_SESSION8_DESKTOP_PROOF.json');
+const persistence=read('W98_SESSION8_PERSISTENCE_PROOF.json');
+const mobile=read('W98_SESSION8_MOBILE_PROOF.json');
+const checks={desktopProofCertified:desktop.ok===true&&desktop.score===100,persistencePrivacyCertified:persistence.ok===true&&persistence.score===100,mobileMissionCertified:mobile.ok===true&&mobile.score===100,allDesktopChecksPass:Object.values(desktop.checks||{}).every(Boolean),allPersistenceChecksPass:Object.values(persistence.checks||{}).every(Boolean),allMobileChecksPass:Object.values(mobile.checks||{}).every(Boolean),noBrowserErrors:[...(desktop.errors||[]),...(persistence.errors||[]),...(mobile.errors||[])].length===0};
+const report={schema:'eon.w98.session8.public-browser-proof.v3',capturedAt:new Date().toISOString(),baseURL:desktop.baseURL,desktop,persistence,mobile,checks,consoleErrors:[],pageErrors:[],ok:Object.values(checks).every(Boolean),final:true,certificationMode:'completed-desktop-phase-plus-fresh-split-persistence-mobile'};
+report.score=Math.round(Object.values(checks).filter(Boolean).length/Object.keys(checks).length*100);
+fs.writeFileSync(path.join(outputDir,'W98_SESSION8_PUBLIC_BROWSER_PROOF.json'),JSON.stringify(report,null,2));
+console.log(JSON.stringify(report,null,2));process.exit(report.ok?0:1);

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">My Frontier abstract world art</title>
+<desc id="desc">A personal build world represented by modular structures, a luminous gateway, and a construction grid.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#101b17"/><stop offset=".52" stop-color="#14241f"/><stop offset="1" stop-color="#0b1112"/></linearGradient>
+  <linearGradient id="portal" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#6ce6bd" stop-opacity=".12"/><stop offset=".56" stop-color="#8cfbd3" stop-opacity=".48"/><stop offset="1" stop-color="#e0fff1" stop-opacity=".88"/></linearGradient>
+  <pattern id="hex" width="64" height="55.43" patternUnits="userSpaceOnUse"><path d="M16 0h32l16 27.715-16 27.715H16L0 27.715Z" fill="none" stroke="#78efc6" stroke-opacity=".08"/></pattern>
+</defs>
+<rect width="1200" height="675" fill="url(#bg)"/><rect width="1200" height="675" fill="url(#hex)"/>
+<path d="M144 675 420 378h360l276 297Z" fill="#0b1514" opacity=".88"/>
+<g fill="none" stroke="#7ee8c1" stroke-opacity=".17"><path d="M420 378 144 675M500 378 374 675M580 378 554 675M660 378 734 675M740 378 914 675M780 378l276 297"/><path d="M355 448h490M298 510h604M238 575h724"/></g>
+<path d="M600 143 484 384h232Z" fill="none" stroke="url(#portal)" stroke-width="14" stroke-linejoin="round"/>
+<path d="M600 189 525 359h150Z" fill="#7cf4c8" fill-opacity=".08"/><circle cx="600" cy="309" r="74" fill="#89fbd3" fill-opacity=".06" stroke="#9effdc" stroke-opacity=".35" stroke-width="2"/>
+<g stroke="#a0f8d7" stroke-opacity=".42">
+  <path d="M304 458 378 420l74 38-74 38Z" fill="#1b3530"/><path d="M304 458v86l74 38v-86Z" fill="#132a26"/><path d="M452 458v86l-74 38v-86Z" fill="#18322d"/>
+  <path d="M780 445 842 413l62 32-62 32Z" fill="#1c3831"/><path d="M780 445v72l62 33v-73Z" fill="#132a25"/><path d="M904 445v72l-62 33v-73Z" fill="#18332d"/>
+  <path d="M707 531 757 506l50 25-50 26Z" fill="#1b3731"/><path d="M707 531v57l50 26v-57Z" fill="#122823"/><path d="M807 531v57l-50 26v-57Z" fill="#17312c"/>
+</g>
+<g fill="none" stroke="#8dffd4" stroke-opacity=".28" stroke-width="2"><path d="M378 420 600 309 842 413"/><path d="M600 309 757 506"/><path d="M600 309 378 496"/></g>
+<g fill="#bfffe5"><circle cx="378" cy="420" r="6"/><circle cx="842" cy="413" r="6"/><circle cx="757" cy="506" r="5"/><circle cx="600" cy="309" r="8"/></g>
+</svg>

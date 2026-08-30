@@ -1,0 +1,50 @@
+/* R4-COMM-01 — App Deck follows the shared Graphite/Classic/System theme tokens. */
+:root { color-scheme: dark; }
+.eon-app-deck { width: min(1260px, 100%); margin: 0 auto; padding: clamp(1rem, 3vw, 2.6rem); color: var(--clr-text); }
+.eon-app-deck-hero { display: flex; align-items: end; justify-content: space-between; gap: 1.3rem; padding: clamp(1.25rem, 4vw, 3rem); border: 1px solid var(--clr-border); border-radius: 1.5rem; background: radial-gradient(circle at 82% 7%, color-mix(in srgb, var(--clr-accent) 15%, transparent), transparent 28%), linear-gradient(145deg, color-mix(in srgb, var(--clr-bg2) 97%, #000 3%), color-mix(in srgb, var(--clr-bg) 96%, #000 4%)); box-shadow: 0 1.25rem 4.5rem color-mix(in srgb, #000 30%, transparent); }
+.eon-app-deck-eyebrow { margin: 0 0 .7rem; color: var(--clr-accent); font-size: .75rem; font-weight: 740; letter-spacing: .14em; text-transform: uppercase; }
+.eon-app-deck-hero h1 { max-width: 14ch; margin: 0; font-size: clamp(2.2rem, 5vw, 4.8rem); line-height: .98; letter-spacing: -.055em; }
+.eon-app-deck-hero p:not(.eon-app-deck-eyebrow) { max-width: 48rem; margin: 1rem 0 0; color: var(--clr-text-muted); line-height: 1.62; }
+.eon-app-deck-hero-actions { display: flex; flex-wrap: wrap; gap: .65rem; justify-content: end; }
+.eon-app-deck-primary, .eon-app-deck-secondary { display: inline-flex; align-items: center; justify-content: center; min-height: 2.65rem; padding: .62rem .92rem; border-radius: .8rem; text-decoration: none; font-weight: 700; font-size: .9rem; cursor: pointer; }
+.eon-app-deck-primary { border: 1px solid color-mix(in srgb, var(--clr-accent) 78%, var(--clr-border)); color: var(--clr-bg); background: linear-gradient(135deg, var(--clr-accent), var(--clr-accent2)); }
+.eon-app-deck-secondary { border: 1px solid var(--clr-border); color: var(--clr-text); background: color-mix(in srgb, var(--clr-surface) 85%, transparent); }
+.eon-app-deck-primary:hover, .eon-app-deck-primary:focus-visible, .eon-app-deck-secondary:hover, .eon-app-deck-secondary:focus-visible { outline: 2px solid var(--clr-link-hover); outline-offset: 3px; filter: brightness(1.06); }
+.eon-app-deck-tabs { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .65rem; margin: 1.25rem 0; }
+.eon-app-deck-tab { display: flex; align-items: center; justify-content: space-between; gap: .7rem; padding: .85rem .95rem; border: 1px solid var(--clr-border); border-radius: .92rem; color: var(--clr-text-muted); background: color-mix(in srgb, var(--clr-surface) 70%, transparent); font: inherit; text-align: left; cursor: pointer; }
+.eon-app-deck-tab small { display: grid; place-items: center; min-width: 1.55rem; height: 1.55rem; border-radius: 999px; color: var(--clr-text); background: color-mix(in srgb, var(--clr-accent) 18%, var(--clr-surface)); }
+.eon-app-deck-tab:hover, .eon-app-deck-tab:focus-visible, .eon-app-deck-tab.is-active { border-color: color-mix(in srgb, var(--clr-accent) 62%, var(--clr-border)); color: var(--clr-text); background: linear-gradient(135deg, color-mix(in srgb, var(--clr-accent) 19%, var(--clr-surface)), color-mix(in srgb, var(--clr-accent2) 13%, var(--clr-bg2))); outline: none; }
+.eon-app-deck-layout { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(18rem, .8fr); gap: 1.15rem; align-items: start; }
+.eon-app-deck-catalog { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; }
+.eon-app-deck-card { display: grid; grid-template-columns: 2.8rem minmax(0, 1fr); gap: .85rem; min-height: 12.2rem; padding: 1rem; border: 1px solid var(--clr-border); border-radius: 1.1rem; background: linear-gradient(155deg, color-mix(in srgb, var(--clr-surface) 96%, #000 4%), color-mix(in srgb, var(--clr-bg) 98%, #000 2%)); cursor: pointer; transition: transform .16s ease, border-color .16s ease, background .16s ease; }
+.eon-app-deck-card:hover, .eon-app-deck-card:focus-within, .eon-app-deck-card.is-selected { border-color: color-mix(in srgb, var(--clr-accent) 65%, var(--clr-border)); background: linear-gradient(155deg, color-mix(in srgb, var(--clr-accent) 12%, var(--clr-surface)), color-mix(in srgb, var(--clr-bg) 94%, #000 6%)); transform: translateY(-2px); }
+.eon-app-deck-card-icon { display: grid; place-items: center; width: 2.55rem; height: 2.55rem; border: 1px solid color-mix(in srgb, var(--clr-accent) 38%, var(--clr-border)); border-radius: .78rem; color: var(--clr-link-hover); background: color-mix(in srgb, var(--clr-accent) 14%, var(--clr-surface)); font-size: 1.15rem; }
+.eon-app-deck-card-copy p { margin: .05rem 0 .4rem; color: var(--clr-text-muted); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; }
+.eon-app-deck-card-copy h3 { margin: 0; color: var(--clr-text); font-size: 1rem; }
+.eon-app-deck-card-copy span { display: block; margin-top: .52rem; color: var(--clr-text-muted); font-size: .87rem; line-height: 1.45; }
+.eon-app-deck-card-footer { grid-column: 1 / -1; display: flex; align-items: end; justify-content: space-between; gap: .7rem; margin-top: auto; }
+.eon-app-deck-card-footer button { border: 1px solid color-mix(in srgb, var(--clr-accent) 42%, var(--clr-border)); border-radius: .65rem; padding: .5rem .62rem; color: var(--clr-link-hover); background: color-mix(in srgb, var(--clr-accent) 13%, var(--clr-surface)); font: inherit; font-size: .78rem; cursor: pointer; }
+.eon-app-deck-card-footer button:hover, .eon-app-deck-card-footer button:focus-visible { outline: 2px solid var(--clr-link-hover); outline-offset: 2px; background: color-mix(in srgb, var(--clr-accent) 25%, var(--clr-surface)); }
+.eon-app-deck-action-tags { display: flex; flex-wrap: wrap; gap: .28rem; }
+.eon-app-deck-action-tags span { padding: .16rem .38rem; border: 1px solid var(--clr-border); border-radius: 999px; color: var(--clr-text-muted); font-size: .69rem; text-transform: capitalize; }
+.eon-app-deck-detail { position: sticky; top: 1rem; padding: 1.2rem; border: 1px solid var(--clr-border); border-radius: 1.1rem; background: radial-gradient(circle at 90% 0, color-mix(in srgb, var(--clr-accent2) 12%, transparent), transparent 36%), color-mix(in srgb, var(--clr-surface) 92%, var(--clr-bg)); }
+.eon-app-deck-detail h2 { margin: .25rem 0 .65rem; font-size: 1.45rem; }
+.eon-app-deck-detail > p:not(.eon-app-deck-eyebrow):not(.eon-app-deck-detail-note) { color: var(--clr-text-muted); line-height: 1.55; }
+.eon-app-deck-detail dl { display: grid; gap: .72rem; margin: 1.05rem 0; }
+.eon-app-deck-detail dl div { padding: .62rem 0; border-top: 1px solid var(--clr-border); }
+.eon-app-deck-detail dt { color: var(--clr-text-muted); font-size: .73rem; text-transform: uppercase; letter-spacing: .09em; }
+.eon-app-deck-detail dd { margin: .25rem 0 0; color: var(--clr-text); line-height: 1.45; font-size: .87rem; text-transform: capitalize; }
+.eon-app-deck-detail-note { margin: 1rem 0 0; color: var(--clr-text-muted); font-size: .78rem; line-height: 1.5; }
+.eon-app-deck-taxonomy { display: grid; grid-template-columns: minmax(0, 1fr) minmax(22rem, .9fr); gap: 1rem; margin-top: 1.2rem; padding: 1.15rem; border: 1px solid var(--clr-border); border-radius: 1.1rem; background: linear-gradient(135deg, color-mix(in srgb, var(--clr-accent2) 12%, var(--clr-surface)), color-mix(in srgb, var(--clr-bg2) 88%, var(--clr-bg))); }
+.eon-app-deck-taxonomy h2 { max-width: 28rem; margin: 0; font-size: clamp(1.25rem, 2vw, 1.65rem); line-height: 1.2; }
+.eon-app-deck-taxonomy p:not(.eon-app-deck-eyebrow) { color: var(--clr-text-muted); line-height: 1.5; }
+.eon-app-deck-taxonomy-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .55rem; align-content: start; }
+.eon-app-deck-taxonomy-grid article { padding: .67rem .72rem; border: 1px solid var(--clr-border); border-radius: .78rem; background: color-mix(in srgb, var(--clr-surface) 84%, transparent); }
+.eon-app-deck-taxonomy-grid strong { display: block; color: var(--clr-text); text-transform: capitalize; }
+.eon-app-deck-taxonomy-grid span { display: block; margin-top: .25rem; color: var(--clr-text-muted); font-size: .74rem; text-transform: capitalize; }
+.eon-app-deck-truth { display: grid; grid-template-columns: auto 1fr; gap: .45rem 1rem; margin-top: 1rem; padding: .78rem .95rem; border-radius: .9rem; color: var(--clr-text-muted); background: color-mix(in srgb, var(--clr-surface) 76%, transparent); font-size: .83rem; }
+.eon-app-deck-truth strong { color: var(--clr-text); }
+.eon-app-deck-truth small { grid-column: 2; color: var(--clr-text-muted); }
+@media (max-width: 980px) { .eon-app-deck-hero { align-items: start; flex-direction: column; } .eon-app-deck-hero-actions { justify-content: start; } .eon-app-deck-layout, .eon-app-deck-taxonomy { grid-template-columns: 1fr; } .eon-app-deck-detail { position: static; } }
+@media (max-width: 660px) { .eon-app-deck { padding: 1rem; } .eon-app-deck-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); } .eon-app-deck-catalog { grid-template-columns: 1fr; } .eon-app-deck-hero h1 { font-size: clamp(2.2rem, 12vw, 3.6rem); } .eon-app-deck-taxonomy-grid { grid-template-columns: 1fr 1fr; } .eon-app-deck-truth { grid-template-columns: 1fr; } .eon-app-deck-truth small { grid-column: auto; } }
+@media (prefers-reduced-motion: reduce) { .eon-app-deck-card { transition: none; } .eon-app-deck-card:hover { transform: none; } }

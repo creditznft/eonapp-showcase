@@ -1,0 +1,100 @@
+{
+  "schema": "eonapp.a15.c07.city-access-distribution-gate.v1",
+  "wave": "C07",
+  "generatedAt": "2026-08-04T22:00:41.862Z",
+  "ok": true,
+  "passed": 17,
+  "total": 17,
+  "checks": [
+    {
+      "id": "canonical-capability-only",
+      "pass": true,
+      "detail": "same-origin capability service"
+    },
+    {
+      "id": "local-claim-rejected",
+      "pass": true,
+      "detail": "no browser tier authority"
+    },
+    {
+      "id": "base-city-not-paywalled",
+      "pass": true,
+      "detail": "base world remains available"
+    },
+    {
+      "id": "capture-not-paywalled",
+      "pass": true,
+      "detail": "local capture"
+    },
+    {
+      "id": "sharing-not-paywalled",
+      "pass": true,
+      "detail": "reviewed sharing"
+    },
+    {
+      "id": "whole-tier-grant-forbidden",
+      "pass": true,
+      "detail": "bounded unlocks"
+    },
+    {
+      "id": "subscription-grant-forbidden",
+      "pass": true,
+      "detail": "server billing only"
+    },
+    {
+      "id": "provider-credit-forbidden",
+      "pass": true,
+      "detail": "BYOK/local remains separate"
+    },
+    {
+      "id": "membership-joins-capability",
+      "pass": true,
+      "detail": "billing plus capability"
+    },
+    {
+      "id": "plans-show-unlocks",
+      "pass": true,
+      "detail": "bounded unlock summary"
+    },
+    {
+      "id": "safe-revocation-copy",
+      "pass": true,
+      "detail": "Free fallback without deletion"
+    },
+    {
+      "id": "checkout-requires-verified-access",
+      "pass": true,
+      "detail": "fail closed"
+    },
+    {
+      "id": "capture-core-owned",
+      "pass": true,
+      "detail": "City adapter only"
+    },
+    {
+      "id": "share-receipt-bounded",
+      "pass": true,
+      "detail": "reviewed receipt"
+    },
+    {
+      "id": "share-no-reward",
+      "pass": true,
+      "detail": "no duplicate reward"
+    },
+    {
+      "id": "no-auto-distribution",
+      "pass": true,
+      "detail": "explicit platform action"
+    },
+    {
+      "id": "private-content-excluded",
+      "pass": true,
+      "detail": "bounded projection"
+    }
+  ],
+  "limitations": [
+    "Source-only certification.",
+    "Live Dodo checkout, downgrade and webhook reversal require external test-mode evidence.",
+    "No public posting success is claimed."
+  ]
+}

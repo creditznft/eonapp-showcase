@@ -1,0 +1,38 @@
+{
+  "schema": "eonapp.final-local-candidate.w694.v1",
+  "wave": "W694",
+  "status": "local-source-candidate-browser-proof-pending",
+  "branch": "local/w671-n3-c3-rebuild",
+  "predecessorWave": "W693",
+  "designAuthority": "N3 + C3 — EON NEXUS Morphic Command Field inside the EONCITY Living Hybrid Metropolis",
+  "completedScope": [
+    "W671-W678 repairs, redesign foundation, Capsule and Expanse threshold",
+    "W679-W682 EONBOT, productive Orientation loop and Expanse scale/population",
+    "W683-W686 Morphic Field, manipulation, spatial Atlas and NEXUS-to-City continuity",
+    "W687-W690 all District Belts and complete connected Core identity",
+    "W691-W692 final Realms, My Realm, Focus/Explore, performance, mobile and accessibility",
+    "W693-W694 local certification, source reconciliation and final local packaging"
+  ],
+  "sourceAuthority": {
+    "manifest": "config/w694-source-reconciliation-manifest.json",
+    "maintainedTestManifest": "config/w624d-current-unit-test-manifest.json",
+    "ownerRecordingMatrix": "config/w693-owner-recording-matrix.json",
+    "socialPreviewManifest": "assets/data/social-preview-manifest.json"
+  },
+  "evidence": {
+    "localSourceGates": "required",
+    "deterministicLongSessionSimulation": "required",
+    "headedBrowser": "pending",
+    "ownerDevice": "pending",
+    "visualScore": "not-claimed",
+    "ninePointFiveScore": "not-claimed"
+  },
+  "releaseBoundaries": {
+    "githubUploadPerformed": false,
+    "actionsRunPerformed": false,
+    "previewPerformed": false,
+    "mergePerformed": false,
+    "deploymentPerformed": false,
+    "productionReleaseAllowed": false
+  }
+}

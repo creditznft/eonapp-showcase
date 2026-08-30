@@ -1,0 +1,17 @@
+{
+  "schema": "eonapp.city-procedural-only-art-test-archive.w649.2026-07-14.v1",
+  "classification": "non-certifying-historical-exact-copy",
+  "certifying": false,
+  "releaseGate": false,
+  "reason": "W649 integrates approved same-origin content-hashed GLBs and therefore supersedes the procedural-only/SceneLoader-forbidden assertion.",
+  "supersededBy": [
+    "tests/unit/w252-city-art-provenance.test.mjs",
+    "tests/unit/w649-eoncity-asset-manifests.test.mjs",
+    "tests/unit/w649-eoncity-controllable-core.test.mjs",
+    "tests/unit/w649-eoncity-district-runtime.test.mjs"
+  ],
+  "files": [{
+    "path": "tests/archive/w649-pre-binary-art-integration/w252-city-art-provenance.test.mjs",
+    "sha256": "03b0ffd2e8dbcc72c9ce54c95a121a14a6d5288784b1ab6f40bd8fb3447fd840"
+  }]
+}

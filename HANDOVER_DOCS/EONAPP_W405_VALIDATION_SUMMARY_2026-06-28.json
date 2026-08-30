@@ -1,0 +1,37 @@
+{
+  "schema": "eon.w405.validation.v1",
+  "date": "2026-06-28",
+  "baseline": "W400C/W391D post-deploy source",
+  "result": "source-green",
+  "commands": {
+    "composite": "npm run verify:w405-live-rescue-source",
+    "lint": "pass",
+    "w394_city_mobile_hud": "9/9 pass",
+    "w400c_google_identity_entry": "7/7 pass",
+    "w405_live_ux_city_rescue": "14/14 pass",
+    "current_runnable_unit_suite": "334/334 pass",
+    "build": "pass",
+    "smoke_build": "pass",
+    "site_audit": "pass",
+    "launch_readiness": "pass"
+  },
+  "manual_proof": {
+    "status": "required",
+    "not_completed": [
+      "Google test-user OAuth login/logout/delete round trip",
+      "service-worker update / legacy Realm redirect on a real browser",
+      "desktop keyboard/mouse City control proof",
+      "Android/iOS touch proof",
+      "City visual and performance certification"
+    ]
+  },
+  "boundaries": {
+    "canonical_city": "/eoncity Babylon",
+    "legacy_three_preview": "temporary compatibility only; no primary navigation",
+    "referral_rewards": "disabled",
+    "collection": "disabled",
+    "external_actions": "fail-closed",
+    "social_connectors": "inactive",
+    "payments": "inactive"
+  }
+}

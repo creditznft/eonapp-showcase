@@ -1,0 +1,39 @@
+:root { color-scheme: dark; }
+body.eon-city-portal-entry { min-width: 320px; margin: 0; background: #02050d; color: #eef6ff; }
+.eon-city-portal { position: relative; min-height: 100svh; overflow: hidden; isolation: isolate; background: radial-gradient(circle at 50% -10%, rgba(71, 101, 180, .26), transparent 38%), linear-gradient(160deg, #071323 0%, #030811 54%, #02040a 100%); }
+.eon-city-portal::before { content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 1; opacity: .56; background: linear-gradient(90deg, rgba(255,255,255,.028) 1px, transparent 1px), linear-gradient(0deg, rgba(255,255,255,.018) 1px, transparent 1px); background-size: 58px 58px; mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 78%, transparent); }
+.eon-city-portal-canvas { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; display: block; opacity: .96; }
+.eon-city-portal-header { position: relative; z-index: 3; width: min(1440px, 100%); margin: 0 auto; padding: max(1.2rem, env(safe-area-inset-top)) clamp(1rem, 3.5vw, 3.4rem) 0; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.eon-city-portal-brand { display: inline-flex; align-items: center; gap: .7rem; color: inherit; text-decoration: none; font-weight: 760; letter-spacing: .1em; font-size: .84rem; text-transform: uppercase; }
+.eon-city-portal-brand-mark { display: grid; place-items: center; width: 2.1rem; height: 2.1rem; border: 1px solid rgba(145, 214, 255, .5); border-radius: .72rem; color: #78f8e4; background: rgba(3, 15, 30, .64); box-shadow: 0 0 1.5rem rgba(76, 218, 230, .16); }
+.eon-city-portal-utility { display: flex; flex-wrap: wrap; gap: .55rem; align-items: center; justify-content: flex-end; }
+.eon-city-portal-utility a { color: #c4d7f4; text-decoration: none; padding: .48rem .7rem; border: 1px solid rgba(149, 179, 220, .22); border-radius: 999px; background: rgba(3, 12, 25, .52); font-size: .83rem; }
+.eon-city-portal-utility a:hover, .eon-city-portal-utility a:focus-visible { color: #fff; border-color: rgba(113, 237, 218, .68); outline: none; }
+.eon-city-portal-content { position: relative; z-index: 2; width: min(1440px, 100%); min-height: calc(100svh - 4.5rem); margin: 0 auto; padding: clamp(3rem, 10vh, 8.5rem) clamp(1rem, 7vw, 7.2rem) max(2rem, env(safe-area-inset-bottom)); display: grid; align-content: center; grid-template-columns: minmax(0, 1.02fr) minmax(18rem, .72fr); gap: clamp(2rem, 7vw, 8.5rem); }
+.eon-city-portal-hero { max-width: 47rem; }
+.eon-city-portal-kicker { margin: 0 0 .9rem; color: #80f4dc; font-size: .79rem; letter-spacing: .17em; text-transform: uppercase; font-weight: 730; }
+.eon-city-portal h1 { margin: 0; max-width: 14ch; font-size: clamp(3rem, 8.3vw, 7.8rem); line-height: .9; letter-spacing: -.068em; text-wrap: balance; font-weight: 780; text-shadow: 0 0 2rem rgba(113, 187, 255, .16); }
+.eon-city-portal-lede { max-width: 40rem; margin: 1.45rem 0 0; color: #c6d7ea; font-size: clamp(1rem, 1.7vw, 1.24rem); line-height: 1.62; text-wrap: pretty; }
+.eon-city-portal-entry { display: inline-grid; grid-template-columns: auto auto; gap: .85rem 1.2rem; align-items: center; margin-top: 2rem; padding: 1.1rem 1.25rem 1.04rem 1.35rem; min-width: min(100%, 21rem); border: 1px solid rgba(116, 252, 225, .7); border-radius: 1.12rem; color: #03131a; text-decoration: none; background: linear-gradient(130deg, #8dfff0, #5ad9ff 60%, #a9b4ff); box-shadow: 0 .8rem 3rem rgba(86, 238, 225, .23); transition: transform .2s ease, box-shadow .2s ease; }
+.eon-city-portal-entry:hover, .eon-city-portal-entry:focus-visible { transform: translateY(-3px); box-shadow: 0 1.15rem 4rem rgba(86, 238, 225, .35); outline: 2px solid #eaffff; outline-offset: 3px; }
+.eon-city-portal-entry strong { letter-spacing: .11em; font-size: 1rem; }
+.eon-city-portal-entry small { grid-column: 1; font-size: .75rem; opacity: .74; }
+.eon-city-portal-entry-arrow { grid-column: 2; grid-row: 1 / span 2; font-size: 1.65rem; }
+.eon-city-portal-truth { margin: 1rem 0 0; max-width: 40rem; color: #8ca7c8; font-size: .83rem; line-height: 1.52; }
+.eon-city-portal-side { align-self: end; display: grid; gap: .85rem; max-width: 30rem; }
+.eon-city-portal-state { padding: 1.2rem; border: 1px solid rgba(124, 159, 206, .24); border-radius: 1.12rem; background: linear-gradient(145deg, rgba(10, 24, 43, .83), rgba(3, 12, 25, .6)); box-shadow: inset 0 1px rgba(255,255,255,.05), 0 1rem 3rem rgba(0,0,0,.2); backdrop-filter: blur(16px); }
+.eon-city-portal-state-label { margin: 0; color: #84a4c8; font-size: .73rem; text-transform: uppercase; letter-spacing: .13em; }
+.eon-city-portal-state h2 { margin: .45rem 0 .4rem; font-size: clamp(1.18rem, 2vw, 1.55rem); }
+.eon-city-portal-state p { margin: 0; color: #b6c8df; line-height: 1.52; font-size: .92rem; }
+.eon-city-portal-choices { display: grid; gap: .66rem; }
+.eon-city-portal-choice { display: grid; grid-template-columns: 2.6rem minmax(0, 1fr) auto; align-items: center; gap: .8rem; min-height: 5rem; padding: .86rem .95rem; border: 1px solid rgba(134, 165, 213, .22); border-radius: 1rem; color: #eaf5ff; text-decoration: none; background: rgba(5, 18, 34, .66); transition: background .18s ease, border-color .18s ease, transform .18s ease; }
+.eon-city-portal-choice:hover, .eon-city-portal-choice:focus-visible { background: rgba(12, 37, 64, .82); border-color: rgba(108, 248, 225, .62); transform: translateX(4px); outline: none; }
+.eon-city-portal-choice-icon { display: grid; place-items: center; width: 2.5rem; height: 2.5rem; border: 1px solid rgba(140, 217, 255, .33); border-radius: .75rem; color: #8ef8e6; background: rgba(35, 80, 125, .22); font-size: 1.1rem; }
+.eon-city-portal-choice strong { display: block; font-size: .96rem; }
+.eon-city-portal-choice small { display: block; margin-top: .16rem; color: #9db4d1; line-height: 1.35; }
+.eon-city-portal-choice-arrow { color: #83f6e1; font-size: 1.18rem; }
+.eon-city-portal-footer { position: relative; z-index: 2; width: min(1440px, 100%); margin: 0 auto; padding: 0 clamp(1rem, 3.5vw, 3.4rem) max(1.1rem, env(safe-area-inset-bottom)); display: flex; justify-content: space-between; gap: 1rem; color: rgba(166, 190, 218, .77); font-size: .72rem; }
+.eon-city-portal-footer span { max-width: 52rem; }
+@media (max-width: 900px) { .eon-city-portal-content { grid-template-columns: 1fr; min-height: calc(100svh - 3.6rem); padding-top: clamp(3.4rem, 11vh, 7rem); } .eon-city-portal-side { align-self: auto; max-width: 42rem; } .eon-city-portal h1 { max-width: 12ch; } }
+@media (max-width: 620px) { .eon-city-portal-header { align-items: flex-start; } .eon-city-portal-brand { font-size: .75rem; } .eon-city-portal-utility a:not(:last-child) { display: none; } .eon-city-portal-content { padding-inline: 1rem; gap: 1.65rem; } .eon-city-portal h1 { font-size: clamp(3rem, 17vw, 5rem); } .eon-city-portal-entry { width: 100%; } .eon-city-portal-footer { padding-inline: 1rem; flex-direction: column; gap: .35rem; } }
+@media (prefers-reduced-motion: reduce) { .eon-city-portal-entry, .eon-city-portal-choice { transition: none; } .eon-city-portal-entry:hover, .eon-city-portal-choice:hover { transform: none; } }

@@ -1,0 +1,166 @@
+{
+  "schema": "eonapp.w303.legacy-salvage-manifest.v1",
+  "generatedFor": "W303",
+  "policy": "Capability extraction, not page resurrection. No active import may enter a retired runtime family without a new reviewed contract and focused test.",
+  "allowedClassifications": [
+    "keep-pure",
+    "extract-after-test",
+    "rewrite",
+    "archive-forever"
+  ],
+  "records": [
+    {
+      "id": "agent-executor",
+      "source": "assets/js/utils/agent-executor.js",
+      "classification": "rewrite",
+      "disposition": "Do not activate. Extract only a neutral planning/job schema after a focused test; build durable execution in the future clean control plane.",
+      "allowedSalvage": [
+        "step planning",
+        "bounded status schema"
+      ],
+      "forbidden": [
+        "browser background execution",
+        "credential handling",
+        "network side effects"
+      ]
+    },
+    {
+      "id": "video-lab",
+      "source": "assets/js/utils/video-lab.js",
+      "classification": "extract-after-test",
+      "disposition": "Retain storyboard, subtitle, and export ideas only. Provider rendering and asset lineage must be rebuilt as Creator Suite 2 adapters.",
+      "allowedSalvage": [
+        "storyboard planning",
+        "subtitle formatting",
+        "local export helpers"
+      ],
+      "forbidden": [
+        "provider claims",
+        "publishing",
+        "unreviewed media generation"
+      ]
+    },
+    {
+      "id": "music-lab",
+      "source": "assets/js/utils/music-lab.js",
+      "classification": "extract-after-test",
+      "disposition": "Keep a cleaned local sound-sketch utility only after focused tests. Real provider workflows and rights evidence are a future rebuild.",
+      "allowedSalvage": [
+        "local sound sketch",
+        "brief formatting"
+      ],
+      "forbidden": [
+        "rights claims",
+        "provider calls",
+        "automatic distribution"
+      ]
+    },
+    {
+      "id": "social-publisher",
+      "source": "assets/js/utils/social-publisher.js",
+      "classification": "archive-forever",
+      "disposition": "Permanently retire. Do not store account-like data in browser storage and do not use session attachment, cookies, passwords, or direct publishing patterns.",
+      "allowedSalvage": [
+        "none"
+      ],
+      "forbidden": [
+        "OAuth tokens",
+        "browser cookies",
+        "passwords",
+        "publishing",
+        "account storage"
+      ]
+    },
+    {
+      "id": "workbench-ai",
+      "source": "assets/js/workbench-ai.js",
+      "classification": "extract-after-test",
+      "disposition": "Retired route. Reuse only audited pure prompt/brief formatting in Workspace or Chat; do not restore the page.",
+      "allowedSalvage": [
+        "prompt templates",
+        "brief formatting"
+      ],
+      "forbidden": [
+        "standalone route restoration",
+        "hidden provider calls"
+      ]
+    },
+    {
+      "id": "eon-browser-page",
+      "source": "assets/js/eon-browser-page.js",
+      "classification": "extract-after-test",
+      "disposition": "Retired surface. Reuse only pure navigation or presentation utilities behind Workspace after test coverage; no EON Browser page return.",
+      "allowedSalvage": [
+        "pure navigation copy",
+        "presentation helpers"
+      ],
+      "forbidden": [
+        "route resurrection",
+        "parallel control plane"
+      ]
+    },
+    {
+      "id": "creator-studio",
+      "source": "assets/js/creator-studio-bootstrap.js",
+      "classification": "extract-after-test",
+      "disposition": "Retired standalone route. Creator Suite 2 will live inside Workspace and may reuse isolated pure helpers only.",
+      "allowedSalvage": [
+        "safe copy",
+        "pure form helpers"
+      ],
+      "forbidden": [
+        "creator-studio route",
+        "social scheduling",
+        "provider impersonation"
+      ]
+    },
+    {
+      "id": "platform-backend",
+      "source": "platform-backend/",
+      "classification": "archive-forever",
+      "disposition": "Do not deploy or extend. Its referral, wallet, swap, entitlement, agent, and social OAuth schema/endpoints are not the basis for accounts, connections, jobs, or publishing.",
+      "allowedSalvage": [
+        "none"
+      ],
+      "forbidden": [
+        "deployment",
+        "D1 schema reuse",
+        "endpoint reuse",
+        "token storage",
+        "referral value systems"
+      ]
+    },
+    {
+      "id": "eon-accounts-manager",
+      "source": "assets/js/utils/eon-accounts-manager.js",
+      "classification": "archive-forever",
+      "disposition": "Browser account attachment and quick-login implementation is retired. The compatibility module is inert and may not initiate identity, attachment, persistence, or network behavior.",
+      "allowedSalvage": [
+        "retirement status message"
+      ],
+      "forbidden": [
+        "identity login",
+        "session attachment",
+        "cookies",
+        "account persistence",
+        "provider account access"
+      ]
+    },
+    {
+      "id": "distribution-automation-rails",
+      "source": "assets/js/utils/distribution-automation-rails.js",
+      "classification": "archive-forever",
+      "disposition": "Legacy distribution automation rails remain archived. New local workflows may prepare reviews and exports only; they cannot schedule, publish, or act after the browser closes.",
+      "allowedSalvage": [
+        "none"
+      ],
+      "forbidden": [
+        "background execution",
+        "scheduling",
+        "publishing",
+        "provider account connection",
+        "job queue"
+      ]
+    }
+  ]
+}

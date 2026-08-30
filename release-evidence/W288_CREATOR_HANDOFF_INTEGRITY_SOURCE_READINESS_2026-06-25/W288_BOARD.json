@@ -1,0 +1,36 @@
+{
+  "schema": "eonapp.w288.creator-handoff-integrity-source-readiness.v1",
+  "decision": "SOURCE_READY_EXTERNAL_EVIDENCE_PENDING",
+  "scope": "source-only",
+  "requiredExternalEvidence": [
+    {
+      "id": "handoff-review-device-walkthrough",
+      "status": "pending-independent-review",
+      "owner": "device reviewer",
+      "evidence": "Desktop and mobile file-picker/readability/error-state walkthrough for the review-only project handoff inspector.",
+      "required": true,
+      "evidenceRefs": []
+    },
+    {
+      "id": "destructive-recovery-clarity-review",
+      "status": "pending-content-owner",
+      "owner": "content/legal owner",
+      "evidence": "Human review that review-only, no-import, ownership and recovery wording is clear and does not overclaim rights or restore safety.",
+      "required": true,
+      "evidenceRefs": []
+    },
+    {
+      "id": "encrypted-backup-restore-drill",
+      "status": "pending-observed-drill",
+      "owner": "rollback owner",
+      "evidence": "Controlled Vault encrypted backup/restore drill demonstrating the separate full-recovery path for normal project records.",
+      "required": true,
+      "evidenceRefs": []
+    }
+  ],
+  "claimFence": [
+    "This board records source-only readiness and does not prove browser, device, provider, account, legal, privacy, security or production behavior.",
+    "No external evidence reference is collected in this source freeze.",
+    "This board cannot approve beta, launch, payment, trading, prediction-market or provider activation."
+  ]
+}

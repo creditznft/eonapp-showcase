@@ -1,0 +1,137 @@
+{
+  "schema": "eonapp.w623f.validation-receipt.v1",
+  "wave": "W623F",
+  "generatedAt": "2026-07-11T04:44:09+05:30",
+  "status": "source-complete-build-green-deployment-stale-no-go",
+  "releaseState": "limited-preview-no-go-public-launch",
+  "nextWave": "W623G",
+  "scope": [
+    "Guide and EONBOT wording audit and beginner-first copy refresh",
+    "hidden language controls in Profile instead of the main Chat header",
+    "browser-assisted Dictate and spoken Guide replies without an AI model when supported",
+    "eleven-language high-value intent routing and deterministic core Chat/Guide/voice copy",
+    "selected reply-language propagation to Local and Direct BYOK model context",
+    "certification v2 source/build/deployment truth board",
+    "W623G real-device multilingual voice and local-speech discovery runbook"
+  ],
+  "validation": {
+    "nodeSyntax": "passed",
+    "targetedEslint": {
+      "status": "passed",
+      "errors": 0,
+      "warnings": 0
+    },
+    "gates": [
+      {
+        "command": "npm run qa:w394b-multilingual-voice",
+        "result": "passed",
+        "gate": "9/9",
+        "tests": "3/3"
+      },
+      {
+        "command": "npm run qa:w394c-language-matrix",
+        "result": "passed",
+        "gate": "12/12",
+        "tests": "3/3"
+      },
+      {
+        "command": "npm run qa:w479-v-voice",
+        "result": "passed",
+        "gate": "11/11",
+        "tests": "3/3"
+      },
+      {
+        "command": "npm run qa:w230-eonbot-command-hub",
+        "result": "passed",
+        "tests": "6/6"
+      },
+      {
+        "command": "npm run qa:w263-eonbot-capability-execution",
+        "result": "passed",
+        "tests": "4/4"
+      },
+      {
+        "command": "npm run qa:w623c-commercial-truth",
+        "result": "passed",
+        "gate": "64/64"
+      },
+      {
+        "command": "npm run qa:w623d-production-reachability",
+        "result": "passed",
+        "tests": "5/5",
+        "reachableFiles": 341,
+        "importEdges": 579,
+        "quarantinedReachable": 0
+      },
+      {
+        "command": "npm run qa:w623e-information-architecture",
+        "result": "passed",
+        "tests": "5/5",
+        "primaryItems": 5,
+        "createModes": 6,
+        "redirectedAliases": 10
+      },
+      {
+        "command": "npm run qa:w623f-certification-v2",
+        "result": "passed",
+        "gate": "24/24",
+        "tests": "6/6",
+        "launchReady": false
+      }
+    ],
+    "productionBuild": {
+      "status": "passed",
+      "distFiles": 452,
+      "distributionBytes": 7952611,
+      "distributionSha256": "b7d743b081d82c742306ff61c45d5bef66ec4c180856d0132508db233819dca9",
+      "minifiedFiles": 290,
+      "beforeBytes": 10267137,
+      "afterBytes": 6036569,
+      "savedBytes": 4230568,
+      "savedPercent": 41.2
+    },
+    "sourceCheckpointSha256": "49aaba051085d3f1a0d8d2a1418b27f812a44bc3c402f5f93599f1fb33d8ffea",
+    "secretScan": {
+      "status": "passed",
+      "filesScanned": 3359,
+      "potentialSecrets": 0,
+      "allowNoHistory": true
+    }
+  },
+  "languageArchitecture": {
+    "languages": [
+      "en",
+      "es",
+      "zh",
+      "ja",
+      "ko",
+      "fr",
+      "de",
+      "pt",
+      "ru",
+      "ar",
+      "hi"
+    ],
+    "mainChatLanguagePickerVisible": false,
+    "settingsPath": "/profile#profile-voice-language",
+    "guideVoiceRequiresAiModel": false,
+    "browserSpeechRequiresEonappApiKey": false,
+    "browserSpeechGuaranteedOffline": false,
+    "fullyLocalSpeechState": "planned-and-proof-required"
+  },
+  "deploymentObservation": {
+    "changedByThisWave": false,
+    "conclusion": "deployment-stale-no-go",
+    "rootParity": false,
+    "createObservedFinalPath": "/workspace",
+    "profileParity": false,
+    "eoncityParity": true
+  },
+  "evidenceBoundary": [
+    "Gate success certifies the W623F source/build truth board, not unrestricted launch readiness.",
+    "The deployed site observed on 2026-07-11 is stale against W623E/F and remains NO-GO until a matching deployment is proven.",
+    "Browser speech support, recognition accuracy and installed spoken voices require real-device proof for each language.",
+    "Browser recognition may use a browser or operating-system service; no offline-local speech claim is made.",
+    "Real local image, local video, Direct BYOK image/video, genuine Dodo customer lifecycle, EONKEYS lifecycle and the W624 City flagship remain pending."
+  ]
+}

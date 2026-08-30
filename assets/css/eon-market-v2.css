@@ -1,0 +1,66 @@
+/* W185: Market is a small generated-first product surface, not a listing back office. */
+body[data-market-v2="1"] #main > :not(#eon-market-v2) { display: none !important; }
+body[data-market-v2="1"] #eon-market-v2 { min-height: 100dvh; padding: clamp(1rem, 3vw, 2.25rem); }
+.eon-market-v2-shell { width: min(1180px, 100%); margin: 0 auto; }
+.eon-market-v2-hero { display: flex; justify-content: space-between; align-items: end; gap: 1.25rem; padding: clamp(1.25rem, 4vw, 2.4rem); border: 1px solid rgba(129,140,248,.26); border-radius: 1.25rem; background: radial-gradient(circle at 88% 0%, rgba(99,102,241,.2), transparent 38%), linear-gradient(145deg, rgba(30,41,59,.74), rgba(15,23,42,.94)); }
+.eon-market-eyebrow { margin: 0 0 .55rem; color: #a5b4fc; font-size: .72rem; letter-spacing: .11em; font-weight: 800; text-transform: uppercase; }
+.eon-market-v2-hero h1 { margin: 0; color: #f8fafc; font-size: clamp(2rem, 4vw, 3.3rem); letter-spacing: -.045em; }
+.eon-market-v2-hero p:not(.eon-market-eyebrow) { max-width: 49rem; margin: .75rem 0 0; color: #a9b8cb; line-height: 1.62; }
+.eon-market-hero-actions { display: flex; gap: .65rem; flex-wrap: wrap; align-items: center; }
+.eon-market-primary,.eon-market-secondary,.eon-market-save,.eon-market-detail { min-height: 2.65rem; padding: .58rem .85rem; border-radius: .75rem; font: inherit; font-size: .84rem; font-weight: 750; cursor: pointer; text-decoration: none; }
+.eon-market-primary,.eon-market-save { border: 1px solid rgba(165,180,252,.56); background: linear-gradient(135deg,#6366f1,#7c3aed); color: #fff; }
+.eon-market-primary:disabled,.eon-market-save:disabled { cursor: default; opacity: .72; }
+.eon-market-secondary,.eon-market-detail { border: 1px solid rgba(148,163,184,.22); background: rgba(15,23,42,.55); color: #dbeafe; }
+.eon-market-progress { display: flex; gap: .75rem; align-items: baseline; padding: .9rem 1rem; margin: 1rem 0; border: 1px solid rgba(52,211,153,.16); border-radius: .85rem; background: rgba(16,185,129,.07); }
+.eon-market-progress strong { color: #bbf7d0; font-size: .86rem; }
+.eon-market-progress span { color: #b7c5d7; font-size: .8rem; line-height: 1.45; }
+.eon-market-tabs { display: flex; gap: .45rem; margin: 1rem 0; padding: .25rem; width: fit-content; border: 1px solid rgba(148,163,184,.16); border-radius: .8rem; background: rgba(15,23,42,.58); }
+.eon-market-tabs span { padding: .45rem .7rem; color: #8ea0b8; font-size: .78rem; }
+.eon-market-tabs .is-active { border-radius: .58rem; background: rgba(99,102,241,.2); color: #eef2ff; font-weight: 800; }
+.eon-market-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: .9rem; }
+.eon-market-card { overflow: hidden; display: flex; flex-direction: column; min-width: 0; border: 1px solid rgba(148,163,184,.16); border-radius: 1rem; background: linear-gradient(165deg, rgba(30,41,59,.78), rgba(15,23,42,.92)); box-shadow: 0 14px 30px rgba(2,6,23,.2); }
+.eon-market-art-wrap { position: relative; aspect-ratio: 1 / 1; overflow: hidden; background: #0f172a; }
+.eon-market-art { width: 100%; height: 100%; object-fit: cover; display: block; }
+.eon-market-rarity { position: absolute; inset: .65rem auto auto .65rem; padding: .28rem .45rem; border-radius: 999px; border: 1px solid rgba(255,255,255,.18); background: rgba(2,6,23,.68); color: #e2e8f0; font-size: .67rem; font-weight: 800; backdrop-filter: blur(8px); }
+.eon-market-rarity.is-rare { color:#bfdbfe; border-color:rgba(96,165,250,.5); }.eon-market-rarity.is-epic { color:#e9d5ff; border-color:rgba(192,132,252,.5); }.eon-market-rarity.is-legendary { color:#fde68a; border-color:rgba(251,191,36,.55); }
+.eon-market-card-body { display: grid; gap: .65rem; padding: .9rem; }
+.eon-market-card-meta,.eon-market-traits { display:flex; justify-content:space-between; gap:.55rem; color:#8ea0b8; font-size:.68rem; text-transform:uppercase; letter-spacing:.055em; }
+.eon-market-card h3 { min-height: 2.6em; margin: 0; color:#f8fafc; font-size:.98rem; line-height:1.3; }.eon-market-card p { margin:0; min-height:4.2em; color:#a9b8cb; font-size:.78rem; line-height:1.5; }
+.eon-market-traits { flex-wrap:wrap; font-size:.65rem; text-transform:none; letter-spacing:0; }.eon-market-traits span { padding:.25rem .42rem; border-radius:999px; background:rgba(148,163,184,.08); }
+.eon-market-card-actions { display:flex; gap:.5rem; }.eon-market-card-actions button { flex:1; }.eon-market-card-note { min-height: auto !important; color:#7f8ea7 !important; font-size:.68rem !important; }
+.eon-market-truth { display:grid; grid-template-columns:1fr 1fr; gap:.8rem; margin:1rem 0; }.eon-market-truth > div { padding:1rem; border:1px solid rgba(148,163,184,.15); border-radius:.85rem; background:rgba(15,23,42,.44); }.eon-market-truth strong { color:#e0e7ff; font-size:.83rem; }.eon-market-truth p { margin:.45rem 0 0; color:#9fb1c8; font-size:.78rem; line-height:1.5; }.eon-market-status { min-height:1.4rem; color:#cbd5e1; font-size:.82rem; }
+@media (max-width: 1040px) { .eon-market-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .eon-market-v2-hero{align-items:start;flex-direction:column;} }
+@media (max-width: 600px) { body[data-market-v2="1"] #eon-market-v2{padding:.85rem}.eon-market-v2-hero{padding:1.05rem}.eon-market-grid{grid-template-columns:1fr}.eon-market-truth{grid-template-columns:1fr}.eon-market-progress{display:grid}.eon-market-card h3{min-height:auto}.eon-market-card p{min-height:auto} }
+
+/* W220: explicit local Market generation — no prefilled collection. */
+.eon-market-tabs button { appearance:none; border:0; padding:.45rem .7rem; color:#8ea0b8; background:transparent; font:inherit; font-size:.78rem; cursor:pointer; }
+.eon-market-tabs button:hover { color:#e2e8f0; }
+.eon-market-tabs button:focus-visible,.eon-market-primary:focus-visible,.eon-market-secondary:focus-visible,.eon-market-save:focus-visible,.eon-market-detail:focus-visible { outline:2px solid #c4b5fd; outline-offset:3px; }
+.eon-market-empty,.eon-market-official,.eon-market-generated { margin:1rem 0; }
+.eon-market-empty,.eon-market-official-card { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(18rem,.85fr); gap:1.15rem; padding:clamp(1rem,3vw,1.5rem); border:1px solid rgba(148,163,184,.18); border-radius:1rem; background:linear-gradient(145deg,rgba(30,41,59,.62),rgba(15,23,42,.78)); }
+.eon-market-empty-copy h2,.eon-market-official-card h2,.eon-market-generation-head h2 { margin:0; color:#f8fafc; font-size:clamp(1.25rem,2.5vw,1.8rem); letter-spacing:-.03em; }
+.eon-market-empty-copy > p:not(.eon-market-eyebrow),.eon-market-official-card > p:not(.eon-market-eyebrow),.eon-market-generation-head p { margin:.62rem 0 0; color:#a9b8cb; line-height:1.58; }
+.eon-market-generate-form { display:grid; align-content:start; gap:.75rem; padding:1rem; border:1px solid rgba(129,140,248,.2); border-radius:.9rem; background:rgba(15,23,42,.48); }
+.eon-market-generate-form label { display:grid; gap:.34rem; color:#cbd5e1; font-size:.78rem; font-weight:750; }
+.eon-market-generate-form input,.eon-market-generate-form select { width:100%; min-height:2.65rem; box-sizing:border-box; border:1px solid rgba(148,163,184,.28); border-radius:.65rem; padding:.55rem .65rem; background:rgba(2,6,23,.42); color:#eef2ff; font:inherit; }
+.eon-market-generate-form input::placeholder { color:#7f8ea7; }
+.eon-market-generate-form input:focus,.eon-market-generate-form select:focus { outline:2px solid rgba(196,181,253,.8); outline-offset:2px; border-color:transparent; }
+.eon-market-form-note { margin:0; color:#8ea0b8; font-size:.72rem; line-height:1.5; }
+.eon-market-resume { grid-column:1 / -1; display:flex; flex-wrap:wrap; align-items:center; gap:.6rem .9rem; padding:.85rem 1rem; border:1px dashed rgba(96,165,250,.42); border-radius:.8rem; background:rgba(30,58,138,.12); color:#dbeafe; }
+.eon-market-resume strong { font-size:.84rem; }
+.eon-market-resume p { flex:1 1 20rem; margin:0; color:#b9c9df; font-size:.78rem; line-height:1.5; }
+.eon-market-official-card { grid-template-columns:minmax(0,1fr) auto; align-items:end; }
+.eon-market-official-card .eon-market-secondary { width:max-content; }
+.eon-market-generation-head { display:flex; justify-content:space-between; align-items:end; gap:1rem; padding:1rem 0 .1rem; }
+.eon-market-card.is-revealing { display:none; }
+.eon-market-card { contain:content; }
+.eon-market-truth { grid-template-columns:repeat(3,minmax(0,1fr)); }
+@media (max-width: 760px) {
+  .eon-market-empty,.eon-market-official-card { grid-template-columns:1fr; }
+  .eon-market-official-card .eon-market-secondary { width:auto; justify-self:start; }
+  .eon-market-generation-head { align-items:start; flex-direction:column; }
+  .eon-market-truth { grid-template-columns:1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .eon-market-card,.eon-market-primary,.eon-market-secondary,.eon-market-save,.eon-market-detail { transition:none !important; animation:none !important; }
+}

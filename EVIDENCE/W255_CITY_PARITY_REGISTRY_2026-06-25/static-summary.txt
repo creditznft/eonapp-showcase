@@ -1,0 +1,72 @@
+[01] npm run qa:w216-source-syntax
+status=0 log=w255-static-01.log
+  
+  > qa:w216-source-syntax
+  > node --check scripts/site-audit.mjs && node --check scripts/w216-local-finalization-gate.mjs && node --check scripts/launch-page-invariants.mjs && node --check scripts/launch-identity-surface-gate.mjs && node --check scripts/app-surface-quality-gate.mjs && node --check assets/js/chat/eonbot-command-hub.js && node --check assets/js/chat/eonbot-action-receipts.js && node --check assets/js/eon-city-3d-station.js && node --check assets/js/eon-operator-map.js && node --check assets/js/eon-operator-map.js && node --check scripts/active-surface-import-fence.mjs && node --check assets/js/city/city-landmark-registry.js && node --check assets/js/city/city-prepared-action.js && node --check assets/js/city/city-world-state.js && node --check assets/js/city/eon-city-2d-engine.js && node --check assets/js/realm-studio-page.js && node --check assets/js/realm/realm-state.js && node --check assets/js/utils/signed-share-link.js && node --check assets/js/utils/referral-par.js && node --check assets/js/utils/realm-share-runtime.js && node --check assets/js/trade/eon-trade-page.js && node --check assets/js/utils/privacy-telemetry.js && node --check assets/js/utils/eon-share-sheet.js && node --check assets/js/eon-workspace-pages.js && node --check assets/js/profile-page.js && node --check assets/js/eon-sync/eon-sync-backup.js && node --check assets/js/city/eon-city-3d-model.js && node --check assets/js/city/eon-city-3d-proof.js && node --check assets/js/local-ai/local-ai-catalog.js && node --check assets/js/local-ai/local-runtime-status.js && node --check assets/js/local-ai/local-ai-page.js && node --check assets/js/city/eon-city-3d-renderer.js && node --check assets/js/account/eon-account-foundation.js && node --check assets/js/realm/public-realm-manifest.js && node --check assets/js/commerce/official-commerce-foundation.js && node --check assets/js/commerce/commercial-decision-gate.js && node --check assets/js/commerce/billing-commercial-status.js && node --check scripts/verify-product-truth.mjs && node --check scripts/secret-scan.mjs && node --check config/product-evidence-registry.mjs && node --check scripts/w228-ceo-red-team.mjs && node --check assets/js/eon-workspace-pages.js && node --check config/eon-invite-architecture.mjs && node --check config/access-milestone-pilot-gate.mjs && node --check config/sponsored-discovery-policy.mjs && node --check assets/js/access/access-milestones-registry.js && node --check assets/js/access/rewards-status-page.js && node --check scripts/w234-referral-d1-readonly-audit.mjs && node --check scripts/w235-access-milestones-disabled-gate.mjs && node --check scripts/w236-access-milestone-pilot-no-go.mjs && node --check scripts/w237-sponsored-discovery-disabled-gate.mjs && node --check scripts/w238-legacy-consolidation-gate.mjs && node --check scripts/w239-public-output-quarantine-gate.mjs
+  
+[02] npm run audit:site
+status=0 log=w255-static-02.log
+  
+  > audit:site
+  > node scripts/site-audit.mjs
+  
+  Site audit passed: 53 HTML files scanned, 3 tools, 1 games, sitemap + precache verified.
+[03] npm run launch:readiness
+status=0 log=w255-static-03.log
+    "primaryRouteCount": 15,
+    "commercialStatus": "disabled-no-active-server-handlers",
+    "signedInviteStatus": "local-signed-context-no-tracking-no-reward-no-auto-posting",
+    "checkedAt": "2026-06-25T02:02:51.503Z",
+    "blockers": [],
+    "warnings": [],
+    "status": "PASS"
+  }
+[04] npm run qa:pwa-install
+status=0 log=w255-static-04.log
+    "manualDeviceQA": [
+      "4 GB Android: portrait Chat, 2D City, no browser-side local-model installation claim, offline fallback.",
+      "Mid-range Android: PWA install path, 2D default, optional 3D only after explicit test and landscape choice.",
+      "iPhone Safari: Share → Add to Home Screen, portrait composer, safe-area and keyboard check.",
+      "Desktop Chrome and Edge: PWA install/update, Local AI runtime discovery/self-test/removal, 2D/3D return path.",
+      "Slow network/offline/no-WebGL: cached shell or offline page, no false cloud/live-data claim, 2D only without WebGL."
+    ]
+  }
+[05] npm run launch:identity-gate
+status=0 log=w255-static-05.log
+  
+  > launch:identity-gate
+  > node scripts/launch-identity-surface-gate.mjs
+  
+  EONAPP.CH Identity Surface Gate
+  ===============================
+  Blockers: 0
+  Warnings: 0
+[06] npm run launch:page-gate
+status=0 log=w255-static-06.log
+  
+  > launch:page-gate
+  > node scripts/launch-page-invariants.mjs
+  
+  EONAPP.CH Page Invariants Gate
+  ==============================
+  Blockers: 0
+  Warnings: 0
+[07] npm run launch:quality-gate
+status=0 log=w255-static-07.log
+  
+  > launch:quality-gate
+  > node scripts/app-surface-quality-gate.mjs
+  
+  Wrote CodexDocs/EONAPP_W216_APP_SURFACE_QUALITY_GATE_REPORT_2026-06-23.md
+  App surface quality gate: PASS (0 blockers, 0 warnings)
+[08] npm run security:secret-scan
+status=0 log=w255-static-08.log
+  
+  > security:secret-scan
+  > node scripts/secret-scan.mjs --mode=workspace
+  
+  [secret-scan] scanned 2074 text files; skipped 10 generated/binary/large files.
+  [secret-scan] PASS: no potential secrets detected.
+[09] npm audit --omit=dev --audit-level=high
+status=0 log=w255-static-09.log
+  found 0 vulnerabilities

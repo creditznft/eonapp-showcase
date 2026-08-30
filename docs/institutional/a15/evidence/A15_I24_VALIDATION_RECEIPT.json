@@ -1,0 +1,33 @@
+{
+  "schema": "eonapp.a15.i24.validation-receipt.v1",
+  "generatedAt": "2026-08-04T21:02:50.486Z",
+  "wave": "I24",
+  "status": "pass",
+  "focusedGateStatus": "pass",
+  "publishedInterfaceLanguages": [
+    "en"
+  ],
+  "chatGuideLanguageCount": 11,
+  "browserSpeechLanguageCount": 11,
+  "englishRouteCount": 25,
+  "englishSourceComplete": true,
+  "accessibilitySourceReady": true,
+  "browserEvidenceComplete": false,
+  "assistiveTechnologyEvidenceComplete": false,
+  "physicalDeviceEvidenceComplete": false,
+  "wcagConformanceCertified": false,
+  "maintainedFileCount": 381,
+  "maintainedPassedFileCount": 372,
+  "dependencyBlockedFileCount": 9,
+  "genuineFailureCount": 0,
+  "maintainedTests": 1491,
+  "maintainedPassed": 1444,
+  "maintainedSkipped": 47,
+  "builtArtifactCertified": false,
+  "authenticatedBrowserCertified": false,
+  "productionAuthorized": false,
+  "boundaryGate": "pass",
+  "secretScan": "pass",
+  "externalActionPerformed": false,
+  "digest": "55fabb6a6065def5fec79e959f80e270c1f6c2d76747620c5e4a36963b42aedd"
+}

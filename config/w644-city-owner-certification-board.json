@@ -1,0 +1,15 @@
+{
+  "schema": "eonapp.city-owner-certification-board.w644.v1",
+  "wave": "W644",
+  "productionVerdict": "not-run",
+  "candidateDigest": null,
+  "deploymentId": null,
+  "authenticatedGoogleSession": "not-run",
+  "guestGate": "not-run",
+  "desktop": "not-run",
+  "mobilePortrait": "not-run",
+  "mobileLandscape": "not-run",
+  "ownerScore": null,
+  "ownerReviewed": false,
+  "receipt": null
+}

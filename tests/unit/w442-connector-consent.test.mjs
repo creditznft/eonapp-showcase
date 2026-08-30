@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict'; import test from 'node:test';
+import { createEonConnectorConsentRegistry, getEonConnectorConsentTruth } from '../../assets/js/connectors/eon-connector-consent-registry.js'; import { inspectW442ConnectorConsent } from '../../scripts/w442-connector-consent-gate.mjs';
+function memoryStorage() { const data = new Map(); return { getItem: (key) => data.has(key) ? data.get(key) : null, setItem: (key, value) => data.set(key, String(value)), removeItem: (key) => data.delete(key), get length() { return data.size; }, key: (index) => [...data.keys()][index] || null }; }
+const NOW = Date.parse('2026-06-29T12:00:00.000Z');
+test('W442 records a local, expiring connector consent with explicit purpose approval', () => {
+  const registry = createEonConnectorConsentRegistry({ storage: memoryStorage(), now: () => NOW }); const input = { connectorId: 'instagram', purpose: 'review-future-publish', safeResourceLabel: 'A finished campaign export', expiryDays: 3 };
+  assert.equal(registry.prepareConsent(input).error, 'explicit-user-action-and-purpose-approval-required'); const prepared = registry.prepareConsent(input, { explicitUserAction: true, explicitPurposeApproval: true }); assert.equal(prepared.ok, true); assert.equal(prepared.record.oauthStarted, false); assert.equal(prepared.record.remoteActionCreated, false); assert.ok(prepared.record.expiresAt > prepared.record.createdAt);
+});
+test('W442 revokes only after confirmation and always blocks OAuth start', () => {
+  const registry = createEonConnectorConsentRegistry({ storage: memoryStorage(), now: () => NOW }); const prepared = registry.prepareConsent({ connectorId: 'telegram', purpose: 'review-future-share', safeResourceLabel: 'A City signal', expiryDays: 7 }, { explicitUserAction: true, explicitPurposeApproval: true });
+  assert.equal(registry.revokeConsent(prepared.record.consentId, { explicitUserAction: true }).error, 'explicit-revocation-confirmation-required'); const revoked = registry.revokeConsent(prepared.record.consentId, { explicitUserAction: true, explicitRevocationConfirmation: true }); assert.equal(revoked.ok, true); assert.equal(revoked.record.state, 'revoked'); assert.equal(registry.startOAuthOrConnection(prepared.record.consentId, { explicitUserAction: true }).error, 'oauth-and-connector-custody-not-released');
+});
+test('W442 gate and truth prevent connector activation claims', () => { const gate = inspectW442ConnectorConsent(); const truth = getEonConnectorConsentTruth(); assert.equal(gate.status, 'pass'); assert.ok(gate.checkCount >= 9); assert.equal(truth.oauthStarted, false); assert.equal(truth.externalPublishCreated, false); });

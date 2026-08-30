@@ -1,0 +1,190 @@
+{
+  "schema": "eonapp.w476.api-negative-test-matrix.v1",
+  "wave": "W476-A6",
+  "cases": [
+    {
+      "route": "/api/account/delete-request",
+      "method": "POST",
+      "state": "conditional",
+      "id": "unconfigured",
+      "request": "POST without exact identity configuration",
+      "expect": "503 identity_unavailable"
+    },
+    {
+      "route": "/api/account/delete-request",
+      "method": "POST",
+      "state": "conditional",
+      "id": "cross-origin",
+      "request": "POST with a non-app Origin",
+      "expect": "403 origin_check_failed"
+    },
+    {
+      "route": "/api/account/delete-request",
+      "method": "POST",
+      "state": "conditional",
+      "id": "missing-confirmation",
+      "request": "POST without exact confirmation literal",
+      "expect": "400 explicit_confirmation_required"
+    },
+    {
+      "route": "/api/actions/execute",
+      "method": "POST",
+      "state": "hard-disabled",
+      "id": "disabled",
+      "request": "POST in every configuration",
+      "expect": "503 action-gateway-not-configured; externalEffect false"
+    },
+    {
+      "route": "/api/actions/prepare",
+      "method": "POST",
+      "state": "hard-disabled",
+      "id": "disabled",
+      "request": "POST in every configuration",
+      "expect": "503 action-gateway-not-configured; externalEffect false"
+    },
+    {
+      "route": "/api/actions/status",
+      "method": "GET",
+      "state": "hard-disabled",
+      "id": "disabled-status",
+      "request": "GET in every configuration",
+      "expect": "200 enabled false; rollout disabled"
+    },
+    {
+      "route": "/api/auth/google/callback",
+      "method": "GET",
+      "state": "conditional",
+      "id": "unconfigured",
+      "request": "GET without exact identity configuration",
+      "expect": "302 unavailable return; flow cookie cleared"
+    },
+    {
+      "route": "/api/auth/google/callback",
+      "method": "GET",
+      "state": "conditional",
+      "id": "tampered-or-missing-flow",
+      "request": "GET with invalid/missing sealed flow",
+      "expect": "safe same-origin error redirect; flow cookie cleared"
+    },
+    {
+      "route": "/api/auth/google/start",
+      "method": "GET",
+      "state": "conditional",
+      "id": "unconfigured",
+      "request": "GET without exact identity configuration",
+      "expect": "302 unavailable return; no provider redirect"
+    },
+    {
+      "route": "/api/auth/google/start",
+      "method": "GET",
+      "state": "conditional",
+      "id": "unsafe-return",
+      "request": "GET with external return target",
+      "expect": "redirect returns only to allowlisted app route"
+    },
+    {
+      "route": "/api/auth/logout",
+      "method": "POST",
+      "state": "conditional",
+      "id": "cross-origin",
+      "request": "POST with a non-app Origin while configured",
+      "expect": "403 origin_check_failed"
+    },
+    {
+      "route": "/api/auth/logout",
+      "method": "POST",
+      "state": "conditional",
+      "id": "unconfigured",
+      "request": "POST without identity configuration",
+      "expect": "200 signedIn false; guest use remains available"
+    },
+    {
+      "route": "/api/auth/session",
+      "method": "GET",
+      "state": "conditional",
+      "id": "unconfigured",
+      "request": "GET without identity configuration",
+      "expect": "200 guest-safe public status; available false"
+    },
+    {
+      "route": "/api/connectors/status",
+      "method": "GET",
+      "state": "hard-disabled",
+      "id": "disabled-status",
+      "request": "GET in every configuration",
+      "expect": "200 enabled false; tokenStored false; directPostCreated false"
+    },
+    {
+      "route": "/api/deployments/status",
+      "method": "GET",
+      "state": "hard-disabled",
+      "id": "disabled-status",
+      "request": "GET in every configuration",
+      "expect": "200 enabled false; githubConnected false; cloudflareConnected false"
+    },
+    {
+      "route": "/api/offline/capability",
+      "method": "POST",
+      "state": "conditional",
+      "id": "unconfigured",
+      "request": "POST without exact identity configuration",
+      "expect": "503 identity_unavailable"
+    },
+    {
+      "route": "/api/offline/capability",
+      "method": "POST",
+      "state": "conditional",
+      "id": "cross-origin",
+      "request": "POST with a non-app Origin",
+      "expect": "403 same_origin_required"
+    },
+    {
+      "route": "/api/offline/capability",
+      "method": "POST",
+      "state": "conditional",
+      "id": "signed-out",
+      "request": "POST without a valid identity session",
+      "expect": "401 signed_in_required"
+    },
+    {
+      "route": "/api/offline/capability",
+      "method": "POST",
+      "state": "conditional",
+      "id": "manifest-mismatch",
+      "request": "POST for a digest other than the deployed manifest",
+      "expect": "409 offline_manifest_mismatch"
+    },
+    {
+      "route": "/csp-report",
+      "method": "POST",
+      "state": "active-privacy-bounded-telemetry",
+      "id": "unsupported-media",
+      "request": "POST with non-report Content-Type",
+      "expect": "415 unsupported_media_type"
+    },
+    {
+      "route": "/csp-report",
+      "method": "POST",
+      "state": "active-privacy-bounded-telemetry",
+      "id": "invalid-json",
+      "request": "POST with malformed JSON",
+      "expect": "400 invalid_json"
+    },
+    {
+      "route": "/csp-report",
+      "method": "POST",
+      "state": "active-privacy-bounded-telemetry",
+      "id": "oversize",
+      "request": "POST over 12 KiB",
+      "expect": "413 report_too_large"
+    },
+    {
+      "route": "/csp-report",
+      "method": "POST",
+      "state": "active-privacy-bounded-telemetry",
+      "id": "foreign-document",
+      "request": "POST with document URL outside request origin",
+      "expect": "400 invalid_csp_document_origin"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+/* W384 — compact Apps hub, built from shared dark-theme tokens. */
+:root { color-scheme: dark; }
+.eon-apps-hub { width: min(1160px, 100%); margin: 0 auto; padding: clamp(1rem, 3vw, 2.4rem); color: var(--clr-text); }
+.eon-apps-hub-hero { display:flex; align-items:end; justify-content:space-between; gap:1.25rem; padding:clamp(1.35rem, 4vw, 2.8rem); border:1px solid var(--clr-border); border-radius:1.25rem; background:linear-gradient(145deg, color-mix(in srgb, var(--clr-surface) 94%, var(--clr-bg)), color-mix(in srgb, var(--clr-bg) 97%, #000)); box-shadow:0 1.25rem 3.8rem color-mix(in srgb, #000 28%, transparent); }
+.eon-apps-hub-eyebrow { margin:0 0 .65rem; color:var(--clr-accent); font-size:.73rem; font-weight:780; letter-spacing:.13em; text-transform:uppercase; }
+.eon-apps-hub-hero h1 { max-width:14ch; margin:0; color:var(--clr-text); font-size:clamp(2.25rem, 5vw, 4.5rem); line-height:.98; letter-spacing:-.055em; }
+.eon-apps-hub-hero > div > p:not(.eon-apps-hub-eyebrow) { max-width:43rem; margin:1rem 0 0; color:var(--clr-text-muted); line-height:1.6; }
+.eon-apps-hub-hero-actions { display:flex; flex-wrap:wrap; gap:.55rem; justify-content:flex-end; }
+.eon-apps-hub-primary, .eon-apps-hub-secondary, .eon-apps-hub-card button { min-height:2.6rem; padding:.58rem .8rem; border-radius:.74rem; font:inherit; font-size:.86rem; font-weight:750; text-decoration:none; cursor:pointer; }
+.eon-apps-hub-primary { border:1px solid color-mix(in srgb, var(--clr-text) 72%, var(--clr-border)); background:var(--clr-text); color:var(--clr-bg); }
+.eon-apps-hub-secondary { display:inline-flex; align-items:center; justify-content:center; border:1px solid var(--clr-border); background:color-mix(in srgb, var(--clr-surface) 82%, transparent); color:var(--clr-text); }
+.eon-apps-hub-layout { display:grid; grid-template-columns:minmax(0, 1.6fr) minmax(17rem, .75fr); gap:1rem; align-items:start; margin-top:1rem; }
+.eon-apps-hub-grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:.8rem; }
+.eon-apps-hub-card { display:flex; flex-direction:column; min-height:15rem; padding:1.1rem; border:1px solid var(--clr-border); border-radius:1rem; background:color-mix(in srgb, var(--clr-surface) 88%, var(--clr-bg)); cursor:pointer; transition:border-color .16s ease, transform .16s ease, background .16s ease; }
+.eon-apps-hub-card:hover, .eon-apps-hub-card:focus-within, .eon-apps-hub-card.is-selected { border-color:color-mix(in srgb, var(--clr-accent) 60%, var(--clr-border)); background:linear-gradient(150deg, color-mix(in srgb, var(--clr-accent) 10%, var(--clr-surface)), color-mix(in srgb, var(--clr-bg) 95%, #000)); transform:translateY(-2px); }
+.eon-apps-hub-card-top { display:flex; align-items:center; gap:.65rem; }
+.eon-apps-hub-icon { display:grid; place-items:center; width:2.45rem; height:2.45rem; border:1px solid color-mix(in srgb, var(--clr-accent) 42%, var(--clr-border)); border-radius:.72rem; color:var(--clr-link-hover); background:color-mix(in srgb, var(--clr-accent) 12%, var(--clr-surface)); font-size:1.1rem; }
+.eon-apps-hub-card-top p { margin:0; color:var(--clr-text-muted); font-size:.7rem; font-weight:750; letter-spacing:.1em; text-transform:uppercase; }
+.eon-apps-hub-card h2 { margin:1rem 0 0; color:var(--clr-text); font-size:1.17rem; }
+.eon-apps-hub-card-copy { margin:.5rem 0 1rem; color:var(--clr-text-muted); font-size:.88rem; line-height:1.5; }
+.eon-apps-hub-card button { align-self:flex-start; margin-top:auto; border:1px solid color-mix(in srgb, var(--clr-accent) 43%, var(--clr-border)); background:color-mix(in srgb, var(--clr-accent) 11%, var(--clr-surface)); color:var(--clr-link-hover); }
+.eon-apps-hub-detail { position:sticky; top:1rem; padding:1.15rem; border:1px solid var(--clr-border); border-radius:1rem; background:color-mix(in srgb, var(--clr-surface) 92%, var(--clr-bg)); }
+.eon-apps-hub-detail h2 { margin:.2rem 0 .65rem; font-size:1.45rem; }
+.eon-apps-hub-detail > p:not(.eon-apps-hub-eyebrow) { color:var(--clr-text-muted); line-height:1.58; }
+.eon-apps-hub-detail .eon-apps-hub-primary { display:inline-flex; align-items:center; justify-content:center; margin-top:1rem; }
+.eon-apps-hub-detail small { display:block; margin-top:1rem; color:var(--clr-text-muted); font-size:.76rem; line-height:1.45; }
+.eon-apps-hub-truth { display:flex; gap:.65rem; align-items:baseline; margin-top:1rem; padding:.78rem .9rem; border:1px solid color-mix(in srgb, var(--clr-border) 78%, transparent); border-radius:.82rem; color:var(--clr-text-muted); background:color-mix(in srgb, var(--clr-surface) 58%, transparent); font-size:.82rem; }
+.eon-apps-hub-truth strong { color:var(--clr-text); white-space:nowrap; }
+.eon-apps-hub-primary:hover, .eon-apps-hub-primary:focus-visible, .eon-apps-hub-secondary:hover, .eon-apps-hub-secondary:focus-visible, .eon-apps-hub-card button:hover, .eon-apps-hub-card button:focus-visible { outline:2px solid var(--clr-link-hover); outline-offset:3px; filter:brightness(1.05); }
+@media (max-width:900px) { .eon-apps-hub-hero { align-items:flex-start; flex-direction:column; } .eon-apps-hub-hero-actions { justify-content:flex-start; } .eon-apps-hub-layout { grid-template-columns:1fr; } .eon-apps-hub-detail { position:static; } }
+@media (max-width:620px) { .eon-apps-hub { padding:1rem; } .eon-apps-hub-grid { grid-template-columns:1fr; } .eon-apps-hub-card { min-height:auto; } .eon-apps-hub-truth { flex-direction:column; gap:.22rem; } }
+@media (prefers-reduced-motion: reduce) { .eon-apps-hub-card { transition:none; } .eon-apps-hub-card:hover { transform:none; } }

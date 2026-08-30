@@ -1,0 +1,9 @@
+{
+  "schema": "eonapp.rt97.production-request.v1",
+  "sourceCommit": "REPLACE_WITH_40_HEX_CERTIFIED_RT97_COMMIT",
+  "sourceTree": "REPLACE_WITH_40_HEX_CERTIFIED_RT97_TREE",
+  "requestedFor": "eonapp.ch",
+  "releaseBranch": "release/rt97-production",
+  "sourceBranch": "codex/rt97-release-candidate-2026-08-30",
+  "notes": "Codex must replace sourceCommit/sourceTree only after the exact source branch CI is green and Cloudflare production values pass RT97 preflight. Do not trigger with placeholders."
+}

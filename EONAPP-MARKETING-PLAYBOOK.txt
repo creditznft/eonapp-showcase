@@ -1,0 +1,452 @@
+EONAPP.ch — marketing and monetization playbook v2
+==================================================
+
+1. Core rule
+------------
+Do not market “the website.”
+Market:
+- one tool
+- one challenge
+- one result card
+- one campaign page
+- one replay loop
+
+Every asset must have:
+- a traffic source
+- a value moment
+- a monetization path
+- a recirculation path
+
+2. The honest static referral model
+-----------------------------------
+EONAPP.ch has no backend.
+That means:
+- no honest global referral counter
+- no honest shared leaderboard
+- no honest passive referral tree payouts
+
+What does work:
+- every user has a random local ID
+- every share link carries that ID
+- links can also carry the invite trail
+- the referrer earns local credit when a downstream user sends a chain link back and the referrer opens it
+
+This is the correct static model:
+- honest
+- legal-safe
+- Cloudflare-friendly
+- no fake database theater
+
+Reward types should stay non-financial:
+- referral rank
+- badges
+- bonus variants
+- challenge XP
+- cosmetic prestige
+
+3. Paid traffic stack — what actually makes sense
+-------------------------------------------------
+Use paid traffic only after a page type proves:
+- users finish the core action
+- the page does not feel scammy
+- return behavior exists
+- the optional reward layer does not kill trust
+
+Best low-cost paid traffic stack for EONAPP.ch:
+
+Tier A — cheapest learning traffic
+1. Push / in-page push / pop / direct click
+- best for:
+  - personality tools
+  - curiosity tools
+  - game campaign pages
+  - quiz-style pages
+- not for:
+  - vault
+  - privacy
+  - serious finance tools
+
+Good providers to test:
+- PropellerAds
+- RichAds
+- Adsterra self-serve
+- Zeropark
+
+Use cases:
+- push/pop to campaign pages, not raw tool pages
+- curiosity headline -> campaign page -> tool -> optional reward
+
+Tier B — native traffic
+2. Native content traffic
+- best for:
+  - pillar article -> tool funnels
+  - finance explainers
+  - creator utility pages
+  - comparison pages
+
+Good providers:
+- MGID
+- RevContent
+- Adsterra native
+
+Use cases:
+- article bridge page -> tool page
+- comparison page -> tool page
+- campaign page with examples -> tool
+
+Tier C — intent traffic
+3. Search ads
+- best for:
+  - calculators
+  - finance utility tools
+  - high-intent creator tools
+  - “how much / what if / calculator / compare” queries
+
+Good providers:
+- Google Ads
+- Microsoft Ads
+
+Use cases:
+- direct to utility page
+- direct to clean finance page
+- no noisy CPA wall in this lane
+
+Tier D — creative scaling only after proof
+4. Meta / TikTok / Reddit paid social
+- only after the creative already wins organically
+- do not use this as the first paid channel
+
+4. Traffic source -> landing page fit
+-------------------------------------
+Push / pop / direct click
+- send to:
+  - campaign pages
+  - curiosity landing pages
+  - challenge pages
+- do not send to:
+  - raw vault page
+  - privacy page
+  - raw homepage
+
+Native
+- send to:
+  - article bridges
+  - “X vs Y” pages
+  - use-case pages
+  - trend pages
+
+Search
+- send to:
+  - direct utility tools
+  - direct calculators
+  - trust-clean finance pages
+
+Retargeting
+- send to:
+  - best performer only
+  - users who already engaged
+
+4A. SEO and blog lanes that actually support the product
+-------------------------------------------------------
+Best blog categories:
+- tool explainers and result decoders
+- comparison pages and "best free" roundups
+- finance/use-case guides tied to a real calculator or tool
+- campaign / seasonal bridge pages
+- game-retention and daily-challenge posts
+
+Quality bar:
+- one keyword lane per page
+- one main CTA back to a tool, game, or vault action
+- one proof/example block
+- one FAQ block
+- clear mobile structure
+- no generic filler written just to pad output
+
+Bad blog behavior:
+- publishing content with no matching tool
+- hiding the CTA until the footer
+- writing broad "everything about AI tools" posts
+- stuffing multiple unrelated keywords into one page
+
+5. Provider fit matrix
+----------------------
+PropellerAds
+- use for cheap discovery
+- strong fit for push/pop/in-page push
+- good for:
+  - campaign pages
+  - quiz funnels
+  - reaction-game funnels
+
+RichAds
+- use for aggressive learning traffic
+- supports push, popunder, in-page, direct click, display, native
+- good for:
+  - testing ad angles fast
+  - entertainment-first pages
+
+Zeropark
+- use when you want more intent-driven redirect / commerce-style traffic testing
+- better for:
+  - campaign page testing
+  - intent-ish landers
+
+MGID
+- use for cleaner native/article traffic
+- better for:
+  - article -> tool flows
+  - creator and finance explainers
+
+RevContent
+- use when you want lightweight native placements and publisher-friendly UX
+- better for:
+  - bridge pages
+  - softer native recirculation
+
+Google Ads / Microsoft Ads
+- use only for:
+  - proven finance tools
+  - proven calculator queries
+  - high-intent pages with clean trust signals
+
+6. Budget ladder
+----------------
+Stage 1 — discovery
+- test one page with one source
+- small budget only
+- objective: find a page/source fit, not scale
+
+Best first paid tests:
+1. push/pop -> RareRank campaign page
+2. push/pop -> Red Flag Decoder campaign page when built
+3. search -> FutureWorth / utility finance page when built
+4. native -> article bridge -> Crypto Fate
+
+Stage 2 — improve
+- once one page proves good completion and recirculation:
+  - test 2-3 headline angles
+  - test 2 CTA variants
+  - test tool-first vs campaign-first flow
+
+Stage 3 — scale slowly
+- only scale when:
+  - page depth is healthy
+  - completion is healthy
+  - monetization is not crushing retention
+
+7. Kill rules
+-------------
+Kill a paid test quickly when:
+- bounce is extreme
+- completion rate is weak
+- pages/session is weak
+- users do not share
+- reward click rate is high but return rate is bad
+- the traffic makes the site feel low-trust
+
+Hard kill examples:
+- finance page + offerwall combo
+- pop traffic sent to vault page
+- push traffic sent to homepage with no hook
+- native traffic sent to raw tool with no context
+
+8. CPA and offerwall rules
+--------------------------
+Best use:
+- bonus analysis
+- second spin
+- cosmetic reward
+- extra challenge pack
+- bonus game mode
+- deeper personality layer
+
+Bad use:
+- first result
+- vault
+- privacy
+- serious finance
+- anything that depends on trust
+
+Best practical providers to keep ready:
+- CPAlead
+- AdGate
+- OGAds / CPAGrip style optional reward layer only if quality stays acceptable
+
+Important:
+- only one clear reward path at a time
+- do not stack five walls
+- do not make the site feel trapped
+
+9. OpenClaw growth workflows beyond social
+------------------------------------------
+OpenClaw should not just write posts.
+It should create traffic assets.
+
+Highest-value growth automations:
+
+1. Campaign page generator
+- for every top tool, generate:
+  - 3 campaign pages
+  - one curiosity angle
+  - one comparison angle
+  - one challenge angle
+
+2. Article bridge generator
+- build:
+  - one pillar article
+  - 4-6 support articles
+  - one “best tools for X” page
+  - one “X vs Y” page
+
+3. Cross-promo engine
+- inject:
+  - related tool blocks
+  - result-end next-step cards
+  - game -> tool loops
+  - tool -> vault loops
+  - blog -> tool loops
+
+4. Trend hijack builder
+- watch:
+  - Google Trends
+  - Reddit trends
+  - X/Threads talking points
+  - crypto/news cycles where relevant
+- then generate:
+  - quick campaign pages
+  - trend blog bridges
+  - matching tool intros
+
+5. Community pack builder
+- generate:
+  - subreddit-safe angle variants
+  - Discord post variants
+  - forum post variants
+  - comment-seeding ideas
+
+6. Paid landing page pack
+- generate:
+  - push landing
+  - pop landing
+  - native bridge
+  - search-clean landing
+
+7. Internal linking optimizer
+- update:
+  - tool pages
+  - vault prompts
+  - blog CTAs
+  - challenge recirculation blocks
+
+10. Cross-promotion system
+--------------------------
+Best cross-promo loops:
+
+Tool -> vault
+- result page tells user to save profile / copy invite / view rewards
+
+Vault -> tool
+- vault recommends the next best tool or challenge to raise status
+
+Tool -> tool
+- every result ends with:
+  - one adjacent tool
+  - one high-intent tool
+  - one challenge-friendly tool
+
+Blog -> tool
+- every article must route into a tool
+
+Game -> challenge -> tool
+- games should feed challenge links, then route into a tool or vault
+
+Assistant -> action
+- the floating guide should always be able to:
+  - send users to a tool
+  - open vault
+  - copy invite link
+  - explain rewards
+
+11. Best paid tests by page type
+--------------------------------
+RareRank / identity tools
+- first paid tests:
+  - push
+  - in-page push
+  - pop
+- landing:
+  - curiosity campaign page first
+- reward layer:
+  - smartlink or offerwall bonus okay
+
+Red Flag / love / social tools
+- first paid tests:
+  - push
+  - native
+- landing:
+  - campaign page or story bridge
+- reward layer:
+  - offerwall bonus okay
+
+Crypto Fate / finance tools
+- first paid tests:
+  - search
+  - native article bridge
+- landing:
+  - direct tool or bridge article
+- reward layer:
+  - smartlink only if soft
+  - no aggressive offerwall
+
+Games
+- first paid tests:
+  - push/pop
+- landing:
+  - score/challenge campaign page
+- reward layer:
+  - optional bonus mode or extra life
+
+12. What to avoid
+-----------------
+- buying broad low-intent display traffic to homepage
+- pushing pop traffic into trust pages
+- forcing CPA before value
+- pretending the site has global backend state
+- spamming communities with cloned OpenClaw posts
+- scaling paid traffic before the first loop is proven
+
+13. Final decision stack
+------------------------
+If money is limited, do this:
+
+1. Organic + internal loops first
+- tools
+- campaign pages
+- vault link sharing
+- challenge chains
+
+2. Cheap discovery traffic second
+- PropellerAds / RichAds / Adsterra / Zeropark
+- only to campaign pages
+
+3. Native third
+- MGID / RevContent
+- only when article bridges exist
+
+4. Search fourth
+- only for proven utility pages
+
+5. Paid social last
+- only when a creative already wins
+
+14. Final marketing rule
+------------------------
+Every page must answer:
+- why was the user sent here?
+- what is the first free value?
+- what is the next action?
+- what gets shared?
+- where does the user go next?
+
+If a page cannot answer those questions, do not buy traffic to it.

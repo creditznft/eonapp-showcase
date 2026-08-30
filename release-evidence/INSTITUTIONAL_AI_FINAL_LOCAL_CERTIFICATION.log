@@ -1,0 +1,2344 @@
+
+=== Institutional AI final certification: authority ===
+
+[authority] institutional-source-authority
+$ /opt/nvm/versions/node/v22.16.0/bin/node scripts/institutional-ai-v2-gate.mjs
+[Institutional AI v2] PASS 106/106 source checks. External provider/local/media proof remains pending.
+
+[authority] first-prompt-grounding-authority
+$ /opt/nvm/versions/node/v22.16.0/bin/node scripts/w605-ai-grounding-and-output-gate.mjs
+{
+  "schema": "eonapp.w605.ai-grounding-output-gate.v1",
+  "status": "pass",
+  "sourceOnly": true,
+  "checks": [
+    {
+      "name": "grounding-contract-valid",
+      "pass": true,
+      "detail": "automatic fine-tuning, silent browsing and active media adapter claims stay disabled"
+    },
+    {
+      "name": "knowledge-base-versioned",
+      "pass": true,
+      "detail": "institutional-grounding-v2.0.0"
+    },
+    {
+      "name": "knowledge-cards-present",
+      "pass": true,
+      "detail": "18 source-controlled product cards"
+    },
+    {
+      "name": "knowledge-covers-web-media-hardware",
+      "pass": true,
+      "detail": "identity-and-secrets,ai-modes,local-media-hardware,creator-video,local-model-device-fit,web-research"
+    },
+    {
+      "name": "output-test-matrix-complete",
+      "pass": true,
+      "detail": "text/code/image/video/creator-edit"
+    },
+    {
+      "name": "low-vram-profile-honest",
+      "pass": true,
+      "detail": "image-sd15-512-baseline"
+    },
+    {
+      "name": "shared-text-runtime-grounding-wired",
+      "pass": true,
+      "detail": "context pack injects W605 grounding for model calls"
+    },
+    {
+      "name": "ai-runtime-uses-turn-context",
+      "pass": true,
+      "detail": "text runtime requests contextual system prompt"
+    },
+    {
+      "name": "creator-setup-remains-fail-closed",
+      "pass": true,
+      "detail": "no media adapter activation claim"
+    },
+    {
+      "name": "grounding-truth-fail-closed",
+      "pass": true,
+      "detail": "{\"marker\":\"EONAPP_GROUNDING_W606\",\"contract\":\"eonapp.w606.ai-grounding-contract.v1\",\"runtimeGrounding\":true,\"automaticFineTuning\":false,\"directLocalModelWebAccess\":false,\"clientOnlyResearch\":true,\"eonappServerProxy\":false,\"cloudflareWorker\":false,\"memoryConsentRequired\":true,\"memoryOffRespectedAtGrounding\":true,\"rawChatAutoMemory\":false,\"mediaAdapterActive\":false,\"localImageAdapterSourceIntegrated\":true,\"localVideoAdapterSourceIntegrated\":true,\"localVideoUniversallyCertified\":false,\"musicFirstClassDirection\":true,\"musicGenerativeAdapterCertified\":false,\"institutionalKnowledgeRetrieval\":true,\"capabilityTruthOverlay\":true,\"capabilityTruthAccountStateIncluded\":false,\"recentOutcomeContextIntentGated\":true,\"recentOutcomeContextRedacted\":true,\"recentOutcomeContextActionAuthority\":false,\"projectScopedMemory\":true}"
+    },
+    {
+      "name": "file-present:config/eon-ai-capability-and-grounding-contract.mjs",
+      "pass": true,
+      "detail": "config/eon-ai-capability-and-grounding-contract.mjs"
+    },
+    {
+      "name": "file-present:config/eonapp-ai-knowledge-base.mjs",
+      "pass": true,
+      "detail": "config/eonapp-ai-knowledge-base.mjs"
+    },
+    {
+      "name": "file-present:config/eon-ai-output-test-matrix.mjs",
+      "pass": true,
+      "detail": "config/eon-ai-output-test-matrix.mjs"
+    },
+    {
+      "name": "file-present:assets/js/ai-kernel/eon-ai-memory-ledger.js",
+      "pass": true,
+      "detail": "assets/js/ai-kernel/eon-ai-memory-ledger.js"
+    },
+    {
+      "name": "file-present:assets/js/chat/eonbot-knowledge-grounding.js",
+      "pass": true,
+      "detail": "assets/js/chat/eonbot-knowledge-grounding.js"
+    },
+    {
+      "name": "file-present:assets/js/local-ai/eon-local-creator-media-profiles.js",
+      "pass": true,
+      "detail": "assets/js/local-ai/eon-local-creator-media-profiles.js"
+    },
+    {
+      "name": "file-present:scripts/w605-live-ai-output-matrix.mjs",
+      "pass": true,
+      "detail": "scripts/w605-live-ai-output-matrix.mjs"
+    }
+  ]
+}
+
+[authority] local-connection-authority
+$ /opt/nvm/versions/node/v22.16.0/bin/node scripts/a15-i12-local-connection-authority-gate.mjs
+[A15 I12] PASS: direct, authenticated, Bridge-recovery, locality and least-privilege CSP authority verified.
+
+[authority] a15-boundary-enforcement
+$ /opt/nvm/versions/node/v22.16.0/bin/node scripts/a15-boundary-gate.mjs --enforce
+{
+  "ok": true,
+  "mode": "enforce",
+  "baselineMatches": false,
+  "core": {
+    "routeCount": 13,
+    "coupledRouteCount": 0,
+    "distinctCityModuleCount": 0
+  },
+  "city": {
+    "moduleCount": 217,
+    "cityModuleCount": 205,
+    "nonCityModuleCount": 12,
+    "allowedContractModuleCount": 12,
+    "nonCityImplementationModuleCount": 0
+  },
+  "coreBlockers": [],
+  "cityBlockers": [],
+  "blockers": [],
+  "target": "Core and City share versioned contracts only; zero two-way implementation imports."
+}
+
+=== Institutional AI final certification: core ===
+
+[core] institutional-core-tests
+$ /opt/nvm/versions/node/v22.16.0/bin/node --test tests/unit/institutional-ai-v2.test.mjs tests/unit/institutional-ai-red-team.test.mjs tests/unit/institutional-ai-city-viral-retention.test.mjs tests/unit/institutional-hosted-music-byok.test.mjs tests/unit/institutional-hosted-media-byok.test.mjs tests/unit/institutional-creator-iteration.test.mjs tests/unit/institutional-eonbot-recent-outcomes.test.mjs
+TAP version 13
+# (node:86039) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///mnt/data/EONAPP_AI_INSTITUTIONAL_WORK/workers/eon-retention-notifications/src/index.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /mnt/data/EONAPP_AI_INSTITUTIONAL_WORK/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Institutional Web Push validates browser endpoints and encrypts subscription custody at rest
+ok 1 - Institutional Web Push validates browser endpoints and encrypts subscription custody at rest
+  ---
+  duration_ms: 10.305339
+  type: 'test'
+  ...
+# Subtest: Institutional Web Push emits VAPID + aes128gcm and never sends plaintext JSON
+ok 2 - Institutional Web Push emits VAPID + aes128gcm and never sends plaintext JSON
+  ---
+  duration_ms: 19.63848
+  type: 'test'
+  ...
+# Subtest: Creator Image, Video, Music and Radio outcomes all project into Create Forge without private content
+ok 3 - Creator Image, Video, Music and Radio outcomes all project into Create Forge without private content
+  ---
+  duration_ms: 2.956781
+  type: 'test'
+  ...
+# Subtest: Hosted Image and Video saves complete the legacy Productive RPG creator mission through the same redacted City bridge
+ok 4 - Hosted Image and Video saves complete the legacy Productive RPG creator mission through the same redacted City bridge
+  ---
+  duration_ms: 0.570509
+  type: 'test'
+  ...
+# Subtest: Image and Video receipts may truthfully originate inside EONCITY while staying on the same shared Creator authority
+ok 5 - Image and Video receipts may truthfully originate inside EONCITY while staying on the same shared Creator authority
+  ---
+  duration_ms: 1.031235
+  type: 'test'
+  ...
+# Subtest: Music and Radio receipts may truthfully originate inside EONCITY on the shared Creator authority
+ok 6 - Music and Radio receipts may truthfully originate inside EONCITY on the shared Creator authority
+  ---
+  duration_ms: 0.538832
+  type: 'test'
+  ...
+# Subtest: Music Core receipts preserve source-specific native authorities across browser, ACE-Step and hosted BYOK
+ok 7 - Music Core receipts preserve source-specific native authorities across browser, ACE-Step and hosted BYOK
+  ---
+  duration_ms: 0.281849
+  type: 'test'
+  ...
+# Subtest: Historical browser Music receipts remain readable after adding ACE-Step and hosted authorities
+ok 8 - Historical browser Music receipts remain readable after adding ACE-Step and hosted authorities
+  ---
+  duration_ms: 0.252616
+  type: 'test'
+  ...
+# Subtest: EONCITY uses maintained Chat and Creator Image/Video/Music surfaces instead of City-only AI forks
+ok 9 - EONCITY uses maintained Chat and Creator Image/Video/Music surfaces instead of City-only AI forks
+  ---
+  duration_ms: 0.727753
+  type: 'test'
+  ...
+# Subtest: EONCITY Creator embeds canonical local and hosted Image/Video execution and keeps prepared prompts transient
+ok 10 - EONCITY Creator embeds canonical local and hosted Image/Video execution and keeps prepared prompts transient
+  ---
+  duration_ms: 0.562207
+  type: 'test'
+  ...
+# Subtest: Verified local media sharing is explicit and supports image, video and audio without publishing claims
+ok 11 - Verified local media sharing is explicit and supports image, video and audio without publishing claims
+  ---
+  duration_ms: 1.112726
+  type: 'test'
+  ...
+# Subtest: Remix in EONAPP deep links create a no-server-state creator loop with no tracking or auto-generation
+ok 12 - Remix in EONAPP deep links create a no-server-state creator loop with no tracking or auto-generation
+  ---
+  duration_ms: 1.542176
+  type: 'test'
+  ...
+# Subtest: Notification return routes are limited to public EONAPP surfaces and never API/arbitrary paths
+ok 13 - Notification return routes are limited to public EONAPP surfaces and never API/arbitrary paths
+  ---
+  duration_ms: 0.1478
+  type: 'test'
+  ...
+# Subtest: Activity category switches suppress disabled categories instead of retaining hidden events
+ok 14 - Activity category switches suppress disabled categories instead of retaining hidden events
+  ---
+  duration_ms: 1.389077
+  type: 'test'
+  ...
+# Subtest: Activity items expose one simple route-scoped return reminder only when background push is enabled
+ok 15 - Activity items expose one simple route-scoped return reminder only when background push is enabled
+  ---
+  duration_ms: 6.112668
+  type: 'test'
+  ...
+# Subtest: Return reminders are explicit, preset-bounded and content-free client requests
+ok 16 - Return reminders are explicit, preset-bounded and content-free client requests
+  ---
+  duration_ms: 1.918335
+  type: 'test'
+  ...
+# Subtest: Notification service worker and cron source are safe-route, no-marketing and deployment-proof gated
+ok 17 - Notification service worker and cron source are safe-route, no-marketing and deployment-proof gated
+  ---
+  duration_ms: 1.742854
+  type: 'test'
+  ...
+# Subtest: Disabled retention worker is inert and never touches D1 before live proof configuration
+ok 18 - Disabled retention worker is inert and never touches D1 before live proof configuration
+  ---
+  duration_ms: 0.275019
+  type: 'test'
+  ...
+# Subtest: City Quick EONBOT keeps known maintained work routes inside EONCITY and preserves Creator mode
+ok 19 - City Quick EONBOT keeps known maintained work routes inside EONCITY and preserves Creator mode
+  ---
+  duration_ms: 0.427847
+  type: 'test'
+  ...
+# Subtest: EON Radio session plays only explicit user-authorized or EON-generated audio without persistence/upload
+ok 20 - EON Radio session plays only explicit user-authorized or EON-generated audio without persistence/upload
+  ---
+  duration_ms: 5.249724
+  type: 'test'
+  ...
+# Subtest: Creator mission authority accepts verified Image, Video, Music, Radio and Forge receipts consistently
+ok 21 - Creator mission authority accepts verified Image, Video, Music, Radio and Forge receipts consistently
+  ---
+  duration_ms: 0.627073
+  type: 'test'
+  ...
+# Subtest: Every maintained City EONBOT panel emits the bounded real-reply progression event after a genuine model response
+ok 22 - Every maintained City EONBOT panel emits the bounded real-reply progression event after a genuine model response
+  ---
+  duration_ms: 0.332485
+  type: 'test'
+  ...
+# Subtest: Share Pack and viral card system treat Music/audio as a first-class reviewed share artifact
+ok 23 - Share Pack and viral card system treat Music/audio as a first-class reviewed share artifact
+  ---
+  duration_ms: 1.113857
+  type: 'test'
+  ...
+# Subtest: Remix Cards preserve Image, Video, Music, DJ and Radio starter kinds without inventing referral proof
+ok 24 - Remix Cards preserve Image, Video, Music, DJ and Radio starter kinds without inventing referral proof
+  ---
+  duration_ms: 0.417742
+  type: 'test'
+  ...
+# Subtest: Verified Creator outcomes create only fixed redacted local return-loop activity
+ok 25 - Verified Creator outcomes create only fixed redacted local return-loop activity
+  ---
+  duration_ms: 0.554605
+  type: 'test'
+  ...
+# Subtest: Web Push abuse controls bound active devices and rate-limit self-test attempts after failures too
+ok 26 - Web Push abuse controls bound active devices and rate-limit self-test attempts after failures too
+  ---
+  duration_ms: 0.171926
+  type: 'test'
+  ...
+# Subtest: red team: credentials and high-risk financial secrets cannot enter durable memory
+ok 27 - red team: credentials and high-risk financial secrets cannot enter durable memory
+  ---
+  duration_ms: 1.705028
+  type: 'test'
+  ...
+# Subtest: red team: safe-auto cannot turn arbitrary raw chat or prompt injection into memory
+ok 28 - red team: safe-auto cannot turn arbitrary raw chat or prompt injection into memory
+  ---
+  duration_ms: 0.17486
+  type: 'test'
+  ...
+# Subtest: red team: saved memory text is quoted as untrusted data and cannot become system instructions
+ok 29 - red team: saved memory text is quoted as untrusted data and cannot become system instructions
+  ---
+  duration_ms: 1.237973
+  type: 'test'
+  ...
+# Subtest: red team: project memory cannot leak across project scopes
+ok 30 - red team: project memory cannot leak across project scopes
+  ---
+  duration_ms: 0.328198
+  type: 'test'
+  ...
+# Subtest: red team: provider verification never becomes cross-provider or surprise-billing consent
+ok 31 - red team: provider verification never becomes cross-provider or surprise-billing consent
+  ---
+  duration_ms: 0.356921
+  type: 'test'
+  ...
+# Subtest: red team: quality score cannot force an obviously oversized local model onto weak hardware
+ok 32 - red team: quality score cannot force an obviously oversized local model onto weak hardware
+  ---
+  duration_ms: 1.178995
+  type: 'test'
+  ...
+# Subtest: red team: source truth cannot self-certify external media/runtime evidence
+ok 33 - red team: source truth cannot self-certify external media/runtime evidence
+  ---
+  duration_ms: 0.904046
+  type: 'test'
+  ...
+# Subtest: red team: canonical runtime cannot import compatibility auto-router or resurrect retired Music route
+ok 34 - red team: canonical runtime cannot import compatibility auto-router or resurrect retired Music route
+  ---
+  duration_ms: 0.657409
+  type: 'test'
+  ...
+# Subtest: red team: research-source prompt injection stays untrusted evidence and cannot grant action authority
+ok 35 - red team: research-source prompt injection stays untrusted evidence and cannot grant action authority
+  ---
+  duration_ms: 2.743874
+  type: 'test'
+  ...
+# Subtest: red team: browser AI transport rejects oversized batch responses before parsing
+ok 36 - red team: browser AI transport rejects oversized batch responses before parsing
+  ---
+  duration_ms: 0.830065
+  type: 'test'
+  ...
+# Subtest: red team: provider error text is bounded and credential-like material is redacted
+ok 37 - red team: provider error text is bounded and credential-like material is redacted
+  ---
+  duration_ms: 0.468127
+  type: 'test'
+  ...
+# Subtest: red team: batch provider output is char-bounded after JSON parsing
+ok 38 - red team: batch provider output is char-bounded after JSON parsing
+  ---
+  duration_ms: 0.194159
+  type: 'test'
+  ...
+# Subtest: red team: browser AI streaming bounds malformed framing and cumulative output
+ok 39 - red team: browser AI streaming bounds malformed framing and cumulative output
+  ---
+  duration_ms: 16.53469
+  type: 'test'
+  ...
+# Subtest: red team: canonical Chat counts attempted batch and streaming requests before transport and applies the same concurrency/rate guard
+ok 40 - red team: canonical Chat counts attempted batch and streaming requests before transport and applies the same concurrency/rate guard
+  ---
+  duration_ms: 0.514295
+  type: 'test'
+  ...
+# Subtest: Institutional grounding expands beyond W605 and resolves specific media truth
+ok 41 - Institutional grounding expands beyond W605 and resolves specific media truth
+  ---
+  duration_ms: 4.22596
+  type: 'test'
+  ...
+# Subtest: Referral and EONKEY grounding is server-authoritative and never awards value for raw sharing
+ok 42 - Referral and EONKEY grounding is server-authoritative and never awards value for raw sharing
+  ---
+  duration_ms: 0.892068
+  type: 'test'
+  ...
+# Subtest: Turn-time capability truth overlay converges canonical Creator and referral lifecycle facts without account state
+ok 43 - Turn-time capability truth overlay converges canonical Creator and referral lifecycle facts without account state
+  ---
+  duration_ms: 4.207472
+  type: 'test'
+  ...
+# Subtest: Institutional memory is scoped, expiring, editable, deduplicated and secret-safe
+ok 44 - Institutional memory is scoped, expiring, editable, deduplicated and secret-safe
+  ---
+  duration_ms: 3.154075
+  type: 'test'
+  ...
+# Subtest: Safe Auto memory learns only finite explicit product controls
+ok 45 - Safe Auto memory learns only finite explicit product controls
+  ---
+  duration_ms: 1.860299
+  type: 'test'
+  ...
+# Subtest: Institutional routing envelope never invents cross-provider, billing or download consent
+ok 46 - Institutional routing envelope never invents cross-provider, billing or download consent
+  ---
+  duration_ms: 0.83265
+  type: 'test'
+  ...
+# Subtest: Institutional model selection reacts to quality, speed, privacy and device evidence
+ok 47 - Institutional model selection reacts to quality, speed, privacy and device evidence
+  ---
+  duration_ms: 1.603497
+  type: 'test'
+  ...
+# Subtest: Provider model manifest keeps only reported capability facts and leaves unknowns unknown
+ok 48 - Provider model manifest keeps only reported capability facts and leaves unknowns unknown
+  ---
+  duration_ms: 0.732029
+  type: 'test'
+  ...
+# Subtest: Verified model envelope is finite, policy-diverse and independent of provider response order
+ok 49 - Verified model envelope is finite, policy-diverse and independent of provider response order
+  ---
+  duration_ms: 1.732529
+  type: 'test'
+  ...
+# Subtest: Canonical runtime derives a bounded task class from the current prompt without changing provider authority
+ok 50 - Canonical runtime derives a bounded task class from the current prompt without changing provider authority
+  ---
+  duration_ms: 0.769886
+  type: 'test'
+  ...
+# Subtest: Canonical runtime model policy re-ranks only the current verified provider envelope and respects explicit pins
+ok 51 - Canonical runtime model policy re-ranks only the current verified provider envelope and respects explicit pins
+  ---
+  duration_ms: 1.582656
+  type: 'test'
+  ...
+# Subtest: Canonical runtime keeps Local AI fail-closed to its self-tested model even when policy changes
+ok 52 - Canonical runtime keeps Local AI fail-closed to its self-tested model even when policy changes
+  ---
+  duration_ms: 0.119869
+  type: 'test'
+  ...
+# Subtest: Verified model context metadata conservatively caps first-turn input, history and output budgets
+ok 53 - Verified model context metadata conservatively caps first-turn input, history and output budgets
+  ---
+  duration_ms: 0.255461
+  type: 'test'
+  ...
+# Subtest: Evaluation ledger stores metrics only and produces routing evidence
+ok 54 - Evaluation ledger stores metrics only and produces routing evidence
+  ---
+  duration_ms: 0.76591
+  type: 'test'
+  ...
+# Subtest: Explicit model-quality feedback is content-free, task-scoped and replaces duplicate votes
+ok 55 - Explicit model-quality feedback is content-free, task-scoped and replaces duplicate votes
+  ---
+  duration_ms: 0.436129
+  type: 'test'
+  ...
+# Subtest: Local starter recommendation is internally consistent
+ok 56 - Local starter recommendation is internally consistent
+  ---
+  duration_ms: 0.374177
+  type: 'test'
+  ...
+# Subtest: Local model lifecycle is explicit, freshness-aware and fails unknown on weak devices
+ok 57 - Local model lifecycle is explicit, freshness-aware and fails unknown on weak devices
+  ---
+  duration_ms: 0.996714
+  type: 'test'
+  ...
+# Subtest: Local install handoff never maps an Ollama tag into another runtime download API
+ok 58 - Local install handoff never maps an Ollama tag into another runtime download API
+  ---
+  duration_ms: 0.183483
+  type: 'test'
+  ...
+# Subtest: Beginner Local AI guide agrees with the reviewed first private-chat model
+ok 59 - Beginner Local AI guide agrees with the reviewed first private-chat model
+  ---
+  duration_ms: 0.294929
+  type: 'test'
+  ...
+# Subtest: Music is first-class but truthful about deterministic and generative states
+ok 60 - Music is first-class but truthful about deterministic and generative states
+  ---
+  duration_ms: 0.713152
+  type: 'test'
+  ...
+# Subtest: EON Radio continuously advances a private queue only after an explicit open-page start
+ok 61 - EON Radio continuously advances a private queue only after an explicit open-page start
+  ---
+  duration_ms: 11.591703
+  type: 'test'
+  ...
+# Subtest: EON Radio plans the next original track locally without provider calls or automatic generation
+ok 62 - EON Radio plans the next original track locally without provider calls or automatic generation
+  ---
+  duration_ms: 0.517971
+  type: 'test'
+  ...
+# Subtest: Auto DJ adds a real local crossfade-preview rail without claiming beat matching or rendered mix export
+ok 63 - Auto DJ adds a real local crossfade-preview rail without claiming beat matching or rendered mix export
+  ---
+  duration_ms: 0.976183
+  type: 'test'
+  ...
+# Subtest: Music progression proof requires explicit save plus byte-for-byte reopened audio and stores no content
+ok 64 - Music progression proof requires explicit save plus byte-for-byte reopened audio and stores no content
+  ---
+  duration_ms: 2.060146
+  type: 'test'
+  ...
+# Subtest: ACE-Step local music rail is explicit, loopback-only, bounded and receipt-redacted
+ok 65 - ACE-Step local music rail is explicit, loopback-only, bounded and receipt-redacted
+  ---
+  duration_ms: 15.975808
+  type: 'test'
+  ...
+# Subtest: EONBOT routes Image, Video and Music creation requests into the canonical Creator with a user-tap boundary
+ok 66 - EONBOT routes Image, Video and Music creation requests into the canonical Creator with a user-tap boundary
+  ---
+  duration_ms: 0.953419
+  type: 'test'
+  ...
+# Subtest: Creator intent continuity is explicit, session-only, single-use and secret-safe
+ok 67 - Creator intent continuity is explicit, session-only, single-use and secret-safe
+  ---
+  duration_ms: 0.97449
+  type: 'test'
+  ...
+# Subtest: Canonical Create reuses maintained local Image and Video execution labs without hidden execution
+ok 68 - Canonical Create reuses maintained local Image and Video execution labs without hidden execution
+  ---
+  duration_ms: 2.531874
+  type: 'test'
+  ...
+# Subtest: Creator variation planner is bounded, session-only and never grants compute or budget authority
+ok 69 - Creator variation planner is bounded, session-only and never grants compute or budget authority
+  ---
+  duration_ms: 0.848623
+  type: 'test'
+  ...
+# Subtest: Video variation truth never masquerades as media extension
+ok 70 - Video variation truth never masquerades as media extension
+  ---
+  duration_ms: 0.250152
+  type: 'test'
+  ...
+# Subtest: Hosted Image/Video variation remains local planning and requires a fresh Generate approval
+ok 71 - Hosted Image/Video variation remains local planning and requires a fresh Generate approval
+  ---
+  duration_ms: 0.486514
+  type: 'test'
+  ...
+# Subtest: Local Image/Video variation buttons never submit ComfyUI work
+ok 72 - Local Image/Video variation buttons never submit ComfyUI work
+  ---
+  duration_ms: 0.396841
+  type: 'test'
+  ...
+# Subtest: Local and hosted Music variation buttons prepare prompts but cannot generate or spend
+ok 73 - Local and hosted Music variation buttons prepare prompts but cannot generate or spend
+  ---
+  duration_ms: 0.571681
+  type: 'test'
+  ...
+# Subtest: recent outcome awareness is continuation-intent gated and excludes ordinary creation prompts
+ok 74 - recent outcome awareness is continuation-intent gated and excludes ordinary creation prompts
+  ---
+  duration_ms: 1.206987
+  type: 'test'
+  ...
+# Subtest: recent outcome projection contains only fixed redacted metadata and never the receipt/provider payload
+ok 75 - recent outcome projection contains only fixed redacted metadata and never the receipt/provider payload
+  ---
+  duration_ms: 1.134478
+  type: 'test'
+  ...
+# Subtest: sensitive Core outcomes such as provider verification and access review are not projected
+ok 76 - sensitive Core outcomes such as provider verification and access review are not projected
+  ---
+  duration_ms: 0.40955
+  type: 'test'
+  ...
+# Subtest: shared EONBOT grounding includes recent activity only on a matching turn
+ok 77 - shared EONBOT grounding includes recent activity only on a matching turn
+  ---
+  duration_ms: 11.868856
+  type: 'test'
+  ...
+# Subtest: recent outcome truth forbids prompt/media/key/receipt/action authority
+ok 78 - recent outcome truth forbids prompt/media/key/receipt/action authority
+  ---
+  duration_ms: 0.222952
+  type: 'test'
+  ...
+# Subtest: reviewed hosted Image/Video registry enables current prompt-first rails while real proof remains pending
+ok 79 - reviewed hosted Image/Video registry enables current prompt-first rails while real proof remains pending
+  ---
+  duration_ms: 1.198213
+  type: 'test'
+  ...
+# Subtest: fal reviewed request disables retry, model fallback and stored I/O and asks for finite output lifecycle
+ok 80 - fal reviewed request disables retry, model fallback and stored I/O and asks for finite output lifecycle
+  ---
+  duration_ms: 0.329541
+  type: 'test'
+  ...
+# Subtest: hosted media quality controls map only reviewed bounded provider inputs
+ok 81 - hosted media quality controls map only reviewed bounded provider inputs
+  ---
+  duration_ms: 0.291194
+  type: 'test'
+  ...
+# Subtest: provider media fetch is allowlisted, kind-bound and never leaks fal credential to fal media CDN
+ok 82 - provider media fetch is allowlisted, kind-bound and never leaks fal credential to fal media CDN
+  ---
+  duration_ms: 0.584089
+  type: 'test'
+  ...
+# Subtest: fal completed image is captured into session-owned Companion memory and provider URL is not returned
+ok 83 - fal completed image is captured into session-owned Companion memory and provider URL is not returned
+  ---
+  duration_ms: 21.780513
+  type: 'test'
+  ...
+# Subtest: Replicate completed video uses protected media fetch but browser-facing result stays URL-free
+ok 84 - Replicate completed video uses protected media fetch but browser-facing result stays URL-free
+  ---
+  duration_ms: 1.721232
+  type: 'test'
+  ...
+# Subtest: hosted media capture fails closed on redirects, wrong kind and oversized declared output
+ok 85 - hosted media capture fails closed on redirects, wrong kind and oversized declared output
+  ---
+  duration_ms: 4.571475
+  type: 'test'
+  ...
+# Subtest: hosted Image/Video save receipts have source-specific native authorities and contain no private content
+ok 86 - hosted Image/Video save receipts have source-specific native authorities and contain no private content
+  ---
+  duration_ms: 1.117434
+  type: 'test'
+  ...
+# Subtest: canonical hosted media UI is explicit-review, cancel/save/reopen/share/remix and has no reference upload or auto-generation path
+ok 87 - canonical hosted media UI is explicit-review, cancel/save/reopen/share/remix and has no reference upload or auto-generation path
+  ---
+  duration_ms: 0.565982
+  type: 'test'
+  ...
+# Subtest: hosted media proof requires byte-identical explicit reopen and video playback before progression
+ok 88 - hosted media proof requires byte-identical explicit reopen and video playback before progression
+  ---
+  duration_ms: 10.094835
+  type: 'test'
+  ...
+# Subtest: hosted media progress and cancellation are provider-authoritative rather than optimistic UI claims
+ok 89 - hosted media progress and cancellation are provider-authoritative rather than optimistic UI claims
+  ---
+  duration_ms: 0.322941
+  type: 'test'
+  ...
+# Subtest: Creator Companion bounds outstanding paid jobs per paired session and provider cancellation is terminal
+ok 90 - Creator Companion bounds outstanding paid jobs per paired session and provider cancellation is terminal
+  ---
+  duration_ms: 1.719419
+  type: 'test'
+  ...
+# Subtest: Creator Companion stream-bounds provider JSON before parsing and returns only sanitized failure truth
+ok 91 - Creator Companion stream-bounds provider JSON before parsing and returns only sanitized failure truth
+  ---
+  duration_ms: 3.247243
+  type: 'test'
+  ...
+# Subtest: Institutional hosted Music adapter is reviewed, prompt-bounded and excludes upload/inpainting rails
+ok 92 - Institutional hosted Music adapter is reviewed, prompt-bounded and excludes upload/inpainting rails
+  ---
+  duration_ms: 2.822501
+  type: 'test'
+  ...
+# Subtest: Institutional Creator Companion keeps hosted Music key in OS vault and output in bounded memory only
+ok 93 - Institutional Creator Companion keeps hosted Music key in OS vault and output in bounded memory only
+  ---
+  duration_ms: 18.978508
+  type: 'test'
+  ...
+# Subtest: Creator Companion pairing is origin-bound, replay-resistant and yields session-specific ownership ids
+ok 94 - Creator Companion pairing is origin-bound, replay-resistant and yields session-specific ownership ids
+  ---
+  duration_ms: 1.33063
+  type: 'test'
+  ...
+# Subtest: Creator Companion jobs and temporary audio are session-owned and raw prompts are not retained in the job map
+ok 95 - Creator Companion jobs and temporary audio are session-owned and raw prompts are not retained in the job map
+  ---
+  duration_ms: 1.22969
+  type: 'test'
+  ...
+# Subtest: Institutional hosted Music fails closed on non-audio binary and never enables reference audio
+ok 96 - Institutional hosted Music fails closed on non-audio binary and never enables reference audio
+  ---
+  duration_ms: 0.829765
+  type: 'test'
+  ...
+# Subtest: Institutional hosted Music rejects unknown credential targets and oversized binary before buffering
+ok 97 - Institutional hosted Music rejects unknown credential targets and oversized binary before buffering
+  ---
+  duration_ms: 0.944345
+  type: 'test'
+  ...
+# Subtest: Creator Companion rate-limits pairing-code creation per approved origin
+ok 98 - Creator Companion rate-limits pairing-code creation per approved origin
+  ---
+  duration_ms: 0.330802
+  type: 'test'
+  ...
+# Subtest: Creator Companion rate-limits repeated completed provider submissions without storing prompt content
+ok 99 - Creator Companion rate-limits repeated completed provider submissions without storing prompt content
+  ---
+  duration_ms: 2.745176
+  type: 'test'
+  ...
+1..99
+# tests 99
+# suites 0
+# pass 99
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 263.856198
+
+=== Institutional AI final certification: media ===
+
+[media] comfyui-image-authority
+$ /opt/nvm/versions/node/v22.16.0/bin/node scripts/w623a-comfyui-local-image-gate.mjs
+{
+  "ok": true,
+  "wave": "W623A-current-aligned-through-W625H",
+  "imageAdapter": "comfyui-loopback",
+  "videoSurface": "separate-proof-gated",
+  "videoCertified": false,
+  "sourceProofOnly": true,
+  "realDeviceProof": "NOT RUN"
+}
+
+[media] real-local-image-authority
+$ /opt/nvm/versions/node/v22.16.0/bin/node scripts/w625a-real-local-image-tooling-gate.mjs
+[W625A] PASS approved-loopback-only: only documented loopback hosts/ports are accepted
+[W625A] PASS positive-path-wired: generate, fetch, preview, save and reopen helpers are wired
+[W625A] PASS digest-match-required: reopened bytes must match the generated SHA-256
+[W625A] PASS cancel-wired: queued/running cancellation is explicit and loopback-only
+[W625A] PASS receipt-redacted: receipt excludes sensitive content and source cannot award proof
+[W625A] PASS image-adapter-video-separated: the image adapter cannot activate video; W625D-H use a separate proof-gated surface
+[W625A] PASS no-cloud-fallback: no hidden cloud execution exists
+[W625A] PASS owner-proof-pending: managed source work does not claim owner-runtime negative-lane proof
+[W625A] PASS 8/8; source tooling complete; real owner-runtime image evidence NOT RUN.
+
+[media] local-video-capability-authority
+$ /opt/nvm/versions/node/v22.16.0/bin/node scripts/w625d-local-video-capability-gate.mjs
+[W625D] PASS 8/8 local-video capability invariants
+
+[media] real-local-video-contract
+$ /opt/nvm/versions/node/v22.16.0/bin/node scripts/w625e-real-local-video-contract-gate.mjs
+[W625E] PASS 10/10 real-local-video contract invariants
+
+[media] local-video-product-workflow
+$ /opt/nvm/versions/node/v22.16.0/bin/node scripts/w625f-local-video-product-workflow-gate.mjs
+[W625F] PASS 8/8 local-video workflow invariants
+
+[media] local-video-efficiency-governor
+$ /opt/nvm/versions/node/v22.16.0/bin/node scripts/w625g-local-video-efficiency-governor-gate.mjs
+[W625G] PASS 8/8 local-video efficiency invariants
+
+[media] local-creator-certification-source
+$ /opt/nvm/versions/node/v22.16.0/bin/node scripts/w625h-local-creator-certification-gate.mjs
+[W625H] PASS 9/9 local-creator certification invariants
+
+[media] image-video-local-regression
+$ /opt/nvm/versions/node/v22.16.0/bin/node --test tests/unit/w623a-comfyui-local-image.test.mjs tests/unit/w625a-real-local-image-tooling.test.mjs tests/unit/w625b-local-image-workflow-registry.test.mjs tests/unit/w625c-image-creation-foundation.test.mjs tests/unit/w625d-local-video-capability.test.mjs tests/unit/w625e-real-local-video-contract.test.mjs tests/unit/w625f-local-video-product-workflow.test.mjs tests/unit/w625g-local-video-efficiency-governor.test.mjs tests/unit/w625h-local-creator-certification.test.mjs tests/unit/w626b-creator-companion.test.mjs
+TAP version 13
+# Subtest: W623A allows only the explicit ComfyUI loopback ports
+ok 1 - W623A allows only the explicit ComfyUI loopback ports
+  ---
+  duration_ms: 0.971976
+  type: 'test'
+  ...
+# Subtest: W623A discovers only already-installed ComfyUI checkpoints after an explicit scan
+ok 2 - W623A discovers only already-installed ComfyUI checkpoints after an explicit scan
+  ---
+  duration_ms: 18.214951
+  type: 'test'
+  ...
+# Subtest: W623A builds a bounded built-in 512px image workflow without custom nodes
+ok 3 - W623A builds a bounded built-in 512px image workflow without custom nodes
+  ---
+  duration_ms: 0.991777
+  type: 'test'
+  ...
+# Subtest: W623A requires a user action and can submit, poll and receive local image metadata
+ok 4 - W623A requires a user action and can submit, poll and receive local image metadata
+  ---
+  duration_ms: 2.239604
+  type: 'test'
+  ...
+# Subtest: W623A image adapter stays narrow while W625D-H video remains separately proof-gated
+ok 5 - W623A image adapter stays narrow while W625D-H video remains separately proof-gated
+  ---
+  duration_ms: 0.757237
+  type: 'test'
+  ...
+# Subtest: W625A queue state distinguishes queued, running and absent prompt identifiers
+ok 6 - W625A queue state distinguishes queued, running and absent prompt identifiers
+  ---
+  duration_ms: 21.883521
+  type: 'test'
+  ...
+# Subtest: W625A cancellation requires a click and uses only the identified local queue or interrupt endpoint
+ok 7 - W625A cancellation requires a click and uses only the identified local queue or interrupt endpoint
+  ---
+  duration_ms: 2.179785
+  type: 'test'
+  ...
+# Subtest: W625A save/reopen proof requires a digest match to the generated image bytes
+ok 8 - W625A save/reopen proof requires a digest match to the generated image bytes
+  ---
+  duration_ms: 8.06203
+  type: 'test'
+  ...
+# Subtest: W625A receipts are redacted and cannot claim real proof while negative lanes are pending
+ok 9 - W625A receipts are redacted and cannot claim real proof while negative lanes are pending
+  ---
+  duration_ms: 0.681975
+  type: 'test'
+  ...
+# Subtest: W625A sanitized capability evidence excludes checkpoint filenames and local paths
+ok 10 - W625A sanitized capability evidence excludes checkpoint filenames and local paths
+  ---
+  duration_ms: 0.448027
+  type: 'test'
+  ...
+# Subtest: W625A source wires cancel, save, reopen and redacted receipts without activating video inside the image adapter
+ok 11 - W625A source wires cancel, save, reopen and redacted receipts without activating video inside the image adapter
+  ---
+  duration_ms: 0.368619
+  type: 'test'
+  ...
+# Subtest: W625B registry exposes one versioned, allowlisted, standard-node text-to-image workflow
+ok 12 - W625B registry exposes one versioned, allowlisted, standard-node text-to-image workflow
+  ---
+  duration_ms: 1.011515
+  type: 'test'
+  ...
+# Subtest: W625B first proof recipe is fixed at low-VRAM 512 square, 12 steps and one item
+ok 13 - W625B first proof recipe is fixed at low-VRAM 512 square, 12 steps and one item
+  ---
+  duration_ms: 1.432963
+  type: 'test'
+  ...
+# Subtest: W625B device profiles stay bounded and queue concurrency remains one
+ok 14 - W625B device profiles stay bounded and queue concurrency remains one
+  ---
+  duration_ms: 0.219387
+  type: 'test'
+  ...
+# Subtest: W625B auto-selects only a recognised SD 1.5 proof checkpoint
+ok 15 - W625B auto-selects only a recognised SD 1.5 proof checkpoint
+  ---
+  duration_ms: 0.608015
+  type: 'test'
+  ...
+# Subtest: W625B truth forbids imports, installs, LAN/public runtime and cloud fallback
+ok 16 - W625B truth forbids imports, installs, LAN/public runtime and cloud fallback
+  ---
+  duration_ms: 0.160609
+  type: 'test'
+  ...
+# Subtest: W625C creator recipe supports bounded aspect, quality and deterministic seed after proof
+ok 17 - W625C creator recipe supports bounded aspect, quality and deterministic seed after proof
+  ---
+  duration_ms: 1.228399
+  type: 'test'
+  ...
+# Subtest: W625C UI gates creator controls behind matching save/reopen proof
+ok 18 - W625C UI gates creator controls behind matching save/reopen proof
+  ---
+  duration_ms: 0.330002
+  type: 'test'
+  ...
+# Subtest: W625C keeps unsupported edit workflows visibly unavailable rather than silently activating them
+ok 19 - W625C keeps unsupported edit workflows visibly unavailable rather than silently activating them
+  ---
+  duration_ms: 0.323482
+  type: 'test'
+  ...
+# Subtest: W625D reference requirement keeps the reviewed 8 GB usable-VRAM floor
+ok 20 - W625D reference requirement keeps the reviewed 8 GB usable-VRAM floor
+  ---
+  duration_ms: 0.67873
+  type: 'test'
+  ...
+# Subtest: W625D supported reference lane requires every reviewed confirmation
+ok 21 - W625D supported reference lane requires every reviewed confirmation
+  ---
+  duration_ms: 1.388888
+  type: 'test'
+  ...
+# Subtest: W625D 4 GB owner lane remains experimental and blocked before queue submission
+ok 22 - W625D 4 GB owner lane remains experimental and blocked before queue submission
+  ---
+  duration_ms: 0.289972
+  type: 'test'
+  ...
+# Subtest: W625D visible 6 GB lane is experimental but still blocked
+ok 23 - W625D visible 6 GB lane is experimental but still blocked
+  ---
+  duration_ms: 0.169893
+  type: 'test'
+  ...
+# Subtest: W625D missing workflow and model readiness are explicit blockers
+ok 24 - W625D missing workflow and model readiness are explicit blockers
+  ---
+  duration_ms: 0.216282
+  type: 'test'
+  ...
+# Subtest: W625D low storage blocks before generation and proposes no automatic deletion
+ok 25 - W625D low storage blocks before generation and proposes no automatic deletion
+  ---
+  duration_ms: 0.133399
+  type: 'test'
+  ...
+# Subtest: W625D capability evidence stays redacted
+ok 26 - W625D capability evidence stays redacted
+  ---
+  duration_ms: 0.476128
+  type: 'test'
+  ...
+# Subtest: W625D detection never installs, downloads or starts a cloud fallback
+ok 27 - W625D detection never installs, downloads or starts a cloud fallback
+  ---
+  duration_ms: 0.219216
+  type: 'test'
+  ...
+# Subtest: W625E safe API workflow receives a stable local SHA-256 review
+ok 28 - W625E safe API workflow receives a stable local SHA-256 review
+  ---
+  duration_ms: 9.545648
+  type: 'test'
+  ...
+# Subtest: W625E forbidden network or execution node is rejected before submission
+ok 29 - W625E forbidden network or execution node is rejected before submission
+  ---
+  duration_ms: 1.396458
+  type: 'test'
+  ...
+# Subtest: W625E prepared workflow requires exact digest confirmation and patches proof controls
+ok 30 - W625E prepared workflow requires exact digest confirmation and patches proof controls
+  ---
+  duration_ms: 1.172085
+  type: 'test'
+  ...
+# Subtest: W625E public endpoint is rejected before network access
+ok 31 - W625E public endpoint is rejected before network access
+  ---
+  duration_ms: 1.10156
+  type: 'test'
+  ...
+# Subtest: W625E unsupported device cannot submit even with explicit user action
+ok 32 - W625E unsupported device cannot submit even with explicit user action
+  ---
+  duration_ms: 0.205887
+  type: 'test'
+  ...
+# Subtest: W625E output fetch rejects a non-loopback URL
+ok 33 - W625E output fetch rejects a non-loopback URL
+  ---
+  duration_ms: 0.333857
+  type: 'test'
+  ...
+# Subtest: W625E proof receipt cannot pass without real job and eleven recovery lanes
+ok 34 - W625E proof receipt cannot pass without real job and eleven recovery lanes
+  ---
+  duration_ms: 0.511021
+  type: 'test'
+  ...
+# Subtest: W625E runtime and proof truth prohibit source-only certification
+ok 35 - W625E runtime and proof truth prohibit source-only certification
+  ---
+  duration_ms: 0.136063
+  type: 'test'
+  ...
+# Subtest: W625F registry is source-owned, image-to-video first and no custom nodes
+ok 36 - W625F registry is source-owned, image-to-video first and no custom nodes
+  ---
+  duration_ms: 0.619892
+  type: 'test'
+  ...
+# Subtest: W625F missing output role blocks the workflow
+ok 37 - W625F missing output role blocks the workflow
+  ---
+  duration_ms: 6.178386
+  type: 'test'
+  ...
+# Subtest: W625F unknown node class blocks the workflow
+ok 38 - W625F unknown node class blocks the workflow
+  ---
+  duration_ms: 0.753651
+  type: 'test'
+  ...
+# Subtest: W625F recipe clamps resolution, frame count, fps, steps and batch
+ok 39 - W625F recipe clamps resolution, frame count, fps, steps and batch
+  ---
+  duration_ms: 0.304043
+  type: 'test'
+  ...
+# Subtest: W625F first proof rejects text-to-video mode
+ok 40 - W625F first proof rejects text-to-video mode
+  ---
+  duration_ms: 1.363539
+  type: 'test'
+  ...
+# Subtest: W625F proof recipe has no audio, interpolation or upscaler
+ok 41 - W625F proof recipe has no audio, interpolation or upscaler
+  ---
+  duration_ms: 0.146148
+  type: 'test'
+  ...
+# Subtest: W625G conservative default is 512×288, 33 frames, 16 FPS and queue one
+ok 42 - W625G conservative default is 512×288, 33 frames, 16 FPS and queue one
+  ---
+  duration_ms: 1.064995
+  type: 'test'
+  ...
+# Subtest: W625G workload returns directional storage estimates, not promises
+ok 43 - W625G workload returns directional storage estimates, not promises
+  ---
+  duration_ms: 2.23749
+  type: 'test'
+  ...
+# Subtest: W625G low storage blocks before submit
+ok 44 - W625G low storage blocks before submit
+  ---
+  duration_ms: 0.283883
+  type: 'test'
+  ...
+# Subtest: W625G missing AC and thermal evidence produce warnings
+ok 45 - W625G missing AC and thermal evidence produce warnings
+  ---
+  duration_ms: 0.148661
+  type: 'test'
+  ...
+# Subtest: W625G cleanup is proposal-only and protects owner-saved media
+ok 46 - W625G cleanup is proposal-only and protects owner-saved media
+  ---
+  duration_ms: 0.196172
+  type: 'test'
+  ...
+# Subtest: W625G truth has no exact latency or memory promise
+ok 47 - W625G truth has no exact latency or memory promise
+  ---
+  duration_ms: 0.123874
+  type: 'test'
+  ...
+# Subtest: W625H source integration alone is a no-go
+ok 48 - W625H source integration alone is a no-go
+  ---
+  duration_ms: 0.673613
+  type: 'test'
+  ...
+# Subtest: W625H requires image, video, benchmark, reference device and owner 4 GB fallback
+ok 49 - W625H requires image, video, benchmark, reference device and owner 4 GB fallback
+  ---
+  duration_ms: 0.173799
+  type: 'test'
+  ...
+# Subtest: W625H complete real evidence can certify supported profiles only
+ok 50 - W625H complete real evidence can certify supported profiles only
+  ---
+  duration_ms: 0.106649
+  type: 'test'
+  ...
+# Subtest: W625H benchmark board defaults to pending
+ok 51 - W625H benchmark board defaults to pending
+  ---
+  duration_ms: 0.150063
+  type: 'test'
+  ...
+# Subtest: W625H truth keeps local video uncertified until real proof
+ok 52 - W625H truth keeps local video uncertified until real proof
+  ---
+  duration_ms: 0.334508
+  type: 'test'
+  ...
+# Subtest: W626B pairing issues short-lived origin-bound sessions
+ok 53 - W626B pairing issues short-lived origin-bound sessions
+  ---
+  duration_ms: 2.29828
+  type: 'test'
+  ...
+# Subtest: W626B companion stays loopback-only and has no plaintext fallback
+ok 54 - W626B companion stays loopback-only and has no plaintext fallback
+  ---
+  duration_ms: 0.553553
+  type: 'test'
+  ...
+1..54
+# tests 54
+# suites 0
+# pass 54
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 201.328953
+
+=== Institutional AI final certification: retention ===
+
+[retention] activity-center-authority
+$ /opt/nvm/versions/node/v22.16.0/bin/node scripts/w434-notification-center-gate.mjs
+W434 continuity gate passed (12/12). Device delivery is source-ready; live proof remains pending.
+
+[retention] city-fairness-authority
+$ /opt/nvm/versions/node/v22.16.0/bin/node scripts/w565-city-fairness-safety-gate.mjs
+{
+  "wave": "W565",
+  "status": "pass",
+  "checkCount": 46,
+  "requiredCount": 8,
+  "errors": []
+}
+
+[retention] share-pack-authority
+$ /opt/nvm/versions/node/v22.16.0/bin/node scripts/w388a1-eon-share-pack-gate.mjs
+W388A.1 EON Share Pack gate passed (9/9).
+
+[retention] remix-card-authority
+$ /opt/nvm/versions/node/v22.16.0/bin/node scripts/w388a2-remix-cards-gate.mjs
+W388A.2 Remix Cards gate passed (10/10).
+
+[retention] eonbot-shareable-authority
+$ /opt/nvm/versions/node/v22.16.0/bin/node scripts/w388a3-eonbot-shareable-gate.mjs
+W388A.3 EONBOT shareable gate passed (8/8).
+
+[retention] pwa-asset-policy-authority
+$ /opt/nvm/versions/node/v22.16.0/bin/node scripts/w275-pwa-asset-policy-gate.mjs
+W275-A0 PWA asset-policy source gate: PASS (16 bounded precache entries; external browser/device evidence remains pending).
+
+[retention] retention-viral-pwa-regression
+$ /opt/nvm/versions/node/v22.16.0/bin/node --test tests/unit/w434-notification-center.test.mjs tests/unit/w565-city-fairness-safety.test.mjs tests/unit/w388a1-eon-share-pack.test.mjs tests/unit/w388a2-remix-cards.test.mjs tests/unit/w388a3-eonbot-shareable.test.mjs tests/unit/w275-pwa-asset-policy.test.mjs
+TAP version 13
+# Subtest: W275-A0 validates bounded cache, protected navigation, and explicit update activation
+ok 1 - W275-A0 validates bounded cache, protected navigation, and explicit update activation
+  ---
+  duration_ms: 2.661161
+  type: 'test'
+  ...
+# Subtest: W275-A0 rejects auto activation and protected precache routes
+ok 2 - W275-A0 rejects auto activation and protected precache routes
+  ---
+  duration_ms: 1.439653
+  type: 'test'
+  ...
+# Subtest: W388A.1 creates a local, non-publishing Share Pack with approved formats
+ok 3 - W388A.1 creates a local, non-publishing Share Pack with approved formats
+  ---
+  duration_ms: 2.100096
+  type: 'test'
+  ...
+# Subtest: W388A.1 keeps exports textual and rejects secret-looking fields
+ok 4 - W388A.1 keeps exports textual and rejects secret-looking fields
+  ---
+  duration_ms: 0.546734
+  type: 'test'
+  ...
+# Subtest: W388A.1 native share requires an explicit caller and source gate remains honest
+ok 5 - W388A.1 native share requires an explicit caller and source gate remains honest
+  ---
+  duration_ms: 1.9419
+  type: 'test'
+  ...
+# Subtest: W388A.2 creates a local, non-hosted Remix Card with a safe starter
+ok 6 - W388A.2 creates a local, non-hosted Remix Card with a safe starter
+  ---
+  duration_ms: 2.079174
+  type: 'test'
+  ...
+# Subtest: W388A.2 keeps export textual and blocks secrets or local/private links
+ok 7 - W388A.2 keeps export textual and blocks secrets or local/private links
+  ---
+  duration_ms: 0.63157
+  type: 'test'
+  ...
+# Subtest: W388A.2 native share requires an explicit caller and source gate remains honest
+ok 8 - W388A.2 native share requires an explicit caller and source gate remains honest
+  ---
+  duration_ms: 1.647732
+  type: 'test'
+  ...
+# Subtest: W388A.2 combined copy keeps public card context and only a canonical EONAPP Remix URL
+ok 9 - W388A.2 combined copy keeps public card context and only a canonical EONAPP Remix URL
+  ---
+  duration_ms: 1.043283
+  type: 'test'
+  ...
+# Subtest: W388A.3 turns explicit EONBOT shareable requests into a user-tap local handoff
+ok 10 - W388A.3 turns explicit EONBOT shareable requests into a user-tap local handoff
+  ---
+  duration_ms: 2.987366
+  type: 'test'
+  ...
+# Subtest: W388A.3 short-lived intent excludes secret-looking requests
+ok 11 - W388A.3 short-lived intent excludes secret-looking requests
+  ---
+  duration_ms: 0.63836
+  type: 'test'
+  ...
+# Subtest: W388A.3 gate keeps no connector, posting, tracking or referral claim
+ok 12 - W388A.3 gate keeps no connector, posting, tracking or referral claim
+  ---
+  duration_ms: 1.492652
+  type: 'test'
+  ...
+# Subtest: W434 records only explicit real local events, dedupes them, and blocks sensitive details
+ok 13 - W434 records only explicit real local events, dedupes them, and blocks sensitive details
+  ---
+  duration_ms: 2.820608
+  type: 'test'
+  ...
+# Subtest: W434 requires user action for read state and stored category/quiet-hour preferences
+ok 14 - W434 requires user action for read state and stored category/quiet-hour preferences
+  ---
+  duration_ms: 1.967438
+  type: 'test'
+  ...
+# Subtest: W434 category visibility preferences are enforced rather than stored as cosmetic switches
+ok 15 - W434 category visibility preferences are enforced rather than stored as cosmetic switches
+  ---
+  duration_ms: 0.400056
+  type: 'test'
+  ...
+# Subtest: W434 continuity keeps device delivery explicit and unsupported environments fail closed
+ok 16 - W434 continuity keeps device delivery explicit and unsupported environments fail closed
+  ---
+  duration_ms: 0.726762
+  type: 'test'
+  ...
+# Subtest: W434 static gate preserves historical truth while AI V2 delivery remains live-proof gated
+ok 17 - W434 static gate preserves historical truth while AI V2 delivery remains live-proof gated
+  ---
+  duration_ms: 2.705692
+  type: 'test'
+  ...
+# {
+#   "wave": "W565",
+#   "status": "pass",
+#   "checkCount": 46,
+#   "requiredCount": 8,
+#   "errors": []
+# }
+# Subtest: W565 keeps the useful Free City core, optional mission routes, and future premium value honest
+ok 18 - W565 keeps the useful Free City core, optional mission routes, and future premium value honest
+  ---
+  duration_ms: 1.393254
+  type: 'test'
+  ...
+# Subtest: W565 rejects chance, pressure, penalties, unconsented delivery, and unsupported live claims
+ok 19 - W565 rejects chance, pressure, penalties, unconsented delivery, and unsupported live claims
+  ---
+  duration_ms: 0.636878
+  type: 'test'
+  ...
+# Subtest: W565 renders a read-only fair-play panel without checkout, delivery controls, or unrequested permissions
+ok 20 - W565 renders a read-only fair-play panel without checkout, delivery controls, or unrequested permissions
+  ---
+  duration_ms: 0.258535
+  type: 'test'
+  ...
+# Subtest: W565 source gate stays fail-closed about coercion, entitlement, delivery, and accessibility penalties
+ok 21 - W565 source gate stays fail-closed about coercion, entitlement, delivery, and accessibility penalties
+  ---
+  duration_ms: 0.109773
+  type: 'test'
+  ...
+1..21
+# tests 21
+# suites 0
+# pass 21
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 107.489287
+
+=== Institutional AI final certification: security ===
+
+[security] w267-red-team
+$ /opt/nvm/versions/node/v22.16.0/bin/node scripts/w267-red-team-source-audit-gate.mjs
+W267 red-team source audit: PASS (source safety boundaries aligned; independent review remains pending).
+
+[security] w484-user-facing-red-team
+$ /opt/nvm/versions/node/v22.16.0/bin/node scripts/w484-user-facing-red-team-gate.mjs
+W484 user-facing red-team gate passed (12/12); 2 waves remain before owner GO.
+
+[security] direct-job-threat-model
+$ /opt/nvm/versions/node/v22.16.0/bin/node scripts/w626a-direct-job-threat-model-gate.mjs
+[W626A] PASS 9/9 provider-neutral job and threat invariants
+
+[security] direct-spending-safety
+$ /opt/nvm/versions/node/v22.16.0/bin/node --test tests/unit/w626g-direct-spending-safety.test.mjs
+TAP version 13
+# Subtest: W626G requires per-job confirmation and enforces hard budget stops
+ok 1 - W626G requires per-job confirmation and enforces hard budget stops
+  ---
+  duration_ms: 0.690708
+  type: 'test'
+  ...
+# Subtest: W626G preserves provider outage, moderation, quota and region truth
+ok 2 - W626G preserves provider outage, moderation, quota and region truth
+  ---
+  duration_ms: 0.404202
+  type: 'test'
+  ...
+# Subtest: W626G never exposes raw provider failure text to public UI/receipts
+ok 3 - W626G never exposes raw provider failure text to public UI/receipts
+  ---
+  duration_ms: 0.294438
+  type: 'test'
+  ...
+1..3
+# tests 3
+# suites 0
+# pass 3
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 74.310254
+
+[security] security-trust
+$ /opt/nvm/versions/node/v22.16.0/bin/node scripts/w214-security-trust-gate.mjs
+W214 security, CSP, telemetry, iframe and trust gate: PASS
+
+[security] security-trust-tests
+$ /opt/nvm/versions/node/v22.16.0/bin/node --test tests/unit/w214-security-trust.test.mjs
+TAP version 13
+# Subtest: W214 telemetry redacts secrets, URLs, query strings and fragments before local storage
+ok 1 - W214 telemetry redacts secrets, URLs, query strings and fragments before local storage
+  ---
+  duration_ms: 2.005425
+  type: 'test'
+  ...
+# Subtest: W214 runtime error records keep only local redacted evidence
+ok 2 - W214 runtime error records keep only local redacted evidence
+  ---
+  duration_ms: 2.248577
+  type: 'test'
+  ...
+# Subtest: W214 CSP endpoint bounds report size and strips URL query/fragment data
+ok 3 - W214 CSP endpoint bounds report size and strips URL query/fragment data
+  ---
+  duration_ms: 16.696942
+  type: 'test'
+  ...
+1..3
+# tests 3
+# suites 0
+# pass 3
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 66.257267
+
+[security] institutional-release-block
+$ /opt/nvm/versions/node/v22.16.0/bin/node scripts/w444-institutional-certification-gate.mjs
+W444 institutional certification gate passed (6/6). Release remains externally blocked.
+
+[security] institutional-release-block-tests
+$ /opt/nvm/versions/node/v22.16.0/bin/node --test tests/unit/w444-institutional-certification.test.mjs
+TAP version 13
+# Subtest: W444 builds a transparent blocked board while external evidence is absent
+ok 1 - W444 builds a transparent blocked board while external evidence is absent
+  ---
+  duration_ms: 1.183722
+  type: 'test'
+  ...
+# Subtest: W444 still refuses source-only certification even if all evidence flags are supplied
+ok 2 - W444 still refuses source-only certification even if all evidence flags are supplied
+  ---
+  duration_ms: 0.33598
+  type: 'test'
+  ...
+# Subtest: W444 gate and truth retain human release authority
+ok 3 - W444 gate and truth retain human release authority
+  ---
+  duration_ms: 0.750056
+  type: 'test'
+  ...
+1..3
+# tests 3
+# suites 0
+# pass 3
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 97.549192
+
+[security] historical-code-closure
+$ /opt/nvm/versions/node/v22.16.0/bin/node scripts/w487-institutional-code-closure-gate.mjs
+[W487] PASS: source hierarchy, first-frame shield, concise Command Deck, archive fence and disabled capability truth are intact. Source-only score: 96/100.
+
+[security] historical-code-closure-tests
+$ /opt/nvm/versions/node/v22.16.0/bin/node --test tests/unit/w487-institutional-code-closure.test.mjs
+TAP version 13
+# Subtest: W487 defines a single visible product hierarchy without activating blocked capabilities
+ok 1 - W487 defines a single visible product hierarchy without activating blocked capabilities
+  ---
+  duration_ms: 1.869723
+  type: 'test'
+  ...
+# Subtest: W487 source gate protects the current institutional code-closure boundary
+ok 2 - W487 source gate protects the current institutional code-closure boundary # SKIP
+  ---
+  duration_ms: 0.298444
+  type: 'test'
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 1
+# fail 0
+# cancelled 0
+# skipped 1
+# todo 0
+# duration_ms 63.691293
+
+[security] hostile-city-machine-score
+$ /opt/nvm/versions/node/v22.16.0/bin/node scripts/w758-hostile-red-team-machine-score-gate.mjs
+TAP version 13
+# (node:86668) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: W623H contract is subscription-only, stateless and minimal
+ok 1 - W623H contract is subscription-only, stateless and minimal
+  ---
+  duration_ms: 1.039687
+  type: 'test'
+  ...
+# Subtest: W623H binds one inviter, rejects self-referral and grants one capped activation Signal Key
+ok 2 - W623H binds one inviter, rejects self-referral and grants one capped activation Signal Key
+  ---
+  duration_ms: 18.910687
+  type: 'test'
+  ...
+# Subtest: W623H waits 14 days for a paid key, supports redemption and reverses refund-derived value
+ok 3 - W623H waits 14 days for a paid key, supports redemption and reverses refund-derived value
+  ---
+  duration_ms: 11.219639
+  type: 'test'
+  ...
+# Subtest: W629A accepts only signed one-level attribution and rejects self or multi-level referral
+ok 4 - W629A accepts only signed one-level attribution and rejects self or multi-level referral
+  ---
+  duration_ms: 0.707903
+  type: 'test'
+  ...
+# Subtest: W629F UX separates sharing from referral and avoids money language
+ok 5 - W629F UX separates sharing from referral and avoids money language
+  ---
+  duration_ms: 1.115381
+  type: 'test'
+  ...
+# Subtest: W724 provides four useful page-context primary commands
+ok 6 - W724 provides four useful page-context primary commands
+  ---
+  duration_ms: 1.398351
+  type: 'test'
+  ...
+# Subtest: W724 is a full-screen 2D surface, not a half-width Nexus panel
+ok 7 - W724 is a full-screen 2D surface, not a half-width Nexus panel
+  ---
+  duration_ms: 0.480194
+  type: 'test'
+  ...
+# Subtest: W724 preserves the City Nexus concept while retiring frontend Nexus auto-mount
+ok 8 - W724 preserves the City Nexus concept while retiring frontend Nexus auto-mount
+  ---
+  duration_ms: 2.738596
+  type: 'test'
+  ...
+# Subtest: W724 City context opens real 2D work routes
+ok 9 - W724 City context opens real 2D work routes
+  ---
+  duration_ms: 0.504371
+  type: 'test'
+  ...
+# Subtest: W724 rejects unsafe recent-item destinations and keeps valid local routes
+ok 10 - W724 rejects unsafe recent-item destinations and keeps valid local routes
+  ---
+  duration_ms: 0.24866
+  type: 'test'
+  ...
+# Subtest: W724 protects City controls and high-contrast users
+ok 11 - W724 protects City controls and high-contrast users
+  ---
+  duration_ms: 0.20143
+  type: 'test'
+  ...
+# Subtest: W724 returns to City without reloading and contains share failures
+ok 12 - W724 returns to City without reloading and contains share failures
+  ---
+  duration_ms: 0.998457
+  type: 'test'
+  ...
+# Subtest: W725 provides one full-screen shared work-surface registry
+ok 13 - W725 provides one full-screen shared work-surface registry
+  ---
+  duration_ms: 0.781634
+  type: 'test'
+  ...
+# Subtest: W725 host is modal, full-screen, accessible and installed before Quick Command
+ok 14 - W725 host is modal, full-screen, accessible and installed before Quick Command
+  ---
+  duration_ms: 0.935442
+  type: 'test'
+  ...
+# Subtest: W725 Quick Command routes productive work into shared surfaces
+ok 15 - W725 Quick Command routes productive work into shared surfaces
+  ---
+  duration_ms: 0.237964
+  type: 'test'
+  ...
+# Subtest: W728 integrates City gameplay capture with signed invite sharing
+ok 16 - W728 integrates City gameplay capture with signed invite sharing
+  ---
+  duration_ms: 2.213194
+  type: 'test'
+  ...
+# Subtest: W728 replaces small City overlays with the shared surface while preserving engines
+ok 17 - W728 replaces small City overlays with the shared surface while preserving engines
+  ---
+  duration_ms: 0.277022
+  type: 'test'
+  ...
+# Subtest: W728 plan promotion is contextual, server-authoritative and non-interruptive
+ok 18 - W728 plan promotion is contextual, server-authoritative and non-interruptive
+  ---
+  duration_ms: 0.894992
+  type: 'test'
+  ...
+# Subtest: W731 establishes one compact runtime owner and removes retired world layers from the launch import graph
+ok 19 - W731 establishes one compact runtime owner and removes retired world layers from the launch import graph
+  ---
+  duration_ms: 2.817919
+  type: 'test'
+  ...
+# Subtest: W731 launch assets are local, content-hashed and never block the first playable frame
+ok 20 - W731 launch assets are local, content-hashed and never block the first playable frame
+  ---
+  duration_ms: 1.288048
+  type: 'test'
+  ...
+# Subtest: W731 active runtime owns exactly one engine, scene and render loop
+ok 21 - W731 active runtime owns exactly one engine, scene and render loop
+  ---
+  duration_ms: 2.876211
+  type: 'test'
+  ...
+# Subtest: W733 maps every visible station to one real shared full-screen work surface
+ok 22 - W733 maps every visible station to one real shared full-screen work surface
+  ---
+  duration_ms: 3.282156
+  type: 'test'
+  ...
+# Subtest: W733 keeps Share, Creator Capture, Plans and My Realm explicit and useful
+ok 23 - W733 keeps Share, Creator Capture, Plans and My Realm explicit and useful
+  ---
+  duration_ms: 2.84208
+  type: 'test'
+  ...
+# Subtest: W733 provides direct City Menu guidance, station opening and local resume
+ok 24 - W733 provides direct City Menu guidance, station opening and local resume
+  ---
+  duration_ms: 2.233204
+  type: 'test'
+  ...
+# Subtest: W736A makes Quick Command the sole persistent frontend command launcher
+ok 25 - W736A makes Quick Command the sole persistent frontend command launcher
+  ---
+  duration_ms: 1.097814
+  type: 'test'
+  ...
+# Subtest: W736A removes retired frontend Nexus query navigation from Projects
+ok 26 - W736A removes retired frontend Nexus query navigation from Projects
+  ---
+  duration_ms: 0.202031
+  type: 'test'
+  ...
+# Subtest: W736A provides one literal Vite loader for every registered work-surface adapter
+ok 27 - W736A provides one literal Vite loader for every registered work-surface adapter
+  ---
+  duration_ms: 115.011453
+  type: 'test'
+  ...
+# Subtest: W736A production sync and build require the shared work-surface stylesheet
+ok 28 - W736A production sync and build require the shared work-surface stylesheet
+  ---
+  duration_ms: 0.334758
+  type: 'test'
+  ...
+# Subtest: R05 keeps Share Command Center and Creator Capture in City Menu without permanent HUD clutter
+ok 29 - R05 keeps Share Command Center and Creator Capture in City Menu without permanent HUD clutter
+  ---
+  duration_ms: 3.467902
+  type: 'test'
+  ...
+# Subtest: R05 keeps Plans & Access explicit inside Menu operations and never auto-starts checkout
+ok 30 - R05 keeps Plans & Access explicit inside Menu operations and never auto-starts checkout
+  ---
+  duration_ms: 1.664007
+  type: 'test'
+  ...
+# Subtest: W744 gives station NPCs bounded real micro-routes without walking in place
+ok 31 - W744 gives station NPCs bounded real micro-routes without walking in place
+  ---
+  duration_ms: 2.341084
+  type: 'test'
+  ...
+# Subtest: W765R4 gives exterior citizens real authored walk/run paths with no visible procedural substitute
+ok 32 - W765R4 gives exterior citizens real authored walk/run paths with no visible procedural substitute
+  ---
+  duration_ms: 1.708994
+  type: 'test'
+  ...
+# Subtest: W742 cast replacement remains part of the maintained Command Hub provenance
+ok 33 - W742 cast replacement remains part of the maintained Command Hub provenance
+  ---
+  duration_ms: 0.170764
+  type: 'test'
+  ...
+# Subtest: W743 binds the City runtime, manifest and service worker to one current provenance
+ok 34 - W743 binds the City runtime, manifest and service worker to one current provenance
+  ---
+  duration_ms: 5.148643
+  type: 'test'
+  ...
+# Subtest: W743 enforces quality-specific concurrency and resident asset budgets
+ok 35 - W743 enforces quality-specific concurrency and resident asset budgets
+  ---
+  duration_ms: 0.678289
+  type: 'test'
+  ...
+# Subtest: W743 arrival camera clears every station footprint and no longer sits behind My Realm
+ok 36 - W743 arrival camera clears every station footprint and no longer sits behind My Realm
+  ---
+  duration_ms: 3.5335
+  type: 'test'
+  ...
+# Subtest: W743 refuses materialless or all-white untextured authored hero assets
+ok 37 - W743 refuses materialless or all-white untextured authored hero assets
+  ---
+  duration_ms: 0.183653
+  type: 'test'
+  ...
+# Subtest: W743 pauses hidden rendering, restores WebGL safely and applies real bounded performance protection
+ok 38 - W743 pauses hidden rendering, restores WebGL safely and applies real bounded performance protection
+  ---
+  duration_ms: 2.766297
+  type: 'test'
+  ...
+# Subtest: W744 completes all ten stations as structure-terminal-NPC micro-locations
+ok 39 - W744 completes all ten stations as structure-terminal-NPC micro-locations
+  ---
+  duration_ms: 2.786027
+  type: 'test'
+  ...
+# Subtest: W744 corrects the Command Status station, route and rejected coat character
+ok 40 - W744 corrects the Command Status station, route and rejected coat character
+  ---
+  duration_ms: 0.484571
+  type: 'test'
+  ...
+# Subtest: W744 station and work-surface routing has no missing local page
+ok 41 - W744 station and work-surface routing has no missing local page
+  ---
+  duration_ms: 0.581005
+  type: 'test'
+  ...
+# Subtest: W744 assigns content-hashed authored structures, terminals, role NPCs and ambient assets within budgets
+ok 42 - W744 assigns content-hashed authored structures, terminals, role NPCs and ambient assets within budgets
+  ---
+  duration_ms: 0.437842
+  type: 'test'
+  ...
+# Subtest: W744 outside Command Centre discoveries use exact authored assets and stay bounded
+ok 43 - W744 outside Command Centre discoveries use exact authored assets and stay bounded
+  ---
+  duration_ms: 2.356898
+  type: 'test'
+  ...
+# Subtest: W744 role cast has real locomotion and stationary work gestures
+ok 44 - W744 role cast has real locomotion and stationary work gestures
+  ---
+  duration_ms: 0.314718
+  type: 'test'
+  ...
+# Subtest: W744 runtime builds the premium Command Centre, real 3D Nexus and bounded ambient life
+ok 45 - W744 runtime builds the premium Command Centre, real 3D Nexus and bounded ambient life
+  ---
+  duration_ms: 5.526255
+  type: 'test'
+  ...
+# Subtest: W744 assigns every active ready W649 world asset and stages the authored hero cast before reveal
+ok 46 - W744 assigns every active ready W649 world asset and stages the authored hero cast before reveal
+  ---
+  duration_ms: 2.383588
+  type: 'test'
+  ...
+# Subtest: W744 preserves review-first sharing, Creator Capture and non-ad subscription monetisation
+ok 47 - W744 preserves review-first sharing, Creator Capture and non-ad subscription monetisation
+  ---
+  duration_ms: 2.579439
+  type: 'test'
+  ...
+# Subtest: W744 red-team authority keeps cache, source and deploy boundaries explicit
+ok 48 - W744 red-team authority keeps cache, source and deploy boundaries explicit
+  ---
+  duration_ms: 3.471067
+  type: 'test'
+  ...
+# Subtest: W745 gives EONBOT a complete bounded curiosity cycle instead of a stiff orbit
+ok 49 - W745 gives EONBOT a complete bounded curiosity cycle instead of a stiff orbit
+  ---
+  duration_ms: 1.503297
+  type: 'test'
+  ...
+# Subtest: W745 uses Pathfinder Prime idle variants and gestures without walking in place
+ok 50 - W745 uses Pathfinder Prime idle variants and gestures without walking in place
+  ---
+  duration_ms: 0.6985
+  type: 'test'
+  ...
+# Subtest: W745 runtime animates EONBOT scan effects, playful movement and live circuit pulses
+ok 51 - W745 runtime animates EONBOT scan effects, playful movement and live circuit pulses
+  ---
+  duration_ms: 4.116187
+  type: 'test'
+  ...
+# Subtest: W745 final CEO audit keeps every station meaningful, interactive and routed to a real surface
+ok 52 - W745 final CEO audit keeps every station meaningful, interactive and routed to a real surface
+  ---
+  duration_ms: 2.313233
+  type: 'test'
+  ...
+# Subtest: W745 final asset audit assigns every active ready world asset and excludes unsafe static candidates
+ok 53 - W745 final asset audit assigns every active ready world asset and excludes unsafe static candidates
+  ---
+  duration_ms: 0.290312
+  type: 'test'
+  ...
+# Subtest: W745 cache authority and deployment boundary are explicit for Codex
+ok 54 - W745 cache authority and deployment boundary are explicit for Codex
+  ---
+  duration_ms: 3.263317
+  type: 'test'
+  ...
+# Subtest: W747 locks one protected 12 metre Nexus Hero Zone and five coherent wings
+ok 55 - W747 locks one protected 12 metre Nexus Hero Zone and five coherent wings
+  ---
+  duration_ms: 2.715712
+  type: 'test'
+  ...
+# Subtest: W747 camera and spawn authority are finite, floor-safe and reveal the centre
+ok 56 - W747 camera and spawn authority are finite, floor-safe and reveal the centre
+  ---
+  duration_ms: 0.559513
+  type: 'test'
+  ...
+# Subtest: W766IR2-G camera safety detects under-floor, invalid-target and beta failures
+ok 57 - W766IR2-G camera safety detects under-floor, invalid-target and beta failures
+  ---
+  duration_ms: 0.294959
+  type: 'test'
+  ...
+# Subtest: W747 loaded-bound diagnostics catch real occlusion, overlap, role and floor defects
+ok 58 - W747 loaded-bound diagnostics catch real occlusion, overlap, role and floor defects
+  ---
+  duration_ms: 0.937456
+  type: 'test'
+  ...
+# Subtest: W766IR2-A retires the Hub Archive Garden and preserves one canonical Expanse Gate
+ok 59 - W766IR2-A retires the Hub Archive Garden and preserves one canonical Expanse Gate
+  ---
+  duration_ms: 0.765139
+  type: 'test'
+  ...
+# Subtest: W747 moves the command furniture into the operations crescent and synchronizes EONBOT dock authority
+ok 60 - W747 moves the command furniture into the operations crescent and synchronizes EONBOT dock authority
+  ---
+  duration_ms: 0.129793
+  type: 'test'
+  ...
+# Subtest: W747 runtime uses actual post-transform GLB bounds and keeps diagnostics advanced-only
+ok 61 - W747 runtime uses actual post-transform GLB bounds and keeps diagnostics advanced-only
+  ---
+  duration_ms: 3.522463
+  type: 'test'
+  ...
+# Subtest: W747 preserves one Babylon owner, Menu and shared work-surface flows
+ok 62 - W747 preserves one Babylon owner, Menu and shared work-surface flows
+  ---
+  duration_ms: 3.633468
+  type: 'test'
+  ...
+# Subtest: W748 registers every station structure, terminal and authored NPC through one semantic authority
+ok 63 - W748 registers every station structure, terminal and authored NPC through one semantic authority
+  ---
+  duration_ms: 2.193565
+  type: 'test'
+  ...
+# Subtest: W748 resolves pointer, gaze and proximity through one deterministic selector
+ok 64 - W748 resolves pointer, gaze and proximity through one deterministic selector
+  ---
+  duration_ms: 0.775394
+  type: 'test'
+  ...
+# Subtest: W748 keeps Focus as the normal app default and makes Dock an explicit City presentation
+ok 65 - W748 keeps Focus as the normal app default and makes Dock an explicit City presentation
+  ---
+  duration_ms: 0.300407
+  type: 'test'
+  ...
+# Subtest: W748 presenter pauses the City, preserves one session across Dock and Focus, and restores the exact snapshot
+ok 66 - W748 presenter pauses the City, preserves one session across Dock and Focus, and restores the exact snapshot
+  ---
+  duration_ms: 1.174628
+  type: 'test'
+  ...
+# Subtest: W748/R03 source keeps one adapter host, responsive City Dock/Sheet modes and exact world restoration
+ok 67 - W748/R03 source keeps one adapter host, responsive City Dock/Sheet modes and exact world restoration
+  ---
+  duration_ms: 7.815062
+  type: 'test'
+  ...
+# Subtest: W749 defines one bounded six-ring Living Nexus projection with no second state owner
+ok 68 - W749 defines one bounded six-ring Living Nexus projection with no second state owner
+  ---
+  duration_ms: 2.279863
+  type: 'test'
+  ...
+# Subtest: W749 projects real readiness, approval, mission and offline changes without leaking unknown private fields
+ok 69 - W749 projects real readiness, approval, mission and offline changes without leaking unknown private fields
+  ---
+  duration_ms: 0.615726
+  type: 'test'
+  ...
+# Subtest: W749 carries only the bounded W686 selected work-object continuity receipt
+ok 70 - W749 carries only the bounded W686 selected work-object continuity receipt
+  ---
+  duration_ms: 0.24181
+  type: 'test'
+  ...
+# Subtest: W749 Babylon presenter emits one shared view event per source refresh and disposes only its own graph
+ok 71 - W749 Babylon presenter emits one shared view event per source refresh and disposes only its own graph
+  ---
+  duration_ms: 2.931333
+  type: 'test'
+  ...
+# Subtest: W749 keeps bounded guide mode alive when source, continuity or mission readers fail
+ok 72 - W749 keeps bounded guide mode alive when source, continuity or mission readers fail
+  ---
+  duration_ms: 0.882123
+  type: 'test'
+  ...
+# Subtest: W749 source integrates the 3D hero, Nexus Dock, ring inspection, freshness and release gates
+ok 73 - W749 source integrates the 3D hero, Nexus Dock, ring inspection, freshness and release gates
+  ---
+  duration_ms: 4.112671
+  type: 'test'
+  ...
+# Subtest: W750 defines five truthful Command Centre walls over existing authorities
+ok 74 - W750 defines five truthful Command Centre walls over existing authorities
+  ---
+  duration_ms: 2.436377
+  type: 'test'
+  ...
+# Subtest: W750 Agent Theatre is still when empty and preserves authoritative progress only
+ok 75 - W750 Agent Theatre is still when empty and preserves authoritative progress only
+  ---
+  duration_ms: 0.566753
+  type: 'test'
+  ...
+# Subtest: W750 strips private candidate fields and never carries raw work into the wall projection
+ok 76 - W750 strips private candidate fields and never carries raw work into the wall projection
+  ---
+  duration_ms: 1.230922
+  type: 'test'
+  ...
+# Subtest: W750 fails closed when all source readers are unavailable and never invents placeholder status cards
+ok 77 - W750 fails closed when all source readers are unavailable and never invents placeholder status cards
+  ---
+  duration_ms: 2.804043
+  type: 'test'
+  ...
+# Subtest: W750 Babylon presenter shows receipt actors only for genuine receipts and disposes its own graph
+ok 78 - W750 Babylon presenter shows receipt actors only for genuine receipts and disposes its own graph
+  ---
+  duration_ms: 1.715464
+  type: 'test'
+  ...
+# Subtest: W750 registry, runtime, Dock, release and build gates converge on one command-centre adapter
+ok 79 - W750 registry, runtime, Dock, release and build gates converge on one command-centre adapter
+  ---
+  duration_ms: 4.046803
+  type: 'test'
+  ...
+# Subtest: W751 defines ten distinctive three-step loops over the existing station authority
+ok 80 - W751 defines ten distinctive three-step loops over the existing station authority
+  ---
+  duration_ms: 2.545168
+  type: 'test'
+  ...
+# Subtest: W751 verifies Core-backed stations only from a current validated Core progress receipt
+ok 81 - W751 verifies Core-backed stations only from a current validated Core progress receipt
+  ---
+  duration_ms: 3.119824
+  type: 'test'
+  ...
+# Subtest: W751 records only explicit reviewed, opened and returned City activity
+ok 82 - W751 records only explicit reviewed, opened and returned City activity
+  ---
+  duration_ms: 2.012535
+  type: 'test'
+  ...
+# Subtest: W751 fails closed when storage and receipt readers are unavailable
+ok 83 - W751 fails closed when storage and receipt readers are unavailable
+  ---
+  duration_ms: 1.106707
+  type: 'test'
+  ...
+# Subtest: W751 renders accessible truthful loop guidance without private work content
+ok 84 - W751 renders accessible truthful loop guidance without private work content
+  ---
+  duration_ms: 0.52412
+  type: 'test'
+  ...
+# Subtest: W751 runtime, shared host, CSS, release and build gates converge without duplicate station editors
+ok 85 - W751 runtime, shared host, CSS, release and build gates converge without duplicate station editors
+  ---
+  duration_ms: 2.930722
+  type: 'test'
+  ...
+# Subtest: W752 defines ten receipt-backed missions with fixed fair boundaries
+ok 86 - W752 defines ten receipt-backed missions with fixed fair boundaries
+  ---
+  duration_ms: 4.49478
+  type: 'test'
+  ...
+# Subtest: W752 all ten launch missions have a real receipt authority and the three formerly dead-end stations claim only after explicit proof
+ok 87 - W752 all ten launch missions have a real receipt authority and the three formerly dead-end stations claim only after explicit proof
+  ---
+  duration_ms: 5.586965
+  type: 'test'
+  ...
+# Subtest: W752 Plans mission rewards verified access review, never checkout or paid tier
+ok 88 - W752 Plans mission rewards verified access review, never checkout or paid tier
+  ---
+  duration_ms: 0.379915
+  type: 'test'
+  ...
+# Subtest: W752 claims XP only from an explicit current Core-backed native receipt and remains idempotent
+ok 89 - W752 claims XP only from an explicit current Core-backed native receipt and remains idempotent
+  ---
+  duration_ms: 0.959608
+  type: 'test'
+  ...
+# Subtest: W752 rejects forged station and legacy mission verification that cannot rejoin current Core proof
+ok 90 - W752 rejects forged station and legacy mission verification that cannot rejoin current Core proof
+  ---
+  duration_ms: 0.834061
+  type: 'test'
+  ...
+# Subtest: W752 Nexus mission accepts only the separately reviewed bounded orientation receipt
+ok 91 - W752 Nexus mission accepts only the separately reviewed bounded orientation receipt
+  ---
+  duration_ms: 1.08827
+  type: 'test'
+  ...
+# Subtest: W752 hosted Creator journey stays receipt-gated from real save through explicit XP claim
+ok 92 - W752 hosted Creator journey stays receipt-gated from real save through explicit XP claim
+  ---
+  duration_ms: 0.929304
+  type: 'test'
+  ...
+# Subtest: W752 never treats review, open or return activity as mission completion
+ok 93 - W752 never treats review, open or return activity as mission completion
+  ---
+  duration_ms: 0.903384
+  type: 'test'
+  ...
+# Subtest: W752 Vault Reveals are explicit, deterministic, cosmetic and duplicate-protected
+ok 94 - W752 Vault Reveals are explicit, deterministic, cosmetic and duplicate-protected
+  ---
+  duration_ms: 1.732198
+  type: 'test'
+  ...
+# Subtest: W752 defers surplus reveal credits after the finite cosmetic catalog is complete
+ok 95 - W752 defers surplus reveal credits after the finite cosmetic catalog is complete
+  ---
+  duration_ms: 0.532983
+  type: 'test'
+  ...
+# Subtest: W752 builds one bounded private My Realm reflection from claimed missions
+ok 96 - W752 builds one bounded private My Realm reflection from claimed missions
+  ---
+  duration_ms: 0.479294
+  type: 'test'
+  ...
+# Subtest: W752 emits view changes, fails closed on denied storage and renders accessible truth
+ok 97 - W752 emits view changes, fails closed on denied storage and renders accessible truth
+  ---
+  duration_ms: 0.959448
+  type: 'test'
+  ...
+# Subtest: W752 runtime, shared host, CSS, release and production gates converge
+ok 98 - W752 runtime, shared host, CSS, release and production gates converge
+  ---
+  duration_ms: 2.470618
+  type: 'test'
+  ...
+# Subtest: W753 normalizes every maintained City source to the EON City share target
+ok 99 - W753 normalizes every maintained City source to the EON City share target
+  ---
+  duration_ms: 0.816876
+  type: 'test'
+  ...
+# Subtest: W753 referral status preserves active, inactive and unavailable as different truths
+ok 100 - W753 referral status preserves active, inactive and unavailable as different truths
+  ---
+  duration_ms: 1.00782
+  type: 'test'
+  ...
+# Subtest: W753 referral endpoint emits a no-store inactive envelope without an active contradiction
+ok 101 - W753 referral endpoint emits a no-store inactive envelope without an active contradiction
+  ---
+  duration_ms: 21.810543
+  type: 'test'
+  ...
+# Subtest: W753 reviewed handoff receipt is explicit, finite, private and duplicate-protected
+ok 102 - W753 reviewed handoff receipt is explicit, finite, private and duplicate-protected
+  ---
+  duration_ms: 1.915722
+  type: 'test'
+  ...
+# Subtest: W753 projects the bounded reviewed handoff into the existing W751/W752 mission authority
+ok 103 - W753 projects the bounded reviewed handoff into the existing W751/W752 mission authority
+  ---
+  duration_ms: 1.780149
+  type: 'test'
+  ...
+# Subtest: W753 source hierarchy keeps quick share and capture above compact referral and advanced tools
+ok 104 - W753 source hierarchy keeps quick share and capture above compact referral and advanced tools
+  ---
+  duration_ms: 2.767509
+  type: 'test'
+  ...
+# Subtest: W754 composes one high-detail cast from the maintained W731/W649 authorities
+ok 105 - W754 composes one high-detail cast from the maintained W731/W649 authorities
+  ---
+  duration_ms: 1.899447
+  type: 'test'
+  ...
+# Subtest: W754 produces nine staggered bounded NPC schedules without shared collision lanes
+ok 106 - W754 produces nine staggered bounded NPC schedules without shared collision lanes
+  ---
+  duration_ms: 0.717608
+  type: 'test'
+  ...
+# Subtest: W754 NPC controller moves only when position changes and suspends safely
+ok 107 - W754 NPC controller moves only when position changes and suspends safely
+  ---
+  duration_ms: 0.58432
+  type: 'test'
+  ...
+# Subtest: W754 keeps EONBOT outside the player and camera corridors
+ok 108 - W754 keeps EONBOT outside the player and camera corridors
+  ---
+  duration_ms: 0.324242
+  type: 'test'
+  ...
+# Subtest: W754 capsule pose uses the authored local +X axis and route tangent
+ok 109 - W754 capsule pose uses the authored local +X axis and route tangent
+  ---
+  duration_ms: 0.643187
+  type: 'test'
+  ...
+# Subtest: W754 transit requires review plus explicit Board or Skip and keeps one receipt authority
+ok 110 - W754 transit requires review plus explicit Board or Skip and keeps one receipt authority
+  ---
+  duration_ms: 1.877405
+  type: 'test'
+  ...
+# Subtest: W754 skip remains a separate explicit accessible choice
+ok 111 - W754 skip remains a separate explicit accessible choice
+  ---
+  duration_ms: 0.564851
+  type: 'test'
+  ...
+# Subtest: W754 runtime wiring retires the backwards ambient-only capsule boundary
+ok 112 - W754 runtime wiring retires the backwards ambient-only capsule boundary
+  ---
+  duration_ms: 2.904303
+  type: 'test'
+  ...
+# Subtest: W755 creates a readable Living Circuit Citadel plan for every quality tier
+ok 113 - W755 creates a readable Living Circuit Citadel plan for every quality tier
+  ---
+  duration_ms: 2.177461
+  type: 'test'
+  ...
+# Subtest: W755 Lite keeps product meaning while reducing effects only
+ok 114 - W755 Lite keeps product meaning while reducing effects only
+  ---
+  duration_ms: 0.180058
+  type: 'test'
+  ...
+# Subtest: W755 time selection is deterministic and local-only
+ok 115 - W755 time selection is deterministic and local-only
+  ---
+  duration_ms: 0.214869
+  type: 'test'
+  ...
+# Subtest: W755 environment and audio changes require explicit user action
+ok 116 - W755 environment and audio changes require explicit user action
+  ---
+  duration_ms: 0.646543
+  type: 'test'
+  ...
+# Subtest: W755 runtime is wired as one-scene local ambience authority
+ok 117 - W755 runtime is wired as one-scene local ambience authority
+  ---
+  duration_ms: 2.68714
+  type: 'test'
+  ...
+# Subtest: W756 keeps the first fifteen seconds, minute and three-minute journey explicit
+ok 118 - W756 keeps the first fifteen seconds, minute and three-minute journey explicit
+  ---
+  duration_ms: 0.831437
+  type: 'test'
+  ...
+# Subtest: W756 provides every essential station through the semantic non-3D path
+ok 119 - W756 provides every essential station through the semantic non-3D path
+  ---
+  duration_ms: 0.179968
+  type: 'test'
+  ...
+# Subtest: W756 mobile rules preserve safe areas, 48px targets and both orientations
+ok 120 - W756 mobile rules preserve safe areas, 48px targets and both orientations
+  ---
+  duration_ms: 0.780892
+  type: 'test'
+  ...
+# Subtest: W756 recovery is fail-closed and never reloads or navigates automatically
+ok 121 - W756 recovery is fail-closed and never reloads or navigates automatically
+  ---
+  duration_ms: 0.132878
+  type: 'test'
+  ...
+# Subtest: W756 controller source traps focus, restores focus and exposes truthful ambience controls
+ok 122 - W756 controller source traps focus, restores focus and exposes truthful ambience controls
+  ---
+  duration_ms: 0.499384
+  type: 'test'
+  ...
+# Subtest: W756 runtime and CSS wire one semantic map without a duplicate scene
+ok 123 - W756 runtime and CSS wire one semantic map without a duplicate scene
+  ---
+  duration_ms: 3.0908
+  type: 'test'
+  ...
+# Subtest: W757 binds progressive loading and resident budgets for every quality tier
+ok 124 - W757 binds progressive loading and resident budgets for every quality tier
+  ---
+  duration_ms: 0.938396
+  type: 'test'
+  ...
+# Subtest: W757 enforces the approved FPS, first-playable, Dock and distance budgets
+ok 125 - W757 enforces the approved FPS, first-playable, Dock and distance budgets
+  ---
+  duration_ms: 0.606533
+  type: 'test'
+  ...
+# Subtest: W757 controller caps Dock frames and throttles non-essential distant animation
+ok 126 - W757 controller caps Dock frames and throttles non-essential distant animation
+  ---
+  duration_ms: 0.767052
+  type: 'test'
+  ...
+# Subtest: W757 keeps local memory observation private and cannot self-certify
+ok 127 - W757 keeps local memory observation private and cannot self-certify
+  ---
+  duration_ms: 0.118577
+  type: 'test'
+  ...
+# Subtest: W757 controller records frames, lifecycle cycles and idempotent disposal
+ok 128 - W757 controller records frames, lifecycle cycles and idempotent disposal
+  ---
+  duration_ms: 2.122559
+  type: 'test'
+  ...
+# Subtest: W757 cache contract requires explicit updates and stale-runtime rejection
+ok 129 - W757 cache contract requires explicit updates and stale-runtime rejection
+  ---
+  duration_ms: 0.460815
+  type: 'test'
+  ...
+# Subtest: W757 active runtime records first playable, frame, memory, context and disposal state
+ok 130 - W757 active runtime records first playable, frame, memory, context and disposal state
+  ---
+  duration_ms: 3.015788
+  type: 'test'
+  ...
+# Subtest: W758 uses the final ten-pillar machine model and all hostile scenarios
+ok 131 - W758 uses the final ten-pillar machine model and all hostile scenarios
+  ---
+  duration_ms: 1.548355
+  type: 'test'
+  ...
+# Subtest: W758 source-only template is blocked and cannot award a score
+ok 132 - W758 source-only template is blocked and cannot award a score
+  ---
+  duration_ms: 0.729856
+  type: 'test'
+  ...
+# Subtest: W758 rejects string and source-regex references as machine evidence
+ok 133 - W758 rejects string and source-regex references as machine evidence
+  ---
+  duration_ms: 0.505943
+  type: 'test'
+  ...
+# Subtest: W758 passes only a complete exact candidate with 9.5 weighted, every pillar 9.0 and no P0/P1
+ok 134 - W758 passes only a complete exact candidate with 9.5 weighted, every pillar 9.0 and no P0/P1
+  ---
+  duration_ms: 0.245815
+  type: 'test'
+  ...
+# Subtest: W758 unresolved P0/P1 is a no-go regardless of average score
+ok 135 - W758 unresolved P0/P1 is a no-go regardless of average score
+  ---
+  duration_ms: 0.293166
+  type: 'test'
+  ...
+# Subtest: W758 red-team closes W757 declared-but-unenforced throttling and stale provenance
+ok 136 - W758 red-team closes W757 declared-but-unenforced throttling and stale provenance
+  ---
+  duration_ms: 2.390908
+  type: 'test'
+  ...
+# Subtest: W759R1 has one strict, truthful certification-quality authority
+ok 137 - W759R1 has one strict, truthful certification-quality authority
+  ---
+  duration_ms: 1.657266
+  type: 'test'
+  ...
+# Subtest: W759R1 shares quality authority from both entries through W731 and the actual loader summary
+ok 138 - W759R1 shares quality authority from both entries through W731 and the actual loader summary
+  ---
+  duration_ms: 4.233602
+  type: 'test'
+  ...
+# Subtest: W759R1 removes the 0.01 scale floor that inflated every audited authored asset
+ok 139 - W759R1 removes the 0.01 scale floor that inflated every audited authored asset
+  ---
+  duration_ms: 0.416409
+  type: 'test'
+  ...
+# Subtest: W759R1 grounds authored assets in world space relative to elevated anchors
+ok 140 - W759R1 grounds authored assets in world space relative to elevated anchors
+  ---
+  duration_ms: 0.257603
+  type: 'test'
+  ...
+# Subtest: W759R1 requires post-attachment bounds, enabled meshes and visible meshes before fallback retirement
+ok 141 - W759R1 requires post-attachment bounds, enabled meshes and visible meshes before fallback retirement
+  ---
+  duration_ms: 0.493725
+  type: 'test'
+  ...
+# Subtest: W759R1 only hides Pathfinder, NPC, building, terminal and discovery fallbacks after the presentation contract passes
+ok 142 - W759R1 only hides Pathfinder, NPC, building, terminal and discovery fallbacks after the presentation contract passes
+  ---
+  duration_ms: 3.297398
+  type: 'test'
+  ...
+# Subtest: W759R1 separates manual pause from workspace pause and makes keyboard blocking diagnosable
+ok 143 - W759R1 separates manual pause from workspace pause and makes keyboard blocking diagnosable
+  ---
+  duration_ms: 6.209012
+  type: 'test'
+  ...
+# Subtest: W759R1 pins first-run buttons to the selected City palette with visible keyboard focus
+ok 144 - W759R1 pins first-run buttons to the selected City palette with visible keyboard focus
+  ---
+  duration_ms: 1.230432
+  type: 'test'
+  ...
+# Subtest: W759R1 uses one bounded, shared movement render recovery authority
+ok 145 - W759R1 uses one bounded, shared movement render recovery authority
+  ---
+  duration_ms: 1.045506
+  type: 'test'
+  ...
+1..145
+# tests 145
+# suites 0
+# pass 145
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 562.336781
+W758 SOURCE/SCORING AUTHORITY PASS — MACHINE STATUS REMAINS BLOCKED UNTIL IMMUTABLE PREVIEW AND REAL BROWSER/DEVICE/API EVIDENCE ARE ATTACHED
+
+=== Institutional AI final certification: hygiene ===
+
+[hygiene] diff-whitespace
+$ git diff --check
+
+[hygiene] final-runner-syntax
+$ /opt/nvm/versions/node/v22.16.0/bin/node --check scripts/institutional-ai-final-local-certification.mjs
+
+Final local certification: PASS (33/33 steps).
+Receipt: release-evidence/INSTITUTIONAL_AI_FINAL_LOCAL_CERTIFICATION.json

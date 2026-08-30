@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <script src="/assets/js/eon-theme-bootstrap.js?release=w722-2026-07-27"></script>
+  <meta name="theme-color" content="#111411" />
+  <meta name="description" content="Install guidance for EONAPP in this browser profile, including PWA prompts, fallback steps, and the local-first boundaries around account, backup, and device storage." />
+  <meta property="og:site_name" content="EONAPP" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Install EONAPP" />
+  <meta property="og:description" content="Install the private-first EONAPP web experience when your browser supports it." />
+  <meta property="og:url" content="https://eonapp.ch/install" />
+  <meta property="og:image" content="https://eonapp.ch/assets/media/social/eonapp-home-1200x630-social-v1.png?v=social-v1" />
+  <meta property="og:image:secure_url" content="https://eonapp.ch/assets/media/social/eonapp-home-1200x630-social-v1.png?v=social-v1" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Install EONAPP social preview" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Install EONAPP" />
+  <meta name="twitter:description" content="Install the private-first EONAPP web experience when your browser supports it." />
+  <meta name="twitter:image" content="https://eonapp.ch/assets/media/social/eonapp-home-1200x630-social-v1.png?v=social-v1" />
+  <meta name="twitter:image:alt" content="Install EONAPP social preview" />
+  <meta name="eon:social-square" content="https://eonapp.ch/assets/media/social/eonapp-home-1080x1080-social-v1.png?v=social-v1" />
+  <title>Install EONAPP · EONAPP</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="stylesheet" href="/assets/css/base.css" />
+  <link rel="stylesheet" href="/assets/css/layout.css" />
+  <link rel="stylesheet" href="/assets/css/eon-app-shell.css" />
+  <link rel="stylesheet" href="/assets/css/eon-hubs.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Install EONAPP","url":"https://eonapp.ch/install","description":"Install guidance for EONAPP in this browser profile, including PWA prompts, fallback steps, and the local-first boundaries around account, backup, and device storage.","publisher":{"@type":"Organization","name":"EONAPP.ch","url":"https://eonapp.ch/"}}</script>
+  <script type="module" src="/assets/js/localStorage-shim.js"></script>
+  <link rel="canonical" href="https://eonapp.ch/install" />
+  <meta name="robots" content="noindex, nofollow" />
+</head>
+<body data-page-type="install" data-eon-app-page="install">
+  <a href="#main" class="skip-to-content">Skip to main content</a>
+  <main id="main" class="eon-hub-main">
+    <header class="eon-hub-top">
+      <div>
+        <p class="eon-hub-kicker">Browser-profile install</p>
+        <h1 class="eon-hub-title">Install EONAPP</h1>
+        <p class="eon-hub-subtitle">Installation depends on your browser and device. The install prompt adds a local app shell for this profile only; it does not create a cloud backup, share keys, copy Vault data, or unlock paid features.</p>
+      </div>
+      <div class="local-ai-hero-actions">
+        <button type="button" class="eon-hub-primary" data-eon-install-request>Install EONAPP</button>
+        <p data-eon-install-status role="status" aria-live="polite"></p>
+        <a class="local-ai-secondary" href="/profile">Open device & app preferences</a>
+      </div>
+    </header>
+
+    <section class="eon-hub-grid" aria-label="Install guidance">
+      <article class="eon-hub-card">
+        <p class="eon-hub-kicker">What install does</p>
+        <h2>Local shell and faster return path</h2>
+        <p>The browser may offer a PWA-style install prompt. If accepted, EONAPP opens like a local app for this browser profile. Chat history, Vault data, City progress, and provider settings still remain local unless you export or restore them explicitly.</p>
+      </article>
+
+      <article class="eon-hub-card">
+        <p class="eon-hub-kicker">If no prompt appears</p>
+        <h2>Use the browser menu</h2>
+        <p>Some browsers hide the prompt behind the address-bar app icon or the browser menu. If the button above does nothing, use the browser’s install option or continue from this tab without installation.</p>
+        <div class="eon-device-actions">
+          <button type="button" class="eon-record-button" data-eon-install-request>Try install again</button>
+          <a href="/help">Open help</a>
+        </div>
+      </article>
+
+      <article class="eon-hub-card">
+        <p class="eon-hub-kicker">Keep boundaries clear</p>
+        <h2>Install is not backup or sync</h2>
+        <p>Installing EONAPP does not grant Google Drive access, activate sync, copy provider keys, or create a paid entitlement. Use Profile, Vault, Capsule, and Billing for those separate decisions.</p>
+        <div class="eon-device-actions">
+          <a href="/profile">Profile & preferences</a>
+          <a href="/vault">Vault & recovery</a>
+          <a href="/billing">Billing status</a>
+        </div>
+      </article>
+    </section>
+
+    <section id="local-ai-companion" class="eon-hub-card" data-eon-local-companion-install aria-labelledby="eon-local-companion-install-title">
+      <div class="eon-offline-pack-head">
+        <div>
+          <p class="eon-hub-kicker">Desktop Local AI</p>
+          <h2 id="eon-local-companion-install-title">One small helper for stronger Local AI</h2>
+          <p>EON Local Companion lets EONAPP connect to approved AI tools already on this computer, start supported local engines after your setup tap, and recover image/video connections without asking you to understand ports or CORS.</p>
+        </div>
+        <span class="eon-record-status" data-eon-companion-badge>Checking this device…</span>
+      </div>
+      <div class="eon-data-custody-grid">
+        <div><strong>Basic chat</strong><span>Phones, tablets and basic computers can use Local Lite when this browser supports it. No desktop helper is required for that path.</span></div>
+        <div><strong>Desktop models</strong><span>On Windows or macOS, EON can reuse a supported Ollama or LM Studio installation after proof. The Companion is offered only when a signed device-certified build exists for that exact platform.</span></div>
+        <div><strong>Images & video</strong><span>On capable desktops, a certified Companion is the protected ComfyUI connection. Image and Video readiness are checked separately and heavy jobs share the City workload governor.</span></div>
+      </div>
+      <div class="eon-device-actions">
+        <a class="eon-hub-primary" data-eon-companion-download hidden>Download EON Local Companion</a>
+        <button type="button" class="eon-hub-primary" data-eon-companion-unavailable disabled>Companion installer is being certified</button>
+        <a class="eon-record-button" href="/local-ai#eonbot-local-ai-setup">Use Local AI</a>
+      </div>
+      <p class="eon-profile-status" data-eon-companion-status role="status" aria-live="polite">Checking the safest Local AI path for this device…</p>
+      <p class="eon-data-custody-warning">EONAPP never substitutes a developer script for the consumer installer. Third-party AI apps and model downloads remain visible and user-approved; Local mode never silently falls back to cloud AI.</p>
+    </section>
+
+    <section id="offline-pack" class="eon-hub-card eon-offline-pack-card" aria-labelledby="eon-offline-pack-title">
+      <div class="eon-offline-pack-head">
+        <div>
+          <p class="eon-hub-kicker">Offline workspace</p>
+          <h2 id="eon-offline-pack-title">Install EONAPP for offline work</h2>
+          <p>The Core pack keeps the EONAPP shell, Local AI setup, local projects, Library, Workspace, Automations, Vault tools, Capsule and local-first pages available in this browser. The Full pack also installs EON City and the current Expanse art after one signed-in online check.</p>
+        </div>
+        <span class="eon-record-status" data-eon-offline-pack-badge>Checking browser…</span>
+      </div>
+      <div class="eon-data-custody-grid">
+        <div><strong>Core pack</strong><span>Works for guest or signed-in local work. Cloud-only actions remain unavailable while offline.</span></div>
+        <div><strong>Full City pack</strong><span>Requires one explicit signed-in installation. City assets are verified and reused from browser storage.</span></div>
+        <div><strong>Local AI</strong><span>Loopback calls to approved localhost runtimes stay direct and are never cached, proxied or queued.</span></div>
+      </div>
+      <div class="eon-device-actions">
+        <button type="button" class="eon-record-button" data-eon-offline-core-install>Install Core offline pack</button>
+        <button type="button" class="eon-hub-primary" data-eon-offline-full-install>Install Full EONAPP + City pack</button>
+        <button type="button" class="eon-record-button" data-eon-offline-refresh>Check or repair pack</button>
+        <button type="button" class="eon-record-button" data-eon-offline-remove>Remove offline pack</button>
+      </div>
+      <p class="eon-profile-status" data-eon-offline-pack-status role="status" aria-live="polite">Checking installed offline coverage…</p>
+      <p class="eon-data-custody-warning">Offline mode never stores cloud API responses, provider keys, prompts, payment data or account cookies. Unsaved cloud actions are not queued automatically. Removing the offline access pack keeps only reusable public City art so unchanged assets do not need to be downloaded again.</p>
+    </section>
+  </main>
+  <script type="module" src="/assets/js/install-page.js"></script>
+  <script type="module" src="/assets/js/utils/accessibility-autoload.js"></script>
+</body>
+</html>

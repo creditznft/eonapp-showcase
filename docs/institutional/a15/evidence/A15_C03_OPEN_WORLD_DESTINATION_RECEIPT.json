@@ -1,0 +1,40 @@
+{
+  "schema": "eonapp.a15.c03.open-world-destination-receipt.v2",
+  "wave": "C03",
+  "status": "pass",
+  "worlds": {
+    "primaryLauncher": "Explore",
+    "order": [
+      "Signal Frontier",
+      "Storm Sector",
+      "My Frontier"
+    ],
+    "signalReviewRequired": true,
+    "myFrontierStarterAccess": true,
+    "stormSignalGateRequired": false,
+    "separateRouteCreated": false
+  },
+  "runtime": {
+    "oneEngineSceneRenderLoopPreserved": true,
+    "existingSignalReviewControllerReused": true,
+    "enterControl": "Enter Signal Frontier",
+    "cancelControl": "Cancel"
+  },
+  "authority": {
+    "menuOrder": [
+      "Living Nexus",
+      "Mission Board",
+      "Live Monitors",
+      "Share Command Center",
+      "Creator Capture",
+      "Plans & Access",
+      "Accessible Map"
+    ],
+    "physicalGateCount": 1,
+    "buildHtmlEntryCount": 32,
+    "coreCoupledRouteCount": 0,
+    "cityCoreImplementationModuleCount": 0
+  },
+  "errors": [],
+  "digest": "f906b7435d91d9ad9297f8fcd6d0d44203d62d7fdae228c64b77c6da58fe2c35"
+}

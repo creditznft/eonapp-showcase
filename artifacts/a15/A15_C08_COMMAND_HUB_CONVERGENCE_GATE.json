@@ -1,0 +1,89 @@
+{
+  "schema": "eonapp.a15.c08.command-hub-convergence-gate.v1",
+  "wave": "C08",
+  "generatedAt": "2026-08-10T19:27:13.079Z",
+  "ok": false,
+  "passed": 12,
+  "total": 15,
+  "checks": [
+    {
+      "id": "source-valid",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "id": "ten-stations",
+      "pass": true,
+      "detail": "10"
+    },
+    {
+      "id": "three-discoveries",
+      "pass": true,
+      "detail": "3"
+    },
+    {
+      "id": "station-part-coverage",
+      "pass": true,
+      "detail": "station terminal npc"
+    },
+    {
+      "id": "maintained-surfaces",
+      "pass": true,
+      "detail": "work-surface registry"
+    },
+    {
+      "id": "support-classified",
+      "pass": true,
+      "detail": "6"
+    },
+    {
+      "id": "nexus-privacy",
+      "pass": true,
+      "detail": "bounded state"
+    },
+    {
+      "id": "nexus-non-executing",
+      "pass": true,
+      "detail": "review only"
+    },
+    {
+      "id": "runtime-enforces-c08",
+      "pass": true,
+      "detail": "mount fail closed"
+    },
+    {
+      "id": "open-world-featured",
+      "pass": false,
+      "detail": "flagship menu"
+    },
+    {
+      "id": "share-featured",
+      "pass": false,
+      "detail": "distribution hierarchy"
+    },
+    {
+      "id": "plans-featured",
+      "pass": false,
+      "detail": "contextual only"
+    },
+    {
+      "id": "no-dead-interaction-surface",
+      "pass": true,
+      "detail": "open actions have surface"
+    },
+    {
+      "id": "nexus-no-raw-content",
+      "pass": true,
+      "detail": "privacy truth"
+    },
+    {
+      "id": "browser-proof-pending",
+      "pass": true,
+      "detail": "source-only; rendered proof required"
+    }
+  ],
+  "limitations": [
+    "Source-only certification.",
+    "Rendered object visibility, interaction reachability and first-party console/network proof remain external gates."
+  ]
+}

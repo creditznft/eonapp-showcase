@@ -1,0 +1,14 @@
+.blog-article { max-width: 720px; margin: 0 auto; }
+    .blog-article h2 { margin-top: 2rem; }
+    .blog-article h  { margin-top: 1.5rem; color: var(--clr-accent); }
+    .blog-article p, .blog-article li { line-height: 1.8; }
+    .blog-article ol, .blog-article ul { padding-left: 1.5rem; margin: 1rem 0; }
+    .blog-article .pool-card { background: var(--clr-surface); border: 1px solid var(--clr-border); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 1.25rem 0; }
+    .blog-article .pool-card h  { margin-top: 0; font-size: 1.05rem; }
+    .blog-article .pool-label { font-size: .8rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; padding: .2rem .6rem; border-radius: 6px; background: var(--clr-accent); color: var(--clr-bg); display: inline-block; margin-bottom: .5rem; }
+    .blog-article .tip { background: color-mix(in srgb, var(--clr-accent) 10%, transparent); border-left:  px solid var(--clr-accent); padding: .75rem 1rem; border-radius: 0 8px 8px 0; margin: 1rem 0; font-size: .92rem; }
+    .blog-meta { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin-bottom: 2rem; font-size: .88rem; opacity: .75; }
+    .blog-cta-bar { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: 2rem; }
+    .points-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: .9rem; }
+    .points-table th, .points-table td { padding: .5rem .75rem; border: 1px solid var(--clr-border); text-align: left; }
+    .points-table th { background: var(--clr-surface); font-weight: 600; }

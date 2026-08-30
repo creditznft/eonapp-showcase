@@ -1,0 +1,456 @@
+# One-time fail-closed Stage-4 recovery promotion.
+# This workflow builds exactly once, proves the staged Pages root on a gate Preview,
+# and promotes those identical bytes to production with automatic rollback.
+name: A15 Stage-4 Single-Build Promotion
+
+on:
+  push:
+    branches:
+      - codex/eoncity-stage4-repair
+
+permissions:
+  actions: read
+  contents: read
+  deployments: write
+  statuses: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+
+concurrency:
+  group: cloudflare-pages-production
+  cancel-in-progress: false
+
+jobs:
+  promote:
+    if: "${{ github.event.head_commit.message == 'release: run single-build Stage-4 promotion' }}"
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    environment:
+      name: production
+      url: https://eonapp.ch
+    env:
+      EXPECTED_COMMIT: ${{ github.sha }}
+      PREVIEW_BRANCH: stage4-production-gate
+    steps:
+      - name: Validate one-time promotion authority
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          test "$GITHUB_REF_NAME" = "codex/eoncity-stage4-repair"
+          test "$GITHUB_EVENT_NAME" = "push"
+          test "${{ github.event.head_commit.message }}" = "release: run single-build Stage-4 promotion"
+          printf '%s' "$EXPECTED_COMMIT" | grep -Eq '^[a-f0-9]{40}$'
+          gh api "repos/$REPO/commits/$EXPECTED_COMMIT" > /tmp/exact-commit.json
+          test "$(jq -r .sha /tmp/exact-commit.json)" = "$EXPECTED_COMMIT"
+
+      - name: Check out exact promotion commit
+        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+
+      - name: Use Node 22
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install exact dependencies
+        run: npm ci --include=dev --no-audit --no-fund --prefer-offline
+
+      - name: Run permanent predeploy certification
+        env:
+          EONAPP_SOURCE_REVISION: ${{ github.sha }}
+        run: npm run verify:codex-predeploy
+
+      - name: Build and verify exactly one immutable candidate
+        id: candidate
+        run: |
+          npm run release:candidate -- --commit "$EXPECTED_COMMIT"
+          npm run release:candidate:verify -- artifacts/w641-release-candidate
+          ROOT="$(realpath artifacts/w641-release-candidate)"
+          DIGEST="$(jq -r .candidateDigest "$ROOT/candidate-provenance.json")"
+          COMMIT="$(jq -r .commitSha "$ROOT/candidate-provenance.json")"
+          printf '%s' "$DIGEST" | grep -Eq '^[a-f0-9]{64}$'
+          test "$COMMIT" = "$EXPECTED_COMMIT"
+          node scripts/w641-verify-release-candidate.mjs "$ROOT" "$DIGEST"
+          echo "root=$ROOT" >> "$GITHUB_OUTPUT"
+          echo "digest=$DIGEST" >> "$GITHUB_OUTPUT"
+
+      - name: Stage the complete Pages root exactly once
+        id: stage
+        env:
+          CANDIDATE_ROOT: ${{ steps.candidate.outputs.root }}
+        run: |
+          DEPLOY_ROOT="$RUNNER_TEMP/eonapp-stage4-single-build-root"
+          node scripts/w660l-stage-pages-deploy-root.mjs \
+            --candidate "$CANDIDATE_ROOT" \
+            --output "$DEPLOY_ROOT"
+          test -f "$DEPLOY_ROOT/_routes.json"
+          test -f "$DEPLOY_ROOT/release/candidate-provenance.json"
+          test -f "$DEPLOY_ROOT/functions/api/auth/session.js"
+          test -f "$DEPLOY_ROOT/functions/api/city/access.js"
+          test -f "$DEPLOY_ROOT/functions/api/billing/status.js"
+          test -f "$DEPLOY_ROOT/functions/api/referrals.js"
+          test "$(jq -r .candidateDigest "$DEPLOY_ROOT/release/candidate-provenance.json")" = "${{ steps.candidate.outputs.digest }}"
+          echo "root=$DEPLOY_ROOT" >> "$GITHUB_OUTPUT"
+
+      - name: Validate Cloudflare credentials
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          test -n "$CLOUDFLARE_API_TOKEN"
+          test -n "$CLOUDFLARE_ACCOUNT_ID"
+
+      - name: Deploy identical staged bytes to production gate Preview
+        id: gate_deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          DEPLOY_ROOT: ${{ steps.stage.outputs.root }}
+        run: |
+          curl --fail --silent --show-error \
+            -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/eonapp-ch/deployments" \
+            > /tmp/gate-before.json
+          jq -r '.result[].id' /tmp/gate-before.json | sort -u > /tmp/gate-ids-before.txt
+          STARTED_AT="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          echo "started_at=$STARTED_AT" >> "$GITHUB_OUTPUT"
+          cd "$DEPLOY_ROOT"
+          npx --yes wrangler@4 pages deploy . \
+            --project-name=eonapp-ch \
+            --branch="$PREVIEW_BRANCH"
+
+      - name: Resolve and prove exact gate Preview provenance
+        id: gate
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          STARTED_AT: ${{ steps.gate_deploy.outputs.started_at }}
+          EXPECTED_DIGEST: ${{ steps.candidate.outputs.digest }}
+          CANDIDATE_ROOT: ${{ steps.candidate.outputs.root }}
+        run: |
+          DEPLOYMENT=null
+          for attempt in $(seq 1 40); do
+            curl --fail --silent --show-error \
+              -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+              "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/eonapp-ch/deployments" \
+              > /tmp/gate-after.json
+            MATCHES="$(jq -c \
+              --arg branch "$PREVIEW_BRANCH" \
+              --arg started "$STARTED_AT" \
+              --rawfile before /tmp/gate-ids-before.txt '
+                ($before | split("\n")) as $beforeIds
+                | [.result[]
+                    | select(.environment == "preview")
+                    | select(.deployment_trigger.metadata.branch == $branch)
+                    | select(.created_on >= $started)
+                    | select(.id as $id | (($beforeIds | index($id)) | not))]
+              ' /tmp/gate-after.json)"
+            COUNT="$(jq 'length' <<<"$MATCHES")"
+            if [ "$COUNT" -eq 1 ]; then
+              DEPLOYMENT="$(jq -c '.[0]' <<<"$MATCHES")"
+              break
+            fi
+            test "$COUNT" -lt 2
+            sleep 10
+          done
+          test "$DEPLOYMENT" != "null"
+          ID="$(jq -r .id <<<"$DEPLOYMENT")"
+          URL="$(jq -r .url <<<"$DEPLOYMENT")"
+          ALIAS_URL="$(jq -r '.aliases[0] // empty' <<<"$DEPLOYMENT")"
+          test "$(jq -r .latest_stage.status <<<"$DEPLOYMENT")" = "success"
+          for BASE in "$URL" "$ALIAS_URL"; do
+            test -n "$BASE"
+            OK=false
+            for attempt in $(seq 1 40); do
+              if curl --fail --silent --show-error "$BASE/release/candidate-provenance.json" -o /tmp/gate-provenance.json; then
+                if [ "$(jq -r .candidateDigest /tmp/gate-provenance.json)" = "$EXPECTED_DIGEST" ] \
+                  && [ "$(jq -r .commitSha /tmp/gate-provenance.json)" = "$EXPECTED_COMMIT" ] \
+                  && [ "$(jq -r .distPayloadDigest /tmp/gate-provenance.json)" = "$(jq -r .distPayloadDigest "$CANDIDATE_ROOT/candidate-provenance.json")" ]; then
+                  OK=true
+                  break
+                fi
+              fi
+              sleep 10
+            done
+            test "$OK" = true
+          done
+          echo "id=$ID" >> "$GITHUB_OUTPUT"
+          echo "url=$URL" >> "$GITHUB_OUTPUT"
+          echo "alias_url=$ALIAS_URL" >> "$GITHUB_OUTPUT"
+
+      - name: Verify gate Pages Functions API parity
+        env:
+          DEPLOYMENT_URL: ${{ steps.gate.outputs.url }}
+          ALIAS_URL: ${{ steps.gate.outputs.alias_url }}
+        run: |
+          cat > /tmp/check-stage4-api.mjs <<'NODE'
+          const bases = [process.env.DEPLOYMENT_URL, process.env.ALIAS_URL];
+          const definitions = [
+            ['/api/auth/session', 'eonapp.identity-only.v1'],
+            ['/api/city/access', 'eon.city.access.w649b.v1'],
+            ['/api/billing/status', 'eonapp.billing.dodo-lifecycle.w628.v1'],
+            ['/api/referrals', 'eonapp.referrals.scalable-minimal-ledger.w623i.v2']
+          ];
+          const failures = [];
+          for (const base of bases) {
+            for (const [route, schema] of definitions) {
+              try {
+                const response = await fetch(`${base}${route}`, { headers: { accept: 'application/json', 'cache-control': 'no-store' } });
+                const body = await response.json().catch(() => null);
+                if (response.status !== 200) failures.push(`${base}:${route}:status:${response.status}`);
+                if (!response.headers.get('content-type')?.toLowerCase().includes('application/json')) failures.push(`${base}:${route}:not-json`);
+                if (body?.schema !== schema) failures.push(`${base}:${route}:schema:${body?.schema || 'missing'}`);
+              } catch (error) {
+                failures.push(`${base}:${route}:request:${error?.message || error}`);
+              }
+            }
+          }
+          if (failures.length) {
+            console.error(failures.join('\n'));
+            process.exit(1);
+          }
+          NODE
+          STATUS=1
+          for attempt in $(seq 1 60); do
+            if node /tmp/check-stage4-api.mjs; then STATUS=0; break; fi
+            sleep 10
+          done
+          exit "$STATUS"
+
+      - name: Install Chromium for live proofs
+        run: npx playwright install --with-deps chromium
+
+      - name: Require real Command Hub from gate deployment
+        env:
+          EON_STAGE4_BASE_URL: ${{ steps.gate.outputs.url }}
+          EON_STAGE4_OUTPUT_DIR: /tmp/stage4-single-build-gate-proof
+        run: node scripts/a15-stage4-production-bundle-proof.mjs
+
+      - name: Wait for exact-head source safety authorities
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          for attempt in $(seq 1 100); do
+            gh api "repos/$REPO/commits/$EXPECTED_COMMIT/status" > /tmp/exact-status.json
+            READY=true
+            for context in \
+              eonapp/a15-stage4-release-safety \
+              eonapp/predeploy-result/pass \
+              eonapp/a15-stage4-production-bundle-proof
+            do
+              STATE="$(jq -r --arg context "$context" '[.statuses[] | select(.context == $context)][0].state // empty' /tmp/exact-status.json)"
+              if [ "$STATE" = "failure" ] || [ "$STATE" = "error" ]; then
+                echo "$context failed for $EXPECTED_COMMIT" >&2
+                exit 1
+              fi
+              if [ "$STATE" != "success" ]; then READY=false; fi
+            done
+            if [ "$READY" = true ]; then exit 0; fi
+            sleep 15
+          done
+          echo "Exact-head source safety authorities did not become successful." >&2
+          exit 1
+
+      - name: Capture exact rollback authority
+        id: rollback
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          curl --fail --silent --show-error \
+            -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/eonapp-ch/deployments" \
+            > /tmp/production-before.json
+          ROLLBACK="$(jq -c '
+            .result
+            | map(select(.environment == "production"))
+            | map(select(.deployment_trigger.metadata.branch == "main"))
+            | map(select(.latest_stage.status == "success"))
+            | sort_by(.created_on)
+            | last
+          ' /tmp/production-before.json)"
+          test "$ROLLBACK" != "null"
+          ID="$(jq -r .id <<<"$ROLLBACK")"
+          URL="$(jq -r .url <<<"$ROLLBACK")"
+          test -n "$ID"
+          test -n "$URL"
+          printf '%s' "$ID" > /tmp/eonapp-rollback-id
+          echo "id=$ID" >> "$GITHUB_OUTPUT"
+          echo "url=$URL" >> "$GITHUB_OUTPUT"
+
+      - name: Record explicit owner and environment authorization
+        env:
+          CANDIDATE_DIGEST: ${{ steps.candidate.outputs.digest }}
+          GATE_URL: ${{ steps.gate.outputs.url }}
+          ROLLBACK_ID: ${{ steps.rollback.outputs.id }}
+        run: |
+          jq -n \
+            --arg schema eonapp.a15.stage4.single-build-owner-authorization.v1 \
+            --arg actor "$GITHUB_ACTOR" \
+            --arg commitSha "$EXPECTED_COMMIT" \
+            --arg candidateDigest "$CANDIDATE_DIGEST" \
+            --arg gateUrl "$GATE_URL" \
+            --arg rollbackDeploymentId "$ROLLBACK_ID" \
+            --arg authorizedAt "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+            '{schema:$schema,ok:true,scope:"authenticated-eoncity-stage4-runtime-recovery",ownerAuthorization:"explicit-owner-chat-authorization-plus-protected-production-environment",actor:$actor,commitSha:$commitSha,candidateDigest:$candidateDigest,gateUrl:$gateUrl,rollbackDeploymentId:$rollbackDeploymentId,authorizedAt:$authorizedAt}' \
+            | tee /tmp/stage4-single-build-owner-authorization.json
+
+      - name: Promote the identical staged bytes to production
+        id: production_deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          DEPLOY_ROOT: ${{ steps.stage.outputs.root }}
+        run: |
+          STARTED_AT="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          echo "started_at=$STARTED_AT" >> "$GITHUB_OUTPUT"
+          cd "$DEPLOY_ROOT"
+          npx --yes wrangler@4 pages deploy . \
+            --project-name=eonapp-ch \
+            --branch=main
+          touch /tmp/eonapp-production-deployed
+
+      - name: Resolve and verify exact production provenance
+        id: production
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          STARTED_AT: ${{ steps.production_deploy.outputs.started_at }}
+          EXPECTED_DIGEST: ${{ steps.candidate.outputs.digest }}
+          CANDIDATE_ROOT: ${{ steps.candidate.outputs.root }}
+          ROLLBACK_ID: ${{ steps.rollback.outputs.id }}
+        run: |
+          DEPLOYMENT=null
+          for attempt in $(seq 1 40); do
+            curl --fail --silent --show-error \
+              -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+              "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/eonapp-ch/deployments" \
+              > /tmp/production-after.json
+            MATCHES="$(jq -c --arg started "$STARTED_AT" --arg rollback "$ROLLBACK_ID" '
+              [.result[]
+                | select(.environment == "production")
+                | select(.deployment_trigger.metadata.branch == "main")
+                | select(.created_on >= $started)
+                | select(.id != $rollback)]
+            ' /tmp/production-after.json)"
+            COUNT="$(jq 'length' <<<"$MATCHES")"
+            if [ "$COUNT" -eq 1 ]; then
+              DEPLOYMENT="$(jq -c '.[0]' <<<"$MATCHES")"
+              break
+            fi
+            test "$COUNT" -lt 2
+            sleep 10
+          done
+          test "$DEPLOYMENT" != "null"
+          ID="$(jq -r .id <<<"$DEPLOYMENT")"
+          URL="$(jq -r .url <<<"$DEPLOYMENT")"
+          test "$(jq -r .latest_stage.status <<<"$DEPLOYMENT")" = "success"
+          for BASE in "$URL" https://eonapp.ch; do
+            OK=false
+            for attempt in $(seq 1 40); do
+              if curl --fail --silent --show-error "$BASE/release/candidate-provenance.json" -o /tmp/live-provenance.json; then
+                if [ "$(jq -r .candidateDigest /tmp/live-provenance.json)" = "$EXPECTED_DIGEST" ] \
+                  && [ "$(jq -r .commitSha /tmp/live-provenance.json)" = "$EXPECTED_COMMIT" ] \
+                  && [ "$(jq -r .distPayloadDigest /tmp/live-provenance.json)" = "$(jq -r .distPayloadDigest "$CANDIDATE_ROOT/candidate-provenance.json")" ]; then
+                  OK=true
+                  break
+                fi
+              fi
+              sleep 10
+            done
+            test "$OK" = true
+          done
+          echo "id=$ID" >> "$GITHUB_OUTPUT"
+          echo "url=$URL" >> "$GITHUB_OUTPUT"
+
+      - name: Verify production Pages Functions API parity
+        env:
+          DEPLOYMENT_URL: ${{ steps.production.outputs.url }}
+          ALIAS_URL: https://eonapp.ch
+        run: |
+          STATUS=1
+          for attempt in $(seq 1 60); do
+            if node /tmp/check-stage4-api.mjs; then STATUS=0; break; fi
+            sleep 10
+          done
+          exit "$STATUS"
+
+      - name: Require real Command Hub from production deployment
+        env:
+          EON_STAGE4_BASE_URL: ${{ steps.production.outputs.url }}
+          EON_STAGE4_OUTPUT_DIR: /tmp/stage4-single-build-production-proof
+        run: node scripts/a15-stage4-production-bundle-proof.mjs
+
+      - name: Require real Command Hub from eonapp.ch
+        env:
+          EON_STAGE4_BASE_URL: https://eonapp.ch
+          EON_STAGE4_OUTPUT_DIR: /tmp/stage4-single-build-domain-proof
+        run: node scripts/a15-stage4-production-bundle-proof.mjs
+
+      - name: Publish successful production receipt
+        env:
+          CANDIDATE_DIGEST: ${{ steps.candidate.outputs.digest }}
+          PRODUCTION_ID: ${{ steps.production.outputs.id }}
+          PRODUCTION_URL: ${{ steps.production.outputs.url }}
+          ROLLBACK_ID: ${{ steps.rollback.outputs.id }}
+        run: |
+          jq -n \
+            --arg schema eonapp.a15.stage4.single-build-production.v1 \
+            --arg commitSha "$EXPECTED_COMMIT" \
+            --arg candidateDigest "$CANDIDATE_DIGEST" \
+            --arg deploymentId "$PRODUCTION_ID" \
+            --arg deploymentUrl "$PRODUCTION_URL" \
+            --arg productionUrl https://eonapp.ch \
+            --arg rollbackDeploymentId "$ROLLBACK_ID" \
+            --arg deployedAt "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+            '{schema:$schema,ok:true,commitSha:$commitSha,candidateDigest:$candidateDigest,deploymentId:$deploymentId,deploymentUrl:$deploymentUrl,productionUrl:$productionUrl,rollbackDeploymentId:$rollbackDeploymentId,deployedAt:$deployedAt}' \
+            | tee /tmp/stage4-single-build-production-receipt.json
+
+      - name: Roll back production after any failed post-deploy proof
+        if: failure()
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          if [ ! -f /tmp/eonapp-production-deployed ]; then
+            echo "Production was not deployed; rollback is not required."
+            exit 0
+          fi
+          ROLLBACK_ID="$(cat /tmp/eonapp-rollback-id)"
+          printf '%s' "$ROLLBACK_ID" | grep -Eq '^[A-Za-z0-9._:-]{6,180}$'
+          curl --fail --silent --show-error \
+            -X POST \
+            -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/eonapp-ch/deployments/$ROLLBACK_ID/rollback" \
+            > /tmp/rollback-result.json
+          test "$(jq -r .success /tmp/rollback-result.json)" = "true"
+
+      - name: Publish connector-readable promotion status
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          if [ "$JOB_STATUS" = "success" ]; then
+            STATE=success
+            DESCRIPTION='Stage-4 single-build production promotion passed'
+          else
+            STATE=failure
+            DESCRIPTION='Stage-4 single-build promotion failed or rolled back'
+          fi
+          STATE="$STATE" DESCRIPTION="$DESCRIPTION" TARGET_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+            node -e "const fs=require('fs'); fs.writeFileSync('/tmp/status.json', JSON.stringify({state:process.env.STATE,context:'eonapp/a15-stage4-single-build-promotion',description:process.env.DESCRIPTION,target_url:process.env.TARGET_URL}))"
+          curl --fail --silent --show-error \
+            -X POST \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H 'Accept: application/vnd.github+json' \
+            -H 'X-GitHub-Api-Version: 2022-11-28' \
+            "${{ github.api_url }}/repos/${{ github.repository }}/statuses/${{ github.sha }}" \
+            --data-binary @/tmp/status.json

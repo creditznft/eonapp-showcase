@@ -1,0 +1,19 @@
+{
+  "schema": "eonapp.non-certifying-archive-manifest.w701.v1",
+  "wave": "W701",
+  "generatedAt": "2026-07-25T12:00:00.000Z",
+  "certifying": false,
+  "entries": [
+    {
+      "sourceTest": "tests/unit/w700-final-polished-candidate.test.mjs",
+      "archivedPath": "archive/w701-superseded-w700-exact-candidate/tests/unit/w700-final-polished-candidate.archived.mjs",
+      "testBlockCount": 5,
+      "reason": "W701 changes the current source tree, so W700 exact-current-tree hashing is historical rather than certifying.",
+      "historicalAuthoritiesRetained": [
+        "config/w700-source-reconciliation-manifest.json",
+        "config/w700-final-polished-local-candidate.json",
+        "config/w700-owner-recording-matrix.json"
+      ]
+    }
+  ]
+}

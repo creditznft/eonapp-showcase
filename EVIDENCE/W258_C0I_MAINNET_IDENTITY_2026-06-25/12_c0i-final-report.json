@@ -1,0 +1,70 @@
+{
+  "schema": "eonapp.w258.c0i.report.v1",
+  "generatedAt": "2026-06-25T04:46:38.640Z",
+  "mode": "offline",
+  "c0iExitEligible": false,
+  "status": "blocked-online-and-artifact-proof-required",
+  "registry": {
+    "path": "deployment-manifests/polygon-mainnet-c0i-canonical-registry.json",
+    "sha256": "0ad32c8d2c13c2ca61e659e2369ce1306ae7b943c3a8acf1f22689eab317ccfe",
+    "contractCount": 16,
+    "chainId": 137
+  },
+  "c0pProof": {
+    "path": "CHAIN_EVIDENCE/R3_MAINNET_PROOF_2026-06-25/polygon-mainnet-live-proof.json",
+    "sha256": "a272a25639bd0bbd0cd1d7dc464700ce83b95328ed714ec503b400448d119ecd",
+    "recordCount": 16
+  },
+  "static": {
+    "errors": [],
+    "warnings": [],
+    "manifestMislabel": true,
+    "sourceProofRecordCount": 16
+  },
+  "offlineCompilerEvidence": {
+    "status": "partial-exact-compiler-source-candidates",
+    "path": "evidence/c0i/offline-solc-0.8.24-batched-summary.json",
+    "sha256": "31b32bb79edc38fbdadfcf8740bfeda025eade0196dfe7dc5ed1db74d5164d14",
+    "compiledCount": 15,
+    "missingLabels": [
+      "LootOperator"
+    ],
+    "compilerVersions": [
+      "0.8.24+commit.e11b9ed9.Emscripten.clang"
+    ]
+  },
+  "roleCustodyEvidence": {
+    "status": "pending-human-and-live-rpc-evidence",
+    "path": "deployment-manifests/polygon-mainnet-c0i-role-custody-attestation.template.json",
+    "sha256": "f47f464bf2f1a272d9b54c966f7afe0a4d1daf2131cba0716c3ef29110e27c36",
+    "chainId": 137,
+    "approvalDecision": "pending",
+    "complete": false
+  },
+  "guardrails": {
+    "modeOnlineRequiredForRpc": true,
+    "readOnlyMethods": [
+      "eth_chainId",
+      "eth_blockNumber",
+      "eth_getCode",
+      "eth_call"
+    ],
+    "forbiddenMethods": [
+      "eth_sendTransaction",
+      "eth_sendRawTransaction",
+      "personal_sign",
+      "eth_sign",
+      "wallet_switchEthereumChain",
+      "eth_requestAccounts"
+    ],
+    "appRuntimeIntegration": "disabled"
+  },
+  "blockingRequirements": [
+    "two independent successful RPC runs",
+    "exact runtime code-hash agreement",
+    "source artifact/runtime disposition for all 16 contracts",
+    "complete exact source-compiler evidence (current missing: LootOperator)",
+    "role/operator/custody evidence with owner approval (current: pending-human-and-live-rpc-evidence/pending)",
+    "manifest naming repair reviewed and recorded"
+  ]
+}

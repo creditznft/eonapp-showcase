@@ -1,0 +1,22 @@
+Snapshot: EONAPP_CHATGPT_SOURCE_HANDOFF_c6a24e4768e6_2026-06-12.zip
+Commit: c6a24e4768e68672ec9aedb0fb89788ee0e170c3
+Branch: main
+Created: 2026-06-12 11:17:47 +05:30
+Purpose: Source + live audit + smoke evidence handoff for GPT-5.5 re-audit, bug reproduction, Vite build, and targeted fixes.
+Included: Exact tracked repository files at HEAD via git archive, plus 2026-06-12 audit artifacts and smoke evidence.
+Excluded: .git metadata, node_modules, local caches, transient temp folders.
+Key docs:
+- _GPT55_HANDOFF_AUDIT\\EONAPP_GPT55_REAUDIT_HANDOFF_2026-06-12.md
+- _GPT55_HANDOFF_AUDIT\\eonapp-live-audit-2026-06-12.md
+- _GPT55_HANDOFF_AUDIT\\eonapp-live-audit-summary-2026-06-12.json
+Current local status:
+- lint: passed
+- build: passed
+- smoke:build: passed
+- audit:site: passed
+- smoke:chat: passed
+- test:unit: failing
+- smoke:home: failing
+- smoke:browser: failing
+- smoke:creator: failing
+SHA256: F1EE30C0C4E912FC866D3FA48EEC8EDFF19F7493A7B4BF90195B635D53CE1841

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="robots" content="index, follow" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>EON Trade Thesis Generator Walkthrough — EONAPP.ch</title>
+  <meta name="description" content="Use Trade mode to build crypto theses with bull/base/bear cases and portfolio-aware AI context." />
+  <link rel="canonical" href="https://eonapp.ch/blog/eon-signal-thesis-generator.html" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://www.googletagmanager.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: blob: https:; connect-src 'self' ws: wss: https:; font-src 'self' data: https://cdn.jsdelivr.net; manifest-src 'self'; media-src 'self' blob:; worker-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'" />
+  <meta property="og:title" content="Crypto Research with EON Trade" />
+  <meta property="og:description" content="A practical workflow for thesis generation, watchlist analysis, and portfolio journaling." />
+  <meta property="og:image" content="https://eonapp.ch/assets/img/og/default.svg" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="/assets/css/base.css" />
+  <link rel="stylesheet" href="/assets/css/layout.css" />
+  <link rel="stylesheet" href="/assets/css/components.css" />
+    <link rel="stylesheet" href="/assets/css/blog-eon-signal-thesis-generator.css" />
+
+<meta name="twitter:card" content="summary_large_image" />
+    <script type="module" src="/assets/js/localStorage-shim.js"></script>
+</head>
+<body data-page-type="blog-post">
+<a href="#main" class="skip-to-content">Skip to main content</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="logo">⚡ EONAPP<span>.ch</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/workspace" data-i18n-key="nav.workspace">Workspace</a>
+      <a href="/chat.html" data-i18n-key="nav.ai-chat">AI Chat</a>
+      <a href="/trade">Trade</a>
+      <a href="/vault">Vault</a>
+      <a href="/market">Market</a>
+      <a href="/realm">Realm</a>
+      <a href="/billing">Billing status</a>
+    </nav>
+    <span id="sub-badge" class="sub-badge" aria-label="Subscription tier"></span>
+  </div>
+</header>
+<main id="main">
+  <section class="page-hero"><div class="container"><span class="badge" data-i18n-key="blog.article.trade.badge" data-i18n-fallback="Trade">Trade</span><h1 data-i18n-key="blog.article.trade.title" data-i18n-fallback="Crypto Research with EON Trade">Crypto Research with EON Trade</h1><p data-i18n-key="blog.article.trade.lead" data-i18n-fallback="Build better market decisions with structure, not noise.">Build better market decisions with structure, not noise.</p></div></section>
+  <section class="section"><div class="container blog-article">
+    <div class="blog-meta">
+      <span data-i18n-key="blog.article.trade.meta.read" data-i18n-fallback="7 min read">7 min read</span>
+      <span>·</span>
+      <span data-i18n-key="blog.article.trade.meta.guide" data-i18n-fallback="Trade guide">Trade guide</span>
+      <span>·</span>
+      <a href="/blog/" data-i18n-key="blog.article.back" data-i18n-fallback="← Back to blog">← Back to blog</a>
+    </div>
+    <p data-i18n-key="blog.article.trade.p1" data-i18n-fallback="EON Trade helps you turn raw market data into a defendable thesis by combining live market feeds, watchlist context, and AI analysis.">EON Trade helps you turn raw market data into a defendable thesis by combining live market feeds, watchlist context, and AI analysis.</p>
+    <h2 data-i18n-key="blog.article.trade.h2.workflow" data-i18n-fallback="Core workflow">Core workflow</h2>
+    <ol>
+      <li data-i18n-key="blog.article.trade.li1" data-i18n-fallback="Choose an asset and timeframe.">Choose an asset and timeframe.</li>
+      <li data-i18n-key="blog.article.trade.li2" data-i18n-fallback="Generate bull/base/bear case outputs.">Generate bull/base/bear case outputs.</li>
+      <li data-i18n-key="blog.article.trade.li3" data-i18n-fallback="Save key assumptions in your research archive.">Save key assumptions in your research archive.</li>
+      <li data-i18n-key="blog.article.trade.li4" data-i18n-fallback="Add the asset to your watchlist and define trigger levels.">Add the asset to your watchlist and define trigger levels.</li>
+      <li data-i18n-key="blog.article.trade.li5" data-i18n-fallback="Optionally connect Binance read-only keys for portfolio-aware prompts.">Optionally connect Binance read-only keys for portfolio-aware prompts.</li>
+    </ol>
+    <h2 data-i18n-key="blog.article.trade.h2.template" data-i18n-fallback="Prompt template">Prompt template</h2>
+    <pre><code>Build a 90-day thesis for [ASSET].
+Include bull/base/bear scenarios, key invalidation levels,
+macro dependencies, and risk-adjusted position sizing notes.</code></pre>
+    <h2 data-i18n-key="blog.article.trade.h2.safety" data-i18n-fallback="Safety policy">Safety policy</h2>
+    <p data-i18n-key="blog.article.trade.p2" data-i18n-fallback="Trade is advisory only. No automatic execution. Keep your process explicit and always review with your own risk rules.">Trade is advisory only. No automatic execution. Keep your process explicit and always review with your own risk rules.</p>
+    <div class="share-actions"><a class="btn btn-primary" href="/trade" data-i18n-key="blog.article.trade.cta1" data-i18n-fallback="Open Trade →">Open Trade →</a><a class="btn btn-outline" href="/build" data-i18n-key="blog.article.trade.cta2" data-i18n-fallback="Run Trade mission →">Run Trade mission →</a></div>
+  </div></section>
+</main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-brand"><a href="/" class="logo">⚡ EONAPP<span>.ch</span></a><p>AI-native platform for creators, builders &amp; operators.</p></div><nav class="footer-nav">
+      <a href="/trade">Trade</a>
+      <a href="/vault">Vault</a>
+      <a href="/market">Market</a>
+      <a href="/marketplace.html">NFT Exchange</a>
+      <a href="/get-free-ai-power.html">Free AI</a>
+      <a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+    </nav></div></footer>
+<script type="module" src="/assets/js/content-lite.js"></script>
+
+<!-- -- Mobile PWA Bottom Nav ------------------------------ -->
+<nav class="eon-bottom-nav" aria-label="Quick navigation">
+  <a href="/build" class="eon-bottom-nav-item" aria-label="Build"><span class="eon-bnav-icon">⚡</span><span class="eon-bnav-label">Build</span></a>
+  <a href="/create" class="eon-bottom-nav-item" aria-label="Create"><span class="eon-bnav-icon">🎨</span><span class="eon-bnav-label">Create</span></a>
+  <a href="/trade" class="eon-bottom-nav-item" aria-label="Trade"><span class="eon-bnav-icon">📊</span><span class="eon-bnav-label">Trade</span></a>
+  <a href="/vault" class="eon-bottom-nav-item" aria-label="Vault"><span class="eon-bnav-icon">🏦</span><span class="eon-bnav-label">Vault</span></a>
+  <a href="/chat.html" class="eon-bottom-nav-item" aria-label="AI Chat"><span class="eon-bnav-icon">💬</span><span class="eon-bnav-label">AI Chat</span></a>
+</nav>
+</body>
+</html>
+
+

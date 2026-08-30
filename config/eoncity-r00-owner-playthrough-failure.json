@@ -1,0 +1,21 @@
+{
+  "schema": "eon.city.r00.owner-playthrough-failure-freeze.v1",
+  "date": "2026-08-08",
+  "remoteAuthority": "c807b31c0d3d5a7be9d691756b296fadf82abe74",
+  "reconstructionBase": "9e6149763efaf17d203e42f65982054b40c8be50",
+  "humanAcceptance": "no-go",
+  "productionPromotionAuthorized": false,
+  "prMustRemainDraft": true,
+  "blockingThemes": [
+    "spatial-authority",
+    "responsive-viewport",
+    "surface-ownership",
+    "interaction-affordance",
+    "label-collision",
+    "signal-frontier-clarity",
+    "storm-world-hierarchy",
+    "asset-cache-proof",
+    "mobile-playability"
+  ],
+  "waves": ["R01","R02","R03","R04","R05","R06","R07","R08","R09","R10","R11"]
+}

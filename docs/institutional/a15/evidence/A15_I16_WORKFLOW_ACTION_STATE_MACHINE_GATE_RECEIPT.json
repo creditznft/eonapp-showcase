@@ -1,0 +1,40 @@
+{
+  "schema": "eonapp.a15.i16.workflow-action-state-machine-gate-receipt.v1",
+  "generatedAt": "2026-08-04T19:23:34.438Z",
+  "wave": "I16",
+  "status": "pass",
+  "authority": {
+    "schema": "eon.workflow-action.a15.v1",
+    "launchMode": "plan-simulate-review",
+    "localApprovalCreatesExternalAuthority": false,
+    "backgroundExecutionEnabled": false,
+    "certifiedExecutorEnabled": false,
+    "queuedStateRequiresServerReceipt": true,
+    "verifiedStateRequiresOutcomeReceipt": true,
+    "cityConsumesNeutralOutcomesOnly": true
+  },
+  "simulation": {
+    "reviewedState": "reviewed",
+    "approvalRequiresExplicitUserAction": true,
+    "approvedLocalOnly": true,
+    "approvedExternalExecutionAuthority": false,
+    "queueWithoutCertifiedExecutor": "certified-executor-receipt-required"
+  },
+  "sourceFiles": [
+    "assets/js/contracts/workflow/eon-workflow-action-state-machine.js",
+    "assets/js/utils/automation-os-store.js",
+    "assets/js/utils/automation-workflow-engine.js",
+    "assets/js/chat/eonbot-action-proposals.js",
+    "assets/js/eon-automations-page.js",
+    "tests/unit/a15-i16-workflow-action-state-machine.test.mjs"
+  ],
+  "claims": {
+    "backgroundExecutionCertified": false,
+    "connectorExecutionCertified": false,
+    "externalEffectCreated": false,
+    "previewDeployed": false,
+    "productionDeployed": false
+  },
+  "errors": [],
+  "digest": "f3a42ad96b2ad121427434bb98ff0eee2c87593bf92a038b5907c141a1aee9b8"
+}

@@ -1,0 +1,5 @@
+Bundle: EONAPP_CHATGPT_READY_SOURCE_1c3f661e7_2026-06-13.zip
+Commit: 1c3f661e7f744c3e7f8d31baa514c4ed0b549072
+SHA-256: 61D675B3F85B50F49713DFF0FC0CDC86B07F4176EFA904EC9C503CD09BCB8FEA
+Contents: exact tracked repo source from deployed HEAD plus CHATGPT_READY_HANDOFF_2026-06-13.md
+Purpose: upload to ChatGPT for source inspection, Vite build, and test execution.

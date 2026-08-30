@@ -1,0 +1,41 @@
+{
+  "schema": "eonapp.a15.i00-c01.validation-receipt.v1",
+  "sourceBaselineCommit": "fdc92595ca6d8fb941f45afb598a4a282dc70e62",
+  "branch": "launch/a15-core-city-integration",
+  "planningOnly": true,
+  "productBehaviorChanged": false,
+  "results": {
+    "a15BaselineAuthority": {
+      "passed": true,
+      "testsPassed": 5,
+      "testsFailed": 0
+    },
+    "w766ToW802RunnableRegression": {
+      "passed": true,
+      "testFiles": 203,
+      "testsPassed": 765,
+      "testsFailed": 0,
+      "note": "Current no-node_modules environment uses the runnable source set. The preserved W802B handover remains the historical authority for its 770/770 run."
+    },
+    "w766ir2SourceCertification": {
+      "passed": true,
+      "criteriaPassed": 10,
+      "criteriaTotal": 10,
+      "browserCertified": false,
+      "authenticatedOfflineCertified": false
+    },
+    "workspaceSecretScan": {
+      "passed": true,
+      "textFilesScanned": 5078
+    }
+  },
+  "environmentBlockers": [
+    "npm 11.12.1 is required but npm 10.9.2 is installed.",
+    "The configured private registry returns 404 for locked ws@7.5.11.",
+    "w766ir2-built-artifact-gate.test.mjs requires unavailable postcss.",
+    "w766ir2-runtime-remount-quarantine.test.mjs requires unavailable @babylonjs/core and @babylonjs/loaders.",
+    "w766ir2-whole-app-offline-pack.test.mjs requires unavailable @babylonjs/core and @babylonjs/loaders.",
+    "Production build, built-artifact, authenticated browser and deployment gates remain unpassed."
+  ],
+  "certificationClaim": "I00+C01 baseline and source-only gates passed. This is not Preview, browser, deployment or Production certification."
+}

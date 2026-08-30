@@ -1,0 +1,242 @@
+
+> qa:w720-w724-foundation
+> npm run qa:w720-authority && npm run qa:w721-product-reset && npm run qa:w722-theme-system && npm run qa:w723-shell-route-reset && npm run qa:w724-quick-command
+
+
+> qa:w720-authority
+> node scripts/w720-source-authority-gate.mjs && node --test tests/unit/w720-source-authority.test.mjs
+
+[w720-authority] PASS — W719.21 is the sole source authority and Option 2 is the current product contract.
+TAP version 13
+# Subtest: W720 records the exact W719.21 source authority
+ok 1 - W720 records the exact W719.21 source authority
+  ---
+  duration_ms: 0.512136
+  type: 'test'
+  ...
+# Subtest: W721 approves a full-screen 2D command surface and preserves City 3D Nexus assets
+ok 2 - W721 approves a full-screen 2D command surface and preserves City 3D Nexus assets
+  ---
+  duration_ms: 0.190763
+  type: 'test'
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 53.457088
+
+> qa:w721-product-reset
+> node scripts/w721-product-reset-gate.mjs && node --test tests/unit/w721-product-reset-contract.test.mjs
+
+[W721] PASS contract: hybrid-command-hub
+[W721] PASS archive-explicit: 33 preserved diagnostics
+[W721] PASS archive-separated: no superseded test certifies W720+
+[W721] PASS replacement-authority: 4 replacement contracts
+[W721] PASS frontend-full-screen: Orb launches full-screen 2D work surface
+[W721] PASS shared-productive-routes: command registry owns real work routes
+[W721] PASS city-nexus-preserved: existing 3D Nexus asset remains available to City
+[W721] PASS help-converged: one Help authority
+[W721] PASS 8/8
+TAP version 13
+# Subtest: W721 fixes the approved Hybrid Command Hub product model
+ok 1 - W721 fixes the approved Hybrid Command Hub product model
+  ---
+  duration_ms: 1.003891
+  type: 'test'
+  ...
+# Subtest: W721 preserves rejected launch assertions as non-certifying diagnostics
+ok 2 - W721 preserves rejected launch assertions as non-certifying diagnostics
+  ---
+  duration_ms: 0.455206
+  type: 'test'
+  ...
+# Subtest: W721 source gate protects the reset without network or deployment work
+ok 3 - W721 source gate protects the reset without network or deployment work
+  ---
+  duration_ms: 0.162577
+  type: 'test'
+  ...
+1..3
+# tests 3
+# suites 0
+# pass 3
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 51.658887
+
+> qa:w722-theme-system
+> node --test tests/unit/w722-theme-system.test.mjs
+
+TAP version 13
+# Subtest: W722 ships three genuinely different non-blue/non-purple dark themes
+ok 1 - W722 ships three genuinely different non-blue/non-purple dark themes
+  ---
+  duration_ms: 1.877802
+  type: 'test'
+  ...
+# Subtest: W722 bootstrap migrates Neon Night safely before paint
+ok 2 - W722 bootstrap migrates Neon Night safely before paint
+  ---
+  duration_ms: 0.228742
+  type: 'test'
+  ...
+# Subtest: W722 applies one pre-paint theme authority across current launch documents
+ok 3 - W722 applies one pre-paint theme authority across current launch documents
+  ---
+  duration_ms: 4.268771
+  type: 'test'
+  ...
+1..3
+# tests 3
+# suites 0
+# pass 3
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 55.643952
+
+> qa:w723-shell-route-reset
+> node scripts/sync-route-contract.mjs && node --test tests/unit/w723-shell-route-reset.test.mjs tests/unit/w217-route-contract.test.mjs
+
+{
+  "ok": true,
+  "generated": [
+    "_redirects",
+    "public/_redirects"
+  ],
+  "bytes": 4435
+}
+TAP version 13
+# Subtest: W380 defines one valid root-first route contract
+ok 1 - W380 defines one valid root-first route contract # SKIP
+  ---
+  duration_ms: 0.572732
+  type: 'test'
+  ...
+# Subtest: W423 keeps one public Babylon City while old map, tour and play URLs redirect
+ok 2 - W423 keeps one public Babylon City while old map, tour and play URLs redirect
+  ---
+  duration_ms: 0.625413
+  type: 'test'
+  ...
+# Subtest: W380 keeps legacy chat links compatible while the root owns the public chat
+ok 3 - W380 keeps legacy chat links compatible while the root owns the public chat
+  ---
+  duration_ms: 0.597469
+  type: 'test'
+  ...
+# Subtest: legacy aliases remain explicit and rewards stay outside primary routing
+ok 4 - legacy aliases remain explicit and rewards stay outside primary routing # SKIP
+  ---
+  duration_ms: 0.085666
+  type: 'test'
+  ...
+# Subtest: generated redirect files are identical, conflict-free, and match the contract
+ok 5 - generated redirect files are identical, conflict-free, and match the contract
+  ---
+  duration_ms: 0.52412
+  type: 'test'
+  ...
+# Subtest: development rewrites keep root on index.html and avoid retired source pages
+ok 6 - development rewrites keep root on index.html and avoid retired source pages
+  ---
+  duration_ms: 1.167348
+  type: 'test'
+  ...
+# Subtest: W448 exposes Research Lab at /insights and retires the legacy /trade entry
+ok 7 - W448 exposes Research Lab at /insights and retires the legacy /trade entry
+  ---
+  duration_ms: 0.242028
+  type: 'test'
+  ...
+# Subtest: W723 exposes the approved beginner-first sidebar and useful utilities
+ok 8 - W723 exposes the approved beginner-first sidebar and useful utilities
+  ---
+  duration_ms: 1.159255
+  type: 'test'
+  ...
+# Subtest: W723 removes Realm from main navigation and consolidates profile utilities
+ok 9 - W723 removes Realm from main navigation and consolidates profile utilities
+  ---
+  duration_ms: 1.086606
+  type: 'test'
+  ...
+# Subtest: W723 converges Support onto Help and places Billing in the app shell
+ok 10 - W723 converges Support onto Help and places Billing in the app shell
+  ---
+  duration_ms: 0.551314
+  type: 'test'
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 2
+# todo 0
+# duration_ms 56.206605
+
+> qa:w724-quick-command
+> node --test tests/unit/w724-quick-command-surface.test.mjs
+
+TAP version 13
+# Subtest: W724 provides four useful page-context primary commands
+ok 1 - W724 provides four useful page-context primary commands
+  ---
+  duration_ms: 1.440602
+  type: 'test'
+  ...
+# Subtest: W724 is a full-screen 2D surface, not a half-width Nexus panel
+ok 2 - W724 is a full-screen 2D surface, not a half-width Nexus panel
+  ---
+  duration_ms: 0.510974
+  type: 'test'
+  ...
+# Subtest: W724 preserves the City Nexus concept while retiring frontend Nexus auto-mount
+ok 3 - W724 preserves the City Nexus concept while retiring frontend Nexus auto-mount
+  ---
+  duration_ms: 0.669071
+  type: 'test'
+  ...
+# Subtest: W724 City context opens real 2D work routes
+ok 4 - W724 City context opens real 2D work routes
+  ---
+  duration_ms: 0.248839
+  type: 'test'
+  ...
+# Subtest: W724 rejects unsafe recent-item destinations and keeps valid local routes
+ok 5 - W724 rejects unsafe recent-item destinations and keeps valid local routes
+  ---
+  duration_ms: 0.209341
+  type: 'test'
+  ...
+# Subtest: W724 protects City controls and high-contrast users
+ok 6 - W724 protects City controls and high-contrast users
+  ---
+  duration_ms: 0.216336
+  type: 'test'
+  ...
+# Subtest: W724 returns to City without reloading and contains share failures
+ok 7 - W724 returns to City without reloading and contains share failures
+  ---
+  duration_ms: 0.470154
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 58.739283

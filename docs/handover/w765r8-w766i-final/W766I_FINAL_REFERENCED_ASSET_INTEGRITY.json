@@ -1,0 +1,299 @@
+{
+  "schema": "eonapp.w765r8-w766i.asset-integrity.v2",
+  "summary": {
+    "manifestEntries": 16,
+    "uniqueFiles": 32,
+    "totalBytes": 31236116,
+    "bad": 0
+  },
+  "files": [
+    {
+      "kind": "character",
+      "id": "eon-x1-worker-9clips",
+      "variant": "primary",
+      "path": "/assets/city/w649/primary/characters/eon_x1_worker_9clips.0cca7479c814.glb",
+      "bytes": 732836,
+      "sha256": "0cca7479c8143df9f94a5584d7464689eefebd7bb5881edde45b7c944d5620d6",
+      "status": "verified"
+    },
+    {
+      "kind": "character",
+      "id": "eon-x1-worker-9clips",
+      "variant": "fallback",
+      "path": "/assets/city/w649/fallback/characters/eon_x1_worker_9clips.ae79b51adc7a.glb",
+      "bytes": 1248080,
+      "sha256": "ae79b51adc7a7e8f63a2b7ddd0e36a1a0c47cb0ae43c2e263d923c20673927e2",
+      "status": "verified"
+    },
+    {
+      "kind": "world",
+      "id": "eoncity-ai-tower-core",
+      "variant": "primary",
+      "path": "/assets/city/w649/primary/world/eoncity_ai_tower_core.b01cb5e1c80a.glb",
+      "bytes": 644868,
+      "sha256": "b01cb5e1c80ac3b16660e5044cbe34f3010df417794667b62c90b25258ad9ef9",
+      "status": "verified"
+    },
+    {
+      "kind": "world",
+      "id": "eoncity-ai-tower-core",
+      "variant": "fallback",
+      "path": "/assets/city/w649/fallback/world/eoncity_ai_tower_core.42516601203d.glb",
+      "bytes": 1071016,
+      "sha256": "42516601203d0e92e62d13cbaaf1e0d0d62c1f64ff77e8faf529a642d61403b7",
+      "status": "verified"
+    },
+    {
+      "kind": "world",
+      "id": "eoncity-ascension-portal",
+      "variant": "primary",
+      "path": "/assets/city/w649/primary/world/eoncity_ascension_portal.1bedd1c550f5.glb",
+      "bytes": 681720,
+      "sha256": "1bedd1c550f5725cea9003c9457f2ddc79bc7404dea7f507922706c203b82e41",
+      "status": "verified"
+    },
+    {
+      "kind": "world",
+      "id": "eoncity-ascension-portal",
+      "variant": "fallback",
+      "path": "/assets/city/w649/fallback/world/eoncity_ascension_portal.1f7cf18399a6.glb",
+      "bytes": 1115088,
+      "sha256": "1f7cf18399a6884ad82b41e7b67b09c623f9114b8e98a4386a1aed35b7e578f5",
+      "status": "verified"
+    },
+    {
+      "kind": "world",
+      "id": "eoncity-district-hologram",
+      "variant": "primary",
+      "path": "/assets/city/w649/primary/world/eoncity_district_hologram.3f706dba03c1.glb",
+      "bytes": 730188,
+      "sha256": "3f706dba03c1d44922c8fa167ee7eb299228f4767db0f9d38f0052bbf8bb7ab9",
+      "status": "verified"
+    },
+    {
+      "kind": "world",
+      "id": "eoncity-district-hologram",
+      "variant": "fallback",
+      "path": "/assets/city/w649/fallback/world/eoncity_district_hologram.2f0c9d9ca3f0.glb",
+      "bytes": 1197996,
+      "sha256": "2f0c9d9ca3f022ce51213548c5476cd96a2b9abe122277a0f5f6f998c731dc31",
+      "status": "verified"
+    },
+    {
+      "kind": "world",
+      "id": "eoncity-district-info",
+      "variant": "primary",
+      "path": "/assets/city/w649/primary/world/eoncity_district_info.88ff692fbb40.glb",
+      "bytes": 390036,
+      "sha256": "88ff692fbb40148cdafeaed4b35ae5a47735164dc53f240c021cb0dbc73cd062",
+      "status": "verified"
+    },
+    {
+      "kind": "world",
+      "id": "eoncity-district-info",
+      "variant": "fallback",
+      "path": "/assets/city/w649/fallback/world/eoncity_district_info.e3508aaa42b0.glb",
+      "bytes": 728616,
+      "sha256": "e3508aaa42b0f8714eed0a0aa49f707f5cd484123a18eff035bebf510eee6174",
+      "status": "verified"
+    },
+    {
+      "kind": "world",
+      "id": "eoncity-forge-basilica",
+      "variant": "primary",
+      "path": "/assets/city/w649/primary/world/eoncity_forge_basilica.5ac8f4e8e1dc.glb",
+      "bytes": 856904,
+      "sha256": "5ac8f4e8e1dc6aeb3f3f24e3736ee587465f2e4d661290869e03d1699a4ad81e",
+      "status": "verified"
+    },
+    {
+      "kind": "world",
+      "id": "eoncity-forge-basilica",
+      "variant": "fallback",
+      "path": "/assets/city/w649/fallback/world/eoncity_forge_basilica.bd88d7ddfab2.glb",
+      "bytes": 1419368,
+      "sha256": "bd88d7ddfab2ffabe445642dfd2264b04420c2fb2ad9357996a7164b27ffb675",
+      "status": "verified"
+    },
+    {
+      "kind": "world",
+      "id": "eoncity-forge-workbench",
+      "variant": "primary",
+      "path": "/assets/city/w649/primary/world/eoncity_forge_workbench.e0619a17609b.glb",
+      "bytes": 535860,
+      "sha256": "e0619a17609b3464d787cf3d9840dbcf08fe933dc5f009446d4e9ae1e36ca5c7",
+      "status": "verified"
+    },
+    {
+      "kind": "world",
+      "id": "eoncity-forge-workbench",
+      "variant": "fallback",
+      "path": "/assets/city/w649/fallback/world/eoncity_forge_workbench.04bff9a5151f.glb",
+      "bytes": 993620,
+      "sha256": "04bff9a5151f1321a27597a0cd0fe691ca5707dfe09ef3a7046a47696fdf0a7c",
+      "status": "verified"
+    },
+    {
+      "kind": "world",
+      "id": "eoncity-genesis-core",
+      "variant": "primary",
+      "path": "/assets/city/w649/primary/world/eoncity_genesis_core.c706604ac2f6.glb",
+      "bytes": 623308,
+      "sha256": "c706604ac2f63d59d5b83d530ba00dffe65df8a68e7ea9343d69f67e501a5cf7",
+      "status": "verified"
+    },
+    {
+      "kind": "world",
+      "id": "eoncity-genesis-core",
+      "variant": "fallback",
+      "path": "/assets/city/w649/fallback/world/eoncity_genesis_core.d5d357ddcd0b.glb",
+      "bytes": 1018260,
+      "sha256": "d5d357ddcd0b2f4203ddf814adca74cdad7b9f89ca5c1ba06f442e8fc9023ad1",
+      "status": "verified"
+    },
+    {
+      "kind": "world",
+      "id": "eoncity-holo-map-beacon",
+      "variant": "primary",
+      "path": "/assets/city/w649/primary/world/eoncity_holo_map_beacon.c4f6b14dea03.glb",
+      "bytes": 790972,
+      "sha256": "c4f6b14dea03436278df8652f55ed44ae37ad5ed572f9364e2009bfe580d0f7a",
+      "status": "verified"
+    },
+    {
+      "kind": "world",
+      "id": "eoncity-holo-map-beacon",
+      "variant": "fallback",
+      "path": "/assets/city/w649/fallback/world/eoncity_holo_map_beacon.85798c481b8e.glb",
+      "bytes": 1232192,
+      "sha256": "85798c481b8eea4985c4719806f9bf8514eab3a6d959b5c401ff73e1626219fd",
+      "status": "verified"
+    },
+    {
+      "kind": "world",
+      "id": "eoncity-nav-info-kiosk",
+      "variant": "primary",
+      "path": "/assets/city/w649/primary/world/eoncity_nav_info_kiosk.b3d27d9b4bea.glb",
+      "bytes": 531944,
+      "sha256": "b3d27d9b4beab68971b8659569bc81085fbec5063210ec196cf7a1abd291f663",
+      "status": "verified"
+    },
+    {
+      "kind": "world",
+      "id": "eoncity-nav-info-kiosk",
+      "variant": "fallback",
+      "path": "/assets/city/w649/fallback/world/eoncity_nav_info_kiosk.efb872c86a85.glb",
+      "bytes": 938212,
+      "sha256": "efb872c86a8538bbe80770cfa61bb03184cd2675675be7ac80945cbae5a7c6f6",
+      "status": "verified"
+    },
+    {
+      "kind": "world",
+      "id": "eoncity-navigator-arc",
+      "variant": "primary",
+      "path": "/assets/city/w649/primary/world/eoncity_navigator_arc.48f4284412e2.glb",
+      "bytes": 751892,
+      "sha256": "48f4284412e250db0d2122e6095503e3880072b102a14b2ce7773c70fceb168f",
+      "status": "verified"
+    },
+    {
+      "kind": "world",
+      "id": "eoncity-navigator-arc",
+      "variant": "fallback",
+      "path": "/assets/city/w649/fallback/world/eoncity_navigator_arc.5ced28f5c208.glb",
+      "bytes": 1957412,
+      "sha256": "5ced28f5c208881bd482bedddaa69d7a684363041cdc7f7c1636fdb5a4bb862b",
+      "status": "verified"
+    },
+    {
+      "kind": "character",
+      "id": "eoncity-navigator-archive-vault-6clips",
+      "variant": "primary",
+      "path": "/assets/city/w649/primary/characters/eoncity_navigator_archive_vault_6clips.c15c8c99528c.glb",
+      "bytes": 802060,
+      "sha256": "c15c8c99528cc710e5217238bac6d1f31aed2852a2ab041eeba1b1ab2d017926",
+      "status": "verified"
+    },
+    {
+      "kind": "character",
+      "id": "eoncity-navigator-archive-vault-6clips",
+      "variant": "fallback",
+      "path": "/assets/city/w649/fallback/characters/eoncity_navigator_archive_vault_6clips.ca91b2f2c308.glb",
+      "bytes": 2086964,
+      "sha256": "ca91b2f2c3089d0c9214526c74b0975954ad18b613a4099e96bd1806164de522",
+      "status": "verified"
+    },
+    {
+      "kind": "character",
+      "id": "eoncity-pathfinder-a-vanguard-6clips",
+      "variant": "primary",
+      "path": "/assets/city/w649/primary/characters/eoncity_pathfinder_a_vanguard_6clips.341989730eef.glb",
+      "bytes": 1044088,
+      "sha256": "341989730eef8df7648c6bcd5d7df322123f5e890f8a5c8022253cc68fab4f08",
+      "status": "verified"
+    },
+    {
+      "kind": "character",
+      "id": "eoncity-pathfinder-a-vanguard-6clips",
+      "variant": "fallback",
+      "path": "/assets/city/w649/fallback/characters/eoncity_pathfinder_a_vanguard_6clips.f87948576117.glb",
+      "bytes": 2780808,
+      "sha256": "f87948576117253d0bb8bef9d50f9ed57ebb3d178f9c4374ea4a011646606654",
+      "status": "verified"
+    },
+    {
+      "kind": "character",
+      "id": "eoncity-pathfinder-prime-11clips",
+      "variant": "primary",
+      "path": "/assets/city/w649/primary/characters/eoncity_pathfinder_prime_11clips.4fc5f5bc696f.glb",
+      "bytes": 736580,
+      "sha256": "4fc5f5bc696fa6a992ca86466be39f7e87b156e1589841b6dc5d797081d78b10",
+      "status": "verified"
+    },
+    {
+      "kind": "character",
+      "id": "eoncity-pathfinder-prime-11clips",
+      "variant": "fallback",
+      "path": "/assets/city/w649/fallback/characters/eoncity_pathfinder_prime_11clips.bd52fc0c68a6.glb",
+      "bytes": 1272504,
+      "sha256": "bd52fc0c68a60a8944eb94b7d33737409473f95ef4df8c68b40cccaaaeb73a18",
+      "status": "verified"
+    },
+    {
+      "kind": "world",
+      "id": "eoncity-street-lamp",
+      "variant": "primary",
+      "path": "/assets/city/w649/primary/world/eoncity_street_lamp.7cde1e3c9b19.glb",
+      "bytes": 211676,
+      "sha256": "7cde1e3c9b195d5865a8fe37e7ab6028740709e1b40b4047167a71df83dec5ee",
+      "status": "verified"
+    },
+    {
+      "kind": "world",
+      "id": "eoncity-street-lamp",
+      "variant": "fallback",
+      "path": "/assets/city/w649/fallback/world/eoncity_street_lamp.9f0e544d96b1.glb",
+      "bytes": 382588,
+      "sha256": "9f0e544d96b14242f35e5e1a1389d24f812bdeb7c21e73041cdb50f5c006c6df",
+      "status": "verified"
+    },
+    {
+      "kind": "world",
+      "id": "eoncity-transit-core",
+      "variant": "primary",
+      "path": "/assets/city/w649/primary/world/eoncity_transit_core.7f75ec20bcf5.glb",
+      "bytes": 627544,
+      "sha256": "7f75ec20bcf5aab2738608cd19b5e4bf2a391a4d484cad58c51243a58489901a",
+      "status": "verified"
+    },
+    {
+      "kind": "world",
+      "id": "eoncity-transit-core",
+      "variant": "fallback",
+      "path": "/assets/city/w649/fallback/world/eoncity_transit_core.264c8d989d37.glb",
+      "bytes": 1100916,
+      "sha256": "264c8d989d37ed8b41f3300d850eae57f85d5251b693217e1c334471f469bb57",
+      "status": "verified"
+    }
+  ]
+}

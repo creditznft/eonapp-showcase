@@ -1,0 +1,15 @@
+{
+  "schema": "eon.creator-certification.w627g.v1",
+  "wave": "W627G",
+  "verdict": "no-go-real-creator-evidence-pending",
+  "publicAvailabilityClaimAllowed": false,
+  "sourceIntegrationAloneCanPass": false,
+  "requiredRealProofs": [
+    "W625A real image save/reopen digest proof",
+    "W625E supported-device real video save/reopen digest proof",
+    "W626 signed companion and real provider proof",
+    "beginner keyboard and touch usability",
+    "Library, Project, Forge and City continuation",
+    "update, export, restore and conflict rehearsal"
+  ]
+}

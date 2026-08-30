@@ -1,0 +1,25 @@
+{
+  "schema": "eonapp.w631.project-workspace-forge-automation.contract.2026-07-11.v1",
+  "wave": "W631",
+  "sourceComplete": true,
+  "publicCertification": "NO-GO",
+  "project": {
+    "versions": true,
+    "outcomes": true,
+    "recentWork": true,
+    "continueAction": true,
+    "ordinaryWorkOnly": true
+  },
+  "forge": {
+    "states": ["draft", "previewed", "reviewed", "exported", "deploy-prepared", "deployed"],
+    "deploymentRequiresPermissionedConnector": true,
+    "deploymentRequiresProviderReceipt": true,
+    "fakeRemoteExecution": false
+  },
+  "automations": {
+    "states": ["draft", "review", "scheduled", "paused", "running", "succeeded", "failed", "cancelled"],
+    "scheduledMeansPreparedOnly": true,
+    "runningRequiresExecutorReceipt": true,
+    "historyRedacted": true
+  }
+}

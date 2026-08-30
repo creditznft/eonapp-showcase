@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#6366f1" />
+  <meta name="robots" content="noindex, follow" />
+  <meta name="description" content="EONAPP testnet readiness checklist. It does not contact exchanges or create orders." />
+  <link rel="canonical" href="https://eonapp.ch/trade/sandbox" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="stylesheet" href="/assets/css/base.css" />
+  <link rel="stylesheet" href="/assets/css/layout.css" />
+  <link rel="stylesheet" href="/assets/css/eon-app-shell.css" />
+  <link rel="stylesheet" href="/assets/css/eon-trade-v2.css" />
+  <script type="module" src="/assets/js/localStorage-shim.js"></script>
+  <title>Trade Sandbox Readiness · EONAPP</title>
+</head>
+<body data-page-type="trade" data-eon-app-shell="1" data-eon-app-page="trade" data-trade-v2="1">
+  <a href="#eon-trade-v2" class="skip-to-content">Skip to trade sandbox readiness</a>
+  <main id="eon-trade-v2">
+    <section class="eon-trade-shell" aria-labelledby="sandbox-title">
+      <header class="eon-trade-hero">
+        <div>
+          <p class="eon-trade-kicker">Testnet readiness · no exchange connection</p>
+          <h1 id="sandbox-title">Trade Sandbox Checklist</h1>
+          <p>Prepare a future venue-specific testnet proof without pasting a raw key into EONAPP. This page records only a non-secret checklist and a Vault credential reference.</p>
+        </div>
+        <div class="eon-trade-badges"><span class="eon-trade-badge is-safe">No exchange order</span><span class="eon-trade-badge">Live execution locked</span></div>
+      </header>
+      <p class="eon-trade-disclaimer">This is not a connection screen. It cannot contact an exchange, retrieve account data, create an order, or perform a withdrawal. Use a dedicated testnet account and never paste a key, secret, password or recovery phrase here.</p>
+      <div class="eon-trade-grid">
+        <article class="eon-trade-card eon-trade-card-wide">
+          <h2>Testnet readiness</h2>
+          <p>Complete this only after you have created a separate sandbox/testnet account outside EONAPP. A future connector must be venue-specific and must prove every safety condition again.</p>
+          <form id="eon-sandbox-form" class="eon-trade-form">
+            <div class="eon-trade-form-row">
+              <label class="eon-trade-field">Sandbox type<select id="eon-sandbox-venue"></select></label>
+              <label class="eon-trade-field">Label (optional)<input id="eon-sandbox-label" maxlength="64" placeholder="My dedicated testnet" /></label>
+            </div>
+            <label class="eon-trade-field">Vault credential reference only (optional)<input id="eon-sandbox-credential-ref" maxlength="160" placeholder="vault://trade/testnet-reference" autocomplete="off" /></label>
+            <p class="eon-trade-status">Do not paste an API key, token, secret, password, seed phrase, private key or exchange credential. This page will discard those fields if a caller attempts to provide them.</p>
+            <div class="eon-trade-grid" style="grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));">
+              <label class="eon-trade-field"><span><input id="eon-sandbox-testnet" type="checkbox" /> Dedicated testnet/sandbox account confirmed</span></label>
+              <label class="eon-trade-field"><span><input id="eon-sandbox-subaccount" type="checkbox" /> Dedicated sub-account confirmed</span></label>
+              <label class="eon-trade-field"><span><input id="eon-sandbox-withdrawals" type="checkbox" /> Withdrawals disabled</span></label>
+              <label class="eon-trade-field"><span><input id="eon-sandbox-ip" type="checkbox" /> IP allowlist reviewed where available</span></label>
+              <label class="eon-trade-field"><span><input id="eon-sandbox-proof" type="checkbox" /> Testnet callback/proof run completed</span></label>
+              <label class="eon-trade-field"><span><input id="eon-sandbox-risk" type="checkbox" /> Deterministic risk policy reviewed</span></label>
+              <label class="eon-trade-field"><span><input id="eon-sandbox-kill" type="checkbox" /> Emergency kill switch verified</span></label>
+            </div>
+            <div class="eon-trade-actions"><button type="submit" class="eon-trade-primary">Save sandbox checklist</button><a class="eon-trade-secondary" href="/trade">Return to Trade Research</a><a class="eon-trade-secondary" href="/vault">Review Vault safety</a></div>
+          </form>
+          <p id="eon-sandbox-status" class="eon-trade-status" role="status" aria-live="polite"></p>
+        </article>
+        <article class="eon-trade-card eon-trade-card-wide"><h2>Execution boundary</h2><p id="eon-sandbox-truth" class="eon-trade-lock" role="status"></p></article>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="/assets/js/eon-app-shell.js"></script>
+  <script type="module" src="/assets/js/trade/eon-trade-sandbox-page.js"></script>
+</body>
+</html>

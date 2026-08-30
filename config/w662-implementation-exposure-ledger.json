@@ -1,0 +1,1288 @@
+{
+  "schema": "eonapp.w662.implementation-exposure-ledger.2026-07-23.v1",
+  "generatedAt": "2026-07-23T11:19:30.351Z",
+  "authority": {
+    "repository": "creditznft/EONAPP",
+    "productionSourceCommit": "063552ccc72b21cb1b8c73512039d29d4dff58cf",
+    "productionDeployment": "57758b16-f1a9-476c-855b-5d3de8f1444c",
+    "workingBranch": "agent/w662-nexus-city-reconciliation",
+    "draftPullRequest": 42,
+    "historicalDraftPullRequest": 39,
+    "noMergeWithoutOwnerApproval": true,
+    "noProductionChangeBeforeGovernedPreview": true,
+    "localWorkingBranch": "local/w662-9.5-reconciliation",
+    "localOnlyUntilOwnerApproval": true
+  },
+  "statusModel": {
+    "complete": "All six evidence fields are true, no contradiction remains, and the accepted owner-visible design is matched.",
+    "present-hidden": "Source/runtime exists, but no clear normal-user discovery path exists.",
+    "present-shallow": "Data or runtime exists, but the owner-visible rendering is materially below the accepted design.",
+    "wired-broken": "A visible/runtime path exists, but interaction is inconsistent or fails.",
+    "planned-only": "The accepted requirement is documented but no sufficient active implementation exists.",
+    "superseded": "An older path remains but is not current product authority.",
+    "human-proof-required": "Automated/source evidence exists, but authenticated owner-visible acceptance is incomplete."
+  },
+  "evidenceFields": [
+    "sourcePresent",
+    "activeRuntimeImported",
+    "frontendTriggerVisible",
+    "functionalInteractionProven",
+    "automatedTestProven",
+    "authenticatedHumanProof"
+  ],
+  "requiredComponentIds": [
+    "eon-pulse",
+    "expanded-live-nexus",
+    "live-nexus-split-fullscreen",
+    "live-nexus-node-field",
+    "project-atlas-adapter",
+    "project-atlas-current-renderer",
+    "project-atlas-spatial-renderer",
+    "pulse-to-live-morph",
+    "live-to-city-continuity",
+    "living-nexus-physical-core-gateway",
+    "living-nexus-destinations",
+    "expanse-deterministic-streaming",
+    "realm-portals",
+    "six-realm-entry-exit",
+    "atlas-discoveries-return-points",
+    "living-nexus-transformations-encounters",
+    "district-travel",
+    "camera-relative-controls",
+    "short-tap-release-lifecycle",
+    "keyboard-focus-overlays",
+    "mobile-touch-controller-parity",
+    "hero-detailed-model",
+    "eonbot-companion",
+    "functional-npc-roster",
+    "character-animation-director",
+    "docks-terminals-transit-schedules",
+    "city-hud-hierarchy",
+    "forge-nexus-visualization",
+    "city-audio",
+    "progressive-fallback-truth",
+    "release-provenance"
+  ],
+  "summary": {
+    "componentCount": 31,
+    "priorityCounts": {
+      "P1": 24,
+      "P0": 7
+    },
+    "statusCounts": {
+      "human-proof-required": 29,
+      "complete": 2
+    },
+    "p0NotComplete": [
+      "pulse-to-live-morph",
+      "live-to-city-continuity",
+      "living-nexus-physical-core-gateway",
+      "living-nexus-destinations",
+      "camera-relative-controls"
+    ],
+    "acceptedComplete": [
+      "short-tap-release-lifecycle",
+      "release-provenance"
+    ],
+    "broadVisualCodingAuthorized": false,
+    "nextAuthorizedWave": "Restore exact dependencies, build the immutable W662I candidate, then run authenticated Preview only after explicit owner approval"
+  },
+  "components": [
+    {
+      "id": "eon-pulse",
+      "label": "EON Pulse persistent state surface",
+      "priority": "P1",
+      "status": "human-proof-required",
+      "evidence": {
+        "sourcePresent": true,
+        "activeRuntimeImported": true,
+        "frontendTriggerVisible": true,
+        "functionalInteractionProven": true,
+        "automatedTestProven": true,
+        "authenticatedHumanProof": false
+      },
+      "references": {
+        "sourcePaths": [
+          "assets/js/nexus/eon-nexus-pulse.js",
+          "assets/js/nexus/eon-nexus-pulse-motion.js",
+          "assets/css/eon-nexus-pulse.css"
+        ],
+        "importPaths": [
+          "assets/js/nexus/eon-nexus-app-shell.js",
+          "assets/js/nexus/eon-nexus-chat-pulse.js"
+        ],
+        "triggerSelectorsOrRoutes": [
+          "[data-eon-nexus-pulse]",
+          "supported app-shell routes",
+          "/chat"
+        ],
+        "testPaths": [
+          "tests/unit/w660b1-eon-nexus-pulse.test.mjs",
+          "tests/unit/w660b2-eon-nexus-pulse-motion.test.mjs",
+          "scripts/w660b1-eon-nexus-pulse-gate.mjs",
+          "scripts/w660b2-eon-nexus-pulse-motion-gate.mjs"
+        ],
+        "humanProofRefs": [],
+        "knownContradictions": [
+          "Owner recording does not prove one continuous Pulse \u2192 Live Nexus morph."
+        ]
+      },
+      "nextAction": "Retain the truthful state surface and prove visual/state continuity into Live Nexus and City."
+    },
+    {
+      "id": "expanded-live-nexus",
+      "label": "Expanded Live Nexus mount and workspace",
+      "priority": "P1",
+      "status": "human-proof-required",
+      "evidence": {
+        "sourcePresent": true,
+        "activeRuntimeImported": true,
+        "frontendTriggerVisible": true,
+        "functionalInteractionProven": true,
+        "automatedTestProven": true,
+        "authenticatedHumanProof": false
+      },
+      "references": {
+        "sourcePaths": [
+          "assets/js/nexus/eon-nexus-live.js",
+          "assets/css/eon-nexus-live.css"
+        ],
+        "importPaths": [
+          "assets/js/nexus/eon-nexus-app-shell.js",
+          "assets/js/nexus/eon-nexus-chat-pulse.js"
+        ],
+        "triggerSelectorsOrRoutes": [
+          "Pulse expand action",
+          "[data-eon-nexus-live]"
+        ],
+        "testPaths": [
+          "tests/unit/w660c-live-nexus.test.mjs",
+          "scripts/w660c-live-nexus-gate.mjs",
+          "tests/unit/w662d-live-nexus-recovery.test.mjs"
+        ],
+        "humanProofRefs": [],
+        "knownContradictions": [
+          "Authenticated owner-visible browser acceptance remains incomplete."
+        ]
+      },
+      "nextAction": "Run the governed W662I authenticated browser/device matrix and obtain explicit owner acceptance before Preview, merge or production."
+    },
+    {
+      "id": "live-nexus-split-fullscreen",
+      "label": "Live Nexus split and fullscreen modes",
+      "priority": "P1",
+      "status": "human-proof-required",
+      "evidence": {
+        "sourcePresent": true,
+        "activeRuntimeImported": true,
+        "frontendTriggerVisible": true,
+        "functionalInteractionProven": true,
+        "automatedTestProven": true,
+        "authenticatedHumanProof": false
+      },
+      "references": {
+        "sourcePaths": [
+          "assets/js/nexus/eon-nexus-live.js",
+          "assets/css/eon-nexus-live.css"
+        ],
+        "importPaths": [
+          "assets/js/nexus/eon-nexus-app-shell.js"
+        ],
+        "triggerSelectorsOrRoutes": [
+          "[data-action=mode]",
+          "[data-action=minimize]",
+          "[data-action=close]"
+        ],
+        "testPaths": [
+          "tests/unit/w660c-live-nexus.test.mjs",
+          "scripts/w660c-live-nexus-gate.mjs"
+        ],
+        "humanProofRefs": [],
+        "knownContradictions": [
+          "Authenticated desktop, split, fullscreen and mobile acceptance is incomplete."
+        ]
+      },
+      "nextAction": "Add real-browser desktop/split/mobile acceptance and focus restoration proof."
+    },
+    {
+      "id": "live-nexus-node-field",
+      "label": "Live Nexus five-node field and task/result panel",
+      "priority": "P1",
+      "status": "human-proof-required",
+      "evidence": {
+        "sourcePresent": true,
+        "activeRuntimeImported": true,
+        "frontendTriggerVisible": true,
+        "functionalInteractionProven": true,
+        "automatedTestProven": true,
+        "authenticatedHumanProof": false
+      },
+      "references": {
+        "sourcePaths": [
+          "assets/js/nexus/eon-nexus-live.js",
+          "assets/css/eon-nexus-live.css"
+        ],
+        "importPaths": [
+          "assets/js/nexus/eon-nexus-app-shell.js"
+        ],
+        "triggerSelectorsOrRoutes": [
+          "[data-eon-nexus-live]",
+          "node buttons",
+          "task/result detail panel"
+        ],
+        "testPaths": [
+          "tests/unit/w660c-live-nexus.test.mjs",
+          "scripts/w660c-live-nexus-gate.mjs",
+          "tests/unit/w662d-live-nexus-recovery.test.mjs"
+        ],
+        "humanProofRefs": [],
+        "knownContradictions": [
+          "Authenticated owner-visible browser acceptance remains incomplete."
+        ]
+      },
+      "nextAction": "Run the governed W662I authenticated browser/device matrix and obtain explicit owner acceptance before Preview, merge or production."
+    },
+    {
+      "id": "project-atlas-adapter",
+      "label": "Selected-project Atlas data adapter",
+      "priority": "P1",
+      "status": "human-proof-required",
+      "evidence": {
+        "sourcePresent": true,
+        "activeRuntimeImported": true,
+        "frontendTriggerVisible": true,
+        "functionalInteractionProven": true,
+        "automatedTestProven": true,
+        "authenticatedHumanProof": false
+      },
+      "references": {
+        "sourcePaths": [
+          "assets/js/nexus/eon-nexus-project-atlas.js",
+          "assets/js/nexus/eon-nexus-event-adapter.js"
+        ],
+        "importPaths": [
+          "assets/js/nexus/eon-nexus-live.js"
+        ],
+        "triggerSelectorsOrRoutes": [
+          "Project Atlas tab/action",
+          "selected project context"
+        ],
+        "testPaths": [
+          "tests/unit/w660d-project-atlas.test.mjs",
+          "scripts/w660d-project-atlas-gate.mjs"
+        ],
+        "humanProofRefs": [],
+        "knownContradictions": [
+          "The data projection is truthful, but selected-project changes and privacy boundaries need authenticated proof."
+        ]
+      },
+      "nextAction": "Keep the adapter and add spatial rendering plus selected-project change proof."
+    },
+    {
+      "id": "project-atlas-current-renderer",
+      "label": "Current Project Atlas metrics/list renderer",
+      "priority": "P1",
+      "status": "human-proof-required",
+      "evidence": {
+        "sourcePresent": true,
+        "activeRuntimeImported": true,
+        "frontendTriggerVisible": true,
+        "functionalInteractionProven": true,
+        "automatedTestProven": true,
+        "authenticatedHumanProof": false
+      },
+      "references": {
+        "sourcePaths": [
+          "assets/js/nexus/eon-nexus-project-atlas.js",
+          "assets/css/eon-nexus-live.css"
+        ],
+        "importPaths": [
+          "assets/js/nexus/eon-nexus-live.js"
+        ],
+        "triggerSelectorsOrRoutes": [
+          "[data-eon-nexus-project-atlas]"
+        ],
+        "testPaths": [
+          "tests/unit/w660d-project-atlas.test.mjs",
+          "scripts/w660d-project-atlas-gate.mjs",
+          "tests/unit/w662e-project-atlas-spatial.test.mjs"
+        ],
+        "humanProofRefs": [],
+        "knownContradictions": [
+          "Authenticated owner-visible browser acceptance remains incomplete."
+        ]
+      },
+      "nextAction": "Run the governed W662I authenticated browser/device matrix and obtain explicit owner acceptance before Preview, merge or production."
+    },
+    {
+      "id": "project-atlas-spatial-renderer",
+      "label": "Approved Project Atlas spatial ring/sector renderer",
+      "priority": "P1",
+      "status": "human-proof-required",
+      "evidence": {
+        "sourcePresent": true,
+        "activeRuntimeImported": true,
+        "frontendTriggerVisible": true,
+        "functionalInteractionProven": true,
+        "automatedTestProven": true,
+        "authenticatedHumanProof": false
+      },
+      "references": {
+        "sourcePaths": [
+          "assets/js/nexus/eon-nexus-project-atlas.js",
+          "assets/css/eon-nexus-live.css"
+        ],
+        "importPaths": [
+          "assets/js/nexus/eon-nexus-live.js"
+        ],
+        "triggerSelectorsOrRoutes": [
+          "[data-eon-nexus-project-atlas]",
+          "Open Project Atlas"
+        ],
+        "testPaths": [
+          "tests/unit/w662e-project-atlas-spatial.test.mjs"
+        ],
+        "humanProofRefs": [],
+        "knownContradictions": [
+          "Authenticated owner-visible browser acceptance remains incomplete."
+        ]
+      },
+      "nextAction": "Run the governed W662I authenticated browser/device matrix and obtain explicit owner acceptance before Preview, merge or production."
+    },
+    {
+      "id": "pulse-to-live-morph",
+      "label": "Pulse to Expanded Live Nexus morph continuity",
+      "priority": "P0",
+      "status": "human-proof-required",
+      "evidence": {
+        "sourcePresent": true,
+        "activeRuntimeImported": true,
+        "frontendTriggerVisible": true,
+        "functionalInteractionProven": true,
+        "automatedTestProven": true,
+        "authenticatedHumanProof": false
+      },
+      "references": {
+        "sourcePaths": [
+          "assets/js/nexus/eon-nexus-morphic-contract.js",
+          "assets/js/nexus/eon-nexus-app-shell.js",
+          "assets/js/nexus/eon-nexus-pulse.js",
+          "assets/js/nexus/eon-nexus-live.js",
+          "assets/js/nexus/eon-nexus-continuity-contract.js"
+        ],
+        "importPaths": [
+          "assets/js/nexus/eon-nexus-app-shell.js"
+        ],
+        "triggerSelectorsOrRoutes": [
+          "Pulse expand action"
+        ],
+        "testPaths": [
+          "tests/unit/w660g-app-shell-nexus.test.mjs",
+          "tests/unit/w660h-chat-shell-page-nexus.test.mjs",
+          "tests/unit/w660n-eon-nexus-end-to-end.test.mjs",
+          "tests/unit/w662c-nexus-continuity.test.mjs",
+          "tests/unit/w662d-live-nexus-recovery.test.mjs"
+        ],
+        "humanProofRefs": [],
+        "knownContradictions": [
+          "Authenticated owner-visible browser acceptance remains incomplete."
+        ]
+      },
+      "nextAction": "Run the governed W662I authenticated browser/device matrix and obtain explicit owner acceptance before Preview, merge or production."
+    },
+    {
+      "id": "live-to-city-continuity",
+      "label": "Expanded Live Nexus to Spatial Living Nexus continuity",
+      "priority": "P0",
+      "status": "human-proof-required",
+      "evidence": {
+        "sourcePresent": true,
+        "activeRuntimeImported": true,
+        "frontendTriggerVisible": true,
+        "functionalInteractionProven": true,
+        "automatedTestProven": true,
+        "authenticatedHumanProof": false
+      },
+      "references": {
+        "sourcePaths": [
+          "assets/js/nexus/eon-nexus-morphic-contract.js",
+          "assets/js/nexus/eon-nexus-living-core.js",
+          "assets/js/city/eon-city-living-nexus-babylon-runtime.js",
+          "assets/js/nexus/eon-nexus-continuity-contract.js",
+          "assets/js/eon-city-play-station.js"
+        ],
+        "importPaths": [
+          "assets/js/nexus/eon-nexus-app-shell.js",
+          "assets/js/city/eon-city-play-core.js"
+        ],
+        "triggerSelectorsOrRoutes": [
+          "/eoncity",
+          "Living Nexus City controls"
+        ],
+        "testPaths": [
+          "tests/unit/w660n-eon-nexus-end-to-end.test.mjs",
+          "tests/unit/w660o-nexus-launch-continuity.test.mjs",
+          "tests/unit/w661d-nexus-convergence.test.mjs",
+          "tests/unit/w662c-nexus-continuity.test.mjs"
+        ],
+        "humanProofRefs": [],
+        "knownContradictions": [
+          "Authenticated owner-visible browser acceptance remains incomplete."
+        ]
+      },
+      "nextAction": "Run the governed W662I authenticated browser/device matrix and obtain explicit owner acceptance before Preview, merge or production."
+    },
+    {
+      "id": "living-nexus-physical-core-gateway",
+      "label": "Physical Living Nexus gateway in the handcrafted Core",
+      "priority": "P0",
+      "status": "human-proof-required",
+      "evidence": {
+        "sourcePresent": true,
+        "activeRuntimeImported": true,
+        "frontendTriggerVisible": true,
+        "functionalInteractionProven": true,
+        "automatedTestProven": true,
+        "authenticatedHumanProof": false
+      },
+      "references": {
+        "sourcePaths": [
+          "assets/js/city/eon-city-connected-core.js",
+          "assets/js/city/eon-city-connected-core-babylon.js",
+          "assets/js/eon-city-play-station.js"
+        ],
+        "importPaths": [
+          "assets/js/city/eon-city-play-core.js",
+          "assets/js/city/eon-city-play-babylon.js"
+        ],
+        "triggerSelectorsOrRoutes": [
+          "[data-eon-play-living-nexus-gateway]",
+          "[data-eon-play-gateway-inspect]",
+          "[data-eon-play-gateway-enter]"
+        ],
+        "testPaths": [
+          "tests/unit/w662f-physical-living-nexus-gateway.test.mjs"
+        ],
+        "humanProofRefs": [],
+        "knownContradictions": [
+          "Authenticated owner-visible browser acceptance remains incomplete."
+        ]
+      },
+      "nextAction": "Run the governed W662I authenticated browser/device matrix and obtain explicit owner acceptance before Preview, merge or production."
+    },
+    {
+      "id": "living-nexus-destinations",
+      "label": "Core, Expanse, My Realm and curated Realm destinations",
+      "priority": "P0",
+      "status": "human-proof-required",
+      "evidence": {
+        "sourcePresent": true,
+        "activeRuntimeImported": true,
+        "frontendTriggerVisible": true,
+        "functionalInteractionProven": true,
+        "automatedTestProven": true,
+        "authenticatedHumanProof": false
+      },
+      "references": {
+        "sourcePaths": [
+          "assets/js/city/eon-city-living-nexus-babylon-runtime.js",
+          "assets/js/city/eon-city-living-nexus-realms.js",
+          "assets/js/city/eon-city-living-nexus-realm-babylon.js",
+          "assets/js/eon-city-play-station.js"
+        ],
+        "importPaths": [
+          "assets/js/city/eon-city-play-core.js"
+        ],
+        "triggerSelectorsOrRoutes": [
+          "Late-injected City Menu entry and technical Living Nexus panel"
+        ],
+        "testPaths": [
+          "tests/unit/w660r-living-nexus-expanse-renderer.test.mjs",
+          "tests/unit/w660v-curated-nexus-realms.test.mjs",
+          "tests/unit/w660y-connected-core.test.mjs",
+          "tests/unit/w662f-physical-living-nexus-gateway.test.mjs"
+        ],
+        "humanProofRefs": [],
+        "knownContradictions": [
+          "Authenticated owner-visible browser acceptance remains incomplete."
+        ]
+      },
+      "nextAction": "Run the governed W662I authenticated browser/device matrix and obtain explicit owner acceptance before Preview, merge or production."
+    },
+    {
+      "id": "expanse-deterministic-streaming",
+      "label": "Deterministic streamed 3\u00d73 Expanse residency",
+      "priority": "P1",
+      "status": "human-proof-required",
+      "evidence": {
+        "sourcePresent": true,
+        "activeRuntimeImported": true,
+        "frontendTriggerVisible": true,
+        "functionalInteractionProven": true,
+        "automatedTestProven": true,
+        "authenticatedHumanProof": false
+      },
+      "references": {
+        "sourcePaths": [
+          "assets/js/city/eon-city-living-nexus-hybrid.js",
+          "assets/js/city/eon-city-living-nexus-babylon-runtime.js"
+        ],
+        "importPaths": [
+          "assets/js/city/eon-city-living-nexus-babylon-runtime.js",
+          "assets/js/city/eon-city-play-core.js"
+        ],
+        "triggerSelectorsOrRoutes": [
+          "Expanse destination"
+        ],
+        "testPaths": [
+          "tests/unit/w660p-living-nexus-hybrid.test.mjs",
+          "tests/unit/w660r-living-nexus-expanse-renderer.test.mjs",
+          "tests/unit/w660u-living-nexus-world-systems.test.mjs"
+        ],
+        "humanProofRefs": [],
+        "knownContradictions": [
+          "Three streamed cells with clearly distinct owner-visible identities are not yet proven in one authenticated recording."
+        ]
+      },
+      "nextAction": "Improve visible cell identity and capture continuous real-browser proof."
+    },
+    {
+      "id": "realm-portals",
+      "label": "Rare physical Realm portals",
+      "priority": "P1",
+      "status": "human-proof-required",
+      "evidence": {
+        "sourcePresent": true,
+        "activeRuntimeImported": true,
+        "frontendTriggerVisible": true,
+        "functionalInteractionProven": true,
+        "automatedTestProven": true,
+        "authenticatedHumanProof": false
+      },
+      "references": {
+        "sourcePaths": [
+          "assets/js/city/eon-city-living-nexus-realms.js",
+          "assets/js/city/eon-city-living-nexus-babylon-runtime.js"
+        ],
+        "importPaths": [
+          "assets/js/city/eon-city-living-nexus-babylon-runtime.js"
+        ],
+        "triggerSelectorsOrRoutes": [
+          "Rare portal signal in Expanse"
+        ],
+        "testPaths": [
+          "tests/unit/w660u-living-nexus-world-systems.test.mjs",
+          "tests/unit/w660v-curated-nexus-realms.test.mjs",
+          "tests/unit/w660x-premium-nexus-realms.test.mjs"
+        ],
+        "humanProofRefs": [],
+        "knownContradictions": [
+          "Physical portal discovery and review-first entry are not accepted by authenticated human proof."
+        ]
+      },
+      "nextAction": "Make portal signals legible and prove inspect \u2192 prepare \u2192 confirm \u2192 enter \u2192 return."
+    },
+    {
+      "id": "six-realm-entry-exit",
+      "label": "Six curated Realm entry and exit paths",
+      "priority": "P1",
+      "status": "human-proof-required",
+      "evidence": {
+        "sourcePresent": true,
+        "activeRuntimeImported": true,
+        "frontendTriggerVisible": true,
+        "functionalInteractionProven": true,
+        "automatedTestProven": true,
+        "authenticatedHumanProof": false
+      },
+      "references": {
+        "sourcePaths": [
+          "assets/js/city/eon-city-living-nexus-realms.js",
+          "assets/js/city/eon-city-living-nexus-realm-babylon.js"
+        ],
+        "importPaths": [
+          "assets/js/city/eon-city-living-nexus-babylon-runtime.js"
+        ],
+        "triggerSelectorsOrRoutes": [
+          "Realm inspect/prepare/confirm/enter/return flow"
+        ],
+        "testPaths": [
+          "tests/unit/w660v-curated-nexus-realms.test.mjs",
+          "tests/unit/w660w-curated-realm-atlas.test.mjs",
+          "tests/unit/w660x-premium-nexus-realms.test.mjs"
+        ],
+        "humanProofRefs": [],
+        "knownContradictions": [
+          "At least two Realms must pass end-to-end human proof before release; all six remain uncertified."
+        ]
+      },
+      "nextAction": "Prioritize two Realms for first human proof, then certify all six."
+    },
+    {
+      "id": "atlas-discoveries-return-points",
+      "label": "Atlas discoveries and exact return points",
+      "priority": "P1",
+      "status": "human-proof-required",
+      "evidence": {
+        "sourcePresent": true,
+        "activeRuntimeImported": true,
+        "frontendTriggerVisible": true,
+        "functionalInteractionProven": true,
+        "automatedTestProven": true,
+        "authenticatedHumanProof": false
+      },
+      "references": {
+        "sourcePaths": [
+          "assets/js/city/eon-city-living-nexus-babylon-runtime.js",
+          "assets/js/city/eon-city-living-nexus-hybrid.js"
+        ],
+        "importPaths": [
+          "assets/js/city/eon-city-living-nexus-babylon-runtime.js"
+        ],
+        "triggerSelectorsOrRoutes": [
+          "Discover cell",
+          "Set return point",
+          "Return action"
+        ],
+        "testPaths": [
+          "tests/unit/w660t-living-nexus-atlas-return.test.mjs",
+          "tests/unit/w660w-curated-realm-atlas.test.mjs"
+        ],
+        "humanProofRefs": [],
+        "knownContradictions": [
+          "Natural in-world discovery and exact return are not shown in the owner recording."
+        ]
+      },
+      "nextAction": "Integrate discovery into world interaction and record exact return proof."
+    },
+    {
+      "id": "living-nexus-transformations-encounters",
+      "label": "Living Nexus transformations, encounters and opportunities",
+      "priority": "P1",
+      "status": "human-proof-required",
+      "evidence": {
+        "sourcePresent": true,
+        "activeRuntimeImported": true,
+        "frontendTriggerVisible": true,
+        "functionalInteractionProven": true,
+        "automatedTestProven": true,
+        "authenticatedHumanProof": false
+      },
+      "references": {
+        "sourcePaths": [
+          "assets/js/city/eon-city-living-nexus-encounters.js",
+          "assets/js/city/eon-city-living-nexus-world-systems.js",
+          "assets/js/city/eon-city-living-nexus-babylon-runtime.js"
+        ],
+        "importPaths": [
+          "assets/js/city/eon-city-living-nexus-babylon-runtime.js"
+        ],
+        "triggerSelectorsOrRoutes": [
+          "Nearest opportunity",
+          "encounter and transformation signals"
+        ],
+        "testPaths": [
+          "tests/unit/w660s-living-nexus-functional-encounters.test.mjs",
+          "tests/unit/w660u-living-nexus-world-systems.test.mjs",
+          "tests/unit/w660z-living-nexus-institutional.test.mjs"
+        ],
+        "humanProofRefs": [],
+        "knownContradictions": [
+          "Opportunity readability and review-first behavior remain unauthenticated."
+        ]
+      },
+      "nextAction": "Make opportunities readable in-world and prove review-first behavior without fabricated execution."
+    },
+    {
+      "id": "district-travel",
+      "label": "Nine-district travel and arrival",
+      "priority": "P1",
+      "status": "human-proof-required",
+      "evidence": {
+        "sourcePresent": true,
+        "activeRuntimeImported": true,
+        "frontendTriggerVisible": true,
+        "functionalInteractionProven": true,
+        "automatedTestProven": true,
+        "authenticatedHumanProof": true
+      },
+      "references": {
+        "sourcePaths": [
+          "assets/js/city/w660/eon-city-w660-completion-matrix.js",
+          "assets/js/city/w660/eon-city-w660-nexus-stations.js",
+          "assets/js/city/w659n/eon-city-w659n-product-layer.js"
+        ],
+        "importPaths": [
+          "assets/js/city/eon-city-play-core.js",
+          "assets/js/city/w659n/eon-city-w659n-product-layer.js"
+        ],
+        "triggerSelectorsOrRoutes": [
+          "District travel controls",
+          "arrival receipt"
+        ],
+        "testPaths": [
+          "tests/unit/w659n-productive-city-integration.test.mjs",
+          "tests/unit/w659h-final-reaudit.test.mjs"
+        ],
+        "humanProofRefs": [
+          "Owner W662 recording confirms normal district travel works."
+        ],
+        "knownContradictions": [
+          "Camera-relative movement and distinct destination identity are not fully accepted after travel."
+        ]
+      },
+      "nextAction": "Keep travel logic; repair movement semantics and certify distinct destination identity."
+    },
+    {
+      "id": "camera-relative-controls",
+      "label": "Canonical camera-relative movement semantics",
+      "priority": "P0",
+      "status": "human-proof-required",
+      "evidence": {
+        "sourcePresent": true,
+        "activeRuntimeImported": true,
+        "frontendTriggerVisible": true,
+        "functionalInteractionProven": true,
+        "automatedTestProven": true,
+        "authenticatedHumanProof": false
+      },
+      "references": {
+        "sourcePaths": [
+          "assets/js/city/eon-city-camera-relative-movement.js",
+          "assets/js/city/eon-city-play-core.js",
+          "assets/js/city/eon-city-third-person-controller.js"
+        ],
+        "importPaths": [
+          "assets/js/city/eon-city-play-core.js"
+        ],
+        "triggerSelectorsOrRoutes": [
+          "W/A/S/D",
+          "arrows",
+          "D-pad",
+          "touch/analogue",
+          "controller"
+        ],
+        "testPaths": [
+          "tests/unit/w662-camera-relative-movement.test.mjs",
+          "scripts/w662-apply-camera-relative-core-patch.mjs",
+          "tests/unit/w661e-frame-aware-browser-proof.test.mjs",
+          "tests/unit/w661e-frame-safe-pulse.test.mjs",
+          "tests/unit/w661e-pointer-completion-click-suppression.test.mjs",
+          "tests/unit/w661e-pointer-event-timestamp-release.test.mjs"
+        ],
+        "humanProofRefs": [],
+        "knownContradictions": [
+          "The fixed-axis defect is removed in source and deterministic tests, but authenticated Chrome/Edge/Firefox/mobile/controller proof is still required."
+        ]
+      },
+      "nextAction": "Run the governed browser parity matrix at 0\u00b0, 90\u00b0, 180\u00b0 and 270\u00b0, including D-pad, touch/analogue, controller, overlay focus and post-transition release."
+    },
+    {
+      "id": "short-tap-release-lifecycle",
+      "label": "Short-tap render-starvation and release lifecycle",
+      "priority": "P0",
+      "status": "complete",
+      "evidence": {
+        "sourcePresent": true,
+        "activeRuntimeImported": true,
+        "frontendTriggerVisible": true,
+        "functionalInteractionProven": true,
+        "automatedTestProven": true,
+        "authenticatedHumanProof": true
+      },
+      "references": {
+        "sourcePaths": [
+          "assets/js/city/eon-city-input-contract.js"
+        ],
+        "importPaths": [
+          "assets/js/city/eon-city-access-station.js"
+        ],
+        "triggerSelectorsOrRoutes": [
+          "Directional D-pad press/click lifecycle"
+        ],
+        "testPaths": [
+          "tests/unit/w661e-frame-aware-browser-proof.test.mjs",
+          "tests/unit/w661e-frame-safe-pulse.test.mjs",
+          "tests/unit/w661e-pointer-completion-click-suppression.test.mjs",
+          "tests/unit/w661e-pointer-event-timestamp-release.test.mjs",
+          "scripts/w660j-touch-route-browser-proof.mjs"
+        ],
+        "humanProofRefs": [
+          "W661E-R3G governed Preview and production browser proofs at 300 ms, 500 ms and 700 ms starvation."
+        ],
+        "knownContradictions": []
+      },
+      "nextAction": "Preserve unchanged while W662B changes directional vector resolution."
+    },
+    {
+      "id": "keyboard-focus-overlays",
+      "label": "Keyboard, focus, Escape and overlay restoration",
+      "priority": "P1",
+      "status": "human-proof-required",
+      "evidence": {
+        "sourcePresent": true,
+        "activeRuntimeImported": true,
+        "frontendTriggerVisible": true,
+        "functionalInteractionProven": true,
+        "automatedTestProven": true,
+        "authenticatedHumanProof": false
+      },
+      "references": {
+        "sourcePaths": [
+          "assets/js/nexus/eon-nexus-live.js",
+          "assets/js/city/eon-city-access-station.js",
+          "assets/js/city/eon-city-play-core.js",
+          "assets/js/city/eon-city-overlay-coordinator.js",
+          "assets/js/eon-city-play-station.js",
+          "assets/css/eon-city-play.css"
+        ],
+        "importPaths": [
+          "active Nexus and City routes"
+        ],
+        "triggerSelectorsOrRoutes": [
+          "Tab",
+          "Enter/Space",
+          "Escape",
+          "modal close/minimize"
+        ],
+        "testPaths": [
+          "tests/unit/w634-responsive-accessibility-input.test.mjs",
+          "tests/unit/w462-trust-accessibility-source-audit.test.mjs",
+          "tests/unit/w662h-whole-app-reconciliation.test.mjs"
+        ],
+        "humanProofRefs": [],
+        "knownContradictions": [
+          "Authenticated owner-visible browser acceptance remains incomplete."
+        ]
+      },
+      "nextAction": "Run the governed W662I authenticated browser/device matrix and obtain explicit owner acceptance before Preview, merge or production."
+    },
+    {
+      "id": "mobile-touch-controller-parity",
+      "label": "Mobile, touch joystick, D-pad and controller parity",
+      "priority": "P1",
+      "status": "human-proof-required",
+      "evidence": {
+        "sourcePresent": true,
+        "activeRuntimeImported": true,
+        "frontendTriggerVisible": true,
+        "functionalInteractionProven": true,
+        "automatedTestProven": true,
+        "authenticatedHumanProof": false
+      },
+      "references": {
+        "sourcePaths": [
+          "assets/js/city/eon-city-input-contract.js",
+          "assets/js/city/eon-city-access-station.js",
+          "assets/js/city/eon-city-play-core.js"
+        ],
+        "importPaths": [
+          "active City control bindings"
+        ],
+        "triggerSelectorsOrRoutes": [
+          "D-pad",
+          "touch/analogue",
+          "controller/gamepad"
+        ],
+        "testPaths": [
+          "scripts/w660j-touch-route-browser-proof.mjs",
+          "tests/unit/w253-city-input-orientation-accessibility.test.mjs"
+        ],
+        "humanProofRefs": [],
+        "knownContradictions": [
+          "Input methods do not yet share a certified camera-relative resolver."
+        ]
+      },
+      "nextAction": "Route every input method through the W662B resolver and certify a parity matrix."
+    },
+    {
+      "id": "hero-detailed-model",
+      "label": "Detailed Pathfinder hero load and fallback replacement",
+      "priority": "P1",
+      "status": "human-proof-required",
+      "evidence": {
+        "sourcePresent": true,
+        "activeRuntimeImported": true,
+        "frontendTriggerVisible": true,
+        "functionalInteractionProven": true,
+        "automatedTestProven": true,
+        "authenticatedHumanProof": false
+      },
+      "references": {
+        "sourcePaths": [
+          "assets/js/city/w649/eon-city-w649-character-manifest.js",
+          "assets/js/city/w649/eon-city-w649-babylon-core-runtime.js"
+        ],
+        "importPaths": [
+          "assets/js/city/eon-city-play-core.js"
+        ],
+        "triggerSelectorsOrRoutes": [
+          "Progressive City detailed-player load"
+        ],
+        "testPaths": [
+          "tests/unit/w649-eoncity-asset-manifests.test.mjs",
+          "tests/unit/w649-eoncity-controllable-core.test.mjs"
+        ],
+        "humanProofRefs": [],
+        "knownContradictions": [
+          "The recording does not prove exact detailed hero load, fallback disable and complete animation coverage."
+        ]
+      },
+      "nextAction": "Create a machine-readable cast roster and prove exact asset, fallback disable and animation state."
+    },
+    {
+      "id": "eonbot-companion",
+      "label": "EONBOT detailed companion, follow, curiosity and docking",
+      "priority": "P1",
+      "status": "human-proof-required",
+      "evidence": {
+        "sourcePresent": true,
+        "activeRuntimeImported": true,
+        "frontendTriggerVisible": true,
+        "functionalInteractionProven": true,
+        "automatedTestProven": true,
+        "authenticatedHumanProof": false
+      },
+      "references": {
+        "sourcePaths": [
+          "assets/js/city/w649/eon-city-w649-babylon-core-runtime.js",
+          "assets/js/city/w660m/eon-city-w660m-experience-director.js",
+          "assets/js/city/eon-city-cast-certification.js",
+          "config/w662g-cast-certification.json"
+        ],
+        "importPaths": [
+          "assets/js/city/eon-city-play-core.js"
+        ],
+        "triggerSelectorsOrRoutes": [
+          "Companion follow/orbit",
+          "dock interactions"
+        ],
+        "testPaths": [
+          "tests/unit/w561-eonbot-companion.test.mjs",
+          "tests/unit/w571-eonbot-rig-and-staging.test.mjs",
+          "tests/unit/w662g-cast-certification.test.mjs",
+          "scripts/w662g-cast-certification-gate.mjs"
+        ],
+        "humanProofRefs": [],
+        "knownContradictions": [
+          "Authenticated owner-visible browser acceptance remains incomplete."
+        ]
+      },
+      "nextAction": "Run the governed W662I authenticated browser/device matrix and obtain explicit owner acceptance before Preview, merge or production."
+    },
+    {
+      "id": "functional-npc-roster",
+      "label": "Functional NPC roster and district role linkage",
+      "priority": "P1",
+      "status": "human-proof-required",
+      "evidence": {
+        "sourcePresent": true,
+        "activeRuntimeImported": true,
+        "frontendTriggerVisible": true,
+        "functionalInteractionProven": true,
+        "automatedTestProven": true,
+        "authenticatedHumanProof": false
+      },
+      "references": {
+        "sourcePaths": [
+          "assets/js/city/w659f/eon-city-w659f-functional-asset-manifest.js",
+          "assets/js/city/w659f/eon-city-w659f-functional-asset-runtime.js",
+          "assets/js/city/w659f/eon-city-w659f-npc-role-registry.js"
+        ],
+        "importPaths": [
+          "assets/js/city/w659n/eon-city-w659n-product-layer.js"
+        ],
+        "triggerSelectorsOrRoutes": [
+          "District NPC and terminal interactions"
+        ],
+        "testPaths": [
+          "tests/unit/w570-city-npc-archetypes.test.mjs",
+          "tests/unit/w659f-eoncity-functional-integration.test.mjs"
+        ],
+        "humanProofRefs": [],
+        "knownContradictions": [
+          "No authenticated roster proves every detailed model, role, animation, terminal and schedule."
+        ]
+      },
+      "nextAction": "Create the W662G cast roster and collect per-asset visible proof."
+    },
+    {
+      "id": "character-animation-director",
+      "label": "Hero, EONBOT and NPC animation coverage",
+      "priority": "P1",
+      "status": "human-proof-required",
+      "evidence": {
+        "sourcePresent": true,
+        "activeRuntimeImported": true,
+        "frontendTriggerVisible": true,
+        "functionalInteractionProven": true,
+        "automatedTestProven": true,
+        "authenticatedHumanProof": false
+      },
+      "references": {
+        "sourcePaths": [
+          "assets/js/city/w660m/eon-city-w660m-experience-director.js",
+          "assets/js/city/w649/eon-city-w649-babylon-core-runtime.js",
+          "assets/js/city/w659f/eon-city-w659f-functional-asset-runtime.js"
+        ],
+        "importPaths": [
+          "assets/js/city/eon-city-play-core.js"
+        ],
+        "triggerSelectorsOrRoutes": [
+          "idle/walk/run/turn/interact state"
+        ],
+        "testPaths": [
+          "tests/unit/w426-city-motion-progression.test.mjs",
+          "tests/unit/w649-eoncity-controllable-core.test.mjs"
+        ],
+        "humanProofRefs": [],
+        "knownContradictions": [
+          "Owner video does not authenticate complete animation coverage across the cast."
+        ]
+      },
+      "nextAction": "Add animation state receipts and continuous owner proof."
+    },
+    {
+      "id": "docks-terminals-transit-schedules",
+      "label": "Docks, terminals, transit and functional schedules",
+      "priority": "P1",
+      "status": "human-proof-required",
+      "evidence": {
+        "sourcePresent": true,
+        "activeRuntimeImported": true,
+        "frontendTriggerVisible": true,
+        "functionalInteractionProven": true,
+        "automatedTestProven": true,
+        "authenticatedHumanProof": false
+      },
+      "references": {
+        "sourcePaths": [
+          "assets/js/city/w659f/eon-city-w659f-functional-asset-runtime.js",
+          "assets/js/city/w659f/eon-city-w659f-transport-runtime.js",
+          "assets/js/city/w660/eon-city-w660-nexus-stations.js",
+          "assets/js/city/w659n/eon-city-w659n-product-layer.js"
+        ],
+        "importPaths": [
+          "assets/js/city/w659n/eon-city-w659n-product-layer.js"
+        ],
+        "triggerSelectorsOrRoutes": [
+          "Functional station panels",
+          "transit actions",
+          "dock interactions"
+        ],
+        "testPaths": [
+          "tests/unit/w563-useful-city-work-paths.test.mjs",
+          "tests/unit/w659f-eoncity-functional-integration.test.mjs"
+        ],
+        "humanProofRefs": [],
+        "knownContradictions": [
+          "The owner recording does not prove all functional schedules, docks, transit and terminal links."
+        ]
+      },
+      "nextAction": "Prove at least three functional NPC/terminal interactions and all transit safety states."
+    },
+    {
+      "id": "city-hud-hierarchy",
+      "label": "EONCITY HUD and panel hierarchy",
+      "priority": "P1",
+      "status": "human-proof-required",
+      "evidence": {
+        "sourcePresent": true,
+        "activeRuntimeImported": true,
+        "frontendTriggerVisible": true,
+        "functionalInteractionProven": true,
+        "automatedTestProven": true,
+        "authenticatedHumanProof": false
+      },
+      "references": {
+        "sourcePaths": [
+          "assets/js/city/eon-city-access-station.js",
+          "assets/css/eon-city-product-layer.css",
+          "assets/js/city/w659n/eon-city-w659n-product-layer.js",
+          "assets/js/city/eon-city-overlay-coordinator.js",
+          "assets/js/eon-city-play-station.js",
+          "assets/css/eon-city-play.css"
+        ],
+        "importPaths": [
+          "active EONCITY route"
+        ],
+        "triggerSelectorsOrRoutes": [
+          "/eoncity HUD, D-pad, actions, menus and modals"
+        ],
+        "testPaths": [
+          "tests/unit/w652-eoncity-entry-first-impression.test.mjs",
+          "tests/unit/w655-eoncity-executive-certification.test.mjs",
+          "tests/unit/w662h-whole-app-reconciliation.test.mjs",
+          "scripts/w662h-whole-app-reconciliation-gate.mjs"
+        ],
+        "humanProofRefs": [],
+        "knownContradictions": [
+          "Authenticated owner-visible browser acceptance remains incomplete."
+        ]
+      },
+      "nextAction": "Run the governed W662I authenticated browser/device matrix and obtain explicit owner acceptance before Preview, merge or production."
+    },
+    {
+      "id": "forge-nexus-visualization",
+      "label": "Forge stage visualization inside Nexus",
+      "priority": "P1",
+      "status": "human-proof-required",
+      "evidence": {
+        "sourcePresent": true,
+        "activeRuntimeImported": true,
+        "frontendTriggerVisible": true,
+        "functionalInteractionProven": true,
+        "automatedTestProven": true,
+        "authenticatedHumanProof": false
+      },
+      "references": {
+        "sourcePaths": [
+          "assets/js/nexus/eon-nexus-product-adapters.js",
+          "assets/js/nexus/eon-nexus-living-core.js",
+          "assets/js/nexus/eon-nexus-app-shell.js",
+          "assets/js/forge/eon-forge-nexus-stage.js",
+          "assets/js/forge/eon-forge-quick-build.js",
+          "assets/css/eon-forge.css"
+        ],
+        "importPaths": [
+          "assets/js/nexus/eon-nexus-app-shell.js",
+          "assets/js/forge/eon-forge-quick-build.js"
+        ],
+        "triggerSelectorsOrRoutes": [
+          "/forge Pulse/Live Nexus context",
+          "[data-eon-forge-nexus-stage]",
+          "/forge"
+        ],
+        "testPaths": [
+          "scripts/w660g-app-shell-nexus-gate.mjs",
+          "tests/unit/w662h-whole-app-reconciliation.test.mjs"
+        ],
+        "humanProofRefs": [],
+        "knownContradictions": [
+          "Authenticated owner-visible browser acceptance remains incomplete."
+        ]
+      },
+      "nextAction": "Run the governed W662I authenticated browser/device matrix and obtain explicit owner acceptance before Preview, merge or production."
+    },
+    {
+      "id": "city-audio",
+      "label": "City, Nexus, portal and Realm audio",
+      "priority": "P1",
+      "status": "human-proof-required",
+      "evidence": {
+        "sourcePresent": true,
+        "activeRuntimeImported": true,
+        "frontendTriggerVisible": true,
+        "functionalInteractionProven": true,
+        "automatedTestProven": true,
+        "authenticatedHumanProof": false
+      },
+      "references": {
+        "sourcePaths": [
+          "assets/js/city/eon-city-adaptive-soundscape.js",
+          "assets/js/eon-city-play-station.js"
+        ],
+        "importPaths": [
+          "active City product runtime"
+        ],
+        "triggerSelectorsOrRoutes": [
+          "City ambience and volume controls"
+        ],
+        "testPaths": [
+          "tests/unit/w369-adaptive-soundscape.test.mjs",
+          "tests/unit/w572-local-soundscape-audio-policy.test.mjs",
+          "tests/unit/w662h-whole-app-reconciliation.test.mjs"
+        ],
+        "humanProofRefs": [],
+        "knownContradictions": [
+          "Authenticated owner-visible browser acceptance remains incomplete."
+        ]
+      },
+      "nextAction": "Run the governed W662I authenticated browser/device matrix and obtain explicit owner acceptance before Preview, merge or production."
+    },
+    {
+      "id": "progressive-fallback-truth",
+      "label": "Progressive detailed-asset loading and fallback truth",
+      "priority": "P1",
+      "status": "human-proof-required",
+      "evidence": {
+        "sourcePresent": true,
+        "activeRuntimeImported": true,
+        "frontendTriggerVisible": true,
+        "functionalInteractionProven": true,
+        "automatedTestProven": true,
+        "authenticatedHumanProof": false
+      },
+      "references": {
+        "sourcePaths": [
+          "assets/js/city/eon-city-play-core.js",
+          "assets/js/city/w649/eon-city-w649-babylon-core-runtime.js",
+          "assets/js/city/w649/eon-city-w649-district-runtime.js",
+          "assets/js/city/eon-city-cast-certification.js",
+          "config/w662g-cast-certification.json"
+        ],
+        "importPaths": [
+          "assets/js/city/eon-city-play-core.js"
+        ],
+        "triggerSelectorsOrRoutes": [
+          "critical-art loading/degraded state"
+        ],
+        "testPaths": [
+          "tests/unit/w649-eoncity-controllable-core.test.mjs",
+          "tests/unit/w651-eoncity-visual-integration.test.mjs",
+          "tests/unit/w662g-cast-certification.test.mjs",
+          "scripts/w662g-cast-certification-gate.mjs"
+        ],
+        "humanProofRefs": [],
+        "knownContradictions": [
+          "Authenticated owner-visible browser acceptance remains incomplete."
+        ]
+      },
+      "nextAction": "Run the governed W662I authenticated browser/device matrix and obtain explicit owner acceptance before Preview, merge or production."
+    },
+    {
+      "id": "release-provenance",
+      "label": "Immutable Preview and byte-identical production provenance",
+      "priority": "P0",
+      "status": "complete",
+      "evidence": {
+        "sourcePresent": true,
+        "activeRuntimeImported": true,
+        "frontendTriggerVisible": true,
+        "functionalInteractionProven": true,
+        "automatedTestProven": true,
+        "authenticatedHumanProof": true
+      },
+      "references": {
+        "sourcePaths": [
+          ".github/workflows/preview.yml",
+          ".github/workflows/deploy.yml",
+          "receipt.json",
+          "HANDOVER/W661D_W660Z_R5_W661_CONVERGENCE_RECEIPT_2026-07-22.md"
+        ],
+        "importPaths": [
+          "production source 063552ccc72b21cb1b8c73512039d29d4dff58cf",
+          "production deployment 57758b16-f1a9-476c-855b-5d3de8f1444c"
+        ],
+        "triggerSelectorsOrRoutes": [
+          "https://eonapp.ch",
+          "https://eonapp.ch/eoncity",
+          "/api/auth/session",
+          "/api/city/access",
+          "/api/billing/status",
+          "/api/referrals"
+        ],
+        "testPaths": [
+          "scripts/w660l-complete-deployment-sweep-gate.mjs",
+          "scripts/w660o-verify-source-authority.mjs",
+          "GitHub Actions verification run 29952608499"
+        ],
+        "humanProofRefs": [
+          "Owner-authorized W661E-R3G production promotion recorded in draft PR #39."
+        ],
+        "knownContradictions": []
+      },
+      "nextAction": "Preserve production until W662I creates a new independently certified immutable Preview."
+    }
+  ]
+}

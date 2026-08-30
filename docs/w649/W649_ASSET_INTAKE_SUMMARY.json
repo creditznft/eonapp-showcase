@@ -1,0 +1,17 @@
+{
+  "schema": "eon.city.w649.asset-intake-summary.v1",
+  "logicalAssets": 38,
+  "activeLogicalAssets": 33,
+  "physicalFiles": 76,
+  "bytes": 82560744,
+  "activeBytes": 71359064,
+  "primaryBytes": 27191308,
+  "fallbackBytes": 55369436,
+  "holdOrSupersededLogicalAssets": [
+    "eoncity-civilian-static-candidate",
+    "eoncity-creator-command-static",
+    "eoncity-m4-maintenance-specialist-static",
+    "eoncity-security-sentinel-static-candidate",
+    "eoncity-x1-worker-8clips"
+  ]
+}

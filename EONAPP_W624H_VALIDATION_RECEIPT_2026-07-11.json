@@ -1,0 +1,97 @@
+{
+  "schema": "eonapp.validation-receipt.w624h.2026-07-11.v1",
+  "wave": "W624H",
+  "status": "source-complete-browser-device-live-status-proof-pending",
+  "releaseState": "limited-preview-no-go-public-launch",
+  "truthfulCommandCenter": {
+    "schema": "eon.city.truthful-command-center.w624h.v1",
+    "familyCount": 6,
+    "stateCount": 7,
+    "families": [
+      "projects",
+      "ai-runtime",
+      "jobs",
+      "billing",
+      "backup",
+      "outcomes"
+    ],
+    "states": [
+      "loading",
+      "current",
+      "empty",
+      "stale",
+      "offline",
+      "unavailable",
+      "error"
+    ],
+    "billingAuthority": "server-authoritative-/api/billing/status",
+    "readsPrivateWork": false,
+    "mutationAllowed": false,
+    "autoNavigation": false,
+    "reviewFirst": true
+  },
+  "validation": {
+    "w624hGate": "33/33",
+    "w624hTests": "6/6",
+    "maintainedFiles": 227,
+    "maintainedTotals": {
+      "tests": 838,
+      "passed": 791,
+      "failed": 0,
+      "skipped": 47,
+      "cancelled": 0,
+      "todo": 0
+    },
+    "alignment": "17/17",
+    "archiveIntegrity": "10/10",
+    "eslint": {
+      "errors": 0,
+      "warnings": 0
+    },
+    "productionReachability": {
+      "reachableFiles": 354,
+      "importEdges": 621,
+      "quarantinedReachable": 0
+    },
+    "secretScan": {
+      "textFiles": 3568,
+      "potentialSecrets": 0
+    },
+    "build": "passed",
+    "buildSmoke": "passed",
+    "w623fCertification": "24/24",
+    "codexPredeploy": {
+      "ok": true,
+      "steps": 22,
+      "resumedStepCount": 3,
+      "sourceFingerprint": {
+        "algorithm": "sha256",
+        "digest": "21f5d3cc5cb8fab6e4b898423258168615c315d05a4fd8128ac50f897b0016f4",
+        "fileCount": 3500
+      }
+    }
+  },
+  "distribution": {
+    "fileCount": 463,
+    "minifiedFiles": 293,
+    "savedPercent": 40.92,
+    "sha256": "7e64ce1b42399c2076ac99a0674ba412e7a0da481793328dfa883a6a509cb724"
+  },
+  "browserProof": {
+    "status": "BLOCKED",
+    "checkpoints": [],
+    "screenshots": [],
+    "productionAuthenticationClaimed": false,
+    "productionBillingClaimed": false,
+    "physicalDeviceClaimed": false,
+    "ownerVisualApprovalClaimed": false
+  },
+  "pendingEvidence": [
+    "real browser screenshots",
+    "physical-device layout and input",
+    "production-authenticated status refresh",
+    "live production billing status evidence",
+    "owner visual approval"
+  ],
+  "nextWave": "W624I"
+}

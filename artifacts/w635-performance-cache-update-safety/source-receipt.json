@@ -1,0 +1,105 @@
+{
+  "schema": "eonapp.gate.w635.performance-cache-update-safety.2026-07-11.v1",
+  "wave": "W635",
+  "ok": true,
+  "total": 17,
+  "passed": 17,
+  "checks": [
+    {
+      "id": "contract",
+      "pass": true,
+      "detail": "machine contract"
+    },
+    {
+      "id": "worker-mirror",
+      "pass": true,
+      "detail": "root/public byte-identical"
+    },
+    {
+      "id": "release-scoped-caches",
+      "pass": true,
+      "detail": "w765-2026-07-31-release-identity-source-template"
+    },
+    {
+      "id": "release-stable-city-asset-cache",
+      "pass": true,
+      "detail": "release-stable content-addressed City art cache without arbitrary FIFO eviction"
+    },
+    {
+      "id": "current-cache-only-reads",
+      "pass": true,
+      "detail": "release caches plus exact-release City shell and strict content-addressed City art only"
+    },
+    {
+      "id": "response-cache-fence",
+      "pass": true,
+      "detail": "redirect/private/cross-origin/canonical fences"
+    },
+    {
+      "id": "query-and-auth-fence",
+      "pass": true,
+      "detail": "query variants and credentials not cached"
+    },
+    {
+      "id": "critical-offline-precache",
+      "pass": true,
+      "detail": "offline fallback required; warm routes optional"
+    },
+    {
+      "id": "navigation-revalidation",
+      "pass": true,
+      "detail": "bounded revalidation fetch"
+    },
+    {
+      "id": "explicit-update-worker",
+      "pass": true,
+      "detail": "no install-time activation"
+    },
+    {
+      "id": "central-registration",
+      "pass": true,
+      "detail": "one registration implementation"
+    },
+    {
+      "id": "explicit-apply-and-reload",
+      "pass": true,
+      "detail": "activation and reload are separate taps"
+    },
+    {
+      "id": "versioned-bootstrap",
+      "pass": true,
+      "detail": "27 current documents"
+    },
+    {
+      "id": "deferred-shell-modules",
+      "pass": true,
+      "detail": "share/job/referral work is demand/page loaded"
+    },
+    {
+      "id": "worker-http-cache-fence",
+      "pass": true,
+      "detail": "edge/browser revalidation header"
+    },
+    {
+      "id": "source-files",
+      "pass": true,
+      "detail": "contract/test set"
+    },
+    {
+      "id": "evidence-honesty",
+      "pass": true,
+      "detail": "real browser/device/edge proof pending"
+    }
+  ],
+  "productionCertified": false,
+  "limitations": [
+    "Source certification only.",
+    "cloudflare-cache-header-observation",
+    "installed-desktop-update-and-reload",
+    "installed-android-update-and-reload",
+    "installed-ios-home-screen-update-observation",
+    "offline-and-slow-network-route-matrix",
+    "storage-pressure-cache-eviction-observation",
+    "real-device-lighthouse-and-city-frame-time-captures"
+  ]
+}

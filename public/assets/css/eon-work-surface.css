@@ -1,0 +1,318 @@
+body.eon-work-surface-open{overflow:hidden!important}
+.eon-work-surface{position:fixed;inset:0;z-index:1700;display:grid;grid-template-rows:auto minmax(0,1fr) auto;min-height:100dvh;overflow:hidden;background:linear-gradient(150deg,color-mix(in srgb,var(--clr-bg2) 80%,var(--clr-bg)),var(--clr-bg) 62%);color:var(--clr-text)}
+.eon-work-surface[hidden]{display:none!important}
+.eon-work-surface-header{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:5.2rem;padding:max(1rem,env(safe-area-inset-top)) max(1.2rem,env(safe-area-inset-right)) 1rem max(1.2rem,env(safe-area-inset-left));border-bottom:1px solid var(--clr-border);background:color-mix(in srgb,var(--clr-bg) 90%,transparent);backdrop-filter:blur(18px)}
+.eon-work-surface-brand{display:flex;align-items:center;gap:.85rem;min-width:0}.eon-work-surface-brand>span{display:grid;place-items:center;width:2.6rem;height:2.6rem;border:1px solid color-mix(in srgb,var(--clr-accent) 58%,var(--clr-border));border-radius:.82rem;background:color-mix(in srgb,var(--clr-accent) 12%,var(--clr-surface));color:var(--clr-accent)}
+.eon-work-surface-brand p{margin:0 0 .08rem;color:var(--clr-text-muted);font-size:.68rem;font-weight:850;letter-spacing:.12em;text-transform:uppercase}.eon-work-surface-brand h1{margin:0;font-size:clamp(1.08rem,2vw,1.5rem);letter-spacing:-.025em}
+.eon-work-surface-header-actions{display:flex;align-items:center;gap:.55rem}.eon-work-surface-header-actions a,.eon-work-surface-header-actions button,.eon-work-surface-footer button{min-height:2.55rem;padding:.55rem .78rem;border:1px solid var(--clr-border);border-radius:.72rem;background:var(--clr-surface);color:var(--clr-text);font:inherit;font-size:.78rem;font-weight:760;text-decoration:none;cursor:pointer}.eon-work-surface-header-actions button{width:2.65rem;padding:0;font-size:1.35rem}
+.eon-work-surface-main{width:min(86rem,100%);margin:0 auto;padding:clamp(1rem,3vw,2.7rem);overflow:auto;overscroll-behavior:contain}
+.eon-work-surface-footer{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:3.4rem;padding:.72rem max(1.2rem,env(safe-area-inset-right)) max(.72rem,env(safe-area-inset-bottom)) max(1.2rem,env(safe-area-inset-left));border-top:1px solid var(--clr-border);color:var(--clr-text-muted);font-size:.7rem}
+.eon-work-surface-loading,.eon-work-surface-error{min-height:55vh;display:grid;place-content:center;justify-items:center;text-align:center}.eon-work-surface-loading>span{font-size:2rem;color:var(--clr-accent)}.eon-work-surface-loading strong{margin-top:.8rem;font-size:1.2rem}.eon-work-surface-loading p,.eon-work-surface-error p{max-width:38rem;color:var(--clr-text-muted);line-height:1.6}.eon-work-surface-error h2{margin:.2rem 0}.eon-work-surface-error>div{display:flex;gap:.6rem}.eon-work-surface-error a,.eon-work-surface-error button{padding:.65rem .8rem;border:1px solid var(--clr-border);border-radius:.7rem;background:var(--clr-surface);color:var(--clr-text);text-decoration:none;font:inherit;cursor:pointer}.eon-work-surface-error small{margin-top:1rem;color:var(--clr-text-muted)}
+.eon-work-panel{display:grid;gap:1rem}.eon-work-panel-intro{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:1rem;padding-bottom:.5rem}.eon-work-panel-kicker{margin:0 0 .4rem;color:var(--clr-accent);font-size:.72rem;font-weight:850;letter-spacing:.13em;text-transform:uppercase}.eon-work-panel-intro h2{margin:0;font-size:clamp(1.7rem,4vw,3.35rem);letter-spacing:-.05em;line-height:1.04}.eon-work-panel-intro p:last-child{max-width:48rem;margin:.8rem 0 0;color:var(--clr-text-muted);line-height:1.6}.eon-work-panel-actions{display:flex;flex-wrap:wrap;gap:.55rem}.eon-work-panel-actions a,.eon-work-panel-actions button,.eon-work-card a,.eon-work-card button{min-height:2.65rem;padding:.62rem .8rem;border:1px solid var(--clr-border);border-radius:.72rem;background:var(--clr-surface);color:var(--clr-text);font:inherit;font-size:.8rem;font-weight:760;text-decoration:none;cursor:pointer}.eon-work-panel-actions .is-primary,.eon-work-card .is-primary{border-color:color-mix(in srgb,var(--clr-accent) 65%,var(--clr-border));background:color-mix(in srgb,var(--clr-accent) 13%,var(--clr-surface))}
+.eon-work-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem}.eon-work-grid.is-two{grid-template-columns:repeat(2,minmax(0,1fr))}.eon-work-card{min-width:0;padding:1rem;border:1px solid var(--clr-border);border-radius:1rem;background:color-mix(in srgb,var(--clr-surface) 78%,transparent)}.eon-work-card[data-featured="true"]{border-color:color-mix(in srgb,var(--clr-accent) 62%,var(--clr-border));background:color-mix(in srgb,var(--clr-accent) 8%,var(--clr-surface))}.eon-work-card p{color:var(--clr-text-muted);line-height:1.55}.eon-work-card h3{margin:.12rem 0}.eon-work-card small{color:var(--clr-text-muted)}.eon-work-card-list{display:grid;gap:.6rem}.eon-work-card-row{display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:.68rem;border:1px solid var(--clr-border);border-radius:.72rem;background:color-mix(in srgb,var(--clr-bg2) 72%,transparent)}.eon-work-card-row>div{min-width:0}.eon-work-card-row strong,.eon-work-card-row small{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.eon-work-empty{padding:1.2rem;border:1px dashed var(--clr-border);border-radius:.85rem;color:var(--clr-text-muted)}
+.eon-work-form{display:grid;gap:.8rem}.eon-work-form label{display:grid;gap:.35rem;color:var(--clr-text-muted);font-size:.78rem;font-weight:700}.eon-work-form input,.eon-work-form textarea,.eon-work-form select{width:100%;padding:.72rem;border:1px solid var(--clr-border);border-radius:.7rem;background:var(--clr-bg2);color:var(--clr-text);font:inherit}.eon-work-form textarea{min-height:8rem;resize:vertical}.eon-work-status{min-height:1.4rem;color:var(--clr-text-muted);font-size:.78rem}.eon-work-details{padding:1rem;border:1px solid var(--clr-border);border-radius:.9rem;background:color-mix(in srgb,var(--clr-surface) 64%,transparent)}.eon-work-details summary{cursor:pointer;font-weight:760}.eon-work-details>div{margin-top:.8rem;color:var(--clr-text-muted)}
+.eon-capture-layout{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(18rem,.7fr);gap:1rem}.eon-capture-preview{display:grid;place-items:center;min-height:22rem;border:1px solid var(--clr-border);border-radius:1rem;background:#000;overflow:hidden}.eon-capture-preview video{display:block;width:100%;max-height:68vh}.eon-capture-placeholder{text-align:center;color:#aab2bd}.eon-capture-recording{color:#ff7d73;font-weight:850}.eon-capture-share-review{display:grid;gap:.7rem;margin-top:1rem;padding:1rem;border:1px solid color-mix(in srgb,var(--clr-accent) 50%,var(--clr-border));border-radius:.9rem;background:color-mix(in srgb,var(--clr-accent) 7%,var(--clr-surface))}.eon-capture-share-review[hidden]{display:none!important}.eon-capture-share-review h3,.eon-capture-share-review p{margin:0}.eon-capture-share-review label{display:grid;gap:.35rem;color:var(--clr-text-muted);font-size:.78rem;font-weight:700}.eon-capture-share-review input,.eon-capture-share-review textarea{width:100%;padding:.72rem;border:1px solid var(--clr-border);border-radius:.7rem;background:var(--clr-bg2);color:var(--clr-text);font:inherit}.eon-capture-share-review textarea{min-height:7rem;resize:vertical}.eon-capture-share-review p{color:var(--clr-text-muted);font-size:.75rem;line-height:1.5}.eon-plan-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.7rem}.eon-plan-price{font-size:1.2rem;font-weight:850}.eon-plan-state{padding:.8rem;border:1px solid var(--clr-border);border-radius:.8rem;background:var(--clr-surface)}
+@media(max-width:980px){.eon-work-grid,.eon-plan-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.eon-capture-layout{grid-template-columns:1fr}}
+@media(max-width:640px){.eon-work-surface-header-actions>a{display:none}.eon-work-surface-main{padding:.85rem}.eon-work-surface-footer{align-items:flex-start;flex-direction:column}.eon-work-panel-intro{grid-template-columns:1fr}.eon-work-grid,.eon-work-grid.is-two,.eon-plan-grid{grid-template-columns:1fr}.eon-work-card-row{align-items:flex-start;flex-direction:column}.eon-capture-preview{min-height:13rem}}
+@media(prefers-reduced-motion:reduce){.eon-work-surface *{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+@media(forced-colors:active){.eon-work-surface,.eon-work-surface-header-actions a,.eon-work-surface-header-actions button,.eon-work-card,.eon-work-card-row,.eon-work-details,.eon-work-form input,.eon-work-form textarea,.eon-work-form select{border:1px solid CanvasText}.eon-work-surface :focus-visible{outline:2px solid Highlight;outline-offset:2px}}
+
+/* W748 City Dock / Focus Workspace presenter. Focus remains the default for
+   ordinary app launches; City explicitly requests Dock. */
+.eon-work-surface[data-eon-work-surface-presentation="dock"]{
+  inset:max(.75rem,env(safe-area-inset-top)) max(.75rem,env(safe-area-inset-right)) max(.75rem,env(safe-area-inset-bottom)) auto;
+  width:clamp(30rem,42vw,40rem);
+  min-height:0;
+  height:auto;
+  max-height:calc(100dvh - max(1.5rem,env(safe-area-inset-top) + env(safe-area-inset-bottom)));
+  border:1px solid color-mix(in srgb,var(--clr-accent) 34%,var(--clr-border));
+  border-radius:1.25rem;
+  background:linear-gradient(155deg,color-mix(in srgb,var(--clr-bg2) 91%,transparent),color-mix(in srgb,var(--clr-bg) 95%,transparent));
+  box-shadow:0 1.5rem 5rem rgb(0 0 0 / .48),inset 0 1px rgb(255 255 255 / .035);
+  backdrop-filter:blur(22px) saturate(1.08);
+}
+.eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-work-surface-header{
+  min-height:4.35rem;
+  padding:.72rem .8rem .68rem .9rem;
+  background:color-mix(in srgb,var(--clr-bg) 78%,transparent);
+}
+.eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-work-surface-brand>span{width:2.2rem;height:2.2rem}
+.eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-work-surface-brand h1{font-size:1.05rem}
+.eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-work-surface-header-actions{gap:.38rem}
+.eon-work-surface-header-actions [data-eon-work-surface-presentation]{width:auto;max-width:10.8rem;padding:.5rem .68rem;font-size:.7rem;line-height:1.1}
+.eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-work-surface-header-actions a{display:none}
+.eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-work-surface-main{width:100%;margin:0;padding:clamp(.75rem,1.7vw,1.15rem)}
+.eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-work-surface-footer{min-height:3rem;padding:.58rem .75rem max(.58rem,env(safe-area-inset-bottom));font-size:.64rem;background:color-mix(in srgb,var(--clr-bg) 78%,transparent)}
+.eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-work-surface-loading,
+.eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-work-surface-error{min-height:18rem}
+.eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-work-panel-intro{grid-template-columns:1fr;align-items:start}
+.eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-work-panel-intro h2{font-size:clamp(1.45rem,3.2vw,2.2rem)}
+.eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-work-grid,
+.eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-work-grid.is-two,
+.eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-plan-grid{grid-template-columns:1fr}
+.eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-capture-layout{grid-template-columns:1fr}
+.eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-capture-preview{min-height:14rem}
+body.eon-work-surface-dock-open [data-eon-city-play-root]{--eon-city-dock-width:clamp(30rem,42vw,40rem)}
+
+@media(min-width:1800px){
+  .eon-work-surface[data-eon-work-surface-presentation="dock"]{width:clamp(34rem,35vw,48rem)}
+}
+@media(max-width:760px) and (orientation:portrait){
+  .eon-work-surface[data-eon-work-surface-presentation="dock"]{
+    inset:auto 0 0 0;
+    width:100%;
+    height:min(78dvh,46rem);
+    max-height:calc(100dvh - max(3.5rem,env(safe-area-inset-top)));
+    border-width:1px 0 0;
+    border-radius:1.2rem 1.2rem 0 0;
+  }
+  .eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-work-surface-header{padding:.66rem .65rem}
+  .eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-work-surface-brand p{display:none}
+  .eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-work-surface-header-actions [data-eon-work-surface-presentation]{max-width:7.5rem}
+  .eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-work-surface-footer span{display:none}
+  .eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-work-surface-footer{min-height:2.75rem;align-items:stretch;padding:.45rem .65rem max(.45rem,env(safe-area-inset-bottom))}
+  .eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-work-surface-footer button{width:100%}
+}
+@media(max-height:540px) and (orientation:landscape){
+  .eon-work-surface[data-eon-work-surface-presentation="dock"]{
+    inset:0 0 0 auto;
+    width:min(54vw,40rem);
+    height:100dvh;
+    max-height:100dvh;
+    border-width:0 0 0 1px;
+    border-radius:0;
+  }
+  .eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-work-surface-header{min-height:3.65rem;padding:.45rem .6rem}
+  .eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-work-surface-brand>span{display:none}
+  .eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-work-surface-brand p{display:none}
+  .eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-work-surface-main{padding:.55rem .65rem}
+  .eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-work-surface-footer{display:none}
+  .eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-work-panel-intro p:last-child{margin:.35rem 0 0;line-height:1.35}
+  .eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-work-card{padding:.72rem}
+}
+@media(forced-colors:active){
+  .eon-work-surface[data-eon-work-surface-presentation="dock"]{border:2px solid CanvasText;backdrop-filter:none}
+}
+
+/* W749 central Living Nexus Dock. This is a view over the existing bounded
+   Nexus projection; no private record or duplicate task state is rendered. */
+.eon-nexus-dock{display:grid;gap:.8rem;min-width:0}
+.eon-nexus-dock button{min-height:2.55rem;padding:.58rem .72rem;border:1px solid var(--clr-border);border-radius:.72rem;background:color-mix(in srgb,var(--clr-surface) 82%,transparent);color:var(--clr-text);font:inherit;font-size:.76rem;font-weight:760;cursor:pointer}
+.eon-nexus-dock button:hover{border-color:color-mix(in srgb,var(--clr-accent) 55%,var(--clr-border));background:color-mix(in srgb,var(--clr-accent) 10%,var(--clr-surface))}
+.eon-nexus-dock button:focus-visible{outline:2px solid var(--clr-accent);outline-offset:2px}
+.eon-nexus-dock-hero{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:.8rem;padding:.9rem;border:1px solid color-mix(in srgb,var(--clr-accent) 38%,var(--clr-border));border-radius:1rem;background:radial-gradient(circle at 10% 20%,color-mix(in srgb,var(--clr-accent) 14%,transparent),transparent 48%),color-mix(in srgb,var(--clr-surface) 74%,transparent)}
+.eon-nexus-dock-hero small,.eon-nexus-dock-inspector>small,.eon-nexus-dock-work-object small{display:block;color:var(--clr-accent);font-size:.64rem;font-weight:850;letter-spacing:.09em;text-transform:uppercase}
+.eon-nexus-dock-hero h2{margin:.15rem 0 .2rem;font-size:clamp(1.15rem,2.5vw,1.65rem);letter-spacing:-.035em}.eon-nexus-dock-hero p{margin:0;color:var(--clr-text-muted);font-size:.76rem;line-height:1.45}
+.eon-nexus-dock-pulse{position:relative;width:3.2rem;height:3.2rem}.eon-nexus-dock-pulse span{position:absolute;inset:0;border:1px solid color-mix(in srgb,var(--clr-accent) 75%,transparent);border-radius:50%}.eon-nexus-dock-pulse span:nth-child(2){inset:.38rem;transform:rotateX(62deg)}.eon-nexus-dock-pulse span:nth-child(3){inset:.82rem;background:color-mix(in srgb,var(--clr-accent) 44%,transparent);box-shadow:0 0 1.2rem color-mix(in srgb,var(--clr-accent) 34%,transparent)}
+.eon-nexus-dock-freshness{display:grid;justify-items:end;gap:.12rem;max-width:9rem;text-align:right}.eon-nexus-dock-freshness strong{font-size:.7rem}.eon-nexus-dock-freshness span{color:var(--clr-text-muted);font-size:.65rem}.eon-nexus-dock-freshness[data-state="expired"],.eon-nexus-dock-freshness[data-state="stale"]{color:var(--clr-warning,var(--clr-accent))}
+.eon-nexus-dock-actions{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.45rem}.eon-nexus-dock-actions button{min-width:0;padding:.52rem .4rem;font-size:.68rem}
+.eon-nexus-dock-work-object{display:grid;gap:.3rem;padding:.78rem;border:1px solid color-mix(in srgb,var(--clr-accent) 35%,var(--clr-border));border-radius:.86rem;background:color-mix(in srgb,var(--clr-accent) 7%,var(--clr-surface))}.eon-nexus-dock-work-object strong{font-size:.9rem}.eon-nexus-dock-work-object p{margin:0;color:var(--clr-text-muted);font-size:.72rem;line-height:1.42}.eon-nexus-dock-work-object button{justify-self:start}
+.eon-nexus-dock-layout{display:grid;grid-template-columns:minmax(12rem,.82fr) minmax(0,1.18fr);gap:.65rem;align-items:stretch}.eon-nexus-dock-rings{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.42rem}.eon-nexus-dock-rings button{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.12rem .4rem;align-content:center;min-width:0;text-align:left}.eon-nexus-dock-rings button>span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:.67rem}.eon-nexus-dock-rings button>strong{font-size:.78rem}.eon-nexus-dock-rings button>small{grid-column:1/-1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--clr-text-muted);font-size:.59rem}.eon-nexus-dock-rings button.is-active{border-color:color-mix(in srgb,var(--clr-accent) 55%,var(--clr-border))}.eon-nexus-dock-rings button.is-warning{border-color:color-mix(in srgb,var(--clr-warning,var(--clr-accent)) 62%,var(--clr-border))}.eon-nexus-dock-rings button.is-failed{border-color:color-mix(in srgb,var(--clr-danger,#d87b72) 72%,var(--clr-border))}.eon-nexus-dock-rings button[aria-pressed="true"]{box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--clr-accent) 62%,transparent);background:color-mix(in srgb,var(--clr-accent) 12%,var(--clr-surface))}
+.eon-nexus-dock-inspector{display:grid;align-content:start;gap:.45rem;min-width:0;padding:.82rem;border:1px solid var(--clr-border);border-radius:.86rem;background:color-mix(in srgb,var(--clr-bg2) 76%,transparent)}.eon-nexus-dock-inspector h3{margin:0;font-size:1rem}.eon-nexus-dock-inspector p{margin:0;color:var(--clr-text-muted);font-size:.72rem;line-height:1.48}.eon-nexus-dock-inspector>div{display:grid;gap:.18rem;padding:.58rem;border-radius:.62rem;background:color-mix(in srgb,var(--clr-surface) 72%,transparent)}.eon-nexus-dock-inspector>div strong{font-size:.65rem}.eon-nexus-dock-inspector>div span{color:var(--clr-text-muted);font-size:.65rem;line-height:1.4}
+.eon-nexus-dock>footer{display:flex;align-items:center;justify-content:space-between;gap:.7rem;padding-top:.1rem;color:var(--clr-text-muted);font-size:.62rem;line-height:1.35}.eon-nexus-dock>footer button{flex:0 0 auto;min-height:2.25rem;font-size:.65rem}
+@media(max-width:640px){.eon-nexus-dock-hero{grid-template-columns:auto minmax(0,1fr)}.eon-nexus-dock-freshness{grid-column:1/-1;justify-items:start;max-width:none;text-align:left}.eon-nexus-dock-actions{grid-template-columns:repeat(2,minmax(0,1fr))}.eon-nexus-dock-layout{grid-template-columns:1fr}.eon-nexus-dock>footer{align-items:stretch;flex-direction:column}.eon-nexus-dock>footer button{width:100%}}
+@media(max-height:540px) and (orientation:landscape){.eon-nexus-dock{gap:.5rem}.eon-nexus-dock-hero{padding:.6rem}.eon-nexus-dock-pulse{width:2.4rem;height:2.4rem}.eon-nexus-dock-hero p{display:none}.eon-nexus-dock-work-object{padding:.55rem}.eon-nexus-dock-layout{grid-template-columns:minmax(11rem,.9fr) minmax(0,1.1fr)}.eon-nexus-dock>footer{display:none}}
+@media(prefers-reduced-motion:no-preference){.eon-nexus-dock-pulse span:first-child{animation:eon-nexus-dock-spin 12s linear infinite}.eon-nexus-dock-pulse span:nth-child(2){animation:eon-nexus-dock-spin-reverse 8s linear infinite}@keyframes eon-nexus-dock-spin{to{transform:rotate(360deg)}}@keyframes eon-nexus-dock-spin-reverse{to{transform:rotateX(62deg) rotate(-360deg)}}}
+@media(forced-colors:active){.eon-nexus-dock-hero,.eon-nexus-dock-work-object,.eon-nexus-dock-inspector,.eon-nexus-dock button{border:1px solid CanvasText}.eon-nexus-dock-pulse span{border-color:CanvasText}}
+
+/* W750 — Living Command Centre Dock */
+.eon-command-centre-dock{display:grid;gap:16px;min-height:100%;padding:clamp(14px,2vw,24px)}
+.eon-command-centre-hero{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:18px;border:1px solid color-mix(in srgb,var(--clr-accent,#8fd8ff) 28%,transparent);border-radius:18px;background:linear-gradient(135deg,color-mix(in srgb,var(--clr-bg-elevated,#171b20) 88%,transparent),color-mix(in srgb,var(--clr-accent,#8fd8ff) 7%,transparent))}
+.eon-command-centre-hero small,.eon-command-centre-inspector small{display:block;color:var(--clr-text-muted,#a7b0ba);letter-spacing:.08em;text-transform:uppercase}
+.eon-command-centre-hero h2,.eon-command-centre-inspector h3{margin:.3rem 0}.eon-command-centre-hero p,.eon-command-centre-inspector p{margin:.25rem 0;color:var(--clr-text-muted,#b9c0c8)}
+.eon-command-centre-hero aside{display:grid;justify-items:end;gap:4px;min-width:150px}.eon-command-centre-hero aside strong{text-transform:capitalize}.eon-command-centre-hero aside span{font-size:.82rem;color:var(--clr-text-muted,#a7b0ba);text-align:right}
+.eon-command-centre-wall-tabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}.eon-command-centre-wall-tabs button{display:grid;grid-template-columns:1fr auto;align-items:center;gap:4px;min-height:72px;padding:11px 12px;border-radius:14px;border:1px solid color-mix(in srgb,var(--clr-border,#3c424b) 82%,transparent);background:var(--clr-bg-elevated,#15191e);color:inherit;text-align:left}.eon-command-centre-wall-tabs button small{grid-column:1/-1;color:var(--clr-text-muted,#a7b0ba);text-transform:capitalize}.eon-command-centre-wall-tabs button[aria-pressed="true"]{outline:2px solid var(--clr-accent,#8fd8ff);outline-offset:2px}.eon-command-centre-wall-tabs .is-error{border-color:#d98673}.eon-command-centre-wall-tabs .is-warning{border-color:#d4ac66}.eon-command-centre-wall-tabs .is-active{border-color:color-mix(in srgb,var(--clr-accent,#8fd8ff) 65%,var(--clr-border,#3c424b))}
+.eon-command-centre-inspector{display:grid;gap:14px;padding:18px;border:1px solid var(--clr-border,#343a43);border-radius:18px;background:var(--clr-bg-elevated,#13171c)}.eon-command-centre-inspector>header{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}.eon-command-centre-inspector>header>span{font-size:1.8rem;font-weight:750}.eon-command-centre-detail{font-size:1rem}.eon-command-centre-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.eon-command-centre-cards article{display:grid;grid-template-columns:1fr auto;gap:8px;padding:13px;border-radius:14px;background:color-mix(in srgb,var(--clr-bg,#0d1014) 72%,transparent);border:1px solid color-mix(in srgb,var(--clr-border,#343a43) 75%,transparent)}.eon-command-centre-cards article p,.eon-command-centre-cards article footer{grid-column:1/-1}.eon-command-centre-cards article div{display:grid;gap:3px}.eon-command-centre-cards article footer{display:flex;justify-content:space-between;gap:8px;font-size:.76rem;color:var(--clr-text-muted,#9fa7b0)}.eon-command-centre-count{font-size:1.35rem;font-weight:750}
+.eon-command-centre-jobs{display:grid;gap:8px}.eon-command-centre-jobs button{display:flex;justify-content:space-between;align-items:center;gap:12px;width:100%;min-height:58px;padding:10px 12px;border:1px solid var(--clr-border,#343a43);border-radius:12px;background:color-mix(in srgb,var(--clr-bg,#0d1014) 76%,transparent);color:inherit;text-align:left}.eon-command-centre-jobs button>span{display:grid;gap:3px}.eon-command-centre-jobs button>span:last-child{justify-items:end}.eon-command-centre-jobs button small,.eon-command-centre-jobs button span span{color:var(--clr-text-muted,#a7b0ba);font-size:.78rem}.eon-command-centre-jobs button b{text-transform:capitalize}.eon-command-centre-jobs button.is-selected{outline:2px solid var(--clr-accent,#8fd8ff)}
+.eon-command-centre-theatre-empty{display:grid;justify-items:center;gap:8px;padding:28px;border:1px dashed var(--clr-border,#3b424b);border-radius:15px;text-align:center}.eon-command-centre-theatre-empty>span{font-size:2rem}.eon-command-centre-actions{display:flex;flex-wrap:wrap;gap:8px}.eon-command-centre-actions button,.eon-command-centre-footer button{min-height:44px;padding:9px 13px;border:1px solid var(--clr-border,#3b424b);border-radius:11px;background:var(--clr-bg,#0f1216);color:inherit}.eon-command-centre-inspector>footer,.eon-command-centre-footer{display:flex;justify-content:space-between;align-items:center;gap:12px;color:var(--clr-text-muted,#a7b0ba);font-size:.82rem}.eon-command-centre-inspector>footer{padding-top:10px;border-top:1px solid var(--clr-border,#343a43)}.eon-command-centre-inspector>footer strong{color:var(--clr-text,#f1f4f6);white-space:nowrap}
+@media(max-width:900px){.eon-command-centre-wall-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.eon-command-centre-cards{grid-template-columns:1fr 1fr}.eon-command-centre-hero{display:grid}.eon-command-centre-hero aside{justify-items:start}.eon-command-centre-hero aside span{text-align:left}}
+@media(max-width:600px){.eon-command-centre-wall-tabs,.eon-command-centre-cards{grid-template-columns:1fr}.eon-command-centre-inspector>header,.eon-command-centre-inspector>footer,.eon-command-centre-footer{align-items:flex-start;flex-direction:column}.eon-command-centre-jobs button{align-items:flex-start;flex-direction:column}.eon-command-centre-jobs button>span:last-child{justify-items:start}}
+
+
+/* W751 — shared productive station work loop. This compact layer only records
+   reviewed/opened/returned City activity; native surfaces retain completion. */
+[data-eon-work-surface-adapter-root]{display:grid;min-width:0}
+.eon-work-surface-main>[data-eon-station-work-loop-slot]:not([hidden]){display:block;margin:0 0 1rem}
+.eon-station-work-loop{display:grid;gap:.8rem;padding:clamp(.8rem,1.6vw,1.15rem);border:1px solid color-mix(in srgb,var(--clr-accent,#8fd8ff) 28%,var(--clr-border,#343a43));border-radius:1rem;background:linear-gradient(145deg,color-mix(in srgb,var(--clr-bg-elevated,#171b20) 94%,transparent),color-mix(in srgb,var(--clr-accent,#8fd8ff) 6%,transparent));box-shadow:0 .8rem 2rem rgba(0,0,0,.12)}
+.eon-station-work-loop>header{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.75rem;align-items:start}.eon-station-work-loop>header small{display:block;color:var(--clr-accent,#8fd8ff);font-size:.64rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.eon-station-work-loop>header h2{margin:.15rem 0 .25rem;font-size:clamp(1rem,2vw,1.35rem)}.eon-station-work-loop>header p{margin:0;color:var(--clr-text-muted,#a7b0ba);font-size:.76rem;line-height:1.45}.eon-station-work-loop>header>span{padding:.35rem .55rem;border:1px solid color-mix(in srgb,var(--clr-accent,#8fd8ff) 38%,var(--clr-border,#343a43));border-radius:999px;font-size:.68rem;font-weight:760;white-space:nowrap}
+.eon-station-work-loop>ol{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.55rem;margin:0;padding:0;list-style:none}.eon-station-work-loop>ol li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:.55rem;padding:.68rem;border:1px solid var(--clr-border,#343a43);border-radius:.8rem;background:color-mix(in srgb,var(--clr-bg,#0d1014) 70%,transparent)}.eon-station-work-loop>ol li>span{display:grid;place-items:center;width:1.55rem;height:1.55rem;border:1px solid var(--clr-border,#343a43);border-radius:50%;font-size:.7rem;font-weight:800}.eon-station-work-loop>ol li strong,.eon-station-work-loop>ol li small{display:block}.eon-station-work-loop>ol li strong{font-size:.74rem}.eon-station-work-loop>ol li small{margin-top:.18rem;color:var(--clr-text-muted,#a7b0ba);font-size:.66rem;line-height:1.4}.eon-station-work-loop>ol li[data-state="complete"],.eon-station-work-loop>ol li[data-state="verified"],.eon-station-work-loop>ol li[data-state="current"]{border-color:color-mix(in srgb,var(--clr-accent,#8fd8ff) 42%,var(--clr-border,#343a43))}.eon-station-work-loop>ol li[data-state="verified"]>span{background:var(--clr-accent,#8fd8ff);color:var(--clr-bg,#0d1014)}
+.eon-station-work-loop>footer{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.75rem;align-items:end;padding-top:.1rem}.eon-station-work-loop>footer>div:first-child{display:grid;gap:.15rem}.eon-station-work-loop>footer strong{font-size:.68rem}.eon-station-work-loop>footer span{color:var(--clr-text-muted,#a7b0ba);font-size:.66rem;line-height:1.4}.eon-station-work-loop-actions{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:.4rem}.eon-station-work-loop-actions button,.eon-station-work-loop-actions a{display:inline-flex;align-items:center;justify-content:center;min-height:2.35rem;padding:.48rem .65rem;border:1px solid var(--clr-border,#343a43);border-radius:.65rem;background:var(--clr-bg,#0d1014);color:inherit;font:inherit;font-size:.68rem;font-weight:720;text-decoration:none;cursor:pointer}.eon-station-work-loop-actions button:focus-visible,.eon-station-work-loop-actions a:focus-visible{outline:2px solid var(--clr-accent,#8fd8ff);outline-offset:2px}.eon-station-work-loop-status{margin:0;color:var(--clr-text-muted,#a7b0ba);font-size:.66rem}
+.eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-station-work-loop>ol{grid-template-columns:1fr}.eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-station-work-loop>footer{grid-template-columns:1fr}.eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-station-work-loop-actions{justify-content:flex-start}
+@media(max-width:720px){.eon-station-work-loop>header,.eon-station-work-loop>footer{grid-template-columns:1fr}.eon-station-work-loop>header>span{justify-self:start}.eon-station-work-loop>ol{grid-template-columns:1fr}.eon-station-work-loop-actions{justify-content:flex-start}.eon-station-work-loop-actions>*{flex:1 1 9rem}}
+@media(max-height:540px) and (orientation:landscape){.eon-station-work-loop{gap:.5rem;padding:.6rem}.eon-station-work-loop>header p,.eon-station-work-loop>footer>div:first-child,.eon-station-work-loop-status{display:none}.eon-station-work-loop>ol{grid-template-columns:repeat(3,minmax(0,1fr))}.eon-station-work-loop>ol li small{display:none}}
+@media(forced-colors:active){.eon-station-work-loop,.eon-station-work-loop>ol li,.eon-station-work-loop-actions button,.eon-station-work-loop-actions a{border:1px solid CanvasText}.eon-station-work-loop>ol li[data-state="verified"]>span{background:Highlight;color:HighlightText}}
+
+/* W752 — receipt-backed missions, deterministic cosmetic Vault Reveals and
+   private My Realm reflection. No chance, paid reward or public-posting loop. */
+.eon-work-surface-main>[data-eon-city-progression-slot]:not([hidden]){display:block;margin:0 0 1rem}
+.eon-city-progression-panel{display:grid;gap:.8rem;padding:clamp(.85rem,1.7vw,1.2rem);border:1px solid color-mix(in srgb,var(--clr-accent,#8fd8ff) 38%,var(--clr-border,#343a43));border-radius:1rem;background:linear-gradient(145deg,color-mix(in srgb,var(--clr-bg-elevated,#171b20) 96%,transparent),color-mix(in srgb,var(--clr-accent,#8fd8ff) 9%,transparent));box-shadow:0 .8rem 2rem rgba(0,0,0,.14)}
+.eon-city-progression-panel>header{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.75rem;align-items:start}.eon-city-progression-panel>header small,.eon-city-my-realm-reflection small{display:block;color:var(--clr-accent,#8fd8ff);font-size:.64rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.eon-city-progression-panel>header h2{margin:.15rem 0 .25rem;font-size:clamp(1rem,2vw,1.4rem)}.eon-city-progression-panel>header p,.eon-city-my-realm-reflection p{margin:0;color:var(--clr-text-muted,#a7b0ba);font-size:.72rem;line-height:1.45}.eon-city-progression-panel>header>span{padding:.35rem .55rem;border:1px solid color-mix(in srgb,var(--clr-accent,#8fd8ff) 45%,var(--clr-border,#343a43));border-radius:999px;font-size:.68rem;font-weight:760;white-space:nowrap}
+.eon-city-progression-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.55rem}.eon-city-progression-metrics article{display:grid;gap:.2rem;padding:.65rem;border:1px solid var(--clr-border,#343a43);border-radius:.75rem;background:color-mix(in srgb,var(--clr-bg,#0d1014) 72%,transparent)}.eon-city-progression-metrics small{color:var(--clr-text-muted,#a7b0ba);font-size:.63rem}.eon-city-progression-metrics strong{font-size:.9rem}.eon-city-progression-metrics meter{width:100%;height:.45rem;accent-color:var(--clr-accent,#8fd8ff)}
+.eon-city-progression-actions{display:flex;flex-wrap:wrap;gap:.45rem}.eon-city-progression-actions button{min-height:2.35rem;padding:.48rem .68rem;border:1px solid var(--clr-border,#343a43);border-radius:.65rem;background:var(--clr-bg,#0d1014);color:inherit;font:inherit;font-size:.68rem;font-weight:730;cursor:pointer}.eon-city-progression-actions button:disabled{opacity:.55;cursor:not-allowed}.eon-city-progression-actions button:not(:disabled):focus-visible{outline:2px solid var(--clr-accent,#8fd8ff);outline-offset:2px}.eon-city-progression-boundary,.eon-city-progression-status{margin:0;color:var(--clr-text-muted,#a7b0ba);font-size:.65rem;line-height:1.45}
+.eon-city-my-realm-reflection{display:grid;gap:.65rem;padding:.75rem;border:1px solid color-mix(in srgb,var(--clr-accent,#8fd8ff) 26%,var(--clr-border,#343a43));border-radius:.8rem;background:color-mix(in srgb,var(--clr-bg,#0d1014) 75%,transparent)}.eon-city-my-realm-reflection>header{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.65rem}.eon-city-my-realm-reflection h3{margin:.12rem 0 .2rem;font-size:.95rem}.eon-city-my-realm-reflection>header>span{font-size:.75rem;font-weight:800}.eon-city-my-realm-reflection>div{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.4rem}.eon-city-my-realm-reflection article{display:grid;gap:.16rem;padding:.5rem;border:1px solid var(--clr-border,#343a43);border-radius:.65rem}.eon-city-my-realm-reflection article[data-complete="true"]{border-color:var(--clr-accent,#8fd8ff)}.eon-city-my-realm-reflection article strong{font-size:.76rem}.eon-city-my-realm-reflection article span{font-size:.6rem;color:var(--clr-text-muted,#a7b0ba)}
+.eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-city-my-realm-reflection>div{grid-template-columns:1fr 1fr}.eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-city-progression-metrics{grid-template-columns:1fr}.eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-city-progression-actions>*{flex:1 1 9rem}
+@media(max-width:720px){.eon-city-progression-panel>header,.eon-city-my-realm-reflection>header{grid-template-columns:1fr}.eon-city-progression-panel>header>span{justify-self:start}.eon-city-progression-metrics{grid-template-columns:1fr}.eon-city-my-realm-reflection>div{grid-template-columns:1fr 1fr}.eon-city-progression-actions>*{flex:1 1 9rem}}
+@media(max-height:540px) and (orientation:landscape){.eon-city-progression-panel{gap:.5rem;padding:.6rem}.eon-city-progression-panel>header p,.eon-city-progression-boundary,.eon-city-progression-status,.eon-city-my-realm-reflection{display:none}.eon-city-progression-metrics{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(forced-colors:active){.eon-city-progression-panel,.eon-city-progression-metrics article,.eon-city-progression-actions button,.eon-city-my-realm-reflection,.eon-city-my-realm-reflection article{border:1px solid CanvasText}}
+
+/* W753 — the one maintained Share Center mounts inside City Dock/Focus. */
+[data-eon-work-surface-adapter-root]>.eon-share-center-v2{width:100%;max-height:none;overflow:visible;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none}
+.eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-share-center-v2{gap:.7rem}.eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-share-center-v2 .eon-share-quick-grid,.eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-share-center-v2 .eon-share-quick-head{grid-template-columns:1fr}.eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-share-center-v2 .eon-share-target-copy{text-align:left}.eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-share-center-v2 .eon-share-launch-grid{grid-template-columns:1fr 1fr}.eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-share-center-v2 .eon-share-card-fields{grid-template-columns:1fr}.eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-share-center-v2 .eon-share-card-detail{grid-column:auto}
+@media(max-width:520px){.eon-work-surface[data-eon-work-surface-presentation="dock"] .eon-share-center-v2 .eon-share-launch-grid{grid-template-columns:1fr}}
+
+/* R03 — City Surface Manager mobile/tablet sheet presentation. */
+.eon-work-surface[data-eon-work-surface-presentation="sheet"]{
+  inset:auto max(.45rem,env(safe-area-inset-right)) max(.45rem,env(safe-area-inset-bottom)) max(.45rem,env(safe-area-inset-left));
+  width:auto;
+  height:min(72dvh,44rem);
+  max-height:calc(100dvh - max(1rem,env(safe-area-inset-top)) - max(.45rem,env(safe-area-inset-bottom)));
+  border:1px solid color-mix(in srgb,var(--clr-border,#394139) 88%,transparent);
+  border-radius:1.2rem;
+  overflow:hidden;
+  box-shadow:0 -1.25rem 4rem rgba(0,0,0,.58);
+  backdrop-filter:blur(22px);
+}
+.eon-work-surface[data-eon-work-surface-presentation="sheet"]::before{
+  content:"";
+  position:absolute;
+  top:.38rem;
+  left:50%;
+  z-index:2;
+  width:3.2rem;
+  height:.28rem;
+  border-radius:999px;
+  background:color-mix(in srgb,var(--clr-text-muted,#aab3ac) 68%,transparent);
+  transform:translateX(-50%);
+  pointer-events:none;
+}
+.eon-work-surface[data-eon-work-surface-presentation="sheet"] .eon-work-surface-header{
+  min-height:4rem;
+  padding:.8rem .7rem .6rem;
+}
+.eon-work-surface[data-eon-work-surface-presentation="sheet"] .eon-work-surface-header-actions>a{display:none}
+.eon-work-surface[data-eon-work-surface-presentation="sheet"] .eon-work-surface-main{
+  width:100%;
+  min-height:0;
+  overflow:auto;
+  overscroll-behavior:contain;
+  padding:.7rem;
+}
+.eon-work-surface[data-eon-work-surface-presentation="sheet"] .eon-work-surface-footer{display:none}
+.eon-work-surface[data-eon-work-surface-presentation="sheet"] :is(.eon-work-grid,.eon-work-grid.is-two,.eon-plan-grid,.eon-capture-layout){grid-template-columns:1fr}
+@media(max-height:520px) and (orientation:landscape){
+  .eon-work-surface[data-eon-work-surface-presentation="sheet"]{
+    left:auto;
+    top:max(.35rem,env(safe-area-inset-top));
+    right:max(.35rem,env(safe-area-inset-right));
+    bottom:max(.35rem,env(safe-area-inset-bottom));
+    width:min(56vw,34rem);
+    height:auto;
+    max-height:none;
+    border-radius:1rem;
+  }
+  .eon-work-surface[data-eon-work-surface-presentation="sheet"]::before{display:none}
+}
+
+/* R10 — City workspaces can minimize without destroying adapter state. */
+.eon-work-surface-header-actions [data-eon-work-surface-minimize]{min-height:2.75rem}
+.eon-work-surface[data-eon-work-surface-presentation="sheet"] .eon-work-surface-header-actions button{min-width:2.75rem;min-height:2.75rem}
+@media(max-width:640px){.eon-work-surface[data-eon-work-surface-presentation="sheet"]{max-height:72dvh}.eon-work-surface-header{gap:.45rem}.eon-work-surface-brand{min-width:0}.eon-work-surface-brand>div{min-width:0}.eon-work-surface-brand h1{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.eon-work-surface-header-actions{gap:.3rem}.eon-work-surface-header-actions button{min-height:3rem}.eon-work-surface-header-actions [data-eon-work-surface-presentation]{display:none!important}}
+
+.eon-city-progression-mission-actions{display:flex;flex-wrap:wrap;gap:.55rem;margin:.8rem 0 .35rem}.eon-city-progression-mission-actions button{min-height:40px}.eon-city-progression-action-boundary{margin:.35rem 0 .8rem;font-size:.86rem;opacity:.78}
+
+/* L95-W09 — mobile workspace closeability is a launch invariant. The sheet
+   header remains in view while its body scrolls, and Close/Minimize keep a
+   full touch target even when the browser viewport or virtual keyboard shrinks. */
+@media (max-width:640px) {
+  .eon-work-surface[data-eon-work-surface-presentation="sheet"] .eon-work-surface-header {
+    position: sticky;
+    top: 0;
+    z-index: 12;
+    flex: 0 0 auto;
+    padding-top: max(.65rem, env(safe-area-inset-top));
+    background: color-mix(in srgb, var(--clr-bg) 96%, transparent);
+  }
+  .eon-work-surface[data-eon-work-surface-presentation="sheet"] .eon-work-surface-header-actions {
+    flex: 0 0 auto;
+    align-self: flex-start;
+  }
+  .eon-work-surface[data-eon-work-surface-presentation="sheet"] .eon-work-surface-header-actions :is([data-eon-work-surface-close],[data-eon-work-surface-minimize]) {
+    min-width: 48px;
+    width: 48px;
+    min-height: 48px;
+    height: 48px;
+    padding: 0;
+  }
+  .eon-work-surface[data-eon-work-surface-presentation="sheet"] .eon-work-surface-main {
+    padding-bottom: max(1rem, calc(env(safe-area-inset-bottom) + .5rem));
+  }
+}
+
+/* L95-M12 — phone City EONBOT owns its sheet body and composer zone.
+   The host Close/Minimize row stays above it; the Send action stays inside
+   normal layout and never shares space with floating City HUD controls. */
+@media (max-width:640px) {
+  .eon-work-surface[data-eon-work-surface-presentation="sheet"] [data-eon-city-chat-adapter="lightweight"] {
+    min-height:100%;
+    grid-template-rows:auto minmax(0,1fr);
+  }
+  .eon-work-surface[data-eon-work-surface-presentation="sheet"] [data-eon-city-chat-adapter="lightweight"] .eon-work-panel-intro {
+    gap:.55rem;
+    padding-bottom:0;
+  }
+  .eon-work-surface[data-eon-work-surface-presentation="sheet"] [data-eon-city-chat-adapter="lightweight"] .eon-work-panel-intro h2 {
+    font-size:1.35rem;
+  }
+  .eon-work-surface[data-eon-work-surface-presentation="sheet"] [data-eon-city-chat-adapter="lightweight"] .eon-work-panel-intro > .eon-work-panel-actions {
+    display:none;
+  }
+  .eon-work-surface[data-eon-work-surface-presentation="sheet"] [data-eon-city-chat-adapter="lightweight"] [data-eon-city-chat-world-context] {
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
+    overflow:hidden;
+    max-height:2.7em;
+    margin:.3rem 0 0;
+    line-height:1.3;
+  }
+  .eon-work-surface[data-eon-work-surface-presentation="sheet"] [data-eon-city-chat-adapter="lightweight"] > .eon-work-card {
+    min-height:0;
+    display:grid;
+    grid-template-rows:minmax(4.5rem,1fr) auto;
+    gap:.65rem;
+    padding:.7rem;
+  }
+  .eon-work-surface[data-eon-work-surface-presentation="sheet"] [data-eon-city-chat-adapter="lightweight"] [data-eon-city-chat-log] {
+    min-height:0;
+    overflow:auto;
+    overscroll-behavior:contain;
+  }
+  .eon-work-surface[data-eon-work-surface-presentation="sheet"] [data-eon-city-chat-adapter="lightweight"] [data-eon-city-chat-form] {
+    position:sticky;
+    bottom:0;
+    z-index:4;
+    gap:.55rem;
+    padding-top:.6rem;
+    padding-bottom:max(.1rem,env(safe-area-inset-bottom));
+    background:color-mix(in srgb,var(--clr-surface) 96%,transparent);
+  }
+  .eon-work-surface[data-eon-work-surface-presentation="sheet"] [data-eon-city-chat-adapter="lightweight"] textarea {
+    min-height:4.75rem;
+    max-height:22dvh;
+    resize:none;
+  }
+  .eon-work-surface[data-eon-work-surface-presentation="sheet"] [data-eon-city-chat-adapter="lightweight"] .eon-work-panel-actions button {
+    min-height:48px;
+  }
+  .eon-work-surface[data-eon-work-surface-presentation="sheet"] [data-eon-city-chat-adapter="lightweight"] [data-eon-city-chat-form] .is-primary {
+    flex:1 1 8rem;
+  }
+  .eon-work-surface[data-eon-work-surface-presentation="sheet"] [data-eon-city-chat-adapter="lightweight"] [data-eon-city-chat-help-current] {
+    flex:1 1 10rem;
+  }
+  .eon-work-surface[data-eon-work-surface-presentation="sheet"] [data-eon-city-chat-adapter="lightweight"] [data-eon-city-chat-clear] {
+    display:none;
+  }
+}
+
+.eon-work-surface .eon-premium-tier-preview{display:grid;gap:.8rem;margin-top:1rem;padding:.85rem;border:1px solid var(--clr-border);border-radius:1rem;background:color-mix(in srgb,var(--clr-accent) 5%,var(--clr-surface))}.eon-work-surface .eon-premium-tier-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem}.eon-work-surface .eon-premium-tier-card{padding:.85rem;border:1px solid var(--clr-border);border-radius:.85rem;background:var(--clr-surface)}.eon-work-surface .eon-premium-tier-card h3{margin:.1rem 0}.eon-work-surface .eon-premium-tier-card p{color:var(--clr-text-muted);line-height:1.5}.eon-work-surface .eon-premium-tier-price{font-size:1.15rem;font-weight:850;color:var(--clr-text)!important}.eon-work-surface .eon-premium-tier-card button{min-height:2.4rem;padding:.55rem .65rem;border:1px solid var(--clr-border);border-radius:.7rem;background:var(--clr-bg2);color:var(--clr-text-muted)}@media(max-width:980px){.eon-work-surface .eon-premium-tier-grid{grid-template-columns:1fr}}

@@ -1,0 +1,273 @@
+{
+  "schema": "eonapp.w725-w730.changed-files.v1",
+  "waveRange": "W725-W730",
+  "generatedAt": "2026-07-28T01:30:00+05:30",
+  "baseCommit": "96581839d670952f3da7399fa47208ae3c8dfc5c",
+  "fileCount": 44,
+  "files": [
+    {
+      "path": "assets/css/eon-work-surface.css",
+      "bytes": 8747,
+      "sha256": "376611db073d5ec8d6a4ea68a024210a88641ff55413b55e004c669f34b0433c",
+      "status": "added"
+    },
+    {
+      "path": "assets/js/work-surface/adapters/eon-creator-capture-panel.js",
+      "bytes": 11287,
+      "sha256": "ca9c0df0903be734b8efd5baa999cce8a4913ae3ae1e2f8b73ef7c252a09df19",
+      "status": "added"
+    },
+    {
+      "path": "assets/js/work-surface/adapters/eon-plans-panel.js",
+      "bytes": 7200,
+      "sha256": "8930651ee2201064b7a06099117d3abdf5eb72de40a870e6d50b74d136c785fb",
+      "status": "added"
+    },
+    {
+      "path": "assets/js/work-surface/adapters/eon-productivity-panel.js",
+      "bytes": 14795,
+      "sha256": "801ba00b7ddbb088c78428318bfae77d3b171332c817a3f5aed172050a3fa4a3",
+      "status": "added"
+    },
+    {
+      "path": "assets/js/work-surface/adapters/eon-share-panel.js",
+      "bytes": 796,
+      "sha256": "40b1cd8564e4b34b579aeffa99bc3520409f29dae8d161e759325856d9c8a16b",
+      "status": "added"
+    },
+    {
+      "path": "assets/js/work-surface/eon-work-surface-host.js",
+      "bytes": 10079,
+      "sha256": "d07f8b634d6f9d81dab9317ba8d62482682b2494612bd3a703f627c3749d0e49",
+      "status": "added"
+    },
+    {
+      "path": "assets/js/work-surface/eon-work-surface-registry.js",
+      "bytes": 5490,
+      "sha256": "311868d14c8c2ee0cca6de48fde30a2b171aaad90d8ee5b96b3c117ec4f85bff",
+      "status": "added"
+    },
+    {
+      "path": "docs/EONAPP_W720_W736_APPROVED_AMENDED_PLAN_V2_2026-07-28.md",
+      "bytes": 27820,
+      "sha256": "c52b2231e6b97358360586929f277ddfc535067ed512ad675c839fe6e0eaf102",
+      "status": "added"
+    },
+    {
+      "path": "docs/w725-w730-validation/W725_W730_VALIDATION_RECEIPT_2026-07-28.md",
+      "bytes": 4926,
+      "sha256": "dce802cb89394dbbd9dca23d7cc32e7bc95fb6e0825cc701bce601c96c93a5c3",
+      "status": "added"
+    },
+    {
+      "path": "scripts/w730-dependency-aware-source-suite.mjs",
+      "bytes": 5424,
+      "sha256": "a5804b0401546a2586ad20fd720f72e498c6fc6a54f7cd3e7d38a934f14326b3",
+      "status": "added"
+    },
+    {
+      "path": "tests/unit/w725-shared-work-surface.test.mjs",
+      "bytes": 2325,
+      "sha256": "4fa1db7a93bc7e0c534df778dc0ba99a4dc64fc654944eeda322137da9eda12f",
+      "status": "added"
+    },
+    {
+      "path": "tests/unit/w726-w727-productivity-simplification.test.mjs",
+      "bytes": 1245,
+      "sha256": "2468d0037d3def565a970f4981680d42d93605ee075f556dcec17a8cffd08306",
+      "status": "added"
+    },
+    {
+      "path": "tests/unit/w728-share-capture-plans.test.mjs",
+      "bytes": 3187,
+      "sha256": "31c725f224291e3b626b1be528522d17bbae7b868e2d99392f644d519f67792e",
+      "status": "added"
+    },
+    {
+      "path": "tests/unit/w729-help-settings-profile.test.mjs",
+      "bytes": 985,
+      "sha256": "f43bfcbb9c7aa5414f4f862f88e6d7dca2c00e900334cf0feb4ca2e87a2d01e4",
+      "status": "added"
+    },
+    {
+      "path": "tests/unit/w730-my-realm-templates.test.mjs",
+      "bytes": 2610,
+      "sha256": "8dcc3eb30279222441188e00f9365965f3cbceca30ac4f7c1a24eb85cf07474f",
+      "status": "added"
+    },
+    {
+      "path": "assets/css/eon-app-shell.css",
+      "bytes": 74920,
+      "sha256": "4acfdde1807b8adbc7a432514c483a4d54d9c3120c7bcfcf7b4e8031ffdc8864",
+      "status": "modified"
+    },
+    {
+      "path": "assets/css/eon-create-hub.css",
+      "bytes": 12192,
+      "sha256": "78cf2e0e9305fff6b2febb102601d75456080bd61e70851c80d7f634aae44c4d",
+      "status": "modified"
+    },
+    {
+      "path": "assets/css/eon-workspace-records.css",
+      "bytes": 12686,
+      "sha256": "ea8b0bddf5a0fab874685c3a592bb29db725ce9f78d7e7d9d4e2788cfad2c9cf",
+      "status": "modified"
+    },
+    {
+      "path": "assets/css/realm-studio.css",
+      "bytes": 17418,
+      "sha256": "a5f0b7a74bb366d4561359ae024586178ec011b0b227703afdcd56be34e5d0c4",
+      "status": "modified"
+    },
+    {
+      "path": "assets/js/city/w659g/eon-city-w659g-creator-capture.js",
+      "bytes": 12780,
+      "sha256": "3b85f62c54f2422908deaa5cfd3b0b16ea02e5f96f8d2dcad8c63a9b52c15b07",
+      "status": "modified"
+    },
+    {
+      "path": "assets/js/city/w659g/eon-city-w659g-membership-console.js",
+      "bytes": 3680,
+      "sha256": "1b8a4892814f5ce9cfceea3ed4405f8f90f2c8b4dee0bfafb0cad985e1ba10e3",
+      "status": "modified"
+    },
+    {
+      "path": "assets/js/city/w659n/eon-city-w659n-product-layer.js",
+      "bytes": 103667,
+      "sha256": "2ec743eb1992c7351feb34f54486979bfa7b5643da02a3e2c6980488bc9609ab",
+      "status": "modified"
+    },
+    {
+      "path": "assets/js/command/eon-command-registry.js",
+      "bytes": 11074,
+      "sha256": "492f24b5ef3cfdd08a766ea2b0f89931632ae987da812f66dbf999eb0c6d1784",
+      "status": "modified"
+    },
+    {
+      "path": "assets/js/command/eon-command-surface.js",
+      "bytes": 13669,
+      "sha256": "628bc932cb67f399ad80379e82a2ce7034cc0a1544a65d2939b85b4e78af6272",
+      "status": "modified"
+    },
+    {
+      "path": "assets/js/create/eon-create-hub.js",
+      "bytes": 8305,
+      "sha256": "45e2ed4435ebf292a2743c51ff118098c03ea432f6c57c2a75753ac782c8e8dc",
+      "status": "modified"
+    },
+    {
+      "path": "assets/js/eon-app-shell.js",
+      "bytes": 68235,
+      "sha256": "cba0fcf2969bddb271b0a623d5e329e596d42e6218847995de9ccd20059a793d",
+      "status": "modified"
+    },
+    {
+      "path": "assets/js/eon-workspace-pages.js",
+      "bytes": 69113,
+      "sha256": "8726110102d3b47dc88ec610402dbd362ddb13d9aaf3ba1b4acdc719d9e9ed7a",
+      "status": "modified"
+    },
+    {
+      "path": "assets/js/projects/eon-projects-page.js",
+      "bytes": 30207,
+      "sha256": "842c72fd18834486b87bd85c06f3d3805b78344cf199da86d01e76cfa78036ef",
+      "status": "modified"
+    },
+    {
+      "path": "assets/js/realm-studio-page.js",
+      "bytes": 28773,
+      "sha256": "953f900565e1fc40fa13307084c27a20a41e7d66cf746c213975a529d947bcc4",
+      "status": "modified"
+    },
+    {
+      "path": "assets/js/realm/realm-state.js",
+      "bytes": 18227,
+      "sha256": "90c206931ac1dd57f37be8d32c8035e0d08e4b3a502ab93b6b3a416e243e0c41",
+      "status": "modified"
+    },
+    {
+      "path": "assets/js/utils/eon-share-sheet.js",
+      "bytes": 45312,
+      "sha256": "203a77c984e33ee2ceed993585a39cde38c194c8a1f98bf28d5a70c859e663d5",
+      "status": "modified"
+    },
+    {
+      "path": "config/archive/w721-superseded-launch-tests.json",
+      "bytes": 2697,
+      "sha256": "f0b2db44232da04a4c18542ec33d41d9bb2cac223700906745df7222bf043f73",
+      "status": "modified"
+    },
+    {
+      "path": "config/w624d-current-unit-test-manifest.json",
+      "bytes": 26961,
+      "sha256": "8185b8094836d2e390ef30a2d0e0bc3c9e9afab8695c7f285ed2c536ab561424",
+      "status": "modified"
+    },
+    {
+      "path": "help.html",
+      "bytes": 13882,
+      "sha256": "d4c2a2791d6a17ff3da19f1da9116e58f047885b07ce0af06bf37cf31dd5173d",
+      "status": "modified"
+    },
+    {
+      "path": "package.json",
+      "bytes": 158253,
+      "sha256": "f42c47c7bc18cbdfa1cee4ff248a72e5f26b3cf1ad4d1bcec06afa54d4f58b67",
+      "status": "modified"
+    },
+    {
+      "path": "realm-studio.html",
+      "bytes": 18412,
+      "sha256": "63ad0bf5e9e4f53a39d17f8df2ed1bee45d0d712eff577c1215fe8e2f656a329",
+      "status": "modified"
+    },
+    {
+      "path": "scripts/run-current-unit-suite.mjs",
+      "bytes": 32157,
+      "sha256": "5d7e1f93b06042446a9be4a7c17c3e852a760492f8d63f99cc092bd8659ffc68",
+      "status": "modified"
+    },
+    {
+      "path": "scripts/w721-product-reset-gate.mjs",
+      "bytes": 3466,
+      "sha256": "f8064a7d3c9c44d3ac783ed6fb47f5b0ada4f8f7221e2dd3fc89b001e602d785",
+      "status": "modified"
+    },
+    {
+      "path": "tests/unit/w222-my-realm-mvp.test.mjs",
+      "bytes": 8509,
+      "sha256": "4b22cc60f154c5daf724cb34f5c60d456f306ab5326e7bce40c0eecb502a355b",
+      "status": "modified"
+    },
+    {
+      "path": "tests/unit/w232-my-realm-return-loop.test.mjs",
+      "bytes": 7877,
+      "sha256": "b0ec72484471198c782667dd218cafb379a76fc09b2584fa03fd98cd087e93c5",
+      "status": "modified"
+    },
+    {
+      "path": "tests/unit/w659g-productive-city.test.mjs",
+      "bytes": 9836,
+      "sha256": "2d39d35de48f115d5208c44ddf2e921337c33208cc2df2fd09fd5d924c2d3660",
+      "status": "modified"
+    },
+    {
+      "path": "tests/unit/w659n-productive-city-integration.test.mjs",
+      "bytes": 4298,
+      "sha256": "6bf5cb3311508285c49dca28a712c79d15fb0860370033b75e6aca445c1ee630",
+      "status": "modified"
+    },
+    {
+      "path": "tests/unit/w719-13-city-control-authority.test.mjs",
+      "bytes": 2439,
+      "sha256": "098c8fbcf5c424f9589a567cd26ce41b51af5248537aaaa3226c83860fecce6a",
+      "status": "modified"
+    },
+    {
+      "path": "tests/unit/w721-product-reset-contract.test.mjs",
+      "bytes": 2127,
+      "sha256": "da09333260e50cab92734e76ee91d3610213bccffd89613b117a096396fc2cb3",
+      "status": "modified"
+    }
+  ]
+}

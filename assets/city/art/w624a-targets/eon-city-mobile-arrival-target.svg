@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1600" viewBox="0 0 900 1600" role="img" aria-labelledby="title desc">
+<title id="title">EON City mobile arrival target</title><desc id="desc">Original portrait target demonstrating a readable path, one dominant landmark, minimal safe-area touch controls, player, EONBOT, warm entry and no crowded HUD.</desc>
+<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#050b18"/><stop offset=".7" stop-color="#0a1830"/><stop offset="1" stop-color="#163f59"/></linearGradient><filter id="g"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect width="900" height="1600" fill="url(#sky)"/>
+<circle cx="700" cy="180" r="74" fill="#c7dcff" opacity=".16"/><circle cx="700" cy="180" r="51" fill="none" stroke="#c7dcff" opacity=".45"/>
+<path d="M210 970 L280 420 L450 280 L575 445 L655 970Z" fill="#07111e" stroke="#69e7ff" stroke-width="6"/>
+<path d="M330 860 L330 470 L450 340 L500 860Z" fill="#163f59" opacity=".75"/>
+<path d="M450 280V180" stroke="#69e7ff" stroke-width="10" filter="url(#g)"/>
+<path d="M120 610 Q450 455 780 610" fill="none" stroke="#69e7ff" stroke-width="18" opacity=".65"/>
+<text x="450" y="680" fill="#c7dcff" font-size="34" font-family="system-ui" text-anchor="middle">COMMAND LOOM</text>
+<path d="M0 970H900V1600H0Z" fill="#0e1a2d"/><path d="M300 970 L580 1600 H100 L350 970Z" fill="#07111e"/><path d="M450 970 L520 1600" stroke="#69e7ff" stroke-width="7" opacity=".45"/>
+<rect x="402" y="830" width="96" height="140" rx="15" fill="#ffbc68" opacity=".78" filter="url(#g)"/>
+<g transform="translate(420 1030)"><circle cx="0" cy="48" r="32" fill="#c7dcff"/><path d="M-40 85 L-68 320 L0 360 L68 320 L40 85Z" fill="#07111e" stroke="#69e7ff" stroke-width="5"/><path d="M20 115 L55 230" stroke="#9b7cff" stroke-width="11"/></g>
+<g transform="translate(590 1120)" filter="url(#g)"><ellipse rx="45" ry="36" fill="#07111e" stroke="#69e7ff" stroke-width="5"/><ellipse rx="66" ry="50" fill="none" stroke="#9b7cff" stroke-width="7" transform="rotate(-18)"/><circle r="9" fill="#c7dcff"/></g>
+<g font-family="system-ui"><rect x="34" y="72" width="832" height="126" rx="30" fill="#07111e" opacity=".92" stroke="#163f59"/><text x="70" y="117" fill="#69e7ff" font-size="22">FIRST CIRCUIT</text><text x="70" y="162" fill="#c7dcff" font-size="32">Reach the Command Loom</text><rect x="718" y="93" width="112" height="70" rx="24" fill="#0e1a2d" stroke="#69e7ff"/><text x="774" y="136" fill="#c7dcff" font-size="21" text-anchor="middle">Menu</text></g>
+<!-- touch-safe controls -->
+<g opacity=".9"><circle cx="170" cy="1400" r="104" fill="#07111e" stroke="#163f59" stroke-width="5"/><circle cx="170" cy="1400" r="44" fill="#132742" stroke="#69e7ff" stroke-width="4"/><circle cx="735" cy="1405" r="82" fill="#07111e" stroke="#163f59" stroke-width="5"/><text x="735" y="1415" fill="#c7dcff" font-size="25" font-family="system-ui" text-anchor="middle">Interact</text></g>
+<g font-family="system-ui"><rect x="34" y="1512" width="832" height="58" rx="20" fill="#07111e" stroke="#69e7ff"/><text x="450" y="1548" fill="#c7dcff" font-size="18" text-anchor="middle">TARGET · touch-safe · one destination · no HUD clutter</text></g>
+</svg>

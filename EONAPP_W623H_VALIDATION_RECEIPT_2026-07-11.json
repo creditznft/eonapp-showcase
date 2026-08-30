@@ -1,0 +1,98 @@
+{
+  "schema": "eonapp.w623h.validation-receipt.v1",
+  "date": "2026-07-11",
+  "wave": "W623H",
+  "status": "source-complete-rollout-controlled-deployment-proof-pending",
+  "releaseState": "limited-preview-no-go-public-launch",
+  "sourceCheckpoint": {
+    "gitRevision": null,
+    "reason": "sanitized source snapshot contains no .git history",
+    "manifestPath": "reports/w623h-minimal-referral-ledger/source-manifest.json",
+    "manifestFileCount": 3467,
+    "manifestSha256": "447a8f8ec2e5176e049c3efac42dbd25383403850d19d1f5bea309ee17287f3c"
+  },
+  "architecture": {
+    "monetization": "subscriptions-only",
+    "inAppAdvertising": false,
+    "watchAdRewards": false,
+    "serverBinding": "EON_BILLING_DB",
+    "newDatabase": false,
+    "newSecret": false,
+    "cron": false,
+    "queue": false,
+    "clickTracking": false,
+    "impressionTracking": false,
+    "socialPostTracking": false,
+    "rawSignedTokenPersistence": false,
+    "identityProof": "fresh-p256-proof-of-possession-10-minute-challenge",
+    "deviceIdentitiesPerAccount": 5,
+    "paidRetentionDays": 14,
+    "yearlyPaidReferralCap": 3,
+    "paidProgression": [
+      "builder",
+      "builder",
+      "power"
+    ],
+    "privacySafeMeasurement": "qualified-ledger-aggregates-only"
+  },
+  "validation": {
+    "w623hGate": "20/20",
+    "w623hSqlLifecycleTests": "3/3",
+    "focusedW623cThroughW623hTests": "31/31",
+    "w623cCommercialTruth": "64/64",
+    "w623dReachabilityTests": "5/5",
+    "w623eInformationArchitecture": "5/5",
+    "w623fCertificationV2": "24/24",
+    "w623gShareVoiceGate": "22/22",
+    "targetedEslint": "zero errors and zero warnings",
+    "secretScan": {
+      "status": "pass",
+      "textFilesScanned": 3385,
+      "skippedGeneratedBinaryLarge": 67
+    },
+    "productionBuild": "pass"
+  },
+  "reachability": {
+    "htmlFiles": 33,
+    "browserScriptEntries": 130,
+    "cloudflareFunctionEntries": 20,
+    "productionEntries": 50,
+    "reachableFiles": 344,
+    "importEdges": 593,
+    "quarantinedReachable": 0
+  },
+  "build": {
+    "distributionFiles": 452,
+    "minifiedFiles": 290,
+    "beforeBytes": 10312161,
+    "afterBytes": 6069733,
+    "savedBytes": 4242428,
+    "savedPercent": 41.14,
+    "distributionSha256": "0b076a814353528688e005bcda16d80d8712b14bf1f40cf26597ad127d664d03",
+    "sourceRevision": null
+  },
+  "viralReadiness": {
+    "sourceScore": 9.7,
+    "deployedScoreUntilRolloutProof": 7.2,
+    "remainingEvidence": [
+      "Cloudflare D1 migration and testing rollout",
+      "two-account live bind/enrol/activation/grant/redemption",
+      "rollout rollback",
+      "real Dodo-origin 14-day retained paid evidence",
+      "native desktop/mobile image-video-card sharing",
+      "eleven-language real-device voice/RTL/IME"
+    ]
+  },
+  "evidenceBoundary": {
+    "notClaimed": [
+      "deployed referral programme active",
+      "production EONKEY grant",
+      "real paid-retention completion",
+      "real refund/dispute reversal",
+      "native media share proof",
+      "universal offline speech",
+      "public launch readiness"
+    ]
+  },
+  "nextWave": "W623I"
+}

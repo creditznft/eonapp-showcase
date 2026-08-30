@@ -1,0 +1,139 @@
+{
+  "schema": "eonapp.a15.i21.d1-migration-manifest.v1",
+  "generatedAt": "2026-08-29T20:08:30.738Z",
+  "releaseAuthorityId": "a15-i21-v1",
+  "migrations": [
+    {
+      "domain": "identity",
+      "binding": "EON_IDENTITY_DB",
+      "file": "identity/migrations/0001_eon_identity.sql",
+      "bytes": 1061,
+      "sha256": "25dce630a13feb8632926bd9c4f5f21aeec675e402ab37e28d17a14e1ddce502"
+    },
+    {
+      "domain": "identity",
+      "binding": "EON_IDENTITY_DB",
+      "file": "identity/migrations/0002_identity_schema_authority.sql",
+      "bytes": 568,
+      "sha256": "bab926c6c24f7bc5f156ec32bae97d4ad257db65daefe65d44bb71ffdb0753f0"
+    },
+    {
+      "domain": "identity",
+      "binding": "EON_IDENTITY_DB",
+      "file": "identity/migrations/0003_push_subscription_authority.sql",
+      "bytes": 1233,
+      "sha256": "eabb595f23fbab0810847d5c672b9ee7ba586761afcd93b93287b4487fa1baa4"
+    },
+    {
+      "domain": "identity",
+      "binding": "EON_IDENTITY_DB",
+      "file": "identity/migrations/0004_notification_retention_reminders.sql",
+      "bytes": 1411,
+      "sha256": "5ac47001978077f7cdd83a00b9c4f66bf5bc3df7d6e32004432dc3180ddc9800"
+    },
+    {
+      "domain": "identity",
+      "binding": "EON_IDENTITY_DB",
+      "file": "identity/migrations/0005_notification_scale_indexes.sql",
+      "bytes": 1312,
+      "sha256": "b6bd8b5b6eb48515ff56eb9d38db72aeb16c53d0f9d71321cffc11e58e7436aa"
+    },
+    {
+      "domain": "identity",
+      "binding": "EON_IDENTITY_DB",
+      "file": "identity/migrations/0006_notification_policy_authority.sql",
+      "bytes": 1695,
+      "sha256": "0667287cae209c54d956a01a566e7f7101b9934cf9186bc1f27affa631be9ea1"
+    },
+    {
+      "domain": "billing",
+      "binding": "EON_BILLING_DB",
+      "file": "migrations/billing/0001_billing_command_entitlement_authority.sql",
+      "bytes": 3917,
+      "sha256": "77ff09a123d1385be1e357906f1c403e13ee533c9a3808674f764b5229141ae6"
+    },
+    {
+      "domain": "billing",
+      "binding": "EON_BILLING_DB",
+      "file": "migrations/billing/0002_billing_payment_reference_authority.sql",
+      "bytes": 1063,
+      "sha256": "030d34e25492f7d8e445a27a224dd76f1a45517542303d8b348324b904235781"
+    },
+    {
+      "domain": "billing",
+      "binding": "EON_BILLING_DB",
+      "file": "migrations/billing/0003_premium_software_grants.sql",
+      "bytes": 1998,
+      "sha256": "d3f14d8637377c54f40057e127a81deabed97563e644ab16426bd92491630466"
+    },
+    {
+      "domain": "referrals",
+      "binding": "EON_REFERRALS_DB",
+      "file": "migrations/referrals/0001_referral_authority.sql",
+      "bytes": 5561,
+      "sha256": "1b7f350b70a2503607f525fb2f5e94222e81f1f9486ab667af19d38483142820"
+    },
+    {
+      "domain": "referrals",
+      "binding": "EON_REFERRALS_DB",
+      "file": "migrations/referrals/0002_referral_operational_views.sql",
+      "bytes": 1008,
+      "sha256": "f31ab59da1e3fc8df73a8d92237bbea6d555a4f0f82a051f524d3926626a8821"
+    },
+    {
+      "domain": "referrals",
+      "binding": "EON_REFERRALS_DB",
+      "file": "migrations/referrals/0003_referral_schema_authority.sql",
+      "bytes": 1738,
+      "sha256": "c6f840e85fe811f1765123e2a941a3d5e5882f94bbefcc07b77a5b99fdec9368"
+    },
+    {
+      "domain": "referrals",
+      "binding": "EON_REFERRALS_DB",
+      "file": "migrations/referrals/0004_rewarded_sponsor_eonkeys.sql",
+      "bytes": 1449,
+      "sha256": "05ad6b4b61a7932d0c9f69e4312f49c408ad79f0aec0748989ec559cb3afe6c1"
+    },
+    {
+      "domain": "referrals",
+      "binding": "EON_REFERRALS_DB",
+      "file": "migrations/referrals/0005_rewarded_sponsor_runtime.sql",
+      "bytes": 1393,
+      "sha256": "f3bac3f9d0b725f8ca5881caa3ba3ebaf78d682073b23c66681c26149f3e26c8"
+    },
+    {
+      "domain": "trust",
+      "binding": "EON_TRUST_DB",
+      "file": "migrations/trust/0001_trust_support_incident_authority.sql",
+      "bytes": 3413,
+      "sha256": "431e942c5c89b000923b7b1bcb4d1e26c19a3fe74582473472009cba4f70eee9"
+    },
+    {
+      "domain": "trust",
+      "binding": "EON_TRUST_DB",
+      "file": "migrations/trust/0002_vexrail_economic_aggregate.sql",
+      "bytes": 1262,
+      "sha256": "afc60306c0f9e3e1af2b668016164e2bf46af38a8ee8a7e841dbd02362f0405a"
+    },
+    {
+      "domain": "trust",
+      "binding": "EON_TRUST_DB",
+      "file": "migrations/trust/0003_growth_profitability_authority.sql",
+      "bytes": 8307,
+      "sha256": "cd2b187da46e6e8e16465de4f93ee93dbd8b0ccacf85a4e90564ede99bd15903"
+    },
+    {
+      "domain": "trust",
+      "binding": "EON_TRUST_DB",
+      "file": "migrations/trust/0004_growth_operational_events.sql",
+      "bytes": 3373,
+      "sha256": "8d12b535dfa58542b38683dd13f060815d4505fb855638898fe34d91c943afdf"
+    }
+  ],
+  "stagedMigrations": [],
+  "requestTimeDdl": false,
+  "unresolvedPlaceholders": [],
+  "externalConfigReady": true,
+  "productionAuthorized": false,
+  "digest": "6904b5a9db20ed3334ea0a31dd9e05e146b42d523d4d9fdecf766916734cf62d"
+}

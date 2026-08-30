@@ -1,0 +1,19 @@
+id,device_or_browser,route_or_mode,required_state,expected_result,privacy_check
+01,Desktop Chrome,City Lite,idle,City Lite loads with visible orientation and no fake work,No prompts/results/keys
+02,Desktop Chrome,City Lite,active mission,finite local work cue appears,No raw output/provider identity
+03,Desktop Chrome,City Lite,huddle/handoff,real lifecycle huddle is understandable,No transcript
+04,Desktop Chrome,City Lite,outcome relay,Review/Result/Attention beacon and explicit review path,No result payload
+05,Desktop Chrome,Three.js Visual Tour,active+huddle+outcome,visuals match bounded local status,No private data
+06,Desktop Chrome,Babylon City Play,idle,scene loads or gives documented fallback,No forced task action
+07,Desktop Chrome,Babylon City Play,active crew,live crew/HUD reflects real lifecycle status,No fake busy actors
+08,Desktop Chrome,Babylon City Play,outcome relay,Manage/Review in Chat is user-tap only,No automatic navigation
+09,Keyboard desktop,all City modes,focus/navigation,skip/focus/dialog/exit controls work,No focus trap
+10,Mid-range Android,City Lite,touch portrait,usable touch/orientation and reduced clutter,No private data
+11,Mid-range Android,Babylon entry,landscape/optional path,explicit choice and fallback behavior,No forced 3D
+12,Low-end Android,City Lite,fallback,2D fallback remains responsive,No false performance claim
+13,iPhone Safari,City Lite/PWA,portrait/safe area,composer/city safe-area behavior,No private data
+14,Reduced motion,all City modes,active/huddle/outcome,meaning not dependent on pulses/animation,No motion-only cue
+15,Optional controller,Babylon,move only,no automatic confirmation/action,No hidden action
+16,Desktop Chrome,Chat,Manage in Chat,real work control/results remain in native page,No City-only control
+17,Desktop Chrome,Support,evidence pack preview,manual redacted local pack review before download,No upload/telemetry
+18,PWA test profile,update flow,apply update,protected local state survives documented path,No real user data

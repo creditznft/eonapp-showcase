@@ -1,0 +1,24 @@
+{
+  "schema": "eonapp.w720-w724.blocked-dependency-lane.v1",
+  "status": "externally-blocked-not-waived",
+  "reason": "npm registry returned HTTP 503, so exact @babylonjs/core dependencies could not be installed in this environment",
+  "maintainedTestFileCount": 378,
+  "dependencyFreePassedFileCount": 365,
+  "blockedRequiredFileCount": 13,
+  "blockedRequiredFiles": [
+    "tests/unit/city-noir-architecture.test.mjs",
+    "tests/unit/w455a-noir-world-composition.test.mjs",
+    "tests/unit/w456a-noir-readable-guide-cast.test.mjs",
+    "tests/unit/w613-eon-city-final-red-team.test.mjs",
+    "tests/unit/w649-eoncity-asset-acceptance.test.mjs",
+    "tests/unit/w649-eoncity-controllable-core.test.mjs",
+    "tests/unit/w649-eoncity-district-runtime.test.mjs",
+    "tests/unit/w660f-city-nexus.test.mjs",
+    "tests/unit/w660i-eoncity-visual-rescue.test.mjs",
+    "tests/unit/w660n-eon-nexus-end-to-end.test.mjs",
+    "tests/unit/w660o-nexus-launch-continuity.test.mjs",
+    "tests/unit/w660x-premium-nexus-realms.test.mjs",
+    "tests/unit/w661d-nexus-convergence.test.mjs"
+  ],
+  "certificationEffect": "Build, browser, Babylon-runtime and owner-device certification remain pending. No blocked test is removed or treated as passing."
+}

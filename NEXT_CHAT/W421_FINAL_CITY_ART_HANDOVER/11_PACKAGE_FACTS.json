@@ -1,0 +1,26 @@
+{
+  "schema": "eonapp.w421.package-facts.v1",
+  "sourceRoot": "EONAPP_FINAL_CODEX_W421_CITY_ART_COMPOSITION_2026-06-28",
+  "manifestFileCount": 2387,
+  "excludedDirectories": [
+    ".cache",
+    ".git",
+    ".vite",
+    "__pycache__",
+    "artifacts",
+    "coverage",
+    "dist",
+    "node_modules",
+    "playwright-report",
+    "test-results"
+  ],
+  "excludedSuffixes": [
+    ".sha256",
+    ".zip"
+  ],
+  "originalVectorArtSvgCount": 18,
+  "sourceOnly": true,
+  "finalBinaryArt": false,
+  "finalVisualCertification": false,
+  "externalProofStillRequired": true
+}

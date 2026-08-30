@@ -1,0 +1,17 @@
+{
+  "schema": "eonapp.city-public-preview-test-archive.w649.2026-07-14.v1",
+  "classification": "non-certifying-historical-exact-copy",
+  "certifying": false,
+  "releaseGate": false,
+  "reason": "W649B retires the public-preview City access mode. The real Babylon City is authenticated-only; signed-out users receive a static portal with no heavy runtime import.",
+  "supersededBy": [
+    "tests/unit/w554-city-access-project-portals.test.mjs",
+    "tests/unit/w649-eoncity-authenticated-entry.test.mjs"
+  ],
+  "files": [
+    {
+      "path": "tests/archive/w649-pre-authenticated-city-entry/w554-city-access-project-portals.test.mjs",
+      "sha256": "bc572399e14e33b33be5473f938d7cd346eb04020fba876315c35eee93386c18"
+    }
+  ]
+}

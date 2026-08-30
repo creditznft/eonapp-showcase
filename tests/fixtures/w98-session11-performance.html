@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>W98 Session 11 Performance Runtime Proof</title>
+  <style>
+    :root{font-family:Inter,system-ui,sans-serif;color-scheme:dark;background:#06101d;color:#eef9ff}
+    body{margin:0;min-height:100vh;display:grid;place-items:center;background:radial-gradient(circle at 20% 20%,#163b61 0,transparent 38%),linear-gradient(145deg,#040b14,#0a1b2d)}
+    main{width:min(920px,calc(100vw - 32px));border:1px solid #2c6382;border-radius:20px;padding:24px;background:#081522e8;box-shadow:0 24px 80px #0008}
+    h1{margin:0 0 8px;font-size:clamp(24px,5vw,42px)}
+    p{color:#b7d7ea}.status{display:inline-flex;padding:7px 12px;border-radius:999px;background:#123149;border:1px solid #36bfe8;font-weight:700}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:20px}.card{padding:14px;border-radius:14px;background:#0d2134;border:1px solid #214c68}.card strong{display:block;font-size:23px;color:#78e7ff}.checks{columns:2;gap:24px;padding:0;list-style:none}.checks li{break-inside:avoid;padding:5px 0}.pass{color:#8affc1}.fail{color:#ff9d9d}code{color:#8de7ff}
+    @media(max-width:620px){main{padding:18px}.checks{columns:1}}
+  </style>
+</head>
+<body>
+<main>
+  <span class="status" id="status">Running deterministic browser endurance…</span>
+  <h1>Session 11 performance runtime</h1>
+  <p>Real browser proof for adaptive quality, near/mid/far streaming budgets, memory cleanup, background suspension and WebGL recovery. No network or secret data is used.</p>
+  <div class="grid" id="metrics"></div>
+  <ul class="checks" id="checks"></ul>
+</main>
+<script type="module">
+import {
+  Session11PerformanceRuntime,
+  resolveSession11StreamingBudget,
+  classifySession11Distance,
+  stepSession11Quality,
+  buildSession11FrameMetrics
+} from '/assets/js/realm3d/engine/EonCitySession11PerformanceRuntime.js';
+
+const mode = new URLSearchParams(location.search).get('mode') === 'mobile' ? 'mobile' : 'desktop';
+const callbacks = { quality: [], status: [], suspend: [], restore: 0, cleanup: [] };
+let nowValue = 0;
+const state = { quality: 'neon', requestedQuality: 'neon', mobile: mode === 'mobile', basicDevice: mode === 'mobile', reducedMotion: mode === 'mobile' };
+const root = document.createElement('div');
+const canvas = new EventTarget();
+const documentTarget = new EventTarget();
+Object.defineProperty(documentTarget, 'hidden', { value: false, writable: true });
+const windowTarget = new EventTarget();
+Object.defineProperty(windowTarget, 'performance', { value: { memory: { usedJSHeapSize: 120, jsHeapSizeLimit: 1000 } }, configurable: true });
+const renderer = { info: { render: { calls: 80, triangles: 90000, points: 0, lines: 20 }, memory: { geometries: 120, textures: 40 }, programs: [1,2,3] }, domElement: canvas };
+const runtime = new Session11PerformanceRuntime({
+  root, renderer, canvas, documentTarget, windowTarget,
+  now: () => nowValue,
+  getState: () => ({ ...state }),
+  onQualityRecommendation: (quality, detail) => { callbacks.quality.push({ quality, detail }); state.quality = quality; },
+  onStatus: (text) => callbacks.status.push(text),
+  onSuspendChange: (value, detail) => callbacks.suspend.push({ value, detail }),
+  onContextRestore: () => { callbacks.restore += 1; },
+  onMemoryPressure: (detail) => callbacks.cleanup.push(detail)
+}).mount();
+
+const samples = [];
+function runFrames(count, frameMs, { renderPressure = false } = {}) {
+  if (renderPressure) {
+    renderer.info.memory.geometries = 999;
+    renderer.info.memory.textures = 999;
+    renderer.info.render.calls = 999;
+    renderer.info.render.triangles = 999999;
+  } else {
+    renderer.info.memory.geometries = 120;
+    renderer.info.memory.textures = 40;
+    renderer.info.render.calls = 80;
+    renderer.info.render.triangles = 90000;
+  }
+  for (let index = 0; index < count; index += 1) {
+    nowValue += frameMs;
+    const snapshot = runtime.tick(nowValue, frameMs / 1000, state);
+    if (index % 60 === 0) samples.push({ now: nowValue, quality: state.quality, frame: snapshot.frame, renderer: snapshot.renderer });
+  }
+}
+
+// 60 simulated seconds: stable, sustained pressure, memory pressure, then recovery.
+runFrames(600, 16.67);
+runFrames(420, 42);
+runFrames(240, 20, { renderPressure: true });
+windowTarget.performance.memory.usedJSHeapSize = 910;
+runFrames(240, 20);
+windowTarget.performance.memory.usedJSHeapSize = 120;
+nowValue += 50000;
+runFrames(2100, 16.67);
+
+runtime.setSuspended(true, 'browser-fixture-background');
+const suspendedSnapshot = runtime.tick(nowValue += 1000, .016, state);
+runtime.setSuspended(false, 'browser-fixture-foreground');
+runtime.handleContextLost({ preventDefault() {} });
+const contextLostSnapshot = runtime.tick(nowValue += 1000, .016, state);
+runtime.handleContextRestored();
+runFrames(120, 16.67);
+
+const standard = resolveSession11StreamingBudget({ quality: 'standard' });
+const basicMobile = resolveSession11StreamingBudget({ quality: 'neon', mobile: true, basicDevice: true });
+const positions = [0, 16, 35, 60, 100];
+const tiers = positions.map((distance) => classifySession11Distance(distance, standard, 'district'));
+const propTiers = positions.map((distance) => classifySession11Distance(distance, standard, 'prop'));
+const npcTiers = positions.map((distance) => classifySession11Distance(distance, standard, 'npc'));
+const final = runtime.getTelemetry();
+const metrics = buildSession11FrameMetrics([16,17,16,18,40]);
+const checks = {
+  runtimeMountedInBrowser: root.dataset.realmPerformanceSession === 'w98-session11',
+  simulatedMinuteCompleted: final.totalFrames >= 3600,
+  nearMidFarUnloadCovered: ['near','mid','far','unloaded'].every((tier) => tiers.includes(tier)),
+  propUnloadCovered: propTiers.includes('near') && propTiers.includes('mid') && propTiers.includes('unloaded'),
+  npcUnloadCovered: npcTiers.includes('near') && npcTiers.includes('mid') && npcTiers.includes('unloaded'),
+  basicMobileBudgetConservative: basicMobile.quality === 'low' && basicMobile.maxVisibleDistricts === 5 && basicMobile.maxActiveNpcs === 4,
+  qualityStepRespectsCeiling: stepSession11Quality('standard', 1, 'standard') === 'standard',
+  frameMetricsCalculated: metrics.sampleCount === 5 && metrics.p95Ms >= 40 && metrics.averageFps > 0,
+  sustainedPressureDowngraded: final.adaptiveDowngrades >= 1 && callbacks.quality.some((item) => item.detail?.direction === 'down'),
+  recoveryPolicyCorrect: mode === 'mobile' ? final.adaptiveRecoveries === 0 : final.adaptiveRecoveries >= 1,
+  rendererPressureDetected: final.memoryPressureEvents >= 1,
+  cleanupRequested: final.cleanupRequests >= 1 && callbacks.cleanup.length >= 1,
+  heapTelemetrySupported: final.lastSnapshot?.heap?.supported === true,
+  backgroundSuspended: suspendedSnapshot.suspended === true && final.backgroundSuspensions >= 1,
+  foregroundResumed: final.resumes >= 1,
+  contextLossHandled: contextLostSnapshot.contextLost === true && final.contextLosses >= 1,
+  contextRestored: final.contextRestores >= 1 && callbacks.restore >= 1,
+  telemetryPublishedToDom: root.dataset.frameAverageMs && root.dataset.rendererCalls,
+  mobileStateApplied: mode !== 'mobile' || (final.budget.basicDevice === true && final.budget.mobile === true && final.activeQuality === 'low'),
+  noSensitiveStorageOrNetwork: !/key|secret|seed|wallet|token|fetch|xmlhttprequest/i.test(JSON.stringify({ state, callbacks, final }))
+};
+runtime.destroy();
+const passed = Object.values(checks).filter(Boolean).length;
+const result = {
+  schema: 'eon.w98.session11.performance-browser-fixture.v1',
+  mode,
+  executionMode: 'real-browser-deterministic-frame-stream',
+  simulatedDurationMs: nowValue,
+  checks, passed, total: Object.keys(checks).length,
+  score: Math.round(passed / Object.keys(checks).length * 100),
+  ok: passed === Object.keys(checks).length,
+  data: { state, callbacks, final, standard, basicMobile, tiers, propTiers, npcTiers, samples }
+};
+window.__SESSION11_BROWSER_PROOF__ = result;
+document.querySelector('#status').textContent = result.ok ? `PASS · ${mode} · ${passed}/${result.total}` : `FAIL · ${mode} · ${passed}/${result.total}`;
+document.querySelector('#status').className = `status ${result.ok ? 'pass' : 'fail'}`;
+document.querySelector('#metrics').innerHTML = `
+  <div class="card"><strong>${result.score}</strong>browser score</div>
+  <div class="card"><strong>${final.totalFrames}</strong>frames simulated</div>
+  <div class="card"><strong>${final.adaptiveDowngrades}</strong>adaptive downgrades</div>
+  <div class="card"><strong>${final.cleanupRequests}</strong>cleanup requests</div>`;
+document.querySelector('#checks').innerHTML = Object.entries(checks).map(([name, pass]) => `<li class="${pass?'pass':'fail'}">${pass?'✓':'✗'} <code>${name}</code></li>`).join('');
+</script>
+</body>
+</html>

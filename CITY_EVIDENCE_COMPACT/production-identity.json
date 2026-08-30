@@ -1,0 +1,52 @@
+{
+  "collectedAt": "2026-07-02T01:41:13.208Z",
+  "baseUrl": "https://eonapp.ch",
+  "mainCommitSha": "9048e3308c8a302be2460c5098a435381c2aa4d5",
+  "deploymentBoundary": {
+    "publicCloudflareDeploymentId": null,
+    "note": "Public site responses in this environment did not expose a Cloudflare deployment UUID. Service worker hash and live route hashes were captured instead."
+  },
+  "serviceWorker": {
+    "url": "https://eonapp.ch/sw.js",
+    "fetchedAt": "2026-07-02T01:38:45.924Z",
+    "status": 200,
+    "sha256": "12b0d24a2dd8cbd66dfd06d67bc99eb33ca44f19d406e92a65afa2d6f4035fba",
+    "bytes": 5544,
+    "releaseId": "w476-2026-07-01-storage-network",
+    "headers": {
+      "access-control-allow-origin": "*",
+      "alt-svc": "h3=\":443\"; ma=86400",
+      "cache-control": "no-cache, no-store, must-revalidate",
+      "cf-cache-status": "BYPASS",
+      "cf-ray": "a149eecdf93d3b8d-BOM",
+      "connection": "keep-alive",
+      "content-encoding": "br",
+      "content-security-policy": "default-src 'self'; script-src 'self' blob: https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://telegram.org https://www.googletagmanager.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: blob: https:; connect-src 'self' https: wss:; font-src 'self' data: https://cdn.jsdelivr.net; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob:; frame-src 'self' https: blob:; frame-ancestors 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests; report-to csp-endpoint; report-uri /csp-report",
+      "content-type": "application/javascript",
+      "cross-origin-embedder-policy": "credentialless",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "date": "Thu, 02 Jul 2026 01:38:46 GMT",
+      "etag": "W/\"bb70a589e981b58f0067ba5f88aafe3a\"",
+      "nel": "{\"report_to\":\"csp-endpoint\",\"max_age\":2592000}",
+      "origin-agent-cluster": "?1",
+      "permissions-policy": "camera=(self), microphone=(self), display-capture=(self), geolocation=(), payment=(), usb=(), serial=(), bluetooth=(), clipboard-read=(), interest-cohort=()",
+      "referrer-policy": "strict-origin",
+      "report-to": "{\"group\":\"csp-endpoint\",\"max_age\":10886400,\"endpoints\":[{\"url\":\"https://eonapp.ch/csp-report\"}]}",
+      "reporting-endpoints": "csp-endpoint=\"/csp-report\"",
+      "server": "cloudflare",
+      "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+      "transfer-encoding": "chunked",
+      "vary": "accept-encoding",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none"
+    }
+  },
+  "browserEvidenceBoundary": {
+    "cacheCleared": true,
+    "localStorageCleared": true,
+    "storageScope": "https://eonapp.ch"
+  }
+}

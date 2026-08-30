@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Offline — EONAPP.ch</title>
+  <meta name="description" content="Offline fallback page for EONAPP.ch when network connectivity is unavailable." />
+  <meta name="robots" content="noindex, follow" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; object-src 'none'; base-uri 'self'" />
+  <link rel="canonical" href="https://eonapp.ch/offline.html" />
+  <meta property="og:title" content="Offline — EONAPP.ch" />
+  <meta property="og:description" content="Offline fallback page for EONAPP.ch when network connectivity is unavailable." />
+  <meta property="og:url" content="https://eonapp.ch/offline.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://eonapp.ch/assets/img/og/default.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Offline — EONAPP.ch" />
+  <meta name="twitter:description" content="Offline fallback page for EONAPP.ch when network connectivity is unavailable." />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/favicon.ico" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="stylesheet" href="/assets/css/base.css" />
+    <link rel="stylesheet" href="/assets/css/offline.css" />
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Offline — EONAPP.ch","url":"https://eonapp.ch/offline.html","description":"Offline fallback page for EONAPP.ch when network connectivity is unavailable.","publisher":{"@type":"Organization","name":"EONAPP.ch","url":"https://eonapp.ch/"}}</script>
+  <script type="module" src="/assets/js/localStorage-shim.js"></script>
+</head>
+<body class="eonAPP-layout" data-eon-analytics="off">
+<a href="#main" class="skip-to-content eon-skip-link">Skip to main content</a>
+  <main id="main" class="offline-shell">
+    <section class="offline-card">
+      <div class="offline-grid">
+        <div>
+          <div class="offline-eyebrow">Offline mode</div>
+          <div class="offline-symbol">⚡</div>
+          <h1 data-i18n-key="offline.title" data-i18n-fallback="You’re offline">You’re offline</h1>
+          <p data-i18n-key="offline.copy" data-i18n-fallback="EONAPP.ch can’t reach the network right now. Reconnect and try again.">EONAPP.ch can’t reach the network right now. Reconnect and try again.</p>
+          <p>Cached Chat shell, saved local work, and offline EON tools may still open from the PWA cache after this browser has visited them online. Cloud AI, web research, live data, trading, publishing, sending messages, and external actions are unavailable while offline.</p>
+          <div class="actions">
+            <a href="/" class="btn btn-primary" data-i18n-key="offline.home" data-i18n-fallback="Return home">Return home</a>
+            <a href="/vault" class="btn btn-outline">Open Vault</a>
+            <a href="/" class="btn btn-outline">Open AI Chat</a>
+          </div>
+        </div>
+        <aside class="support-panel" aria-label="Offline support">
+          <h2>What still works</h2>
+          <ul class="support-list">
+            <li><strong>Vault</strong><span>Local recovery, keys, notes, and cached receipts.</span></li>
+            <li><strong>Guide mode</strong><span>Read stored help, workflows, and recovery instructions.</span></li>
+            <li><strong>Installed app</strong><span>Use the app shell again after the connection returns.</span></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+</main>
+<script type="module" src="/assets/js/site-shell-bootstrap.js"></script>
+<script type="module" src="/assets/js/utils/accessibility-autoload.js"></script>
+
+<!-- -- Mobile PWA Bottom Nav ------------------------------ -->
+<nav class="eon-bottom-nav" aria-label="Quick navigation">
+  <a href="/build" class="eon-bottom-nav-item" aria-label="Build"><span class="eon-bnav-icon">⚡</span><span class="eon-bnav-label">Build</span></a>
+  <a href="/create" class="eon-bottom-nav-item" aria-label="Create"><span class="eon-bnav-icon">🎨</span><span class="eon-bnav-label">Create</span></a>
+  <a href="/insights" class="eon-bottom-nav-item" aria-label="Research Lab"><span class="eon-bnav-icon">📊</span><span class="eon-bnav-label">Research</span></a>
+  <a href="/vault" class="eon-bottom-nav-item" aria-label="Vault"><span class="eon-bnav-icon">🏦</span><span class="eon-bnav-label">Vault</span></a>
+  <a href="/" class="eon-bottom-nav-item" aria-label="AI Chat"><span class="eon-bnav-icon">💬</span><span class="eon-bnav-label">AI Chat</span></a>
+</nav>
+</body>
+</html>
+

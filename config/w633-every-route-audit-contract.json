@@ -1,0 +1,26 @@
+{
+  "schema": "eonapp.w633.every-route-audit.contract.2026-07-11.v1",
+  "wave": "W633",
+  "sourceComplete": true,
+  "publicCertification": "NO-GO",
+  "requirements": [
+    "all-public-routes-declared-once",
+    "all-redirects-terminate-in-one-hop",
+    "retired-aliases-inbound-only",
+    "source-only-alias-documents-never-built",
+    "current-pages-use-clean-internal-links",
+    "one-canonical-tag-per-public-document",
+    "advanced-work-routes-remain-discoverable",
+    "real-page-context-with-parent-navigation",
+    "generated-cloudflare-redirects-match-contract",
+    "unknown-routes-fail-to-404"
+  ],
+  "realEvidencePending": [
+    "production-edge-route-probe",
+    "desktop-navigation-walkthrough",
+    "android-navigation-walkthrough",
+    "iphone-ipad-navigation-walkthrough",
+    "service-worker-update-route-continuity",
+    "external-crawler-canonical-observation"
+  ]
+}

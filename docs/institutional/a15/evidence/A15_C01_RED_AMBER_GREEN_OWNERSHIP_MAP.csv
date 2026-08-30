@@ -1,0 +1,345 @@
+file,zone,owner,disposition,reason
+assets/city/future-regions/storm-sector/audio/charged-wind.wav,green,EONCITY authored assets,keep-content-addressed,Isolated authored City/Expanse asset.
+assets/city/future-regions/storm-sector/audio/relay-hum.wav,green,EONCITY authored assets,keep-content-addressed,Isolated authored City/Expanse asset.
+assets/city/future-regions/storm-sector/audio/storm-distance.wav,green,EONCITY authored assets,keep-content-addressed,Isolated authored City/Expanse asset.
+assets/city/future-regions/storm-sector/models/atmospheric-stabilizer-lod0.glb,green,EONCITY authored assets,keep-content-addressed,Isolated authored City/Expanse asset.
+assets/city/future-regions/storm-sector/models/atmospheric-stabilizer-lod1.glb,green,EONCITY authored assets,keep-content-addressed,Isolated authored City/Expanse asset.
+assets/city/future-regions/storm-sector/models/atmospheric-stabilizer-lod2.glb,green,EONCITY authored assets,keep-content-addressed,Isolated authored City/Expanse asset.
+assets/city/future-regions/storm-sector/models/charged-transit-gate-lod0.glb,green,EONCITY authored assets,keep-content-addressed,Isolated authored City/Expanse asset.
+assets/city/future-regions/storm-sector/models/charged-transit-gate-lod1.glb,green,EONCITY authored assets,keep-content-addressed,Isolated authored City/Expanse asset.
+assets/city/future-regions/storm-sector/models/charged-transit-gate-lod2.glb,green,EONCITY authored assets,keep-content-addressed,Isolated authored City/Expanse asset.
+assets/city/future-regions/storm-sector/models/storm-command-spire-lod0.glb,green,EONCITY authored assets,keep-content-addressed,Isolated authored City/Expanse asset.
+assets/city/future-regions/storm-sector/models/storm-command-spire-lod1.glb,green,EONCITY authored assets,keep-content-addressed,Isolated authored City/Expanse asset.
+assets/city/future-regions/storm-sector/models/storm-command-spire-lod2.glb,green,EONCITY authored assets,keep-content-addressed,Isolated authored City/Expanse asset.
+assets/city/future-regions/storm-sector/storm-sector-package.json,green,EONCITY authored assets,keep-content-addressed,Isolated authored City/Expanse asset.
+assets/js/city/w731/eon-city-w731-command-hub-runtime.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w766/eon-expanse-w766a-foundation.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w766/eon-expanse-w766a-gateway-overlook.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w766/eon-expanse-w766b-hero-assets.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w766/eon-expanse-w766b-signal-frontier.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w766/eon-expanse-w766d-npc-transit.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w766/eon-expanse-w766e-mission-runtime.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w766/eon-expanse-w766f-activity-anchors.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w766/eon-expanse-w766f-living-content.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w766/eon-expanse-w766g-audio-director.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w766/eon-expanse-w766g-presentation-director.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w766/eon-expanse-w766g-visual-director.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w766/eon-expanse-w766h-objective-marker.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w766/eon-expanse-w766h-playability-core.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w766/eon-expanse-w766h-ui-overlay.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w766/eon-expanse-w766i-open-world-renderer.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w766/eon-expanse-w767a-asset-truth.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w766/eon-expanse-w767a-companion-continuity.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w766/eon-expanse-w767b-guidance-director.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w766/eon-expanse-w767d-asset-diagnostics.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w766/eon-expanse-w767e-authored-presentation.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w766/eon-expanse-w767f-onboarding-director.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w766/eon-expanse-w767g-companion-behavior.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w766/eon-expanse-w767i-touch-interaction.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w766/eon-expanse-w767j-asset-recovery.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w766/eon-expanse-w767k-lost-player-assistance.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w766/eon-expanse-w767l-companion-dock.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w766/eon-expanse-w767m-activity-presentation.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w766/eon-expanse-w767n-asset-repair-focus.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w766/eon-expanse-w767o-dynamic-event-lifecycle.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w766/eon-expanse-w767p-dynamic-event-presentation.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w766/eon-expanse-w767q-accessibility-profile.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w766/eon-expanse-w767q-event-atmosphere.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w766/eon-expanse-w767r-restoration-status.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w766/eon-expanse-w767s-capture-moment.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w766/eon-expanse-w767t-living-activity-board.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w766/eon-expanse-w767u-activity-action.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w766/eon-expanse-w767v-guidance-lifecycle.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w766/eon-expanse-w767w-productive-receipt-bridge.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w766/eon-expanse-w767x-verified-result-action.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w766/eon-expanse-w767y-daily-signal.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w768/eon-expanse-w768a-my-frontier-layout-contract.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w768/eon-expanse-w768b-my-frontier-state.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w768/eon-expanse-w768c-my-frontier-construction-permit.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w768/eon-expanse-w768d-my-frontier-construction-ledger.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w768/eon-expanse-w768f-my-frontier-planning-view.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w768/eon-expanse-w768g-my-frontier-building-choice.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w768/eon-expanse-w768h-my-frontier-readiness.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w768/eon-expanse-w768i-my-frontier-renderer.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w768/eon-expanse-w768i-my-frontier-visual-model.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w768/eon-expanse-w768j-my-frontier-presentation.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w768/eon-expanse-w768k-my-frontier-plot-inspection.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w768/eon-expanse-w768l-my-frontier-authored-asset-catalog.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w768/eon-expanse-w768m-my-frontier-authored-asset-plan.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w768/eon-expanse-w768n-my-frontier-authored-asset-presenter.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w768/eon-expanse-w768o-my-frontier-construction-action.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w768/eon-expanse-w768p-my-frontier-navigation.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w768/eon-expanse-w768q-my-frontier-construction-site.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w768/eon-expanse-w768r-my-frontier-building-terminal.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w768/eon-expanse-w768s-my-frontier-construction-ceremony.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w768/eon-expanse-w768t-my-frontier-resident-stations.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w768/eon-expanse-w768u-my-frontier-resident-inspection.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w768/eon-expanse-w768v-my-frontier-resident-authority.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w768/eon-expanse-w768w-my-frontier-resident-invitation.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w768/eon-expanse-w768x-my-frontier-resident-asset-plan.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w768/eon-expanse-w768y-my-frontier-resident-presenter.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w768/eon-expanse-w768z-my-frontier-resident-reaction.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w769/eon-expanse-w769a-my-frontier-resident-release.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w769/eon-expanse-w769b-my-frontier-theme.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w769/eon-expanse-w769c-my-frontier-theme-presentation.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w769/eon-expanse-w769d-my-frontier-district-upgrade.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w769/eon-expanse-w769e-my-frontier-upgrade-ledger.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w769/eon-expanse-w769i-my-frontier-upgrade-site.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w769/eon-expanse-w769j-my-frontier-upgrade-ceremony.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w770/eon-expanse-w770a-my-frontier-building-composition-catalog.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w770/eon-expanse-w770b-my-frontier-building-composition-plan.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w770/eon-expanse-w770c-my-frontier-building-composition-presenter.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w770/eon-expanse-w770e-my-frontier-building-presentation-view.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w770/eon-expanse-w770f-my-frontier-composition-recovery.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w771/eon-expanse-w771a-five-zone-cinematic-art-contract.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w771/eon-expanse-w771b-zone-environment-kit-plan.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w771/eon-expanse-w771c-zone-environment-kit-presenter.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w771/eon-expanse-w771e-zone-restoration-art-state.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w772/eon-expanse-w772a-zone-arrival-director.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w772/eon-expanse-w772c-campaign-objective-authority.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w772/eon-expanse-w772e-objective-completion-director.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w773/eon-expanse-w773a-zone-restoration-board.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w773/eon-expanse-w773c-my-frontier-capture-director.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w774/eon-expanse-w774a-productive-world-transformations.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w774/eon-expanse-w774b-productive-transformation-presenter.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w775/eon-expanse-w775a-capture-handoff-package.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w776/eon-expanse-w776a-zone-audio-state.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w777/eon-expanse-w777a-restoration-audio-cue-director.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w778/eon-expanse-w778a-side-mission-transformations.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w778/eon-expanse-w778b-side-transformation-presenter.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w779/eon-expanse-w779a-post-campaign-progression.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w780/eon-expanse-w780a-future-region-catalog.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w780/eon-expanse-w780b-future-region-programme.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w781/eon-expanse-w781a-open-world-art-audit.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w781/eon-expanse-w781b-future-region-release-gate.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w782/eon-expanse-w782a-performance-readiness.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w783/eon-expanse-w783a-future-region-programme-review.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w785/eon-expanse-w785a-authored-region-package-certification.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w785/eon-expanse-w785b-region-package-readiness.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w786/eon-expanse-w786a-future-region-release-matrix.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w787/eon-expanse-w787a-release-evidence-export.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w788/eon-expanse-w788a-future-region-release-review.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w789/eon-expanse-w789a-region-package-certification-state.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w790/eon-expanse-w790a-performance-certification-evidence.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w792/eon-expanse-w792a-storm-sector-authored-package.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w792/eon-expanse-w792b-storm-sector-layout.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w792/eon-expanse-w792c-storm-sector-presenter.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w793/eon-expanse-w793a-future-region-activation.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w794/eon-expanse-w794a-storm-sector-journey.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w794/eon-expanse-w794b-storm-sector-gateway-presenter.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w795/eon-expanse-w795a-storm-sector-mission-runtime.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w795/eon-expanse-w795b-storm-sector-interaction-presenter.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w796/eon-expanse-w796a-storm-sector-npc-plan.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w796/eon-expanse-w796b-storm-sector-npc-presenter.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w797/eon-expanse-w797a-storm-sector-transit.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w797/eon-expanse-w797b-storm-sector-transit-presenter.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w798/eon-expanse-w798a-storm-sector-board.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w799/eon-expanse-w799a-storm-sector-transformations.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w799/eon-expanse-w799b-storm-sector-transformation-presenter.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w800/eon-expanse-w800a-storm-sector-capture-director.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w801/eon-expanse-w801a-external-certification-gates.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+assets/js/city/w802/eon-expanse-w802a-owner-playthrough-matrix.js,amber,EONCITY runtime,keep-active-adapt-no-rewrite,Active City/Expanse source with Core-boundary review required.
+docs/handover/w767a-expanse-companion-clarity/W767A_FOCUSED_REGRESSION_147_PASS.log,green,Evidence archive,keep-historical-or-current-evidence,Non-runtime evidence or handover material.
+docs/handover/w767a-expanse-companion-clarity/W767A_IMPLEMENTATION_HANDOVER.md,green,Evidence archive,keep-historical-or-current-evidence,Non-runtime evidence or handover material.
+docs/handover/w767a-expanse-companion-clarity/W767A_RUNTIME_SOURCE_REGRESSION_291_PASS.log,green,Evidence archive,keep-historical-or-current-evidence,Non-runtime evidence or handover material.
+docs/handover/w767b-expanse-guidance/W767B_FOCUSED_REGRESSION_153_PASS.log,green,Evidence archive,keep-historical-or-current-evidence,Non-runtime evidence or handover material.
+docs/handover/w767b-expanse-guidance/W767B_IMPLEMENTATION_HANDOVER.md,green,Evidence archive,keep-historical-or-current-evidence,Non-runtime evidence or handover material.
+docs/handover/w767c-expanse-proximity-interaction/W767C_FOCUSED_REGRESSION_157_PASS.log,green,Evidence archive,keep-historical-or-current-evidence,Non-runtime evidence or handover material.
+docs/handover/w767c-expanse-proximity-interaction/W767C_IMPLEMENTATION_HANDOVER.md,green,Evidence archive,keep-historical-or-current-evidence,Non-runtime evidence or handover material.
+docs/handover/w767d-expanse-asset-diagnostics/W767D_FOCUSED_REGRESSION_161_PASS.log,green,Evidence archive,keep-historical-or-current-evidence,Non-runtime evidence or handover material.
+docs/handover/w767d-expanse-asset-diagnostics/W767D_IMPLEMENTATION_HANDOVER.md,green,Evidence archive,keep-historical-or-current-evidence,Non-runtime evidence or handover material.
+docs/handover/w767e-expanse-authored-presentation/W767E_FOCUSED_REGRESSION_165_PASS.log,green,Evidence archive,keep-historical-or-current-evidence,Non-runtime evidence or handover material.
+docs/handover/w767e-expanse-authored-presentation/W767E_IMPLEMENTATION_HANDOVER.md,green,Evidence archive,keep-historical-or-current-evidence,Non-runtime evidence or handover material.
+docs/handover/w767f-expanse-first-minute-onboarding/W767F_FOCUSED_REGRESSION_170_PASS.log,green,Evidence archive,keep-historical-or-current-evidence,Non-runtime evidence or handover material.
+docs/handover/w767f-expanse-first-minute-onboarding/W767F_IMPLEMENTATION_HANDOVER.md,green,Evidence archive,keep-historical-or-current-evidence,Non-runtime evidence or handover material.
+docs/handover/w767g-expanse-companion-behavior/W767G_FOCUSED_REGRESSION_176_PASS.log,green,Evidence archive,keep-historical-or-current-evidence,Non-runtime evidence or handover material.
+docs/handover/w767g-expanse-companion-behavior/W767G_IMPLEMENTATION_HANDOVER.md,green,Evidence archive,keep-historical-or-current-evidence,Non-runtime evidence or handover material.
+docs/handover/w767h-expanse-companion-interaction-reactions/W767H_FOCUSED_REGRESSION_180_PASS.log,green,Evidence archive,keep-historical-or-current-evidence,Non-runtime evidence or handover material.
+docs/handover/w767h-expanse-companion-interaction-reactions/W767H_IMPLEMENTATION_HANDOVER.md,green,Evidence archive,keep-historical-or-current-evidence,Non-runtime evidence or handover material.
+docs/handover/w791b-release-certification-authority/W791B_IMPLEMENTATION_HANDOVER.md,green,Evidence archive,keep-historical-or-current-evidence,Non-runtime evidence or handover material.
+docs/handover/w802b-storm-sector-source-complete-external-gates/evidence/built-artifact-gate.log,green,Evidence archive,keep-historical-or-current-evidence,Non-runtime evidence or handover material.
+docs/handover/w802b-storm-sector-source-complete-external-gates/evidence/chromium-source-smoke.log,green,Evidence archive,keep-historical-or-current-evidence,Non-runtime evidence or handover material.
+docs/handover/w802b-storm-sector-source-complete-external-gates/evidence/npm-ci.log,green,Evidence archive,keep-historical-or-current-evidence,Non-runtime evidence or handover material.
+docs/handover/w802b-storm-sector-source-complete-external-gates/evidence/production-build.log,green,Evidence archive,keep-historical-or-current-evidence,Non-runtime evidence or handover material.
+docs/handover/w802b-storm-sector-source-complete-external-gates/evidence/w766-w802-regression.log,green,Evidence archive,keep-historical-or-current-evidence,Non-runtime evidence or handover material.
+docs/handover/w802b-storm-sector-source-complete-external-gates/evidence/w766ir2-source-certification.log,green,Evidence archive,keep-historical-or-current-evidence,Non-runtime evidence or handover material.
+docs/handover/w802b-storm-sector-source-complete-external-gates/evidence/W802B_EXTERNAL_CERTIFICATION_EVIDENCE.json,green,Evidence archive,keep-historical-or-current-evidence,Non-runtime evidence or handover material.
+docs/handover/w802b-storm-sector-source-complete-external-gates/evidence/workspace-secret-scan.log,green,Evidence archive,keep-historical-or-current-evidence,Non-runtime evidence or handover material.
+docs/handover/w802b-storm-sector-source-complete-external-gates/W802B_IMPLEMENTATION_HANDOVER.md,green,Evidence archive,keep-historical-or-current-evidence,Non-runtime evidence or handover material.
+public/sw.js,red,Core/shared authority,review-before-change,"Shared runtime, backend, storage or release surface."
+scripts/w792a-storm-sector-package-gate.mjs,amber,A15 release tooling,keep-current-tooling,Gate/tool changes can affect launch authority.
+tests/unit/w766a-expanse-foundation.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w766e-mission-progression.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w766ef-archive-transit-missions.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w766f-living-content.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w766g-horizon-vault-campaign.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w766g-presentation.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w766h-animated-npc-assets.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w766h-physical-campaign-flow.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w766ir2g-live-overlay-recovery.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w767a-expanse-asset-truth.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w767a-expanse-companion-continuity.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w767a-expanse-runtime-contract.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w767b-expanse-guidance-director.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w767b-expanse-runtime-integration.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w767c-expanse-proximity-interaction.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w767d-expanse-asset-diagnostics.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w767e-expanse-authored-presentation.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w767f-expanse-first-minute-onboarding.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w767g-expanse-companion-behavior.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w767h-expanse-companion-reactions.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w767i-expanse-touch-interaction.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w767j-expanse-asset-recovery.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w767k-expanse-lost-player-assistance.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w767l-expanse-companion-dock.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w767m-expanse-activity-presentation.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w767n-expanse-asset-repair-focus.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w767o-expanse-dynamic-event-lifecycle.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w767p-expanse-dynamic-event-presentation.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w767q-expanse-accessibility-profile.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w767q-expanse-event-atmosphere.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w767r-expanse-restoration-status.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w767s-expanse-capture-moment.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w767t-expanse-living-activity-board.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w767u-expanse-activity-action.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w767v-expanse-guidance-lifecycle.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w767w-expanse-productive-receipt-bridge.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w767x-expanse-verified-result-action.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w767y-expanse-daily-signal.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w768a-my-frontier-layout-contract.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w768b-my-frontier-state.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w768c-my-frontier-construction-permit.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w768d-my-frontier-construction-ledger.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w768e-my-frontier-runtime-persistence.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w768f-my-frontier-planning-view.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w768g-my-frontier-building-choice.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w768h-my-frontier-readiness.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w768i-my-frontier-visual-foundation.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w768j-my-frontier-presentation.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w768k-my-frontier-plot-inspection.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w768l-my-frontier-authored-asset-catalog.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w768m-my-frontier-authored-asset-plan.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w768n-my-frontier-authored-asset-presenter.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w768o-my-frontier-construction-action.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w768p-my-frontier-navigation.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w768q-my-frontier-construction-site.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w768r-my-frontier-building-terminal.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w768s-my-frontier-construction-ceremony.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w768t-my-frontier-resident-stations.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w768u-my-frontier-resident-inspection.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w768v-my-frontier-resident-authority.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w768w-my-frontier-resident-invitation.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w768x-my-frontier-resident-asset-plan.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w768y-my-frontier-resident-presenter.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w768z-my-frontier-resident-reaction.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w769a-my-frontier-resident-release.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w769b-my-frontier-theme.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w769c-my-frontier-theme-presentation.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w769d-my-frontier-district-upgrade.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w769e-my-frontier-upgrade-ledger.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w769f-my-frontier-upgrade-runtime.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w769g-my-frontier-operational-presentation.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w769h-my-frontier-upgrade-board.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w769i-my-frontier-upgrade-site.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w769j-my-frontier-upgrade-ceremony.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w770a-my-frontier-building-composition-catalog.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w770b-my-frontier-building-composition-plan.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w770c-my-frontier-building-composition-presenter.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w770d-my-frontier-building-composition-integration.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w770e-my-frontier-building-presentation-integration.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w770e-my-frontier-building-presentation-view.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w770f-my-frontier-composition-recovery.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w771a-five-zone-cinematic-art-contract.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w771b-zone-environment-kit-plan.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w771c-zone-environment-kit-presenter.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w771d-zone-environment-kit-integration.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w771e-zone-restoration-art-state.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w771f-zone-restoration-art-integration.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w772a-zone-arrival-director.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w772b-zone-arrival-integration.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w772c-campaign-objective-authority.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w772d-campaign-objective-authority-integration.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w772e-objective-completion-director.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w772f-objective-feedback-integration.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w773a-zone-restoration-board.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w773b-zone-restoration-board-integration.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w773c-my-frontier-capture-director.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w773d-my-frontier-capture-integration.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w774a-productive-world-transformations.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w774b-productive-transformation-presenter.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w774c-productive-transformation-integration.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w774d-productive-transformation-status.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w774e-productive-capture-moments.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w775a-capture-handoff-package.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w775b-capture-handoff-integration.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w776a-zone-audio-state.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w776b-audio-director-world-state.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w776c-zone-audio-runtime-integration.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w777a-restoration-audio-cue-director.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w777b-restoration-cue-audio-director.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w777c-restoration-audio-cue-runtime-integration.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w778a-side-mission-transformations.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w778b-side-transformation-presenter.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w778c-side-transformation-gateway-integration.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w778d-side-transformation-board-status.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w779a-post-campaign-progression.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w779b-post-campaign-board-integration.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w780a-future-region-catalog.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w780b-future-region-programme.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w780c-future-region-programme-integration.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w781a-open-world-art-audit.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w781b-future-region-release-gate.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w781c-future-region-release-gate-integration.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w782a-performance-readiness.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w782b-performance-readiness-integration.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w783a-future-region-programme-review.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w783b-future-region-programme-persistence.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w783c-future-region-programme-review-integration.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w784a-release-presentation-proxy-suppression.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w784b-release-presentation-truth.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w785a-authored-region-package-certification.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w785b-region-package-readiness.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w785c-region-package-readiness-integration.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w786a-future-region-release-matrix.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w786b-future-region-release-matrix-integration.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w787a-release-evidence-export.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w787b-release-evidence-runtime-integration.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w788a-future-region-release-review.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w788b-future-region-release-review-persistence.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w789a-region-package-certification-state.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w789b-region-package-certification-persistence.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w789c-region-package-certification-runtime-integration.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w790a-performance-certification-evidence.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w790b-performance-evidence-persistence.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w790c-performance-evidence-runtime-integration.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w791a-future-region-release-review-runtime-integration.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w792a-storm-sector-authored-package.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w792b-storm-sector-layout.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w792c-storm-sector-presenter-source.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w793a-future-region-activation.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w793b-future-region-activation-persistence.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w793c-future-region-activation-runtime-integration.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w794a-storm-sector-journey.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w794b-storm-sector-gateway-presenter-source.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w794c-storm-sector-gateway-integration.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w794d-storm-sector-runtime-integration.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w795a-storm-sector-mission-runtime.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w795b-storm-sector-interaction-presenter-source.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w795c-storm-sector-mission-persistence.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w795d-storm-sector-runtime-integration.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w796a-storm-sector-npc-plan.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w796b-storm-sector-npc-presenter-source.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w796c-storm-sector-npc-runtime-integration.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w797a-storm-sector-transit.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w797b-storm-sector-transit-presenter-source.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w797c-storm-sector-transit-runtime-integration.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w798a-storm-sector-board.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w798b-storm-sector-board-runtime-integration.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w798c-storm-sector-board-ui.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w799a-storm-sector-transformations.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w799b-storm-sector-transformation-presenter-source.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w799c-storm-sector-transformation-runtime-integration.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w800a-storm-sector-capture-director.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w800b-storm-sector-capture-runtime-integration.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w801a-external-certification-gates.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.
+tests/unit/w802a-owner-playthrough-matrix.test.mjs,amber,A15 certification,keep-current-test,Release evidence must follow current authority.

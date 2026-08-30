@@ -1,0 +1,33 @@
+{
+  "extends": "./tsconfig.strict.json",
+  "include": [
+    "types/**/*.d.ts",
+    "games/alchemy-lab/**/*.js",
+    "games/cyber-rogue/**/*.js",
+    "games/dungeon-crawl-zero/**/*.js",
+    "games/neon-conquest/**/*.js",
+    "games/neural-override/**/*.js",
+    "games/realm-wars-lite/**/*.js",
+    "games/color-sprint.js",
+    "games/memory-chain.js",
+    "games/merge-grid.js",
+    "games/neon-dash.js",
+    "games/orbit-survivor.js",
+    "games/reaction-sprint.js",
+    "games/tap-reactor.js",
+    "games/void-raider.js",
+    "games/word-blitz.js"
+  ],
+  "exclude": [
+    "node_modules",
+    "tests",
+    "e2e",
+    "**/test/**",
+    "**/__tests__/**",
+    "**/*.test.*",
+    "**/*.spec.*",
+    "archive",
+    "LEGACY_ARCHIVE_DEC20_2025",
+    "test-results/**"
+  ]
+}

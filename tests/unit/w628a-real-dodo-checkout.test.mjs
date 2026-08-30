@@ -1,0 +1,3 @@
+import test from 'node:test'; import assert from 'node:assert/strict';
+import { normalizeCheckoutRequest } from '../../assets/js/billing/eon-dodo-live-runtime.js';
+test('W628A checkout accepts only configured paid tiers and rejects browser claims', () => { const env = { DODO_PRODUCT_PLUS: 'prod_plus' }; assert.equal(normalizeCheckoutRequest({ tier: 'plus', idempotencyKey: 'checkout:plus:test-1' }, env).ok, true); assert.equal(normalizeCheckoutRequest({ tier: 'free', idempotencyKey: 'checkout:free:test-1' }, env).ok, false); assert.equal(normalizeCheckoutRequest({ tier: 'plus', idempotencyKey: 'checkout:plus:test-2', clientPaymentCallback: true }, env).ok, false); });

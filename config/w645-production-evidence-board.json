@@ -1,0 +1,13 @@
+{
+  "schema": "eonapp.production-evidence-source-board.w645.v1",
+  "wave": "W645",
+  "productionVerdict": "not-run",
+  "candidateDigest": null,
+  "previewDeploymentId": null,
+  "w638EvidenceIndex": "not-run",
+  "w639ProductionRehearsal": "not-run",
+  "w643CreatorDevice": "not-run",
+  "w644CityOwner": "not-run",
+  "killSwitchRehearsal": "not-run",
+  "ownerReviewed": false
+}

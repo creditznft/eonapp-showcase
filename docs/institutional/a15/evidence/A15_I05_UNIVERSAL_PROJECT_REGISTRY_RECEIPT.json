@@ -1,0 +1,46 @@
+{
+  "schema": "eonapp.a15.i05.universal-project-registry-receipt.v1",
+  "wave": "I05",
+  "status": "pass",
+  "registry": {
+    "schema": "eonapp.project-registry.a15.v1",
+    "identityAndLifecycleOnly": true,
+    "lifecycleStates": [
+      "active",
+      "archived"
+    ],
+    "sourceBodiesMutated": false,
+    "sourceCount": 6,
+    "migratedCandidateCount": 6,
+    "canonicalProjectCount": 4,
+    "targetDigest": "8c55272169dad3d0023c85899b641f037aea8e250f32cabfb8cbaf2fd60c8cfd",
+    "idempotent": true,
+    "rollbackPassed": true
+  },
+  "liveAdapters": {
+    "ordinary": true,
+    "w631": true,
+    "forge": true,
+    "creatorJobs": true,
+    "creatorAssets": true,
+    "continueResolver": true
+  },
+  "boundaries": {
+    "coreCoupledRouteCount": 0,
+    "cityCoreImplementationModuleCount": 0
+  },
+  "sourceDigests": {
+    "registry": "4ca81773036d8027dbdc4ccfeac4c1def20ce75daeede7a70e1a573bcfff91d6",
+    "migration": "7c717814bd7cb4ee107e42231e133cad799f673948af4efd34b97258f8a92201",
+    "bootstrap": "d4a0e4dfc7fffb7b072bfa2e88e9786e4f30aa33bd5307feb3ab82b4d7bf7550",
+    "ordinary": "0d9a1bd09384916c9faf0a44662698880b3052d61f49e82eb65ae2341aa86c32",
+    "w631": "bc8a81890e20f0ff92e5e46c5c61a454550021c334160d27718e56fd0b992d42",
+    "forge": "86f00d2c43581aa8a8c1294e317baa9d844a1e1c1720f43150a3558680985c9d",
+    "creatorJobs": "6847f26f973c5dab7ec6693ed800c80a201f7818a4db489ceee68c9aae987ac5",
+    "creatorAssets": "33061d1cc115859602b2d38de5b5be36f8a16f9f861e335e23d8e6ca6169c82b",
+    "shell": "df8ae4df8ca02f39f14f105c2e8a5b91868c48fb2f13dd3924ac80f26b261895",
+    "continueResolver": "dd3a932040101007e7b8e08b7dadc92d89b0d75d9dce8191ba476f726e2f947b"
+  },
+  "errors": [],
+  "digest": "cfa24c560e78894bec784a4b99d37584ea5e15ecbf732f551d637d51ec4c8750"
+}

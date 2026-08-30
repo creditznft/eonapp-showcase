@@ -1,0 +1,16 @@
+{
+  "schema": "eon.creator-companion.release-board.w626b.2026-07-11.v1",
+  "version": "0.1.0-w626b-source",
+  "sourceComplete": true,
+  "signed": false,
+  "windowsCodeSigning": "pending",
+  "macosNotarization": "pending",
+  "linuxPackageSigning": "pending",
+  "secureCredentialStoreSource": true,
+  "loopbackOriginAuthenticationSource": true,
+  "installProof": "pending",
+  "updateProof": "pending",
+  "uninstallProof": "pending",
+  "diagnosticProof": "pending",
+  "publicReleaseAllowed": false
+}

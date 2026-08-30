@@ -1,0 +1,81 @@
+{
+  "schema": "eonapp.gate.w634-responsive-accessibility-input.2026-07-11.v1",
+  "wave": "W634",
+  "ok": true,
+  "total": 13,
+  "passed": 13,
+  "checks": [
+    {
+      "id": "contract",
+      "pass": true,
+      "detail": "14/14"
+    },
+    {
+      "id": "public-documents",
+      "pass": true,
+      "detail": "49 documents; 0 issues"
+    },
+    {
+      "id": "layout-owners",
+      "pass": true,
+      "detail": "6 owners"
+    },
+    {
+      "id": "autoload-binding",
+      "pass": true,
+      "detail": "shared bootstrap"
+    },
+    {
+      "id": "safe-capability-bridge",
+      "pass": true,
+      "detail": "no network, permissions, fullscreen, orientation lock, audio or polling"
+    },
+    {
+      "id": "input-modes",
+      "pass": true,
+      "detail": "five descriptive modes"
+    },
+    {
+      "id": "form-error-announcement",
+      "pass": true,
+      "detail": "native invalid/input bridge"
+    },
+    {
+      "id": "touch-target-css",
+      "pass": true,
+      "detail": "44px coarse-pointer foundation"
+    },
+    {
+      "id": "focus-contrast-css",
+      "pass": true,
+      "detail": "visible focus and forced colors"
+    },
+    {
+      "id": "reduced-motion-css",
+      "pass": true,
+      "detail": "motion preference honored"
+    },
+    {
+      "id": "zoom-wrap-css",
+      "pass": true,
+      "detail": "narrow/zoom overflow foundation"
+    },
+    {
+      "id": "short-landscape-shell",
+      "pass": true,
+      "detail": "bounded mobile shell"
+    },
+    {
+      "id": "physical-evidence-honest",
+      "pass": true,
+      "detail": "source only; real devices pending"
+    }
+  ],
+  "documentIssues": [],
+  "publicFileCount": 49,
+  "physicalEvidenceCertified": false,
+  "limitations": [
+    "Static source certification only.",
+    "Physical device, browser, PWA, zoom, screen-reader, speech and controller evidence remains pending."
+  ]
+}

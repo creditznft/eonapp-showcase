@@ -1,0 +1,20 @@
+{
+  "schema": "eonapp.r3a1.ai-api-contract-gate-report.v1",
+  "ok": false,
+  "contractSchema": "eonapp.w476.ai-api-contracts.v2",
+  "changeControlSchema": "eonapp.r3a1.ai-api-change-control.v1",
+  "activeHostedProviderCount": 15,
+  "reviewBoardProviderCount": 15,
+  "deepseekContract": {
+    "baseUrl": "https://api.deepseek.com",
+    "modelsUrl": "https://api.deepseek.com/models"
+  },
+  "nvidiaRuntimeBaseUrl": "https://integrate.api.nvidia.com/v1",
+  "deprecatedNvidiaTeamScopedPaths": [],
+  "providerNetworkCallsMade": false,
+  "proofLimit": "Static source/contract validation only. User-owned keys must be verified in Vault on a user action; no account, quota, billing, CORS or inference claim is made.",
+  "errors": [
+    "active hosted provider missing or disabled in runtime catalog: nvidia.",
+    "active hosted provider missing or disabled in runtime catalog: sambanova."
+  ]
+}

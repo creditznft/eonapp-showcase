@@ -1,0 +1,80 @@
+{
+  "schema": "eonapp.a15.i23.validation-receipt.v1",
+  "generatedAt": "2026-08-05T02:21:10+05:30",
+  "wave": "I23",
+  "status": "pass-source",
+  "focused": {
+    "tests": 31,
+    "passed": 31,
+    "failed": 0
+  },
+  "maintainedSource": {
+    "filesMaintained": 381,
+    "filesRunnable": 372,
+    "tests": 1491,
+    "passed": 1444,
+    "intentionalSkips": 47,
+    "failed": 0,
+    "exactDependencyFilesDeferred": 9
+  },
+  "w766ir2SourceCertification": {
+    "passed": true,
+    "criteriaPassed": 10,
+    "criteriaTotal": 10,
+    "directSourceTestsPassed": 63,
+    "browserCertified": false,
+    "authenticatedOfflineCertified": false,
+    "builtArtifactCertified": false
+  },
+  "boundary": {
+    "coreRoutesReachingCityImplementation": 0,
+    "cityModulesReachingCoreImplementation": 0,
+    "contractOnly": true
+  },
+  "observabilitySecurityHealth": {
+    "authoritySha256": "c85578a90cfeb57598d5c3d9bf77379673c4d584123eb4be31d9b1fdb28e057d",
+    "browserDiagnosticsDefaultEnabled": false,
+    "workerObservabilityConfigured": true,
+    "workerHeadSamplingRate": 0.1,
+    "sourceMapsConfigured": true,
+    "customPayloadsContainPrompts": false,
+    "customPayloadsContainCredentials": false,
+    "customPayloadsContainRequestBodies": false,
+    "sloAlertDrillPassed": true,
+    "edgeSecurityRuleCount": 5,
+    "edgeSecurityApplied": false,
+    "automaticRollback": false,
+    "rollbackRequiresSuccessfulProductionTarget": true,
+    "rollbackRequiresExplicitOwnerAuthorization": true,
+    "rollbackDrillSourcePassed": true,
+    "rollbackExternalActionPerformed": false
+  },
+  "repositoryAuthority": {
+    "trackedFiles": 5582,
+    "activeModules": 543,
+    "missingImportFilesQuarantined": 194,
+    "secretScanTextFiles": 5259
+  },
+  "claims": {
+    "cloudflareDashboardReconciled": false,
+    "workersLogsObserved": false,
+    "edgeRulesApplied": false,
+    "liveAlertsObserved": false,
+    "productionRollbackProven": false,
+    "productionBuildPassed": false,
+    "previewDeployed": false,
+    "productionDeployed": false
+  },
+  "externalReferences": [
+    "https://developers.cloudflare.com/workers/wrangler/configuration/",
+    "https://developers.cloudflare.com/workers/observability/source-maps/",
+    "https://developers.cloudflare.com/waf/rate-limiting-rules/create-api/",
+    "https://developers.cloudflare.com/pages/configuration/rollbacks/"
+  ],
+  "externalBlockers": [
+    "Private registry still returns 404 for locked ws@7.5.11.",
+    "Installed npm is 10.9.2 while the repository requires npm 11.12.1.",
+    "Built-artifact certification remains blocked by unavailable postcss/esbuild dependencies.",
+    "Cloudflare observability, WAF/rate-limit application, live alert delivery, authenticated Preview and production rollback evidence remain pending."
+  ]
+}

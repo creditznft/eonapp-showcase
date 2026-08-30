@@ -1,0 +1,102 @@
+name: A15 Stage-4 Predeploy Diagnostic
+
+on:
+  push:
+    branches:
+      - codex/eoncity-stage4-repair
+
+permissions:
+  contents: read
+  statuses: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+
+jobs:
+  permanent-predeploy-diagnostic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    concurrency:
+      group: eonapp-stage4-predeploy-diagnostic
+      cancel-in-progress: true
+    steps:
+      - name: Check out exact source
+        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955
+        with:
+          fetch-depth: 0
+      - name: Use Node 22
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - name: Install exact dependencies
+        run: npm ci --include=dev --no-audit --no-fund --prefer-offline
+      - name: Run permanent predeploy and retain exact diagnosis
+        id: predeploy
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          npm run verify:codex-predeploy 2>&1 | tee /tmp/eonapp-predeploy.log
+      - name: Publish exact permanent-predeploy diagnosis
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PREDEPLOY_OUTCOME: ${{ steps.predeploy.outcome }}
+          TARGET_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const text = fs.existsSync('/tmp/eonapp-predeploy.log')
+            ? fs.readFileSync('/tmp/eonapp-predeploy.log', 'utf8').replace(/\u001b\[[0-9;]*m/g, '')
+            : '';
+          const lines = text.split(/\r?\n/).map((line) => line.trim()).filter(Boolean);
+          const failedStepLine = [...lines].reverse().find((line) => /\[CODEX-PREDEPLOY\]\s+FAIL at\s+/i.test(line));
+          const failedStep = failedStepLine?.match(/FAIL at\s+([^\.]+)\./i)?.[1]?.trim()
+            || [...lines].reverse().find((line) => /^>\s+eonapp@.*\s+qa:/i.test(line))?.replace(/^.*\s(qa:[^\s]+).*$/, '$1')
+            || 'unknown-step';
+          const failureIndex = lines.findIndex((line) => /^not ok\b/i.test(line));
+          const failing = failureIndex >= 0
+            ? lines[failureIndex]
+            : [...lines].reverse().find((line) => /ERR_ASSERTION|AssertionError|\bFAIL:?\b|Error:/i.test(line))
+              || failedStepLine
+              || lines.slice(-1)[0]
+              || 'predeploy produced no diagnostic line';
+          const source = lines.find((line) => /(?:tests|scripts|config|assets)\/[^\s:]+\.(?:mjs|js|ts)(?::\d+)?/i.test(line)) || 'source-not-found';
+          const slug = (value, limit = 66) => String(value)
+            .toLowerCase()
+            .replace(/^not ok\s+\d+\s*-?\s*/i, '')
+            .replace(/[^a-z0-9._/-]+/g, '-')
+            .replace(/^-+|-+$/g, '')
+            .slice(0, limit) || 'unknown';
+          const ok = process.env.PREDEPLOY_OUTCOME === 'success';
+          const statuses = ok
+            ? [{ context: 'eonapp/predeploy-result/pass', description: 'Permanent predeploy passed' }]
+            : [
+                { context: `eonapp/predeploy-step/${slug(failedStep)}`, description: String(failedStepLine || failedStep).slice(0, 140) },
+                { context: `eonapp/predeploy-fail/${slug(failing)}`, description: String(failing).slice(0, 140) },
+                { context: `eonapp/predeploy-source/${slug(source)}`, description: String(source).slice(0, 140) }
+              ];
+          statuses.forEach((status, index) => {
+            fs.writeFileSync(`/tmp/predeploy-status-${index}.json`, JSON.stringify({
+              state: ok ? 'success' : 'failure',
+              context: status.context.slice(0, 100),
+              description: status.description,
+              target_url: process.env.TARGET_URL
+            }));
+          });
+          fs.writeFileSync('/tmp/predeploy-status-count', String(statuses.length));
+          NODE
+          COUNT="$(cat /tmp/predeploy-status-count)"
+          for INDEX in $(seq 0 $((COUNT - 1))); do
+            curl --fail --silent --show-error \
+              -X POST \
+              -H "Authorization: Bearer $GH_TOKEN" \
+              -H 'Accept: application/vnd.github+json' \
+              -H 'X-GitHub-Api-Version: 2022-11-28' \
+              "${{ github.api_url }}/repos/${{ github.repository }}/statuses/${{ github.sha }}" \
+              --data-binary "@/tmp/predeploy-status-${INDEX}.json"
+          done
+      - name: Preserve gate failure
+        if: steps.predeploy.outcome != 'success'
+        run: exit 1

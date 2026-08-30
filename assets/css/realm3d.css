@@ -1,0 +1,4789 @@
+/* W28_REAL_EON_CITY_3D_HARD_RESET — real Three.js voxel city layer */
+body[data-page-type="realm"] {
+  background:
+    radial-gradient(circle at 18% 8%, rgba(34, 211, 238, .2), transparent 32rem),
+    radial-gradient(circle at 80% 14%, rgba(168, 85, 247, .24), transparent 30rem),
+    #020617;
+}
+
+.realm3d-hero {
+  min-height: calc(100vh - 76px);
+  padding: clamp(1rem, 2vw, 2rem) 0 2rem;
+  border-bottom: 1px solid rgba(148, 163, 184, .16);
+}
+
+.realm3d-hero-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 2fr);
+  align-items: stretch;
+}
+
+.realm3d-copy-card,
+.realm3d-shell,
+.realm3d-fallback-card,
+.realm3d-legacy-note {
+  border: 1px solid rgba(148, 163, 184, .18);
+  background: linear-gradient(150deg, rgba(15, 23, 42, .94), rgba(2, 6, 23, .9));
+  box-shadow: 0 24px 80px rgba(0, 0, 0, .35), inset 0 1px 0 rgba(255, 255, 255, .04);
+  border-radius: 28px;
+}
+
+.realm3d-copy-card {
+  padding: clamp(1.1rem, 2vw, 1.7rem);
+  position: relative;
+  overflow: hidden;
+}
+
+.realm3d-copy-card::after {
+  content: "";
+  position: absolute;
+  inset: auto -30% -35% 10%;
+  height: 12rem;
+  background: radial-gradient(circle, rgba(34, 211, 238, .22), transparent 70%);
+  pointer-events: none;
+}
+
+.realm3d-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .38rem .7rem;
+  border-radius: 999px;
+  color: #bae6fd;
+  border: 1px solid rgba(34, 211, 238, .26);
+  background: rgba(8, 47, 73, .52);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.realm3d-copy-card h1,
+.realm3d-topbar h2,
+.realm3d-fallback-card h2 {
+  margin: .75rem 0 .6rem;
+  color: #f8fafc;
+  line-height: 1;
+}
+
+.realm3d-copy-card h1 {
+  font-size: clamp(2.4rem, 6vw, 5.2rem);
+  letter-spacing: -.08em;
+}
+
+.realm3d-copy-card p,
+.realm3d-topbar p,
+.realm3d-fallback-card p,
+.realm3d-panel-card p {
+  color: #cbd5e1;
+}
+
+.realm3d-pillar-list,
+.realm3d-device-list {
+  display: grid;
+  gap: .55rem;
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.realm3d-pillar-list li,
+.realm3d-device-list li {
+  display: flex;
+  gap: .55rem;
+  align-items: flex-start;
+  padding: .66rem .75rem;
+  border-radius: 16px;
+  color: #e2e8f0;
+  background: rgba(15, 23, 42, .68);
+  border: 1px solid rgba(148, 163, 184, .12);
+}
+
+.realm3d-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .7rem;
+  margin-top: 1rem;
+}
+
+.realm3d-shell {
+  min-height: min(72vh, 760px);
+  overflow: hidden;
+  position: relative;
+}
+
+.realm3d-topbar {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: .9rem;
+  position: relative;
+  z-index: 5;
+  background: linear-gradient(180deg, rgba(2, 6, 23, .92), rgba(2, 6, 23, .42));
+  border-bottom: 1px solid rgba(148, 163, 184, .14);
+}
+
+.realm3d-topbar h2 {
+  margin: .35rem 0 .2rem;
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
+}
+
+.realm3d-topbar p {
+  margin: 0;
+  font-size: .95rem;
+}
+
+.realm3d-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: .5rem;
+  min-width: min(100%, 28rem);
+}
+
+.realm3d-quality {
+  border: 1px solid rgba(148, 163, 184, .25);
+  background: rgba(15, 23, 42, .9);
+  color: #e2e8f0;
+  border-radius: 999px;
+  padding: .5rem .8rem;
+}
+
+.realm3d-stage-wrap {
+  position: relative;
+  min-height: min(66vh, 680px);
+}
+
+.realm3d-canvas-host {
+  min-height: min(66vh, 680px);
+  outline: none;
+  cursor: crosshair;
+  background: #020617;
+}
+
+.realm3d-canvas-host canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+}
+
+.realm3d-hud,
+.realm3d-minimap,
+.realm3d-panel-card {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(148, 163, 184, .22);
+  background: rgba(2, 6, 23, .76);
+  color: #e2e8f0;
+}
+
+.realm3d-hud {
+  position: absolute;
+  left: .9rem;
+  bottom: .9rem;
+  right: .9rem;
+  display: flex;
+  gap: .6rem 1rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: .65rem .8rem;
+  border-radius: 18px;
+  font-size: .82rem;
+  pointer-events: none;
+}
+
+.realm3d-minimap {
+  position: absolute;
+  top: .85rem;
+  right: .85rem;
+  width: 8.6rem;
+  height: 8.6rem;
+  border-radius: 22px;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(34, 211, 238, .14) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 211, 238, .14) 1px, transparent 1px),
+    rgba(2, 6, 23, .72);
+  background-size: 1.35rem 1.35rem;
+}
+
+.realm3d-minimap button {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, .32);
+  background: rgba(15, 23, 42, .9);
+  color: #fff;
+  cursor: pointer;
+}
+
+.realm3d-mobile-controls {
+  position: absolute;
+  inset: auto 0 0 0;
+  z-index: 7;
+  display: none;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+  padding: 1rem;
+  pointer-events: none;
+}
+
+.realm3d-stick,
+.realm3d-mobile-actions {
+  pointer-events: auto;
+}
+
+.realm3d-stick {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, .28);
+  background: rgba(15, 23, 42, .55);
+  display: grid;
+  place-items: center;
+  touch-action: none;
+}
+
+.realm3d-stick span {
+  width: 2.7rem;
+  height: 2.7rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #22d3ee, #a855f7);
+  box-shadow: 0 0 24px rgba(34, 211, 238, .45);
+}
+
+.realm3d-mobile-actions {
+  display: flex;
+  gap: .5rem;
+  margin-bottom: .55rem;
+}
+
+.realm3d-mobile-actions button {
+  min-height: 2.8rem;
+  padding: .55rem .75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, .28);
+  background: rgba(15, 23, 42, .82);
+  color: #f8fafc;
+  font-weight: 800;
+}
+
+.realm3d-panel-shell {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(2, 6, 23, .72);
+}
+
+.realm3d-panel-shell.hidden {
+  display: none;
+}
+
+.realm3d-panel-card {
+  width: min(96vw, 680px);
+  max-height: 86vh;
+  overflow: auto;
+  border-radius: 24px;
+  padding: 1rem;
+  box-shadow: 0 32px 120px rgba(0, 0, 0, .5);
+  position: relative;
+}
+
+.realm3d-panel-close {
+  position: absolute;
+  top: .7rem;
+  right: .7rem;
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, .25);
+  background: rgba(15, 23, 42, .8);
+  color: #f8fafc;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.realm3d-panel-kicker,
+.realm3d-panel-note {
+  color: #93c5fd;
+  font-size: .85rem;
+  font-weight: 800;
+}
+
+.realm3d-panel-card h3 {
+  margin: .45rem 2rem .5rem 0;
+  color: #f8fafc;
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+}
+
+.realm3d-panel-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+  margin-top: 1rem;
+}
+
+.realm3d-workspace-grid,
+.realm3d-fallback-grid,
+.realm3d-roadmap-grid {
+  display: grid;
+  gap: .75rem;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  margin-top: 1rem;
+}
+
+.realm3d-workspace-tile,
+.realm3d-fallback-grid a,
+.realm3d-roadmap-card {
+  border: 1px solid rgba(148, 163, 184, .16);
+  border-radius: 18px;
+  padding: .8rem;
+  background: rgba(15, 23, 42, .68);
+  color: #e2e8f0;
+  text-decoration: none;
+}
+
+.realm3d-workspace-tile span {
+  display: block;
+  font-size: 1.7rem;
+}
+
+.realm3d-workspace-tile strong,
+.realm3d-workspace-tile small {
+  display: block;
+}
+
+.realm3d-workspace-tile small,
+.realm3d-roadmap-card p {
+  color: #cbd5e1;
+}
+
+.realm3d-seed-card {
+  padding: .85rem;
+  border-radius: 18px;
+  background: rgba(8, 47, 73, .55);
+  border: 1px solid rgba(34, 211, 238, .22);
+  color: #e0f2fe;
+}
+
+.realm3d-fallback-card {
+  padding: clamp(1rem, 2vw, 1.5rem);
+}
+
+.realm3d-roadmap {
+  padding: 2rem 0;
+}
+
+.realm3d-roadmap-card h3 {
+  color: #f8fafc;
+  margin: 0 0 .4rem;
+}
+
+.realm3d-legacy-note {
+  margin-top: 1.4rem;
+  padding: 1rem;
+  color: #cbd5e1;
+}
+
+body[data-page-type="realm"] .rl-hub-hero,
+body[data-page-type="realm"] .rl-w23-city-world,
+body[data-page-type="realm"] .rl-v23-private-workstation,
+body[data-page-type="realm"] .rl-v23-my-realm,
+body[data-page-type="realm"] .rl-view-toggle-bar,
+body[data-page-type="realm"] .rl-publication-banner,
+body[data-page-type="realm"] .rl-publication-guide,
+body[data-page-type="realm"] .rl-edit-view,
+body[data-page-type="realm"] .rl-preview-view {
+  display: none !important;
+}
+
+@media (pointer: coarse), (max-width: 860px) {
+  .realm3d-mobile-controls {
+    display: flex;
+  }
+  .realm3d-hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .realm3d-copy-card {
+    order: 2;
+  }
+  .realm3d-shell {
+    order: 1;
+  }
+  .realm3d-topbar {
+    flex-direction: column;
+  }
+  .realm3d-actions {
+    justify-content: flex-start;
+  }
+  .realm3d-stage-wrap,
+  .realm3d-canvas-host {
+    min-height: 64vh;
+  }
+  .realm3d-minimap {
+    width: 6.8rem;
+    height: 6.8rem;
+  }
+  .realm3d-hud {
+    bottom: 8.5rem;
+    font-size: .76rem;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 680px) {
+  .realm3d-hero {
+    min-height: auto;
+  }
+  .realm3d-stage-wrap,
+  .realm3d-canvas-host {
+    min-height: 58vh;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 620px) {
+  .realm3d-copy-card {
+    display: none;
+  }
+  .realm3d-hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .realm3d-stage-wrap,
+  .realm3d-canvas-host {
+    min-height: calc(100vh - 8rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .realm3d-shell *,
+  .realm3d-panel-shell * {
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+  }
+}
+
+/* W29-W35_REALM3D_METAVERSE_EXPANSION — richer city/room/realm UX */
+.realm3d-shell[data-metaverse="true"] {
+  outline: 1px solid rgba(34, 211, 238, .18);
+}
+
+.realm3d-snapshot-json {
+  max-height: 12rem;
+  overflow: auto;
+  margin: .75rem 0;
+  padding: .75rem;
+  border-radius: 14px;
+  color: #a7f3d0;
+  background: rgba(2, 6, 23, .82);
+  border: 1px solid rgba(34, 197, 94, .22);
+  font-size: .75rem;
+  white-space: pre-wrap;
+}
+
+.realm3d-panel-card:has(#ghost-presence-policy),
+.realm3d-panel-card:has(#arweave-realm-export) {
+  border-color: rgba(250, 204, 21, .32);
+}
+
+.realm3d-actions [data-realm3d-ghost],
+.realm3d-actions [data-realm3d-export] {
+  border-color: rgba(167, 139, 250, .36);
+}
+
+@media (max-width: 520px) {
+  .realm3d-actions [data-realm3d-ghost],
+  .realm3d-actions [data-realm3d-export] {
+    display: none;
+  }
+  .realm3d-panel-card {
+    max-height: 88vh;
+    overflow: auto;
+  }
+}
+
+/* W36-W40_REALM3D_END_TO_END_POLISH — premium voxel game polish */
+.realm3d-shell {
+  isolation: isolate;
+}
+.realm3d-shell::before,
+.realm3d-shell::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+.realm3d-shell::before {
+  background:
+    radial-gradient(circle at 50% 12%, rgba(34, 211, 238, .18), transparent 28%),
+    radial-gradient(circle at 78% 70%, rgba(168, 85, 247, .12), transparent 30%);
+  mix-blend-mode: screen;
+}
+.realm3d-shell::after {
+  background: linear-gradient(180deg, rgba(255,255,255,.04), transparent 16%, rgba(2,6,23,.34));
+}
+.realm3d-canvas-host canvas {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+.realm3d-crosshair {
+  position: absolute;
+  left: 50%;
+  top: calc(-50vh + 2.5rem);
+  transform: translate(-50%, -50%);
+  width: 1.6rem;
+  height: 1.6rem;
+  display: grid;
+  place-items: center;
+  color: rgba(226, 232, 240, .72);
+  text-shadow: 0 0 12px rgba(34, 211, 238, .85);
+  font-weight: 900;
+  font-size: 1.35rem;
+  pointer-events: none;
+}
+.realm3d-locked .realm3d-crosshair {
+  color: #f8fafc;
+}
+.realm3d-minimap::before {
+  content: "EON CITY";
+  position: absolute;
+  left: .5rem;
+  top: .4rem;
+  font-size: .58rem;
+  font-weight: 900;
+  letter-spacing: .08em;
+  color: rgba(186, 230, 253, .88);
+}
+.realm3d-minimap::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: .55rem;
+  height: .55rem;
+  border-radius: 999px;
+  transform: translate(-50%, -50%);
+  background: #f8fafc;
+  box-shadow: 0 0 0 4px rgba(34, 211, 238, .18), 0 0 18px rgba(34, 211, 238, .9);
+}
+.realm3d-hud {
+  z-index: 6;
+}
+.realm3d-panel-card {
+  background:
+    radial-gradient(circle at 20% 0%, rgba(34, 211, 238, .14), transparent 22rem),
+    radial-gradient(circle at 86% 18%, rgba(168, 85, 247, .16), transparent 22rem),
+    rgba(2, 6, 23, .88);
+}
+.realm3d-panel-card h3::before {
+  content: "▣ ";
+  color: #22d3ee;
+}
+.realm3d-workspace-tile:hover,
+.realm3d-minimap button:hover,
+.realm3d-mobile-actions button:active {
+  border-color: rgba(34, 211, 238, .58);
+  box-shadow: 0 0 22px rgba(34, 211, 238, .18);
+}
+.realm3d-snapshot-json {
+  user-select: text;
+}
+@media (max-width: 860px) {
+  .realm3d-crosshair {
+    display: none;
+  }
+  .realm3d-topbar .realm3d-kicker {
+    display: none;
+  }
+  .realm3d-actions {
+    max-height: 7.2rem;
+    overflow: auto;
+    padding-bottom: .25rem;
+  }
+}
+@media (max-width: 420px) {
+  .realm3d-hud {
+    left: .45rem;
+    right: .45rem;
+    bottom: 7.8rem;
+    padding: .5rem;
+  }
+  .realm3d-stick {
+    width: 6.2rem;
+    height: 6.2rem;
+  }
+}
+
+/* W41-W45 final Realm3D metaverse polish */
+.realm3d-tour-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+  margin-top: .75rem;
+}
+.realm3d-tour-list span {
+  border: 1px solid rgba(34, 211, 238, .24);
+  border-radius: 999px;
+  background: rgba(15, 23, 42, .78);
+  color: #dff7ff;
+  font-size: .72rem;
+  font-weight: 800;
+  padding: .28rem .48rem;
+}
+.realm3d-shell[data-metaverse="true"] .realm3d-stage-wrap::before {
+  content: "EON CITY 3D · SAFE METAVERSE";
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  z-index: 3;
+  border: 1px solid rgba(34, 211, 238, .24);
+  border-radius: 999px;
+  background: rgba(2, 6, 23, .62);
+  color: rgba(224, 242, 254, .9);
+  font-size: .68rem;
+  font-weight: 900;
+  letter-spacing: .08em;
+  padding: .28rem .55rem;
+  pointer-events: none;
+}
+.realm3d-actions [data-realm3d-tour],
+.realm3d-actions [data-realm3d-photo] {
+  border-color: rgba(240, 171, 252, .44);
+  box-shadow: 0 0 18px rgba(216, 180, 254, .16);
+}
+@media (max-width: 520px) {
+  .realm3d-shell[data-metaverse="true"] .realm3d-stage-wrap::before {
+    left: .6rem;
+    top: .6rem;
+    font-size: .58rem;
+  }
+  .realm3d-tour-list span { font-size: .64rem; }
+}
+
+/* W75-W76 gameplay repair: explicit game mode, fullscreen, safe workstation screens */
+.realm3d-shell.realm3d-fullscreen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
+  background: #020617;
+}
+.realm3d-fullscreen .realm3d-topbar {
+  padding: .6rem .8rem;
+}
+.realm3d-fullscreen .realm3d-stage-wrap,
+.realm3d-fullscreen .realm3d-canvas-host {
+  min-height: calc(100vh - 5.2rem);
+  height: calc(100vh - 5.2rem);
+}
+.realm3d-exit-btn:not([hidden]) {
+  border-color: rgba(248, 113, 113, .55);
+  color: #fecaca;
+  box-shadow: 0 0 18px rgba(248, 113, 113, .12);
+}
+.realm3d-screen-focus-bar {
+  position: absolute;
+  left: 50%;
+  bottom: 5.2rem;
+  z-index: 8;
+  display: none;
+  align-items: center;
+  gap: .65rem;
+  transform: translateX(-50%);
+  padding: .55rem .7rem;
+  border: 1px solid rgba(34, 211, 238, .32);
+  border-radius: 999px;
+  background: rgba(2, 6, 23, .86);
+  color: #e0f2fe;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, .38);
+}
+.realm3d-screen-focused .realm3d-screen-focus-bar {
+  display: flex;
+}
+.realm3d-app-screen-card {
+  width: min(96vw, 760px);
+}
+.realm3d-app-screen-preview {
+  margin-top: .85rem;
+  overflow: hidden;
+  border: 1px solid rgba(34, 211, 238, .26);
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(34, 211, 238, .18), transparent 18rem),
+    linear-gradient(145deg, rgba(15, 23, 42, .95), rgba(30, 41, 59, .82));
+}
+.realm3d-app-screen-toolbar {
+  display: flex;
+  justify-content: space-between;
+  gap: .8rem;
+  padding: .55rem .75rem;
+  border-bottom: 1px solid rgba(148, 163, 184, .18);
+  color: #bae6fd;
+  font-size: .78rem;
+  word-break: break-word;
+}
+.realm3d-app-screen-toolbar strong {
+  color: #bbf7d0;
+  white-space: nowrap;
+}
+.realm3d-app-screen-lines {
+  min-height: 8.5rem;
+  padding: 1.2rem;
+  color: #f8fafc;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+.realm3d-app-screen-lines span {
+  color: #cbd5e1;
+}
+.realm3d-canvas-host {
+  cursor: default;
+}
+.realm3d-locked .realm3d-canvas-host {
+  cursor: none;
+}
+@media (orientation: landscape) and (max-height: 620px) {
+  .realm3d-fullscreen .realm3d-topbar h2,
+  .realm3d-fullscreen .realm3d-topbar p {
+    display: none;
+  }
+  .realm3d-fullscreen .realm3d-stage-wrap,
+  .realm3d-fullscreen .realm3d-canvas-host {
+    min-height: calc(100vh - 3.4rem);
+    height: calc(100vh - 3.4rem);
+  }
+  .realm3d-screen-focus-bar {
+    bottom: 4rem;
+  }
+}
+@media (max-width: 680px) {
+  .realm3d-screen-focus-bar {
+    left: .5rem;
+    right: .5rem;
+    bottom: 7.4rem;
+    transform: none;
+    justify-content: space-between;
+    border-radius: 18px;
+  }
+  .realm3d-app-screen-toolbar {
+    flex-direction: column;
+  }
+}
+
+/* W77-W78 art-direction panels */
+.realm3d-eonbot-dialogue {
+  border-color: rgba(125, 211, 252, .42);
+  box-shadow: 0 26px 80px rgba(14, 165, 233, .22), inset 0 0 38px rgba(168, 85, 247, .12);
+}
+
+.realm3d-eonbot-dialogue h3 {
+  text-shadow: 0 0 22px rgba(34, 211, 238, .45);
+}
+
+.realm3d-market-card {
+  background:
+    radial-gradient(circle at top right, rgba(250, 204, 21, .16), transparent 34%),
+    radial-gradient(circle at bottom left, rgba(34, 211, 238, .14), transparent 32%),
+    rgba(2, 6, 23, .76);
+}
+
+.realm3d-app-screen-preview,
+.realm3d-seed-card {
+  overflow-wrap: anywhere;
+}
+
+/* W79 AI-agent NPC panels */
+.realm3d-agent-npc-dialogue {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(34, 211, 238, .18), transparent 30%),
+    radial-gradient(circle at 82% 12%, rgba(168, 85, 247, .16), transparent 28%),
+    rgba(2, 6, 23, .92);
+}
+.realm3d-agent-npc-dialogue .realm3d-workspace-tile {
+  min-height: 7.2rem;
+}
+.realm3d-agent-npc-dialogue .realm3d-panel-note {
+  color: #cbd5e1;
+}
+
+/* W80-W81: in-world upgrade stations and safe live app panel readiness */
+.realm3d-upgrade-station-grid {
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+}
+
+.realm3d-upgrade-station-tile {
+  min-height: 8.5rem;
+  background:
+    radial-gradient(circle at 20% 12%, rgba(34, 211, 238, .24), transparent 55%),
+    linear-gradient(145deg, rgba(15, 23, 42, .92), rgba(30, 41, 59, .72));
+}
+
+.realm3d-upgrade-station-panel {
+  border-color: rgba(34, 211, 238, .32);
+  box-shadow: inset 0 0 0 1px rgba(34, 211, 238, .08), 0 18px 50px rgba(8, 47, 73, .28);
+}
+
+.realm3d-unlock-path-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+  margin: .85rem 0;
+}
+
+.realm3d-unlock-path-row span,
+.realm3d-live-panel-policy {
+  border: 1px solid rgba(148, 163, 184, .18);
+  background: rgba(15, 23, 42, .74);
+  color: #dbeafe;
+  border-radius: 14px;
+  padding: .48rem .62rem;
+  font-size: .82rem;
+}
+
+.realm3d-live-panel-policy {
+  margin: .75rem;
+  line-height: 1.45;
+}
+
+.realm3d-live-panel-policy small {
+  color: #bae6fd;
+}
+
+/* W98 — Flagship EON City AI Workstation World */
+body.realm3d-flagship-mode {
+  background: #02040b;
+  overflow-x: hidden;
+}
+
+body.realm3d-flagship-mode .site-header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 90;
+  background: linear-gradient(180deg, rgba(2, 6, 23, .9), rgba(2, 6, 23, .42), transparent);
+  border-bottom: 0;
+  backdrop-filter: blur(18px);
+}
+
+body.realm3d-flagship-mode main {
+  padding: 0;
+}
+
+body.realm3d-flagship-mode .realm3d-hero {
+  min-height: 100svh;
+  padding: 0;
+  background: #02040b;
+}
+
+body.realm3d-flagship-mode .realm3d-hero > .container {
+  width: 100%;
+  max-width: none;
+  padding: 0;
+  margin: 0;
+}
+
+body.realm3d-flagship-mode .realm3d-hero-grid {
+  display: block;
+  min-height: 100svh;
+}
+
+body.realm3d-flagship-mode .realm3d-copy-card,
+body.realm3d-flagship-mode .realm3d-legacy-surface,
+body.realm3d-flagship-mode main > section:not(.realm3d-hero) {
+  display: none !important;
+}
+
+body.realm3d-document-fullscreen .site-header,
+.realm3d-fullscreen ~ .site-footer {
+  display: none !important;
+}
+
+.realm3d-flagship-shell {
+  --realm-cyan: #22d3ee;
+  --realm-blue: #3b82f6;
+  --realm-violet: #a855f7;
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  overflow: hidden;
+  isolation: isolate;
+  color: #e5f6ff;
+  background: #02040b;
+}
+
+.realm3d-stage-wrap,
+.realm3d-canvas-host {
+  width: 100%;
+  height: 100svh;
+  min-height: 620px;
+}
+
+.realm3d-canvas-host canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+  cursor: grab;
+  outline: 0;
+}
+
+.realm3d-game-active .realm3d-canvas-host canvas,
+.realm3d-locked .realm3d-canvas-host canvas {
+  cursor: none;
+}
+
+.realm3d-launch-screen {
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: clamp(1.25rem, 5vw, 5rem);
+  background:
+    linear-gradient(90deg, rgba(2, 6, 23, .94) 0%, rgba(2, 6, 23, .74) 48%, rgba(2, 6, 23, .18) 100%),
+    radial-gradient(circle at 78% 38%, rgba(34, 211, 238, .17), transparent 30%);
+  transition: opacity .5s ease, visibility .5s ease;
+}
+
+.realm3d-intro-dismissed .realm3d-launch-screen {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.realm3d-launch-aurora {
+  position: absolute;
+  inset: -25%;
+  background:
+    radial-gradient(ellipse at 70% 45%, rgba(34, 211, 238, .22), transparent 28%),
+    radial-gradient(ellipse at 84% 24%, rgba(168, 85, 247, .22), transparent 25%);
+  filter: blur(28px);
+  animation: realm98Aurora 9s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.realm3d-launch-card {
+  position: relative;
+  width: min(680px, 100%);
+  margin-right: auto;
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+  border: 1px solid rgba(125, 211, 252, .24);
+  border-radius: 30px;
+  background: linear-gradient(145deg, rgba(2, 6, 23, .86), rgba(8, 20, 39, .62));
+  box-shadow: 0 30px 120px rgba(0, 0, 0, .55), inset 0 0 70px rgba(34, 211, 238, .055);
+  backdrop-filter: blur(18px);
+}
+
+.realm3d-launch-card h2 {
+  margin: .55rem 0 1rem;
+  max-width: 12ch;
+  font-size: clamp(2.35rem, 6vw, 5.4rem);
+  line-height: .94;
+  letter-spacing: -.055em;
+  text-wrap: balance;
+  background: linear-gradient(105deg, #fff, #a5f3fc 54%, #c4b5fd);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.realm3d-launch-card p {
+  max-width: 58ch;
+  color: #cbd5e1;
+  font-size: clamp(1rem, 1.5vw, 1.18rem);
+  line-height: 1.7;
+}
+
+.realm3d-launch-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .65rem;
+  margin-top: 1.4rem;
+}
+
+.realm3d-launch-proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+  margin-top: 1.35rem;
+}
+
+.realm3d-launch-proof span,
+.realm3d-scene-chip,
+.realm3d-route-chip,
+.realm3d-safety-badge {
+  border: 1px solid rgba(148, 163, 184, .18);
+  border-radius: 999px;
+  background: rgba(2, 6, 23, .72);
+  color: #bae6fd;
+  padding: .36rem .66rem;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .02em;
+  backdrop-filter: blur(14px);
+}
+
+.realm3d-command-dock {
+  position: absolute;
+  z-index: 30;
+  top: max(4.7rem, env(safe-area-inset-top));
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1160px, calc(100% - 2rem));
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding: .52rem .65rem;
+  border: 1px solid rgba(148, 163, 184, .16);
+  border-radius: 20px;
+  background: rgba(2, 6, 23, .74);
+  box-shadow: 0 16px 60px rgba(0, 0, 0, .32);
+  backdrop-filter: blur(20px);
+}
+
+.realm3d-brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: .62rem;
+  min-width: max-content;
+}
+.realm3d-brand-lockup strong { display: block; color: #e0f2fe; }
+.realm3d-brand-lockup small { display: block; color: #64748b; font-size: .7rem; }
+.realm3d-brand-orb {
+  width: 1.9rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fff, #22d3ee 26%, #3b82f6 58%, #581c87);
+  box-shadow: 0 0 24px rgba(34, 211, 238, .62);
+}
+
+.realm3d-primary-actions { margin-left: auto; display: flex; gap: .42rem; }
+.realm3d-world-menu { position: relative; }
+.realm3d-world-menu summary {
+  cursor: pointer;
+  list-style: none;
+  border: 1px solid rgba(148, 163, 184, .2);
+  border-radius: 10px;
+  padding: .54rem .7rem;
+  color: #dbeafe;
+  font-weight: 700;
+  font-size: .78rem;
+}
+.realm3d-world-menu summary::-webkit-details-marker { display: none; }
+.realm3d-world-menu-popover {
+  position: absolute;
+  right: 0;
+  top: calc(100% + .65rem);
+  width: min(270px, 82vw);
+  display: grid;
+  gap: .35rem;
+  padding: .65rem;
+  border: 1px solid rgba(125, 211, 252, .2);
+  border-radius: 16px;
+  background: rgba(2, 6, 23, .96);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, .5);
+}
+.realm3d-world-menu:not([open]) .realm3d-world-menu-popover { display: none; }
+.realm3d-world-menu-popover button,
+.realm3d-world-menu-popover select {
+  width: 100%;
+  border: 1px solid rgba(148, 163, 184, .15);
+  border-radius: 10px;
+  background: rgba(15, 23, 42, .82);
+  color: #dbeafe;
+  padding: .62rem .7rem;
+  text-align: left;
+}
+
+.realm3d-game-hud {
+  position: absolute;
+  z-index: 20;
+  left: clamp(.8rem, 2.5vw, 2rem);
+  bottom: clamp(.8rem, 2.5vw, 2rem);
+  width: min(590px, calc(100% - 1.6rem));
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .45rem;
+  padding: .75rem;
+  border: 1px solid rgba(148, 163, 184, .14);
+  border-radius: 18px;
+  background: rgba(2, 6, 23, .68);
+  backdrop-filter: blur(16px);
+  pointer-events: none;
+}
+.realm3d-status-line { flex-basis: 100%; color: #dbeafe; font-size: .78rem; }
+.realm3d-telemetry-row { display: flex; flex-wrap: wrap; gap: .55rem; color: #93c5fd; font-size: .72rem; }
+.realm3d-crosshair {
+  position: fixed;
+  left: 50%; top: 50%;
+  width: 20px; height: 20px;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity .2s;
+}
+.realm3d-game-active .realm3d-crosshair { opacity: .78; }
+.realm3d-crosshair i { position: absolute; background: #e0f2fe; box-shadow: 0 0 8px #22d3ee; }
+.realm3d-crosshair i:first-child { left: 9px; top: 1px; width: 2px; height: 18px; }
+.realm3d-crosshair i:last-child { left: 1px; top: 9px; width: 18px; height: 2px; }
+
+.realm3d-minimap {
+  position: absolute;
+  right: clamp(.8rem, 2.5vw, 2rem);
+  bottom: clamp(.8rem, 2.5vw, 2rem);
+  width: 180px;
+  height: 180px;
+  border: 1px solid rgba(125, 211, 252, .2);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(14, 116, 144, .16), rgba(2, 6, 23, .8) 68%);
+  box-shadow: inset 0 0 40px rgba(34, 211, 238, .08), 0 16px 60px rgba(0, 0, 0, .35);
+  backdrop-filter: blur(16px);
+}
+
+.realm3d-safety-badge {
+  position: absolute;
+  z-index: 20;
+  top: 8.9rem;
+  right: 1rem;
+}
+
+.realm3d-panel-shell {
+  position: fixed;
+  z-index: 100;
+  inset: max(5.3rem, env(safe-area-inset-top)) 1rem 1rem auto;
+  width: min(780px, calc(100vw - 2rem));
+  max-height: calc(100svh - 6.3rem);
+  overflow: auto;
+  padding: 0;
+  border-radius: 24px;
+  background: transparent;
+}
+.realm3d-panel-shell.hidden { display: none; }
+.realm3d-panel-card {
+  border: 1px solid rgba(125, 211, 252, .22);
+  border-radius: 24px;
+  background: linear-gradient(145deg, rgba(2, 6, 23, .97), rgba(8, 20, 39, .95));
+  box-shadow: 0 30px 110px rgba(0, 0, 0, .65);
+  backdrop-filter: blur(24px);
+}
+
+.realm3d-native-widget {
+  margin: .8rem 0;
+  border: 1px solid rgba(125, 211, 252, .18);
+  border-radius: 18px;
+  background: rgba(2, 6, 23, .72);
+  overflow: hidden;
+}
+.realm3d-code-editor-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(148, 163, 184, .12); }
+.realm3d-code-editor-grid label { display: grid; gap: .35rem; padding: .65rem; background: #050b16; }
+.realm3d-code-editor-grid span { color: #67e8f9; font-size: .72rem; font-weight: 800; }
+.realm3d-code-editor-grid textarea {
+  min-height: 150px;
+  width: 100%;
+  resize: vertical;
+  border: 0;
+  outline: 0;
+  background: #020617;
+  color: #dbeafe;
+  font: 12px/1.55 ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+.realm3d-code-preview-shell { min-height: 260px; }
+.realm3d-widget-toolbar { display: flex; justify-content: space-between; align-items: center; padding: .55rem .7rem; border-top: 1px solid rgba(148,163,184,.12); }
+.realm3d-widget-toolbar button,
+.realm3d-quick-prompts button {
+  border: 1px solid rgba(34, 211, 238, .28);
+  border-radius: 999px;
+  background: rgba(8, 47, 73, .52);
+  color: #cffafe;
+  padding: .42rem .7rem;
+  font-weight: 700;
+}
+.realm3d-code-preview-shell iframe { width: 100%; min-height: 220px; border: 0; background: #fff; }
+.realm3d-eonbot-transcript { max-height: 280px; overflow: auto; display: grid; gap: .55rem; padding: .85rem; }
+.realm3d-eonbot-message { width: fit-content; max-width: 82%; padding: .65rem .8rem; border-radius: 16px; color: #dbeafe; background: rgba(15, 23, 42, .88); }
+.realm3d-eonbot-message.user { margin-left: auto; background: linear-gradient(135deg, rgba(14, 116, 144, .8), rgba(91, 33, 182, .68)); }
+.realm3d-eonbot-form { display: flex; gap: .5rem; padding: .75rem; border-top: 1px solid rgba(148, 163, 184, .12); }
+.realm3d-eonbot-form label { flex: 1; }
+.realm3d-eonbot-form input { width: 100%; border: 1px solid rgba(148, 163, 184, .18); border-radius: 12px; background: rgba(15, 23, 42, .8); color: #fff; padding: .72rem; }
+.realm3d-quick-prompts { display: flex; flex-wrap: wrap; gap: .45rem; padding: 0 .75rem .75rem; }
+.realm3d-status-widget { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; }
+.realm3d-status-widget > div { padding: 1rem; background: rgba(15, 23, 42, .74); }
+.realm3d-status-widget span, .realm3d-status-widget strong { display: block; }
+.realm3d-status-widget span { color: #94a3b8; font-size: .72rem; }
+.realm3d-status-widget strong { margin-top: .3rem; color: #67e8f9; }
+
+.realm3d-fullscreen,
+.realm3d-fullscreen .realm3d-stage-wrap,
+.realm3d-fullscreen .realm3d-canvas-host {
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+}
+
+@keyframes realm98Aurora { to { transform: translate3d(-4%, 3%, 0) scale(1.06); filter: blur(38px) hue-rotate(20deg); } }
+
+@media (max-width: 780px) {
+  body.realm3d-flagship-mode .site-header { display: none; }
+  .realm3d-command-dock { top: max(.55rem, env(safe-area-inset-top)); width: calc(100% - 1rem); border-radius: 16px; }
+  .realm3d-brand-lockup small { display: none; }
+  .realm3d-primary-actions .btn:not([data-realm3d-enter]):not([data-realm3d-eonbot]) { display: none; }
+  .realm3d-stage-wrap, .realm3d-canvas-host { min-height: 100svh; }
+  .realm3d-launch-screen { padding: .8rem; background: linear-gradient(180deg, rgba(2,6,23,.9), rgba(2,6,23,.54)); }
+  .realm3d-launch-card { margin: auto 0 0; padding: 1.25rem; border-radius: 22px; }
+  .realm3d-launch-card h2 { font-size: clamp(2.3rem, 13vw, 4rem); }
+  .realm3d-launch-actions { display: grid; grid-template-columns: 1fr 1fr; }
+  .realm3d-launch-actions .btn:first-child { grid-column: 1 / -1; }
+  .realm3d-minimap { width: 116px; height: 116px; bottom: 6.2rem; }
+  .realm3d-game-hud { bottom: .55rem; width: calc(100% - 1.1rem); }
+  .realm3d-route-chip, .realm3d-scene-chip { display: none; }
+  .realm3d-safety-badge { display: none; }
+  .realm3d-panel-shell { inset: .5rem; width: auto; max-height: calc(100svh - 1rem); }
+  .realm3d-code-editor-grid { grid-template-columns: 1fr; }
+  .realm3d-code-editor-grid textarea { min-height: 100px; }
+  .realm3d-status-widget { grid-template-columns: 1fr; }
+}
+
+@media (orientation: landscape) and (max-height: 600px) {
+  .realm3d-command-dock { top: .4rem; }
+  .realm3d-launch-card { max-width: 720px; padding: 1.15rem 1.4rem; }
+  .realm3d-launch-card h2 { font-size: 2.6rem; }
+  .realm3d-launch-card p { margin: .5rem 0; line-height: 1.45; }
+  .realm3d-launch-proof { display: none; }
+  .realm3d-minimap { width: 105px; height: 105px; }
+}
+
+/* The 3D world has its own companion UX; hide the global floating widget to avoid duplicate assistants. */
+body.realm3d-flagship-mode #eon-widget-btn,
+body.realm3d-flagship-mode #eon-widget-panel,
+body.realm3d-flagship-mode .chat-widget-shell {
+  display: none !important;
+}
+
+/* W98 Session 2 — flagship visual direction and mobile-safe launch composition */
+.realm3d-flagship-shell .btn,
+.realm3d-flagship-shell button,
+.realm3d-flagship-shell summary,
+.realm3d-flagship-shell select {
+  font: inherit;
+}
+
+.realm3d-flagship-shell .btn {
+  min-height: 2.7rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: .68rem .95rem;
+  border: 1px solid rgba(125, 211, 252, .24);
+  border-radius: 13px;
+  background: linear-gradient(145deg, rgba(15, 23, 42, .88), rgba(8, 20, 39, .74));
+  color: #e0f2fe;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .055), 0 8px 24px rgba(0, 0, 0, .18);
+  font-size: .84rem;
+  font-weight: 800;
+  letter-spacing: .005em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .18s ease, border-color .18s ease, background .18s ease, box-shadow .18s ease;
+}
+
+.realm3d-flagship-shell .btn:hover,
+.realm3d-flagship-shell .btn:focus-visible {
+  transform: translateY(-1px);
+  border-color: rgba(103, 232, 249, .62);
+  background: linear-gradient(145deg, rgba(8, 47, 73, .92), rgba(30, 41, 59, .84));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08), 0 12px 34px rgba(8, 145, 178, .2);
+  outline: 2px solid transparent;
+}
+
+.realm3d-flagship-shell .btn-primary,
+.realm3d-flagship-shell .realm3d-launch-primary {
+  border-color: rgba(103, 232, 249, .62);
+  background: linear-gradient(118deg, #0891b2 0%, #2563eb 52%, #7c3aed 100%);
+  color: #fff;
+  box-shadow: 0 13px 42px rgba(37, 99, 235, .32), inset 0 1px 0 rgba(255, 255, 255, .24);
+}
+
+.realm3d-flagship-shell .btn-sm {
+  min-height: 2.3rem;
+  padding: .48rem .7rem;
+  border-radius: 11px;
+  font-size: .75rem;
+}
+
+.realm3d-launch-layout {
+  position: relative;
+  width: min(1320px, 100%);
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(300px, .75fr);
+  align-items: center;
+  gap: clamp(1rem, 3vw, 3.25rem);
+  z-index: 1;
+}
+
+.realm3d-launch-card {
+  margin: 0;
+}
+
+.realm3d-launch-actions .btn {
+  min-height: 3.05rem;
+  padding-inline: 1rem;
+}
+
+.realm3d-launch-sidecar {
+  position: relative;
+  padding: 1.05rem;
+  border: 1px solid rgba(125, 211, 252, .2);
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at 88% 8%, rgba(168, 85, 247, .2), transparent 34%),
+    linear-gradient(150deg, rgba(2, 6, 23, .82), rgba(8, 20, 39, .64));
+  box-shadow: 0 28px 100px rgba(0, 0, 0, .46), inset 0 0 45px rgba(34, 211, 238, .04);
+  backdrop-filter: blur(18px);
+}
+
+.realm3d-sidecar-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: .8rem;
+  color: #67e8f9;
+  font-size: .7rem;
+  font-weight: 900;
+  letter-spacing: .13em;
+}
+
+.realm3d-sidecar-head strong {
+  padding: .32rem .52rem;
+  border: 1px solid rgba(167, 139, 250, .28);
+  border-radius: 999px;
+  color: #ddd6fe;
+  background: rgba(76, 29, 149, .25);
+  font-size: .66rem;
+  letter-spacing: .03em;
+}
+
+.realm3d-system-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .58rem;
+}
+
+.realm3d-system-grid article {
+  min-height: 7.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: .24rem;
+  padding: .8rem;
+  border: 1px solid rgba(148, 163, 184, .14);
+  border-radius: 17px;
+  background:
+    linear-gradient(180deg, rgba(15, 23, 42, .32), rgba(15, 23, 42, .84)),
+    radial-gradient(circle at 25% 15%, rgba(34, 211, 238, .16), transparent 50%);
+}
+
+.realm3d-system-grid article:nth-child(2n) {
+  background:
+    linear-gradient(180deg, rgba(15, 23, 42, .32), rgba(15, 23, 42, .84)),
+    radial-gradient(circle at 75% 12%, rgba(168, 85, 247, .18), transparent 50%);
+}
+
+.realm3d-system-grid span {
+  color: #94a3b8;
+  font-size: .65rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.realm3d-system-grid strong {
+  color: #f0f9ff;
+  font-size: .92rem;
+  line-height: 1.2;
+}
+
+.realm3d-system-grid small {
+  color: #93c5fd;
+  font-size: .68rem;
+  line-height: 1.35;
+}
+
+.realm3d-district-track {
+  display: flex;
+  gap: .38rem;
+  margin-top: .75rem;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, #000 88%, transparent);
+}
+
+.realm3d-district-track span {
+  flex: 0 0 auto;
+  padding: .38rem .52rem;
+  border: 1px solid rgba(34, 211, 238, .17);
+  border-radius: 999px;
+  color: #a5f3fc;
+  background: rgba(8, 47, 73, .36);
+  font-size: .6rem;
+  font-weight: 850;
+  letter-spacing: .05em;
+}
+
+.realm3d-sidecar-note {
+  margin: .72rem .15rem .05rem;
+  color: #94a3b8;
+  font-size: .68rem;
+  line-height: 1.45;
+}
+
+.realm3d-command-dock .btn {
+  white-space: nowrap;
+}
+
+.realm3d-world-menu summary {
+  min-height: 2.3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, rgba(15, 23, 42, .92), rgba(8, 20, 39, .78));
+  transition: border-color .18s ease, background .18s ease;
+}
+
+.realm3d-world-menu summary:hover,
+.realm3d-world-menu summary:focus-visible {
+  border-color: rgba(103, 232, 249, .58);
+  background: rgba(8, 47, 73, .8);
+  outline: 2px solid transparent;
+}
+
+.realm3d-world-menu-popover button:hover,
+.realm3d-world-menu-popover button:focus-visible,
+.realm3d-world-menu-popover select:focus-visible {
+  border-color: rgba(103, 232, 249, .52);
+  background: rgba(8, 47, 73, .78);
+  outline: 2px solid transparent;
+}
+
+[data-eon-city-3d-root]:not(.realm3d-intro-dismissed) .realm3d-mobile-controls {
+  display: none !important;
+}
+
+.realm3d-intro-dismissed .realm3d-launch-screen[hidden] {
+  display: none;
+}
+
+.realm3d-world-switching .realm3d-canvas-host::after {
+  content: 'Rebuilding world…';
+  position: absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  z-index: 22;
+  padding: .72rem 1rem;
+  border: 1px solid rgba(103, 232, 249, .28);
+  border-radius: 999px;
+  color: #cffafe;
+  background: rgba(2, 6, 23, .82);
+  box-shadow: 0 12px 50px rgba(0, 0, 0, .42);
+  backdrop-filter: blur(14px);
+  font-size: .76rem;
+  font-weight: 850;
+}
+
+@media (max-width: 1040px) {
+  .realm3d-launch-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(260px, .55fr);
+    gap: 1rem;
+  }
+  .realm3d-system-grid {
+    grid-template-columns: 1fr;
+  }
+  .realm3d-system-grid article {
+    min-height: 5.7rem;
+  }
+  .realm3d-primary-actions .btn[data-realm3d-fullscreen] {
+    display: none;
+  }
+}
+
+@media (max-width: 780px) {
+  .realm3d-launch-screen {
+    overflow: auto;
+    align-items: end;
+    padding: max(.75rem, env(safe-area-inset-top)) .7rem max(.8rem, env(safe-area-inset-bottom));
+  }
+  .realm3d-launch-layout {
+    display: block;
+    width: 100%;
+  }
+  .realm3d-launch-card {
+    max-height: calc(100svh - 1.5rem);
+    overflow: auto;
+    margin: 0;
+    padding: 1.12rem;
+    border-radius: 22px;
+    scrollbar-width: thin;
+  }
+  .realm3d-launch-card h2 {
+    max-width: 10ch;
+    margin-bottom: .65rem;
+    font-size: clamp(2.15rem, 12.5vw, 3.8rem);
+  }
+  .realm3d-launch-card p {
+    margin: .35rem 0;
+    font-size: .9rem;
+    line-height: 1.48;
+  }
+  .realm3d-launch-actions {
+    grid-template-columns: 1fr 1fr;
+    gap: .5rem;
+    margin-top: .9rem;
+  }
+  .realm3d-launch-actions .btn {
+    min-width: 0;
+    min-height: 2.75rem;
+    padding: .56rem .62rem;
+    font-size: .74rem;
+    line-height: 1.2;
+    text-align: center;
+  }
+  .realm3d-launch-actions .realm3d-launch-primary {
+    grid-column: 1 / -1;
+  }
+  .realm3d-launch-proof {
+    gap: .32rem;
+    margin-top: .82rem;
+  }
+  .realm3d-launch-proof span {
+    padding: .28rem .46rem;
+    font-size: .62rem;
+  }
+  .realm3d-launch-sidecar {
+    display: none;
+  }
+  .realm3d-command-dock {
+    gap: .4rem;
+    min-height: 52px;
+    padding: .4rem;
+  }
+  .realm3d-brand-lockup {
+    gap: .42rem;
+  }
+  .realm3d-brand-orb {
+    width: 1.55rem;
+  }
+  .realm3d-brand-lockup strong {
+    font-size: .76rem;
+  }
+  .realm3d-primary-actions {
+    gap: .3rem;
+  }
+  .realm3d-primary-actions .btn {
+    min-height: 2.18rem;
+    padding: .38rem .5rem;
+    font-size: .66rem;
+  }
+  .realm3d-world-menu summary {
+    min-height: 2.18rem;
+    padding: .42rem .5rem;
+    font-size: .66rem;
+  }
+  .realm3d-mobile-controls {
+    padding: .75rem .65rem max(.7rem, env(safe-area-inset-bottom));
+  }
+  .realm3d-stick {
+    width: 5.7rem;
+    height: 5.7rem;
+  }
+  .realm3d-stick span {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+  .realm3d-mobile-actions {
+    margin-bottom: .25rem;
+  }
+  .realm3d-mobile-actions button {
+    min-height: 2.45rem;
+    padding: .45rem .6rem;
+    font-size: .7rem;
+  }
+  .realm3d-game-hud {
+    bottom: 6.6rem;
+    max-width: calc(100% - 1.1rem);
+    padding: .55rem;
+  }
+  .realm3d-status-line {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height: 1.35;
+  }
+}
+
+@media (max-width: 430px) and (max-height: 760px) {
+  .realm3d-launch-card h2 {
+    font-size: 2.2rem;
+  }
+  .realm3d-launch-card p {
+    font-size: .8rem;
+  }
+  .realm3d-launch-proof span:nth-child(2),
+  .realm3d-launch-proof span:nth-child(3),
+  .realm3d-launch-proof span:nth-child(4) {
+    display: none;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 600px) {
+  .realm3d-launch-layout {
+    grid-template-columns: minmax(0, 1.3fr) minmax(250px, .7fr);
+  }
+  .realm3d-launch-sidecar {
+    display: block;
+    max-height: calc(100svh - 1.2rem);
+    overflow: hidden;
+  }
+  .realm3d-system-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .realm3d-system-grid article {
+    min-height: 4.6rem;
+    padding: .55rem;
+  }
+  .realm3d-sidecar-note,
+  .realm3d-district-track {
+    display: none;
+  }
+}
+
+/* W98 Session 3 — authored material depth, living agents, and conservative cinematic grade */
+.realm3d-flagship-shell .realm3d-stage-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(2, 6, 23, .08), transparent 24%, transparent 72%, rgba(2, 6, 23, .2)),
+    radial-gradient(ellipse at center, transparent 56%, rgba(2, 6, 23, .28) 100%);
+  box-shadow: inset 0 0 100px rgba(2, 6, 23, .2);
+  mix-blend-mode: multiply;
+}
+
+.realm3d-flagship-shell[data-quality="low"] .realm3d-stage-wrap::after {
+  background: linear-gradient(180deg, rgba(2, 6, 23, .04), transparent 25%, transparent 80%, rgba(2, 6, 23, .1));
+  box-shadow: none;
+  mix-blend-mode: normal;
+}
+
+.realm3d-agent-status-row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: .65rem;
+  margin: .85rem 0 .45rem;
+  padding: .72rem .78rem;
+  border: 1px solid rgba(125, 211, 252, .22);
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(8, 47, 73, .55), rgba(15, 23, 42, .78));
+}
+
+.realm3d-agent-status-row > div {
+  display: grid;
+  min-width: 0;
+}
+
+.realm3d-agent-status-row strong {
+  color: #f0fdfa;
+  text-transform: capitalize;
+}
+
+.realm3d-agent-status-row small {
+  overflow: hidden;
+  color: #93c5fd;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.realm3d-agent-status-row b {
+  color: #a7f3d0;
+  font-size: .78rem;
+}
+
+.realm3d-agent-state-dot {
+  width: .72rem;
+  height: .72rem;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 0 .28rem rgba(52, 211, 153, .12), 0 0 18px rgba(52, 211, 153, .65);
+}
+
+.realm3d-agent-npc-dialogue[data-agent-state="setup-needed"] .realm3d-agent-state-dot {
+  background: #f59e0b;
+  box-shadow: 0 0 0 .28rem rgba(245, 158, 11, .12), 0 0 18px rgba(245, 158, 11, .58);
+}
+
+.realm3d-agent-progress {
+  height: .45rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, .9);
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, .15);
+}
+
+.realm3d-agent-progress i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #22d3ee, #34d399, #a855f7);
+  box-shadow: 0 0 18px rgba(34, 211, 238, .42);
+}
+
+.realm3d-agent-activity {
+  margin: .48rem 0 .75rem !important;
+  color: #bae6fd !important;
+  font-size: .82rem;
+}
+
+.realm3d-npc-topic-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+  margin: .8rem 0 .55rem;
+}
+
+.realm3d-npc-topic-list button {
+  border: 1px solid rgba(103, 232, 249, .24);
+  border-radius: 999px;
+  padding: .48rem .7rem;
+  color: #dbeafe;
+  background: rgba(8, 47, 73, .42);
+  font: inherit;
+  font-size: .75rem;
+  font-weight: 760;
+  cursor: pointer;
+}
+
+.realm3d-npc-topic-list button:hover,
+.realm3d-npc-topic-list button:focus-visible,
+.realm3d-npc-topic-list button[aria-pressed="true"] {
+  border-color: rgba(52, 211, 153, .64);
+  color: #ecfdf5;
+  background: rgba(6, 78, 59, .66);
+  outline: 2px solid transparent;
+}
+
+.realm3d-npc-topic-reply {
+  min-height: 4.4rem;
+  padding: .78rem .85rem;
+  border: 1px solid rgba(52, 211, 153, .2);
+  border-radius: 16px;
+  color: #d1fae5;
+  background:
+    radial-gradient(circle at top right, rgba(52, 211, 153, .12), transparent 42%),
+    rgba(2, 6, 23, .7);
+  line-height: 1.55;
+}
+
+.realm3d-flagship-shell[data-guidance-target] .realm3d-route-chip {
+  border-color: rgba(52, 211, 153, .58);
+  color: #d1fae5;
+  background: rgba(6, 78, 59, .72);
+  box-shadow: 0 0 24px rgba(52, 211, 153, .2);
+}
+
+@media (max-width: 560px) {
+  .realm3d-agent-status-row {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+  .realm3d-agent-status-row b {
+    grid-column: 2;
+  }
+  .realm3d-npc-topic-list {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .realm3d-npc-topic-list button {
+    border-radius: 12px;
+    text-align: left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .realm3d-agent-progress i,
+  .realm3d-flagship-shell[data-guidance-target] .realm3d-route-chip {
+    transition: none;
+  }
+}
+
+/* W98 Session 3 — intent-first public launch scene. */
+.realm3d-preflight {
+  position: relative;
+  display: grid;
+  min-height: 100svh;
+  place-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  color: #eaf9ff;
+  background:
+    radial-gradient(circle at 72% 20%, rgba(34, 211, 238, .2), transparent 28%),
+    radial-gradient(circle at 25% 72%, rgba(168, 85, 247, .18), transparent 31%),
+    linear-gradient(145deg, #020617 0%, #07152f 52%, #030712 100%);
+}
+
+.realm3d-preflight::before,
+.realm3d-preflight::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.realm3d-preflight::before {
+  opacity: .32;
+  background-image:
+    linear-gradient(rgba(34, 211, 238, .18) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 211, 238, .18) 1px, transparent 1px);
+  background-size: 64px 64px;
+  transform: perspective(520px) rotateX(64deg) translateY(52%);
+  transform-origin: bottom;
+  mask-image: linear-gradient(to top, #000, transparent 82%);
+}
+
+.realm3d-preflight::after {
+  background: linear-gradient(180deg, rgba(2, 6, 23, .05), rgba(2, 6, 23, .72));
+  z-index: -1;
+}
+
+.realm3d-preflight-sky {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.realm3d-preflight-orb {
+  position: absolute;
+  width: clamp(14rem, 28vw, 28rem);
+  aspect-ratio: 1;
+  right: 8%;
+  top: 8%;
+  border-radius: 50%;
+  border: 1px solid rgba(103, 232, 249, .44);
+  box-shadow: 0 0 80px rgba(34, 211, 238, .24), inset 0 0 56px rgba(168, 85, 247, .18);
+  background: radial-gradient(circle at 34% 28%, rgba(224, 242, 254, .9), rgba(34, 211, 238, .22) 11%, rgba(59, 130, 246, .08) 46%, transparent 68%);
+  animation: realm3d-preflight-float 9s ease-in-out infinite;
+}
+
+.realm3d-preflight-tower {
+  position: absolute;
+  bottom: 12%;
+  width: clamp(5rem, 9vw, 9rem);
+  border: 1px solid rgba(103, 232, 249, .24);
+  border-radius: 18px 18px 4px 4px;
+  background:
+    repeating-linear-gradient(180deg, rgba(34, 211, 238, .5) 0 2px, transparent 2px 22px),
+    linear-gradient(110deg, rgba(15, 23, 42, .92), rgba(30, 41, 59, .4));
+  box-shadow: 0 0 40px rgba(34, 211, 238, .12);
+  transform: skewY(-2deg);
+}
+.realm3d-preflight-tower-a { right: 8%; height: 34%; }
+.realm3d-preflight-tower-b { right: 20%; height: 22%; }
+.realm3d-preflight-tower-c { left: 5%; height: 18%; opacity: .6; }
+.realm3d-preflight-road {
+  position: absolute;
+  left: 50%;
+  bottom: -12%;
+  width: min(74rem, 92vw);
+  height: 54%;
+  transform: translateX(-50%) perspective(480px) rotateX(68deg);
+  background: linear-gradient(90deg, transparent 49.6%, rgba(34, 211, 238, .82) 49.8% 50.2%, transparent 50.4%), linear-gradient(#0b1225, #020617);
+  border: 1px solid rgba(34, 211, 238, .18);
+}
+
+.realm3d-preflight-content {
+  width: min(44rem, calc(100% - 2rem));
+  margin-right: min(28vw, 24rem);
+  padding: clamp(1.4rem, 4vw, 3rem);
+  border: 1px solid rgba(125, 211, 252, .24);
+  border-radius: 28px;
+  background: linear-gradient(145deg, rgba(4, 12, 30, .88), rgba(8, 22, 48, .7));
+  box-shadow: 0 32px 100px rgba(0, 0, 0, .44), inset 0 1px rgba(255, 255, 255, .08);
+  backdrop-filter: blur(18px);
+}
+
+.realm3d-preflight-kicker {
+  display: inline-flex;
+  padding: .38rem .72rem;
+  border: 1px solid rgba(34, 211, 238, .32);
+  border-radius: 999px;
+  color: #a5f3fc;
+  background: rgba(8, 145, 178, .12);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.realm3d-preflight h1 {
+  max-width: 12ch;
+  margin: 1rem 0 .8rem;
+  font-size: clamp(2.2rem, 6vw, 5.1rem);
+  line-height: .96;
+  letter-spacing: -.055em;
+  text-wrap: balance;
+  background: linear-gradient(110deg, #fff, #a5f3fc 48%, #c4b5fd);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.realm3d-preflight-content > p { max-width: 61ch; color: #bdd7e7; line-height: 1.65; }
+.realm3d-preflight-actions { display: flex; flex-wrap: wrap; gap: .72rem; margin-top: 1.35rem; }
+.realm3d-preflight-primary,
+.realm3d-preflight-secondary {
+  min-height: 3rem;
+  padding: .78rem 1.15rem;
+  border-radius: 12px;
+  border: 1px solid rgba(103, 232, 249, .42);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.realm3d-preflight-primary { color: #02131c; background: linear-gradient(115deg, #67e8f9, #60a5fa); box-shadow: 0 14px 36px rgba(34, 211, 238, .22); }
+.realm3d-preflight-secondary { color: #e9d5ff; background: rgba(88, 28, 135, .2); }
+.realm3d-preflight-primary:hover,
+.realm3d-preflight-secondary:hover { transform: translateY(-2px); border-color: #e0f2fe; }
+.realm3d-preflight-primary:focus-visible,
+.realm3d-preflight-secondary:focus-visible { outline: 3px solid #f8fafc; outline-offset: 3px; }
+.realm3d-preflight-proof { display: flex; flex-wrap: wrap; gap: .55rem 1rem; margin-top: 1.25rem; color: #86efac; font-size: .8rem; font-weight: 700; }
+.realm3d-preflight-status { min-height: 1.5rem; margin: .75rem 0 0; color: #93c5fd !important; font-size: .78rem; }
+[data-eon-city-3d-root][data-realm-loading="true"] .realm3d-preflight-primary,
+[data-eon-city-3d-root][data-realm-loading="true"] .realm3d-preflight-secondary { opacity: .58; pointer-events: none; }
+
+@keyframes realm3d-preflight-float { 50% { transform: translate3d(0, -12px, 0) scale(1.025); } }
+
+@media (max-width: 860px) {
+  .realm3d-preflight-content { margin: 0; }
+  .realm3d-preflight-orb { right: -12%; top: 4%; opacity: .72; }
+  .realm3d-preflight-tower-a { right: -2%; opacity: .48; }
+  .realm3d-preflight-tower-b { right: 18%; opacity: .36; }
+  .realm3d-preflight h1 { font-size: clamp(2.35rem, 12vw, 4.4rem); }
+}
+
+@media (max-width: 520px) {
+  .realm3d-preflight { align-items: end; padding: 1rem 0 5.5rem; }
+  .realm3d-preflight-content { padding: 1.2rem; border-radius: 22px; }
+  .realm3d-preflight-actions { display: grid; }
+  .realm3d-preflight-primary, .realm3d-preflight-secondary { width: 100%; }
+  .realm3d-preflight-proof { display: grid; gap: .35rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .realm3d-preflight-orb { animation: none; }
+}
+
+/* W98 Session 7 — enterable landmark interiors and focus-safe native stations */
+.realm3d-inside-landmark .realm3d-minimap {
+  opacity: .3;
+  pointer-events: none;
+  filter: saturate(.5);
+}
+.realm3d-inside-landmark .realm3d-route-chip {
+  border-color: rgba(52, 211, 153, .54);
+  background: linear-gradient(135deg, rgba(2, 6, 23, .94), rgba(6, 78, 59, .72));
+  color: #d1fae5;
+}
+.realm3d-panel-active .realm3d-crosshair,
+.realm3d-screen-focused .realm3d-crosshair {
+  opacity: 0;
+}
+.realm3d-panel-active .realm3d-mobile-controls,
+.realm3d-screen-focused .realm3d-mobile-controls {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.realm3d-app-screen-card {
+  width: min(1040px, calc(100vw - 2rem));
+  max-height: min(88svh, 900px);
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.realm3d-app-screen-card:focus {
+  outline: 2px solid rgba(103, 232, 249, .72);
+  outline-offset: 3px;
+}
+.realm3d-market-preview,
+.realm3d-template-picker {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .75rem;
+}
+.realm3d-market-preview article,
+.realm3d-template-picker button {
+  min-width: 0;
+  border: 1px solid rgba(125, 211, 252, .25);
+  border-radius: 18px;
+  padding: .9rem;
+  background: linear-gradient(145deg, rgba(15, 23, 42, .94), rgba(2, 6, 23, .86));
+  color: #e0f2fe;
+  text-align: left;
+  box-shadow: inset 0 1px rgba(255, 255, 255, .04);
+}
+.realm3d-market-preview article span,
+.realm3d-template-picker button span {
+  display: block;
+  font-size: 1.45rem;
+  margin-bottom: .45rem;
+}
+.realm3d-market-preview article strong,
+.realm3d-template-picker button strong {
+  display: block;
+  line-height: 1.2;
+}
+.realm3d-market-preview article small,
+.realm3d-template-picker button small {
+  display: block;
+  margin-top: .4rem;
+  color: #94a3b8;
+  line-height: 1.35;
+}
+.realm3d-template-picker button {
+  cursor: pointer;
+  transition: border-color .16s ease, transform .16s ease, background .16s ease;
+}
+.realm3d-template-picker button:hover,
+.realm3d-template-picker button:focus-visible,
+.realm3d-template-picker button[aria-pressed="true"] {
+  border-color: rgba(192, 132, 252, .8);
+  background: linear-gradient(145deg, rgba(76, 29, 149, .62), rgba(15, 23, 42, .94));
+  transform: translateY(-1px);
+  outline: none;
+}
+.realm3d-native-widget[data-native-widget="vault-summary"] strong,
+.realm3d-native-widget[data-native-widget="provider-health"] strong {
+  color: #bbf7d0;
+}
+.realm3d-screen-focused .realm3d-screen-focus-bar,
+.realm3d-panel-active .realm3d-screen-focus-bar {
+  z-index: 45;
+}
+@media (max-width: 760px) {
+  .realm3d-app-screen-card {
+    width: calc(100vw - 1rem);
+    max-height: calc(100svh - 1rem);
+    border-radius: 20px;
+  }
+  .realm3d-market-preview,
+  .realm3d-template-picker {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 430px) {
+  .realm3d-market-preview,
+  .realm3d-template-picker {
+    grid-template-columns: 1fr;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .realm3d-template-picker button {
+    transition: none;
+  }
+}
+
+/* W98 Session 8 — guided missions, local progression, and mobile objective HUD */
+.realm3d-mission-hud {
+  position: absolute;
+  z-index: 36;
+  top: 8.9rem;
+  left: .85rem;
+  width: min(23rem, calc(100% - 11rem));
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: .45rem;
+  align-items: stretch;
+  pointer-events: auto;
+}
+.realm3d-mission-summary,
+.realm3d-mission-guide,
+.realm3d-mission-actions button,
+.realm3d-mission-catalog button {
+  border: 1px solid rgba(103, 232, 249, .3);
+  color: #e0f2fe;
+  font: inherit;
+  cursor: pointer;
+}
+.realm3d-mission-summary {
+  position: relative;
+  min-width: 0;
+  display: grid;
+  gap: .18rem;
+  padding: .7rem .8rem .72rem;
+  border-radius: 17px;
+  text-align: left;
+  background: linear-gradient(145deg, rgba(2, 6, 23, .94), rgba(8, 47, 73, .87));
+  box-shadow: 0 18px 50px rgba(2, 6, 23, .42), inset 0 1px rgba(255, 255, 255, .05);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+.realm3d-mission-summary:hover,
+.realm3d-mission-summary:focus-visible,
+.realm3d-mission-guide:hover,
+.realm3d-mission-guide:focus-visible {
+  border-color: rgba(165, 243, 252, .78);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(34, 211, 238, .16), 0 18px 50px rgba(2, 6, 23, .42);
+}
+.realm3d-mission-kicker {
+  color: #67e8f9;
+  font-size: .61rem;
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.realm3d-mission-summary strong {
+  overflow: hidden;
+  color: #f8fafc;
+  font-size: .88rem;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.realm3d-mission-summary small {
+  display: block;
+  overflow: hidden;
+  color: #a5c5d7;
+  font-size: .7rem;
+  line-height: 1.3;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.realm3d-mission-progress {
+  height: .23rem;
+  margin-top: .32rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, .2);
+}
+.realm3d-mission-progress i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #22d3ee, #34d399, #a78bfa);
+  box-shadow: 0 0 12px rgba(34, 211, 238, .55);
+  transition: width .25s ease;
+}
+.realm3d-mission-count {
+  position: absolute;
+  right: .72rem;
+  top: .66rem;
+  color: #94a3b8;
+  font-size: .62rem;
+  font-weight: 800;
+}
+.realm3d-mission-guide {
+  min-width: 4.8rem;
+  padding: .55rem .65rem;
+  border-radius: 16px;
+  background: linear-gradient(145deg, rgba(6, 95, 70, .94), rgba(8, 47, 73, .94));
+  font-size: .72rem;
+  font-weight: 900;
+}
+.realm3d-mission-drawer {
+  position: absolute;
+  z-index: 48;
+  top: 8.75rem;
+  left: .75rem;
+  width: min(30rem, calc(100% - 1.5rem));
+  max-height: calc(100% - 9.5rem);
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: 1rem;
+  border: 1px solid rgba(103, 232, 249, .34);
+  border-radius: 24px;
+  background: linear-gradient(155deg, rgba(2, 6, 23, .985), rgba(8, 47, 73, .95));
+  color: #e2e8f0;
+  box-shadow: 0 30px 110px rgba(0, 0, 0, .65), inset 0 1px rgba(255, 255, 255, .06);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  pointer-events: auto;
+}
+.realm3d-mission-drawer[hidden] { display: none; }
+
+.realm3d-fullscreen .realm3d-mission-hud { top: .85rem; }
+.realm3d-fullscreen .realm3d-mission-drawer { top: .75rem; max-height: calc(100% - 1.5rem); }
+.realm3d-mission-drawer-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.realm3d-mission-drawer-head span {
+  color: #67e8f9;
+  font-size: .62rem;
+  font-weight: 900;
+  letter-spacing: .12em;
+}
+.realm3d-mission-drawer-head h3 { margin: .22rem 0 0; font-size: 1.15rem; }
+.realm3d-mission-drawer-head > button {
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 1px solid rgba(148, 163, 184, .3);
+  border-radius: 999px;
+  background: rgba(15, 23, 42, .9);
+  color: #f8fafc;
+  font-size: 1.35rem;
+  cursor: pointer;
+}
+.realm3d-mission-summary-copy {
+  margin: .8rem 0;
+  color: #b9d6e5;
+  font-size: .78rem;
+  line-height: 1.5;
+}
+.realm3d-objective-list {
+  display: grid;
+  gap: .46rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.realm3d-objective-list li {
+  display: grid;
+  grid-template-columns: 1.8rem minmax(0, 1fr);
+  gap: .58rem;
+  align-items: start;
+  padding: .6rem;
+  border: 1px solid rgba(148, 163, 184, .16);
+  border-radius: 14px;
+  background: rgba(15, 23, 42, .56);
+}
+.realm3d-objective-list li > span {
+  display: grid;
+  width: 1.65rem;
+  height: 1.65rem;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(30, 41, 59, .95);
+  color: #94a3b8;
+  font-size: .72rem;
+  font-weight: 900;
+}
+.realm3d-objective-list li strong,
+.realm3d-objective-list li small { display: block; }
+.realm3d-objective-list li strong { color: #e2e8f0; font-size: .78rem; }
+.realm3d-objective-list li small { margin-top: .2rem; color: #94a3b8; font-size: .68rem; line-height: 1.35; }
+.realm3d-objective-list li[data-current="true"] {
+  border-color: rgba(103, 232, 249, .58);
+  background: linear-gradient(135deg, rgba(8, 145, 178, .18), rgba(15, 23, 42, .76));
+  box-shadow: inset 3px 0 #22d3ee;
+}
+.realm3d-objective-list li[data-objective-state="completed"] > span { background: rgba(5, 150, 105, .26); color: #86efac; }
+.realm3d-objective-list li[data-objective-state="skipped"] > span { background: rgba(245, 158, 11, .2); color: #fde68a; }
+.realm3d-mission-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+  margin: .8rem 0;
+}
+.realm3d-mission-actions button {
+  min-height: 2.25rem;
+  padding: .48rem .65rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, .88);
+  font-size: .68rem;
+  font-weight: 800;
+}
+.realm3d-mission-actions button:first-child { background: rgba(6, 95, 70, .68); }
+.realm3d-mission-catalog,
+.realm3d-activity-list {
+  display: grid;
+  gap: .42rem;
+  margin-top: .85rem;
+  padding-top: .75rem;
+  border-top: 1px solid rgba(148, 163, 184, .15);
+}
+.realm3d-mission-catalog > strong,
+.realm3d-activity-list > strong { color: #c4b5fd; font-size: .7rem; letter-spacing: .06em; text-transform: uppercase; }
+.realm3d-mission-catalog button,
+.realm3d-activity-list article {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .7rem;
+  min-width: 0;
+  padding: .55rem .65rem;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, .62);
+  text-align: left;
+}
+.realm3d-mission-catalog button[aria-current="true"] { border-color: rgba(167, 139, 250, .65); background: rgba(76, 29, 149, .26); }
+.realm3d-mission-catalog button span,
+.realm3d-mission-catalog button small,
+.realm3d-activity-list b,
+.realm3d-activity-list small { display: block; }
+.realm3d-mission-catalog button span,
+.realm3d-activity-list b { color: #e2e8f0; font-size: .72rem; }
+.realm3d-mission-catalog button small,
+.realm3d-activity-list small { color: #94a3b8; font-size: .62rem; }
+.realm3d-activity-list article { justify-content: flex-start; border: 1px solid rgba(148, 163, 184, .12); }
+.realm3d-activity-list article > span { color: #86efac; font-weight: 900; }
+.realm3d-mission-privacy {
+  margin: .85rem 0 0;
+  padding: .65rem;
+  border-radius: 12px;
+  background: rgba(6, 78, 59, .18);
+  color: #a7f3d0;
+  font-size: .62rem;
+  line-height: 1.45;
+}
+.realm3d-mission-drawer-active .realm3d-crosshair,
+.realm3d-mission-drawer-active .realm3d-mobile-controls { opacity: 0; visibility: hidden; pointer-events: none; }
+.realm3d-mission-drawer-active .realm3d-mission-hud { opacity: 0; pointer-events: none; }
+.realm3d-panel-active .realm3d-mission-hud,
+.realm3d-screen-focused .realm3d-mission-hud { opacity: .28; pointer-events: none; }
+
+@media (max-width: 760px) {
+  .realm3d-mission-hud {
+    top: .48rem;
+    left: .48rem;
+    width: calc(100% - .96rem);
+    padding-right: 8.4rem;
+  }
+  .realm3d-mission-summary { padding: .55rem .65rem .62rem; border-radius: 14px; }
+  .realm3d-mission-summary small { display: none; }
+  .realm3d-mission-summary strong { font-size: .78rem; max-width: calc(100vw - 13rem); }
+  .realm3d-mission-guide { min-width: 4.2rem; border-radius: 14px; }
+  .realm3d-mission-count { top: .52rem; }
+  .realm3d-mission-drawer {
+    position: fixed;
+    inset: .45rem;
+    width: auto;
+    max-height: calc(100svh - .9rem);
+    border-radius: 20px;
+    padding: .85rem;
+  }
+  .realm3d-objective-list { gap: .35rem; }
+  .realm3d-objective-list li { padding: .5rem; }
+}
+@media (max-width: 430px) {
+  .realm3d-mission-hud { padding-right: 6.1rem; grid-template-columns: minmax(0, 1fr) auto; }
+  .realm3d-mission-guide { min-width: 3.7rem; padding-inline: .45rem; font-size: .62rem; }
+  .realm3d-mission-kicker { font-size: .52rem; }
+  .realm3d-mission-summary strong { max-width: calc(100vw - 10.5rem); font-size: .72rem; }
+  .realm3d-mission-count { display: none; }
+  .realm3d-mission-actions { display: grid; grid-template-columns: 1fr 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .realm3d-mission-progress i { transition: none; }
+}
+
+/* W98 Session 9 — opt-in procedural spatial audio and reduced-sensory controls */
+.realm3d-audio-toggle[data-audio-state="on"] {
+  border-color: rgba(52, 211, 153, .62);
+  background: linear-gradient(145deg, rgba(6, 95, 70, .9), rgba(8, 47, 73, .82));
+  color: #d1fae5;
+  box-shadow: 0 0 0 1px rgba(52, 211, 153, .14), 0 0 20px rgba(16, 185, 129, .12);
+}
+.realm3d-audio-toggle[data-audio-state="muted"] {
+  border-color: rgba(251, 191, 36, .42);
+  color: #fde68a;
+}
+.realm3d-sound-launch {
+  border-color: rgba(103, 232, 249, .3) !important;
+}
+.realm3d-audio-settings {
+  display: grid;
+  gap: .5rem;
+  margin: .18rem 0;
+  padding: .68rem;
+  border: 1px solid rgba(103, 232, 249, .18);
+  border-radius: 12px;
+  background: linear-gradient(145deg, rgba(8, 47, 73, .28), rgba(15, 23, 42, .74));
+}
+.realm3d-audio-settings strong {
+  color: #cffafe;
+  font-size: .72rem;
+  letter-spacing: .04em;
+}
+.realm3d-audio-settings label {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: .55rem;
+  align-items: center;
+  color: #cbd5e1;
+  font-size: .68rem;
+}
+.realm3d-audio-settings input[type="range"] {
+  width: 100%;
+  accent-color: #22d3ee;
+}
+.realm3d-audio-settings .realm3d-audio-check {
+  grid-template-columns: auto minmax(0, 1fr);
+  justify-content: start;
+}
+.realm3d-audio-settings input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  accent-color: #34d399;
+}
+.realm3d-audio-settings small {
+  color: #94a3b8;
+  font-size: .61rem;
+  line-height: 1.42;
+}
+[data-eon-city-3d-root][data-audio-enabled="true"] .realm3d-brand-orb {
+  animation: realm3d-audio-orb 2.8s ease-in-out infinite;
+}
+@keyframes realm3d-audio-orb {
+  0%, 100% { box-shadow: 0 0 20px rgba(34, 211, 238, .52); }
+  50% { box-shadow: 0 0 30px rgba(52, 211, 153, .68), 0 0 54px rgba(34, 211, 238, .2); }
+}
+@media (max-width: 1040px) {
+  .realm3d-primary-actions .realm3d-audio-toggle { display: inline-flex; }
+}
+@media (max-width: 780px) {
+  .realm3d-primary-actions .realm3d-audio-toggle {
+    min-width: 2.45rem;
+    max-width: 5.9rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .realm3d-sound-launch { grid-column: 1 / -1; }
+  .realm3d-world-menu-popover {
+    position: fixed;
+    left: max(.55rem, env(safe-area-inset-left));
+    right: max(.55rem, env(safe-area-inset-right));
+    top: max(4.65rem, calc(env(safe-area-inset-top) + 4.15rem));
+    width: auto;
+    max-height: min(78svh, 620px);
+    overflow: auto;
+    overscroll-behavior: contain;
+  }
+}
+@media (max-width: 430px) {
+  .realm3d-primary-actions .realm3d-audio-toggle { max-width: 4.8rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-eon-city-3d-root][data-audio-enabled="true"] .realm3d-brand-orb { animation: none; }
+}
+
+/* W98 Session 10 — mobile, controller, accessibility, and comfort */
+.realm3d-sr-live {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.realm3d-comfort-panel {
+  margin: .18rem 0;
+  border: 1px solid rgba(167, 139, 250, .24);
+  border-radius: 14px;
+  background: linear-gradient(145deg, rgba(46, 16, 101, .22), rgba(15, 23, 42, .82));
+  color: #e2e8f0;
+}
+.realm3d-comfort-panel > summary {
+  min-height: 2.4rem;
+  display: flex;
+  align-items: center;
+  padding: .62rem .72rem;
+  cursor: pointer;
+  color: #ddd6fe;
+  font-size: .72rem;
+  font-weight: 900;
+  letter-spacing: .03em;
+  list-style-position: inside;
+}
+.realm3d-comfort-panel[open] > summary {
+  border-bottom: 1px solid rgba(167, 139, 250, .18);
+}
+.realm3d-comfort-grid,
+.realm3d-comfort-checks,
+.realm3d-controller-map {
+  display: grid;
+  gap: .55rem;
+  padding: .72rem;
+}
+.realm3d-comfort-grid label {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: .25rem .5rem;
+  align-items: center;
+  color: #cbd5e1;
+  font-size: .67rem;
+}
+.realm3d-comfort-grid output {
+  color: #a5f3fc;
+  font-variant-numeric: tabular-nums;
+  font-weight: 850;
+}
+.realm3d-comfort-grid input[type="range"] {
+  grid-column: 1 / -1;
+  width: 100%;
+  min-height: 1.4rem;
+  accent-color: #8b5cf6;
+}
+.realm3d-comfort-checks {
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid rgba(148, 163, 184, .12);
+  border-bottom: 1px solid rgba(148, 163, 184, .12);
+}
+.realm3d-comfort-checks label {
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+  min-height: 2rem;
+  color: #cbd5e1;
+  font-size: .64rem;
+  line-height: 1.3;
+}
+.realm3d-comfort-checks input {
+  flex: 0 0 auto;
+  width: 1.05rem;
+  height: 1.05rem;
+  accent-color: #34d399;
+}
+.realm3d-controller-map {
+  grid-template-columns: 1fr 1fr;
+}
+.realm3d-controller-map > strong,
+.realm3d-controller-map > small {
+  grid-column: 1 / -1;
+}
+.realm3d-controller-map > strong {
+  color: #c4b5fd;
+  font-size: .7rem;
+}
+.realm3d-controller-map > small {
+  color: #94a3b8;
+  font-size: .6rem;
+  line-height: 1.35;
+}
+.realm3d-controller-map label {
+  display: grid;
+  gap: .28rem;
+  color: #cbd5e1;
+  font-size: .62rem;
+}
+.realm3d-controller-map select,
+.realm3d-comfort-actions button,
+.realm3d-portrait-guide button {
+  min-height: 2.15rem;
+  border: 1px solid rgba(148, 163, 184, .26);
+  border-radius: 10px;
+  padding: .42rem .5rem;
+  background: rgba(15, 23, 42, .9);
+  color: #f8fafc;
+  font: inherit;
+}
+.realm3d-controller-map select:focus-visible,
+.realm3d-comfort-actions button:focus-visible,
+.realm3d-portrait-guide button:focus-visible {
+  outline: 3px solid rgba(103, 232, 249, .68);
+  outline-offset: 2px;
+}
+.realm3d-comfort-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .5rem;
+  padding: 0 .72rem .72rem;
+}
+.realm3d-comfort-actions button {
+  cursor: pointer;
+  font-size: .63rem;
+  font-weight: 850;
+}
+.realm3d-comfort-vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(circle at center, transparent 47%, rgba(2, 6, 23, .32) 73%, rgba(2, 6, 23, .78) 100%);
+  transition: opacity 120ms linear;
+}
+.realm3d-portrait-guide {
+  position: absolute;
+  z-index: 24;
+  left: 50%;
+  bottom: 7.1rem;
+  width: min(92%, 360px);
+  transform: translateX(-50%);
+  padding: .75rem;
+  border: 1px solid rgba(103, 232, 249, .4);
+  border-radius: 18px;
+  background: rgba(2, 6, 23, .94);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, .48);
+  color: #e0f2fe;
+  backdrop-filter: blur(16px);
+}
+.realm3d-portrait-guide[hidden] { display: none; }
+.realm3d-portrait-guide strong,
+.realm3d-portrait-guide span { display: block; }
+.realm3d-portrait-guide strong { color: #cffafe; font-size: .82rem; }
+.realm3d-portrait-guide span { margin-top: .25rem; color: #cbd5e1; font-size: .68rem; line-height: 1.4; }
+.realm3d-portrait-guide > div { display: grid; grid-template-columns: 1fr 1fr; gap: .45rem; margin-top: .6rem; }
+.realm3d-portrait-guide button { cursor: pointer; font-size: .65rem; font-weight: 850; }
+
+.realm3d-stick {
+  position: relative;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .03), 0 12px 34px rgba(0, 0, 0, .28);
+  backdrop-filter: blur(10px);
+}
+.realm3d-stick small {
+  position: absolute;
+  bottom: .42rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(226, 232, 240, .7);
+  font-size: .53rem;
+  font-weight: 900;
+  letter-spacing: .12em;
+}
+.realm3d-mobile-actions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(3.35rem, auto));
+}
+.realm3d-mobile-actions button {
+  min-width: 3.35rem;
+  min-height: 3rem;
+  touch-action: manipulation;
+}
+.realm3d-mobile-left-handed .realm3d-stick-move { order: 3; }
+.realm3d-mobile-left-handed .realm3d-mobile-actions { order: 2; }
+.realm3d-mobile-left-handed .realm3d-stick-look { order: 1; }
+
+[data-eon-city-3d-root][data-high-contrast="true"] .realm3d-game-hud,
+[data-eon-city-3d-root][data-high-contrast="true"] .realm3d-mission-summary,
+[data-eon-city-3d-root][data-high-contrast="true"] .realm3d-world-menu-popover {
+  color: #fff;
+  background: #020617;
+  border-color: #fff;
+  box-shadow: 0 0 0 2px #000, 0 0 0 4px #fff;
+}
+[data-eon-city-3d-root][data-high-contrast="true"] .realm3d-status-line,
+[data-eon-city-3d-root][data-high-contrast="true"] .realm3d-telemetry-row,
+[data-eon-city-3d-root][data-high-contrast="true"] .realm3d-route-chip { color: #fff; }
+[data-eon-city-3d-root] .realm3d-status-line { font-size: calc(.82rem * var(--realm3d-ui-scale, 1)); }
+[data-eon-city-3d-root] .realm3d-telemetry-row,
+[data-eon-city-3d-root] .realm3d-route-chip,
+[data-eon-city-3d-root] .realm3d-scene-chip { font-size: calc(.7rem * var(--realm3d-ui-scale, 1)); }
+[data-eon-city-3d-root] .realm3d-mobile-actions button { font-size: calc(.7rem * var(--realm3d-ui-scale, 1)); }
+
+[data-eon-city-3d-root][data-reduced-motion="true"] *,
+[data-eon-city-3d-root][data-reduced-motion="true"] *::before,
+[data-eon-city-3d-root][data-reduced-motion="true"] *::after {
+  animation-duration: .001ms !important;
+  animation-iteration-count: 1 !important;
+  scroll-behavior: auto !important;
+  transition-duration: .001ms !important;
+}
+[data-eon-city-3d-root][data-reduced-motion="true"] .realm3d-comfort-vignette,
+[data-eon-city-3d-root][data-comfort-vignette="false"] .realm3d-comfort-vignette { display: none; }
+
+.realm3d-basic-device .realm3d-minimap,
+.realm3d-basic-device .realm3d-crosshair,
+.realm3d-basic-device .realm3d-telemetry-row,
+.realm3d-basic-device .realm3d-scene-chip { display: none !important; }
+.realm3d-basic-device .realm3d-hud { backdrop-filter: none; box-shadow: none; }
+.realm3d-basic-device .realm3d-brand-orb { animation: none !important; box-shadow: none; }
+.realm3d-basic-device .realm3d-route-chip { max-width: 100%; }
+
+@media (orientation: portrait) and (max-width: 700px) {
+  [data-eon-city-3d-root][data-portrait-mode="true"] .realm3d-command-dock {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+  [data-eon-city-3d-root][data-portrait-mode="true"] .realm3d-primary-actions {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+  }
+  [data-eon-city-3d-root][data-portrait-mode="true"] .realm3d-primary-actions .btn {
+    min-width: 0;
+    white-space: normal;
+    line-height: 1.15;
+  }
+  [data-eon-city-3d-root][data-portrait-mode="true"] .realm3d-stage-wrap,
+  [data-eon-city-3d-root][data-portrait-mode="true"] .realm3d-canvas-host { min-height: 72svh; }
+  [data-eon-city-3d-root][data-portrait-mode="true"] .realm3d-mobile-controls {
+    gap: .4rem;
+    padding-inline: .45rem;
+  }
+  [data-eon-city-3d-root][data-portrait-mode="true"] .realm3d-stick {
+    width: 5.15rem;
+    height: 5.15rem;
+  }
+  [data-eon-city-3d-root][data-portrait-mode="true"] .realm3d-mobile-actions {
+    grid-template-columns: 1fr;
+    gap: .28rem;
+  }
+  [data-eon-city-3d-root][data-portrait-mode="true"] .realm3d-mobile-actions button {
+    min-width: 3.55rem;
+    min-height: 2.15rem;
+    padding: .32rem .42rem;
+    font-size: .61rem;
+  }
+  [data-eon-city-3d-root][data-portrait-mode="true"] .realm3d-game-hud {
+    bottom: 6.05rem;
+    left: .45rem;
+    right: .45rem;
+    max-width: none;
+  }
+  [data-eon-city-3d-root][data-portrait-mode="true"] .realm3d-telemetry-row,
+  [data-eon-city-3d-root][data-portrait-mode="true"] .realm3d-scene-chip { display: none; }
+}
+
+@media (max-width: 780px) {
+  .realm3d-comfort-checks,
+  .realm3d-controller-map { grid-template-columns: 1fr; }
+  .realm3d-controller-map > strong,
+  .realm3d-controller-map > small { grid-column: 1; }
+  .realm3d-comfort-actions { grid-template-columns: 1fr; }
+  .realm3d-world-menu-popover { padding-bottom: max(.7rem, env(safe-area-inset-bottom)); }
+}
+
+@media (max-width: 430px) {
+  .realm3d-mobile-actions { grid-template-columns: 1fr; gap: .25rem; }
+  .realm3d-mobile-actions button { min-height: 2.15rem; padding: .3rem .42rem; }
+  .realm3d-stick { width: 5.1rem; height: 5.1rem; }
+}
+
+/* W98 Session 10: short-landscape phones must remain a true one-viewport game surface. */
+@media (orientation: landscape) and (max-height: 620px) {
+  body.realm3d-flagship-mode {
+    overflow: hidden;
+  }
+  body.realm3d-flagship-mode .site-header,
+  body.realm3d-flagship-mode .site-footer {
+    display: none !important;
+  }
+  body.realm3d-flagship-mode .realm3d-hero,
+  body.realm3d-flagship-mode .realm3d-hero-grid,
+  body.realm3d-flagship-mode .realm3d-flagship-shell,
+  body.realm3d-flagship-mode .realm3d-stage-wrap,
+  body.realm3d-flagship-mode .realm3d-canvas-host {
+    width: 100vw;
+    height: 100svh;
+    min-height: 100svh;
+    max-height: 100svh;
+  }
+  body.realm3d-flagship-mode .realm3d-mobile-controls {
+    inset: auto 0 0;
+    padding: .42rem .65rem max(.4rem, env(safe-area-inset-bottom));
+  }
+  body.realm3d-flagship-mode .realm3d-stick {
+    width: min(5.2rem, 22svh);
+    height: min(5.2rem, 22svh);
+  }
+  body.realm3d-flagship-mode .realm3d-mobile-actions {
+    margin-bottom: 0;
+  }
+  body.realm3d-flagship-mode .realm3d-game-hud {
+    bottom: min(5.45rem, 23svh);
+  }
+}
+
+/* W98 Session 10: the 3D world owns its mobile navigation and HUD. */
+body.realm3d-flagship-mode .eon-bottom-nav {
+  display: none !important;
+}
+
+@media (orientation: landscape) and (max-height: 620px) {
+  body.realm3d-flagship-mode .realm3d-command-dock {
+    flex-direction: row !important;
+    align-items: center;
+    gap: .42rem;
+    min-height: 3.45rem;
+    max-height: 4rem;
+    overflow: visible;
+  }
+  body.realm3d-flagship-mode .realm3d-brand-lockup small {
+    display: none;
+  }
+  body.realm3d-flagship-mode .realm3d-primary-actions {
+    margin-left: auto;
+    min-width: 0;
+    gap: .28rem;
+  }
+  body.realm3d-flagship-mode .realm3d-primary-actions .btn,
+  body.realm3d-flagship-mode .realm3d-world-menu summary {
+    min-height: 2.2rem;
+    padding: .36rem .48rem;
+    font-size: .64rem;
+  }
+  body.realm3d-flagship-mode .realm3d-mission-hud {
+    top: 4.55rem;
+    width: min(23rem, calc(100% - 10rem));
+  }
+}
+
+@media (orientation: portrait) and (max-width: 700px) {
+  body.realm3d-flagship-mode [data-eon-city-3d-root][data-portrait-mode="true"] .realm3d-mission-hud {
+    top: 8.85rem;
+  }
+}
+
+/* W98 Session 12 — harsh visual review, public-copy truth, and CEO pre-certification polish */
+body.realm3d-flagship-mode.realm3d-world-booted .site-header {
+  transform: translateY(-120%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+body.realm3d-flagship-mode .site-header {
+  transition: transform .32s ease, opacity .24s ease;
+}
+
+body.realm3d-flagship-mode.realm3d-world-booted .realm3d-command-dock {
+  top: max(.7rem, env(safe-area-inset-top));
+}
+
+.realm3d-launch-actions-polished {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.realm3d-launch-actions-polished .realm3d-launch-primary {
+  grid-row: span 2;
+  min-height: 6.7rem;
+  flex-direction: column;
+  font-size: 1.02rem;
+}
+
+.realm3d-launch-actions-polished .realm3d-launch-primary span {
+  font-size: 1.45rem;
+}
+
+.realm3d-launch-actions-polished .btn-quiet {
+  min-height: 2.72rem;
+  border-color: rgba(148, 163, 184, .12);
+  background: rgba(15, 23, 42, .48);
+  color: #cbd5e1;
+  box-shadow: none;
+}
+
+.realm3d-launch-actions-polished .btn-quiet:hover,
+.realm3d-launch-actions-polished .btn-quiet:focus-visible {
+  border-color: rgba(103, 232, 249, .4);
+  background: rgba(8, 47, 73, .66);
+  color: #f0f9ff;
+}
+
+.realm3d-sidecar-head strong {
+  color: #bbf7d0;
+  border-color: rgba(74, 222, 128, .28);
+  background: rgba(20, 83, 45, .28);
+}
+
+.realm3d-command-dock {
+  width: min(1040px, calc(100% - 1.4rem));
+  min-height: 54px;
+  border-color: rgba(103, 232, 249, .17);
+  background: linear-gradient(145deg, rgba(2, 6, 23, .88), rgba(8, 20, 39, .78));
+  box-shadow: 0 16px 60px rgba(0, 0, 0, .42), inset 0 1px 0 rgba(255, 255, 255, .035);
+}
+
+.realm3d-primary-actions .btn {
+  min-width: 5.4rem;
+}
+
+.realm3d-menu-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+  padding: .35rem .38rem .48rem;
+  color: #e0f2fe;
+}
+
+.realm3d-menu-heading strong {
+  font-size: .75rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.realm3d-menu-heading span {
+  color: #67e8f9;
+  font-size: .66rem;
+  font-weight: 800;
+}
+
+.realm3d-hud-mode-picker {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .35rem;
+  margin-top: .2rem;
+  padding-top: .65rem;
+  border-top: 1px solid rgba(148, 163, 184, .12);
+}
+
+.realm3d-hud-mode-picker strong {
+  grid-column: 1 / -1;
+  color: #94a3b8;
+  font-size: .66rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.realm3d-hud-mode-picker button {
+  min-height: 2.4rem;
+  padding: .45rem .25rem;
+  text-align: center;
+  font-size: .66rem;
+}
+
+.realm3d-hud-mode-picker button.is-active,
+.realm3d-hud-mode-picker button[aria-pressed="true"] {
+  border-color: rgba(103, 232, 249, .65);
+  background: linear-gradient(145deg, rgba(8, 145, 178, .42), rgba(76, 29, 149, .34));
+  color: #fff;
+}
+
+.realm3d-menu-link {
+  min-height: 2.55rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: .2rem;
+  border: 1px solid rgba(148, 163, 184, .12);
+  border-radius: 10px;
+  color: #bfdbfe;
+  background: rgba(15, 23, 42, .54);
+  font-size: .72rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.realm3d-game-hud {
+  width: min(520px, calc(100% - 1.6rem));
+  padding: .68rem .72rem;
+  gap: .42rem;
+  border-color: rgba(103, 232, 249, .18);
+  background: linear-gradient(145deg, rgba(2, 6, 23, .86), rgba(8, 20, 39, .72));
+  box-shadow: 0 18px 56px rgba(0, 0, 0, .34), inset 0 1px 0 rgba(255, 255, 255, .035);
+}
+
+.realm3d-hud-main {
+  display: grid;
+  gap: .38rem;
+  width: 100%;
+}
+
+.realm3d-status-line {
+  font-size: .82rem;
+  line-height: 1.42;
+  font-weight: 720;
+}
+
+.realm3d-route-chip {
+  width: fit-content;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #cffafe;
+  border-color: rgba(34, 211, 238, .22);
+  background: rgba(8, 47, 73, .46);
+}
+
+.realm3d-controls-hint {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .34rem;
+  width: 100%;
+  margin-top: .12rem;
+  color: #94a3b8;
+  font-size: .65rem;
+  pointer-events: auto;
+}
+
+.realm3d-controls-hint[hidden] {
+  display: none !important;
+}
+
+.realm3d-controls-hint span {
+  display: inline-flex;
+  align-items: center;
+  gap: .25rem;
+}
+
+.realm3d-controls-hint kbd {
+  min-width: 1.5rem;
+  display: inline-grid;
+  place-items: center;
+  padding: .18rem .3rem;
+  border: 1px solid rgba(148, 163, 184, .2);
+  border-bottom-color: rgba(148, 163, 184, .38);
+  border-radius: 6px;
+  color: #e0f2fe;
+  background: rgba(15, 23, 42, .78);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, .35);
+  font: 800 .6rem/1 system-ui, sans-serif;
+}
+
+.realm3d-controls-hint button {
+  min-width: 1.8rem;
+  min-height: 1.8rem;
+  margin-left: auto;
+  border: 0;
+  border-radius: 999px;
+  color: #94a3b8;
+  background: rgba(15, 23, 42, .54);
+  cursor: pointer;
+}
+
+[data-eon-city-3d-root][data-hud-mode="guided"] .realm3d-diagnostic-only,
+[data-eon-city-3d-root][data-hud-mode="minimal"] .realm3d-diagnostic-only {
+  display: none !important;
+}
+
+[data-eon-city-3d-root][data-hud-mode="minimal"] .realm3d-game-hud {
+  width: min(420px, calc(100% - 1.6rem));
+  padding: .54rem .62rem;
+  background: rgba(2, 6, 23, .52);
+}
+
+[data-eon-city-3d-root][data-hud-mode="minimal"] .realm3d-route-chip,
+[data-eon-city-3d-root][data-hud-mode="minimal"] .realm3d-controls-hint,
+[data-eon-city-3d-root][data-hud-mode="minimal"] .realm3d-minimap,
+[data-eon-city-3d-root][data-hud-mode="minimal"] .realm3d-safety-badge {
+  display: none !important;
+}
+
+[data-eon-city-3d-root][data-hud-mode="diagnostic"] .realm3d-game-hud {
+  width: min(670px, calc(100% - 1.6rem));
+}
+
+.realm3d-photo-mode .realm3d-command-dock,
+.realm3d-photo-mode .realm3d-game-hud,
+.realm3d-photo-mode .realm3d-minimap,
+.realm3d-photo-mode .realm3d-safety-badge,
+.realm3d-photo-mode .realm3d-mission-hud {
+  opacity: .18;
+  transition: opacity .2s ease;
+}
+
+.realm3d-photo-mode .realm3d-command-dock:hover,
+.realm3d-photo-mode .realm3d-command-dock:focus-within,
+.realm3d-photo-mode .realm3d-game-hud:hover {
+  opacity: 1;
+}
+
+.realm3d-safety-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  top: 5.4rem;
+  right: .85rem;
+  color: #bbf7d0;
+  border-color: rgba(74, 222, 128, .22);
+  background: rgba(20, 83, 45, .42);
+}
+
+.realm3d-world-menu-popover {
+  width: min(310px, calc(100vw - 1.4rem));
+  max-height: min(82svh, 760px);
+  overflow: auto;
+  scrollbar-width: thin;
+}
+
+@media (max-width: 1040px) {
+  .realm3d-launch-actions-polished {
+    grid-template-columns: 1.2fr 1fr;
+  }
+  .realm3d-launch-actions-polished .realm3d-launch-primary {
+    grid-row: auto;
+    grid-column: 1 / -1;
+    min-height: 3.4rem;
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 780px) {
+  body.realm3d-flagship-mode.realm3d-world-booted .realm3d-command-dock {
+    top: max(.42rem, env(safe-area-inset-top));
+  }
+  .realm3d-launch-actions-polished {
+    grid-template-columns: 1fr 1fr;
+  }
+  .realm3d-launch-actions-polished .realm3d-launch-primary {
+    grid-column: 1 / -1;
+  }
+  .realm3d-command-dock {
+    width: calc(100% - .8rem);
+    border-radius: 15px;
+  }
+  .realm3d-primary-actions .btn {
+    min-width: 0;
+    min-height: 2.75rem;
+  }
+  .realm3d-game-hud {
+    left: .55rem;
+    right: .55rem;
+    width: auto;
+  }
+  .realm3d-controls-hint {
+    display: none;
+  }
+  .realm3d-safety-badge {
+    display: none;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 620px) {
+  body.realm3d-flagship-mode.realm3d-world-booted .realm3d-command-dock {
+    top: .35rem;
+  }
+  .realm3d-primary-actions .btn {
+    min-height: 2.35rem;
+  }
+  .realm3d-game-hud {
+    max-width: min(42rem, calc(100% - 11rem));
+  }
+  .realm3d-route-chip {
+    max-width: 72vw;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 700px) {
+  [data-eon-city-3d-root][data-portrait-mode="true"] .realm3d-command-dock {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+  [data-eon-city-3d-root][data-portrait-mode="true"] .realm3d-primary-actions {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  [data-eon-city-3d-root][data-portrait-mode="true"] .realm3d-primary-actions .realm3d-audio-toggle {
+    display: none;
+  }
+  [data-eon-city-3d-root][data-portrait-mode="true"] .realm3d-game-hud {
+    bottom: 6.2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.realm3d-flagship-mode .site-header,
+  .realm3d-photo-mode .realm3d-command-dock,
+  .realm3d-photo-mode .realm3d-game-hud,
+  .realm3d-photo-mode .realm3d-minimap {
+    transition: none;
+  }
+}
+
+/* Session 12 browser-matrix corrections: hidden pre-launch chrome, 40/44 px targets, and portrait separation. */
+[data-eon-city-3d-root]:not(.realm3d-intro-dismissed) .realm3d-command-dock,
+[data-eon-city-3d-root]:not(.realm3d-intro-dismissed) .realm3d-game-hud,
+[data-eon-city-3d-root]:not(.realm3d-intro-dismissed) .realm3d-minimap,
+[data-eon-city-3d-root]:not(.realm3d-intro-dismissed) .realm3d-safety-badge,
+[data-eon-city-3d-root]:not(.realm3d-intro-dismissed) .realm3d-mission-hud {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.realm3d-primary-actions .btn,
+.realm3d-world-menu > summary {
+  min-height: 2.5rem;
+}
+
+@media (max-width: 780px) {
+  .realm3d-primary-actions .btn,
+  .realm3d-world-menu > summary {
+    min-height: 2.75rem;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 620px) {
+  body.realm3d-flagship-mode .realm3d-primary-actions .btn,
+  body.realm3d-flagship-mode .realm3d-world-menu > summary {
+    min-height: 2.75rem;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 700px) {
+  body.realm3d-flagship-mode [data-eon-city-3d-root][data-portrait-mode="true"] .realm3d-mission-hud {
+    top: 9.35rem;
+  }
+  body.realm3d-flagship-mode [data-eon-city-3d-root][data-portrait-mode="true"] .realm3d-game-hud {
+    bottom: 10.9rem;
+  }
+  body.realm3d-flagship-mode [data-eon-city-3d-root][data-portrait-mode="true"] .realm3d-mobile-actions button {
+    min-height: 2.75rem;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 620px) {
+  body.realm3d-flagship-mode .realm3d-game-hud {
+    bottom: min(6.4rem, 27svh);
+  }
+}
+
+@media (orientation: portrait) and (max-width: 700px) {
+  body.realm3d-flagship-mode [data-eon-city-3d-root][data-portrait-mode="true"] .realm3d-mission-hud {
+    top: 9.6rem;
+  }
+}
+
+/* Session 12 human-review refinements: remove legacy chrome collisions and show all launch landmarks. */
+.realm3d-flagship-shell.realm3d-intro-dismissed .realm3d-stage-wrap::before {
+  display: none;
+}
+
+.realm3d-district-track {
+  flex-wrap: wrap;
+  overflow: visible;
+  mask-image: none;
+}
+
+@media (min-width: 781px) {
+  .realm3d-safety-badge {
+    top: 12.35rem;
+  }
+}
+
+[data-eon-city-3d-root].realm3d-intro-dismissed .realm3d-shell[data-metaverse="true"] .realm3d-stage-wrap::before {
+  display: none;
+}
+
+/* W98 Session 13 — mega enhancement, actual-world identity, compatibility, and release resilience */
+.realm3d-quality-identity {
+  width: fit-content;
+  max-width: 100%;
+  padding: .28rem .52rem;
+  border: 1px solid rgba(103, 232, 249, .18);
+  border-radius: 999px;
+  color: #bae6fd;
+  background: rgba(8, 47, 73, .34);
+  font-size: .61rem;
+  font-weight: 850;
+  letter-spacing: .025em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+[data-eon-city-3d-root][data-quality-identity="signal"] .realm3d-quality-identity {
+  color: #f8fafc;
+  border-color: rgba(226, 232, 240, .34);
+  background: rgba(15, 23, 42, .82);
+}
+
+[data-eon-city-3d-root][data-quality-identity="aurora"] .realm3d-quality-identity {
+  color: #f5d0fe;
+  border-color: rgba(216, 180, 254, .4);
+  background: linear-gradient(120deg, rgba(8, 145, 178, .4), rgba(126, 34, 206, .45));
+  box-shadow: 0 0 22px rgba(192, 132, 252, .16);
+}
+
+.realm3d-transition-veil {
+  position: absolute;
+  inset: 0;
+  z-index: 28;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  opacity: 0;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(34, 211, 238, .12), transparent 34%),
+    linear-gradient(110deg, rgba(2, 6, 23, .78), rgba(15, 23, 42, .24), rgba(2, 6, 23, .78));
+  backdrop-filter: blur(0);
+  transition: opacity .18s ease, backdrop-filter .28s ease;
+}
+
+.realm3d-transition-veil[hidden] {
+  display: none !important;
+}
+
+.realm3d-transition-veil::before,
+.realm3d-transition-veil::after {
+  content: "";
+  position: absolute;
+  width: min(38vw, 26rem);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(103, 232, 249, .88), transparent);
+  box-shadow: 0 0 24px rgba(34, 211, 238, .38);
+}
+
+.realm3d-transition-veil::before {
+  transform: translateY(-2.15rem);
+}
+
+.realm3d-transition-veil::after {
+  transform: translateY(2.15rem);
+}
+
+.realm3d-transition-veil strong {
+  position: relative;
+  z-index: 1;
+  max-width: min(80vw, 34rem);
+  padding: .58rem 1rem;
+  border: 1px solid rgba(103, 232, 249, .22);
+  border-radius: 999px;
+  color: #ecfeff;
+  background: rgba(2, 6, 23, .66);
+  box-shadow: 0 14px 42px rgba(0, 0, 0, .36);
+  font-size: clamp(.72rem, 1.4vw, .92rem);
+  letter-spacing: .1em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.realm3d-transition-active .realm3d-transition-veil {
+  opacity: 1;
+  backdrop-filter: blur(3px);
+}
+
+.realm3d-arrival-card {
+  position: absolute;
+  z-index: 26;
+  top: max(5.1rem, calc(env(safe-area-inset-top) + 4.4rem));
+  left: max(.85rem, env(safe-area-inset-left));
+  width: min(360px, calc(100% - 1.7rem));
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: .72rem;
+  padding: .72rem .8rem;
+  border: 1px solid rgba(103, 232, 249, .26);
+  border-radius: 16px;
+  color: #e0f2fe;
+  background: linear-gradient(135deg, rgba(2, 6, 23, .92), rgba(8, 47, 73, .82));
+  box-shadow: 0 18px 60px rgba(0, 0, 0, .46), inset 0 1px 0 rgba(255, 255, 255, .045);
+  pointer-events: auto;
+  animation: realm3d-session13-arrival .42s cubic-bezier(.2, .85, .25, 1) both;
+}
+
+.realm3d-arrival-card[hidden] {
+  display: none !important;
+}
+
+.realm3d-arrival-icon {
+  width: 2.45rem;
+  height: 2.45rem;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  color: #ecfeff;
+  background: rgba(8, 145, 178, .34);
+  box-shadow: inset 0 0 0 1px rgba(103, 232, 249, .2), 0 0 26px rgba(34, 211, 238, .12);
+  font-size: 1.18rem;
+}
+
+.realm3d-arrival-card strong {
+  display: block;
+  color: #f8fafc;
+  font-size: .86rem;
+  letter-spacing: .025em;
+}
+
+.realm3d-arrival-card p {
+  margin: .18rem 0 0;
+  color: #a5f3fc;
+  font-size: .68rem;
+  line-height: 1.35;
+}
+
+.realm3d-arrival-card button {
+  align-self: start;
+  min-width: 2.55rem;
+  min-height: 2.55rem;
+  border: 1px solid rgba(148, 163, 184, .16);
+  border-radius: 999px;
+  color: #cbd5e1;
+  background: rgba(15, 23, 42, .72);
+  cursor: pointer;
+}
+
+.realm3d-screen-focused .realm3d-stage-wrap::after {
+  content: "Safe native station · world movement paused";
+  position: absolute;
+  z-index: 24;
+  left: 50%;
+  bottom: 1rem;
+  transform: translateX(-50%);
+  max-width: calc(100% - 2rem);
+  padding: .46rem .72rem;
+  border: 1px solid rgba(74, 222, 128, .22);
+  border-radius: 999px;
+  color: #bbf7d0;
+  background: rgba(5, 46, 22, .72);
+  font-size: .66rem;
+  font-weight: 800;
+  pointer-events: none;
+}
+
+[data-eon-city-3d-root][data-quality-identity="signal"] .realm3d-stage-wrap {
+  box-shadow: inset 0 0 0 1px rgba(226, 232, 240, .08);
+}
+
+[data-eon-city-3d-root][data-quality-identity="aurora"] .realm3d-stage-wrap {
+  box-shadow: inset 0 0 0 1px rgba(216, 180, 254, .1), inset 0 0 80px rgba(126, 34, 206, .055);
+}
+
+[data-eon-city-3d-root][data-compatibility-profile="conservative"] .realm3d-quality-identity::before {
+  content: "Efficient · ";
+  color: #86efac;
+}
+
+@keyframes realm3d-session13-arrival {
+  from { opacity: 0; transform: translateY(-10px) scale(.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 780px) {
+  .realm3d-quality-identity {
+    max-width: 72vw;
+  }
+  .realm3d-arrival-card {
+    top: max(4.4rem, calc(env(safe-area-inset-top) + 3.8rem));
+    width: min(330px, calc(100% - 1rem));
+    left: max(.5rem, env(safe-area-inset-left));
+    padding: .62rem .66rem;
+  }
+  .realm3d-arrival-card button {
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 620px) {
+  .realm3d-arrival-card {
+    top: 3.55rem;
+    max-width: min(330px, 44vw);
+  }
+  .realm3d-arrival-card p {
+    display: none;
+  }
+  .realm3d-transition-veil strong {
+    padding: .42rem .72rem;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 700px) {
+  .realm3d-arrival-card {
+    top: 8.7rem;
+  }
+  .realm3d-quality-identity {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .realm3d-transition-veil,
+  .realm3d-arrival-card {
+    transition: none;
+    animation: none;
+  }
+}
+
+.realm3d-basic-device .realm3d-transition-veil::before,
+.realm3d-basic-device .realm3d-transition-veil::after,
+.realm3d-basic-device .realm3d-arrival-card p {
+  display: none;
+}
+
+.realm3d-release-readiness {
+  border: 1px solid rgba(103, 232, 249, .15);
+  border-radius: 12px;
+  background: rgba(2, 6, 23, .42);
+  overflow: clip;
+}
+
+.realm3d-release-readiness > summary {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  padding: .54rem .64rem;
+  color: #cffafe;
+  font-size: .72rem;
+  font-weight: 850;
+  cursor: pointer;
+}
+
+.realm3d-release-readiness[open] > summary {
+  border-bottom: 1px solid rgba(103, 232, 249, .12);
+}
+
+.realm3d-release-readiness-grid {
+  display: grid;
+  grid-template-columns: minmax(7rem, .72fr) minmax(0, 1.28fr);
+  gap: .38rem .6rem;
+  padding: .65rem;
+  font-size: .66rem;
+  line-height: 1.35;
+}
+
+.realm3d-release-readiness-grid span {
+  color: #94a3b8;
+}
+
+.realm3d-release-readiness-grid strong {
+  min-width: 0;
+  color: #e0f2fe;
+  overflow-wrap: anywhere;
+}
+
+.realm3d-release-readiness-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .45rem;
+  padding: 0 .65rem .58rem;
+}
+
+.realm3d-release-readiness-actions button {
+  min-height: 40px;
+  border: 1px solid rgba(103, 232, 249, .18);
+  border-radius: 10px;
+  color: #cffafe;
+  background: rgba(8, 47, 73, .45);
+  font: inherit;
+  font-size: .66rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.realm3d-release-readiness > small {
+  display: block;
+  padding: 0 .65rem .68rem;
+  color: #94a3b8;
+  font-size: .61rem;
+  line-height: 1.4;
+}
+
+[data-eon-city-3d-root][data-network-state="offline"] .realm3d-release-readiness {
+  border-color: rgba(251, 191, 36, .35);
+}
+
+[data-eon-city-3d-root][data-graphics-state="recovering"] .realm3d-release-readiness {
+  border-color: rgba(248, 113, 113, .42);
+}
+
+@media (max-width: 780px) {
+  .realm3d-release-readiness > summary,
+  .realm3d-release-readiness-actions button {
+    min-height: 44px;
+  }
+}
+
+/* Session 13 touch ergonomics: arrival dismissal remains a full 44px target even on wide landscape phones. */
+@media (pointer: coarse) {
+  .realm3d-arrival-card button {
+    min-width: 2.8rem;
+    min-height: 2.8rem;
+  }
+}
+
+.realm3d-arrival-card button {
+  min-width: 41px;
+  min-height: 41px;
+}
+
+@media (max-width: 780px) {
+  .realm3d-arrival-card button {
+    min-width: 45px;
+    min-height: 45px;
+  }
+}
+
+[data-eon-city-3d-root][data-compatibility-profile="conservative"] .realm3d-arrival-card button { min-width: 2.8rem; min-height: 2.8rem; }
+
+.realm3d-shell[data-mobile="true"] .realm3d-arrival-card button {
+  min-width: 45px;
+  min-height: 45px;
+}
+
+/* W108C — Realm Device Lab station polish */
+.realm3d-preflight-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.realm3d-device-lab-card {
+  border-color: rgba(52, 211, 153, .34);
+  background:
+    radial-gradient(circle at top left, rgba(16, 185, 129, .16), transparent 36%),
+    rgba(2, 6, 23, .84);
+}
+
+.realm3d-device-lab-grid .realm3d-workspace-tile {
+  border-color: rgba(52, 211, 153, .2);
+}
+
+/* W110: make interactions and the private workspace route obvious on desktop/mobile. */
+.realm3d-interaction-chip {
+  width: fit-content;
+  max-width: 100%;
+  padding: .38rem .55rem;
+  border: 1px solid rgba(52, 211, 153, .24);
+  border-radius: 999px;
+  color: #dcfce7;
+  background: rgba(6, 78, 59, .38);
+  font-size: .72rem;
+  font-weight: 850;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.realm3d-interaction-chip[data-state="ready"] {
+  color: #fff7ed;
+  border-color: rgba(251, 191, 36, .48);
+  background: linear-gradient(135deg, rgba(120, 53, 15, .62), rgba(6, 95, 70, .54));
+  box-shadow: 0 0 24px rgba(251, 191, 36, .16);
+}
+
+.realm3d-interaction-chip[data-state="aim"] {
+  border-color: rgba(103, 232, 249, .42);
+  color: #e0f2fe;
+  background: rgba(14, 116, 144, .42);
+}
+
+.realm3d-workspace-quick {
+  box-shadow: 0 0 0 1px rgba(251, 191, 36, .22), 0 0 28px rgba(34, 211, 238, .2);
+}
+
+@media (max-width: 720px) {
+  .realm3d-interaction-chip {
+    width: 100%;
+    font-size: .68rem;
+  }
+}
+
+/* W111/W115 — make aim-click targets feel discoverable instead of hidden. */
+.realm3d-canvas-host.realm3d-aim-ready {
+  cursor: pointer;
+}
+
+.realm3d-canvas-host.realm3d-aim-ready + .realm3d-comfort-vignette ~ .realm3d-hud .realm3d-crosshair,
+.realm3d-aim-ready ~ .realm3d-hud .realm3d-crosshair {
+  filter: drop-shadow(0 0 14px rgba(251, 191, 36, .92));
+  transform: translate(-50%, -50%) scale(1.12);
+}
+
+.realm3d-interaction-chip[data-state="aim"]::before,
+.realm3d-interaction-chip[data-state="ready"]::before {
+  content: "● ";
+  color: #fbbf24;
+}
+
+/* W112 — building detail pass + optional NPC/EONBOT voice controls. */
+.realm3d-voice-toggle[data-voice-state="on"],
+.realm3d-voice-settings [data-realm3d-voice-toggle][data-voice-state="on"] {
+  border-color: rgba(52, 211, 153, .52);
+  color: #dcfce7;
+  background: linear-gradient(135deg, rgba(6, 78, 59, .64), rgba(14, 116, 144, .46));
+  box-shadow: 0 0 22px rgba(52, 211, 153, .16);
+}
+
+.realm3d-voice-toggle[data-voice-state="unsupported"],
+.realm3d-voice-settings [data-realm3d-mic][data-mic-state="unsupported"] {
+  opacity: .58;
+}
+
+.realm3d-voice-settings {
+  display: grid;
+  gap: .5rem;
+  margin-top: .75rem;
+  padding: .75rem;
+  border: 1px solid rgba(103, 232, 249, .18);
+  border-radius: 16px;
+  background: rgba(2, 6, 23, .52);
+}
+
+.realm3d-voice-settings strong {
+  color: #e0f2fe;
+  font-size: .76rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.realm3d-voice-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+}
+
+.realm3d-voice-actions button,
+.realm3d-eonbot-form [data-realm3d-mic] {
+  border: 1px solid rgba(103, 232, 249, .28);
+  border-radius: 999px;
+  padding: .52rem .75rem;
+  color: #e0f2fe;
+  background: rgba(15, 23, 42, .82);
+  font-weight: 800;
+}
+
+.realm3d-voice-actions [data-mic-state="listening"],
+.realm3d-eonbot-form [data-mic-state="listening"] {
+  color: #020617;
+  background: #67e8f9;
+  border-color: rgba(255, 255, 255, .7);
+  box-shadow: 0 0 20px rgba(103, 232, 249, .28);
+}
+
+.realm3d-voice-settings small {
+  color: #bae6fd;
+  line-height: 1.35;
+}
+
+[data-eon-city-3d-root][data-voice-enabled="true"] .realm3d-brand-orb {
+  box-shadow: 0 0 0 5px rgba(52, 211, 153, .12), 0 0 32px rgba(34, 211, 238, .34);
+}
+
+@media (max-width: 720px) {
+  .realm3d-primary-actions .realm3d-voice-toggle {
+    max-width: 5.2rem;
+    overflow: hidden;
+  }
+
+  .realm3d-eonbot-form [data-realm3d-mic] {
+    min-width: 4.2rem;
+  }
+}
+
+/* W113/W116: command room v2 and realm generator v2 safe native panels */
+.realm3d-command-room-v2-card,
+.realm3d-realm-generator-v2-card {
+  border-color: color-mix(in srgb, var(--realm3d-accent, #22d3ee) 42%, transparent);
+  background:
+    radial-gradient(circle at top left, rgba(34, 211, 238, 0.16), transparent 34%),
+    linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(2, 6, 23, 0.88));
+}
+
+.realm3d-command-room-v2-grid,
+.realm3d-realm-generator-v2-grid {
+  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+}
+
+.realm3d-command-room-v2-tile,
+.realm3d-realm-generator-v2-grid .realm3d-workspace-tile {
+  position: relative;
+  min-height: 5.75rem;
+  overflow: hidden;
+}
+
+.realm3d-command-room-v2-tile::after,
+.realm3d-realm-generator-v2-grid .realm3d-workspace-tile::after {
+  content: 'USE';
+  position: absolute;
+  top: 0.55rem;
+  right: 0.65rem;
+  padding: 0.15rem 0.4rem;
+  border: 1px solid rgba(125, 211, 252, 0.42);
+  border-radius: 999px;
+  color: #bae6fd;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  background: rgba(2, 6, 23, 0.48);
+}
+
+.realm3d-command-room-v2-contract {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.75rem;
+}
+
+.realm3d-command-room-v2-contract span {
+  border: 1px solid rgba(103, 232, 249, 0.26);
+  border-radius: 999px;
+  color: #dbeafe;
+  background: rgba(14, 165, 233, 0.12);
+  padding: 0.28rem 0.58rem;
+  font-size: 0.78rem;
+}
+
+@media (max-width: 720px) {
+  .realm3d-command-room-v2-grid,
+  .realm3d-realm-generator-v2-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .realm3d-command-room-v2-tile,
+  .realm3d-realm-generator-v2-grid .realm3d-workspace-tile {
+    min-height: 4.9rem;
+  }
+}
+
+/* W117: deep usable interiors and station context cards */
+.realm3d-w117-interior-card {
+  border-color: rgba(216, 180, 254, 0.38);
+  background:
+    radial-gradient(circle at 12% 8%, rgba(168, 85, 247, 0.18), transparent 34%),
+    radial-gradient(circle at 88% 18%, rgba(34, 211, 238, 0.12), transparent 30%),
+    linear-gradient(135deg, rgba(15, 23, 42, 0.94), rgba(2, 6, 23, 0.9));
+}
+
+.realm3d-w117-interior-grid {
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+}
+
+.realm3d-w117-interior-grid .realm3d-workspace-tile {
+  min-height: 5.25rem;
+  border-color: rgba(216, 180, 254, 0.22);
+}
+
+.realm3d-w117-interior-grid .realm3d-workspace-tile small {
+  color: #c4b5fd;
+}
+
+[data-eon-city-3d-root][data-realm-deep-interior-session="w117"] .realm3d-panel-shell .realm3d-app-screen-card {
+  box-shadow: 0 0 0 1px rgba(216, 180, 254, 0.18), 0 24px 90px rgba(2, 6, 23, 0.72);
+}
+
+@media (max-width: 720px) {
+  .realm3d-w117-interior-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* W118 Mobile Optimization: compact HUD, touch target safety, and device-tier detail rails. */
+.realm3d-w118-mobile-optimized .realm3d-mobile-health-chip {
+  display: inline-flex;
+  max-width: min(100%, 34rem);
+}
+
+.realm3d-mobile-health-chip span[data-state="rich"] { color: #fde68a; }
+.realm3d-mobile-health-chip span[data-state="balanced"] { color: #bae6fd; }
+.realm3d-mobile-health-chip span[data-state="safe"] { color: #bbf7d0; }
+
+.realm3d-w118-compact-hud .realm3d-hud {
+  gap: .48rem;
+  padding: .62rem;
+}
+
+.realm3d-w118-compact-hud .realm3d-controls-hint,
+.realm3d-w118-essential-detail .realm3d-diagnostic-only {
+  display: none !important;
+}
+
+.realm3d-w118-one-thumb .realm3d-mobile-actions {
+  min-width: 9rem;
+  border-radius: 999px;
+  padding: .4rem;
+  background: rgba(2, 6, 23, .78);
+  border: 1px solid rgba(125, 211, 252, .26);
+}
+
+.realm3d-w118-one-thumb .realm3d-mobile-actions button,
+.realm3d-mobile-controls [data-w118-primary-use] {
+  min-width: 48px;
+  min-height: 48px;
+  touch-action: manipulation;
+}
+
+.realm3d-mobile-controls.realm3d-mobile-portrait-rail {
+  grid-template-columns: minmax(4.8rem, 6.4rem) 1fr;
+  align-items: end;
+}
+
+.realm3d-mobile-controls.realm3d-mobile-portrait-rail .realm3d-stick-look {
+  display: none;
+}
+
+.realm3d-mobile-controls.realm3d-mobile-portrait-rail .realm3d-mobile-actions {
+  justify-self: end;
+}
+
+.realm3d-mobile-controls.realm3d-mobile-essential .realm3d-stick {
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.realm3d-w118-portrait .realm3d-minimap {
+  transform: scale(.82);
+  transform-origin: right bottom;
+  opacity: .72;
+}
+
+.realm3d-w118-desktop-rich .realm3d-stage-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 52% 18%, rgba(34, 211, 238, .12), transparent 34%), radial-gradient(circle at 82% 72%, rgba(217, 70, 239, .10), transparent 28%);
+  mix-blend-mode: screen;
+}
+
+@media (max-width: 720px), (pointer: coarse) {
+  .realm3d-w118-mobile-optimized .realm3d-topbar {
+    gap: .45rem;
+  }
+
+  .realm3d-w118-mobile-optimized .realm3d-primary-actions .btn:not([data-realm3d-use-nearest]):not([data-realm3d-eonbot]) {
+    min-height: 42px;
+  }
+
+  .realm3d-w118-compact-hud .realm3d-route-chip,
+  .realm3d-w118-compact-hud .realm3d-interaction-chip,
+  .realm3d-w118-compact-hud .realm3d-mobile-health-chip {
+    font-size: .68rem;
+    line-height: 1.25;
+  }
+}
+
+/* W119/W120 — starter quest coach and final handoff polish */
+.realm3d-w119-quest-coach {
+  position: absolute;
+  right: .85rem;
+  bottom: 5.8rem;
+  z-index: 47;
+  display: grid;
+  gap: .55rem;
+  width: min(23rem, calc(100% - 1.7rem));
+  padding: .78rem;
+  border: 1px solid rgba(134, 239, 172, .34);
+  border-radius: 22px;
+  background: linear-gradient(145deg, rgba(2, 6, 23, .92), rgba(6, 78, 59, .72));
+  color: #ecfdf5;
+  box-shadow: 0 20px 72px rgba(0, 0, 0, .48), inset 0 1px rgba(255, 255, 255, .08);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  pointer-events: auto;
+}
+.realm3d-w119-quest-coach[hidden] { display: none; }
+.realm3d-w119-quest-head {
+  display: grid;
+  grid-template-columns: 2.2rem minmax(0, 1fr) auto;
+  align-items: start;
+  gap: .62rem;
+}
+.realm3d-w119-quest-head > span {
+  display: grid;
+  width: 2.1rem;
+  height: 2.1rem;
+  place-items: center;
+  border-radius: 14px;
+  background: radial-gradient(circle, rgba(52, 211, 153, .28), rgba(15, 23, 42, .78));
+  box-shadow: inset 0 0 0 1px rgba(134, 239, 172, .24), 0 0 20px rgba(16, 185, 129, .18);
+}
+.realm3d-w119-quest-head strong,
+.realm3d-w119-quest-head small { display: block; }
+.realm3d-w119-quest-head strong { color: #f0fdfa; font-size: .86rem; }
+.realm3d-w119-quest-head small {
+  margin-top: .2rem;
+  color: #bbf7d0;
+  font-size: .68rem;
+  line-height: 1.35;
+}
+.realm3d-w119-quest-head button,
+.realm3d-w119-actions button {
+  min-height: 48px;
+  min-width: 48px;
+  border: 1px solid rgba(134, 239, 172, .3);
+  border-radius: 999px;
+  background: rgba(15, 23, 42, .78);
+  color: #d1fae5;
+  font: inherit;
+  font-size: .68rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+.realm3d-w119-progress {
+  position: relative;
+  height: .54rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, .8);
+}
+.realm3d-w119-progress i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #22c55e, #22d3ee, #a78bfa);
+  box-shadow: 0 0 18px rgba(34, 211, 238, .4);
+}
+.realm3d-w119-progress b {
+  position: absolute;
+  right: .45rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #f8fafc;
+  font-size: .56rem;
+}
+.realm3d-w119-quest-coach p {
+  margin: 0;
+  color: #d1fae5;
+  font-size: .7rem;
+  line-height: 1.45;
+}
+.realm3d-w119-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+}
+.realm3d-w119-actions button[data-w119-quest-action="guide"],
+.realm3d-w119-actions button[data-w119-quest-action="use"] {
+  background: linear-gradient(145deg, rgba(6, 95, 70, .92), rgba(8, 47, 73, .82));
+  color: #f0fdfa;
+}
+.realm3d-w119-actions [data-w119-quest-dismiss] {
+  margin-left: auto;
+  color: #fecaca;
+}
+.realm3d-w119-quest-coach[data-compact="true"] {
+  width: min(18rem, calc(100% - 1.7rem));
+  padding: .58rem;
+}
+.realm3d-w119-quest-coach[data-compact="true"] .realm3d-w119-actions button:not([data-w119-quest-action="guide"]):not([data-w119-quest-action="use"]):not([data-w119-quest-dismiss]) { display: none; }
+.realm3d-w119-quest-active .realm3d-mobile-health-chip { margin-bottom: .35rem; }
+.realm3d-w118-one-thumb .realm3d-w119-quest-coach {
+  right: .48rem;
+  left: .48rem;
+  bottom: 5.1rem;
+  width: auto;
+  border-radius: 18px;
+}
+.realm3d-w118-one-thumb .realm3d-w119-actions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) auto; }
+.realm3d-w118-one-thumb .realm3d-w119-actions button { padding-inline: .35rem; }
+.realm3d-screen-focused .realm3d-w119-quest-coach,
+.realm3d-panel-active .realm3d-w119-quest-coach,
+.realm3d-mission-drawer-active .realm3d-w119-quest-coach { opacity: .18; pointer-events: none; }
+@media (max-width: 760px) {
+  .realm3d-w119-quest-coach {
+    right: .52rem;
+    left: .52rem;
+    bottom: 5rem;
+    width: auto;
+  }
+  .realm3d-w119-quest-head strong { font-size: .78rem; }
+  .realm3d-w119-quest-head small { font-size: .64rem; }
+}
+@media (max-width: 430px) {
+  .realm3d-w119-quest-coach { bottom: 4.6rem; }
+  .realm3d-w119-actions { display: grid; grid-template-columns: 1fr 1fr 1fr auto; }
+  .realm3d-w119-actions button { min-width: 0; padding-inline: .3rem; font-size: .62rem; }
+  .realm3d-w119-actions button[data-w119-quest-action="workspace"],
+  .realm3d-w119-actions button[data-w119-quest-action="eonbot"] { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .realm3d-w119-progress i { transition: none; }
+}
+
+/* W125 — full-screen app workspace and user-safe game OS copy */
+.realm3d-panel-shell:has(.realm3d-fullscreen-app-panel) {
+  inset: max(.75rem, env(safe-area-inset-top)) .75rem .75rem .75rem;
+  width: auto;
+  max-height: calc(100svh - 1.5rem);
+  display: grid;
+  place-items: center;
+}
+.realm3d-fullscreen-app-panel {
+  width: min(1280px, calc(100vw - 1.5rem));
+  max-height: calc(100svh - 1.5rem);
+  overflow: auto;
+  border-radius: 28px;
+  border-color: rgba(103, 232, 249, .44);
+  box-shadow: 0 44px 140px rgba(0, 0, 0, .76), inset 0 1px rgba(255,255,255,.06);
+}
+.realm3d-fullscreen-app-panel .realm3d-app-screen-preview {
+  min-height: min(58svh, 640px);
+  display: grid;
+  align-content: stretch;
+  background: radial-gradient(circle at 20% 0%, rgba(34, 211, 238, .16), transparent 38%), linear-gradient(145deg, rgba(2, 6, 23, .94), rgba(8, 13, 28, .98));
+}
+.realm3d-fullscreen-app-panel .realm3d-native-widget {
+  min-height: min(48svh, 540px);
+}
+.realm3d-fullscreen-app-panel .realm3d-panel-actions {
+  position: sticky;
+  bottom: 0;
+  z-index: 3;
+  background: linear-gradient(180deg, rgba(2, 6, 23, .18), rgba(2, 6, 23, .96) 32%);
+  padding-top: .8rem;
+}
+.realm3d-fullscreen-app-panel [data-w125-pin-status] {
+  margin: .75rem 1rem 1rem;
+  border-color: rgba(52, 211, 153, .38);
+  background: rgba(6, 78, 59, .25);
+  color: #bbf7d0;
+}
+@media (max-width: 720px) {
+  .realm3d-panel-shell:has(.realm3d-fullscreen-app-panel) {
+    inset: .35rem;
+  }
+  .realm3d-fullscreen-app-panel {
+    width: calc(100vw - .7rem);
+    max-height: calc(100svh - .7rem);
+    border-radius: 20px;
+  }
+  .realm3d-fullscreen-app-panel .realm3d-app-screen-preview,
+  .realm3d-fullscreen-app-panel .realm3d-native-widget {
+    min-height: 44svh;
+  }
+}
+
+/* W130 gameplay UX pass: room teleport, approach prompts, and readable mobile cues. */
+.realm3d-inline-hud-button {
+  min-height: 32px;
+  border: 1px solid rgba(125, 211, 252, 0.5);
+  border-radius: 999px;
+  padding: 0.22rem 0.62rem;
+  background: rgba(8, 47, 73, 0.76);
+  color: #e0f2fe;
+  font: inherit;
+  cursor: pointer;
+}
+
+.realm3d-room-teleport-card {
+  width: min(1080px, calc(100vw - 2rem));
+  max-height: min(760px, calc(100dvh - 2rem));
+  overflow: auto;
+}
+
+.realm3d-room-teleport-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 0.78rem;
+  margin: 1rem 0;
+}
+
+.realm3d-room-teleport-tile {
+  display: grid;
+  gap: 0.45rem;
+  padding: 0.85rem;
+  border: 1px solid rgba(125, 211, 252, 0.25);
+  border-radius: 1rem;
+  background: linear-gradient(145deg, rgba(15, 23, 42, 0.94), rgba(8, 47, 73, 0.74));
+  box-shadow: inset 0 0 24px rgba(34, 211, 238, 0.06);
+}
+
+.realm3d-room-teleport-tile > span {
+  width: 42px;
+  height: 42px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 14px;
+  background: rgba(34, 211, 238, 0.14);
+  font-size: 1.25rem;
+}
+
+.realm3d-room-teleport-tile small {
+  color: #bae6fd;
+  overflow-wrap: anywhere;
+}
+
+.realm3d-room-teleport-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.realm3d-room-teleport-tile.is-active {
+  border-color: rgba(250, 204, 21, 0.62);
+  box-shadow: 0 0 0 1px rgba(250, 204, 21, 0.18), 0 0 32px rgba(250, 204, 21, 0.1);
+}
+
+.realm3d-interaction-chip[data-w130-approach-prompt],
+.realm3d-interaction-chip[data-w130-npc-guide] {
+  border-color: rgba(34, 211, 238, 0.48);
+  background: rgba(6, 78, 59, 0.42);
+}
+
+@media (max-width: 720px) {
+  .realm3d-room-teleport-card {
+    width: calc(100vw - 0.75rem);
+    max-height: calc(100dvh - 0.75rem);
+    border-radius: 1rem;
+  }
+  .realm3d-room-teleport-grid {
+    grid-template-columns: 1fr;
+  }
+  .realm3d-room-teleport-actions .btn {
+    min-height: 48px;
+    flex: 1 1 100%;
+  }
+  .realm3d-interaction-chip[data-w130-approach-prompt],
+  .realm3d-interaction-chip[data-w130-npc-guide] {
+    font-size: 0.95rem;
+    line-height: 1.35;
+  }
+}
+
+
+/* W135 live mobile first-impression rescue: keep EON City view unobstructed on phones. */
+body.realm3d-flagship-mode [data-eon-city-3d-root] .realm3d-crosshair {
+  opacity: .92;
+}
+body.realm3d-flagship-mode [data-eon-city-3d-root]:not(.realm3d-game-active) .realm3d-crosshair {
+  opacity: .38;
+}
+@media (max-width: 780px), (orientation: landscape) and (max-height: 620px) {
+  body.realm3d-flagship-mode .realm3d-command-dock {
+    top: max(.32rem, env(safe-area-inset-top));
+    left: .35rem;
+    right: .35rem;
+    width: auto;
+    max-height: 5.15rem;
+    overflow: hidden;
+    padding: .42rem .5rem;
+    border-radius: 16px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+  body.realm3d-flagship-mode .realm3d-brand-lockup small { display: none; }
+  body.realm3d-flagship-mode .realm3d-brand-lockup strong { font-size: .9rem; }
+  body.realm3d-flagship-mode .realm3d-brand-orb { width: 1.75rem; height: 1.75rem; }
+  body.realm3d-flagship-mode .realm3d-primary-actions {
+    display: flex;
+    gap: .35rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    max-width: 100%;
+    padding-bottom: .1rem;
+  }
+  body.realm3d-flagship-mode .realm3d-primary-actions::-webkit-scrollbar { display: none; }
+  body.realm3d-flagship-mode .realm3d-primary-actions .btn {
+    flex: 0 0 auto;
+    min-height: 2.35rem;
+    padding: .42rem .62rem;
+    font-size: .76rem;
+    border-radius: 12px;
+  }
+  body.realm3d-flagship-mode .realm3d-primary-actions .realm3d-audio-toggle,
+  body.realm3d-flagship-mode .realm3d-primary-actions .realm3d-voice-toggle {
+    display: none;
+  }
+  body.realm3d-flagship-mode .realm3d-world-menu > summary {
+    min-height: 2.35rem;
+    padding: .35rem .62rem;
+    border-radius: 12px;
+    font-size: .78rem;
+  }
+  body.realm3d-flagship-mode .realm3d-mission-hud {
+    top: 5.75rem;
+    left: .42rem;
+    width: min(13.6rem, calc(100vw - 7.1rem));
+    grid-template-columns: minmax(0, 1fr);
+    gap: .25rem;
+    z-index: 34;
+  }
+  body.realm3d-flagship-mode .realm3d-mission-summary {
+    padding: .48rem .58rem;
+    border-radius: 14px;
+  }
+  body.realm3d-flagship-mode .realm3d-mission-summary strong { font-size: .76rem; }
+  body.realm3d-flagship-mode .realm3d-mission-summary small,
+  body.realm3d-flagship-mode .realm3d-mission-count,
+  body.realm3d-flagship-mode .realm3d-mission-guide {
+    display: none !important;
+  }
+  body.realm3d-flagship-mode .realm3d-game-hud {
+    left: .42rem;
+    right: .42rem;
+    bottom: .46rem;
+    width: auto;
+    max-height: 22svh;
+    overflow: hidden;
+    padding: .48rem .58rem;
+    border-radius: 16px;
+    z-index: 31;
+  }
+  body.realm3d-flagship-mode .realm3d-status-line,
+  body.realm3d-flagship-mode .realm3d-route-chip,
+  body.realm3d-flagship-mode .realm3d-interaction-chip {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  body.realm3d-flagship-mode .realm3d-quality-identity,
+  body.realm3d-flagship-mode .realm3d-mobile-health-chip,
+  body.realm3d-flagship-mode .realm3d-portrait-guide,
+  body.realm3d-flagship-mode .realm3d-arrival-card {
+    display: none !important;
+  }
+  body.realm3d-flagship-mode .realm3d-minimap {
+    right: .55rem;
+    top: 5.6rem;
+    width: 4.8rem;
+    height: 4.8rem;
+    opacity: .78;
+  }
+}
+@media (orientation: portrait) and (max-width: 700px) {
+  body.realm3d-flagship-mode [data-eon-city-3d-root][data-portrait-mode="true"] .realm3d-mission-hud { top: 5.72rem; }
+  body.realm3d-flagship-mode [data-eon-city-3d-root][data-portrait-mode="true"] .realm3d-game-hud { bottom: .48rem; }
+  body.realm3d-flagship-mode [data-eon-city-3d-root][data-portrait-mode="true"] .realm3d-minimap { top: 5.55rem; }
+}
+
+/* W140 EON City command-center redesign: premium owner cockpit, large app wall, and storage-safe proof. */
+.realm3d-w140-command-center-card {
+  border-color: rgba(34, 211, 238, 0.34);
+  background:
+    radial-gradient(circle at 16% 0%, rgba(34, 211, 238, 0.16), transparent 34%),
+    radial-gradient(circle at 86% 12%, rgba(244, 114, 182, 0.14), transparent 36%),
+    linear-gradient(145deg, rgba(2, 6, 23, 0.98), rgba(15, 23, 42, 0.94));
+  box-shadow: inset 0 0 48px rgba(34, 211, 238, 0.08), 0 24px 72px rgba(0, 0, 0, 0.34);
+}
+
+.realm3d-w140-zone-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 0.78rem;
+  margin: 1rem 0;
+}
+
+.realm3d-w140-zone-tile,
+.realm3d-w140-app-monitor {
+  min-height: 48px;
+  border: 1px solid rgba(125, 211, 252, 0.24);
+  border-radius: 1rem;
+  padding: 0.82rem;
+  background: rgba(8, 47, 73, 0.34);
+  color: #e0f2fe;
+  text-decoration: none;
+  box-shadow: inset 0 0 20px rgba(34, 211, 238, 0.05);
+}
+
+.realm3d-w140-zone-tile {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.realm3d-w140-zone-tile > span {
+  width: 42px;
+  height: 42px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 14px;
+  background: rgba(34, 211, 238, 0.14);
+  font-size: 1.22rem;
+}
+
+.realm3d-w140-zone-tile small,
+.realm3d-w140-app-monitor small {
+  color: #bae6fd;
+  line-height: 1.35;
+}
+
+.realm3d-w140-app-wall {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 0.62rem;
+  margin: 1rem 0;
+  padding: 0.78rem;
+  border: 1px solid rgba(34, 211, 238, 0.18);
+  border-radius: 1rem;
+  background: rgba(2, 6, 23, 0.38);
+}
+
+.realm3d-w140-app-monitor {
+  display: grid;
+  gap: 0.32rem;
+}
+
+.realm3d-w140-app-monitor span {
+  color: #67e8f9;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.realm3d-w140-proof-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.9rem 0;
+}
+
+.realm3d-w140-proof-row span {
+  border: 1px solid rgba(52, 211, 153, 0.26);
+  border-radius: 999px;
+  padding: 0.42rem 0.68rem;
+  background: rgba(6, 78, 59, 0.2);
+  color: #bbf7d0;
+  font-size: 0.82rem;
+}
+
+.realm3d-w140-actions .btn {
+  min-height: 48px;
+}
+
+@media (max-width: 720px) {
+  .realm3d-w140-zone-grid,
+  .realm3d-w140-app-wall {
+    grid-template-columns: 1fr;
+  }
+  .realm3d-w140-zone-tile,
+  .realm3d-w140-app-monitor,
+  .realm3d-w140-actions .btn {
+    min-height: 48px;
+  }
+}
+
+/* W141 NPC movement, robot quality, and device-tier performance */
+.realm3d-shell[data-realm-npc-device-session="w141"] [data-realm3d-performance-health][data-w141-npc-device-tier="low"] {
+  outline: 1px solid rgba(52, 211, 153, 0.35);
+}
+
+.realm3d-shell[data-realm-npc-device-session="w141"] [data-realm3d-performance-health][data-w141-npc-device-tier="neon"] {
+  outline: 1px solid rgba(244, 114, 182, 0.38);
+}
+
+.realm3d-w141-ceo-audit,
+.realm3d-w141-device-tier-card {
+  min-height: 48px;
+  border: 1px solid rgba(125, 211, 252, 0.22);
+  border-radius: 1rem;
+  padding: 0.9rem;
+  background: linear-gradient(135deg, rgba(8, 47, 73, 0.3), rgba(15, 23, 42, 0.46));
+}
+
+@media (max-width: 720px) {
+  .realm3d-w141-ceo-audit,
+  .realm3d-w141-device-tier-card {
+    min-height: 48px;
+    font-size: 0.94rem;
+  }
+}
+
+/* W146 EON City high-end AAA graphics expansion: desktop-rich visuals with mobile-safe proof. */
+.realm3d-shell[data-realm-high-end-aaa-graphics-session="w146"] [data-realm3d-performance-health][data-w146-high-end-aaa-tier="desktop-neon"] {
+  outline: 1px solid rgba(251, 191, 36, 0.44);
+  box-shadow: 0 0 0 3px rgba(244, 114, 182, 0.08);
+}
+
+.realm3d-shell[data-realm-high-end-aaa-graphics-session="w146"] [data-realm3d-performance-health][data-w146-high-end-aaa-tier="protected-low"] {
+  outline: 1px solid rgba(52, 211, 153, 0.38);
+}
+
+.realm3d-w146-high-end-aaa-card {
+  border-color: rgba(251, 191, 36, 0.34);
+  background:
+    radial-gradient(circle at 18% 0%, rgba(251, 191, 36, 0.16), transparent 30%),
+    radial-gradient(circle at 78% 10%, rgba(217, 70, 239, 0.15), transparent 34%),
+    linear-gradient(145deg, rgba(2, 6, 23, 0.98), rgba(30, 41, 59, 0.92));
+  box-shadow: inset 0 0 56px rgba(251, 191, 36, 0.07), 0 24px 78px rgba(0, 0, 0, 0.36);
+}
+
+.realm3d-w146-layer-grid {
+  margin: 1rem 0;
+}
+
+.realm3d-w146-layer-card {
+  min-height: 56px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.22rem 0.65rem;
+  align-items: start;
+  border: 1px solid rgba(251, 191, 36, 0.22);
+  border-radius: 1rem;
+  padding: 0.86rem;
+  background: linear-gradient(135deg, rgba(88, 28, 135, 0.26), rgba(8, 47, 73, 0.28));
+  color: #fef3c7;
+}
+
+.realm3d-w146-layer-card span {
+  width: 38px;
+  height: 38px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 14px;
+  background: rgba(251, 191, 36, 0.12);
+  color: #fde68a;
+}
+
+.realm3d-w146-layer-card small {
+  grid-column: 2;
+  color: #fde68a;
+  line-height: 1.35;
+}
+
+.realm3d-w146-proof-row span {
+  border-color: rgba(251, 191, 36, 0.28);
+  background: rgba(113, 63, 18, 0.24);
+  color: #fef3c7;
+}
+
+@media (max-width: 720px), (prefers-reduced-motion: reduce) {
+  .realm3d-w146-high-end-aaa-card,
+  .realm3d-w146-layer-card {
+    min-height: 48px;
+    box-shadow: none;
+  }
+}
+
+/* W147 EON City NPC voice/proximity/social pass: opt-in voice, speech bubbles, and owner/visitor safety. */
+.realm3d-shell[data-realm-npc-voice-social-session="w147"] [data-realm3d-voice-state] {
+  border-color: rgba(125, 211, 252, 0.32);
+  background: rgba(8, 47, 73, 0.32);
+}
+
+.realm3d-w147-npc-voice-social-card {
+  border-color: rgba(125, 211, 252, 0.34);
+  background:
+    radial-gradient(circle at 14% 0%, rgba(14, 165, 233, 0.18), transparent 36%),
+    radial-gradient(circle at 88% 12%, rgba(168, 85, 247, 0.14), transparent 34%),
+    rgba(2, 6, 23, 0.9);
+}
+
+.realm3d-w147-social-grid {
+  margin: 1rem 0;
+}
+
+.realm3d-w147-social-card {
+  min-height: 58px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.35rem 0.7rem;
+  align-items: center;
+  border: 1px solid rgba(125, 211, 252, 0.2);
+  background: rgba(15, 23, 42, 0.58);
+}
+
+.realm3d-w147-social-card span {
+  width: 34px;
+  height: 34px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(14, 165, 233, 0.16);
+  color: #bae6fd;
+}
+
+.realm3d-w147-social-card small {
+  grid-column: 2;
+  color: #bfdbfe;
+}
+
+.realm3d-w147-proof-row span {
+  border-color: rgba(125, 211, 252, 0.28);
+  background: rgba(8, 47, 73, 0.26);
+}
+
+.realm3d-w147-bubble-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0.8rem 0;
+}
+
+.realm3d-w147-bubble-preview span {
+  display: inline-flex;
+  max-width: 100%;
+  padding: 0.42rem 0.64rem;
+  border-radius: 999px;
+  border: 1px solid rgba(125, 211, 252, 0.28);
+  background: rgba(14, 165, 233, 0.12);
+  color: #e0f2fe;
+  font-size: 0.82rem;
+}
+
+@media (max-width: 720px), (prefers-reduced-motion: reduce) {
+  .realm3d-w147-npc-voice-social-card,
+  .realm3d-w147-social-card {
+    min-height: 48px;
+    box-shadow: none;
+  }
+}
+
+/* W148 EON City all-device visual proof lab: generated realm parity + compact proof matrix. */
+.realm3d-shell[data-realm-all-device-proof-session="w148"] .realm3d-w148-proof-chip,
+.realm3d-w148-all-device-card {
+  border-color: rgba(74, 222, 128, 0.32);
+  background:
+    radial-gradient(circle at 10% 0%, rgba(74, 222, 128, 0.16), transparent 34%),
+    radial-gradient(circle at 88% 16%, rgba(56, 189, 248, 0.14), transparent 32%),
+    rgba(2, 6, 23, 0.92);
+}
+
+.realm3d-w148-device-grid {
+  margin: 1rem 0;
+}
+
+.realm3d-w148-device-card {
+  display: grid;
+  gap: 0.24rem;
+  min-height: 66px;
+  border: 1px solid rgba(74, 222, 128, 0.22);
+  border-radius: 1rem;
+  padding: 0.78rem;
+  background: rgba(15, 23, 42, 0.58);
+}
+
+.realm3d-w148-device-card span {
+  width: fit-content;
+  max-width: 100%;
+  padding: 0.18rem 0.46rem;
+  border-radius: 999px;
+  background: rgba(74, 222, 128, 0.12);
+  color: #bbf7d0;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.realm3d-w148-device-card small {
+  color: #d1fae5;
+}
+
+.realm3d-w148-proof-row span {
+  border-color: rgba(74, 222, 128, 0.28);
+  background: rgba(6, 78, 59, 0.24);
+  color: #dcfce7;
+}
+
+@media (max-width: 720px), (prefers-reduced-motion: reduce) {
+  .realm3d-w148-all-device-card,
+  .realm3d-w148-device-card {
+    min-height: 48px;
+    box-shadow: none;
+  }
+}
+
+/* W156 EON City Ultra Showcase: strong-desktop wow layer with low-device protection. */
+.realm3d-shell[data-realm-ultra-showcase-session="w156"] [data-realm3d-performance-health][data-w156-ultra-showcase-tier="desktop-ultra"] {
+  border-color: rgba(250, 204, 21, 0.76);
+  box-shadow: 0 0 24px rgba(250, 204, 21, 0.28), inset 0 0 18px rgba(103, 232, 249, 0.12);
+}
+
+.realm3d-shell[data-realm-ultra-showcase-session="w156"] [data-realm3d-performance-health][data-w156-ultra-showcase-tier="protected-low"] {
+  border-color: rgba(45, 212, 191, 0.55);
+  box-shadow: inset 0 0 18px rgba(20, 184, 166, 0.14);
+}
+
+.realm3d-w156-ultra-showcase-card {
+  border: 1px solid rgba(250, 204, 21, 0.28);
+  background:
+    radial-gradient(circle at 12% 0%, rgba(250, 204, 21, 0.16), transparent 28%),
+    radial-gradient(circle at 88% 12%, rgba(103, 232, 249, 0.16), transparent 30%),
+    linear-gradient(135deg, rgba(15, 23, 42, 0.94), rgba(30, 41, 59, 0.86));
+}
+
+.realm3d-w156-layer-grid {
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+}
+
+.realm3d-w156-layer-card {
+  display: grid;
+  gap: 0.42rem;
+  padding: 0.82rem;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 18px;
+  background: rgba(2, 6, 23, 0.48);
+}
+
+.realm3d-w156-layer-card span {
+  width: 2.05rem;
+  height: 2.05rem;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 999px;
+  color: #020617;
+  background: linear-gradient(135deg, #fde68a, #67e8f9);
+  box-shadow: 0 0 20px rgba(103, 232, 249, 0.28);
+}
+
+.realm3d-w156-layer-card small,
+.realm3d-w156-room-audit span {
+  color: rgba(226, 232, 240, 0.78);
+}
+
+.realm3d-w156-proof-row span {
+  border-color: rgba(250, 204, 21, 0.24);
+  background: rgba(250, 204, 21, 0.08);
+}
+
+.realm3d-w156-room-audit {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.75rem;
+}
+
+.realm3d-w156-room-audit span {
+  padding: 0.38rem 0.58rem;
+  border: 1px solid rgba(103, 232, 249, 0.18);
+  border-radius: 999px;
+  background: rgba(8, 47, 73, 0.32);
+  font-size: 0.78rem;
+}
+
+.realm3d-w156-proof-chip {
+  border-color: rgba(250, 204, 21, 0.24);
+}
+
+@media (max-width: 760px), (prefers-reduced-motion: reduce) {
+  .realm3d-w156-ultra-showcase-card,
+  .realm3d-w156-layer-card {
+    box-shadow: none;
+  }
+}
+
+/* W157-W165 EON City final gamer/power-user certification: cumulative landmark, NPC, office, trailer, weather, clarity, realm parity, performance, and final proof layer. */
+.realm3d-w165-certification-card {
+  border-color: rgba(253, 230, 138, 0.34);
+  box-shadow: 0 0 0 1px rgba(253, 230, 138, 0.14), 0 22px 54px rgba(12, 18, 42, 0.38);
+  background: linear-gradient(145deg, rgba(15, 23, 42, 0.96), rgba(41, 17, 78, 0.86));
+}
+.realm3d-w165-proof-chip {
+  border-color: rgba(253, 230, 138, 0.42);
+  background: rgba(253, 230, 138, 0.1);
+}
+.realm3d-w165-proof-row span {
+  border: 1px solid rgba(253, 230, 138, 0.26);
+  background: rgba(253, 230, 138, 0.08);
+}
+.realm3d-w165-phase-grid {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  margin-top: 12px;
+}
+.realm3d-w165-phase-card {
+  min-height: 120px;
+  border: 1px solid rgba(125, 211, 252, 0.2);
+  border-radius: 18px;
+  padding: 12px;
+  background: radial-gradient(circle at 20% 0%, rgba(125, 211, 252, 0.18), rgba(15, 23, 42, 0.72));
+}
+.realm3d-w165-phase-card span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 46px;
+  height: 24px;
+  margin-bottom: 8px;
+  border-radius: 999px;
+  background: rgba(253, 230, 138, 0.14);
+  color: #fde68a;
+  font-weight: 800;
+  font-size: 0.78rem;
+}
+.realm3d-w165-phase-card strong,
+.realm3d-w165-phase-card small {
+  display: block;
+}
+.realm3d-w165-phase-card small {
+  margin-top: 6px;
+  color: rgba(226, 232, 240, 0.76);
+  line-height: 1.35;
+}
+.realm3d-w165-landmark-audit span {
+  border-color: rgba(167, 243, 208, 0.24);
+  background: rgba(16, 185, 129, 0.08);
+}
+@media (prefers-reduced-motion: reduce) {
+  .realm3d-w165-certification-card,
+  .realm3d-w165-phase-card {
+    transition: none !important;
+    animation: none !important;
+  }
+}

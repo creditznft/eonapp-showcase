@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024"><defs>
+      <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071526"/><stop offset=".5" stop-color="#132642"/><stop offset="1" stop-color="#050b17"/></linearGradient>
+      <radialGradient id="glow" cx=".5" cy=".45" r=".7"><stop stop-color="#62f4ff" stop-opacity=".35"/><stop offset="1" stop-color="#0d1930" stop-opacity="0"/></radialGradient>
+      <linearGradient id="violet" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c4a4ff"/><stop offset="1" stop-color="#5030bb"/></linearGradient>
+      <linearGradient id="mint" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c4ffdf"/><stop offset="1" stop-color="#1f9f82"/></linearGradient>
+      <linearGradient id="amber" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffe2a2"/><stop offset="1" stop-color="#c36a1c"/></linearGradient>
+    </defs><rect width="1024" height="1024" fill="#061525"/><rect width="1024" height="1024" fill="url(#glow)"/>
+        <g fill="none" stroke="#8ceeff" stroke-width="7" stroke-opacity=".38"><path d="M-40 170c110-80 180 100 290 10s180-120 290-20 180 70 290-20 180-80 240 0"/><path d="M-40 390c110-80 180 100 290 10s180-120 290-20 180 70 290-20 180-80 240 0"/><path d="M-40 610c110-80 180 100 290 10s180-120 290-20 180 70 290-20 180-80 240 0"/><path d="M-40 830c110-80 180 100 290 10s180-120 290-20 180 70 290-20 180-80 240 0"/></g>
+        <g stroke="#c2a4ff" stroke-width="2" stroke-opacity=".45"><path d="M0 0 1024 1024M240 0 1024 784M480 0 1024 544"/></g></svg>

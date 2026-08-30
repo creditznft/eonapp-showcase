@@ -1,0 +1,34 @@
+{
+  "schema": "eonapp.w655.runtime-dist-reconciliation.v2",
+  "generatedAt": "2026-07-14T13:57:55.439Z",
+  "status": "new-candidate-required",
+  "latestSourceHead": "2b226351c4921086b16fb1ad5e6e057168918ad8",
+  "originalSourceAuthority": "5e1fbb06ebea742fcfd6870b1f1acb6c8aeb0069",
+  "originalExactCandidate": {
+    "directoryDigest": "540159dd47b70e4ec97140bc097863ed870d32b86ebd2582281d41df76b1d1a2",
+    "fileCount": 563,
+    "deployable": false,
+    "reason": "Latest-source rebuild did not reproduce the original exact candidate digest."
+  },
+  "latestSourceRebuild": {
+    "directoryDigest": "cadaacbc63ec567e30efbc584e00ca10f171cc7bdfac4104a87bda01139ca7fe",
+    "fileCount": 563,
+    "largestFile": {
+      "path": "assets/city/w649/fallback/characters/eoncity_pathfinder_a_vanguard_6clips.f87948576117.glb",
+      "bytes": 2780808
+    },
+    "envLocalRead": false,
+    "envLocalPackaged": false
+  },
+  "appliedPortabilityAndReleaseGateCommits": [
+    "7be1e82bc6278efc3f688884ea5c72118bb80c94",
+    "fc1cb3633b9da81cfcca86c1ded6fb92f6ef4046",
+    "fd852a21bf8d0ca40adbc65315797f056a29adad",
+    "8fa1034cf4ea8d3c59b38fe8709a930d16f6e850",
+    "2b226351c4921086b16fb1ad5e6e057168918ad8"
+  ],
+  "runtimeDistByteIdenticalToOriginal": false,
+  "previewDeployment": "blocked-until-new-candidate-identity-and-ci-verification",
+  "productionDeployment": "blocked"
+}
+

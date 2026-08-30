@@ -1,0 +1,20 @@
+{
+  "schema": "eonapp.w273.city-sensory-accessibility-source-gate.v1",
+  "wave": "W273-A0",
+  "scope": "City Play source-only",
+  "ok": false,
+  "score": 0,
+  "checks": {
+    "explicitDefaultOff": false,
+    "localPreferenceBoundary": true,
+    "explicitActionFeedbackOnly": true,
+    "visualAlternativeAndControls": true,
+    "noMediaAutoplayOrMicrophone": true,
+    "noRemoteTransport": true,
+    "accessibleControls": true,
+    "noGoPreserved": true,
+    "packageScript": true
+  },
+  "claimFence": "This source baseline covers City Play only and cannot prove device audio, vibration support, hearing/vestibular accessibility, or usability on real hardware.",
+  "releaseDependency": "W260 remains NO-GO"
+}

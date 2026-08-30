@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <script src="/assets/js/eon-theme-bootstrap.js?release=w722-2026-07-27"></script>
+  <meta name="theme-color" content="#111411" />
+  <meta name="description" content="Public EONAPP service status and privacy-safe incident communication." />
+  <title>Status · EONAPP</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="stylesheet" href="/assets/css/base.css" />
+  <link rel="stylesheet" href="/assets/css/layout.css" />
+  <link rel="stylesheet" href="/assets/css/eon-app-shell.css" />
+  <link rel="stylesheet" href="/assets/css/eon-hubs.css" />
+  <link rel="canonical" href="https://eonapp.ch/status" />
+  <meta name="robots" content="noindex, follow" />
+</head>
+<body data-page-type="status" data-eon-app-shell="1" data-eon-app-page="status">
+  <a href="#main" class="skip-to-content">Skip to main content</a>
+  <main id="main" class="eon-hub-main">
+    <header class="eon-hub-top">
+      <div><p class="eon-hub-kicker">Public service health</p><h1 class="eon-hub-title">EONAPP Status</h1><p class="eon-hub-subtitle">Privacy-safe operational updates. An unavailable status service is never treated as proof that everything is operational.</p></div>
+      <div class="local-ai-hero-actions"><a class="eon-hub-primary" href="/help#trust-support-case">Open a support case</a><a class="local-ai-secondary" href="/">Return to EONBOT</a></div>
+    </header>
+    <section class="eon-hub-card" aria-live="polite"><p class="eon-hub-kicker">Current state</p><h2 data-status-overall data-state="unknown">Checking status…</h2><p data-status-note>No private prompts, credentials, case details or workspace content are published here.</p></section>
+    <section aria-labelledby="status-components-title"><h2 id="status-components-title">Service components</h2><div class="eon-hub-grid" data-status-components aria-live="polite">Loading component status…</div></section>
+    <section aria-labelledby="status-incidents-title"><h2 id="status-incidents-title">Active and recent incidents</h2><div class="eon-hub-grid" data-status-incidents aria-live="polite">Loading incident history…</div></section>
+    <section class="eon-hub-card" data-eon-operator-identity>
+      <p class="eon-hub-kicker">Operational accountability</p><h2>Operator/controller record</h2><p data-eon-operator-status>Checking deployment configuration…</p>
+      <dl><dt>Legal operator</dt><dd data-eon-operator-field="legalName"></dd><dt>Support contact</dt><dd data-eon-operator-field="supportContact"></dd><dt>Security contact</dt><dd data-eon-operator-field="securityContact"></dd></dl>
+    </section>
+  </main>
+  <script type="module" src="/assets/js/eon-app-shell.js"></script>
+  <script type="module" src="/assets/js/status-page.js"></script>
+  <script type="module" src="/assets/js/utils/accessibility-autoload.js"></script>
+</body>
+</html>

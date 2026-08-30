@@ -1,0 +1,148 @@
+/* W724 — one small Orb, one full-screen productive command surface. */
+.eon-command-host { position: relative; z-index: 1450; }
+.eon-command-orb {
+  position: fixed;
+  z-index: 1460;
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(var(--eon-command-safe-bottom, 1rem), env(safe-area-inset-bottom));
+  display: inline-grid;
+  grid-template-columns: auto 0fr;
+  align-items: center;
+  gap: 0;
+  width: 3.35rem;
+  height: 3.35rem;
+  padding: 0 1rem;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--clr-accent) 54%, var(--clr-border));
+  border-radius: 999px;
+  background: radial-gradient(circle at 35% 28%, color-mix(in srgb, var(--clr-accent2) 46%, transparent), transparent 32%), linear-gradient(145deg, color-mix(in srgb, var(--clr-surface2) 94%, #fff 3%), var(--clr-surface));
+  box-shadow: 0 14px 42px color-mix(in srgb, var(--clr-bg) 62%, transparent), 0 0 32px var(--eon-theme-orb-glow, transparent);
+  color: var(--clr-text);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  transition: width .2s ease, transform .18s ease, border-color .18s ease;
+}
+.eon-command-orb:hover,
+.eon-command-orb:focus-visible { width: 7.4rem; grid-template-columns: auto 1fr; gap: .52rem; transform: translateY(-2px); border-color: var(--clr-accent); outline: none; }
+.eon-command-orb > span:first-child { font-size: 1.18rem; }
+.eon-command-orb-label { min-width: 0; overflow: hidden; opacity: 0; white-space: nowrap; transition: opacity .15s ease; }
+.eon-command-orb:hover .eon-command-orb-label,
+.eon-command-orb:focus-visible .eon-command-orb-label { opacity: 1; }
+.eon-command-hint { position: fixed; z-index: 1459; right: max(1.1rem, env(safe-area-inset-right)); bottom: calc(var(--eon-command-safe-bottom, 1rem) + 4rem); padding: .45rem .68rem; border: 1px solid var(--clr-border); border-radius: .58rem; background: var(--clr-surface); color: var(--clr-text); font-size: .76rem; box-shadow: 0 12px 34px color-mix(in srgb, var(--clr-bg) 58%, transparent); }
+.eon-command-hint::after { content: ''; position: absolute; right: 1.05rem; bottom: -.36rem; width: .62rem; height: .62rem; border-right: 1px solid var(--clr-border); border-bottom: 1px solid var(--clr-border); background: var(--clr-surface); transform: rotate(45deg); }
+body.eon-command-open { overflow: hidden !important; }
+.eon-command-surface {
+  position: fixed;
+  z-index: 1500;
+  inset: 0;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  min-width: 0;
+  min-height: 100dvh;
+  overflow: hidden;
+  background: linear-gradient(150deg, color-mix(in srgb, var(--clr-bg2) 78%, var(--clr-bg)), var(--clr-bg) 62%);
+  color: var(--clr-text);
+}
+.eon-command-surface[hidden] { display: none !important; }
+.eon-command-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 5.25rem; padding: max(1rem, env(safe-area-inset-top)) max(1.25rem, env(safe-area-inset-right)) 1rem max(1.25rem, env(safe-area-inset-left)); border-bottom: 1px solid var(--clr-border); background: color-mix(in srgb, var(--clr-bg) 88%, transparent); backdrop-filter: blur(18px); }
+.eon-command-brand { display: flex; align-items: center; gap: .9rem; min-width: 0; }
+.eon-command-mark { display: inline-grid; place-items: center; width: 2.65rem; height: 2.65rem; border: 1px solid color-mix(in srgb, var(--clr-accent) 60%, var(--clr-border)); border-radius: .86rem; background: color-mix(in srgb, var(--clr-accent) 12%, var(--clr-surface)); color: var(--clr-accent); box-shadow: 0 0 26px var(--eon-theme-orb-glow, transparent); }
+.eon-command-brand p { margin: 0 0 .08rem; color: var(--clr-text-muted); font-size: .67rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+.eon-command-brand h1 { margin: 0; overflow: hidden; font-size: clamp(1.05rem, 2vw, 1.45rem); letter-spacing: -.025em; text-overflow: ellipsis; white-space: nowrap; }
+.eon-command-header-actions { display: flex; align-items: center; gap: .65rem; }
+.eon-command-shortcut { padding: .35rem .52rem; border: 1px solid var(--clr-border); border-radius: .5rem; color: var(--clr-text-muted); font-size: .7rem; }
+.eon-command-close { display: inline-grid; place-items: center; width: 2.65rem; height: 2.65rem; padding: 0; border: 1px solid var(--clr-border); border-radius: .78rem; background: var(--clr-surface); color: var(--clr-text); font: inherit; font-size: 1.45rem; cursor: pointer; }
+.eon-command-close:hover,
+.eon-command-close:focus-visible { border-color: var(--clr-accent); outline: none; }
+.eon-command-main { width: min(80rem, 100%); margin: 0 auto; padding: clamp(1.2rem, 3.5vw, 3.25rem); overflow: auto; overscroll-behavior: contain; }
+.eon-command-intro { max-width: 54rem; }
+.eon-command-kicker { margin: 0 0 .45rem; color: var(--clr-accent); font-size: .72rem; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.eon-command-intro h2 { margin: 0; font-size: clamp(1.65rem, 4vw, 3.45rem); line-height: 1.04; letter-spacing: -.05em; }
+.eon-command-intro > p:last-child { max-width: 46rem; margin: .9rem 0 0; color: var(--clr-text-muted); font-size: clamp(.88rem, 1.5vw, 1rem); line-height: 1.6; }
+.eon-command-primary-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .8rem; margin-top: clamp(1.35rem, 3vw, 2.6rem); }
+.eon-command-primary { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: start; gap: .8rem; min-height: 8.2rem; padding: 1rem; border: 1px solid var(--clr-border); border-radius: 1rem; background: color-mix(in srgb, var(--clr-surface) 88%, transparent); color: var(--clr-text); text-align: left; font: inherit; cursor: pointer; transition: transform .16s ease, border-color .16s ease, background .16s ease; }
+.eon-command-primary:hover,
+.eon-command-primary:focus-visible { transform: translateY(-2px); border-color: color-mix(in srgb, var(--clr-accent) 70%, var(--clr-border)); background: color-mix(in srgb, var(--clr-accent) 9%, var(--clr-surface)); outline: none; }
+.eon-command-primary-icon { display: inline-grid; place-items: center; width: 2.35rem; height: 2.35rem; border-radius: .72rem; background: color-mix(in srgb, var(--clr-accent) 13%, var(--clr-surface2)); color: var(--clr-accent); font-size: 1rem; }
+.eon-command-primary strong { display: block; margin-top: .1rem; font-size: .96rem; }
+.eon-command-primary small { display: block; margin-top: .38rem; color: var(--clr-text-muted); font-size: .78rem; line-height: 1.45; }
+.eon-command-lower-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .85rem; margin-top: .9rem; }
+.eon-command-section,
+.eon-command-advanced { min-width: 0; padding: 1rem; border: 1px solid var(--clr-border); border-radius: 1rem; background: color-mix(in srgb, var(--clr-surface) 70%, transparent); }
+.eon-command-section-head { display: flex; align-items: baseline; justify-content: space-between; gap: .8rem; margin-bottom: .72rem; }
+.eon-command-section-head h2 { margin: 0; font-size: .9rem; }
+.eon-command-section-head span { color: var(--clr-text-muted); font-size: .68rem; }
+.eon-command-links { display: grid; gap: .45rem; }
+.eon-command-link,
+.eon-command-advanced a { display: flex; align-items: center; justify-content: space-between; min-height: 2.55rem; padding: .58rem .72rem; border: 1px solid transparent; border-radius: .68rem; background: color-mix(in srgb, var(--clr-bg2) 76%, transparent); color: var(--clr-text); text-decoration: none; font: inherit; font-size: .79rem; text-align: left; cursor: pointer; }
+.eon-command-link::after,
+.eon-command-advanced a::after { content: '›'; color: var(--clr-text-muted); }
+.eon-command-link:hover,
+.eon-command-link:focus-visible,
+.eon-command-advanced a:hover,
+.eon-command-advanced a:focus-visible { border-color: color-mix(in srgb, var(--clr-accent) 55%, var(--clr-border)); outline: none; }
+.eon-command-advanced { grid-column: 1 / -1; }
+.eon-command-advanced summary { cursor: pointer; color: var(--clr-text-muted); font-size: .78rem; font-weight: 750; }
+.eon-command-advanced > div { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .48rem; margin-top: .75rem; }
+.eon-command-footer { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 3.4rem; padding: .75rem max(1.25rem, env(safe-area-inset-right)) max(.75rem, env(safe-area-inset-bottom)) max(1.25rem, env(safe-area-inset-left)); border-top: 1px solid var(--clr-border); color: var(--clr-text-muted); font-size: .72rem; }
+.eon-command-footer a,
+.eon-command-footer button { color: var(--clr-accent); font: inherit; font-weight: 760; text-decoration: none; }
+.eon-command-footer button { padding: .35rem .55rem; border: 1px solid var(--clr-border); border-radius: .55rem; background: var(--clr-surface); cursor: pointer; }
+@media (max-width: 900px) {
+  .eon-command-primary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .eon-command-primary { min-height: 7rem; }
+}
+@media (max-width: 620px) {
+  /* L95-W09 — Quick Command is useful on phones, but its dismissal control
+     must remain a full touch target and visible above the scrollable body. */
+  .eon-command-header { position: sticky; top: 0; z-index: 12; gap: .5rem; padding-top: max(.75rem, env(safe-area-inset-top)); }
+  .eon-command-header-actions { flex: 0 0 auto; }
+  .eon-command-close { width: 48px; height: 48px; min-width: 48px; min-height: 48px; }
+  .eon-command-shortcut { display: none; }
+  .eon-command-main { padding: 1rem .82rem 1.5rem; }
+  .eon-command-intro h2 { font-size: clamp(1.55rem, 8vw, 2.35rem); }
+  .eon-command-primary-grid,
+  .eon-command-lower-grid,
+  .eon-command-advanced > div { grid-template-columns: 1fr; }
+  .eon-command-primary { min-height: auto; }
+  .eon-command-advanced { grid-column: auto; }
+  .eon-command-footer { align-items: flex-start; flex-direction: column; }
+  .eon-command-orb { right: max(.75rem, env(safe-area-inset-right)); width: 3rem; height: 3rem; padding: 0; grid-template-columns: 1fr; }
+  .eon-command-orb:hover,
+  .eon-command-orb:focus-visible { width: 3rem; grid-template-columns: 1fr; gap: 0; }
+  .eon-command-orb-label { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .eon-command-orb,
+  .eon-command-primary,
+  .eon-command-orb-label { transition: none !important; }
+}
+
+body[data-eon-app-page="chat"] .eon-command-host {
+  --eon-command-safe-bottom: 5.75rem;
+}
+body[data-eon-app-page="chat"] .eon-command-hint {
+  bottom: calc(var(--eon-command-safe-bottom, 5.75rem) + 3.65rem);
+}
+body[data-eon-app-page="eoncity"] .eon-command-orb {
+  bottom: max(5.25rem, calc(env(safe-area-inset-bottom) + 4.25rem));
+}
+body[data-eon-app-page="eoncity"] .eon-command-hint {
+  bottom: max(9.25rem, calc(env(safe-area-inset-bottom) + 8.25rem));
+}
+@media (forced-colors: active) {
+  .eon-command-orb,
+  .eon-command-surface,
+  .eon-command-close,
+  .eon-command-primary,
+  .eon-command-section,
+  .eon-command-advanced,
+  .eon-command-link,
+  .eon-command-advanced a { border: 1px solid CanvasText; }
+  .eon-command-orb:focus-visible,
+  .eon-command-close:focus-visible,
+  .eon-command-primary:focus-visible,
+  .eon-command-link:focus-visible,
+  .eon-command-advanced a:focus-visible { outline: 2px solid Highlight; outline-offset: 2px; }
+}

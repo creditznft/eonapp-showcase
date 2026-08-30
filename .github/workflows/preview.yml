@@ -1,0 +1,363 @@
+# Deploys the exact CI-produced candidate to a non-production Pages branch.
+name: Preview Exact Candidate
+
+on:
+  workflow_dispatch:
+    inputs:
+      candidate_run_id:
+        description: Successful CI run ID containing the immutable candidate artifact
+        required: true
+        type: string
+      candidate_digest:
+        description: Expected 64-character candidate digest from CI
+        required: true
+        type: string
+      preview_branch:
+        description: Cloudflare Pages preview branch label
+        required: true
+        default: w646-owner-evidence
+        type: string
+
+permissions:
+  actions: read
+  contents: read
+  deployments: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+
+concurrency:
+  group: cloudflare-pages-preview-${{ inputs.preview_branch }}
+  cancel-in-progress: true
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    environment:
+      name: preview
+    steps:
+      - name: Validate inputs
+        env:
+          RUN_ID: ${{ inputs.candidate_run_id }}
+          CANDIDATE_DIGEST: ${{ inputs.candidate_digest }}
+          PREVIEW_BRANCH: ${{ inputs.preview_branch }}
+        run: |
+          printf '%s' "$RUN_ID" | grep -Eq '^[0-9]{1,20}$'
+          printf '%s' "$CANDIDATE_DIGEST" | grep -Eq '^[a-f0-9]{64}$'
+          printf '%s' "$PREVIEW_BRANCH" | grep -Eq '^[A-Za-z0-9._-]{1,60}$'
+      - name: Download immutable candidate from the named CI run
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_ID: ${{ inputs.candidate_run_id }}
+          REPO: ${{ github.repository }}
+        run: gh run download "$RUN_ID" --repo "$REPO" --pattern 'eonapp-release-candidate-*' --dir candidate-download
+      - name: Resolve candidate checkout
+        id: candidate
+        env:
+          EXPECTED_DIGEST: ${{ inputs.candidate_digest }}
+        run: |
+          ROOT="$(realpath "$(find candidate-download -path '*/candidate-provenance.json' ! -path '*/dist/release/*' -printf '%h\n' | sort | head -n 1)")"
+          test -n "$ROOT"
+          SHA="$(jq -r .commitSha "$ROOT/candidate-provenance.json")"
+          DIGEST="$(jq -r .candidateDigest "$ROOT/candidate-provenance.json")"
+          test "$DIGEST" = "$EXPECTED_DIGEST"
+          echo "root=$ROOT" >> "$GITHUB_OUTPUT"
+          echo "sha=$SHA" >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+        with:
+          ref: ${{ steps.candidate.outputs.sha }}
+          fetch-depth: 0
+          path: source
+      - name: Verify candidate without rebuilding
+        env:
+          EXPECTED_DIGEST: ${{ inputs.candidate_digest }}
+        run: node source/scripts/w641-verify-release-candidate.mjs "${{ steps.candidate.outputs.root }}" "$EXPECTED_DIGEST"
+      - name: Validate Cloudflare credentials
+        run: |
+          test -n "${{ secrets.CLOUDFLARE_API_TOKEN }}"
+          test -n "${{ secrets.CLOUDFLARE_ACCOUNT_ID }}"
+      - name: Deploy exact candidate dist to Preview
+        id: deploy
+        working-directory: source
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          PREVIEW_BRANCH: ${{ inputs.preview_branch }}
+        run: |
+          echo "deployment_started_at=$(date -u +%Y-%m-%dT%H:%M:%SZ)" >> "$GITHUB_OUTPUT"
+          # Capture the branch deployment baseline before Wrangler can create a new deployment.
+          curl --fail --silent --show-error -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/eonapp-ch/deployments" > deployments-before.json
+          jq -r '.result[].id' deployments-before.json | sort -u > deployment-ids-before.txt
+          # W660L stages the exact immutable candidate with the same-commit
+          # Pages Functions and every relative Function support import.
+          DEPLOY_ROOT="$RUNNER_TEMP/eonapp-pages-preview"
+          node scripts/w660l-stage-pages-deploy-root.mjs \
+            --candidate "${{ steps.candidate.outputs.root }}" \
+            --output "$DEPLOY_ROOT"
+          test -f "$DEPLOY_ROOT/_routes.json"
+          test -f "$DEPLOY_ROOT/functions/api/auth/session.js"
+          test -f "$DEPLOY_ROOT/functions/api/city/access.js"
+          test -f "$DEPLOY_ROOT/functions/api/billing/status.js"
+          test -f "$DEPLOY_ROOT/functions/api/referrals.js"
+          cd "$DEPLOY_ROOT"
+          set -o pipefail
+          npx --yes wrangler@4 pages deploy . --project-name=eonapp-ch --branch="$PREVIEW_BRANCH" | tee "$GITHUB_WORKSPACE/source/preview-deploy.log"
+      - name: Resolve Cloudflare deployment and verify served candidate identity
+        id: deployment
+        working-directory: source
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          PREVIEW_BRANCH: ${{ inputs.preview_branch }}
+          CANDIDATE_DIGEST: ${{ inputs.candidate_digest }}
+          CANDIDATE_ROOT: ${{ steps.candidate.outputs.root }}
+          DEPLOYMENT_STARTED_AT: ${{ steps.deploy.outputs.deployment_started_at }}
+        run: |
+          DEPLOYMENT="null"
+          for attempt in $(seq 1 30); do
+            curl --fail --silent --show-error -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+              "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/eonapp-ch/deployments" > deployments.json
+            # The API snapshot is authoritative; compare IDs with grep because the before file is line-oriented.
+            NEW_DEPLOYMENTS="$(jq -c --arg branch "$PREVIEW_BRANCH" --arg started "$DEPLOYMENT_STARTED_AT" --rawfile before deployment-ids-before.txt '
+              ($before | split("\n")) as $beforeIds
+              | [.result[] | select(.deployment_trigger.metadata.branch == $branch and .created_on >= $started and .environment == "preview" and (.id as $id | (($beforeIds | index($id)) | not)))]
+            ' deployments.json)"
+            COUNT="$(jq 'length' <<<"$NEW_DEPLOYMENTS")"
+            if [ "$COUNT" -eq 1 ]; then
+              DEPLOYMENT="$(jq -c '.[0]' <<<"$NEW_DEPLOYMENTS")"
+              break
+            fi
+            if [ "$COUNT" -gt 1 ]; then
+              echo "Ambiguous new Cloudflare deployments for branch $PREVIEW_BRANCH" >&2
+              jq '[.[] | {id,url,created_on,latest_stage,aliases,environment}]' <<<"$NEW_DEPLOYMENTS" >&2
+              exit 1
+            fi
+            echo "Waiting for the new Cloudflare deployment (attempt $attempt/30)"
+            sleep 10
+          done
+          test "$DEPLOYMENT" != "null"
+          ID="$(jq -r .id <<<"$DEPLOYMENT")"
+          URL="$(jq -r .url <<<"$DEPLOYMENT")"
+          ALIAS_URL="$(jq -r '.aliases[0] // empty' <<<"$DEPLOYMENT")"
+          test -n "$ID" && test -n "$URL"
+          test -n "$ALIAS_URL"
+          test "$(jq -r .latest_stage.status <<<"$DEPLOYMENT")" = "success"
+          for attempt in 1 2 3 4 5; do
+            if curl --fail --silent --show-error "$URL/release/candidate-provenance.json" -o served-provenance.json; then break; fi
+            sleep 10
+          done
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent --show-error "$ALIAS_URL/release/candidate-provenance.json" -o alias-provenance.json; then break; fi
+            echo "Waiting for the Cloudflare alias to serve provenance (attempt $attempt/30)"
+            sleep 10
+          done
+          test "$(jq -r .candidateDigest served-provenance.json)" = "$CANDIDATE_DIGEST"
+          test "$(jq -r .commitSha served-provenance.json)" = "$(jq -r .commitSha "$CANDIDATE_ROOT/candidate-provenance.json")"
+          test "$(jq -r .distPayloadDigest served-provenance.json)" = "$(jq -r .distPayloadDigest "$CANDIDATE_ROOT/candidate-provenance.json")"
+          test "$(jq -r .candidateDigest alias-provenance.json)" = "$CANDIDATE_DIGEST"
+          test "$(jq -r .commitSha alias-provenance.json)" = "$(jq -r .commitSha "$CANDIDATE_ROOT/candidate-provenance.json")"
+          test "$(jq -r .distPayloadDigest alias-provenance.json)" = "$(jq -r .distPayloadDigest "$CANDIDATE_ROOT/candidate-provenance.json")"
+          export DEPLOYMENT_URL="$URL"
+          export ALIAS_URL
+          export EXPECTED_CANDIDATE_DIGEST="$CANDIDATE_DIGEST"
+          export EXPECTED_COMMIT_SHA="$(jq -r .commitSha "$CANDIDATE_ROOT/candidate-provenance.json")"
+          export EXPECTED_DIST_PAYLOAD_DIGEST="$(jq -r .distPayloadDigest "$CANDIDATE_ROOT/candidate-provenance.json")"
+          run_api_surface_check() {
+          node --input-type=module <<'EOF'
+          import fs from 'node:fs';
+          import crypto from 'node:crypto';
+
+          const expected = Object.freeze({
+            candidateDigest: process.env.EXPECTED_CANDIDATE_DIGEST,
+            commitSha: process.env.EXPECTED_COMMIT_SHA,
+            distPayloadDigest: process.env.EXPECTED_DIST_PAYLOAD_DIGEST
+          });
+          const bases = Object.freeze([
+            { label: 'deployment', url: process.env.DEPLOYMENT_URL },
+            { label: 'alias', url: process.env.ALIAS_URL }
+          ]);
+          const routes = Object.freeze([
+            {
+              route: '/api/auth/session',
+              schema: 'eonapp.identity-only.v1',
+              requiredFields: ['available', 'signedIn', 'guestUseAvailable', 'rollout'],
+              validators: { available: 'boolean', signedIn: 'boolean', guestUseAvailable: 'boolean', rollout: 'string' }
+            },
+            {
+              route: '/api/city/access',
+              schema: 'eon.city.access.w649b.v1',
+              requiredFields: ['mode', 'requiresIdentity', 'identityAvailable', 'signedIn', 'canBootFullCity'],
+              validators: { mode: 'string', requiresIdentity: 'boolean', identityAvailable: 'boolean', signedIn: 'boolean', canBootFullCity: 'boolean' }
+            },
+            {
+              route: '/api/billing/status',
+              schema: 'eonapp.billing.dodo-lifecycle.w628.v1',
+              requiredFields: ['ok', 'rollout', 'configured', 'account'],
+              validators: { ok: 'boolean', rollout: 'string', configured: 'object', account: 'object' }
+            },
+            {
+              route: '/api/referrals',
+              schema: 'eonapp.referrals.scalable-minimal-ledger.w623i.v2',
+              requiredFields: ['ok', 'rollout', 'active'],
+              validators: { ok: 'boolean', rollout: 'string', active: 'boolean' }
+            }
+          ]);
+
+          const digestText = (value) => crypto.createHash('sha256').update(value).digest('hex');
+          const failures = [];
+
+          async function fetchJson(base, route) {
+            const response = await fetch(`${base}${route}`, {
+              headers: { accept: 'application/json', 'cache-control': 'no-store' },
+              redirect: 'follow'
+            });
+            const text = await response.text();
+            const contentType = response.headers.get('content-type') || '';
+            let parsed = null;
+            let parsedOk = false;
+            try {
+              parsed = JSON.parse(text);
+              parsedOk = true;
+            } catch {}
+            return {
+              status: response.status,
+              url: response.url,
+              contentType,
+              text,
+              parsed,
+              parsedOk,
+              digest: digestText(text)
+            };
+          }
+
+          const provenance = {};
+          for (const base of bases) {
+            const response = await fetchJson(base.url, '/release/candidate-provenance.json');
+            if (response.status !== 200) failures.push(`${base.label}:candidate-provenance-status:${response.status}`);
+            if (!response.contentType.toLowerCase().includes('application/json')) failures.push(`${base.label}:candidate-provenance-not-json`);
+            if (!response.parsedOk || !response.parsed || typeof response.parsed !== 'object') failures.push(`${base.label}:candidate-provenance-invalid-json`);
+            if (response.parsed?.candidateDigest !== expected.candidateDigest) failures.push(`${base.label}:candidate-provenance-digest-mismatch`);
+            if (response.parsed?.commitSha !== expected.commitSha) failures.push(`${base.label}:candidate-provenance-commit-mismatch`);
+            if (response.parsed?.distPayloadDigest !== expected.distPayloadDigest) failures.push(`${base.label}:candidate-provenance-dist-mismatch`);
+            provenance[base.label] = {
+              url: response.url,
+              digest: response.digest,
+              candidateDigest: response.parsed?.candidateDigest || null,
+              commitSha: response.parsed?.commitSha || null,
+              distPayloadDigest: response.parsed?.distPayloadDigest || null
+            };
+          }
+
+          const apiResults = [];
+          for (const base of bases) {
+            for (const definition of routes) {
+              const response = await fetchJson(base.url, definition.route);
+              const body = response.parsed;
+              const result = {
+                base: base.label,
+                baseUrl: base.url,
+                route: definition.route,
+                status: response.status,
+                finalUrl: response.url,
+                contentType: response.contentType,
+                responseDigest: response.digest,
+                parsedJson: response.parsedOk,
+                schema: body?.schema || null,
+                fieldsPresent: Object.fromEntries(definition.requiredFields.map((field) => [field, Object.prototype.hasOwnProperty.call(body || {}, field)])),
+                validatorsPassed: {}
+              };
+              if (response.status !== 200) failures.push(`${base.label}:${definition.route}:status:${response.status}`);
+              if (!response.contentType.toLowerCase().includes('application/json')) failures.push(`${base.label}:${definition.route}:not-json`);
+              if (!response.parsedOk || !body || typeof body !== 'object' || Array.isArray(body)) {
+                failures.push(`${base.label}:${definition.route}:invalid-json`);
+              } else {
+                if (body.schema !== definition.schema) failures.push(`${base.label}:${definition.route}:schema`);
+                for (const field of definition.requiredFields) {
+                  if (!Object.prototype.hasOwnProperty.call(body, field)) failures.push(`${base.label}:${definition.route}:missing:${field}`);
+                }
+                for (const [field, type] of Object.entries(definition.validators)) {
+                  const value = body?.[field];
+                  const pass = type === 'object'
+                    ? value !== null && typeof value === 'object' && !Array.isArray(value)
+                    : typeof value === type;
+                  result.validatorsPassed[field] = pass;
+                  if (!pass) failures.push(`${base.label}:${definition.route}:type:${field}`);
+                }
+              }
+              apiResults.push(result);
+            }
+          }
+
+          fs.writeFileSync('api-surface-receipt.json', JSON.stringify({
+            schema: 'eonapp.preview-api-surface-receipt.w646.v1',
+            wave: 'W646',
+            candidateDigest: expected.candidateDigest,
+            commitSha: expected.commitSha,
+            distPayloadDigest: expected.distPayloadDigest,
+            deploymentUrl: process.env.DEPLOYMENT_URL,
+            previewAliasUrl: process.env.ALIAS_URL,
+            generatedAt: new Date().toISOString(),
+            ok: failures.length === 0,
+            provenance,
+            results: apiResults,
+            failures
+          }, null, 2));
+
+          if (failures.length) {
+            console.error(failures.join('\n'));
+          }
+          EOF
+          }
+          API_CHECK_STATUS=1
+          # Pages Functions can become available after the deployment record and
+          # static assets. Allow a bounded propagation window before failing.
+          for attempt in $(seq 1 60); do
+            echo "Checking deployed Pages Functions API surface (attempt $attempt/60)"
+            run_api_surface_check || true
+            if jq -e '.ok == true' api-surface-receipt.json >/dev/null; then
+              API_CHECK_STATUS=0
+              break
+            fi
+            if [ "$attempt" -lt 60 ]; then sleep 5; fi
+          done
+          test "$API_CHECK_STATUS" -eq 0
+          API_SURFACE_DIGEST="$(sha256sum api-surface-receipt.json | cut -d' ' -f1)"
+          jq -n \
+            --arg id "$ID" --arg url "$URL" --arg deployedAt "$(jq -r .created_on <<<"$DEPLOYMENT")" \
+            --arg candidateDigest "$CANDIDATE_DIGEST" \
+            --arg distPayloadDigest "$(jq -r .distPayloadDigest "$CANDIDATE_ROOT/candidate-provenance.json")" \
+            --arg commitSha "$(jq -r .commitSha "$CANDIDATE_ROOT/candidate-provenance.json")" \
+            --arg previewAliasUrl "$ALIAS_URL" \
+            --arg apiSurfaceReceiptDigest "$API_SURFACE_DIGEST" \
+            '{schema:"eonapp.preview-deployment-receipt.w641.v1",wave:"W641",deploymentId:$id,previewUrl:$url,previewAliasUrl:$previewAliasUrl,deployedAt:$deployedAt,candidateDigest:$candidateDigest,distPayloadDigest:$distPayloadDigest,commitSha:$commitSha,machineChecksPassed:true,functionsParityVerified:true,apiSurfaceReceiptDigest:$apiSurfaceReceiptDigest,ownerReviewed:false,redactionReviewed:true}' > preview-receipt.json
+          echo "id=$ID" >> "$GITHUB_OUTPUT"
+          echo "url=$URL" >> "$GITHUB_OUTPUT"
+          echo "alias_url=$ALIAS_URL" >> "$GITHUB_OUTPUT"
+      - name: Upload Preview receipt
+        if: success()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: eonapp-preview-receipt-${{ inputs.candidate_digest }}
+          path: |
+            source/preview-receipt.json
+            source/api-surface-receipt.json
+            source/served-provenance.json
+            source/alias-provenance.json
+          if-no-files-found: error
+          retention-days: 14
+      - name: Upload Preview deployment diagnostics
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: eonapp-preview-diagnostics-${{ github.run_id }}
+          path: |
+            source/preview-deploy.log
+            source/deployments-before.json
+            source/deployments.json
+            source/deployment-ids-before.txt
+            source/served-provenance.json
+            source/alias-provenance.json
+            source/api-surface-receipt.json
+          if-no-files-found: warn
+          retention-days: 14

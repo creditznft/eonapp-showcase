@@ -1,0 +1,12 @@
+# W412 template only. Do not place credentials here and do not deploy as a public release.
+# Bind this dedicated database to the Pages project as EON_SYNC_DB only after W406A
+# identity proof and the W412 two-device manual proof plan are ready.
+[[d1_databases]]
+binding = "EON_SYNC_DB"
+database_name = "eonapp-sync-basic-manual-proof"
+database_id = "REPLACE_IN_CLOUDFLARE_DASHBOARD"
+
+[vars]
+# Both flags are required for endpoints to leave fail-closed mode.
+EON_SYNC_ROLLOUT = "manual-proof"
+EON_SYNC_MUTATION_GATE = "reviewed"

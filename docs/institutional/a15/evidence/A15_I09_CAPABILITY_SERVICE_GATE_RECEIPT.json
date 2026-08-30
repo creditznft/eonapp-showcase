@@ -1,0 +1,24 @@
+{
+  "schema": "eonapp.a15.i09.capability-service-gate-receipt.v1",
+  "generatedAt": "2026-08-04T17:47:28.455Z",
+  "wave": "I09",
+  "passed": true,
+  "errors": [],
+  "authority": {
+    "serverEntitlementOnly": true,
+    "browserPaidClaimAccepted": false,
+    "signedSnapshot": true,
+    "browserCryptographicVerification": false,
+    "sameOriginNoStoreBrowserTrust": true,
+    "localFreeFallback": true,
+    "eonKeyWholeTierGrant": false,
+    "activeUnlocksAffectFeaturesAndLimits": true,
+    "oneUniversalProjectLimit": true
+  },
+  "verified": {
+    "freeProjectSlots": 3,
+    "studioProjectSlots": 35,
+    "eonKeyBoostedProjectSlots": 6,
+    "studioFeatureGroupCount": 6
+  }
+}

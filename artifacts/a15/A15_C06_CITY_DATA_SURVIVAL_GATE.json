@@ -1,0 +1,126 @@
+{
+  "schema": "eonapp.a15.c06.city-data-survival-gate.v1",
+  "wave": "C06",
+  "ok": true,
+  "passed": 22,
+  "total": 22,
+  "generatedAt": "2026-08-04T21:44:09.261Z",
+  "declaredRecordCount": 8,
+  "checks": [
+    {
+      "id": "eight-declared-records",
+      "pass": true,
+      "detail": "8 keys"
+    },
+    {
+      "id": "signal-frontier-covered",
+      "pass": true,
+      "detail": "canonical Expanse record"
+    },
+    {
+      "id": "my-frontier-covered",
+      "pass": true,
+      "detail": "inside W766 state"
+    },
+    {
+      "id": "storm-sector-covered",
+      "pass": true,
+      "detail": "exact package progress inside W766 state"
+    },
+    {
+      "id": "workspace-capsule-subpayload",
+      "pass": true,
+      "detail": "separate protection class"
+    },
+    {
+      "id": "record-digests-required",
+      "pass": true,
+      "detail": "SHA-256 per record"
+    },
+    {
+      "id": "bundle-digest-required",
+      "pass": true,
+      "detail": "SHA-256 payload"
+    },
+    {
+      "id": "future-versions-rejected",
+      "pass": true,
+      "detail": "exact version"
+    },
+    {
+      "id": "restore-preview-required",
+      "pass": true,
+      "detail": "inspect before apply"
+    },
+    {
+      "id": "typed-restore-confirmation",
+      "pass": true,
+      "detail": "RESTORE EONCITY DATA"
+    },
+    {
+      "id": "atomic-restore",
+      "pass": true,
+      "detail": "all owned records snapshotted"
+    },
+    {
+      "id": "rollback-verified",
+      "pass": true,
+      "detail": "exact prior bytes"
+    },
+    {
+      "id": "verified-delete",
+      "pass": true,
+      "detail": "declared keys only"
+    },
+    {
+      "id": "private-content-forbidden",
+      "pass": true,
+      "detail": "closed schemas"
+    },
+    {
+      "id": "credentials-forbidden",
+      "pass": true,
+      "detail": "no credential payload"
+    },
+    {
+      "id": "raw-media-separated",
+      "pass": true,
+      "detail": "I15 media bundle remains separate"
+    },
+    {
+      "id": "no-network-execution",
+      "pass": true,
+      "detail": "local-only"
+    },
+    {
+      "id": "productive-store-preserved",
+      "pass": true,
+      "detail": "durable store not public projection"
+    },
+    {
+      "id": "inventory-joined-value-free",
+      "pass": true,
+      "detail": "inventory metadata only"
+    },
+    {
+      "id": "manifest-exact-expanse-schema",
+      "pass": true,
+      "detail": "matches W766 authority"
+    },
+    {
+      "id": "no-silent-omission-claim",
+      "pass": true,
+      "detail": "four lifecycle policies per record"
+    },
+    {
+      "id": "source-has-size-bound",
+      "pass": true,
+      "detail": "bounded import/export"
+    }
+  ],
+  "limitations": [
+    "Source-only certification.",
+    "Encrypted Workspace Capsule browser export/import playthrough remains part of external certification.",
+    "Raw Creator media and optional encrypted secrets remain separate protection classes by design."
+  ]
+}

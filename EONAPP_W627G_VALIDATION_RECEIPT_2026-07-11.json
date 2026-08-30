@@ -1,0 +1,78 @@
+{
+  "schema": "eonapp.validation-receipt.w627g.2026-07-11.v1",
+  "wave": "W627A-W627G-unified-creator-source-batch",
+  "ok": true,
+  "generatedAt": "2026-07-11T09:20:58.164100Z",
+  "source": {
+    "baseAuthority": "EONAPP_W626H_FULL_SOURCE_SNAPSHOT_2026-07-11.zip",
+    "baseArchiveSha256": "96d9a8cbba96edccc4d8380fa48f811d18319688fa3fa662105f52bb0d8c46b8",
+    "localImportCommit": "191c9ba5cc0def28932916b54ef6e018966b3310",
+    "commit": "b2fe6787014dee75eb456c0f5eee708e55679149",
+    "fingerprintAlgorithm": "sha256",
+    "fingerprint": "1ebe6e0af95475f80e5ed2413d150638623f9fb69521b23533fd9133a9c696bc",
+    "fingerprintedFileCount": 3631
+  },
+  "permanentCommand": [
+    "npm ci",
+    "npm run verify:codex-predeploy"
+  ],
+  "predeploy": {
+    "passedStages": 49,
+    "totalStages": 49,
+    "resumedStageCount": 42,
+    "failedStages": 0
+  },
+  "maintainedTests": {
+    "files": 254,
+    "chunks": 10,
+    "assertions": 938,
+    "passed": 891,
+    "historicalSkips": 47,
+    "failed": 0
+  },
+  "w627FocusedGates": {
+    "W627A": "pass",
+    "W627B": "pass",
+    "W627C": "pass",
+    "W627D": "pass",
+    "W627E": "pass",
+    "W627F": "pass",
+    "W627G": "pass"
+  },
+  "security": {
+    "secretScanTextFiles": 3725,
+    "secretScanSkippedGeneratedBinaryLarge": 75,
+    "findings": 0,
+    "dependencyAuditVulnerabilities": 0,
+    "lintWarnings": 0
+  },
+  "reachability": {
+    "htmlFiles": 33,
+    "browserScriptEntries": 130,
+    "cloudflareFunctionEntries": 20,
+    "totalEntries": 51,
+    "reachableFiles": 380,
+    "importEdges": 661,
+    "quarantinedReachable": 0
+  },
+  "build": {
+    "sourceRevision": "b2fe6787014dee75eb456c0f5eee708e55679149",
+    "distributionSha256": "8762b018b0834a98cbf8614f661af126b37b4a547ef79900104bd90b9c251ec4",
+    "fileCount": 466,
+    "bytes": 11848178,
+    "containsUserData": false,
+    "containsSecrets": false
+  },
+  "truth": {
+    "sourceStatus": "source-complete-real-creator-evidence-pending",
+    "releaseState": "limited-preview-no-go-public-launch",
+    "launchReady": false,
+    "realLocalImageProof": "pending-owner-runtime",
+    "realLocalVideoProof": "pending-supported-reference-machine",
+    "realDirectProviderProof": "pending-signed-companion-and-provider-output",
+    "creatorUsabilityProof": "pending-keyboard-touch-and-device-evidence",
+    "creatorContinuationProof": "pending-real-library-project-forge-city-evidence",
+    "creatorPersistenceProof": "pending-update-export-restore-evidence",
+    "noMockOrSourceOnlyProofClaim": true
+  }
+}

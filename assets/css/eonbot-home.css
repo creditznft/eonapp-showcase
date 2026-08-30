@@ -1,0 +1,271 @@
+/* W380/W382 — root EONBOT home: a calm guest-first surface layered over the existing safe chat runtime. */
+body.eonbot-home { background: var(--clr-bg); }
+body.eonbot-home .eon-chat-page-title { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+body.eonbot-home .chat-page-main { min-height: 100dvh; }
+body.eonbot-home .eonbot-home-container {
+  position: relative;
+  display: flex;
+  width: min(66rem, 100%);
+  min-height: 100dvh;
+  height: 100dvh;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 3vw, 2.25rem) calc(1.15rem + env(safe-area-inset-bottom));
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  overflow: hidden;
+}
+body.eonbot-home .eonbot-home-header {
+  position: absolute;
+  z-index: 5;
+  top: 1rem;
+  right: clamp(1rem, 3vw, 2.25rem);
+  left: clamp(1rem, 3vw, 2.25rem);
+  min-height: 3.35rem;
+  padding: .45rem .55rem;
+  border: 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--clr-border) 50%, transparent);
+  border-radius: 0;
+  background: color-mix(in srgb, var(--clr-bg) 88%, transparent);
+  box-shadow: none;
+}
+body.eonbot-home .chat-bot-avatar-large { width: 2.15rem; height: 2.15rem; border: 1px solid color-mix(in srgb, var(--clr-accent) 40%, var(--clr-border)); border-radius: .75rem; background: color-mix(in srgb, var(--clr-accent) 14%, var(--clr-surface)); color: var(--clr-accent); font-size: 1rem; }
+body.eonbot-home .chat-inner-header-info strong { font-size: .88rem; }
+body.eonbot-home .chat-status-line { display: none !important; font-size: .69rem; }
+body.eonbot-home .chat-model-settings-link,
+body.eonbot-home #chat-voice-mode,
+body.eonbot-home #chat-tts-toggle,
+body.eonbot-home #chat-provider-badge,
+body.eonbot-home .eonbot-emotion-strip { display: none !important; }
+body.eonbot-home .eonbot-home-stage { display: flex; flex: 1 1 auto; min-height: 0; width: 100%; }
+body.eonbot-home .eonbot-home-messages { display: flex; flex: 1 1 auto; min-height: 0; padding: 5.75rem 0 9rem; overflow-y: auto; }
+body.eonbot-home .eonbot-home-welcome { width: min(42rem, 100%); margin: auto; padding: 2rem 1rem 4rem; text-align: center; }
+body.eonbot-home .eonbot-home-welcome h2 { margin: .25rem 0 .7rem; color: var(--clr-text); font-size: clamp(2rem, 5vw, 3.55rem); line-height: 1.04; letter-spacing: -.055em; }
+body.eonbot-home .eonbot-home-welcome > p:not(.eonbot-home-kicker) { max-width: 36rem; margin: 0 auto; color: var(--clr-text-muted); font-size: clamp(.94rem, 1.7vw, 1.06rem); line-height: 1.6; }
+.eonbot-home-kicker { margin: 0; color: var(--clr-accent); font-size: .69rem; font-weight: 850; letter-spacing: .14em; text-transform: uppercase; }
+.eonbot-home-suggestions { display: flex; flex-wrap: wrap; justify-content: center; gap: .55rem; margin-top: 1.5rem; }
+.eonbot-home-suggestions button,
+.eonbot-home-mode { min-height: 2.38rem; padding: .52rem .78rem; border: 1px solid color-mix(in srgb, var(--clr-border) 85%, transparent); border-radius: 999px; background: color-mix(in srgb, var(--clr-surface) 82%, transparent); color: var(--clr-text); font: inherit; font-size: .79rem; font-weight: 710; }
+.eonbot-home-suggestions button:hover,
+.eonbot-home-suggestions button:focus-visible,
+.eonbot-home-mode:hover,
+.eonbot-home-mode:focus-visible { border-color: color-mix(in srgb, var(--clr-accent) 65%, var(--clr-border)); background: color-mix(in srgb, var(--clr-accent) 12%, var(--clr-surface)); outline: none; }
+body.eonbot-home .eonbot-home-composer { position: absolute; z-index: 8; right: clamp(1rem, 3vw, 2.25rem); bottom: calc(1.5rem + env(safe-area-inset-bottom)); left: clamp(1rem, 3vw, 2.25rem); display: flex; gap: .5rem; padding: .58rem; border: 1px solid color-mix(in srgb, var(--clr-border) 80%, transparent); border-radius: 1.15rem; background: color-mix(in srgb, var(--clr-surface) 96%, transparent); box-shadow: 0 20px 55px color-mix(in srgb, #000 22%, transparent); }
+body.eonbot-home .chat-input-field { min-height: 2.7rem; padding: .65rem .2rem; background: transparent; font-size: 1rem; }
+body.eonbot-home .chat-voice-btn { width: 2.65rem; min-width: 2.65rem; height: 2.65rem; border: 1px solid transparent; border-radius: .82rem; background: transparent; color: var(--clr-text-muted); }
+body.eonbot-home .chat-voice-btn:hover,
+body.eonbot-home .chat-voice-btn:focus-visible { border-color: var(--clr-border); background: var(--eon-app-hover); color: var(--clr-text); outline: none; }
+body.eonbot-home .eonbot-home-mode { min-width: 4.3rem; padding-inline: .66rem; }
+body.eonbot-home .chat-send-btn { width: 2.75rem; min-width: 2.75rem; height: 2.75rem; border-radius: 50%; background: var(--clr-text); color: var(--clr-bg); }
+body.eonbot-home .eonbot-home-composer-note { position: absolute; right: 0; bottom: .25rem; left: 0; margin: 0; color: var(--clr-text-muted); font-size: .67rem; text-align: center; }
+.eonbot-home-setup-dialog { width: min(52rem, calc(100vw - 2rem)); max-height: min(80dvh, 48rem); padding: 0; overflow: hidden auto; border: 1px solid var(--clr-border); border-radius: 1.15rem; background: var(--clr-bg2); color: var(--clr-text); box-shadow: 0 32px 90px color-mix(in srgb, #000 52%, transparent); }
+.eonbot-home-setup-dialog::backdrop { background: color-mix(in srgb, #000 68%, transparent); }
+.eonbot-home-dialog-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; padding: 1.15rem 1.2rem .9rem; border-bottom: 1px solid var(--clr-border); }
+.eonbot-home-dialog-head h2 { margin: .18rem 0 0; font-size: 1.28rem; letter-spacing: -.025em; }
+.eonbot-home-dialog-close { display: inline-grid; place-items: center; width: 2.25rem; height: 2.25rem; padding: 0; border: 1px solid var(--clr-border); border-radius: .7rem; background: transparent; color: var(--clr-text); font: inherit; font-size: 1.22rem; }
+.eonbot-home-dialog-copy { margin: 0; padding: .9rem 1.2rem 0; color: var(--clr-text-muted); font-size: .87rem; line-height: 1.55; }
+.eonbot-home-setup-dialog .eonbot-home-controls { display: block; height: auto; max-height: none; padding: 1rem 1.2rem; overflow: visible; border: 0; background: transparent; }
+.eonbot-home-account-note { display: grid; gap: .32rem; margin: .1rem 1.2rem 1.2rem; padding: .85rem .9rem; border: 1px solid var(--clr-border); border-radius: .85rem; background: color-mix(in srgb, var(--clr-surface) 72%, transparent); }
+.eonbot-home-account-note strong { font-size: .83rem; }
+.eonbot-home-account-note span { color: var(--clr-text-muted); font-size: .76rem; line-height: 1.48; }
+.eonbot-home-account-note a { color: var(--clr-link); font-size: .78rem; font-weight: 760; text-decoration: none; }
+@media (max-width: 960px) {
+  body.eonbot-home .eonbot-home-container { min-height: calc(100dvh - var(--eon-app-mobilebar-height)); height: calc(100dvh - var(--eon-app-mobilebar-height)); padding-inline: .9rem; }
+  body.eonbot-home .eonbot-home-header { top: calc(var(--eon-app-mobilebar-height) + .35rem); right: .9rem; left: .9rem; }
+  body.eonbot-home .eonbot-home-messages { padding-top: 6.1rem; }
+  body.eonbot-home .eonbot-home-composer { right: .9rem; bottom: calc(.95rem + env(safe-area-inset-bottom)); left: .9rem; }
+}
+
+/* L95 — when an active project exists, the continuity strip is part of the
+   document flow. Subtract its height from the fixed Chat viewport so no layer
+   is forced underneath the header or composer. */
+body.eonbot-home[data-eon-project-context="active"] .eonbot-home-container {
+  height: calc(100dvh - 3.25rem);
+  min-height: calc(100dvh - 3.25rem);
+  max-height: calc(100dvh - 3.25rem);
+}
+@media (max-width: 960px) {
+  body.eonbot-home[data-eon-project-context="active"] .eonbot-home-container {
+    height: calc(100dvh - var(--eon-app-mobilebar-height) - 3.25rem);
+    min-height: calc(100dvh - var(--eon-app-mobilebar-height) - 3.25rem);
+    max-height: calc(100dvh - var(--eon-app-mobilebar-height) - 3.25rem);
+  }
+}
+@media (max-width: 720px) {
+  body.eonbot-home[data-eon-project-context="active"] .eonbot-home-container {
+    height: calc(100dvh - var(--eon-app-mobilebar-height) - 2.9rem);
+    min-height: calc(100dvh - var(--eon-app-mobilebar-height) - 2.9rem);
+    max-height: calc(100dvh - var(--eon-app-mobilebar-height) - 2.9rem);
+  }
+}
+@media (max-width: 560px) {
+  body.eonbot-home .eonbot-home-welcome { padding: 1rem .1rem 6rem; }
+  body.eonbot-home .eonbot-home-welcome h2 { font-size: clamp(1.8rem, 11vw, 2.55rem); }
+  body.eonbot-home .eonbot-home-suggestions { gap: .42rem; }
+  body.eonbot-home .eonbot-home-suggestions button { font-size: .72rem; }
+  body.eonbot-home .chat-inner-header-info { min-width: 0; }
+  body.eonbot-home .eonbot-home-mode { display: none; }
+  body.eonbot-home .chat-voice-btn { width: 2.4rem; min-width: 2.4rem; }
+  body.eonbot-home .eonbot-home-composer-note { display: none; }
+}
+
+/* W382 — local-only attachments. The composer stays anchored and files never
+   create a full-page upload screen. */
+body.eonbot-home .eonbot-attachment-tray {
+  position: absolute;
+  z-index: 8;
+  right: clamp(1rem, 3vw, 2.25rem);
+  bottom: calc(5.15rem + env(safe-area-inset-bottom));
+  left: clamp(1rem, 3vw, 2.25rem);
+  max-height: 8.6rem;
+  padding: .55rem .65rem;
+  overflow: auto;
+  border: 1px solid color-mix(in srgb, var(--clr-border) 88%, transparent);
+  border-radius: .95rem;
+  background: color-mix(in srgb, var(--clr-surface) 96%, transparent);
+  box-shadow: 0 16px 38px color-mix(in srgb, #000 18%, transparent);
+}
+.eonbot-attachment-tray-head { display: flex; align-items: center; justify-content: space-between; gap: .75rem; color: var(--clr-text-muted); font-size: .71rem; font-weight: 720; }
+.eonbot-attachment-clear { padding: .18rem .35rem; border: 0; border-radius: .45rem; background: transparent; color: var(--clr-link); font: inherit; font-size: .71rem; font-weight: 760; cursor: pointer; }
+.eonbot-attachment-clear:hover, .eonbot-attachment-clear:focus-visible { background: var(--eon-app-hover); outline: none; }
+.eonbot-attachment-list { display: flex; flex-wrap: wrap; gap: .42rem; margin-top: .48rem; }
+.eonbot-attachment-chip { display: inline-flex; align-items: center; min-width: 0; max-width: min(100%, 23rem); padding: .32rem .38rem .32rem .55rem; border: 1px solid color-mix(in srgb, var(--clr-border) 90%, transparent); border-radius: .68rem; background: color-mix(in srgb, var(--clr-bg2) 86%, transparent); color: var(--clr-text); font-size: .7rem; }
+.eonbot-attachment-chip > span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.eonbot-attachment-chip > button { display: inline-grid; flex: 0 0 auto; place-items: center; width: 1.35rem; height: 1.35rem; margin-left: .32rem; padding: 0; border: 0; border-radius: .4rem; background: transparent; color: var(--clr-text-muted); font: inherit; font-size: 1rem; cursor: pointer; }
+.eonbot-attachment-chip > button:hover, .eonbot-attachment-chip > button:focus-visible { background: var(--eon-app-hover); color: var(--clr-text); outline: none; }
+.eonbot-file-drop-zone { position: absolute; z-index: 12; inset: .75rem; display: none; place-content: center; justify-items: center; gap: .4rem; padding: 1.25rem; border: 1px dashed color-mix(in srgb, var(--clr-accent) 70%, var(--clr-border)); border-radius: 1.25rem; background: color-mix(in srgb, var(--clr-bg) 84%, transparent); color: var(--clr-text); text-align: center; pointer-events: none; }
+.eonbot-file-drop-zone strong { font-size: 1.05rem; }
+.eonbot-file-drop-zone span { max-width: 25rem; color: var(--clr-text-muted); font-size: .82rem; line-height: 1.5; }
+.eonbot-home-container.is-dropping-files .eonbot-file-drop-zone { display: grid; }
+
+@media (max-width: 960px) {
+  body.eonbot-home .eonbot-attachment-tray { right: .9rem; left: .9rem; bottom: calc(4.6rem + env(safe-area-inset-bottom)); }
+}
+@media (max-width: 560px) {
+  body.eonbot-home .eonbot-attachment-tray { max-height: 7.65rem; bottom: calc(4.2rem + env(safe-area-inset-bottom)); }
+  .eonbot-attachment-chip { max-width: 100%; }
+}
+
+
+/* W382B/W383B — local-only preview actions and transient file viewer. */
+.eonbot-attachment-chip > .eonbot-attachment-preview{width:auto;min-width:3.35rem;margin-left:.32rem;padding:0 .34rem;border:1px solid color-mix(in srgb,var(--clr-border) 86%,transparent);border-radius:.42rem;background:transparent;color:var(--clr-link);font-size:.63rem;font-weight:760}
+.eonbot-attachment-chip > .eonbot-attachment-remove{margin-left:.18rem}
+.eonbot-local-file-viewer{width:min(56rem,calc(100vw - 1rem));max-height:min(88dvh,58rem);padding:0;overflow:hidden auto;border:1px solid var(--clr-border);border-radius:1rem;background:var(--clr-bg2);color:var(--clr-text);box-shadow:0 2rem 6rem color-mix(in srgb,#000 64%,transparent)}
+.eonbot-local-file-viewer::backdrop{background:color-mix(in srgb,#000 72%,transparent);backdrop-filter:blur(6px)}
+.eonbot-local-file-viewer-header{position:sticky;z-index:1;top:0;display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding:1rem 1.05rem .85rem;border-bottom:1px solid var(--clr-border);background:color-mix(in srgb,var(--clr-bg2) 96%,transparent)}
+.eonbot-local-file-viewer-kicker{margin:0;color:var(--clr-accent);font-size:.64rem;font-weight:850;letter-spacing:.12em;text-transform:uppercase}.eonbot-local-file-viewer h2{max-width:min(39rem,68vw);margin:.2rem 0 .16rem;overflow:hidden;font-size:1rem;letter-spacing:-.02em;text-overflow:ellipsis;white-space:nowrap}.eonbot-local-file-viewer-meta{margin:0;color:var(--clr-text-muted);font-size:.72rem}.eonbot-local-file-viewer-close{flex:0 0 auto;min-height:2.25rem;padding:.4rem .62rem;border:1px solid var(--clr-border);border-radius:.6rem;background:transparent;color:var(--clr-text);font:inherit;font-size:.75rem;font-weight:760;cursor:pointer}.eonbot-local-file-viewer-close:hover,.eonbot-local-file-viewer-close:focus-visible{border-color:var(--clr-accent);background:var(--eon-app-hover);outline:none}
+.eonbot-local-file-viewer-body{display:grid;gap:.75rem;padding:1rem 1.05rem 1.2rem}.eonbot-local-file-viewer-note{margin:0;padding:.66rem .72rem;border-left:2px solid var(--clr-accent);border-radius:.2rem .65rem .65rem .2rem;background:color-mix(in srgb,var(--clr-accent) 7%,var(--clr-surface));color:var(--clr-text-muted);font-size:.75rem;line-height:1.46}.eonbot-local-file-viewer-text{max-height:60dvh;margin:0;padding:.86rem;overflow:auto;border:1px solid var(--clr-border);border-radius:.75rem;background:color-mix(in srgb,var(--clr-bg) 84%,transparent);color:var(--clr-text);font:.78rem/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere}.eonbot-local-file-viewer-image{display:block;max-width:100%;max-height:60dvh;margin:auto;border:1px solid var(--clr-border);border-radius:.78rem;background:var(--clr-bg)}.eonbot-local-file-viewer-pdf{width:100%;min-height:min(62dvh,42rem);border:1px solid var(--clr-border);border-radius:.78rem;background:#fff}.eonbot-local-file-viewer-media{width:100%;max-height:60dvh;border-radius:.78rem;background:#000}.eonbot-local-file-viewer-table-wrap{max-height:56dvh;overflow:auto;border:1px solid var(--clr-border);border-radius:.75rem}.eonbot-local-file-viewer-table{width:100%;border-collapse:collapse;font-size:.73rem}.eonbot-local-file-viewer-table th,.eonbot-local-file-viewer-table td{min-width:7rem;padding:.52rem .58rem;border-right:1px solid var(--clr-border);border-bottom:1px solid var(--clr-border);color:var(--clr-text);text-align:left;vertical-align:top;overflow-wrap:anywhere}.eonbot-local-file-viewer-table th{position:sticky;top:0;background:var(--clr-bg2);font-weight:800}
+@media(max-width:560px){.eonbot-local-file-viewer{width:calc(100vw - .7rem);max-height:92dvh}.eonbot-local-file-viewer-header{padding:.8rem}.eonbot-local-file-viewer h2{max-width:60vw}.eonbot-local-file-viewer-body{padding:.8rem}.eonbot-local-file-viewer-pdf{min-height:54dvh}.eonbot-attachment-chip{max-width:100%}.eonbot-attachment-chip > .eonbot-attachment-preview{min-width:3rem}}
+
+/* W394B — compact, local-only speech-language picker. */
+body.eonbot-home .chat-speech-language-control { display: inline-flex; flex: 0 1 auto; min-width: 0; }
+body.eonbot-home .chat-speech-language-select { width: min(8.2rem, 19vw); min-height: 2.35rem; padding: .38rem 1.55rem .38rem .56rem; overflow: hidden; border: 1px solid color-mix(in srgb, var(--clr-border) 90%, transparent); border-radius: .72rem; background: color-mix(in srgb, var(--clr-surface) 94%, transparent); color: var(--clr-text-muted); font: inherit; font-size: .72rem; font-weight: 680; text-overflow: ellipsis; }
+body.eonbot-home .chat-speech-language-select:hover,
+body.eonbot-home .chat-speech-language-select:focus-visible { border-color: color-mix(in srgb, var(--clr-accent) 62%, var(--clr-border)); color: var(--clr-text); outline: none; }
+body.eonbot-home .chat-speech-language-control[hidden] { display: none !important; }
+@media (max-width: 560px) { body.eonbot-home .chat-speech-language-select { width: 5.55rem; padding-left: .42rem; font-size: .67rem; } }
+
+/* W394C — visible voice controls with an honest unsupported-browser fallback. */
+body.eonbot-home .chat-speech-language-control.is-unavailable { opacity: .62; }
+body.eonbot-home .chat-speech-language-select:disabled { cursor: not-allowed; opacity: .72; }
+body.eonbot-home .chat-voice-btn.is-unavailable { cursor: not-allowed; opacity: .62; }
+body.eonbot-home .chat-speech-support-note { max-width: min(38rem, calc(100vw - 1.5rem)); margin: .26rem auto 0; color: var(--clr-text-muted); font-size: .69rem; line-height: 1.4; text-align: center; }
+@media (max-width: 560px) { body.eonbot-home .chat-speech-support-note { max-width: calc(100vw - 1.15rem); font-size: .66rem; } }
+
+/* W479-V — shown only after an active Local/Connected route passes the
+   capability gateway. The text states that browser speech is separate from the
+   chosen AI route, so Local never implies an offline speech model. */
+.chat-voice-route-note {
+  margin: .35rem auto 0;
+  max-width: min(52rem, calc(100% - 2rem));
+  color: var(--clr-text-muted);
+  font-size: .68rem;
+  line-height: 1.35;
+  text-align: center;
+}
+.chat-voice-route-note[hidden] { display: none !important; }
+body.eonbot-home .chat-voice-route-note {
+  position: absolute;
+  right: clamp(1rem, 3vw, 2.25rem);
+  bottom: .05rem;
+  left: clamp(1rem, 3vw, 2.25rem);
+  margin: 0;
+  font-size: .62rem;
+}
+body.eonbot-home .chat-voice-btn.is-listening {
+  border-color: color-mix(in srgb, var(--clr-accent) 75%, var(--clr-border));
+  background: color-mix(in srgb, var(--clr-accent) 16%, transparent);
+  color: var(--clr-text);
+}
+@media (max-width: 560px) {
+  body.eonbot-home .chat-voice-route-note { display: none !important; }
+}
+
+
+/* W487 — visible product hierarchy without adding a dashboard. */
+.eonbot-home-hierarchy {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .42rem .62rem;
+  max-width: 42rem;
+  margin: .95rem auto 0;
+  padding: .56rem .72rem;
+  border: 1px solid color-mix(in srgb, var(--clr-accent) 24%, var(--clr-border));
+  border-radius: .76rem;
+  background: color-mix(in srgb, var(--clr-surface) 74%, transparent);
+  color: var(--clr-text-muted);
+  font-size: .75rem;
+  line-height: 1.42;
+  text-align: center;
+}
+.eonbot-home-hierarchy strong { color: var(--clr-text); }
+@media (max-width: 560px) {
+  .eonbot-home-hierarchy { margin-top: .72rem; font-size: .7rem; }
+}
+
+/* W660H — root Chat keeps its composer dock inside the visible viewport even
+   when Continue, Nexus or account surfaces appear. */
+body.eonbot-home .eonbot-home-main {
+  height: 100dvh;
+  min-height: 0;
+  max-height: 100dvh;
+  overflow: hidden;
+}
+body.eonbot-home .eonbot-home-container {
+  flex: 1 1 auto;
+  height: 100%;
+  min-height: 0;
+  max-height: 100%;
+}
+body.eonbot-home .eonbot-home-stage,
+body.eonbot-home .eonbot-home-messages { min-height: 0; }
+body.eonbot-home .eonbot-home-composer {
+  position: absolute;
+  bottom: calc(1.5rem + env(safe-area-inset-bottom));
+}
+@media (max-width: 960px) {
+  body.eonbot-home .eonbot-home-main { height: 100dvh; max-height: 100dvh; }
+  body.eonbot-home .eonbot-home-container {
+    height: calc(100dvh - var(--eon-app-mobilebar-height));
+    max-height: calc(100dvh - var(--eon-app-mobilebar-height));
+  }
+}
+
+/* RT96 — quiet public-information links for trust, product context and crawlable navigation. */
+.eonbot-home-public-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .35rem .75rem;
+  max-width: 38rem;
+  margin: .78rem auto 0;
+  font-size: .69rem;
+  line-height: 1.4;
+}
+.eonbot-home-public-links a { color: var(--clr-text-muted); text-decoration: none; }
+.eonbot-home-public-links a:hover,
+.eonbot-home-public-links a:focus-visible { color: var(--clr-link); text-decoration: underline; outline: none; }
+@media (max-width: 560px) {
+  .eonbot-home-public-links { gap: .28rem .58rem; margin-top: .62rem; font-size: .66rem; }
+}

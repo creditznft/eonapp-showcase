@@ -1,0 +1,4 @@
+W765R5 isolated diagnostic run 2
+Production authorization: false
+Preview authorization: false
+Artifacts: none

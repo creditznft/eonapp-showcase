@@ -1,0 +1,63 @@
+{
+  "schema": "eonapp.a15.i18.validation-receipt.v1",
+  "generatedAt": "2026-08-05T01:16:23+05:30",
+  "wave": "I18",
+  "status": "pass-source",
+  "focused": {
+    "tests": 25,
+    "passed": 25,
+    "failed": 0
+  },
+  "maintainedSource": {
+    "filesRunnable": 368,
+    "tests": 1468,
+    "passed": 1421,
+    "intentionalSkips": 47,
+    "failed": 0,
+    "exactDependencyFilesDeferred": 13
+  },
+  "w766ir2SourceCertification": {
+    "passed": true,
+    "criteriaPassed": 10,
+    "criteriaTotal": 10,
+    "browserCertified": false,
+    "authenticatedOfflineCertified": false
+  },
+  "boundary": {
+    "coreRoutesReachingCityImplementation": 0,
+    "cityModulesReachingCoreImplementation": 0,
+    "contractOnly": true
+  },
+  "referralAndDistributionAuthority": {
+    "signedOneLevelAttribution": true,
+    "freeActivationRequiresServerMilestoneReceipt": true,
+    "retainedPaidDays": 14,
+    "paidGrantSequence": [
+      "builder",
+      "builder",
+      "power"
+    ],
+    "paidYearlyCap": 3,
+    "outOfOrderBillingCannotReactivateReferral": true,
+    "acceptedDuplicateCanRepairSplitDelivery": true,
+    "consumedUnlockRevokedWithSourceReversal": true,
+    "capabilityConsumesActiveServerUnlocks": true,
+    "clickShareOrSocialPostQualifies": false,
+    "automaticPosting": false,
+    "cashSubscriptionOrProviderCreditReward": false
+  },
+  "claims": {
+    "realReferralAccountsExercised": false,
+    "realDodoRetentionPeriodElapsed": false,
+    "socialPostCreated": false,
+    "productionBuildPassed": false,
+    "previewDeployed": false,
+    "productionDeployed": false
+  },
+  "externalBlockers": [
+    "Private registry still returns 404 for locked ws@7.5.11.",
+    "Installed npm is 10.9.2 while the repository requires npm 11.12.1.",
+    "Built-artifact certification remains blocked by unavailable postcss/esbuild dependencies.",
+    "Real referral accounts, Dodo test-mode retention, authenticated browsers, Preview and Production evidence remain pending."
+  ]
+}

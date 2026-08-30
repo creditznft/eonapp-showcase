@@ -1,0 +1,50 @@
+{
+  "schema": "eonapp.a15.i03.validation-receipt.v1",
+  "wave": "I03",
+  "status": "pass-source-only",
+  "scope": "Minimal Core Shell and optional EONCITY implementation-import boundary",
+  "results": {
+    "coreBoundary": {
+      "routes": 13,
+      "routesReachingCityImplementation": 0,
+      "distinctCityImplementationModules": 0,
+      "boundedCityContractModules": 13,
+      "unresolvedLocalImports": 0
+    },
+    "a15I03Tests": {
+      "passed": 3,
+      "failed": 0
+    },
+    "modifiedCurrentContractTests": {
+      "passed": 144,
+      "skipped": 7,
+      "failed": 0,
+      "excludedBaselineStaleTests": 5,
+      "excludedMissingDependencyFiles": 3
+    },
+    "w766ir2SourceCertification": {
+      "passed": true,
+      "criteriaPassed": 10,
+      "criteriaTotal": 10,
+      "browserCertified": false,
+      "authenticatedOfflineCertified": false
+    }
+  },
+  "baselineStaleTests": [
+    "w361-city-mode-transition: retired City mode and /apps route assumptions already failed at 4a8f8eb",
+    "w362-app-deck-action-taxonomy: /apps current-route assumption already failed at 4a8f8eb",
+    "w660p-living-nexus-hybrid: exact maintained-suite count already failed at 4a8f8eb",
+    "w660t-living-nexus-atlas-return: exact maintained-suite count already failed at 4a8f8eb"
+  ],
+  "environmentBlockedTests": [
+    "w660s-living-nexus-functional-encounters requires unavailable @babylonjs/core",
+    "w660v-curated-nexus-realms requires unavailable @babylonjs/core",
+    "w660x-premium-nexus-realms requires unavailable @babylonjs/core"
+  ],
+  "architectureTruth": {
+    "coreToCityImplementationIsolationComplete": true,
+    "cityToCoreImplementationIsolationComplete": false,
+    "fullC02DependencyInversionClaimed": false,
+    "previewOrProductionCertified": false
+  }
+}

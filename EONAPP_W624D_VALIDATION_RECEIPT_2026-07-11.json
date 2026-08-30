@@ -1,0 +1,106 @@
+{
+  "schema": "eonapp.validation-receipt.w624d.2026-07-11.v1",
+  "wave": "W624D",
+  "status": "source-complete-live-device-proof-pending",
+  "releaseState": "limited-preview-no-go-public-launch",
+  "city": {
+    "canonicalRoute": "/eoncity",
+    "runtimeOwner": "assets/js/city/eon-city-runtime-owner.js",
+    "w624bStateCount": 11,
+    "wayfinderSchema": "eon.city.wayfinder-experience.w624d.v1",
+    "wayfinderStateCount": 9,
+    "cameraProfileCount": 5,
+    "hiddenAutoNavigation": false,
+    "automaticRouteOpen": false,
+    "payToWin": false,
+    "localOnlyPolicy": true,
+    "w624cExpansionAllowed": false
+  },
+  "testAlignment": {
+    "maintainedTestFiles": 223,
+    "tests": 814,
+    "passed": 767,
+    "failed": 0,
+    "skippedHistoricalAssertions": 47,
+    "archivedOriginalFiles": 36,
+    "archiveCertifying": false,
+    "excludedEvidenceDiagnostics": 12,
+    "defaultConcurrency": 1,
+    "codexCommand": "npm run verify:codex-predeploy",
+    "overlapLock": ".eonapp-codex-predeploy.lock"
+  },
+  "codexPredeploy": {
+    "ok": true,
+    "stepCount": 18,
+    "startedAt": "2026-07-11T02:46:45.947Z",
+    "finishedAt": "2026-07-11T02:47:45.052Z",
+    "receipt": "reports/w624d-codex-predeploy/receipt.json",
+    "allStepStatuses": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "command": "npm run verify:codex-predeploy"
+  },
+  "validation": {
+    "w624dGate": "20/20",
+    "w624dTests": "6/6",
+    "alignmentGate": "16/16",
+    "alignmentTests": "6/6",
+    "archiveGate": "10/10",
+    "archiveTests": "1/1",
+    "w621LiveDodo": "46/46; 6/6",
+    "w623cCommercialTruth": "64/64",
+    "w623dProductionReachability": "350 files / 604 import edges / 0 quarantined",
+    "w623eInformationArchitecture": "5 primary / 6 Create modes / 10 aliases; 5/5",
+    "w623hReferralLedger": "20/20; 3/3",
+    "w623iReferralScale": "16/16; 4/4",
+    "w624aArtBible": "17/17; 5/5",
+    "w624bRuntime": "19/19; 5/5",
+    "w624cCommandDistrict": "24/24; 6/6",
+    "eslint": {
+      "errors": 0,
+      "warnings": 0
+    },
+    "secretScan": {
+      "textFiles": 3505,
+      "potentialSecrets": 0
+    },
+    "build": "passed",
+    "buildSmoke": "passed",
+    "w623fPostBuildCertification": "24/24; 6/6"
+  },
+  "distribution": {
+    "fileCount": 462,
+    "minifiedFiles": 292,
+    "savedPercent": 41.05,
+    "sha256": "fa6d706a0477cc9bde11837c4ebe278decdc60cd11db4cedf32648b820a110f5"
+  },
+  "pendingEvidence": [
+    "authenticated production City boot",
+    "real-browser W624D Wayfinder/camera receipt",
+    "physical keyboard/mouse proof",
+    "physical touch proof",
+    "physical controller proof",
+    "camera clipping review along the certified route",
+    "sustained performance and thermal evidence",
+    "W624C 90/100 runtime visual approval",
+    "owner visual approval"
+  ],
+  "nextWave": "W624E"
+}

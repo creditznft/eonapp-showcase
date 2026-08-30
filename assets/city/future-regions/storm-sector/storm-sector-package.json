@@ -1,0 +1,199 @@
+{
+  "schema": "eon.expanse.storm-sector.authored-package.w792a.v1",
+  "regionId": "storm-sector",
+  "gatewayId": "future-gateway-storm-sector",
+  "packageKind": "authored-composite-candidate",
+  "sourcePolicy": "maintained-same-origin-authored-assets",
+  "heroAssets": [
+    {
+      "id": "storm-command-spire",
+      "authoredComposite": true,
+      "developmentProxy": false,
+      "lods": [
+        {
+          "level": 0,
+          "url": "/assets/city/future-regions/storm-sector/models/storm-command-spire-lod0.glb",
+          "sha256": "39b351b68b4d059d3ddd36388cc618fd9b04bab8ec6bfed98124598b89bdb529",
+          "bytes": 290180
+        },
+        {
+          "level": 1,
+          "url": "/assets/city/future-regions/storm-sector/models/storm-command-spire-lod1.glb",
+          "sha256": "5d6178065054cfb0044d68b68f41865a37c8d49e07d4a492979f1ea7459999b0",
+          "bytes": 271112
+        },
+        {
+          "level": 2,
+          "url": "/assets/city/future-regions/storm-sector/models/storm-command-spire-lod2.glb",
+          "sha256": "7da7815f9cdbc8a5d4ab36533c219a6e2427f5c370883bb659bbf7e0c52e71e9",
+          "bytes": 260220
+        }
+      ]
+    },
+    {
+      "id": "atmospheric-stabilizer",
+      "authoredComposite": true,
+      "developmentProxy": false,
+      "lods": [
+        {
+          "level": 0,
+          "url": "/assets/city/future-regions/storm-sector/models/atmospheric-stabilizer-lod0.glb",
+          "sha256": "d3df8caf74464c29b0ef96d85f4813ffae33437780ff0e246f1dd916fc6955c4",
+          "bytes": 220184
+        },
+        {
+          "level": 1,
+          "url": "/assets/city/future-regions/storm-sector/models/atmospheric-stabilizer-lod1.glb",
+          "sha256": "676fee318e0833ebd4a9957e05247078716df2060897f76656aaf95979895a56",
+          "bytes": 201344
+        },
+        {
+          "level": 2,
+          "url": "/assets/city/future-regions/storm-sector/models/atmospheric-stabilizer-lod2.glb",
+          "sha256": "daad0e328863af003d82402f325645fd19fde4f4e577f0582defbf90ec5dac1d",
+          "bytes": 192824
+        }
+      ]
+    },
+    {
+      "id": "charged-transit-gate",
+      "authoredComposite": true,
+      "developmentProxy": false,
+      "lods": [
+        {
+          "level": 0,
+          "url": "/assets/city/future-regions/storm-sector/models/charged-transit-gate-lod0.glb",
+          "sha256": "ddba2fcf752d73524c0ac054836112d18e7bcb96d4e26e0ba57dde3b616803f1",
+          "bytes": 298428
+        },
+        {
+          "level": 1,
+          "url": "/assets/city/future-regions/storm-sector/models/charged-transit-gate-lod1.glb",
+          "sha256": "a0743ad7e733ae43e23a8172048d3e91a44ec8c68a0eaba79109af7463d120b2",
+          "bytes": 279044
+        },
+        {
+          "level": 2,
+          "url": "/assets/city/future-regions/storm-sector/models/charged-transit-gate-lod2.glb",
+          "sha256": "0003ee32207ccbd45f139b1751fcb4535a82f06f06d9632036f10434260db1d5",
+          "bytes": 265868
+        }
+      ]
+    }
+  ],
+  "architectureKits": [
+    {
+      "id": "storm-relay-kit",
+      "authored": true,
+      "moduleHeroIds": [
+        "storm-command-spire",
+        "atmospheric-stabilizer"
+      ]
+    },
+    {
+      "id": "industrial-platform-kit",
+      "authored": true,
+      "moduleHeroIds": [
+        "storm-command-spire"
+      ]
+    },
+    {
+      "id": "charged-transit-kit",
+      "authored": true,
+      "moduleHeroIds": [
+        "charged-transit-gate"
+      ]
+    }
+  ],
+  "environmentFamilies": [
+    {
+      "id": "electrical-storms",
+      "authored": true,
+      "reducedSensorySafe": true
+    },
+    {
+      "id": "rain-sheets",
+      "authored": true,
+      "reducedSensorySafe": true
+    },
+    {
+      "id": "charged-fog",
+      "authored": true,
+      "reducedSensorySafe": true
+    },
+    {
+      "id": "signal-pylons",
+      "authored": true,
+      "reducedSensorySafe": true
+    }
+  ],
+  "audioFamilies": [
+    {
+      "id": "storm-distance",
+      "url": "/assets/city/future-regions/storm-sector/audio/storm-distance.wav",
+      "sha256": "c31a2f9a30be2468d024e973470852f185f7ed813e994ebfef8b4716f8212bad",
+      "bytes": 352844,
+      "explicitStartRequired": true
+    },
+    {
+      "id": "relay-hum",
+      "url": "/assets/city/future-regions/storm-sector/audio/relay-hum.wav",
+      "sha256": "aa30d98c900b8568d3b92b0719b61b00a38f4dcc905044d0302ed6676228239f",
+      "bytes": 352844,
+      "explicitStartRequired": true
+    },
+    {
+      "id": "charged-wind",
+      "url": "/assets/city/future-regions/storm-sector/audio/charged-wind.wav",
+      "sha256": "928f24c13ef1c01ab70716bc4874479301d0b29ef175782f33b8b9bbcc058252",
+      "bytes": 352844,
+      "explicitStartRequired": true
+    }
+  ],
+  "missionFamilies": [
+    {
+      "id": "weather-restoration",
+      "manualPlaythroughRequired": true,
+      "automaticCompletion": false
+    },
+    {
+      "id": "relay-repair",
+      "manualPlaythroughRequired": true,
+      "automaticCompletion": false
+    },
+    {
+      "id": "storm-rescue",
+      "manualPlaythroughRequired": true,
+      "automaticCompletion": false
+    }
+  ],
+  "qualityProfiles": {
+    "lite": {
+      "heroLod": 2,
+      "activeCells": 5,
+      "maxParticles": 32,
+      "maxDynamicLights": 2
+    },
+    "balanced": {
+      "heroLod": 1,
+      "activeCells": 9,
+      "maxParticles": 72,
+      "maxDynamicLights": 4
+    },
+    "cinematic": {
+      "heroLod": 0,
+      "activeCells": 13,
+      "maxParticles": 128,
+      "maxDynamicLights": 6
+    }
+  },
+  "oneCanonicalScene": true,
+  "ownsEngine": false,
+  "ownsScene": false,
+  "ownsRenderLoop": false,
+  "automaticCertification": false,
+  "automaticActivation": false,
+  "privateContentStored": false,
+  "packageDigest": "a5c13aa3ba94a0b60f0e2b7122f228f5534132b4985c3019e414cc85a9a96c4d",
+  "generatedAt": "2026-08-04T18:12:00+05:30"
+}

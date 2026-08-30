@@ -1,0 +1,53 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "ignoreDeprecations": "6.0",
+    "allowJs": true,
+    "checkJs": false,
+    "strict": true,
+    "noImplicitAny": false,
+    "strictNullChecks": false,
+    "useUnknownInCatchVariables": false,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "lib": ["ES2022", "DOM", "WebWorker"]
+  },
+  "include": [
+    "types/**/*.d.ts",
+    "assets/js/**/*.js",
+    "games/alchemy-lab/**/*.js",
+    "games/cyber-rogue/**/*.js",
+    "games/dungeon-crawl-zero/**/*.js",
+    "games/neon-conquest/**/*.js",
+    "games/neural-override/**/*.js",
+    "games/realm-wars-lite/**/*.js",
+    "games/color-sprint.js",
+    "games/memory-chain.js",
+    "games/merge-grid.js",
+    "games/neon-dash.js",
+    "games/orbit-survivor.js",
+    "games/reaction-sprint.js",
+    "games/tap-reactor.js",
+    "games/void-raider.js",
+    "games/word-blitz.js",
+    "platform-backend/src/**/*.js",
+    "sw.js"
+  ],
+  "exclude": [
+    "node_modules",
+    "tests",
+    "e2e",
+    "**/test/**",
+    "**/__tests__/**",
+    "**/*.test.*",
+    "**/*.spec.*",
+    "archive",
+    "LEGACY_ARCHIVE_DEC20_2025",
+    "Smart Contracts/test/**",
+    "test-results/**"
+  ]
+}

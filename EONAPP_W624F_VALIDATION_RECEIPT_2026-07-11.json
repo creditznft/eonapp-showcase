@@ -1,0 +1,96 @@
+{
+  "schema": "eonapp.validation-receipt.w624f.2026-07-11.v1",
+  "wave": "W624F",
+  "status": "source-complete-browser-device-crowd-proof-pending",
+  "releaseState": "limited-preview-no-go-public-launch",
+  "sourceFingerprint": {
+    "algorithm": "sha256",
+    "digest": "a518a641f8ce6ea50552e52c0f397b9dc97cd5c4fead6665b6ccac94c9c3945b",
+    "fileCount": 3474
+  },
+  "architecture": {
+    "canonicalRoute": "/eoncity",
+    "runtimeOwner": "assets/js/city/eon-city-runtime-owner.js",
+    "npcSchema": "eon.city.command-district-npc-system.w624f.v1",
+    "archetypeCount": 4,
+    "stateCount": 9,
+    "authoredPathCount": 4,
+    "lodProfiles": [
+      "disabled",
+      "lite",
+      "balanced",
+      "cinematic"
+    ],
+    "autoNavigation": false,
+    "automaticExecution": false,
+    "privateDataRead": false,
+    "commercialMutation": false,
+    "districtExpansionAllowed": false
+  },
+  "validation": {
+    "maintainedTestFiles": 225,
+    "maintainedAssertions": 826,
+    "currentPasses": 779,
+    "historicalSkips": 47,
+    "failures": 0,
+    "w624fGate": "25/25",
+    "w624fTests": "6/6",
+    "w409CompatibilityTests": "5/5",
+    "currentContractAlignment": "17/17",
+    "currentContractAlignmentTests": "6/6",
+    "archiveIntegrity": "10/10",
+    "archiveIntegrityTests": "1/1",
+    "codexPredeploy": "20/20",
+    "codexPredeployResumedStepCount": 6,
+    "eslint": {
+      "errors": 0,
+      "warnings": 0
+    },
+    "secretScan": {
+      "textFiles": 3537,
+      "potentialSecrets": 0
+    },
+    "productionReachability": {
+      "htmlFiles": 33,
+      "browserScriptEntries": 129,
+      "cloudflareFunctionEntries": 20,
+      "totalEntries": 50,
+      "reachableFiles": 352,
+      "importEdges": 610,
+      "quarantinedReachable": 0
+    },
+    "build": "passed",
+    "buildSmoke": "passed",
+    "postBuildCertification": "24/24"
+  },
+  "distribution": {
+    "sha256": "55020c6e675aa046b113c3b2182db691a5afdedebb6dd8f42b320423b5f50d85",
+    "fileCount": 462,
+    "bytes": 11624789
+  },
+  "browserEvidence": {
+    "status": "BLOCKED",
+    "baseURL": "http://127.0.0.1:4173",
+    "screenshots": 0,
+    "productionAuthenticationClaimed": false,
+    "physicalDeviceClaimed": false,
+    "productionAiAgentsClaimed": false,
+    "physicalCrowdPerformanceClaimed": false,
+    "ownerVisualApprovalClaimed": false,
+    "blockedReason": "browserType.launch: Executable doesn't exist at /home/oai/.cache/ms-playwright/chromium_headless_shell-1217/chrome-headless-shell-linux64/chrome-headless-shell\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.       \u2551\n\u2551 Please run the following command to download new browsers: \u2551\n\u2551                                                            \u2551\n\u2551     npx playwright install                                 \u2551\n\u2551                                                            \u2551\n\u2551 <3 Playwright Team                                         \u2551"
+  },
+  "cloudflare": {
+    "referralRollout": "testing",
+    "infrastructureActivation": "complete",
+    "liveBusinessLifecycleProof": "pending"
+  },
+  "pendingEvidence": [
+    "real-browser NPC layout and interaction screenshots",
+    "physical-device crowd and LOD performance",
+    "keyboard touch and controller interaction comfort",
+    "final imported NPC rigs animations and voice",
+    "authenticated production City boot and disposal re-entry proof",
+    "owner visual approval and W624C runtime score"
+  ],
+  "nextWave": "W624G"
+}

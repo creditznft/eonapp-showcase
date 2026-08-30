@@ -1,0 +1,17 @@
+/* W197 — portable encrypted EON Sync backup controls. */
+.eon-sync-panel { display:grid; gap:.9rem; padding:1rem; border:1px solid rgba(148,163,184,.18); border-radius:1rem; background:linear-gradient(145deg,rgba(30,41,59,.62),rgba(15,23,42,.82)); }
+.eon-sync-panel h2,.eon-sync-panel h3 { margin:0; color:#f8fafc; }
+.eon-sync-panel p { margin:0; color:#aab8ca; font-size:.84rem; line-height:1.55; }
+.eon-sync-warning { padding:.65rem .72rem; border:1px solid rgba(251,191,36,.25); border-radius:.65rem; background:rgba(120,53,15,.12); color:#fde68a !important; }
+.eon-sync-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.7rem; }
+.eon-sync-field { display:grid; gap:.35rem; color:#cbd5e1; font-size:.78rem; font-weight:700; }
+.eon-sync-field input { min-height:2.65rem; padding:.62rem .7rem; border:1px solid rgba(148,163,184,.24); border-radius:.68rem; background:rgba(2,6,23,.46); color:#f8fafc; font:inherit; }
+.eon-sync-actions { display:flex; flex-wrap:wrap; gap:.6rem; align-items:center; }
+.eon-sync-actions button,.eon-sync-actions .eon-sync-file-label { min-height:2.5rem; padding:.55rem .75rem; border:1px solid rgba(148,163,184,.25); border-radius:.68rem; background:rgba(79,70,229,.78); color:#fff; font:inherit; font-size:.82rem; font-weight:760; cursor:pointer; }
+.eon-sync-actions button:hover,.eon-sync-actions button:focus-visible,.eon-sync-actions .eon-sync-file-label:hover { background:rgba(99,102,241,.94); border-color:rgba(199,210,254,.8); }
+.eon-sync-file-label { display:inline-flex; align-items:center; background:rgba(15,23,42,.7) !important; color:#dbeafe !important; }
+.eon-sync-file-label input { position:absolute; width:1px; height:1px; opacity:0; pointer-events:none; }
+.eon-sync-status { min-height:1.2rem; color:#c7d2fe !important; font-size:.8rem !important; }
+.eon-sync-meta { display:grid; gap:.38rem; margin:0; padding:0; list-style:none; }
+.eon-sync-meta li { color:#bdc9da; font-size:.76rem; }
+@media (max-width:640px) { .eon-sync-grid { grid-template-columns:1fr; } .eon-sync-actions > * { width:100%; text-align:center; justify-content:center; } }

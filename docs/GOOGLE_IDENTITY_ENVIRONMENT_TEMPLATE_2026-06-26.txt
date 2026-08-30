@@ -1,0 +1,22 @@
+# EONAPP optional Google Identity — Cloudflare configuration template
+# Template only. Do not add real values to this repository or send them in chat.
+
+# Production text variables
+APP_ORIGIN=https://eonapp.ch
+GOOGLE_REDIRECT_URI=https://eonapp.ch/api/auth/google/callback
+EON_AUTH_ROLLOUT=testing
+GOOGLE_OAUTH_CLIENT_ID=<set manually in Cloudflare as a non-secret variable>
+
+# Production encrypted Secrets
+GOOGLE_OAUTH_CLIENT_SECRET=<set manually as Cloudflare Secret>
+EON_AUTH_SUBJECT_PEPPER=<set manually as Cloudflare Secret>
+EON_SESSION_SIGNING_KEY=<set manually as Cloudflare Secret>
+EON_OAUTH_FLOW_SIGNING_KEY=<set manually as Cloudflare Secret>
+
+# Production D1 binding
+EON_IDENTITY_DB=<bind to eonapp-identity-prod>
+
+# Preview policy
+# Keep EON_AUTH_ROLLOUT=disabled until a separate Google OAuth preview client
+# with a stable exact preview callback is deliberately created.
+# Bind Preview to eonapp-identity-preview, never to production.

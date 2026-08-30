@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>W98 Session 13 release fixture</title>
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/realm3d.css">
+  <style>
+    html,body{margin:0;min-height:100%;background:#020617} body{overflow:hidden}.site-header{height:54px;background:#07111f}.site-header .container{height:100%;display:flex;align-items:center;padding:0 1rem;color:#e0f2fe;font:800 12px system-ui}.realm3d-shell{min-height:100svh}.realm3d-canvas-host{background:radial-gradient(circle at 50% 34%,#164e63 0,#0f172a 32%,#020617 78%)}
+  </style>
+</head>
+<body class="realm3d-flagship-mode realm3d-world-booted">
+  <header class="site-header"><div class="container">EONAPP</div></header>
+  <main><div id="root" data-eon-city-3d-root></div></main>
+  <script type="module">
+    import { buildRealm3dShellHtml } from '/assets/js/realm3d/engine/EngineBoot.js';
+    import { Session13MegaRuntime, resolveSession13CompatibilityProfile } from '/assets/js/realm3d/engine/EonCitySession13MegaRuntime.js';
+    import { buildSession13WorldPolish } from '/assets/js/realm3d/engine/EonCitySession13WorldPolish.js';
+    import { buildEonCityVoxelWorld } from '/assets/js/realm3d/engine/EonCityMap.js';
+    import { MobileControls } from '/assets/js/realm3d/engine/MobileControls.js';
+
+    const scenario = new URLSearchParams(location.search).get('scenario') || 'desktop-studio';
+    const mobile = scenario.includes('mobile');
+    const basic = scenario.includes('signal');
+    const reducedMotion = scenario.includes('reduced');
+    const quality = scenario.includes('aurora') ? 'neon' : basic ? 'low' : 'standard';
+    const root = document.querySelector('#root');
+    root.innerHTML = buildRealm3dShellHtml({ mobile, webgl: true }, quality);
+    root.classList.add('realm3d-intro-dismissed','realm3d-game-active');
+    root.dataset.hudMode = basic ? 'minimal' : 'guided';
+    if (mobile && innerHeight > innerWidth) root.dataset.portraitMode = 'true';
+    const intro = root.querySelector('[data-realm3d-intro]');
+    if (intro) { intro.hidden = true; intro.setAttribute('aria-hidden','true'); }
+    let mobileControls = null;
+    if (mobile) {
+      mobileControls = new MobileControls({ root: root.querySelector('.realm3d-shell'), player: { setMobileMove(){}, setMobileLook(){} } });
+    }
+    let fallbackReason = '';
+    const lifecycleCanvas = document.createElement('canvas');
+    const districts = [
+      { id:'spawn', label:'Spawn Plaza', icon:'⚡', description:'Arrival, map and guided start.', position:[0,0] },
+      { id:'ai', label:'AI Tower', icon:'🧠', description:'Provider health, EONBOT and safe model controls.', position:[0,-20] }
+    ];
+    const runtime = new Session13MegaRuntime({
+      root,
+      canvas: lifecycleCanvas,
+      getState: () => ({ webgl:true, webgl2:true, mobile, touch:mobile, deviceMemory:basic?2:8, hardwareConcurrency:basic?2:8, basicDevice:basic, reducedMotion, quality, world:'eon-city', districts, player:{x:0,z:-18} }),
+      onFallback: ({reason}) => { fallbackReason = reason || 'fallback'; }
+    }).mount();
+    runtime.update();
+    runtime.recordEvent('eonbot-opened', { world:'eon-city' });
+    runtime.recordEvent('guided-mission', { world:'eon-city' });
+    runtime.recordEvent('world-entered', { world:'private-workstation' });
+    runtime.recordEvent('station-opened', { world:'private-workstation' });
+    runtime.recordEvent('activity-completed', { world:'eon-city' });
+    runtime.handleNetworkChange(false);
+    runtime.handleNetworkChange(true);
+    runtime.handleContextLost({ preventDefault(){} });
+    runtime.handleContextRestored();
+    if (scenario.includes('fallback')) runtime.refreshCompatibility({ webgl:false });
+
+    const worldPolish = buildSession13WorldPolish({ map: buildEonCityVoxelWorld(), quality });
+    const artStats = worldPolish.stats;
+
+    const rect = (el) => {
+      if (!el) return null;
+      const r=el.getBoundingClientRect(), s=getComputedStyle(el);
+      return {x:r.x,y:r.y,right:r.right,bottom:r.bottom,width:r.width,height:r.height,display:s.display,visibility:s.visibility,opacity:Number(s.opacity||1)};
+    };
+    const visible = (el) => { const r=rect(el); return Boolean(r&&r.width>0&&r.height>0&&r.display!=='none'&&r.visibility!=='hidden'&&r.opacity>.01); };
+    const compatibility = resolveSession13CompatibilityProfile({ webgl:!scenario.includes('fallback'), webgl2:true, mobile, deviceMemory:basic?2:8, hardwareConcurrency:basic?2:8, reducedMotion, basicDevice:basic });
+    runtime.showDistrictArrival(districts[1]);
+    await new Promise((resolve)=>requestAnimationFrame(resolve));
+    await new Promise((resolve)=>setTimeout(resolve,reducedMotion?120:460));
+    await new Promise((resolve)=>requestAnimationFrame(resolve));
+    const card=root.querySelector('[data-realm3d-arrival-card]');
+    const transition=root.querySelector('[data-realm3d-transition]');
+    const chip=root.querySelector('[data-realm3d-quality-identity]');
+    const controls=root.querySelector('.realm3d-mobile-controls');
+    const releasePanel=root.querySelector('[data-realm3d-release-readiness]');
+    const targets=[...root.querySelectorAll('.realm3d-primary-actions .btn,.realm3d-world-menu>summary,.realm3d-mobile-actions button,[data-realm3d-arrival-dismiss]')].filter(visible).map(rect);
+    const floor=mobile?44:40;
+    const overflowPx=Math.max(0,document.documentElement.scrollWidth-innerWidth);
+    window.__SESSION13_RELEASE_PROOF__={
+      scenario,quality,mobile,basic,reducedMotion,fallbackReason,compatibility,
+      dataset:{...root.dataset},
+      telemetry:runtime.getTelemetry(),releaseReport:runtime.getReleaseReport(),artStats,
+      measurements:{overflowPx,card:rect(card),transition:rect(transition),chip:rect(chip),controls:rect(controls),releasePanel:rect(releasePanel),targets,undersized:targets.filter((r)=>r.width<floor-.25||r.height<floor-.25).length,header:rect(document.querySelector('.site-header'))},
+      checks:{
+        qualityIdentity:root.dataset.qualityIdentity===(quality==='low'?'signal':quality==='neon'?'aurora':'studio'),
+        districtArrival:runtime.getTelemetry().districtArrivals>=1,
+        arrivalCard:Boolean(card&&!card.hidden&&rect(card)?.width>0),
+        transitionLayer:runtime.getTelemetry().transitions>=1,
+        compatibilityProfile:Boolean(compatibility.profile),
+        fallbackHonest:scenario.includes('fallback')?compatibility.fallbackRequired&&Boolean(fallbackReason):!compatibility.fallbackRequired,
+        actualWorldArt:artStats.actualWorldGeometry===true&&artStats.distinctLandmarkSignatures===8,
+        criticalJourney:runtime.getReleaseReport().journey&&Object.keys(runtime.getReleaseReport().journey.milestones).length===7,
+        networkRecovery:runtime.getTelemetry().networkChanges===2&&root.dataset.networkState==='online',
+        graphicsRecovery:runtime.getTelemetry().contextLosses===1&&runtime.getTelemetry().contextRestores===1&&root.dataset.graphicsState==='restored',
+        compatibilityPanel:Boolean(releasePanel)&&root.querySelector('[data-realm3d-release-score]').textContent.includes('runtime checks'),
+        noOverflow:overflowPx<=1,
+        targetsMeetFloor:targets.filter((r)=>r.width<floor-.25||r.height<floor-.25).length===0
+      }
+    };
+    window.__SESSION13_RELEASE_PROOF__.ok=Object.values(window.__SESSION13_RELEASE_PROOF__.checks).every(Boolean);
+    worldPolish.group.traverse((object) => {
+      object.geometry?.dispose?.();
+      const materials = Array.isArray(object.material) ? object.material : [object.material];
+      materials.filter(Boolean).forEach((material) => material.dispose?.());
+    });
+  </script>
+</body>
+</html>

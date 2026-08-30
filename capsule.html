@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <script src="/assets/js/eon-theme-bootstrap.js?release=w722-2026-07-27"></script>
+  <meta name="theme-color" content="#111411" />
+  <meta name="description" content="Create and restore a user-held encrypted Portable Workspace Capsule for allowlisted EONAPP local work." />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="stylesheet" href="/assets/css/base.css" />
+  <link rel="stylesheet" href="/assets/css/layout.css" />
+  <link rel="stylesheet" href="/assets/css/eon-app-shell.css" />
+  <link rel="stylesheet" href="/assets/css/eon-vault-v2.css" />
+  <meta property="og:site_name" content="EONAPP" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Capsule — EONAPP" />
+  <meta property="og:description" content="Create and restore encrypted backups through explicit, review-first controls." />
+  <meta property="og:url" content="https://eonapp.ch/capsule" />
+  <meta property="og:image" content="https://eonapp.ch/assets/media/social/eonapp-trust-1200x630-social-v1.png?v=social-v1" />
+  <meta property="og:image:secure_url" content="https://eonapp.ch/assets/media/social/eonapp-trust-1200x630-social-v1.png?v=social-v1" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Capsule — EONAPP social preview" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Capsule — EONAPP" />
+  <meta name="twitter:description" content="Create and restore encrypted backups through explicit, review-first controls." />
+  <meta name="twitter:image" content="https://eonapp.ch/assets/media/social/eonapp-trust-1200x630-social-v1.png?v=social-v1" />
+  <meta name="twitter:image:alt" content="Capsule — EONAPP social preview" />
+  <meta name="eon:social-square" content="https://eonapp.ch/assets/media/social/eonapp-trust-1080x1080-social-v1.png?v=social-v1" />
+  <title>Portable Workspace Capsule · EONAPP</title>
+  <link rel="canonical" href="https://eonapp.ch/capsule" />
+  <meta name="robots" content="noindex, nofollow" />
+</head>
+<body data-page-type="vault" data-eon-app-shell="1" data-eon-app-page="capsule" data-vault-v2="1" data-workspace-capsule="w518">
+  <a href="#workspace-capsule" class="skip-to-content">Skip to Portable Workspace Capsule</a>
+  <main id="workspace-capsule" data-eon-capsule-surface="workspace-capsule">
+    <section class="eon-vault-shell" aria-labelledby="workspace-capsule-title">
+      <header class="eon-vault-hero">
+        <div>
+          <p class="eon-vault-kicker">Explicit local recovery</p>
+          <h1 id="workspace-capsule-title">Portable Workspace Capsule</h1>
+          <p>One user-held encrypted file for every eligible local EONAPP workspace record in this browser. It is not cloud sync, an account restore, or a Vault-key export.</p>
+        </div>
+        <a class="eon-vault-secondary" href="/vault">Back to Vault</a>
+      </header>
+
+      <div class="eon-vault-grid eon-capsule-primary-grid">
+        <article class="eon-vault-card is-wide" data-eon-capsule-card="export">
+          <h2>Create one encrypted Capsule</h2>
+          <p>Every eligible allowlisted local workspace record is collected into this one file. When supported and useful, it is compressed before encryption in this browser; otherwise it stays encrypted without compression. EONAPP does not save the passphrase, and the file is not sent anywhere automatically.</p>
+          <div class="eon-vault-form-grid">
+            <label class="eon-vault-field">Capsule passphrase<input id="eon-capsule-export-passphrase" type="password" autocomplete="new-password" minlength="12" /></label>
+            <label class="eon-vault-field">Confirm passphrase<input id="eon-capsule-export-confirm" type="password" autocomplete="new-password" minlength="12" /></label>
+          </div>
+          <div class="eon-vault-actions"><button id="eon-capsule-export" class="eon-vault-primary" type="button">Download encrypted Capsule</button></div>
+          <details class="eon-capsule-disclosure">
+            <summary>Learn why one Capsule is the recovery file</summary>
+            <div class="eon-capsule-disclosure-body">
+              <p id="eon-capsule-boundary">Checking the allowlisted local workspace boundary…</p>
+              <p class="eon-vault-warning">Capsules intentionally exclude API/provider keys, Vault recovery material, wallets, payments, OAuth sessions, rewards/referrals, raw media, model files, caches, and unknown browser storage. Google sign-in identifies an account; it cannot recreate browser-local work without a Capsule or paired device.</p>
+            </div>
+          </details>
+        </article>
+
+        <article class="eon-vault-card is-wide" data-eon-capsule-card="restore">
+          <h2>Restore a Capsule</h2>
+          <p>Choose a Capsule, inspect the recovery plan, then apply only the selected changes.</p>
+          <div class="eon-vault-form-grid">
+            <label class="eon-vault-field">Capsule or legacy Vault file<input id="eon-capsule-file" type="file" accept="application/json,.json,.eoncapsule,.eonvault" /></label>
+            <label class="eon-vault-field">File passphrase<input id="eon-capsule-restore-passphrase" type="password" autocomplete="current-password" minlength="12" /></label>
+          </div>
+          <div class="eon-vault-actions">
+            <button id="eon-capsule-inspect" class="eon-vault-secondary" type="button">Inspect file</button>
+            <button id="eon-capsule-recover" class="eon-vault-secondary" type="button">Recover interrupted restore</button>
+          </div>
+          <div id="eon-capsule-stage" class="eon-vault-state" aria-live="polite">Choose a Capsule to see a no-values restore plan.</div>
+          <label class="eon-vault-field">Type <code>APPLY CAPSULE</code> after choosing changes<input id="eon-capsule-confirmation" type="text" autocomplete="off" /></label>
+          <div class="eon-vault-actions"><button id="eon-capsule-commit" class="eon-vault-primary" type="button" disabled>Apply selected changes</button></div>
+        </article>
+
+        <article class="eon-vault-card is-wide" data-eon-capsule-card="data-survival">
+          <p class="eon-vault-kicker">A15 Data Survival Centre</p>
+          <h2>Know exactly what survives, moves, restores, and deletes</h2>
+          <p>The Workspace Capsule protects eligible local records. Raw Creator media, encrypted secret records, device-bound identity, temporary session state, and replaceable caches remain separate protection classes so one successful file can never be mistaken for complete device recovery.</p>
+          <div id="eon-data-survival-coverage" class="eon-vault-state" aria-live="polite">Inspecting protection classes without reading record values…</div>
+
+          <details class="eon-capsule-disclosure">
+            <summary>
+              <span class="eon-vault-kicker">Raw media portability</span>
+              <span class="eon-capsule-summary-title">Encrypted Creator media bundle</span>
+              <span class="eon-capsule-summary-copy">Separate from the Workspace Capsule; manual export and inspect-first restore.</span>
+            </summary>
+            <div class="eon-capsule-disclosure-body">
+              <h3>Export explicitly saved Creator media</h3>
+              <p>This encrypted user-held file includes raw Creator image/video blobs and minimum matching metadata. It never uploads automatically, stores the passphrase, includes provider credentials, or silently replaces existing media.</p>
+              <div class="eon-vault-form-grid">
+                <label class="eon-vault-field">Media bundle passphrase<input id="eon-media-bundle-passphrase" type="password" autocomplete="new-password" minlength="12" /></label>
+                <label class="eon-vault-field">Confirm passphrase<input id="eon-media-bundle-confirm" type="password" autocomplete="new-password" minlength="12" /></label>
+              </div>
+              <div class="eon-vault-actions"><button id="eon-media-bundle-export" class="eon-vault-primary" type="button">Download encrypted media bundle</button></div>
+
+              <h3>Restore an encrypted Creator media bundle</h3>
+              <div class="eon-vault-form-grid">
+                <label class="eon-vault-field">Creator media bundle<input id="eon-media-bundle-file" type="file" accept="application/json,.json,.eonmedia" /></label>
+                <label class="eon-vault-field">Bundle passphrase<input id="eon-media-bundle-restore-passphrase" type="password" autocomplete="current-password" minlength="12" /></label>
+              </div>
+              <div class="eon-vault-actions"><button id="eon-media-bundle-inspect" class="eon-vault-secondary" type="button">Inspect media bundle</button></div>
+              <div id="eon-media-bundle-stage" class="eon-vault-state" aria-live="polite">Choose an encrypted Creator media bundle to inspect raw-media changes without applying them.</div>
+              <label class="eon-vault-field">Type <code>RESTORE CREATOR MEDIA</code> after choosing changes<input id="eon-media-bundle-confirmation" type="text" autocomplete="off" /></label>
+              <div class="eon-vault-actions"><button id="eon-media-bundle-commit" class="eon-vault-primary" type="button" disabled>Restore selected media</button></div>
+            </div>
+          </details>
+
+          <details class="eon-capsule-disclosure">
+            <summary>
+              <span class="eon-vault-kicker">Local deletion drill</span>
+              <span class="eon-capsule-summary-title">Clear all declared local EONAPP data</span>
+              <span class="eon-capsule-summary-copy">localStorage, sessionStorage, declared IndexedDB databases, and EONAPP caches.</span>
+            </summary>
+            <div class="eon-capsule-disclosure-body">
+              <p class="eon-vault-warning">This cannot be undone without your separate Workspace Capsule, Creator media bundle, and any separate encrypted-secret export. It does not delete provider accounts, Google Drive files, or user-saved exports.</p>
+              <label class="eon-vault-field"><input id="eon-data-survival-backup-ack" type="checkbox" /> I understand local work is unrecoverable unless I kept the required separate exports.</label>
+              <label class="eon-vault-field">Type <code>DELETE EONAPP DATA</code><input id="eon-data-survival-clear-confirmation" type="text" autocomplete="off" /></label>
+              <div class="eon-vault-actions"><button id="eon-data-survival-clear" class="eon-vault-danger" type="button">Delete and verify local EONAPP data</button></div>
+              <p class="eon-vault-muted">A no-values deletion receipt is downloaded only after every declared browser store is verified. Unrelated same-origin records are preserved.</p>
+            </div>
+          </details>
+        </article>
+
+        <details class="eon-vault-card is-wide eon-capsule-disclosure" data-eon-capsule-card="google-drive">
+          <summary>
+            <span class="eon-vault-kicker">Optional encrypted cloud snapshot</span>
+            <span class="eon-capsule-summary-title">Google Drive backup</span>
+            <span class="eon-capsule-summary-copy">Optional, separate consent, and collapsed by default.</span>
+          </summary>
+          <div class="eon-capsule-disclosure-body">
+            <h2>Back up this Capsule to Google Drive</h2>
+            <p>After you choose it, EONAPP creates one compressed-when-useful, encrypted Capsule in this browser and uploads that one file to the Google Drive account you select. Google Login does not grant this permission. It never starts sync, automatic backup, or automatic restore.</p>
+            <div class="eon-vault-actions">
+              <button id="eon-drive-prepare" class="eon-vault-secondary" type="button">Prepare Google Drive backup</button>
+              <button id="eon-drive-backup" class="eon-vault-primary" type="button" hidden>Connect &amp; back up encrypted Capsule</button>
+              <button id="eon-drive-list" class="eon-vault-secondary" type="button" hidden>View Google Drive backups</button>
+              <button id="eon-drive-revoke" class="eon-vault-danger" type="button" hidden>Disconnect this browser</button>
+            </div>
+            <p id="eon-drive-snapshot-status" class="eon-vault-status" role="status" aria-live="polite">Google Drive is optional and awaits an explicit backup action.</p>
+            <div id="eon-drive-snapshots" class="eon-vault-state" aria-live="polite"></div>
+            <p class="eon-vault-muted">EONAPP keeps no Drive access credential after this tab is closed. Disconnecting does not delete existing Drive copies; move a selected copy to Drive trash separately.</p>
+          </div>
+        </details>
+
+        <details class="eon-vault-card is-wide eon-capsule-disclosure eon-capsule-advanced-card" data-eon-capsule-card="advanced-recovery">
+          <summary>
+            <span class="eon-vault-kicker">Manual only</span>
+            <span class="eon-capsule-summary-title">Advanced recovery</span>
+            <span class="eon-capsule-summary-copy">Move plans, exclusions, inspect-first rules, and technical detail.</span>
+          </summary>
+          <div class="eon-capsule-disclosure-body">
+            <div class="eon-capsule-advanced-grid">
+              <article class="eon-capsule-advanced-block">
+                <h2>Move your workspace safely</h2>
+                <p>Changing devices or moving to a future reviewed EONAPP address uses the same one encrypted Capsule file. No website can open this browser’s local workspace on your behalf.</p>
+                <div class="eon-vault-form-grid">
+                  <label class="eon-vault-field">Where are you going?
+                    <select id="eon-capsule-move-scenario">
+                      <option value="new-device">Another device using eonapp.ch</option>
+                      <option value="future-reviewed-origin">A future reviewed EONAPP address</option>
+                      <option value="trust-hub">EON.HUB Trust &amp; Rescue page</option>
+                    </select>
+                  </label>
+                </div>
+                <div class="eon-vault-actions"><button id="eon-capsule-show-move-plan" class="eon-vault-secondary" type="button">Show safe move plan</button></div>
+                <div id="eon-capsule-move-plan" class="eon-vault-state" aria-live="polite">Choose where you are going to see the exact file-based move steps.</div>
+              </article>
+
+              <article class="eon-capsule-advanced-block">
+                <h2>Inspect-first restore rules</h2>
+                <p>Inspect first. New records are selected as add-only. A same-key conflict is never overwritten unless you select that key separately. Any storage failure rolls back the selected records.</p>
+                <ul class="eon-vault-notices">
+                  <li>Workspace, identity, and Realm records are reviewed before any change is applied.</li>
+                  <li>Provider keys, Vault recovery material, wallets, payments, OAuth sessions, rewards/referrals, raw media, model files, caches, and unknown browser storage stay outside the Capsule.</li>
+                  <li>Restore remains manual, local, and review-first. Automatic multi-device sync is not active.</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </details>
+      </div>
+      <p id="eon-capsule-status" class="eon-vault-status" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+  <script type="module" src="/assets/js/eon-app-shell.js"></script>
+  <script type="module" src="/assets/js/local-first/eon-workspace-capsule-page.js"></script>
+</body>
+</html>

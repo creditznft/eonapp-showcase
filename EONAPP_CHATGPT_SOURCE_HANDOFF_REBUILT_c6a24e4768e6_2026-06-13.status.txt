@@ -1,0 +1,13 @@
+Snapshot: EONAPP_CHATGPT_SOURCE_HANDOFF_REBUILT_c6a24e4768e6_2026-06-13.zip
+Commit: c6a24e4768e68672ec9aedb0fb89788ee0e170c3
+Branch: main
+Created: 2026-06-13 02:15:10 +05:30
+Purpose: Rebuilt source handoff zip with audit artifacts, intended for ChatGPT/Codex Vite build and test reproduction.
+Included: Exact tracked repository files at HEAD via git archive, plus output/audit and smoke evidence.
+Excluded: .git metadata, node_modules, dist build output, caches, transient temp folders.
+Verification: zip created from clean staging directory and extracted locally after creation.
+Key docs:
+- README_CHATGPT_HANDOFF_REBUILT.txt
+- _GPT55_HANDOFF_AUDIT\\EONAPP_GPT55_REAUDIT_HANDOFF_2026-06-12.md
+- _GPT55_HANDOFF_AUDIT\\eonapp-live-audit-2026-06-12.md
+SHA256: CACF6D19B1C5C0A2046B37A07C94EBEC94317FF948F2F7D089C38174390B7E3C

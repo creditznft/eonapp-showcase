@@ -1,0 +1,73 @@
+{
+  "schema": "eonapp.w434.notification-center-gate.v2",
+  "wave": "W434",
+  "status": "pass",
+  "sourceOnly": true,
+  "checkCount": 12,
+  "checks": [
+    {
+      "id": "required-files",
+      "pass": true,
+      "detail": "Activity Center and explicit device-delivery sources are present"
+    },
+    {
+      "id": "contract-valid",
+      "pass": true,
+      "detail": "historical W434 truth is preserved and explicit AI V2 supersession is declared"
+    },
+    {
+      "id": "shell-wired",
+      "pass": true,
+      "detail": "Settings exposes Activity Center, explicit Enable and explicit push self-test controls"
+    },
+    {
+      "id": "explicit-source-event",
+      "pass": true,
+      "detail": "activity rows still require real redacted source events"
+    },
+    {
+      "id": "explicit-permission",
+      "pass": true,
+      "detail": "browser permission is reachable only through the explicit device-delivery function"
+    },
+    {
+      "id": "encrypted-custody",
+      "pass": true,
+      "detail": "push endpoint custody is encrypted before D1 persistence"
+    },
+    {
+      "id": "web-push-protocol",
+      "pass": true,
+      "detail": "server delivery implements encrypted Web Push and VAPID source paths"
+    },
+    {
+      "id": "same-origin-account-scope",
+      "pass": true,
+      "detail": "subscription mutation and self-test are same-origin and account-scoped"
+    },
+    {
+      "id": "service-worker-safe-delivery",
+      "pass": true,
+      "detail": "service worker accepts only bounded text/internal routes and ignores remote notification icons"
+    },
+    {
+      "id": "watchdog-not-marketing",
+      "pass": true,
+      "detail": "mission watchdog remains an explicit local activity source, not a promotional sender"
+    },
+    {
+      "id": "update-safe-key",
+      "pass": true,
+      "detail": "Activity Center preferences/read state remain update-protected"
+    },
+    {
+      "id": "truth-boundary",
+      "pass": true,
+      "detail": "source-ready device delivery is distinguished from not-yet-run live delivery proof"
+    }
+  ],
+  "limitations": [
+    "Live browser permission, real push-service acceptance, closed-tab delivery, unsubscribe and multi-device behavior still require deployment/runtime proof.",
+    "Marketing/reward push remains prohibited; service-device alerts require explicit opt-in."
+  ]
+}

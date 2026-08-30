@@ -1,0 +1,25 @@
+{
+  "active_workspace": "/mnt/data/eonapp_work_reconstructed",
+  "selector_locked_rc_11": true,
+  "language_checkpoints": [
+    "SESSION_CHECKPOINT_LANGUAGES_01.md",
+    "SESSION_CHECKPOINT_LANGUAGES_02.md"
+  ],
+  "reconstruction_master_checklist": "RECONSTRUCTION_MASTER_CHECKLIST.md",
+  "major_recovered_layers": [
+    "crypto-receipts",
+    "secure-keystore compatibility wrappers",
+    "trusted-time",
+    "profile trusted device keys",
+    "lootbox exchange trust boundaries",
+    "page hardening markers",
+    "language selector restriction",
+    "menu readability bump"
+  ],
+  "current_focus": [
+    "German-first completion",
+    "Spanish completion",
+    "Creator Studio keyspace",
+    "Language pack completeness"
+  ]
+}

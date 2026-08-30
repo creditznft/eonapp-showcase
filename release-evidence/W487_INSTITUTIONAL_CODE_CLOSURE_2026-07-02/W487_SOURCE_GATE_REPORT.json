@@ -1,0 +1,66 @@
+{
+  "schema": "eonapp.w487.institutional-code-closure.v1",
+  "status": "pass",
+  "sourceImplementationScore": 96,
+  "sourceImplementationScoreMeaning": "A code-and-source-contract measure only; it is not a deployed institutional launch score.",
+  "primaryHierarchy": [
+    {
+      "id": "chat",
+      "label": "EONBOT",
+      "href": "/"
+    },
+    {
+      "id": "projects",
+      "label": "Projects",
+      "href": "/projects"
+    },
+    {
+      "id": "library",
+      "label": "Library",
+      "href": "/library"
+    },
+    {
+      "id": "forge",
+      "label": "Forge",
+      "href": "/forge"
+    },
+    {
+      "id": "eoncity",
+      "label": "EON City",
+      "href": "/eoncity"
+    },
+    {
+      "id": "vault",
+      "label": "Vault",
+      "href": "/vault"
+    }
+  ],
+  "cityCommandDeck": {
+    "cardCount": 7,
+    "maxDetailLength": 48,
+    "firstFrameShield": true,
+    "overflowContainment": true
+  },
+  "capabilityTruth": {
+    "unifiedProductNarrative": true,
+    "desktopHoverExpandRail": true,
+    "localChatSearchOnly": true,
+    "legacyCommercialArchiveFence": true,
+    "accessMilestonesDisabled": true,
+    "cityFirstFrameShield": true,
+    "cityCommandDeckOverflowContainment": true,
+    "automaticPostingAllowedNow": false,
+    "localMediaRuntimeAllowedNow": false,
+    "paymentAllowedNow": false,
+    "syncAllowedNow": false,
+    "iotRemoteControlAllowedNow": false
+  },
+  "releaseEvidenceStillRequired": [
+    "deploy-rebase-and-production-identity",
+    "city-webgl-console-and-frame-trace",
+    "desktop-tablet-android-ios-physical-device-walkthrough",
+    "pwa-update-and-offline-rehearsal",
+    "oauth-boundary-proof-when-owner-configured"
+  ],
+  "failures": []
+}

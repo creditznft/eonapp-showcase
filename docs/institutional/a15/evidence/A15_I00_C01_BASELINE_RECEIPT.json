@@ -1,0 +1,49 @@
+{
+  "schema": "eonapp.a15.i00-c01.baseline-receipt.v1",
+  "generatedAt": "2026-08-04T13:52:28Z",
+  "source": {
+    "a14BaselineCommit": "a6cf226d39073701b3d3b04c1f8d4582aec495a3",
+    "w802bBaselineCommit": "fdc92595ca6d8fb941f45afb598a4a282dc70e62",
+    "currentHead": "fdc92595ca6d8fb941f45afb598a4a282dc70e62",
+    "currentBranch": "launch/a15-core-city-integration",
+    "sourceBaselineIsAncestor": true,
+    "archiveSha256": "76ea76c72f55f75a0d371116a65b675abe35265b3438ac092bb42bc04e2542ec"
+  },
+  "delta": {
+    "changedFiles": 344,
+    "insertions": 38193,
+    "deletions": 516
+  },
+  "coreBoundary": {
+    "routeCount": 13,
+    "coupledRouteCount": 13,
+    "distinctCityModuleCount": 19
+  },
+  "cityBoundary": {
+    "moduleCount": 249,
+    "cityModuleCount": 192,
+    "nonCityModuleCount": 57
+  },
+  "cityStorage": {
+    "planningStaticModuleCount": 40,
+    "observedReferenceModuleCount": 41,
+    "directAccessModuleCount": 39,
+    "nonAccessReferenceModuleCount": 2,
+    "planningCountDiscrepancy": 1,
+    "namedKeyCount": 290
+  },
+  "ownership": {
+    "red": 1,
+    "amber": 303,
+    "green": 40
+  },
+  "planningOnly": true,
+  "productBehaviorChanged": false,
+  "boundaryTargetSatisfied": false,
+  "blockers": [
+    "core-routes-reaching-city:13",
+    "city-runtime-reaching-non-city:57",
+    "city-direct-storage-modules:39"
+  ],
+  "receiptDigest": "b6a0e443c553bdad2551a8749a167035165d72deb427fd141430355d760e69e3"
+}

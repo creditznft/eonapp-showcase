@@ -1,0 +1,28 @@
+01	0	npm run test:unit
+02	0	npm run lint
+03	0	node --check scripts/w260-release-board-gate.mjs
+04	0	npm run build
+05	0	npm run qa:w239-public-output-quarantine
+06	0	npm run qa:w242-active-source-quarantine
+07	0	npm run qa:w247-economic-commercial-firewall
+08	0	npm run qa:w248-existing-city-visual-tour-audit
+09	0	npm run qa:w249-babylon-play-proof-spike:dist
+10	0	npm run qa:w250-city-prepared-action
+11	0	npm run qa:w251-city-work-gateway
+12	0	npm run qa:w252-city-art-provenance
+13	0	npm run qa:w253-city-input-orientation-accessibility
+14	0	npm run qa:w254-city-performance-governor
+15	0	npm run qa:w255-city-parity-registry
+16	0	npm run qa:w256-eonbot-proposals-vault-return
+17	0	npm run qa:w257-beginner-work-missions
+18	0	npm run qa:w259-city-preview-evidence
+19	0	npm run qa:w260-release-board
+20	0	npm run qa:r3-f1-physical-source-reduction
+21	0	npm run qa:r3-f2-route-tiering
+22	0	npm run smoke:build
+23	0	npm run audit:site
+24	0	npm run launch:readiness
+25	0	npm run qa:pwa-install
+26	0	npm run security:secret-scan
+27	0	npm audit --omit=dev --json
+28	1	npm audit --json (informational; dev toolchain risk remains open)

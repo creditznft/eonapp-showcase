@@ -1,0 +1,521 @@
+{
+  "schema": "eonapp.w660h.final-clean-delta-manifest.2026-07-19.v1",
+  "createdAt": "2026-07-19T15:05:00+05:30",
+  "certifiedParent": "5a12c38a184d286774335550d034f549092f311e",
+  "auditFreezeCommit": "70320c5b3d04da8f8b341d77ab9bb8f412806b3c",
+  "selfExcludedPath": "config/w660h-final-clean-delta-manifest.json",
+  "overlayFileCount": 102,
+  "overlayBytes": 1279382,
+  "files": [
+    {
+      "path": "CURRENT_PRODUCT_START_HERE.md",
+      "bytes": 7642,
+      "sha256": "628a78d11a0682a1a8cd794918ee8374fdfafb3ddfcf4b369eaa7bd6b40195b6"
+    },
+    {
+      "path": "EONAPP_MASTER_ROADMAP_POST_W659_2026-07-19.md",
+      "bytes": 7939,
+      "sha256": "1284a041f8fd8d4535d4037198c24a97057743983b9bca4bbd23d07d93d6324f"
+    },
+    {
+      "path": "HANDOVER/W660_EON_NEXUS_IMPLEMENTATION_START_HERE_2026-07-19.md",
+      "bytes": 9979,
+      "sha256": "fc74446786a33d374e340d78381260d8076fd070d4d786b30164149438db801d"
+    },
+    {
+      "path": "assets/css/eon-app-shell.css",
+      "bytes": 68883,
+      "sha256": "03eee7cd69ee48cbc03d78a3e65f6d8e600627f701a51d3e3c3d36c5e51f2382"
+    },
+    {
+      "path": "assets/css/eon-chat-first.css",
+      "bytes": 13124,
+      "sha256": "2d9ee87885300c593be04a3310edff4b8564a3835fa63cbbf8270b9f2b061dd4"
+    },
+    {
+      "path": "assets/css/eon-city-product-layer.css",
+      "bytes": 7269,
+      "sha256": "da82aaefde612b8a817381ea24904abb9d695093f356f738dc6eb592813af57f"
+    },
+    {
+      "path": "assets/css/eon-continue.css",
+      "bytes": 3972,
+      "sha256": "18b9d6177049d5406b810e9bf24e9d6f0977840aa3edbd0ba8c48c5aa790021b"
+    },
+    {
+      "path": "assets/css/eon-nexus-live.css",
+      "bytes": 15578,
+      "sha256": "71167822f9223b98bf1a57860f52226db9bbb4dafbec7e40589a4b4dbeb5fa91"
+    },
+    {
+      "path": "assets/css/eon-nexus-pulse.css",
+      "bytes": 10928,
+      "sha256": "68020e232754bf7bd66d22a30d54926961151e0d897559728a2ad94541f06ebe"
+    },
+    {
+      "path": "assets/css/eonbot-home.css",
+      "bytes": 19132,
+      "sha256": "d6ff7c0b2af91c351475177cc7d532b6bb6d5c32a0c50bd938830c82c7ac81f8"
+    },
+    {
+      "path": "assets/js/chat-page-deferred.js",
+      "bytes": 5894,
+      "sha256": "894927fae182ea3e5634594109d5a11fce774924bdfa3501df8046ebf5f7daa8"
+    },
+    {
+      "path": "assets/js/city/eon-city-access-station.js",
+      "bytes": 30284,
+      "sha256": "f401c2e1365b5de673ef652c8d0d9a7c6829a5c1c810270d434355d4f5d150a6"
+    },
+    {
+      "path": "assets/js/city/eon-city-district-identity.js",
+      "bytes": 1007,
+      "sha256": "368f278a30b9d8aa194a7c3476c7230d141e4651bc9d2fe73ce34bfd01c4ee1e"
+    },
+    {
+      "path": "assets/js/city/eon-city-noir-architecture.js",
+      "bytes": 42627,
+      "sha256": "78c91ac9537ee19f1859fb39585d4a053ab773047bd01ed7c0ed18bed663ecfa"
+    },
+    {
+      "path": "assets/js/city/eon-city-play-core.js",
+      "bytes": 24869,
+      "sha256": "fa81f8769a276446fdff5d9af5423fd1e8a73e7515fdb2a9ed8df2e007f28081"
+    },
+    {
+      "path": "assets/js/city/w649/eon-city-w649-babylon-core-runtime.js",
+      "bytes": 20001,
+      "sha256": "b06be0de399c966d4f24d6a3484f1bda508bbb4bd324e90747574df389bacc80"
+    },
+    {
+      "path": "assets/js/city/w649/eon-city-w649-district-runtime.js",
+      "bytes": 28365,
+      "sha256": "90b3775dbbc8c2196f1aaae19c6e4ccff58cd58fffb340fb6d80c5350d18a97f"
+    },
+    {
+      "path": "assets/js/city/w649/eon-city-w649-performance-profile.js",
+      "bytes": 2959,
+      "sha256": "2af4404d8cc6524dc9f3c6e9a0b4e51fa8ed8991984589f711d79535b1b67907"
+    },
+    {
+      "path": "assets/js/city/w659f/eon-city-w659f-functional-asset-manifest.js",
+      "bytes": 13134,
+      "sha256": "c053f8c5eb0868933727840a076abbfc3e415943d927b45e6c30c6750f127a3d"
+    },
+    {
+      "path": "assets/js/city/w659f/eon-city-w659f-functional-asset-runtime.js",
+      "bytes": 14574,
+      "sha256": "3a44c0ea1738ea87c281b861b29005448f4291af70979707ac896c13815bc716"
+    },
+    {
+      "path": "assets/js/city/w659f/eon-city-w659f-npc-role-registry.js",
+      "bytes": 15095,
+      "sha256": "124243d2018296fb4dccdf214603327138cf28ea60ea62762176c3b00e698619"
+    },
+    {
+      "path": "assets/js/city/w659f/eon-city-w659f-transport-runtime.js",
+      "bytes": 3313,
+      "sha256": "9d6b6105238ffcb728679cd5e28c8a7e3c6e1f309bd8425da493407bba5e6514"
+    },
+    {
+      "path": "assets/js/city/w659n/eon-city-w659n-product-layer.js",
+      "bytes": 38553,
+      "sha256": "053876fc0048fc753e68f054668f363f7eb79ec117d8b1fa739e565e092c9e89"
+    },
+    {
+      "path": "assets/js/city/w660/eon-city-w660-completion-matrix.js",
+      "bytes": 4986,
+      "sha256": "94aaacd72a7fe48cfb062aca9047d504df03da23482a0098232076a157abf825"
+    },
+    {
+      "path": "assets/js/city/w660/eon-city-w660-nexus-hologram.js",
+      "bytes": 8600,
+      "sha256": "8617d37b976d5713b46861720f702da66bcfbc4d49eeaf7daaba2e992f33be87"
+    },
+    {
+      "path": "assets/js/city/w660/eon-city-w660-nexus-stations.js",
+      "bytes": 7845,
+      "sha256": "13e350cd03b675b54639af58071a6bbf5ae602a1b2c6eaf17818427503c6a123"
+    },
+    {
+      "path": "assets/js/eon-app-shell.js",
+      "bytes": 66935,
+      "sha256": "40680db22f74beb7f0ab2b0ebb3cc39ef817dc2233613c1179d902e65a5ad14b"
+    },
+    {
+      "path": "assets/js/nexus/eon-nexus-app-shell.js",
+      "bytes": 11695,
+      "sha256": "6a732592181f5ae0f9f17aec44c30db71f742d9681f8a7f358658bbe579e79dc"
+    },
+    {
+      "path": "assets/js/nexus/eon-nexus-capability.js",
+      "bytes": 4073,
+      "sha256": "3bb08f65d94592584dd49f754aadc724c19d9aa88c7b5d5f6db3cb8280a6b3d9"
+    },
+    {
+      "path": "assets/js/nexus/eon-nexus-chat-pulse.js",
+      "bytes": 10261,
+      "sha256": "7379d8f728c7ec0d94302a826a0c03a6abf14543a8e74dcf5077edb25fb396e4"
+    },
+    {
+      "path": "assets/js/nexus/eon-nexus-event-adapter.js",
+      "bytes": 9503,
+      "sha256": "de9ceece6036a7c9aab36021165da00380ed97c213490f593a6f819bb6ce73e4"
+    },
+    {
+      "path": "assets/js/nexus/eon-nexus-live.js",
+      "bytes": 27674,
+      "sha256": "da0638064977727c4847a670e58fcc936c7b6db2c0a84aef822226cf93cc79c0"
+    },
+    {
+      "path": "assets/js/nexus/eon-nexus-privacy-projection.js",
+      "bytes": 14380,
+      "sha256": "c58ea6670312ff2c6c7c909b7f5753e45f4e0cf8bd1b0b4fb985ba82e3512e73"
+    },
+    {
+      "path": "assets/js/nexus/eon-nexus-product-adapters.js",
+      "bytes": 9279,
+      "sha256": "42b4ae80e154b596d1256139fec59bdbdc743b19f7c3f909fe202a05b19715f6"
+    },
+    {
+      "path": "assets/js/nexus/eon-nexus-project-atlas.js",
+      "bytes": 14758,
+      "sha256": "70329592f96f89225880202a78b0444bab6be9e8276e7f6f674ffcf9dae9bc81"
+    },
+    {
+      "path": "assets/js/nexus/eon-nexus-pulse-motion.js",
+      "bytes": 8035,
+      "sha256": "80b5fdbd818ae7de1879c92e2a765b621319de7a5e132e970e032e4e08a01a54"
+    },
+    {
+      "path": "assets/js/nexus/eon-nexus-pulse.js",
+      "bytes": 13295,
+      "sha256": "f5d7e60ef71fdcccbdfd3eea5e90278b2ecb8cfc5fd0bddc17b00a5f3a632a1f"
+    },
+    {
+      "path": "assets/js/nexus/eon-nexus-state-contract.js",
+      "bytes": 16479,
+      "sha256": "1e882d534e196062c0791d8b31d0eee2554b3cfee950cc92d94eea1ee7ffb1d2"
+    },
+    {
+      "path": "assets/js/referrals/eon-referral-server-runtime.js",
+      "bytes": 69310,
+      "sha256": "c791931c23708fbef66829603ee5d66b879c433496e505be8ac418f0ea816c6d"
+    },
+    {
+      "path": "chat.html",
+      "bytes": 11838,
+      "sha256": "aecdb9f191654e28addce342abd9786feee1a8119c0bf294c51e07ff13f2ddb0"
+    },
+    {
+      "path": "config/w519-legacy-transport-quarantine-contract.mjs",
+      "bytes": 7946,
+      "sha256": "0db6a67d39ea14671bbcb5beceb4df102b4802136aaf58c6b6bb49b6d2d00724"
+    },
+    {
+      "path": "config/w624d-current-unit-test-manifest.json",
+      "bytes": 20415,
+      "sha256": "7a7bf5612550ed035a0bab42bd3ea28b94dc64a2ccf3903790428c3008136ad4"
+    },
+    {
+      "path": "docs/W660A1_EON_NEXUS_STATE_SOURCE_INVENTORY_2026-07-19.md",
+      "bytes": 14556,
+      "sha256": "f3d2b4bc729e7675549e1e7e20cb965d96a8a09367306b96103ee6bd4e67b921"
+    },
+    {
+      "path": "docs/W660A2_EON_NEXUS_STATE_CONTRACT_RECEIPT_2026-07-19.md",
+      "bytes": 3609,
+      "sha256": "efb915998a7074b49e3b1858f0a8c9ba17d20bdcf160657a1ed93a0f27593e90"
+    },
+    {
+      "path": "docs/W660B1_EON_NEXUS_PULSE_CERTIFICATION_2026-07-19.md",
+      "bytes": 4416,
+      "sha256": "397349e85112eda6a50e8242e3eefd76f5cc8a0d59e2acc18ee0944181d71ce9"
+    },
+    {
+      "path": "docs/W660C_LIVE_NEXUS_SOURCE_RECEIPT_2026-07-19.md",
+      "bytes": 2189,
+      "sha256": "38ebca5a4f23e7164ebb1e19958f209f753ea000e6ae4a9a8771a5f4d70ac7fc"
+    },
+    {
+      "path": "docs/W660D_PROJECT_ATLAS_SOURCE_RECEIPT_2026-07-19.md",
+      "bytes": 1762,
+      "sha256": "cd8dede84170eae018e4c4afed2f3e25f1aa94645b896e9420ab57ed4539f30d"
+    },
+    {
+      "path": "docs/W660E_PRODUCT_ADAPTERS_SOURCE_RECEIPT_2026-07-19.md",
+      "bytes": 837,
+      "sha256": "40e9be3bbbbcc7c2878bc61dc3878436c1127405a9f7ca340d0021713c47ff3a"
+    },
+    {
+      "path": "docs/W660F_EONCITY_NEXUS_SOURCE_RECEIPT_2026-07-19.md",
+      "bytes": 836,
+      "sha256": "1e5b5780ff16a58574b70ab09297747737a0f2e5d48fc891d274c28efdc53eab"
+    },
+    {
+      "path": "docs/W660G_APP_SHELL_NEXUS_COMPLETION_RECEIPT_2026-07-19.md",
+      "bytes": 1513,
+      "sha256": "52bb27ac1a1308cf27619227c3aca4e3f0d50a4e3e1e2326cdd202084942771c"
+    },
+    {
+      "path": "docs/W660H_CHATGPT_SHELL_PAGE_NEXUS_COMPLETION_RECEIPT_2026-07-19.md",
+      "bytes": 1648,
+      "sha256": "b92a4be64beb8242f3cb8d980e906b013a63065038cb1aba6ac8fbb7fbbcd827"
+    },
+    {
+      "path": "docs/W660_CITY_COMPLETION_MATRIX_SOURCE_RECEIPT_2026-07-19.md",
+      "bytes": 865,
+      "sha256": "2fb734ca83532bb6d6ae24c14a3d909902809af9fbaf7cc7fe4000f1c6ec8bd7"
+    },
+    {
+      "path": "docs/W660_EON_NEXUS_VISUAL_DESIGN_SYSTEM_2026-07-19.md",
+      "bytes": 15404,
+      "sha256": "b639fa23d2fcdcdca29f4a5ce1e6945ca2022cecff3632b7e9160b7000d73207"
+    },
+    {
+      "path": "docs/W660_EON_NEXUS_VISUAL_INTELLIGENCE_LAYER_2026-07-19.md",
+      "bytes": 14209,
+      "sha256": "4185ec46596a50374295d688627d32683419a379a5d854822a38ea51cfd62c25"
+    },
+    {
+      "path": "docs/W660_FINAL_CLEAN_MILESTONE_CERTIFICATION_2026-07-19.md",
+      "bytes": 2008,
+      "sha256": "84c506d0731fd7a6ce5cbe65258b4e31df869c7f1dd3f765a6729629e96c9fce"
+    },
+    {
+      "path": "eslint.config.mjs",
+      "bytes": 5528,
+      "sha256": "7cd5b543b2973aaba1f8832c18de797765130b17fe10c97f5e16227e65688558"
+    },
+    {
+      "path": "index.html",
+      "bytes": 9158,
+      "sha256": "344c54cd2f8320943cf78ef687e5a61fbcd01339b3547ac81bcf17ac0a3e5672"
+    },
+    {
+      "path": "package.json",
+      "bytes": 132517,
+      "sha256": "965e925a0edc72db178bf95da65ee58401194b8477c2ab792813aa43fb06e08c"
+    },
+    {
+      "path": "public/assets/css/eon-city-product-layer.css",
+      "bytes": 7269,
+      "sha256": "da82aaefde612b8a817381ea24904abb9d695093f356f738dc6eb592813af57f"
+    },
+    {
+      "path": "public/assets/img/icons/icon-192.png",
+      "bytes": 10208,
+      "sha256": "685d7fbd1570b4b8f081a503af10ab7fa6e6823efa7cad9f5b1e94a790e68dc5"
+    },
+    {
+      "path": "public/assets/img/icons/icon-512.png",
+      "bytes": 40961,
+      "sha256": "be3e1ce76983c94644e6b8145b8629814c86f11aeb6659121841cf13568bcff8"
+    },
+    {
+      "path": "scripts/run-current-unit-suite.mjs",
+      "bytes": 25543,
+      "sha256": "77c6962012ab1352d200fa1675e2b811d09c7453f0aacc1a08b6c131ace387dc"
+    },
+    {
+      "path": "scripts/run-w624d-codex-predeploy.mjs",
+      "bytes": 15467,
+      "sha256": "ac29fbc61183d71ed63c26d5dc9c32b6c02cde64f397caa62c399e5f55563783"
+    },
+    {
+      "path": "scripts/w392-direct-eon-city-entry-gate.mjs",
+      "bytes": 6480,
+      "sha256": "e798eae7a20b81cfd521bb0f616df9a0e8f14e6c5862892e57c1fa1288357c86"
+    },
+    {
+      "path": "scripts/w479v-eonbot-voice-gate.mjs",
+      "bytes": 5657,
+      "sha256": "e30ecb97af25ba5263e828266426bb6ead34afe67a0195ac8e82e5bb3902d2ea"
+    },
+    {
+      "path": "scripts/w519-legacy-transport-quarantine-gate.mjs",
+      "bytes": 10000,
+      "sha256": "0be0c6681f4048f859dbb283ea5dd9ab7eb6a06ebbbb778a3e6fcfa5e1937373"
+    },
+    {
+      "path": "scripts/w659n-productive-city-browser-proof.mjs",
+      "bytes": 25850,
+      "sha256": "1e623aee22a4e85d7d3a8f3871af15d8d7fb3ce4199cea406c888df4b49e1da0"
+    },
+    {
+      "path": "scripts/w659n-productive-city-gate.mjs",
+      "bytes": 7119,
+      "sha256": "e50ccb49d3b99a4efd90d09f97ce31546b8904e8b3824cdcc44d33f09a1a9e90"
+    },
+    {
+      "path": "scripts/w660-city-completion-matrix-gate.mjs",
+      "bytes": 2215,
+      "sha256": "9d1959ff47762a17437675ddb69d0aed65a788eb3c27aa234fc99f59c9deaea6"
+    },
+    {
+      "path": "scripts/w660-city-emitted-candidate-gate.mjs",
+      "bytes": 3741,
+      "sha256": "36bbc3ca990987bd5b82e745ef71e1d5e55041aadf46311401b3adf8fccfb995"
+    },
+    {
+      "path": "scripts/w660a2-eon-nexus-state-gate.mjs",
+      "bytes": 5553,
+      "sha256": "e2efea44e1f0643e5223c4d2274c52b816dc6097364868a978bf81a631537fb5"
+    },
+    {
+      "path": "scripts/w660b1-eon-nexus-pulse-browser-proof.mjs",
+      "bytes": 10678,
+      "sha256": "e19a59a2ec179557f6585d10da0521b8f97b6f08a14b8b5446e998118dce2cd2"
+    },
+    {
+      "path": "scripts/w660b1-eon-nexus-pulse-gate.mjs",
+      "bytes": 5471,
+      "sha256": "2cf2f4952c21c5cd49d6aef3aa71cdcd9408a3b10b6754df14fb947ebc634e98"
+    },
+    {
+      "path": "scripts/w660b2-eon-nexus-pulse-motion-browser-proof.mjs",
+      "bytes": 15390,
+      "sha256": "a5cede45caf102421ea0c5d6e157a3c3cf965680247753f4bc836af9d16533f9"
+    },
+    {
+      "path": "scripts/w660b2-eon-nexus-pulse-motion-gate.mjs",
+      "bytes": 4257,
+      "sha256": "69a514008190237c067d4cdb4b550c120576b4efbe9669fbdaf46a1227ee5d9d"
+    },
+    {
+      "path": "scripts/w660c-live-nexus-gate.mjs",
+      "bytes": 4865,
+      "sha256": "b0f65734b1112224eb721771b3baddbab9ac045368641af78145b05f8391c5f7"
+    },
+    {
+      "path": "scripts/w660d-project-atlas-gate.mjs",
+      "bytes": 5186,
+      "sha256": "eb67beb94349190754ae550ef7ecfffa3aa83a295dceb18df4041b0daf85b0fe"
+    },
+    {
+      "path": "scripts/w660e-product-adapters-gate.mjs",
+      "bytes": 3492,
+      "sha256": "f18969f7c7dc90b088185966b5df470b8eb03668b1dc0dd901b649ffcd999e29"
+    },
+    {
+      "path": "scripts/w660f-city-nexus-gate.mjs",
+      "bytes": 3267,
+      "sha256": "324d8b995286196c8bddeabcc5683d0c4559d5dbdd2a8c1c3492d5308b690953"
+    },
+    {
+      "path": "scripts/w660g-app-shell-nexus-gate.mjs",
+      "bytes": 3279,
+      "sha256": "3af1d49e206792b8a5038647f171c4199f31c3445ce97e081a96528549a0813d"
+    },
+    {
+      "path": "scripts/w660h-chat-shell-page-nexus-gate.mjs",
+      "bytes": 3680,
+      "sha256": "f238c4953627b91a39d84b93e5009d01b56516806f2a64658eed4faf50291ba7"
+    },
+    {
+      "path": "tests/unit/w392-direct-eon-city-entry.test.mjs",
+      "bytes": 3931,
+      "sha256": "1e6d5d374d58f5cd0a92c8c17f0321773a0bab242117ed8d13dd1b781321f9d3"
+    },
+    {
+      "path": "tests/unit/w519-legacy-transport-quarantine.test.mjs",
+      "bytes": 3172,
+      "sha256": "c023a6504ce90e56fee05e65859ae7c293d132849ba25a1cfd08b2d53da03320"
+    },
+    {
+      "path": "tests/unit/w649-eoncity-authenticated-entry.test.mjs",
+      "bytes": 12490,
+      "sha256": "39b26c2021c8644e051b041551950c2cc5f4357165508907ece34532117993d1"
+    },
+    {
+      "path": "tests/unit/w649-eoncity-performance-profile.test.mjs",
+      "bytes": 1980,
+      "sha256": "b932866958743d26be0d51e8cd6a31efce92dc4d96ea825f6156536b970bc985"
+    },
+    {
+      "path": "tests/unit/w659f-eoncity-functional-integration.test.mjs",
+      "bytes": 9652,
+      "sha256": "b3fee9d6de1f1a5fc5bb04fb0df1106335d172a5c2e7e27948784565a05f06af"
+    },
+    {
+      "path": "tests/unit/w659n-p0-correctness.test.mjs",
+      "bytes": 5697,
+      "sha256": "0784cbed114d29256e915533b4d074c5e52ac422a65ebe40e5f7e7727e06d295"
+    },
+    {
+      "path": "tests/unit/w659n-productive-city-integration.test.mjs",
+      "bytes": 4055,
+      "sha256": "3af9456f79890009966bf4651111228ed8e49288b3cdcd8ab5bb8a10562a5f13"
+    },
+    {
+      "path": "tests/unit/w659n-world-composition.test.mjs",
+      "bytes": 3015,
+      "sha256": "0e1aa01432f18f353b831c6741cc960c3b56be6c5f127b032a89178b6e310cc3"
+    },
+    {
+      "path": "tests/unit/w660-city-completion-matrix.test.mjs",
+      "bytes": 1972,
+      "sha256": "3a57663af6f210c2e5e421e9e2a0009f7d4f0b61a27dc5f253997e61b6d0bdb8"
+    },
+    {
+      "path": "tests/unit/w660-city-emitted-candidate.test.mjs",
+      "bytes": 582,
+      "sha256": "c231503aaca53e201a02b31ed32d2cf95669ecf9ae4e292112b9d39f71ad27f1"
+    },
+    {
+      "path": "tests/unit/w660-nexus-event-adapter.test.mjs",
+      "bytes": 5049,
+      "sha256": "6f95171abc243fcfcee46e33694502f010fd2abd85c13352d87addd9e9b68a11"
+    },
+    {
+      "path": "tests/unit/w660-nexus-privacy-projection.test.mjs",
+      "bytes": 7217,
+      "sha256": "9055c8c0275bb3419386865035527d63402646f784af9199789aeaf8ce9b9ffa"
+    },
+    {
+      "path": "tests/unit/w660-nexus-state-contract.test.mjs",
+      "bytes": 4378,
+      "sha256": "e36a67fe28d6adb3ed5f23fe2e147e7f5c1ffa6df6ad2a96a0d66147043003d8"
+    },
+    {
+      "path": "tests/unit/w660b1-eon-nexus-pulse.test.mjs",
+      "bytes": 5017,
+      "sha256": "fb41fdf84871f6d2695c831d45a7bf95a75367cad8d3417fa51f221a9048ad26"
+    },
+    {
+      "path": "tests/unit/w660b2-eon-nexus-pulse-motion.test.mjs",
+      "bytes": 5770,
+      "sha256": "8c077f4348201e68ebb3523317e6cc518a9cab04fe78bb8542e79a62ee00c9ed"
+    },
+    {
+      "path": "tests/unit/w660c-live-nexus.test.mjs",
+      "bytes": 4691,
+      "sha256": "3029dc465af0ca998bc601367520ee3742f7aab46ec363d0feefe8a9cacfb1c5"
+    },
+    {
+      "path": "tests/unit/w660d-project-atlas.test.mjs",
+      "bytes": 5803,
+      "sha256": "0662f0181ea73d83fb660cfbb51f1bb89faa15ab3b53d6810be03c2598ac64b5"
+    },
+    {
+      "path": "tests/unit/w660e-product-adapters.test.mjs",
+      "bytes": 4632,
+      "sha256": "ca474e4f8b8ab0a8f25fca2efc967cbdadb4c94c251fa0c9ce3baa9087868e62"
+    },
+    {
+      "path": "tests/unit/w660f-city-nexus.test.mjs",
+      "bytes": 3661,
+      "sha256": "ef25de5de2f20b09c09be56d3e5d8c9aea6a52a7535051db7ef03e3e9355f78a"
+    },
+    {
+      "path": "tests/unit/w660g-app-shell-nexus.test.mjs",
+      "bytes": 2073,
+      "sha256": "afb9bc3974b33ff8f516342596721076018bd3dad28629ac3bea8cffabc64f26"
+    },
+    {
+      "path": "tests/unit/w660h-chat-shell-page-nexus.test.mjs",
+      "bytes": 5434,
+      "sha256": "4e004617586033653eaebc6e7848b7e4b7897d783079f127a97c8cc375c92881"
+    }
+  ]
+}

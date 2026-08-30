@@ -1,0 +1,69 @@
+{
+  "schema": "eonapp.a15.i21.cloudflare-pages-source-authority.v1",
+  "project": "eonapp-ch",
+  "wranglerConfig": "wrangler.jsonc",
+  "buildOutput": "dist",
+  "compatibilityDate": "2026-08-05",
+  "releaseAuthorityId": "a15-i21-v1",
+  "functionsRoutes": "_routes.json",
+  "environments": [
+    "local",
+    "preview",
+    "production"
+  ],
+  "bindings": [
+    {
+      "binding": "EON_IDENTITY_DB",
+      "domain": "identity",
+      "expectedVersion": 6,
+      "migrationsDir": "identity/migrations"
+    },
+    {
+      "binding": "EON_BILLING_DB",
+      "domain": "billing",
+      "expectedVersion": 2,
+      "migrationsDir": "migrations/billing"
+    },
+    {
+      "binding": "EON_REFERRALS_DB",
+      "domain": "referrals",
+      "expectedVersion": 4,
+      "migrationsDir": "migrations/referrals"
+    },
+    {
+      "binding": "EON_TRUST_DB",
+      "domain": "trust",
+      "expectedVersion": 3,
+      "migrationsDir": "migrations/trust"
+    }
+  ],
+  "requiredSecrets": [
+    "GOOGLE_OAUTH_CLIENT_SECRET",
+    "EON_AUTH_SUBJECT_PEPPER",
+    "EON_SESSION_SIGNING_KEY",
+    "EON_OAUTH_FLOW_SIGNING_KEY",
+    "DODO_PAYMENTS_API_KEY",
+    "DODO_WEBHOOK_SECRET",
+    "EON_ENTITLEMENT_SIGNING_KEY",
+    "EON_CAPABILITY_SIGNING_KEY",
+    "EON_TRUST_OPERATOR_TOKEN",
+    "EON_TRUST_RATE_LIMIT_SALT",
+    "VEXRAIL_SECRET_KEY",
+    "VEXRAIL_PUBLISHABLE_KEY"
+  ],
+  "databaseIdsCommitted": false,
+  "secretsCommitted": false,
+  "dashboardConfigMayOverrideSource": false,
+  "requestTimeDdlAllowed": false,
+  "productionDeploymentAuthorized": false,
+  "observability": {
+    "enabled": true,
+    "headSamplingRate": 0.1,
+    "uploadSourceMaps": true,
+    "privacyAuthority": "assets/js/observability/eon-observability-authority.js",
+    "sloPolicy": "config/observability/a15-i23-slo-policy.json"
+  },
+  "edgeSecurityPolicy": "config/cloudflare/eon-edge-security-policy.json",
+  "edgeSecurityApplied": false,
+  "productionRollbackAutomatic": false
+}

@@ -1,0 +1,36 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+const source=fs.readFileSync(new URL('../../assets/js/city/w731/eon-city-w731-command-hub-runtime.js', import.meta.url),'utf8');
+const overlay=fs.readFileSync(new URL('../../assets/js/city/w766/eon-expanse-w766h-ui-overlay.js', import.meta.url),'utf8');
+assert.match(source,/mountEonExpanseW766HUiOverlay/);
+assert.match(source,/openExpanseMissionBoard/);
+assert.match(source,/syncExpanseUi\(\)/);
+assert.match(overlay,/SIGNAL FRONTIER MISSIONS/);
+assert.match(overlay,/data-eon-expanse-ui="guidance"/);
+assert.doesNotMatch(overlay,/new Engine|new Scene|runRenderLoop/);
+assert.match(overlay,/aria-hidden/);
+assert.match(overlay,/event\.key === 'Escape'/);
+assert.match(overlay,/lastFocused\?\.focus/);
+assert.match(overlay,/lastRenderSignature/);
+
+console.log('w766h ui overlay integration tests passed');
+assert.match(overlay,/Confirm campaign receipt/);
+assert.match(overlay,/onConfirmCampaignReceipt/);
+assert.match(overlay,/confirm-campaign-receipt/);
+assert.match(source,/confirmExpanseCampaignReceiptAction/);
+assert.match(source,/onGuideToExpanseGate/);
+assert.match(overlay,/Start mission/);
+assert.match(overlay,/onStartMission/);
+assert.match(source,/startExpanseMissionAction/);
+assert.match(overlay,/Return to Command Hub/);
+assert.match(overlay,/data-eon-expanse-ui':'return-hub/);
+assert.match(overlay,/onReturnToCommandHub/);
+assert.match(overlay,/returnControlVisible/);
+assert.match(source,/onReturnToCommandHub: \(options = \{\}\) => runtime\?\.returnFromExpanse/);
+
+assert.match(overlay,/resetWorldPresentation/);
+assert.match(overlay,/captureMoment\.hidden = true/);
+assert.match(overlay,/eventBanner\.dataset\.active = 'false'/);
+assert.match(overlay,/hud\.dataset\.active = 'false'/);
+assert.match(source,/resetWorldPresentation\?\.\(\{ reason: 'return-to-command-hub' \}\)/);
+assert.match(source,/worldPresentationReset/);

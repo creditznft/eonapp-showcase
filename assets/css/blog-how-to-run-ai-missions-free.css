@@ -1,0 +1,10 @@
+.blog-article { max-width: 720px; margin: 0 auto; }
+    .blog-article h2 { margin-top: 2rem; }
+    .blog-article h3 { margin-top: 1.5rem; color: var(--clr-accent); }
+    .blog-article p, .blog-article li { line-height: 1.8; }
+    .blog-article ol, .blog-article ul { padding-left: 1.5rem; margin: 1rem 0; }
+    .blog-article .step-box { background: var(--clr-surface); border: 1px solid var(--clr-border); border-radius: 10px; padding: 1.25rem 1.5rem; margin: 1.25rem 0; }
+    .blog-article .step-box strong { color: var(--clr-accent); }
+    .blog-article .tip { background: color-mix(in srgb, var(--clr-accent) 10%, transparent); border-left: 3px solid var(--clr-accent); padding: .75rem 1rem; border-radius: 0 8px 8px 0; margin: 1rem 0; font-size: .92rem; }
+    .blog-meta { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin-bottom: 2rem; font-size: .88rem; opacity: .75; }
+    .blog-cta-bar { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: 2rem; }

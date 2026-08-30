@@ -1,0 +1,595 @@
+{
+  "schema": "eonapp.w747.spatial-foundation.source-receipt.v1",
+  "createdAt": "2026-07-29T11:05:24Z",
+  "authority": {
+    "branch": "w747-spatial-foundation-local",
+    "correctedStartingCommit": "ff17b66d9b81b04268b956338c99890185f50256",
+    "correctedStartingTree": "cdb624ccd76b1f7fb2793c482e98053b2b0724c9",
+    "implementationCommit": "a658fcd53002f697aa757b8c47777d3dd1680252",
+    "implementationTree": "84ab57470810b8b1a2a4a2001cb5684e4f431252",
+    "briefAuthorityMismatch": {
+      "briefCommit": "88c836b2403cae26537bbfcfde273006f432f2ff",
+      "briefTree": "745b96df271906f13f6cde6f35dad2c169162245",
+      "resolution": "Uploaded source ZIP and Git bundle matched each other exactly across 4,876 tracked files; ff17b66/cdb624c is the grounded uploaded authority."
+    },
+    "uploadedSha256": {
+      "planPackage": "bbb8fbb6c710bfaf296442b00018f44e29561ed963e6f9d781ae90777066ebcb",
+      "sourceZip": "6fe512b029a6b56366ed082edcb6bb0f38014c9d6b2eeb9fcb7af8dcd12f716d",
+      "historyBundle": "0ecdc206e00aed5b25c9ddd9ef36580a14ec0e2096ea6b2e3c1446da37f28bd3",
+      "handoverZip": "41cc59382219877f6df2ae49d55fdfdeb9f46ebea2668649784bc658dbad699e"
+    }
+  },
+  "runtime": {
+    "spatialSchema": "eon.city.spatial-foundation.w747.v1",
+    "provenance": "eon-city-living-nexus-command-core-w747-1",
+    "manifestVersion": "747.0.0",
+    "oneEngineSceneLoopPreserved": true,
+    "final3dNexusBuilt": false,
+    "deploymentPerformed": false
+  },
+  "spatial": {
+    "heroZone": {
+      "id": "living-nexus-hero-zone",
+      "center": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "radius": 6,
+      "diameter": 12,
+      "reservedPrimaryRole": "living-nexus-core",
+      "allowedFloorDecorationHeight": 0.24,
+      "minimumPrimaryClearance": 0.45
+    },
+    "arrivalCorridor": {
+      "id": "arrival-reveal-corridor",
+      "from": {
+        "x": 0,
+        "y": 0,
+        "z": 16.2
+      },
+      "to": {
+        "x": 0,
+        "y": 0,
+        "z": 6.25
+      },
+      "halfWidth": 2.65,
+      "minimumVerticalClearance": 2.15
+    },
+    "wingAnchors": [
+      {
+        "id": "creator",
+        "label": "Creator Wing",
+        "position": {
+          "x": -11.3,
+          "y": 0,
+          "z": 0.6
+        }
+      },
+      {
+        "id": "operations",
+        "label": "Operations Wing",
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": -11.6
+        }
+      },
+      {
+        "id": "knowledge",
+        "label": "Knowledge Wing",
+        "position": {
+          "x": 11.3,
+          "y": 0,
+          "z": 0.6
+        }
+      },
+      {
+        "id": "systems",
+        "label": "Systems Wing",
+        "position": {
+          "x": 16.2,
+          "y": 0,
+          "z": 6.8
+        }
+      },
+      {
+        "id": "personal-transit",
+        "label": "Personal / Transit Wing",
+        "position": {
+          "x": -15.1,
+          "y": 0,
+          "z": 10.8
+        }
+      }
+    ],
+    "spawn": {
+      "x": 0,
+      "y": 0,
+      "z": 16.2,
+      "heading": 3.141592653589793
+    },
+    "cameras": {
+      "arrival": {
+        "id": "arrival",
+        "alpha": 1.5707963267948966,
+        "beta": 1.08,
+        "radius": 15.9,
+        "target": {
+          "x": 0,
+          "y": 1.55,
+          "z": 3.8
+        },
+        "targetHeight": 1.55,
+        "lowerRadiusLimit": 7,
+        "upperRadiusLimit": 18.5,
+        "lowerBetaLimit": 0.72,
+        "upperBetaLimit": 1.36,
+        "derivedPosition": {
+          "x": 8.58669010121813e-16,
+          "y": 9.044120990362465,
+          "z": 17.823129129470665
+        }
+      },
+      "return": {
+        "id": "return",
+        "alpha": 1.5707963267948966,
+        "beta": 1.08,
+        "radius": 15.9,
+        "target": {
+          "x": 0,
+          "y": 1.55,
+          "z": 3.8
+        },
+        "targetHeight": 1.55,
+        "lowerRadiusLimit": 7,
+        "upperRadiusLimit": 18.5,
+        "lowerBetaLimit": 0.72,
+        "upperBetaLimit": 1.36,
+        "derivedPosition": {
+          "x": 8.58669010121813e-16,
+          "y": 9.044120990362465,
+          "z": 17.823129129470665
+        }
+      },
+      "nexusFocus": {
+        "id": "nexus-focus",
+        "alpha": 1.5707963267948966,
+        "beta": 1.04,
+        "radius": 10.2,
+        "target": {
+          "x": 0,
+          "y": 1.75,
+          "z": 0
+        },
+        "targetHeight": 1.75,
+        "lowerRadiusLimit": 7,
+        "upperRadiusLimit": 14,
+        "lowerBetaLimit": 0.72,
+        "upperBetaLimit": 1.36,
+        "derivedPosition": {
+          "x": 5.386316939969975e-16,
+          "y": 6.913446623774339,
+          "z": 8.796523117882051
+        }
+      },
+      "follow": {
+        "id": "follow",
+        "alpha": 1.5707963267948966,
+        "beta": 1.08,
+        "radius": 10.8,
+        "target": {
+          "x": 0,
+          "y": 1.35,
+          "z": 0
+        },
+        "targetHeight": 1.35,
+        "lowerRadiusLimit": 6.5,
+        "upperRadiusLimit": 15.5,
+        "lowerBetaLimit": 0.72,
+        "upperBetaLimit": 1.36,
+        "derivedPosition": {
+          "x": 5.832468747997221e-16,
+          "y": 6.440346333076391,
+          "z": 9.525144314357433
+        }
+      }
+    },
+    "operationsCrescent": {
+      "commandTable": {
+        "position": {
+          "x": 0,
+          "y": 0.46,
+          "z": -8.05
+        },
+        "footprintRadius": 1.6
+      },
+      "commandSeat": {
+        "position": {
+          "x": -2.55,
+          "y": 0,
+          "z": -8.45
+        },
+        "rotationY": 3.141592653589793,
+        "footprintRadius": 1.05
+      },
+      "districtHologram": {
+        "position": {
+          "x": 2.65,
+          "y": 0,
+          "z": -8.35
+        },
+        "rotationY": 3.141592653589793,
+        "footprintRadius": 2.15
+      },
+      "eonbotDock": {
+        "position": {
+          "x": 2.35,
+          "y": 0,
+          "z": 2.15
+        },
+        "rotationY": 3.141592653589793,
+        "footprintRadius": 0.8
+      },
+      "canopy": {
+        "radius": 11.55,
+        "height": 7.2,
+        "columnRadius": 11.25,
+        "columnAngleOffset": 0.39269908169872414
+      }
+    },
+    "placements": [
+      {
+        "id": "eonbot-nexus",
+        "wing": "hero",
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "focus": {
+          "x": 0,
+          "y": 0,
+          "z": 6.65
+        },
+        "footprintRadius": 2.45,
+        "primaryRole": "living-nexus-core",
+        "previousPosition": {
+          "x": 0,
+          "z": -2.5
+        }
+      },
+      {
+        "id": "create-forge",
+        "wing": "creator",
+        "position": {
+          "x": -10.8,
+          "y": 0,
+          "z": -3.6
+        },
+        "focus": {
+          "x": -7.65,
+          "y": 0,
+          "z": -2.05
+        },
+        "footprintRadius": 3.05,
+        "primaryRole": "create-forge",
+        "previousPosition": {
+          "x": -7.4,
+          "z": -5.2
+        }
+      },
+      {
+        "id": "share-capture",
+        "wing": "creator",
+        "position": {
+          "x": -11.8,
+          "y": 0,
+          "z": 4.8
+        },
+        "focus": {
+          "x": -8.55,
+          "y": 0,
+          "z": 3.55
+        },
+        "footprintRadius": 2.65,
+        "primaryRole": "share-capture",
+        "previousPosition": {
+          "x": 8.2,
+          "z": 4.6
+        }
+      },
+      {
+        "id": "command-console",
+        "wing": "operations",
+        "position": {
+          "x": -5.2,
+          "y": 0,
+          "z": -11.6
+        },
+        "focus": {
+          "x": -3.55,
+          "y": 0,
+          "z": -8.25
+        },
+        "footprintRadius": 2.75,
+        "primaryRole": "command-console",
+        "previousPosition": {
+          "x": -13.5,
+          "z": -10
+        }
+      },
+      {
+        "id": "automation-theatre",
+        "wing": "operations",
+        "position": {
+          "x": 5.2,
+          "y": 0,
+          "z": -11.6
+        },
+        "focus": {
+          "x": 3.55,
+          "y": 0,
+          "z": -8.25
+        },
+        "footprintRadius": 2.75,
+        "primaryRole": "automation-theatre",
+        "previousPosition": {
+          "x": 13.5,
+          "z": -10
+        }
+      },
+      {
+        "id": "project-atlas",
+        "wing": "knowledge",
+        "position": {
+          "x": 10.8,
+          "y": 0,
+          "z": -3.6
+        },
+        "focus": {
+          "x": 7.65,
+          "y": 0,
+          "z": -2.05
+        },
+        "footprintRadius": 2.5,
+        "primaryRole": "project-atlas",
+        "previousPosition": {
+          "x": 7.4,
+          "z": -5.2
+        }
+      },
+      {
+        "id": "library-vault",
+        "wing": "knowledge",
+        "position": {
+          "x": 11.8,
+          "y": 0,
+          "z": 4.8
+        },
+        "focus": {
+          "x": 8.55,
+          "y": 0,
+          "z": 3.55
+        },
+        "footprintRadius": 2.55,
+        "primaryRole": "library-vault",
+        "previousPosition": {
+          "x": -8.2,
+          "z": 4.6
+        }
+      },
+      {
+        "id": "local-ai-lab",
+        "wing": "systems",
+        "position": {
+          "x": 18,
+          "y": 0,
+          "z": 8.5
+        },
+        "focus": {
+          "x": 14.4,
+          "y": 0,
+          "z": 6.9
+        },
+        "footprintRadius": 3.05,
+        "primaryRole": "local-ai-lab",
+        "previousPosition": {
+          "x": -15.2,
+          "z": 8.5
+        }
+      },
+      {
+        "id": "my-realm-portal",
+        "wing": "personal-transit",
+        "position": {
+          "x": -18,
+          "y": 0,
+          "z": 8.5
+        },
+        "focus": {
+          "x": -14.4,
+          "y": 0,
+          "z": 6.9
+        },
+        "footprintRadius": 3,
+        "primaryRole": "my-realm-portal",
+        "previousPosition": {
+          "x": 0,
+          "z": 16.5
+        }
+      },
+      {
+        "id": "plans-access",
+        "wing": "personal-transit",
+        "position": {
+          "x": -14,
+          "y": 0,
+          "z": 14.2
+        },
+        "focus": {
+          "x": -11.25,
+          "y": 0,
+          "z": 11.35
+        },
+        "footprintRadius": 3.05,
+        "primaryRole": "plans-access",
+        "previousPosition": {
+          "x": 15.2,
+          "z": 8.5
+        }
+      }
+    ],
+    "retired": [
+      "duplicate central command-centre-shell use of eoncity-orientation-hall"
+    ],
+    "preserved": [
+      "archive-garden-world use of eoncity-orientation-hall",
+      "City Menu",
+      "shared work surfaces",
+      "Pathfinder",
+      "EONBOT"
+    ]
+  },
+  "validation": {
+    "spatialFoundation": {
+      "schema": "eon.city.spatial-foundation.w747.v1",
+      "ok": true,
+      "errors": [],
+      "footprintReport": {
+        "ok": true,
+        "overlaps": [],
+        "heroZoneViolations": [],
+        "footprintCount": 10
+      },
+      "corridorReport": {
+        "ok": true,
+        "blockers": []
+      }
+    },
+    "primaryFootprints": {
+      "ok": true,
+      "overlaps": [],
+      "heroZoneViolations": [],
+      "footprintCount": 10
+    },
+    "arrivalCorridor": {
+      "ok": true,
+      "blockers": []
+    },
+    "legacyArrivalCameraCompatibility": {
+      "ok": true,
+      "cameraPosition": {
+        "x": 8.58669010121813e-16,
+        "y": 9.044120990362465,
+        "z": 17.823129129470665
+      },
+      "target": {
+        "x": 0,
+        "y": 1.55,
+        "z": 3.8
+      },
+      "minimumClearance": 1.3500000000000005,
+      "blockedStationIds": [],
+      "clearances": [
+        {
+          "id": "eonbot-nexus",
+          "lineDistance": 3.8000000000000007,
+          "visualRadius": 2.45,
+          "clearance": 1.3500000000000005
+        },
+        {
+          "id": "create-forge",
+          "lineDistance": 13.091982279242513,
+          "visualRadius": 3.05,
+          "clearance": 10.041982279242514
+        },
+        {
+          "id": "project-atlas",
+          "lineDistance": 13.091982279242513,
+          "visualRadius": 2.5,
+          "clearance": 10.591982279242513
+        },
+        {
+          "id": "library-vault",
+          "lineDistance": 11.8,
+          "visualRadius": 2.55,
+          "clearance": 9.25
+        },
+        {
+          "id": "share-capture",
+          "lineDistance": 11.8,
+          "visualRadius": 2.65,
+          "clearance": 9.15
+        },
+        {
+          "id": "command-console",
+          "lineDistance": 16.25423021862309,
+          "visualRadius": 2.75,
+          "clearance": 13.50423021862309
+        },
+        {
+          "id": "automation-theatre",
+          "lineDistance": 16.25423021862309,
+          "visualRadius": 2.75,
+          "clearance": 13.50423021862309
+        },
+        {
+          "id": "local-ai-lab",
+          "lineDistance": 18,
+          "visualRadius": 3.05,
+          "clearance": 14.95
+        },
+        {
+          "id": "my-realm-portal",
+          "lineDistance": 18,
+          "visualRadius": 3,
+          "clearance": 15
+        },
+        {
+          "id": "plans-access",
+          "lineDistance": 14,
+          "visualRadius": 3.05,
+          "clearance": 10.95
+        }
+      ]
+    },
+    "focusedTests": {
+      "passed": 42,
+      "failed": 0
+    },
+    "maintainedRegressionTests": {
+      "passed": 60,
+      "failed": 0
+    },
+    "assets": {
+      "entriesChecked": 41,
+      "variantsChecked": 82,
+      "bytesChecked": 79149292,
+      "ok": true
+    },
+    "siteAudit": {
+      "htmlFiles": 49,
+      "tools": 3,
+      "games": 1,
+      "blockers": 0,
+      "warnings": 2
+    },
+    "identitySurface": {
+      "blockers": 0,
+      "warnings": 0
+    },
+    "build": {
+      "status": "blocked",
+      "reason": "Dependencies unavailable: internal npm mirror 404 for ws@7.5.11; public registry retry EAI_AGAIN."
+    },
+    "headedBrowser": {
+      "status": "blocked",
+      "screenshots": [],
+      "videos": [],
+      "consoleSummary": "not run",
+      "networkSummary": "not run"
+    }
+  },
+  "status": "W747 BLOCKED — SOURCE, ASSET OR BROWSER EVIDENCE INCOMPLETE"
+}

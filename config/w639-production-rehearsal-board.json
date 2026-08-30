@@ -1,0 +1,20 @@
+{
+  "schema": "eonapp.whole-app-production-rehearsal-input.w639.v1",
+  "wave": "W639",
+  "generatedAt": null,
+  "domainEvidence": {
+    "routes": "not-run",
+    "account": "not-run",
+    "projects": "not-run",
+    "forge": "not-run",
+    "automations": "not-run",
+    "city": "not-run",
+    "creator": "not-run",
+    "billing": "not-run",
+    "referral": "not-run",
+    "backup-recovery": "not-run",
+    "incidents-rollback": "not-run"
+  },
+  "productionRehearsalPassed": false,
+  "launchCandidateFrozen": false
+}

@@ -1,0 +1,3 @@
+import test from 'node:test'; import assert from 'node:assert/strict';
+import { EON_REFERRAL_REVERSAL_REASONS, normalizeGrantTransition } from '../../assets/js/referrals/eon-referral-program-w629.js';
+test('W629D reversal reasons are explicit and consumed grants can still be revoked',()=>{for(const reason of ['refund','dispute','abuse','support_reversal'])assert.equal(EON_REFERRAL_REVERSAL_REASONS.includes(reason),true);const row=normalizeGrantTransition({from:'consumed',to:'revoked',reason:'refund'});assert.equal(row.ok,true);assert.equal(row.terminal,true);assert.equal(row.browserAuthoritative,false);});

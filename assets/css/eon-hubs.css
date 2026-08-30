@@ -1,0 +1,160 @@
+/* Chat-first hub destinations: Projects, Library and Workspace. */
+.eon-hub-main {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+}
+
+.eon-hub-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.eon-hub-kicker {
+  margin: 0 0 .5rem;
+  color: #a5b4fc;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.eon-hub-title {
+  margin: 0;
+  color: #f8fafc;
+  font-size: clamp(1.75rem, 3.4vw, 2.65rem);
+  letter-spacing: -.04em;
+}
+
+.eon-hub-subtitle {
+  max-width: 44rem;
+  margin: .6rem 0 0;
+  color: #a9b8cb;
+  line-height: 1.6;
+}
+
+.eon-hub-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.eon-hub-card {
+  grid-column: span 4;
+  padding: 1.1rem;
+  border: 1px solid rgba(148, 163, 184, .16);
+  border-radius: 1rem;
+  background: linear-gradient(150deg, rgba(30, 41, 59, .66), rgba(15, 23, 42, .8));
+  box-shadow: 0 14px 36px rgba(2, 6, 23, .12);
+}
+
+.eon-hub-card h2,
+.eon-hub-card h3 { margin: 0; color: #f8fafc; font-size: 1rem; }
+.eon-hub-card p { margin: .5rem 0 0; color: #a9b8cb; font-size: .88rem; line-height: 1.5; }
+.eon-hub-card-wide { grid-column: span 8; }
+.eon-hub-card-full { grid-column: 1 / -1; }
+
+.eon-workspace-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .75rem;
+  margin-top: 1rem;
+}
+
+.eon-workspace-action {
+  text-decoration: none;
+  display: grid;
+  gap: .4rem;
+  min-height: 8.75rem;
+  padding: 1rem;
+  border: 1px solid rgba(129, 140, 248, .25);
+  border-radius: .9rem;
+  background: rgba(30, 41, 59, .52);
+  color: #e8edff;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  transition: transform .16s ease, background .16s ease, border-color .16s ease;
+}
+.eon-workspace-action:hover,
+.eon-workspace-action:focus-visible { transform: translateY(-2px); border-color: rgba(165, 180, 252, .62); background: rgba(67, 56, 202, .18); }
+.eon-workspace-action strong { font-size: 1rem; }
+.eon-workspace-action span { color: #a9b8cb; font-size: .82rem; line-height: 1.4; }
+
+.eon-hub-list { display: grid; gap: .6rem; margin-top: .9rem; }
+.eon-hub-list-row { display: flex; align-items: center; justify-content: space-between; gap: .75rem; padding: .76rem .82rem; border: 1px solid rgba(148, 163, 184, .12); border-radius: .72rem; background: rgba(15, 23, 42, .52); }
+.eon-hub-list-row strong { color: #e7edf8; font-size: .88rem; }
+.eon-hub-list-row span { color: #93a4bc; font-size: .76rem; }
+.eon-hub-empty { color: #93a4bc; font-size: .88rem; }
+
+.eon-workspace-direct { display:flex; flex-wrap:wrap; gap:.55rem; margin-top:1rem; }
+.eon-workspace-direct a { padding:.5rem .68rem; border:1px solid rgba(129,140,248,.35); border-radius:.65rem; color:#e0e7ff; background:rgba(99,102,241,.1); font-size:.8rem; font-weight:700; text-decoration:none; }
+.eon-workspace-direct a:hover, .eon-workspace-direct a:focus-visible { border-color:rgba(165,180,252,.72); color:#fff; background:rgba(99,102,241,.2); }
+
+.eon-hub-advanced { margin-top: 1rem; border-top: 1px solid rgba(148, 163, 184, .14); padding-top: 1rem; }
+.eon-hub-advanced summary { color: #c7d2fe; cursor: pointer; font-weight: 700; }
+.eon-hub-advanced p { max-width: 50rem; }
+.eon-hub-advanced-links { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: .8rem; }
+.eon-hub-advanced-links a { padding: .45rem .62rem; border: 1px solid rgba(148, 163, 184, .2); border-radius: .6rem; color: #cbd5e1; font-size: .8rem; text-decoration: none; }
+.eon-hub-advanced-links a:hover { border-color: rgba(165, 180, 252, .6); color: #fff; }
+
+.eon-hub-primary { display: inline-flex; align-items: center; gap: .45rem; min-height: 2.5rem; padding: .55rem .8rem; border: 1px solid rgba(129, 140, 248, .45); border-radius: .7rem; background: rgba(99, 102, 241, .2); color: #eef2ff; font: inherit; font-size: .86rem; font-weight: 750; text-decoration: none; cursor: pointer; }
+.eon-hub-primary:hover { color: #fff; background: rgba(99, 102, 241, .3); }
+
+@media (max-width: 880px) {
+  .eon-hub-card, .eon-hub-card-wide { grid-column: 1 / -1; }
+}
+@media (max-width: 600px) {
+  .eon-hub-main { padding: 1.25rem 1rem 2rem; }
+  .eon-hub-top { display: grid; }
+  .eon-workspace-actions { grid-template-columns: 1fr; }
+}
+
+/* W218 local profile, appearance, and app-update surfaces. */
+.eon-profile-identity-card { display: grid; gap: .9rem; }
+.eon-profile-identity-row { display: flex; align-items: center; gap: .9rem; }
+.eon-profile-avatar { flex: 0 0 auto; width: 80px; height: 80px; }
+.eon-profile-avatar img { width: 80px !important; height: 80px !important; border-radius: 1.1rem !important; }
+.eon-profile-field { display: grid; gap: .4rem; color: #cbd5e1; font-size: .82rem; font-weight: 700; }
+.eon-profile-field input { width: 100%; min-height: 2.5rem; padding: .55rem .68rem; border: 1px solid rgba(148, 163, 184, .28); border-radius: .7rem; background: rgba(15, 23, 42, .72); color: #f8fafc; font: inherit; }
+.eon-profile-field input:focus { outline: 2px solid rgba(129, 140, 248, .7); outline-offset: 2px; }
+.eon-profile-actions, .eon-theme-options { display: flex; flex-wrap: wrap; gap: .55rem; }
+.eon-record-button, .eon-theme-options button { min-height: 2.5rem; padding: .55rem .8rem; border: 1px solid rgba(148, 163, 184, .28); border-radius: .7rem; background: rgba(15, 23, 42, .52); color: #e2e8f0; font: inherit; font-size: .84rem; font-weight: 700; cursor: pointer; }
+.eon-record-button:hover, .eon-theme-options button:hover, .eon-theme-options button.is-active { border-color: rgba(165, 180, 252, .72); background: rgba(99, 102, 241, .2); color: #fff; }
+.eon-record-button:disabled, .eon-theme-options button:disabled { opacity: .55; cursor: not-allowed; }
+.eon-profile-status { min-height: 1.2rem; color: #a5b4fc !important; font-size: .78rem !important; }
+.eon-device-actions { display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; margin-top: .9rem; }
+.eon-device-actions a { color: #c7d2fe; font-size: .84rem; font-weight: 700; }
+
+@media (max-width: 600px) {
+  .eon-profile-identity-row { align-items: flex-start; }
+  .eon-profile-actions, .eon-theme-options { display: grid; grid-template-columns: 1fr; }
+}
+
+/* W364A — data-custody disclosure for guest-first optional identity. */
+.eon-profile-data-custody-card { grid-column: span 8; }
+.eon-data-custody-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.65rem; margin-top:.9rem; }
+.eon-data-custody-grid > div { display:grid; gap:.3rem; padding:.7rem; border:1px solid rgba(148,163,184,.18); border-radius:.75rem; background:rgba(2,6,23,.24); }
+.eon-data-custody-grid strong { color:#e0e7ff; font-size:.78rem; }
+.eon-data-custody-grid span { color:#b7c4d7; font-size:.75rem; line-height:1.45; }
+.eon-data-custody-warning { margin-top:.8rem !important; padding:.72rem .78rem; border:1px solid rgba(251,191,36,.32); border-radius:.75rem; background:rgba(120,53,15,.12); color:#fde68a !important; }
+@media (max-width: 900px) { .eon-profile-data-custody-card { grid-column: span 12; } .eon-data-custody-grid { grid-template-columns:1fr; } }
+
+/* W525B — one calm Profile & Preferences workspace, aligned with the app shell. */
+body[data-eon-preferences="1"] .eon-preferences-main{width:min(1240px,100%);margin:0 auto;padding:clamp(1.25rem,3.5vw,2.8rem)}
+.eon-preferences-hero{display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;margin-bottom:1rem;padding:clamp(1.15rem,3vw,1.85rem);border:1px solid rgba(129,140,248,.24);border-radius:1.15rem;background:radial-gradient(circle at 96% 0%,rgba(99,102,241,.17),transparent 42%),linear-gradient(145deg,rgba(30,41,59,.66),rgba(15,23,42,.9))}.eon-preferences-hero .eon-hub-subtitle{margin-bottom:0}.eon-preferences-hero-actions{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:.65rem}.eon-preferences-text-link{color:#c7d2fe;font-size:.84rem;font-weight:740;text-decoration:none}.eon-preferences-text-link:hover,.eon-preferences-text-link:focus-visible{color:#fff;text-decoration:underline;outline:none}
+.eon-preferences-layout{display:grid;grid-template-columns:minmax(11.6rem,.72fr) minmax(0,3fr);gap:1rem;align-items:start}.eon-preferences-nav{position:sticky;top:1rem;display:grid;gap:.18rem;padding:.62rem;border:1px solid rgba(148,163,184,.16);border-radius:1rem;background:linear-gradient(165deg,rgba(30,41,59,.72),rgba(15,23,42,.92));box-shadow:0 14px 30px rgba(2,6,23,.16)}.eon-preferences-nav-title{margin:.2rem .45rem .4rem;color:#f8fafc;font-size:.82rem;font-weight:820}.eon-preferences-nav>button{display:flex;align-items:center;width:100%;min-height:2.4rem;padding:.47rem .56rem;border:1px solid transparent;border-radius:.62rem;background:transparent;color:#b9c7da;font:inherit;font-size:.8rem;font-weight:720;text-align:left;cursor:pointer}.eon-preferences-nav>button:hover,.eon-preferences-nav>button:focus-visible{border-color:rgba(129,140,248,.34);background:rgba(99,102,241,.11);color:#fff;outline:none}.eon-preferences-nav-note{display:grid;gap:.32rem;margin-top:.55rem;padding:.7rem;border-top:1px solid rgba(148,163,184,.14);color:#a9b8cb;font-size:.72rem;line-height:1.45}.eon-preferences-nav-note strong{color:#e0e7ff;font-size:.74rem}.eon-preferences-nav-note a{color:#c7d2fe;font-weight:720;text-decoration:none}.eon-preferences-content{display:grid;gap:1rem;min-width:0}.eon-preferences-section{scroll-margin-top:1rem;padding:1rem;border:1px solid rgba(148,163,184,.15);border-radius:1.05rem;background:linear-gradient(165deg,rgba(30,41,59,.56),rgba(15,23,42,.82));box-shadow:0 14px 30px rgba(2,6,23,.13)}.eon-preferences-section[data-preference-active="false"]{display:none}.eon-preferences-section-head{margin:0 0 .9rem;padding:0 0 .9rem;border-bottom:1px solid rgba(148,163,184,.14)}.eon-preferences-section-toggle{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;width:100%;padding:0;border:0;background:transparent;color:inherit;text-align:left;cursor:pointer}.eon-preferences-section-toggle-copy{display:grid;gap:.42rem;min-width:0}.eon-preferences-section-title{display:block;color:#f8fafc;font-size:1.08rem;font-weight:780;letter-spacing:-.02em}.eon-preferences-section-summary{display:block;max-width:52rem;color:#a9b8cb;font-size:.82rem;line-height:1.5}.eon-preferences-section-chevron{position:relative;flex:0 0 auto;width:.92rem;height:.92rem;margin-top:.2rem}.eon-preferences-section-chevron::before,.eon-preferences-section-chevron::after{content:"";position:absolute;top:.35rem;width:.56rem;height:2px;border-radius:999px;background:#c7d2fe;transition:transform .16s ease}.eon-preferences-section-chevron::before{left:0;transform:rotate(45deg)}.eon-preferences-section-chevron::after{right:0;transform:rotate(-45deg)}.eon-preferences-section-toggle[aria-expanded="true"] .eon-preferences-section-chevron::before{transform:rotate(-45deg)}.eon-preferences-section-toggle[aria-expanded="true"] .eon-preferences-section-chevron::after{transform:rotate(45deg)}.eon-preferences-card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}.eon-preferences-card-grid>.eon-hub-card{grid-column:auto;margin:0;background:rgba(2,6,23,.21);box-shadow:none}.eon-preferences-card-grid>.eon-preferences-card-wide{grid-column:span 2}.eon-preferences-card-grid>.eon-preferences-card-full{grid-column:1/-1}.eon-preferences-card-grid .eon-profile-data-custody-card{grid-column:1/-1}.eon-profile-field select{width:100%;min-height:2.5rem;padding:.55rem .68rem;border:1px solid rgba(148,163,184,.28);border-radius:.7rem;background:rgba(15,23,42,.72);color:#f8fafc;font:inherit}.eon-profile-toggle{display:flex;align-items:flex-start;gap:.55rem;margin-top:.85rem;color:#dbe5f4;font-size:.8rem;line-height:1.45}.eon-profile-toggle input{margin-top:.18rem;accent-color:#818cf8}.eon-profile-toggle+ .eon-profile-toggle{margin-top:.58rem}.eon-preferences-disclosure{margin-top:.95rem;border:1px solid rgba(148,163,184,.18);border-radius:.82rem;background:rgba(2,6,23,.18)}.eon-preferences-disclosure summary{cursor:pointer;list-style:none;padding:.8rem .9rem;color:#dbe5f4;font-size:.8rem;font-weight:760}.eon-preferences-disclosure summary::-webkit-details-marker{display:none}.eon-preferences-disclosure-body{display:grid;gap:.7rem;padding:0 .9rem .9rem}.eon-preferences-disclosure-body p{margin:0;color:#a9b8cb;font-size:.78rem;line-height:1.5}
+@media(max-width:960px){.eon-preferences-layout{grid-template-columns:1fr}.eon-preferences-nav{display:none}.eon-preferences-section[data-preference-active="false"]{display:block}.eon-preferences-card-grid>.eon-preferences-card-wide{grid-column:1/-1}}
+@media(max-width:680px){body[data-eon-preferences="1"] .eon-preferences-main{padding:1rem}.eon-preferences-hero{align-items:flex-start;flex-direction:column}.eon-preferences-hero-actions{justify-content:flex-start}.eon-preferences-section{padding:.9rem}.eon-preferences-card-grid{grid-template-columns:1fr}.eon-preferences-card-grid>.eon-hub-card,.eon-preferences-card-grid>.eon-preferences-card-wide,.eon-preferences-card-grid>.eon-preferences-card-full{grid-column:auto}.eon-data-custody-grid{grid-template-columns:1fr}}
+.eon-preferences-nav>button.is-active{border-color:rgba(129,140,248,.48);background:linear-gradient(135deg,rgba(99,102,241,.26),rgba(124,58,237,.17));color:#fff}
+
+/* W766IR2-E — explicit full-app offline installation surface. */
+.eon-offline-pack-card { display: grid; gap: 1rem; margin-top: 1rem; }
+.eon-offline-pack-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
+.eon-offline-pack-head h2 { margin: .15rem 0 .5rem; color: #f8fafc; }
+.eon-offline-pack-head p { max-width: 62rem; }
+.eon-offline-pack-card .eon-record-status.is-active { border-color: rgba(52, 211, 153, .42); color: #d1fae5; }
+@media (max-width: 720px) { .eon-offline-pack-head { flex-direction: column; } }

@@ -1,0 +1,152 @@
+# Generated from config/route-contract.mjs. Do not hand-edit.
+# W380: root EONBOT home plus one public route contract; concrete clean URLs are emitted as real route files at build time.
+# Only redirects and wildcard rewrites belong here so Cloudflare Pages does not loop clean URLs back to themselves.
+# Signed links use no short-link registry, KV,
+# D1 resolver, or Worker is required.
+
+# Root is the canonical EONBOT home document.
+
+# Concrete canonical routes are served by dist/<route>/index.html files generated at build time.
+
+# Legacy chat paths converge to the root EONBOT home.
+/support /help 301
+/chat / 301
+/chat.html / 301
+
+# Wildcard compatibility routes still need explicit Cloudflare rewrites.
+/u/* /realm-profile.html?user=:splat 200
+/r/* /referral.html 200
+/m/* /referral.html 200
+
+# Retired aliases. Each origin is declared once.
+/index.html / 301
+/support.html /help 301
+/apps /create 301
+/apps.html /create 301
+/studio /create 301
+/studio.html /create 301
+/collection /create 301
+/collection.html /create 301
+/vault/backup /capsule 301
+/vault-backup /capsule 301
+/vault-backup.html /capsule 301
+/eoncity.html /eoncity 301
+/eoncity/ /eoncity 301
+/realm /eoncity 301
+/realm/ /eoncity 301
+/realm.html /eoncity 301
+/realmworld /eoncity 301
+/realmworld.html /eoncity 301
+/team-realm /eoncity 301
+/team-realm.html /eoncity 301
+/world /eoncity 301
+/game /eoncity 301
+/games.html /eoncity 301
+/eoncity/lite /eoncity 301
+/eoncity/lite/ /eoncity 301
+/eoncity/lite.html /eoncity 301
+/eoncity/tour /eoncity 301
+/eoncity/tour/ /eoncity 301
+/eoncity/3d /eoncity 301
+/eoncity/3d/ /eoncity 301
+/eoncity/play /eoncity 301
+/eoncity/play/ /eoncity 301
+/eoncity-3d /eoncity 301
+/eoncity-3d.html /eoncity 301
+/eoncity-play /eoncity 301
+/eoncity-play.html /eoncity 301
+/eoncity-lite.html /eoncity 301
+/blog /archive 301
+/blog/* /archive 301
+/telegram/index.html /telegram 301
+/telegram/* /telegram 301
+/nowpayments /billing 301
+/nowpayments/* /billing 301
+/admin /archive 301
+/admin.html /archive 301
+/campaign-admin /archive 301
+/campaign-admin.html /archive 301
+/trade /insights 301
+/trade.html /insights 301
+/live-trading-dashboard /insights 301
+/live-trading-dashboard.html /insights 301
+/tools /create 301
+/tools/* /create 301
+/tools.html /create 301
+/trust /legal 301
+/trust.html /legal 301
+/wallet-risk /legal 301
+/wallet-risk.html /legal 301
+/eon-browser /workspace 301
+/eon-browser.html /workspace 301
+/browser /workspace 301
+/workbench /workspace 301
+/workbench.html /workspace 301
+/build /workspace 301
+/builder /workspace 301
+/creator-studio /create 301
+/creator-studio.html /create 301
+/code-maker /workspace 301
+/code-maker.html /workspace 301
+/music-studio /workspace 301
+/music-studio.html /workspace 301
+/video-editor /workspace 301
+/video-editor.html /workspace 301
+/realm-code-preview /workspace 301
+/realm-code-preview.html /workspace 301
+/automation /automations 301
+/automate /automations 301
+/automation-studio /automations 301
+/automation-studio.html /automations 301
+/marketplace /create 301
+/marketplace.html /create 301
+/games /eoncity 301
+/games/* /archive 301
+/realm-profile /realm-studio 301
+/realm-profile.html /realm-studio 301
+/signal /insights 301
+/signal.html /insights 301
+/trade/sandbox /insights 301
+/trade-sandbox /insights 301
+/trade-sandbox.html /insights 301
+/get-free-ai-power /local-ai 301
+/get-free-ai-power.html /local-ai 301
+/setup /local-ai 301
+/device-check /local-ai 301
+/device-check.html /local-ai 301
+/onboarding / 301
+/onboarding.html / 301
+/start / 301
+/subscription /archive 301
+/subscription.html /archive 301
+/reward-access /rewards 301
+/reward-access.html /rewards 301
+/vault-rewards /archive 301
+/vault-rewards.html /archive 301
+/vault-payments /archive 301
+/vault-payments.html /archive 301
+/kpi-token-dashboard /archive 301
+/kpi-token-dashboard.html /archive 301
+/kpi-dashboard /archive 301
+/kpi-dashboard.html /archive 301
+/leaderboard /archive 301
+/leaderboard.html /archive 301
+/hustle /archive 301
+/hustle.html /archive 301
+/social-mission /archive 301
+/social-missions /archive 301
+/missions /archive 301
+/vault-api /vault 301
+/vault-api.html /vault 301
+/vault-api-keys /vault 301
+/vault-api-keys.html /vault 301
+/vault-identity /profile 301
+/vault-identity.html /profile 301
+/vault-inventory /vault 301
+/vault-inventory.html /vault 301
+/refund-policy /billing 301
+/refund-policy.html /billing 301
+/crypto /archive 301
+
+# 404 fallback must remain last.
+/* /404.html 404

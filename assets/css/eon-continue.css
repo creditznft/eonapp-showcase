@@ -1,0 +1,64 @@
+.eon-continue-card{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin:0 0 1rem;padding:.9rem 1rem;border:1px solid color-mix(in srgb,var(--eon-border,#343841) 72%,transparent);border-radius:16px;background:color-mix(in srgb,var(--eon-surface,#17191d) 92%,transparent);box-shadow:0 10px 26px rgb(0 0 0/.14)}.eon-continue-card>div:first-child{display:grid;gap:.15rem;min-width:0}.eon-continue-card span{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;opacity:.72}.eon-continue-card strong,.eon-continue-card small{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.eon-continue-card small{opacity:.72}.eon-continue-actions{display:flex;align-items:center;gap:.45rem;flex:0 0 auto}.eon-continue-actions a,.eon-continue-actions button{border:0;border-radius:999px;padding:.55rem .8rem;font:inherit;cursor:pointer}.eon-continue-actions a{background:var(--eon-accent,#6366f1);color:#fff;text-decoration:none}.eon-continue-actions button{background:transparent;color:inherit;opacity:.72}@media(max-width:640px){.eon-continue-card{align-items:flex-start;flex-direction:column}.eon-continue-actions{width:100%}.eon-continue-actions a{flex:1;text-align:center}}
+
+/* W660H — Continue is a real compact action card and never participates in
+   the chat viewport's height calculation. */
+.eon-continue-actions a,
+.eon-continue-actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.35rem;
+  border: 1px solid color-mix(in srgb, var(--clr-accent, #a78bfa) 48%, var(--clr-border, #3a3f48));
+  border-radius: .72rem;
+  padding: .48rem .78rem;
+  background: color-mix(in srgb, var(--clr-surface, #202329) 92%, transparent);
+  color: var(--clr-text, #f1f3f5);
+  font-weight: 760;
+  line-height: 1;
+  opacity: 1;
+  text-decoration: none;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, #fff 3%, transparent);
+}
+.eon-continue-actions a {
+  border-color: color-mix(in srgb, var(--clr-accent, #a78bfa) 72%, var(--clr-border, #3a3f48));
+  background: color-mix(in srgb, var(--clr-accent, #a78bfa) 24%, var(--clr-surface, #202329));
+}
+.eon-continue-actions a:hover,
+.eon-continue-actions a:focus-visible,
+.eon-continue-actions button:hover,
+.eon-continue-actions button:focus-visible {
+  border-color: var(--clr-accent, #a78bfa);
+  background: color-mix(in srgb, var(--clr-accent, #a78bfa) 18%, var(--clr-surface, #202329));
+  outline: 2px solid color-mix(in srgb, var(--clr-accent, #a78bfa) 54%, transparent);
+  outline-offset: 2px;
+}
+body[data-eon-app-shell='1'][data-eon-app-page='chat'] .chat-page-main > .eon-continue-card {
+  position: fixed;
+  z-index: 118;
+  top: max(4.85rem, calc(env(safe-area-inset-top) + 4.35rem));
+  left: calc(var(--eon-app-rail-width) + max(1rem, (100dvw - var(--eon-app-rail-width) - 66rem) / 2 + 1rem));
+  width: min(31rem, calc(100dvw - var(--eon-app-rail-width) - 2rem));
+  margin: 0;
+  padding: .72rem .78rem;
+  background: color-mix(in srgb, var(--clr-surface, #202329) 97%, transparent);
+  box-shadow: 0 1rem 3rem rgb(0 0 0 / .32);
+  backdrop-filter: blur(18px);
+}
+@media (max-width: 960px) {
+  body[data-eon-app-shell='1'][data-eon-app-page='chat'] .chat-page-main > .eon-continue-card {
+    top: calc(var(--eon-app-mobilebar-height) + 4.15rem);
+    left: .75rem;
+    width: calc(100dvw - 1.5rem);
+  }
+}
+@media (max-width: 640px) {
+  body[data-eon-app-shell='1'][data-eon-app-page='chat'] .chat-page-main > .eon-continue-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: .55rem;
+  }
+  body[data-eon-app-shell='1'][data-eon-app-page='chat'] .chat-page-main > .eon-continue-card > div:first-child small { display: none; }
+  body[data-eon-app-shell='1'][data-eon-app-page='chat'] .chat-page-main > .eon-continue-card .eon-continue-actions { width: auto; }
+  body[data-eon-app-shell='1'][data-eon-app-page='chat'] .chat-page-main > .eon-continue-card .eon-continue-actions a { flex: 0 0 auto; }
+}

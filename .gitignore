@@ -1,0 +1,90 @@
+# EONAPP.ch — Git Ignore
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# OpenClaw runtime files (don't commit queue or secrets)
+openclaw/.env
+openclaw/queue/pending/*.json
+openclaw/queue/done/*.json
+openclaw/queue/failed/*.json
+openclaw/logs/*.log
+
+# Reports (large, generated — optional to commit)
+# openclaw/reports/*.json   # uncomment to exclude reports from git
+
+# Windows
+Thumbs.db
+Desktop.ini
+*.lnk
+
+# Editor
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+
+# Node (if any tooling added later)
+node_modules/
+npm-debug.log
+.env.local
+dist-local-companion/
+
+# Cloudflare
+.wrangler/
+
+# Decentralized deployment secrets / local state
+.ipns-config/local-*.json
+.ipns-config/deployment-state.json
+arweave-key.json
+
+# Temp screenshots
+*.png
+
+# W517 reproducibility: canonical PWA icon sources are product assets, not temporary screenshots.
+!assets/img/icons/icon-192.png
+!assets/img/icons/icon-512.png
+
+# TypeScript error logs
+ts_errors_*
+tsc-*
+
+# Temp/log files
+.tmp-*
+codex-preview.*
+dev-server.log
+errors-by-file.txt
+
+# Smart Contracts env (contains real keys — NEVER commit)
+Smart Contracts/.env
+**/.env
+
+test-results/
+playwright-report/
+node_modules/
+.playwright/
+.codex-temp/
+
+# Local live-AI evidence can be safely exported by the operator, but must never be committed.
+docs/qa/live-ai-v2/
+artifacts/w517-source-convergence/
+
+tmp/
+.eslintcache
+
+# W592 operator-only evidence; never commit secrets, previews, browser state, or benchmark output.
+reports/
+.eon-city-auth-state*.json
+*.storage-state.json
+
+# Canonical social preview source assets
+!assets/media/social/
+!assets/media/social/*.png

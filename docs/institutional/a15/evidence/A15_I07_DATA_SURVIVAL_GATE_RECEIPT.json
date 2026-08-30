@@ -1,0 +1,43 @@
+{
+  "schema": "eonapp.a15.i07.data-survival-gate-receipt.v1",
+  "generatedAt": "2026-08-04T16:55:59.740Z",
+  "wave": "I07",
+  "passed": true,
+  "coverage": {
+    "complete": true,
+    "itemCount": 10,
+    "protectionClasses": [
+      "workspace-capsule",
+      "local-only-excluded",
+      "ephemeral-session",
+      "creator-media-bundle",
+      "encrypted-secret-bundle",
+      "device-bound-identity",
+      "optional-local-runtime-data",
+      "replaceable-cache"
+    ],
+    "undeclaredItems": []
+  },
+  "creatorMedia": {
+    "encrypted": true,
+    "rawMediaIncluded": true,
+    "workspaceCapsuleIncludesRawMedia": false,
+    "inspectBeforeApply": true,
+    "digestVerified": true,
+    "rollbackPrepared": true
+  },
+  "deletion": {
+    "ok": true,
+    "removed": {
+      "localStorage": 2,
+      "sessionStorage": 1,
+      "indexedDb": 5,
+      "caches": 2
+    },
+    "zeroUndeclaredResidue": true,
+    "unrelatedSameOriginStoragePreserved": true
+  },
+  "uiConnected": true,
+  "networkExecutionAdded": false,
+  "rawValuesIncluded": false
+}

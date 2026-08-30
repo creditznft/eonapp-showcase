@@ -1,0 +1,24 @@
+{
+  "gameplay_hq": {
+    "description": "Gameplay-focused export with clean pacing and no stock inserts.",
+    "captureDurationSec": 26,
+    "speedFactor": 0.86,
+    "stockMode": "none"
+  },
+  "gameplay_stock_hype": {
+    "description": "Adds short stock intro and outro around gameplay for promo rhythm.",
+    "captureDurationSec": 28,
+    "speedFactor": 0.84,
+    "stockMode": "intro_outro",
+    "stockIntroSec": 2.5,
+    "stockOutroSec": 2.5
+  },
+  "meme_punch": {
+    "description": "Faster pacing for short meme-style edits.",
+    "captureDurationSec": 24,
+    "speedFactor": 0.78,
+    "stockMode": "intro_outro",
+    "stockIntroSec": 1.8,
+    "stockOutroSec": 1.8
+  }
+}

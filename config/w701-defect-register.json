@@ -1,0 +1,135 @@
+{
+  "schema": "eonapp.institutional-defect-register.w701.v1",
+  "wave": "W701",
+  "generatedAt": "2026-07-25T12:00:00.000Z",
+  "sourceEvidence": [
+    "owner recording: Projects 2026-07-25 14-34-40",
+    "owner recording: Projects 2026-07-25 14-37-18",
+    "owner recording: EON City 2026-07-25 14-38-07",
+    "live Cloudflare review of eonapp.ch",
+    "W700 verified source and release history"
+  ],
+  "defects": [
+    {
+      "id": "CITY-P0-001",
+      "severity": "P0",
+      "area": "EON City camera",
+      "title": "Camera can expose the underside of the world",
+      "status": "locally-implemented-browser-proof-pending",
+      "ownerWave": "W703",
+      "acceptance": "No pointer, wheel, restored pose, transition or device layout can place the camera or target below the safe world floor."
+    },
+    {
+      "id": "CITY-P0-002",
+      "severity": "P0",
+      "area": "EON City world safety",
+      "title": "Restored and transition poses are not globally sanitized",
+      "status": "locally-implemented-browser-proof-pending",
+      "ownerWave": "W703",
+      "acceptance": "Non-finite and out-of-bounds positions fail closed to a safe in-world pose without automatic travel."
+    },
+    {
+      "id": "STATE-P0-001",
+      "severity": "P0",
+      "area": "Cross-surface continuity",
+      "title": "Projects, Atlas, NEXUS and City lack one explicit foreground state authority",
+      "status": "locally-implemented-browser-proof-pending",
+      "ownerWave": "W702",
+      "acceptance": "All four surfaces can consume immutable projections of one canonical state without a second store or private payload copy."
+    },
+    {
+      "id": "TRUST-P0-001",
+      "severity": "P0",
+      "area": "Foreground actions",
+      "title": "No single reviewed gateway covers cross-surface foreground navigation and selection",
+      "status": "locally-implemented-browser-proof-pending",
+      "ownerWave": "W702",
+      "acceptance": "Every supported action requires explicit preparation and final confirmation and performs no external side effect itself."
+    },
+    {
+      "id": "CITY-P1-003",
+      "severity": "P1",
+      "area": "Expanse",
+      "title": "Flagship Expanse discovery and entry are not obvious or reliable",
+      "status": "locally-implemented-browser-proof-pending",
+      "ownerWave": "W712"
+    },
+    {
+      "id": "CITY-P1-004",
+      "severity": "P1",
+      "area": "Core world",
+      "title": "Wide views expose sparse disconnected district islands",
+      "status": "locally-implemented-browser-proof-pending",
+      "ownerWave": "W710-W711"
+    },
+    {
+      "id": "NEXUS-P1-001",
+      "severity": "P1",
+      "area": "EON NEXUS",
+      "title": "NEXUS reads as transformed 2D UI rather than a primary spatial command field",
+      "status": "locally-implemented-browser-proof-pending",
+      "ownerWave": "W706-W708"
+    },
+    {
+      "id": "PROJECTS-P1-001",
+      "severity": "P1",
+      "area": "Projects",
+      "title": "Repeated continue and active-project surfaces create clutter",
+      "status": "locally-implemented-browser-proof-pending",
+      "ownerWave": "W704"
+    },
+    {
+      "id": "ATLAS-P1-001",
+      "severity": "P1",
+      "area": "Project Atlas",
+      "title": "Atlas is not useful when no project is selected",
+      "status": "locally-implemented-browser-proof-pending",
+      "ownerWave": "W705"
+    },
+    {
+      "id": "COMMAND-P1-001",
+      "severity": "P1",
+      "area": "Command Centre",
+      "title": "Command Centre is not yet the unified master operating room",
+      "status": "locally-implemented-browser-proof-pending",
+      "ownerWave": "W709"
+    },
+    {
+      "id": "COHERENCE-P1-001",
+      "severity": "P1",
+      "area": "Whole EONAPP continuity",
+      "title": "Home, Create, Projects, Library, Vault, Automations, Local AI, NEXUS and City do not expose one explicit product-custody and foreground-state contract",
+      "status": "locally-implemented-browser-proof-pending",
+      "ownerWave": "W713",
+      "acceptance": "All product routes project one selected project and one EONBOT identity; Projects owns ordinary work, Library reusable content, Vault sensitive material, Creator attachments are explicit, and provider readiness is clear without copying secrets."
+    },
+    {
+      "id": "TRUST-P1-002",
+      "severity": "P1",
+      "area": "Identity and commercial truth",
+      "title": "Identity, billing, referral and legal surfaces need one explicit operational truth authority",
+      "status": "locally-implemented-browser-proof-pending",
+      "ownerWave": "W714",
+      "acceptance": "Google identity remains optional and separate from backup; Dodo and signed server events own entitlements; EONKEYS remain non-cash individual unlocks; active routes contain no revived wallet, NFT, token or earnings claims."
+    },
+    {
+      "id": "PERF-P1-001",
+      "severity": "P1",
+      "area": "Performance and assets",
+      "title": "Institutional performance budgets and canonical binary-store proof are not consolidated",
+      "status": "locally-implemented-browser-proof-pending",
+      "ownerWave": "W715",
+      "acceptance": "Low, balanced and high budgets are explicit; W649 source/public binaries are exact one-copy mirrors with no build duplicates; service-worker update remains explicit; real browser/device measurements are required before certification."
+    },
+    {
+      "id": "A11Y-P1-001",
+      "severity": "P1",
+      "area": "Accessibility, language and input",
+      "title": "Institutional keyboard, semantic-alternative, language-direction and device-layout proof is not consolidated",
+      "status": "locally-implemented-browser-proof-pending",
+      "ownerWave": "W716",
+      "acceptance": "All critical journeys retain keyboard/pointer/touch/controller/typed-voice parity, 48 px targets, visible focus, reduced-motion and caption support, semantic alternatives for NEXUS/Atlas/City, 11-language and Arabic RTL truth, with real assistive-technology and device evidence required before launch."
+    }
+  ],
+  "updatedAt": "2026-07-25T14:28:00Z"
+}

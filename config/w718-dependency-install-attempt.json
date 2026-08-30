@@ -1,0 +1,21 @@
+{
+  "schema": "eonapp.w718.dependency-install-attempt.v1",
+  "wave": "W718",
+  "attemptedAt": "2026-07-25T14:16:45Z",
+  "nodeVersion": "v22.16.0",
+  "npmVersion": "10.9.2",
+  "command": "npm ci --prefer-offline --no-audit --fund=false",
+  "exactLockfile": true,
+  "outcome": "infrastructure-blocked",
+  "errorCode": "E503",
+  "httpStatus": 503,
+  "failedPackage": "ws",
+  "registryClass": "managed-npm-gateway",
+  "sourceFailure": false,
+  "lockfileFailure": false,
+  "alternateVersionUsed": false,
+  "cdnSubstituteUsed": false,
+  "babylonShimUsed": false,
+  "nodeModulesCreated": false,
+  "nextAction": "Retry the exact lockfile once in W718 on an environment with a healthy package registry; do not alter versions or certify browser/build evidence before that succeeds."
+}

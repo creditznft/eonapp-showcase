@@ -1,0 +1,359 @@
+{
+  "schema": "eon.city.certification.w432.v1",
+  "generatedAt": "2026-06-28T23:42:44.155Z",
+  "canonicalRoute": "/eoncity",
+  "sourceOnly": true,
+  "certificationIssued": false,
+  "launchApproved": false,
+  "expectedCaseCount": 18,
+  "cases": [
+    {
+      "id": "desktop:home-chat-guest",
+      "profile": "desktop",
+      "route": "/",
+      "purpose": "Guest-first Home/Chat first render and sign-in card shell.",
+      "budget": {
+        "performance": 0.82,
+        "accessibility": 0.88,
+        "bestPractices": 0.85,
+        "seo": 0.88,
+        "lcpMs": 3500,
+        "cls": 0.15,
+        "tbtMs": 400
+      },
+      "rawHtmlRequired": true,
+      "rawJsonRequired": true
+    },
+    {
+      "id": "desktop:apps",
+      "profile": "desktop",
+      "route": "/apps",
+      "purpose": "Apps entry and truthful first render.",
+      "budget": {
+        "performance": 0.82,
+        "accessibility": 0.88,
+        "bestPractices": 0.85,
+        "seo": 0.88,
+        "lcpMs": 3500,
+        "cls": 0.15,
+        "tbtMs": 400
+      },
+      "rawHtmlRequired": true,
+      "rawJsonRequired": true
+    },
+    {
+      "id": "desktop:workspace",
+      "profile": "desktop",
+      "route": "/workspace",
+      "purpose": "Core work surface shell.",
+      "budget": {
+        "performance": 0.82,
+        "accessibility": 0.88,
+        "bestPractices": 0.85,
+        "seo": 0.88,
+        "lcpMs": 3500,
+        "cls": 0.15,
+        "tbtMs": 400
+      },
+      "rawHtmlRequired": true,
+      "rawJsonRequired": true
+    },
+    {
+      "id": "desktop:forge",
+      "profile": "desktop",
+      "route": "/forge",
+      "purpose": "Local-first build surface shell.",
+      "budget": {
+        "performance": 0.82,
+        "accessibility": 0.88,
+        "bestPractices": 0.85,
+        "seo": 0.88,
+        "lcpMs": 3500,
+        "cls": 0.15,
+        "tbtMs": 400
+      },
+      "rawHtmlRequired": true,
+      "rawJsonRequired": true
+    },
+    {
+      "id": "desktop:vault",
+      "profile": "desktop",
+      "route": "/vault",
+      "purpose": "Vault and Collection boundary.",
+      "budget": {
+        "performance": 0.82,
+        "accessibility": 0.88,
+        "bestPractices": 0.85,
+        "seo": 0.88,
+        "lcpMs": 3500,
+        "cls": 0.15,
+        "tbtMs": 400
+      },
+      "rawHtmlRequired": true,
+      "rawJsonRequired": true
+    },
+    {
+      "id": "desktop:market",
+      "profile": "desktop",
+      "route": "/market",
+      "purpose": "Preview-only Market surface.",
+      "budget": {
+        "performance": 0.82,
+        "accessibility": 0.88,
+        "bestPractices": 0.85,
+        "seo": 0.88,
+        "lcpMs": 3500,
+        "cls": 0.15,
+        "tbtMs": 400
+      },
+      "rawHtmlRequired": true,
+      "rawJsonRequired": true
+    },
+    {
+      "id": "desktop:eoncity",
+      "profile": "desktop",
+      "route": "/eoncity",
+      "purpose": "Canonical Babylon City direct entry.",
+      "budget": {
+        "performance": 0.82,
+        "accessibility": 0.88,
+        "bestPractices": 0.85,
+        "seo": 0.88,
+        "lcpMs": 3500,
+        "cls": 0.15,
+        "tbtMs": 400
+      },
+      "rawHtmlRequired": true,
+      "rawJsonRequired": true
+    },
+    {
+      "id": "desktop:profile",
+      "profile": "desktop",
+      "route": "/profile",
+      "purpose": "Account and settings surface.",
+      "budget": {
+        "performance": 0.82,
+        "accessibility": 0.88,
+        "bestPractices": 0.85,
+        "seo": 0.88,
+        "lcpMs": 3500,
+        "cls": 0.15,
+        "tbtMs": 400
+      },
+      "rawHtmlRequired": true,
+      "rawJsonRequired": true
+    },
+    {
+      "id": "desktop:support",
+      "profile": "desktop",
+      "route": "/support",
+      "purpose": "Public support route.",
+      "budget": {
+        "performance": 0.82,
+        "accessibility": 0.88,
+        "bestPractices": 0.85,
+        "seo": 0.88,
+        "lcpMs": 3500,
+        "cls": 0.15,
+        "tbtMs": 400
+      },
+      "rawHtmlRequired": true,
+      "rawJsonRequired": true
+    },
+    {
+      "id": "mobile:home-chat-guest",
+      "profile": "mobile",
+      "route": "/",
+      "purpose": "Guest-first Home/Chat first render and sign-in card shell.",
+      "budget": {
+        "performance": 0.72,
+        "accessibility": 0.85,
+        "bestPractices": 0.8,
+        "seo": 0.85,
+        "lcpMs": 4500,
+        "cls": 0.15,
+        "tbtMs": 600
+      },
+      "rawHtmlRequired": true,
+      "rawJsonRequired": true
+    },
+    {
+      "id": "mobile:apps",
+      "profile": "mobile",
+      "route": "/apps",
+      "purpose": "Apps entry and truthful first render.",
+      "budget": {
+        "performance": 0.72,
+        "accessibility": 0.85,
+        "bestPractices": 0.8,
+        "seo": 0.85,
+        "lcpMs": 4500,
+        "cls": 0.15,
+        "tbtMs": 600
+      },
+      "rawHtmlRequired": true,
+      "rawJsonRequired": true
+    },
+    {
+      "id": "mobile:workspace",
+      "profile": "mobile",
+      "route": "/workspace",
+      "purpose": "Core work surface shell.",
+      "budget": {
+        "performance": 0.72,
+        "accessibility": 0.85,
+        "bestPractices": 0.8,
+        "seo": 0.85,
+        "lcpMs": 4500,
+        "cls": 0.15,
+        "tbtMs": 600
+      },
+      "rawHtmlRequired": true,
+      "rawJsonRequired": true
+    },
+    {
+      "id": "mobile:forge",
+      "profile": "mobile",
+      "route": "/forge",
+      "purpose": "Local-first build surface shell.",
+      "budget": {
+        "performance": 0.72,
+        "accessibility": 0.85,
+        "bestPractices": 0.8,
+        "seo": 0.85,
+        "lcpMs": 4500,
+        "cls": 0.15,
+        "tbtMs": 600
+      },
+      "rawHtmlRequired": true,
+      "rawJsonRequired": true
+    },
+    {
+      "id": "mobile:vault",
+      "profile": "mobile",
+      "route": "/vault",
+      "purpose": "Vault and Collection boundary.",
+      "budget": {
+        "performance": 0.72,
+        "accessibility": 0.85,
+        "bestPractices": 0.8,
+        "seo": 0.85,
+        "lcpMs": 4500,
+        "cls": 0.15,
+        "tbtMs": 600
+      },
+      "rawHtmlRequired": true,
+      "rawJsonRequired": true
+    },
+    {
+      "id": "mobile:market",
+      "profile": "mobile",
+      "route": "/market",
+      "purpose": "Preview-only Market surface.",
+      "budget": {
+        "performance": 0.72,
+        "accessibility": 0.85,
+        "bestPractices": 0.8,
+        "seo": 0.85,
+        "lcpMs": 4500,
+        "cls": 0.15,
+        "tbtMs": 600
+      },
+      "rawHtmlRequired": true,
+      "rawJsonRequired": true
+    },
+    {
+      "id": "mobile:eoncity",
+      "profile": "mobile",
+      "route": "/eoncity",
+      "purpose": "Canonical Babylon City direct entry.",
+      "budget": {
+        "performance": 0.72,
+        "accessibility": 0.85,
+        "bestPractices": 0.8,
+        "seo": 0.85,
+        "lcpMs": 4500,
+        "cls": 0.15,
+        "tbtMs": 600
+      },
+      "rawHtmlRequired": true,
+      "rawJsonRequired": true
+    },
+    {
+      "id": "mobile:profile",
+      "profile": "mobile",
+      "route": "/profile",
+      "purpose": "Account and settings surface.",
+      "budget": {
+        "performance": 0.72,
+        "accessibility": 0.85,
+        "bestPractices": 0.8,
+        "seo": 0.85,
+        "lcpMs": 4500,
+        "cls": 0.15,
+        "tbtMs": 600
+      },
+      "rawHtmlRequired": true,
+      "rawJsonRequired": true
+    },
+    {
+      "id": "mobile:support",
+      "profile": "mobile",
+      "route": "/support",
+      "purpose": "Public support route.",
+      "budget": {
+        "performance": 0.72,
+        "accessibility": 0.85,
+        "bestPractices": 0.8,
+        "seo": 0.85,
+        "lcpMs": 4500,
+        "cls": 0.15,
+        "tbtMs": 600
+      },
+      "rawHtmlRequired": true,
+      "rawJsonRequired": true
+    }
+  ],
+  "deviceMatrix": [
+    {
+      "id": "desktop-balanced",
+      "profile": "desktop",
+      "quality": "balanced",
+      "evidence": "first useful frame, Command Deck, route review, return path, 30-minute stability."
+    },
+    {
+      "id": "desktop-cinematic",
+      "profile": "desktop",
+      "quality": "cinematic",
+      "evidence": "opt-in visual profile, governor behaviour, no hidden route change, clean disposal/re-entry."
+    },
+    {
+      "id": "android-safe",
+      "profile": "android",
+      "quality": "lite",
+      "evidence": "direct City first frame, touch safe areas, recovery path, route review and exit."
+    },
+    {
+      "id": "ios-safe",
+      "profile": "ios",
+      "quality": "lite",
+      "evidence": "direct City first frame, touch safe areas, recovery path, route review and exit."
+    },
+    {
+      "id": "weak-webgl",
+      "profile": "weak-webgl",
+      "quality": "lite",
+      "evidence": "safe recovery choice, no silent map fallback, no stuck loading state."
+    }
+  ],
+  "evidenceRules": {
+    "chromeErrorPageInvalid": true,
+    "navStartRequired": true,
+    "rawHtmlAndJsonRequired": true,
+    "browserVersionRequired": true,
+    "deployedCommitRequired": true,
+    "deviceHumanEvidenceRequired": true,
+    "sourceOnlyCannotCertify": true
+  },
+  "note": "This file plans required evidence. It is not a Lighthouse result, device result, production result, or certification."
+}

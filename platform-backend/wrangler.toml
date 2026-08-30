@@ -1,0 +1,26 @@
+name = "eonapp-platform-backend"
+main = "src/index.js"
+compatibility_date = "2026-04-16"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "eonapp-platform"
+database_id = "replace-with-real-d1-database-id"
+
+[vars]
+ADMIN_HMAC_HEADER = "x-eon-signature"
+ADMIN_TIMESTAMP_HEADER = "x-eon-ts"
+ADMIN_NONCE_HEADER = "x-eon-nonce"
+# Set ADMIN_HMAC_SECRET via: wrangler secret put ADMIN_HMAC_SECRET
+# Optional comma-separated browser origins for CORS, e.g. "https://eonapp.ch,https://app.eonapp.ch"
+# CORS_ALLOWED_ORIGINS = ""
+
+# Optional replay-protection store for admin nonces:
+# [[kv_namespaces]]
+# binding = "ADMIN_NONCE_KV"
+# id = "replace-with-real-kv-namespace-id"
+#
+# Optional replay-protection store for swap reconciliation nonces:
+# [[kv_namespaces]]
+# binding = "SWAP_NONCE_KV"
+# id = "replace-with-real-swap-kv-namespace-id"

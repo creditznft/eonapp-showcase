@@ -1,0 +1,69 @@
+{
+  "schema": "eonapp.w624a.validation-receipt.v1",
+  "date": "2026-07-11",
+  "implementationRevision": "bbe874e47c9ac7a436351a3a8ed30c33e9efb8a1",
+  "status": "source-complete-owner-target-review-pending",
+  "releaseState": "limited-preview-no-go-public-launch",
+  "artBible": {
+    "schema": "eon.city.art-bible.w624a.v1",
+    "name": "Productive Nocturne",
+    "pillars": 6,
+    "commandDistrictLandmarks": 6,
+    "player": "wayfinder",
+    "eonbot": "eonbot-orbit",
+    "productiveNpcRoles": 5,
+    "targetFrames": 3,
+    "rejectRules": 14,
+    "scoreWeight": 100,
+    "commandDistrictExpansionThreshold": 9.0,
+    "flagshipOwnerApprovalThreshold": 9.5,
+    "ownerVisualApproval": "pending-target-frame-review"
+  },
+  "targetFrames": {
+    "desktopArrivalSha256": "1a58b4c3d5ce7b997d7fcb0204ddb03fbe5c8a86ce41b1e48fde244aa3199471",
+    "mobileArrivalSha256": "fdea023c6edb5ec0b52265819464ca1954a7fbc4fe7531118c99edd98b630870",
+    "castLineupSha256": "1fd918fcdb6e0613be71333455c09af2bdb234aa8717fba60dc87f220c478768",
+    "contactSheetSha256": "46bf9d6fa0dbcb7f566bce282cecfb21c2a155583bc40a0fdbd52fa676a16eee",
+    "runtimeScreenshots": false,
+    "finalRigs": false
+  },
+  "validation": {
+    "w624aGate": "17/17",
+    "w624aTests": "5/5",
+    "w420GateAndTests": "7/7 + 3/3",
+    "w421GateAndTests": "8/8 + 3/3",
+    "w422GateAndTests": "10/10 + 5/5",
+    "w416GateAndTests": "8/8 + 5/5",
+    "w432GateAndTests": "9/9 + 3/3",
+    "commercialTruth": "64/64",
+    "reachabilityTests": "5/5",
+    "certificationV2": "24/24 + 6/6",
+    "referralScale": "16/16 + 4/4",
+    "eslint": "0 errors, 0 warnings",
+    "secretScan": "3416 text files, 0 findings",
+    "build": "passed",
+    "smokeBuild": "passed"
+  },
+  "reachability": {
+    "reachableFiles": 345,
+    "importEdges": 594,
+    "quarantinedReachable": 0
+  },
+  "build": {
+    "distFiles": 460,
+    "minifiedFiles": 290,
+    "savedPercent": 41.10,
+    "distributionSha256": "34da418dce136240ef6f2e666b4962fc8bd590db6c1c6178a58ba48c1e7c18a5"
+  },
+  "liveProof": {
+    "ownerTargetFrameApproval": false,
+    "runtimeTargetFrameComparison": false,
+    "desktopDeviceProof": false,
+    "mobileDeviceProof": false,
+    "commandDistrictScoreAtLeastNine": false,
+    "flagshipApprovalAtLeastNinePointFive": false,
+    "cloudflareReferralActivationVerifiedHere": false
+  },
+  "nextCodingWave": "W624B",
+  "finalLiveVerifier": "Codex after W640"
+}

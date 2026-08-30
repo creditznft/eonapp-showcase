@@ -1,0 +1,204 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "eonapp-ch",
+  "pages_build_output_dir": "./dist",
+  "compatibility_date": "2026-08-05",
+  "send_metrics": false,
+  "upload_source_maps": true,
+  "vars": {
+    "EON_ENVIRONMENT": "local",
+    "EON_RELEASE_AUTHORITY_ID": "a15-i21-v1",
+    "APP_ORIGIN": "http://localhost:8788",
+    "GOOGLE_REDIRECT_URI": "http://localhost:8788/api/auth/google/callback",
+    "EON_AUTH_ROLLOUT": "disabled",
+    "EON_BILLING_ROLLOUT": "disabled",
+    "DODO_API_ENVIRONMENT": "test",
+    "EON_REFERRAL_ROLLOUT": "disabled",
+    "EON_PUSH_ROLLOUT": "disabled",
+    "EON_VEXRAIL_ROLLOUT": "disabled",
+    "EON_VEXRAIL_PROFIT_GOVERNOR_MODE": "observe",
+    "EON_VEXRAIL_AI_COVERAGE_TARGET": "1.25",
+    "EON_VEXRAIL_PROFIT_MIN_PROMPTS": "200",
+    "EON_VEXRAIL_PROFIT_WINDOW_DAYS": "7",
+    "EON_VEXRAIL_LEARNING_PROMPT_BUDGET": "50",
+    "EON_VEXRAIL_LEARNING_LOSS_BUDGET_MICROS": "0",
+    "EON_VEXRAIL_GUEST_ONE_SHOT": "false",
+    "EON_VEXRAIL_GUEST_NETWORK_DAILY_CAP": "5",
+    "EON_VEXRAIL_GUEST_MAX_OUTPUT_TOKENS": "768",
+    "EON_VEXRAIL_GUEST_COOKIE_DAYS": "30",
+    "EON_MONETIZATION_ROLLOUT": "disabled",
+    "EON_MONETIZATION_ENABLED": "false",
+    "EON_DISPLAY_ADS_ENABLED": "false",
+    "EON_EXOCLICK_ENABLED": "false",
+    "EON_EXOCLICK_NATIVE_ENABLED": "false",
+    "EON_EXOCLICK_MULTIFORMAT_ENABLED": "false",
+    "EON_EXOCLICK_OUTSTREAM_ENABLED": "false",
+    "EON_SPONSOR_VIDEO_ENABLED": "false",
+    "EON_REWARDED_ADS_ENABLED": "false",
+    "EON_REWARDED_PROVIDER": "none",
+    "EON_REWARDED_PROVIDER_VERIFIED": "false",
+    "EON_REWARDED_DAILY_CAP": "3",
+    "EON_REWARDED_COOLDOWN_MINUTES": "10",
+    "EON_PREMIUM_CHECKOUT_ROLLOUT": "disabled"
+  },
+  "d1_databases": [
+    {
+      "binding": "EON_IDENTITY_DB",
+      "database_name": "eonapp-identity-local",
+      "database_id": "00000000-0000-0000-0000-000000000101",
+      "migrations_dir": "identity/migrations"
+    },
+    {
+      "binding": "EON_BILLING_DB",
+      "database_name": "eonapp-billing-local",
+      "database_id": "00000000-0000-0000-0000-000000000102",
+      "migrations_dir": "migrations/billing"
+    },
+    {
+      "binding": "EON_REFERRALS_DB",
+      "database_name": "eonapp-referrals-local",
+      "database_id": "00000000-0000-0000-0000-000000000103",
+      "migrations_dir": "migrations/referrals"
+    },
+    {
+      "binding": "EON_TRUST_DB",
+      "database_name": "eonapp-trust-local",
+      "database_id": "00000000-0000-0000-0000-000000000104",
+      "migrations_dir": "migrations/trust"
+    }
+  ],
+  "env": {
+    "preview": {
+      "vars": {
+        "EON_ENVIRONMENT": "preview",
+        "EON_RELEASE_AUTHORITY_ID": "a15-i21-v1",
+        "APP_ORIGIN": "https://w662-review.eonapp-ch.pages.dev",
+        "GOOGLE_REDIRECT_URI": "https://w662-review.eonapp-ch.pages.dev/api/auth/google/callback",
+        "EON_AUTH_ROLLOUT": "disabled",
+        "EON_BILLING_ROLLOUT": "testing",
+        "DODO_API_ENVIRONMENT": "test",
+        "EON_REFERRAL_ROLLOUT": "testing",
+        "EON_PUSH_ROLLOUT": "testing",
+        "EON_VEXRAIL_ROLLOUT": "testing",
+        "EON_VEXRAIL_GUEST_ONE_SHOT": "true",
+        "EON_VEXRAIL_GEO_MODE": "testing",
+        "EON_VEXRAIL_PAID_SPONSORED_OPT_IN": "true",
+        "EON_VEXRAIL_COUNTRY_DAILY_TOKEN_CAP": "300000",
+        "EON_VEXRAIL_GLOBAL_DAILY_TOKEN_CAP": "500000",
+        "EON_VEXRAIL_REQUIRE_CF_METADATA": "false",
+        "EON_VEXRAIL_TURNSTILE_MODE": "off",
+        "EON_VEXRAIL_GLOBAL_DAILY_CAP": "5000",
+        "EON_MONETIZATION_ROLLOUT": "testing",
+        "EON_MONETIZATION_ENABLED": "true",
+        "EON_DISPLAY_ADS_ENABLED": "false",
+        "EON_EXOCLICK_ENABLED": "false",
+        "EON_EXOCLICK_NATIVE_ENABLED": "false",
+        "EON_EXOCLICK_MULTIFORMAT_ENABLED": "false",
+        "EON_EXOCLICK_OUTSTREAM_ENABLED": "false",
+        "EON_SPONSOR_VIDEO_ENABLED": "false",
+        "EON_REWARDED_ADS_ENABLED": "false",
+        "EON_REWARDED_PROVIDER": "none",
+        "EON_REWARDED_PROVIDER_VERIFIED": "false",
+        "EON_REWARDED_DAILY_CAP": "3",
+        "EON_REWARDED_COOLDOWN_MINUTES": "10",
+        "EON_PREMIUM_CHECKOUT_ROLLOUT": "disabled"
+      },
+      "d1_databases": [
+        {
+          "binding": "EON_IDENTITY_DB",
+          "database_name": "eonapp-identity-preview",
+          "database_id": "83b32cf2-67f1-4bbf-8c1d-b1d1517cf9fa",
+          "migrations_dir": "identity/migrations"
+        },
+        {
+          "binding": "EON_BILLING_DB",
+          "database_name": "eonapp-billing-rt92-preview",
+          "database_id": "cfde5322-e109-48cf-bba4-ded208c07e2a",
+          "migrations_dir": "migrations/billing"
+        },
+        {
+          "binding": "EON_REFERRALS_DB",
+          "database_name": "eonapp-referrals-rt92-preview",
+          "database_id": "314f7dea-eb60-41ed-90d8-5104687ed0e0",
+          "migrations_dir": "migrations/referrals"
+        },
+        {
+          "binding": "EON_TRUST_DB",
+          "database_name": "eonapp-trust-preview",
+          "database_id": "3b5e260c-6a6f-4066-9182-47ce95b5ace9",
+          "migrations_dir": "migrations/trust"
+        }
+      ]
+    },
+    "production": {
+      "vars": {
+        "EON_ENVIRONMENT": "production",
+        "EON_RELEASE_AUTHORITY_ID": "a15-i21-v1",
+        "APP_ORIGIN": "https://eonapp.ch",
+        "GOOGLE_REDIRECT_URI": "https://eonapp.ch/api/auth/google/callback",
+        "EON_AUTH_ROLLOUT": "public",
+        "GOOGLE_OAUTH_CLIENT_ID": "1081065213047-60of3lic263stnbe13dlmn3f6qqus61g.apps.googleusercontent.com",
+        "EON_BILLING_ROLLOUT": "production",
+        "DODO_API_ENVIRONMENT": "live",
+        "EON_REFERRAL_ROLLOUT": "production",
+        "EON_PUSH_ROLLOUT": "disabled",
+        "EON_VEXRAIL_ROLLOUT": "production",
+        "EON_VEXRAIL_PROFIT_GOVERNOR_MODE": "enforce",
+        "EON_VEXRAIL_LEARNING_PROMPT_BUDGET": "100",
+        "EON_VEXRAIL_GUEST_ONE_SHOT": "true",
+        "EON_VEXRAIL_GEO_MODE": "selected_countries",
+        "EON_VEXRAIL_COUNTRIES": "US,CA,GB,DE,IN",
+        "EON_VEXRAIL_PAID_SPONSORED_OPT_IN": "true",
+        "EON_VEXRAIL_REQUIRE_CF_METADATA": "true",
+        "EON_VEXRAIL_TURNSTILE_MODE": "required",
+        "EON_MONETIZATION_ROLLOUT": "production",
+        "EON_MONETIZATION_ENABLED": "true",
+        "EON_DISPLAY_ADS_ENABLED": "false",
+        "EON_EXOCLICK_ENABLED": "false",
+        "EON_EXOCLICK_NATIVE_ENABLED": "false",
+        "EON_EXOCLICK_MULTIFORMAT_ENABLED": "false",
+        "EON_EXOCLICK_OUTSTREAM_ENABLED": "false",
+        "EON_SPONSOR_VIDEO_ENABLED": "true",
+        "EON_REWARDED_ADS_ENABLED": "true",
+        "EON_REWARDED_PROVIDER": "exoclick",
+        "EON_REWARDED_PROVIDER_VERIFIED": "true",
+        "EON_REWARDED_DAILY_CAP": "6",
+        "EON_REWARDED_COOLDOWN_MINUTES": "10",
+        "EON_PREMIUM_CHECKOUT_ROLLOUT": "production",
+        "DODO_PRODUCT_PLUS": "pdt_0Nis1ygG50cHTUTsp7Gwa",
+        "DODO_PRODUCT_STUDIO": "pdt_0Nis7CRUoZ9B0QfEzQ1w3",
+        "DODO_PRODUCT_POWER": "pdt_0Nis7RsQydyq2vm7Yn5i0",
+        "DODO_PRODUCT_MAX": "pdt_0Nis7lrISs3fLPlO5t39E",
+        "DODO_PRODUCT_PRO": "pdt_0NlZKlIoQ2A6bSFNbBwMk",
+        "DODO_PRODUCT_ULTRA": "pdt_0NlZLXhMLMnLeFkxNZMSw",
+        "DODO_PRODUCT_ULTIMATE": "pdt_0NlZMVaq84ItJEM2lPSrZ"
+      },
+      "d1_databases": [
+        {
+          "binding": "EON_IDENTITY_DB",
+          "database_name": "eonapp-identity-prod",
+          "database_id": "947300be-0e59-4fee-9587-27f11389d318",
+          "migrations_dir": "identity/migrations"
+        },
+        {
+          "binding": "EON_BILLING_DB",
+          "database_name": "eonapp-billing",
+          "database_id": "d1ed9744-bbe2-433a-aef1-ceecf212efdb",
+          "migrations_dir": "migrations/billing"
+        },
+        {
+          "binding": "EON_REFERRALS_DB",
+          "database_name": "EONAPP_REFERRALS_DB",
+          "database_id": "b90e38ad-8eaa-47e1-ba40-2d71b0c06d75",
+          "migrations_dir": "migrations/referrals"
+        },
+        {
+          "binding": "EON_TRUST_DB",
+          "database_name": "eonapp-trust",
+          "database_id": "f6b7e1f2-08cb-414a-8c5a-0eb97d2d175d",
+          "migrations_dir": "migrations/trust"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "schema": "eonapp.w400c-w391d.validation.v1",
+  "status": "pass",
+  "sourceOnly": true,
+  "validated": {
+    "lint": "pass",
+    "currentRunnableTests": "331/331 pass",
+    "w390W391CollectionRelay": "9/9 pass",
+    "w395IdentityReadiness": "38/38 pass",
+    "w397ReleaseAudit": "27/27 pass",
+    "w399PrelaunchAudit": "11/11 pass",
+    "w400cIdentityEntry": "7/7 pass",
+    "w391dRelayTrackingPrep": "9/9 pass",
+    "build": "pass",
+    "smokeBuild": "pass",
+    "siteAudit": "pass",
+    "launchReadiness": "pass"
+  },
+  "stillManual": [
+    "rotate exposed Google OAuth client secret",
+    "real Google test-user login/logout/delete proof",
+    "real desktop/mobile visual proof",
+    "W276 update rollback local-data restoration proof",
+    "Relay legal/support/abuse/kill-switch approval",
+    "dedicated Relay D1 binding/migration and secret before any tracking pilot"
+  ],
+  "activation": {
+    "googleOAuthPublic": false,
+    "relayTracking": false,
+    "relayRewards": false,
+    "collectionGrants": false,
+    "connectorOAuth": false,
+    "socialPosting": false,
+    "paymentEntitlements": false
+  }
+}

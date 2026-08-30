@@ -1,0 +1,51 @@
+{
+  "schema": "eonapp.w623i.validation-receipt.v1",
+  "date": "2026-07-11",
+  "sourceRevision": "409177a04061e9fe275889147cd205d54c39ad22",
+  "status": "source-complete-live-proof-pending",
+  "releaseState": "limited-preview-no-go-public-launch",
+  "architecture": {
+    "preferredReferralBinding": "EON_REFERRALS_DB",
+    "existingReferralDatabase": "EONAPP_REFERRALS_DB",
+    "existingReferralDatabaseId": "b90e38ad-8eaa-47e1-ba40-2d71b0c06d75",
+    "billingBinding": "EON_BILLING_DB",
+    "billingDatabase": "eonapp-billing",
+    "databaseReset": false,
+    "newDatabaseCreated": false,
+    "subscriptionsOnly": true,
+    "inAppAds": false
+  },
+  "validation": {
+    "w623iGate": "16/16",
+    "w623iTests": "4/4",
+    "w623hGate": "20/20",
+    "w623hTests": "3/3",
+    "commercialTruth": "64/64",
+    "reachabilityTests": "5/5",
+    "certificationV2": "24/24",
+    "eslint": "0 errors, 0 warnings",
+    "secretScan": "3393 files, 0 findings",
+    "build": "passed"
+  },
+  "reachability": {
+    "reachableFiles": 344,
+    "importEdges": 593,
+    "quarantinedReachable": 0
+  },
+  "build": {
+    "distFiles": 452,
+    "minifiedFiles": 290,
+    "savedPercent": 41.14,
+    "distributionSha256": "17df8091bb1f02bce43252af1a3bbda9835d108c8bcab0b75408845594b011b6"
+  },
+  "liveProof": {
+    "cloudflareMutationPerformed": false,
+    "remoteMigrationApplied": false,
+    "rolloutActivated": false,
+    "twoAccountProof": false,
+    "deviceShareProof": false,
+    "elevenLanguageDeviceProof": false
+  },
+  "nextCodingWave": "W624A",
+  "finalLiveVerifier": "Codex after W640"
+}

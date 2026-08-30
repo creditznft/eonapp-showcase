@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+import fs from 'node:fs'; import path from 'node:path'; import { fileURLToPath } from 'node:url';
+import { createEonCityC11CertificationReceipt, validateEonCityC11CertificationReceipt } from '../assets/js/city/c11/eon-city-c11-device-performance-certification.js';
+import { getEonOriginStorageTruth } from '../assets/js/pwa/eon-origin-storage-authority.js';
+import { getLocaleAccessibilityTruth } from '../assets/js/locale/eon-locale-accessibility-authority.js';
+import { getPerformanceResilienceTruth } from '../assets/js/performance/eon-performance-resilience-owner-lab.js';
+const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..'); const read=(p)=>fs.readFileSync(path.join(ROOT,p),'utf8');
+const checks=[]; const check=(id,pass,detail='')=>checks.push({id,pass:Boolean(pass),detail:String(detail)});
+const storageTruth=getEonOriginStorageTruth(); const localeTruth=getLocaleAccessibilityTruth(); const performanceTruth=getPerformanceResilienceTruth();
+const sourceAuthority={ serviceWorkerSourceGenerated:storageTruth.serviceWorkerSourceGenerated, serviceWorkerMayDeleteProtectedDatabases:storageTruth.serviceWorkerMayDeleteProtectedDatabases, minimumTargetPx:localeTruth.minimumTargetPx, coreInitialBundleMayContainCityImplementation:performanceTruth.coreInitialBundleMayContainCityImplementation };
+const receipt=createEonCityC11CertificationReceipt([], { sourceAuthority }); const validation=validateEonCityC11CertificationReceipt(receipt);
+const worker=read('assets/js/pwa/eon-origin-storage-authority.js'); const locale=read('assets/js/locale/eon-locale-accessibility-authority.js'); const perf=read('assets/js/performance/eon-performance-resilience-owner-lab.js');
+check('source-contract-valid',validation.ok,validation.errors.join(','));
+check('twenty-two-evidence-lanes',receipt.laneCount===22,String(receipt.laneCount));
+check('source-ready',receipt.sourceReady,'I22-I25 + C09-C10');
+check('external-evidence-pending',!receipt.externalComplete&&receipt.passedLaneCount===0,'no fabricated proof');
+check('protected-storage-source',/serviceWorkerMayDeleteProtectedDatabases: false/.test(worker),'protected databases');
+check('accessibility-source',/minimumTargetPx: EON_ACCESSIBILITY_MIN_TARGET_PX/.test(locale)&&/nvda-chrome/.test(locale),'WCAG evidence lanes');
+check('core-bundle-city-free',/coreInitialBundleMayContainCityImplementation: false/.test(perf),'I25 truth');
+check('four-hour-endurance-required',/endurance-four-hours/.test(read('assets/js/city/c11/eon-city-c11-device-performance-certification.js'))&&/durationMinutes\) >= 240/.test(read('assets/js/city/c11/eon-city-c11-device-performance-certification.js')),'240 minutes');
+check('ten-transition-minimum',/completedTransitions\) >= 10/.test(read('assets/js/city/c11/eon-city-c11-device-performance-certification.js')),'10 cycles');
+check('no-automatic-certification',!receipt.automaticCertification&&!receipt.automaticDeployment,'manual only');
+const out={schema:'eonapp.a15.c11.device-performance-certification-gate.v1',wave:'C11',generatedAt:new Date().toISOString(),ok:checks.every(c=>c.pass),passed:checks.filter(c=>c.pass).length,total:checks.length,checks,evidenceLaneCount:receipt.laneCount,sourceReady:receipt.sourceReady,externalEvidenceComplete:false,productionReady:false,limitations:['Authenticated physical-browser, assistive-technology, offline and four-hour endurance evidence remains pending.','This source gate cannot observe a rendered frame, memory timeline or device interaction.']};
+for(const c of checks) console.log(`${c.pass?'PASS':'FAIL'} ${c.id} — ${c.detail}`); console.log(`\nA15 C11 Device Performance Certification: ${out.passed}/${out.total}`); fs.mkdirSync(path.join(ROOT,'artifacts/a15'),{recursive:true}); fs.writeFileSync(path.join(ROOT,'artifacts/a15/A15_C11_DEVICE_PERFORMANCE_CERTIFICATION_GATE.json'),JSON.stringify(out,null,2)+'\n'); if(!out.ok) process.exitCode=1;

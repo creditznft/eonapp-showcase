@@ -1,0 +1,17 @@
+:root{color-scheme:dark;background:#060a12;color:#e9efff;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;background:radial-gradient(circle at top,#14253e 0,#090d16 44%,#05070b 100%)}
+body[data-page="telegram"]{background:radial-gradient(circle at top,#1a3550 0,#0a0f18 48%,#05070b 100%)}
+.eon-release-card{width:min(780px,100%);padding:clamp(28px,6vw,58px);border:1px solid rgba(163,193,255,.22);border-radius:28px;background:rgba(8,14,24,.9);box-shadow:0 22px 70px rgba(0,0,0,.36)}
+.eon-release-card--narrow{width:min(720px,100%)}
+.eon-release-eyebrow{margin:0 0 12px;color:#9bc7ff;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase}
+.eon-release-card h1{margin:0;font-size:clamp(2rem,5vw,3.5rem);line-height:1.04}
+.eon-release-card p{max-width:65ch;color:#b8c5d9;line-height:1.72}
+.eon-release-status{margin:24px 0;padding:16px 18px;border-radius:16px;background:rgba(110,151,206,.12);border:1px solid rgba(154,197,255,.22);color:#dceaff}
+.eon-release-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:28px 0}
+.eon-release-card-item{padding:18px;border-radius:16px;border:1px solid rgba(170,204,255,.19);background:rgba(255,255,255,.035)}
+.eon-release-card-item h2{margin:0 0 8px;font-size:1rem}.eon-release-card-item p{margin:0;font-size:.94rem}
+.eon-release-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.eon-release-actions a{padding:12px 16px;border-radius:12px;text-decoration:none;color:#eef5ff;border:1px solid rgba(170,204,255,.25);background:rgba(255,255,255,.04)}
+.eon-release-actions a.eon-release-primary{background:#dcecff;color:#09101c;border-color:#dcecff;font-weight:750}
+.eon-release-fine{margin-top:28px;font-size:.9rem;color:#8f9caf}

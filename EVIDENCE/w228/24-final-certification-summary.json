@@ -1,0 +1,8 @@
+{
+  "build": "pass",
+  "fullReleaseCandidate": "pass",
+  "currentUnitSuite": "pass",
+  "secretScan": "pass",
+  "productionDependencyAudit": "0 vulnerabilities",
+  "browserVisualProof": "blocked-by-administrator; external proof required"
+}

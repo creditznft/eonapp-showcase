@@ -1,0 +1,62 @@
+{
+  "schema": "eonapp.w388a2.remix-cards-gate.v1",
+  "wave": "W388A.2",
+  "status": "pass",
+  "checkCount": 10,
+  "checks": [
+    {
+      "id": "contract-valid",
+      "pass": true,
+      "detail": "W388A.2 contract has no internal violations"
+    },
+    {
+      "id": "kind-set",
+      "pass": true,
+      "detail": "Remix Cards offer the approved starter kinds"
+    },
+    {
+      "id": "workspace-integrated",
+      "pass": true,
+      "detail": "Remix Cards are integrated in canonical Workspace"
+    },
+    {
+      "id": "copy-export-native-only",
+      "pass": true,
+      "detail": "surface provides explicit copy, export and optional native share"
+    },
+    {
+      "id": "no-hosting-or-transfer",
+      "pass": true,
+      "detail": "no public host, private project/file transfer, live collaboration, or transport is introduced"
+    },
+    {
+      "id": "no-growth-value-claim",
+      "pass": true,
+      "detail": "Remix Cards do not create tracking, referral value, collaboration, publishing, or access claims"
+    },
+    {
+      "id": "rights-honesty",
+      "pass": true,
+      "detail": "creator credit remains a courtesy request, not a rights claim"
+    },
+    {
+      "id": "public-link-safety",
+      "pass": true,
+      "detail": "local/private links are rejected"
+    },
+    {
+      "id": "secret-protection",
+      "pass": true,
+      "detail": "secret-looking inputs are rejected"
+    },
+    {
+      "id": "session-boundary",
+      "pass": true,
+      "detail": "generated card stays page-only; short chat handoff is browser-session only"
+    }
+  ],
+  "limitations": [
+    "Static source verification only.",
+    "No public Remix Card hosting, recipient identity, automatic attribution, collaboration presence, tracking, referral reward, rights clearance, or publishing proof is enabled in this wave."
+  ]
+}

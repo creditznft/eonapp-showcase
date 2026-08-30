@@ -1,0 +1,43 @@
+{
+  "schema": "eonapp.w617b.validation-summary.v1",
+  "wave": "W617B Launch Master Plan and Codex/Cloudflare Contract",
+  "date": "2026-07-10",
+  "baseline": "W616D source plus W617A shell readiness changes",
+  "commandsPassed": [
+    "npm ci",
+    "npm run qa:w616b-eon-keys-referral",
+    "npm run qa:w616c-locked-feature-resolver",
+    "npm run qa:w616d-locked-feature-surfaces",
+    "npm run qa:w617a-shell-launch-readiness",
+    "npm run qa:w617b-launch-master-plan",
+    "npm run lint -- --max-warnings=0",
+    "npm run build",
+    "npm run smoke:build",
+    "npm run launch:readiness",
+    "npm run launch:page-gate",
+    "npm run launch:identity-gate",
+    "npm run launch:quality-gate",
+    "npm run security:secret-scan"
+  ],
+  "build": {
+    "distFiles": 444,
+    "distributionSha256": "91296f204cd7bf8e4856cd02b32826a03c11367c13336125ccdbaa56ad7757ed"
+  },
+  "launchGates": {
+    "readiness": "PASS 0 blockers 0 warnings",
+    "page": "PASS 0 blockers 0 warnings",
+    "identity": "PASS 0 blockers 0 warnings",
+    "quality": "PASS 0 blockers 0 warnings",
+    "secretScan": "PASS"
+  },
+  "notClaimed": [
+    "Cloudflare production deployment",
+    "Dodo checkout activation",
+    "trial activation",
+    "EON Key redemption activation",
+    "referral grant ledger activation",
+    "server entitlement ledger activation",
+    "authenticated EON City browser proof",
+    "mobile device proof"
+  ]
+}

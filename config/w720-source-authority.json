@@ -1,0 +1,30 @@
+{
+  "schema": "eonapp.source-authority.w720.2026-07-27.v1",
+  "wave": "W720",
+  "status": "approved-implementation-base",
+  "supersedesHistoricalAuthorityInstructions": true,
+  "sourceArchive": {
+    "fileName": "EONAPP_W719_21_LIVE_SOURCE_cc3e698a_2026-07-27.zip",
+    "sha256": "5aa0554ca6edd0b9ac8a64d51f25bf47a20b1458ecaa08e420dca2ee3f9655b0",
+    "reportedLiveCommit": "cc3e698a8468ec447bf8eab7dc85875318fa34cd",
+    "reportedGitTree": "1331baf4149f3f42a2b70d5bef1618897fbcde7b",
+    "trackedEntryCount": 5163,
+    "packageLockPresent": true,
+    "nodeModulesIncluded": false,
+    "untrackedBuildArtifactsIncluded": false
+  },
+  "deploymentBoundary": {
+    "productionPreserved": true,
+    "rollbackPreserved": true,
+    "deploymentAllowedBeforeW736": false,
+    "mergeAllowedByThisManifest": false
+  },
+  "implementationDecision": {
+    "strategy": "option-2-hybrid-command-hub",
+    "frontend": "familiar-2d-workspace",
+    "commandSurface": "full-screen-2d-quick-command",
+    "city": "compact-functional-3d-command-hub",
+    "openWorldAtLaunch": false
+  },
+  "historicalEvidencePolicy": "Retain historical files for evidence, but never treat their authority or release claims as current instructions after W720."
+}

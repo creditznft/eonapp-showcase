@@ -1,0 +1,87 @@
+/* W216 local completion polish — Realm Studio is a small, local identity tool. */
+.realm-studio-main { display:grid; gap:1rem; }
+.realm-studio-top-actions,.realm-studio-actions,.realm-studio-share-controls { display:flex; flex-wrap:wrap; gap:.6rem; align-items:center; }
+.realm-studio-shell { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:1rem; }
+.realm-studio-card,.realm-studio-share-card { border:1px solid rgba(148,163,184,.18); border-radius:1rem; background:linear-gradient(145deg,rgba(30,41,59,.74),rgba(15,23,42,.88)); box-shadow:0 18px 42px rgba(2,6,23,.18); }
+.realm-studio-card { padding:clamp(1rem,3vw,1.5rem); }
+.realm-studio-kicker { margin:0 0 .35rem; color:#a5b4fc; font-size:.72rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; }
+.realm-studio-card h2,.realm-studio-share-card h2 { margin:.1rem 0 .55rem; color:#f8fafc; font-size:clamp(1.25rem,3vw,1.75rem); }
+.realm-studio-copy,.realm-studio-share-card p { margin:0; color:#cbd5e1; line-height:1.6; }
+.realm-studio-form-card form { display:grid; gap:.85rem; margin-top:1rem; }
+.realm-studio-form-card label,.realm-studio-url-label { display:grid; gap:.38rem; color:#dbeafe; font-size:.82rem; font-weight:760; }
+.realm-studio-form-card input,.realm-studio-form-card select,.realm-studio-url-label input { width:100%; min-height:2.8rem; padding:.65rem .72rem; border:1px solid rgba(148,163,184,.3); border-radius:.72rem; background:rgba(2,6,23,.5); color:#f8fafc; font:inherit; }
+.realm-studio-form-card input:focus,.realm-studio-form-card select:focus,.realm-studio-url-label input:focus { outline:2px solid rgba(129,140,248,.72); outline-offset:2px; }
+.realm-studio-form-card small { color:#94a3b8; font-size:.72rem; font-weight:500; line-height:1.45; }
+.realm-studio-status { min-height:1.3rem; margin:0; color:#a5b4fc; font-size:.8rem; }
+.realm-studio-status[data-tone="error"] { color:#fda4af; }.realm-studio-status[data-tone="success"] { color:#86efac; }
+.realm-studio-preview { min-height:16rem; display:grid; align-content:end; gap:.85rem; padding:1.1rem; overflow:hidden; border:1px solid rgba(196,181,253,.35); border-radius:1rem; background:radial-gradient(circle at 18% 18%,rgba(125,211,252,.32),transparent 27%),radial-gradient(circle at 80% 18%,rgba(196,181,253,.3),transparent 24%),linear-gradient(160deg,#111827,#0f172a 55%,#020617); position:relative; }
+.realm-studio-preview::before { content:""; position:absolute; inset:auto -10% -18% -10%; height:58%; transform:perspective(360px) rotateX(60deg); transform-origin:top; background:repeating-linear-gradient(90deg,rgba(129,140,248,.16) 0 1px,transparent 1px 18px),repeating-linear-gradient(0deg,rgba(129,140,248,.14) 0 1px,transparent 1px 18px); }
+.realm-studio-preview > * { position:relative; z-index:1; }.realm-studio-preview h3 { margin:0; color:#fff; font-size:clamp(1.4rem,4vw,2.1rem); }.realm-studio-preview p { margin:0; color:#cbd5e1; }.realm-studio-preview code { width:max-content; max-width:100%; overflow:hidden; color:#bfdbfe; font-size:.74rem; text-overflow:ellipsis; white-space:nowrap; }
+.realm-studio-facts { display:grid; gap:.55rem; margin-top:1rem; }.realm-studio-facts div { display:flex; align-items:baseline; justify-content:space-between; gap:.65rem; padding:.55rem 0; border-bottom:1px solid rgba(148,163,184,.12); }.realm-studio-facts span { color:#94a3b8; font-size:.78rem; }.realm-studio-facts code,.realm-studio-facts strong { max-width:60%; overflow:hidden; color:#dbeafe; font-size:.76rem; text-align:right; text-overflow:ellipsis; white-space:nowrap; }
+.realm-studio-share-card { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:1rem; padding:clamp(1rem,3vw,1.5rem); align-items:start; }.realm-studio-share-controls { justify-content:end; }.realm-studio-url-label { grid-column:1 / -1; }.realm-studio-url-label input { color:#bfdbfe; font-size:.76rem; font-weight:500; }.realm-studio-share-proof { display:grid; grid-template-columns:auto minmax(0,1fr); grid-column:1 / -1; align-items:center; gap:1rem; min-height:11rem; padding:1rem; border:1px solid rgba(148,163,184,.16); border-radius:.9rem; background:rgba(2,6,23,.28); }.realm-studio-share-proof canvas { width:176px; height:176px; max-width:36vw; max-height:36vw; padding:.5rem; border-radius:.72rem; background:#fff; image-rendering:pixelated; }.realm-studio-share-proof strong { color:#f8fafc; }.realm-studio-share-proof p { margin:.45rem 0 0; color:#a9b8cc; font-size:.82rem; }
+@media(max-width:840px){.realm-studio-shell{grid-template-columns:1fr}.realm-studio-share-card{grid-template-columns:1fr}.realm-studio-share-controls{justify-content:start}}@media(max-width:640px){.realm-studio-top-actions>*{flex:1;text-align:center;justify-content:center}.realm-studio-actions>*{flex:1}.realm-studio-share-controls>*{flex:1}.realm-studio-share-proof{grid-template-columns:1fr}.realm-studio-share-proof canvas{width:176px;height:176px;max-width:none;max-height:none}}
+
+/* W222 — My Realm, local City district and private showcase. */
+.realm-studio-showcase-card,.realm-studio-safety-card { display:grid; grid-template-columns:minmax(0,.82fr) minmax(19rem,1.18fr); gap:clamp(1rem,3vw,1.5rem); margin-top:1rem; padding:clamp(1rem,3vw,1.5rem); border:1px solid rgba(148,163,184,.16); border-radius:1rem; background:linear-gradient(145deg,rgba(30,41,59,.66),rgba(15,23,42,.82)); }
+.realm-studio-showcase-card h2,.realm-studio-safety-card h2 { margin:.1rem 0 .5rem; color:#f8fafc; font-size:1.12rem; }
+.realm-studio-showcase-card > div > p:not(.realm-studio-kicker),.realm-studio-safety-card > div > p:not(.realm-studio-kicker) { margin:0; color:#a9b8cc; font-size:.82rem; line-height:1.55; }
+.realm-studio-showcase { min-width:0; }
+.realm-studio-showcase-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.55rem; }
+.realm-studio-showcase-item { display:grid; grid-template-columns:auto 3.1rem minmax(0,1fr); align-items:center; gap:.55rem; min-height:4.8rem; padding:.48rem; border:1px solid rgba(148,163,184,.17); border-radius:.72rem; background:rgba(2,6,23,.26); cursor:pointer; }
+.realm-studio-showcase-item:hover,.realm-studio-showcase-item:has(input:focus-visible) { border-color:rgba(165,180,252,.68); }
+.realm-studio-showcase-item.is-selected { border-color:rgba(94,234,212,.66); background:rgba(13,83,77,.16); }
+.realm-studio-showcase-item input { width:1rem; height:1rem; accent-color:#5eead4; }
+.realm-studio-showcase-item img,.realm-studio-showcase-art { display:grid; place-items:center; width:3.1rem; height:3.1rem; border-radius:.56rem; object-fit:cover; background:linear-gradient(145deg,rgba(99,102,241,.35),rgba(15,23,42,.82)); color:#c4b5fd; }
+.realm-studio-showcase-item strong { display:block; overflow:hidden; color:#e8edff; font-size:.73rem; text-overflow:ellipsis; white-space:nowrap; }
+.realm-studio-showcase-item small { display:block; overflow:hidden; margin-top:.18rem; color:#93a4bc; font-size:.62rem; text-overflow:ellipsis; white-space:nowrap; }
+.realm-studio-showcase-note,.realm-studio-empty { margin:.65rem 0 0; color:#9fb0c7; font-size:.74rem; line-height:1.45; }
+.realm-studio-empty + .eon-operator-secondary { display:inline-flex; margin-top:.65rem; text-decoration:none; }
+.realm-studio-safety { align-self:stretch; padding:.82rem; border:1px solid rgba(148,163,184,.16); border-radius:.82rem; background:rgba(2,6,23,.3); }
+.realm-studio-safety strong { display:block; font-size:.85rem; }
+.realm-studio-safety strong.is-safe { color:#6ee7b7; }
+.realm-studio-safety strong.is-review { color:#fcd34d; }
+.realm-studio-safety p,.realm-studio-safety li { color:#a9b8cc; font-size:.76rem; line-height:1.48; }
+.realm-studio-safety p { margin:.45rem 0 0; }
+.realm-studio-safety ul { margin:.5rem 0 0; padding-left:1.15rem; }
+.realm-studio-safety a { color:#c7d2fe; }
+.realm-studio-preview-note { color:#a9b8cc; font-size:.76rem; }
+@media(max-width:840px){.realm-studio-showcase-card,.realm-studio-safety-card{grid-template-columns:1fr}.realm-studio-showcase-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.realm-studio-showcase-grid{grid-template-columns:1fr}}
+
+/* W232 — private Realm return loop and local landmark choices. */
+.realm-studio-return-card { display:grid; grid-template-columns:minmax(0,.9fr) minmax(17rem,1.1fr); gap:clamp(1rem,3vw,1.5rem); margin-top:1rem; padding:clamp(1rem,3vw,1.5rem); border:1px solid rgba(94,234,212,.22); border-radius:1rem; background:radial-gradient(circle at 84% 16%,rgba(94,234,212,.12),transparent 28%),linear-gradient(145deg,rgba(13,83,77,.2),rgba(15,23,42,.82)); }
+.realm-studio-return-card h2 { margin:.1rem 0 .5rem; color:#f8fafc; font-size:1.14rem; }
+.realm-studio-return-card > div > p:not(.realm-studio-kicker) { margin:0; color:#a9b8cc; font-size:.82rem; line-height:1.55; }
+.realm-studio-return-actions { display:grid; align-content:center; gap:.7rem; }
+.realm-studio-return-summary { display:grid; gap:.2rem; padding:.8rem .86rem; border:1px solid rgba(148,163,184,.16); border-radius:.82rem; background:rgba(2,6,23,.28); }
+.realm-studio-return-summary strong { color:#d9fffb; font-size:.84rem; }.realm-studio-return-summary span { color:#c7d2fe; font-size:.78rem; font-weight:720; }.realm-studio-return-summary small { color:#94a3b8; font-size:.67rem; line-height:1.45; }
+.realm-studio-return-actions .eon-hub-primary { justify-self:start; text-decoration:none; }
+@media(max-width:840px){.realm-studio-return-card{grid-template-columns:1fr}}@media(max-width:520px){.realm-studio-return-actions .eon-hub-primary{width:100%;justify-content:center;text-align:center}}
+
+/* W347-A — local Share Relic Passport. Cosmetic, device-local and non-commercial. */
+.realm-studio-relic-passport-card { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:1rem; margin-top:1rem; padding:clamp(1rem,3vw,1.5rem); border:1px solid rgba(196,181,253,.28); border-radius:1rem; background:radial-gradient(circle at 86% 14%,rgba(196,181,253,.15),transparent 30%),linear-gradient(145deg,rgba(49,46,129,.18),rgba(15,23,42,.86)); }
+.realm-studio-relic-passport-card h2 { margin:.1rem 0 .55rem; color:#f8fafc; font-size:1.12rem; }
+.realm-studio-relic-passport-card > div > p:not(.realm-studio-kicker) { margin:0; color:#a9b8cc; font-size:.82rem; line-height:1.55; }
+.realm-studio-relic-passport-head { display:grid; align-content:start; gap:.55rem; justify-items:end; }
+.realm-studio-relic-passport-head strong { color:#e9d5ff; font-size:.82rem; white-space:nowrap; }
+.realm-studio-relic-passport { grid-column:1 / -1; min-width:0; }
+.realm-studio-relic-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.6rem; }
+.realm-studio-relic-card { display:grid; grid-template-columns:auto minmax(0,1fr); gap:.66rem; padding:.76rem; border:1px solid rgba(196,181,253,.22); border-radius:.8rem; background:rgba(2,6,23,.32); }
+.realm-studio-relic-symbol { display:grid; place-items:center; width:2.5rem; height:2.5rem; border:1px solid rgba(216,180,254,.44); border-radius:.72rem; background:radial-gradient(circle at 30% 30%,rgba(253,230,138,.52),transparent 28%),linear-gradient(145deg,rgba(139,92,246,.45),rgba(30,41,59,.78)); color:#fff; font-size:1.15rem; }
+.realm-studio-relic-card strong,.realm-studio-relic-card small,.realm-studio-relic-card p { display:block; }
+.realm-studio-relic-card strong { overflow:hidden; color:#f5f3ff; font-size:.78rem; text-overflow:ellipsis; white-space:nowrap; }
+.realm-studio-relic-card small { margin-top:.16rem; color:#c4b5fd; font-size:.66rem; line-height:1.4; }
+.realm-studio-relic-card p { margin:.28rem 0 0; color:#94a3b8; font-size:.67rem; line-height:1.42; }
+@media(max-width:840px){.realm-studio-relic-passport-card{grid-template-columns:1fr}.realm-studio-relic-passport-head{justify-items:start}.realm-studio-relic-grid{grid-template-columns:1fr}}
+
+
+/* W370 — local Realm atmosphere and encrypted visual-only backup. */
+.realm-studio-visual-card{display:grid;grid-template-columns:minmax(0,.82fr) minmax(19rem,1.18fr);gap:clamp(1rem,3vw,1.5rem);margin-top:1rem;padding:clamp(1rem,3vw,1.5rem);border:1px solid rgba(196,181,253,.3);border-radius:1rem;background:radial-gradient(circle at 84% 16%,rgba(125,211,252,.13),transparent 31%),linear-gradient(145deg,rgba(49,46,129,.18),rgba(15,23,42,.86))}.realm-studio-visual-card h2{margin:.1rem 0 .5rem;color:#f8fafc;font-size:1.14rem}.realm-studio-visual-card>div>p:not(.realm-studio-kicker){margin:0;color:#a9b8cc;font-size:.82rem;line-height:1.55}.realm-studio-visual-controls{display:grid;gap:.68rem}.realm-studio-visual-controls label{display:grid;gap:.3rem;color:#dbeafe;font-size:.78rem;font-weight:730}.realm-studio-visual-controls select{min-height:2.7rem;padding:.45rem .55rem;border:1px solid rgba(148,163,184,.25);border-radius:.64rem;background:rgba(2,6,23,.4);color:#e5edff;font:inherit}.realm-studio-visual-actions{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:.12rem}.realm-studio-visual-status{min-height:1.3rem;color:#d8d4ff!important;font-size:.77rem!important}.realm-studio-visual-disclosure{padding:.7rem .78rem;border-left:2px solid rgba(196,181,253,.66);border-radius:.28rem .7rem .7rem .28rem;background:rgba(30,27,75,.25);color:#c7c5ec!important;font-size:.73rem!important}.realm-studio-preview[data-realm-atmosphere="soft-rain"]::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(110deg,transparent 0 16px,rgba(186,230,253,.1) 17px 18px,transparent 19px 36px);opacity:.5;pointer-events:none}.realm-studio-preview[data-realm-atmosphere="aurora-current"]{background:radial-gradient(circle at 20% 15%,rgba(94,234,212,.34),transparent 30%),radial-gradient(circle at 78% 20%,rgba(196,181,253,.36),transparent 28%),linear-gradient(160deg,#0f172a,#10243e 55%,#020617)}.realm-studio-preview[data-realm-atmosphere="quiet-interior"]{background:linear-gradient(160deg,#151528,#111827 55%,#020617)}.realm-studio-preview[data-realm-companion="survey-drone"]::after,.realm-studio-preview[data-realm-companion="archive-lantern"]::after,.realm-studio-preview[data-realm-companion="quiet-orb"]::after{display:grid;place-items:center;inset:1rem auto auto 1rem;width:2.5rem;height:2.5rem;border:1px solid rgba(207,250,254,.42);border-radius:999px;background:rgba(8,47,73,.45);color:#cffafe;font-size:1.1rem}.realm-studio-preview[data-realm-companion="survey-drone"]::after{content:"◉"}.realm-studio-preview[data-realm-companion="archive-lantern"]::after{content:"✦"}.realm-studio-preview[data-realm-companion="quiet-orb"]::after{content:"○"}.realm-studio-visual-note{color:#d8d4ff!important;font-size:.72rem!important}@media(max-width:840px){.realm-studio-visual-card{grid-template-columns:1fr}}@media(max-width:560px){.realm-studio-visual-actions>*{flex:1;justify-content:center;text-align:center}}
+
+
+/* W374B — local Realm data-custody reminder. */
+.realm-studio-account-notice{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:1rem;align-items:center;margin-top:1rem;padding:1rem 1.1rem;border:1px solid rgba(125,211,252,.32);border-radius:1rem;background:radial-gradient(circle at 88% 20%,rgba(125,211,252,.13),transparent 29%),rgba(15,23,42,.72)}.realm-studio-account-notice h2{margin:.15rem 0 .45rem;color:#f8fafc;font-size:1.1rem}.realm-studio-account-notice p:not(.realm-studio-kicker){margin:0;color:#cbd5e1;font-size:.8rem;line-height:1.55}.realm-studio-account-actions{display:flex;flex-wrap:wrap;gap:.55rem}.realm-studio-account-actions a{text-decoration:none}@media(max-width:760px){.realm-studio-account-notice{grid-template-columns:1fr}.realm-studio-account-actions>*{flex:1;justify-content:center;text-align:center}}
+
+/* W730 — fixed-layout My Realm launch surface. */
+.realm-studio-shortcuts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.55rem;margin:0;padding:.9rem;border:1px solid var(--clr-border);border-radius:.9rem}.realm-studio-shortcuts legend{padding:0 .35rem;color:var(--clr-text);font-weight:760}.realm-studio-shortcuts label{display:flex!important;align-items:center;gap:.5rem;padding:.55rem;border:1px solid color-mix(in srgb,var(--clr-border) 78%,transparent);border-radius:.68rem;background:color-mix(in srgb,var(--clr-surface) 68%,transparent)}.realm-studio-shortcuts input{width:auto!important}.realm-studio-featured-grid{display:grid;grid-template-columns:.7fr 1.2fr 1fr;gap:.65rem}.realm-share-card{margin-top:.8rem;padding:1rem;border:1px solid color-mix(in srgb,var(--clr-accent) 46%,var(--clr-border));border-radius:1rem;background:color-mix(in srgb,var(--clr-accent) 7%,var(--clr-surface))}.realm-share-card h3{margin:.1rem 0}.realm-share-card p,.realm-share-card small{color:var(--clr-text-muted);line-height:1.5}.realm-share-card-shortcuts{display:flex;flex-wrap:wrap;gap:.4rem;margin:.7rem 0}.realm-share-card-shortcuts span{padding:.35rem .55rem;border:1px solid var(--clr-border);border-radius:999px;background:var(--clr-bg2);font-size:.72rem}.realm-studio-advanced{margin-top:1rem;border:1px solid var(--clr-border);border-radius:1rem;background:color-mix(in srgb,var(--clr-surface) 54%,transparent);overflow:hidden}.realm-studio-advanced>summary{padding:1rem;cursor:pointer;font-weight:800}.realm-studio-advanced>section{margin:0;border:0;border-top:1px solid var(--clr-border);border-radius:0}
+@media(max-width:760px){.realm-studio-shortcuts,.realm-studio-featured-grid{grid-template-columns:1fr}}

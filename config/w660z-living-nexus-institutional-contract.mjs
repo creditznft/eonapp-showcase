@@ -1,0 +1,50 @@
+export const W660Z_LIVING_NEXUS_INSTITUTIONAL_CONTRACT = Object.freeze({
+  schema: 'eonapp.w660z.living-nexus-institutional-contract.2026-07-21.v1',
+  wave: 'W660Z',
+  scope: Object.freeze({
+    connectedCore: true,
+    premiumRealmCount: 6,
+    streamedResidentCellCount: 9,
+    localBrowserProof: true,
+    mobileTouchProof: true,
+    reducedEffectsProof: true,
+    lifecyclePerformanceProof: true,
+    completePagesFunctionsCandidate: true
+  }),
+  invariants: Object.freeze({
+    oneCanonicalScene: true,
+    oneCanvas: true,
+    oneRenderLoop: true,
+    oneEonbot: true,
+    oneProjectTaskApprovalAuthority: true,
+    reviewFirstActions: true,
+    matchingVerifiedReceiptBeforeTransformation: true,
+    immediateSafeReturn: true,
+    deterministicSourceControlledWorlds: true,
+    noRuntimeAiGeometry: true,
+    noPrivateDataInSeedsAtlasOrProofs: true,
+    noAutomaticWork: true,
+    noAutomaticNavigation: true,
+    noAutomaticSharing: true,
+    noAutomaticRewards: true,
+    noPaymentClaims: true,
+    webglBaseline: true,
+    webgpuOptionalOnly: true,
+    productionUnchangedWithoutAuthenticatedApproval: true
+  }),
+  acceptance: Object.freeze({
+    districtCount: 9,
+    minimumCoreConnections: 17,
+    coreStationCount: 9,
+    minimumPremiumZonesPerRealm: 4,
+    minimumDiscoveriesPerRealm: 3,
+    maximumResidentCells: 9,
+    maximumRealmVisitMemory: 12,
+    maximumRealmDiscoveryMemory: 24,
+    maximumAtlasDiscoveries: 48,
+    touchDirections: 4,
+    physicalOperaProofRequiredForFinalClaim: true,
+    authenticatedProductionProofRequiredForFinalClaim: true,
+    targetScoreClaimAllowedBeforeExternalProof: false
+  })
+});

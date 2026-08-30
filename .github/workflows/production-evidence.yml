@@ -1,0 +1,91 @@
+name: Validate Exact-Candidate Production Evidence
+
+on:
+  workflow_dispatch:
+    inputs:
+      candidate_run_id:
+        description: CI run containing the immutable candidate
+        required: true
+        type: string
+      preview_run_id:
+        description: Preview deployment run for the same candidate
+        required: true
+        type: string
+      candidate_digest:
+        description: Exact candidate digest
+        required: true
+        type: string
+      evidence_ref:
+        description: Temporary private ref containing redacted evidence only
+        required: true
+        type: string
+
+permissions:
+  actions: read
+  contents: read
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+
+concurrency:
+  group: production-evidence-${{ inputs.candidate_digest }}
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    environment:
+      name: production-evidence
+    steps:
+      - name: Validate inputs
+        run: |
+          printf '%s' '${{ inputs.candidate_run_id }}' | grep -Eq '^[0-9]{1,20}$'
+          printf '%s' '${{ inputs.preview_run_id }}' | grep -Eq '^[0-9]{1,20}$'
+          printf '%s' '${{ inputs.candidate_digest }}' | grep -Eq '^[a-f0-9]{64}$'
+      - name: Download candidate and Preview receipt
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          gh run download '${{ inputs.candidate_run_id }}' --repo "$REPO" --pattern 'eonapp-release-candidate-*' --dir candidate-download
+          gh run download '${{ inputs.preview_run_id }}' --repo "$REPO" --pattern 'eonapp-preview-receipt-*' --dir preview-download
+      - name: Resolve exact source commit
+        id: candidate
+        run: |
+          ROOT="$(realpath "$(find candidate-download -path '*/candidate-provenance.json' ! -path '*/dist/release/*' -printf '%h\n' | sort | head -n 1)")"
+          PREVIEW="$(realpath "$(find preview-download -name preview-receipt.json | head -n 1)")"
+          test -n "$ROOT" && test -n "$PREVIEW"
+          test "$(jq -r .candidateDigest "$ROOT/candidate-provenance.json")" = '${{ inputs.candidate_digest }}'
+          echo "root=$ROOT" >> "$GITHUB_OUTPUT"
+          echo "preview=$PREVIEW" >> "$GITHUB_OUTPUT"
+          echo "sha=$(jq -r .commitSha "$ROOT/candidate-provenance.json")" >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+        with:
+          ref: ${{ steps.candidate.outputs.sha }}
+          fetch-depth: 0
+          path: source
+      - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+        with:
+          ref: ${{ inputs.evidence_ref }}
+          fetch-depth: 1
+          path: evidence-source
+      - name: Verify immutable candidate without rebuilding
+        run: node source/scripts/w641-verify-release-candidate.mjs '${{ steps.candidate.outputs.root }}' '${{ inputs.candidate_digest }}'
+      - name: Scan redacted evidence branch
+        working-directory: evidence-source
+        run: node scripts/secret-scan.mjs --mode=worktree --allow-no-history
+      - name: Build converged evidence package
+        run: |
+          node source/scripts/w645-build-production-evidence-package.mjs \
+            --candidate '${{ steps.candidate.outputs.root }}' \
+            --preview '${{ steps.candidate.outputs.preview }}' \
+            --evidence-root evidence-source \
+            --output production-evidence-package
+      - name: Upload protected evidence package
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: eonapp-w646-production-evidence-${{ inputs.candidate_digest }}
+          path: production-evidence-package
+          if-no-files-found: error
+          retention-days: 14
+          compression-level: 0

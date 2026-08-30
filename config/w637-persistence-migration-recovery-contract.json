@@ -1,0 +1,77 @@
+{
+  "schema": "eonapp.persistence-migration-recovery.w637.v1",
+  "wave": "W637",
+  "sourceCertified": true,
+  "productionCertified": false,
+  "indexedDb": [
+    {
+      "database": "eonapp-local-vault-v1",
+      "version": 2,
+      "stores": [
+        "encrypted-records",
+        "vault-metadata"
+      ],
+      "portable": "encrypted-envelope backup only"
+    },
+    {
+      "database": "eonapp-creator-media-v1",
+      "version": 1,
+      "stores": [
+        "media"
+      ],
+      "portable": "excluded from generic Capsule"
+    },
+    {
+      "database": "eon-share-identity",
+      "version": 1,
+      "stores": [
+        "identity"
+      ],
+      "portable": "excluded"
+    },
+    {
+      "database": "eon-offline-db",
+      "version": 2,
+      "stores": [
+        "kv",
+        "queue",
+        "offline-cache"
+      ],
+      "portable": "excluded unless separately allowlisted"
+    },
+    {
+      "database": "eonapp-quantum-safe",
+      "version": 1,
+      "stores": [
+        "eon:quantum:v1"
+      ],
+      "portable": "excluded"
+    }
+  ],
+  "restore": {
+    "inspectBeforeWrite": true,
+    "reviewedPreviewIdRequired": true,
+    "defaultMerge": "add-only",
+    "overwrite": false,
+    "indexedDbMode": "single add-only transaction",
+    "capsuleMode": "encrypted rollback journal plus integrity receipt",
+    "postWriteVerification": true,
+    "postVerificationFailureTruth": "committed-verification-failed requires recovery"
+  },
+  "drive": {
+    "mode": "explicit encrypted snapshot, not sync",
+    "scope": "drive.file",
+    "accessTokenStorage": "memory-only",
+    "automaticUpload": false,
+    "automaticRestore": false,
+    "automaticCrossDeviceSync": false
+  },
+  "externalEvidenceRequired": [
+    "real browser update and rollback data-survival rehearsal",
+    "real corrupted IndexedDB and quota-pressure recovery evidence",
+    "real interrupted Capsule restore and recovery evidence",
+    "real Google Drive consent upload list download inspect restore and revoke evidence",
+    "real cross-device recovery with separate browser profiles",
+    "owner verification that deletion and revocation remove only intended records"
+  ]
+}

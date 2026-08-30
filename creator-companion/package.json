@@ -1,0 +1,11 @@
+{
+  "name": "eon-creator-companion",
+  "private": true,
+  "version": "0.1.0-w626b-source",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.mjs",
+    "diagnose": "node src/diagnose.mjs"
+  },
+  "engines": { "node": ">=22" }
+}

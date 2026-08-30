@@ -1,0 +1,22 @@
+{
+  "schema": "eon.direct-byok.certification-board.w626h.2026-07-11.v1",
+  "verdict": "no-go-real-provider-evidence-pending",
+  "sourceIntegrationAloneCanPass": false,
+  "requiredEvidence": {
+    "desktopImageFal": "pending",
+    "desktopImageReplicate": "pending",
+    "desktopVideoFal": "pending",
+    "desktopVideoReplicate": "pending",
+    "supportedMobilePath": "pending",
+    "cancelRecovery": "pending",
+    "rateLimitRecovery": "pending",
+    "outageRecovery": "pending",
+    "expiredResultRecovery": "pending",
+    "moderationTruth": "pending",
+    "localHistoryDeleteExport": "pending",
+    "networkBoundaryProof": "pending"
+  },
+  "eonappServerProxyObserved": null,
+  "eonappServerMediaStorageObserved": null,
+  "publicAvailabilityClaimAllowed": false
+}

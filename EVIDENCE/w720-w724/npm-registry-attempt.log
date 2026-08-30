@@ -1,0 +1,14 @@
+=== npm ping ===
+2026-07-27T19:01:26Z
+npm notice PING https://packages.applied-caas-gateway1.internal.api.openai.org/artifactory/api/npm/npm-public
+npm error code E503
+npm error 503 Service Temporarily Unavailable - GET https://packages.applied-caas-gateway1.internal.api.openai.org/artifactory/api/npm/npm-public/-/ping
+npm error A complete log of this run can be found in: /home/oai/.npm/_logs/2026-07-27T19_01_26_423Z-debug-0.log
+npm_ping_status=1
+
+=== npm ci (bounded fetch) ===
+2026-07-27T19:01:26Z
+npm error code E503
+npm error 503 Service Temporarily Unavailable - GET https://packages.applied-caas-gateway1.internal.api.openai.org/artifactory/api/npm/npm-public/ws
+npm error A complete log of this run can be found in: /home/oai/.npm/_logs/2026-07-27T19_01_26_770Z-debug-0.log
+npm_ci_status=1

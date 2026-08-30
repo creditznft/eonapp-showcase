@@ -1,0 +1,69 @@
+.eon-telegram-growth-wrap {
+  margin: 1rem 0;
+}
+
+.eon-telegram-growth-card {
+  border: 1px solid rgba(56, 189, 248, 0.24);
+  border-radius: 1.25rem;
+  padding: clamp(1rem, 2.8vw, 1.45rem);
+  background:
+    radial-gradient(circle at top left, rgba(34, 197, 94, 0.12), transparent 22rem),
+    linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.78));
+  box-shadow: 0 18px 55px rgba(2, 6, 23, 0.22);
+  color: var(--clr-text, #e5eefb);
+}
+
+.eon-telegram-growth-card.is-compact {
+  padding: 1rem;
+}
+
+.eon-telegram-growth-kicker {
+  margin: 0 0 0.35rem;
+  color: #67e8f9;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+}
+
+.eon-telegram-growth-card h2 {
+  margin: 0 0 0.45rem;
+  font-size: clamp(1.25rem, 2.6vw, 1.8rem);
+}
+
+.eon-telegram-growth-card p,
+.eon-telegram-growth-card li {
+  color: var(--clr-text-muted, #aeb9d4);
+  line-height: 1.55;
+}
+
+.eon-telegram-growth-card ul {
+  margin: 0.65rem 0 0;
+  padding-left: 1.15rem;
+}
+
+.eon-telegram-growth-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 0.95rem;
+}
+
+.eon-telegram-growth-actions .btn {
+  min-height: 42px;
+}
+
+.eon-telegram-growth-safe-note {
+  margin: 0.85rem 0 0;
+  padding: 0.7rem 0.8rem;
+  border-radius: 0.9rem;
+  background: rgba(2, 6, 23, 0.36);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 640px) {
+  .eon-telegram-growth-actions {
+    display: grid;
+  }
+}

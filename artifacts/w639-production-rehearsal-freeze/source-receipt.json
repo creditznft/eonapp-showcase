@@ -1,0 +1,713 @@
+{
+  "schema": "eonapp.gate.whole-app-production-rehearsal-freeze.w639.2026-07-11.v1",
+  "wave": "W639",
+  "mode": "source",
+  "ok": true,
+  "total": 10,
+  "passed": 10,
+  "checks": [
+    {
+      "id": "contract",
+      "pass": true,
+      "detail": "11 rehearsal domains"
+    },
+    {
+      "id": "files",
+      "pass": true,
+      "detail": "contract, input board, manifest library, gate and maintained tests"
+    },
+    {
+      "id": "freeze-manifest",
+      "pass": true,
+      "detail": "68 frozen files / 10 categories"
+    },
+    {
+      "id": "migration-registry",
+      "pass": true,
+      "detail": "22 migration files fingerprinted"
+    },
+    {
+      "id": "w638-link",
+      "pass": true,
+      "detail": "W638 not-run"
+    },
+    {
+      "id": "truthful-rehearsal",
+      "pass": true,
+      "detail": "production not-run"
+    },
+    {
+      "id": "local-build-boundary",
+      "pass": true,
+      "detail": "source/build cannot certify production"
+    },
+    {
+      "id": "incident-boundary",
+      "pass": true,
+      "detail": "incident drills fail closed and preserve user data"
+    },
+    {
+      "id": "commands",
+      "pass": true,
+      "detail": "source, build and evidence commands registered"
+    },
+    {
+      "id": "release-no-go",
+      "pass": true,
+      "detail": "launch candidate remains unfrozen pending external proof"
+    }
+  ],
+  "freezeManifest": {
+    "schema": "eonapp.launch-candidate-freeze-manifest.w639.v1",
+    "wave": "W639",
+    "generatedAt": "2026-08-29T21:34:29.787Z",
+    "ok": true,
+    "categoryCount": 10,
+    "fileCount": 68,
+    "freezeDigest": "3f46101692e86ae14cd91c3b19d91fa7f6cc417918045f44624c7864f23b09fa",
+    "categories": [
+      {
+        "id": "dependencies",
+        "ok": true,
+        "fileCount": 2,
+        "categoryDigest": "e9589baa2ffd24d6309dfb2c6b36a2b67595ce09289a1a072b49fada0b81853d",
+        "files": [
+          {
+            "path": "package-lock.json",
+            "exists": true,
+            "bytes": 245454,
+            "sha256": "c9a4f0ad2cf69aba8c8a81d7969d74867630738e795e30dcb05b6ada294a07f6"
+          },
+          {
+            "path": "package.json",
+            "exists": true,
+            "bytes": 183035,
+            "sha256": "ee0b5af44ed9884a70676c491c5c945f9cb34818d229ae1a900b910da6530bad"
+          }
+        ]
+      },
+      {
+        "id": "workflows",
+        "ok": true,
+        "fileCount": 3,
+        "categoryDigest": "3a39caf10cf3a99e857e5702b3c268fc559f933e8cbb5ce9396a038f5c5199bf",
+        "files": [
+          {
+            "path": ".github/workflows/ci.yml",
+            "exists": true,
+            "bytes": 6392,
+            "sha256": "0fe2f4172bc5561636fc625f9f8ee79226ffe112162f209d95565a9853c0ede8"
+          },
+          {
+            "path": ".github/workflows/deploy.yml",
+            "exists": true,
+            "bytes": 22587,
+            "sha256": "d0d96da3d4ff21594fde8900bf75d18c6728de135d2469da4823e8dbf6e2a2ff"
+          },
+          {
+            "path": ".github/workflows/preview.yml",
+            "exists": true,
+            "bytes": 19023,
+            "sha256": "a8f6ecd357eebd98682e66790745a382f25e791284293248730478b6a0a07c51"
+          }
+        ]
+      },
+      {
+        "id": "routes",
+        "ok": true,
+        "fileCount": 5,
+        "categoryDigest": "068717ca8d8025f9dc547937c237a37ea8d3ac7012da984c7d6dc88db745707d",
+        "files": [
+          {
+            "path": "_redirects",
+            "exists": true,
+            "bytes": 4435,
+            "sha256": "11b532d725bf362b2019d745f7e1303175f4db9ae77a38915f046db88ac43ea6"
+          },
+          {
+            "path": "config/route-contract.mjs",
+            "exists": true,
+            "bytes": 20937,
+            "sha256": "f186925cea53fb62c1b676554434b18d5428086a0ac343725f5cff46f32ffe2a"
+          },
+          {
+            "path": "config/w633-every-route-audit-contract.mjs",
+            "exists": true,
+            "bytes": 6793,
+            "sha256": "c669c8fcbae3c60c96708ea75d1e8bf83e535eb5c767c6162baec8bd8a26721a"
+          },
+          {
+            "path": "public/_redirects",
+            "exists": true,
+            "bytes": 4435,
+            "sha256": "11b532d725bf362b2019d745f7e1303175f4db9ae77a38915f046db88ac43ea6"
+          },
+          {
+            "path": "vite.config.mjs",
+            "exists": true,
+            "bytes": 4477,
+            "sha256": "489ed950b374291c41ca8f118d8fcee39d753934b2a0c138692dcc71236c2fd4"
+          }
+        ]
+      },
+      {
+        "id": "service-worker",
+        "ok": true,
+        "fileCount": 3,
+        "categoryDigest": "24d3b0119a87fd9a92822ad57a3eff63319e86dab0613857cd4527d8cff49e4c",
+        "files": [
+          {
+            "path": "assets/js/utils/eon-service-worker-registration.js",
+            "exists": true,
+            "bytes": 1292,
+            "sha256": "cc0a50d6206a6c76d2a44aeca6c09c7e6cecff4816ade34fc53d34ae2bf5ea73"
+          },
+          {
+            "path": "config/w635-performance-cache-update-safety-contract.json",
+            "exists": true,
+            "bytes": 2189,
+            "sha256": "77cb2911da39b2821b4721c2708dd4d007a2515575f024ae720e7a256137c0d2"
+          },
+          {
+            "path": "sw.js",
+            "exists": true,
+            "bytes": 52716,
+            "sha256": "2aad64d24f875cdf167f6d0ceceaf03104e6908b4edde6ff4a9ca7c4bec9bf94"
+          }
+        ]
+      },
+      {
+        "id": "provider-adapters",
+        "ok": true,
+        "fileCount": 6,
+        "categoryDigest": "c0ceb3097d95c92f1480ee1e29375c9ec6bb76e6acce31775e0f085a1fbc45c3",
+        "files": [
+          {
+            "path": "assets/js/direct-byok/provider-adapters/fal.js",
+            "exists": true,
+            "bytes": 6679,
+            "sha256": "1796330157b47f83411ed5a5ec575b0963968c35525aeb0f4f9f504dda4585bf"
+          },
+          {
+            "path": "assets/js/direct-byok/provider-adapters/replicate.js",
+            "exists": true,
+            "bytes": 4965,
+            "sha256": "dffeace4a4929a5a49eb72eda8d40249f2d3be10ace240e85865c9cad41fee9e"
+          },
+          {
+            "path": "assets/js/direct-byok/provider-registry.js",
+            "exists": true,
+            "bytes": 5135,
+            "sha256": "45c3dcee2784a01c4254f2d21c0b397198a863f3baa831b15f6e7e1d0fecb679"
+          },
+          {
+            "path": "config/ai-api-contracts.mjs",
+            "exists": true,
+            "bytes": 18643,
+            "sha256": "9dded86fa60f59e85a24b9f2ec3b171fa4991fe87ce9d8d4200271e46d25e211"
+          },
+          {
+            "path": "config/w626-reviewed-provider-models.json",
+            "exists": true,
+            "bytes": 3383,
+            "sha256": "940776194b8b8ac4e84de30e775f8b54c27d68a30486625fed6d2fe2712a3581"
+          },
+          {
+            "path": "creator-companion/src/provider-gateway.mjs",
+            "exists": true,
+            "bytes": 19594,
+            "sha256": "c44f3cf010e72f20443ed529e2c6c8ac02d435e62d0f253d57dfa69214a658cb"
+          }
+        ]
+      },
+      {
+        "id": "billing-catalogue",
+        "ok": true,
+        "fileCount": 5,
+        "categoryDigest": "c77f24f8d770e53d94c288483cf89e52862359b6d6a9d1921ffafb76984de8f9",
+        "files": [
+          {
+            "path": "assets/js/billing/eon-dodo-live-runtime.js",
+            "exists": true,
+            "bytes": 48244,
+            "sha256": "6ca268b2191e9ec490d0e6e5c152019f658e9e395498d95a9f4639571e245dde"
+          },
+          {
+            "path": "config/w620-dodo-dashboard-setup-contract.mjs",
+            "exists": true,
+            "bytes": 8459,
+            "sha256": "762fa36f320fd942e47c998accf3ccf41cb573f22a89889ef8985cefc0bd8011"
+          },
+          {
+            "path": "config/w628-billing-certification-board.json",
+            "exists": true,
+            "bytes": 683,
+            "sha256": "83e7fca6bdc0e2b2097fe45ed2fd190516b34b16c9ec05d3e164fd5b25124143"
+          },
+          {
+            "path": "functions/api/billing/checkout.js",
+            "exists": true,
+            "bytes": 1920,
+            "sha256": "dbb8496254bf534afb81f7649b283ccc83de6b70cc46bd5da5dd22721f78e9ef"
+          },
+          {
+            "path": "functions/api/billing/webhooks/dodo.js",
+            "exists": true,
+            "bytes": 633,
+            "sha256": "958e9c659ee4f4fc0aa833b56cc6a55a59af4b999ee94b790b6f244ac51865bc"
+          }
+        ]
+      },
+      {
+        "id": "referral-ledger",
+        "ok": true,
+        "fileCount": 4,
+        "categoryDigest": "a1063b02e7a8189c92e1b7c107719aea56cca56bf0f9108b7142723c52d5f83b",
+        "files": [
+          {
+            "path": "assets/js/referrals/eon-referral-program-w629.js",
+            "exists": true,
+            "bytes": 11311,
+            "sha256": "c088a05074f78a2a2a4c50c2000ee4cf2c9746151fb39c0b730068971707be34"
+          },
+          {
+            "path": "config/w629-referral-certification-board.json",
+            "exists": true,
+            "bytes": 1139,
+            "sha256": "a2152abbf3b92a66efd28d82269bd14d3f972669dfbc76cbb7f70747d96e8a78"
+          },
+          {
+            "path": "functions/api/referrals.js",
+            "exists": true,
+            "bytes": 8260,
+            "sha256": "2c3ea2586a3a137c63eb3540a5711e01ca7f76e12f054c26cac897519cb75bca"
+          },
+          {
+            "path": "migrations/0002_minimal_referral_eonkeys.sql",
+            "exists": true,
+            "bytes": 4388,
+            "sha256": "516b5dff4c650f9c702ff95aa4a5b23130d6459d6036997c9d58e0f9ad219b0e"
+          }
+        ]
+      },
+      {
+        "id": "persistence",
+        "ok": true,
+        "fileCount": 26,
+        "categoryDigest": "cc32c3a2df80ec2645f54fba3f5b51917f42569f1bf9da0431d96546c51416cd",
+        "files": [
+          {
+            "path": "assets/js/local-first/eon-google-drive-snapshot-connector.js",
+            "exists": true,
+            "bytes": 15998,
+            "sha256": "bc6dcb25ff565af996f317f235a27dadca61bbb5df10dbdd482be82d785a233b"
+          },
+          {
+            "path": "assets/js/local-first/eon-portable-backup.js",
+            "exists": true,
+            "bytes": 16184,
+            "sha256": "4b28847e6c6d5575aa3efa4bcf143e0a272ba5f3c294757ccb762e1fac8bddf8"
+          },
+          {
+            "path": "assets/js/local-first/eon-workspace-capsule.js",
+            "exists": true,
+            "bytes": 39761,
+            "sha256": "f5d926d4358606ba9e15ca2dfdf8557af50d634da3577d6c363a0c8f8275c746"
+          },
+          {
+            "path": "config/w637-persistence-migration-recovery-contract.mjs",
+            "exists": true,
+            "bytes": 6356,
+            "sha256": "7142c454b7e7cf653a818f46a0c6b9f7107fdba9588f90978467d44e3fe0d007"
+          },
+          {
+            "path": "migrations/0001_referral_storage.sql",
+            "exists": true,
+            "bytes": 1874,
+            "sha256": "43a16e00e337d3cd7b8b4f52269e219bf286909e4cf8db939b8475a36282e8fa"
+          },
+          {
+            "path": "migrations/0002_minimal_referral_eonkeys.sql",
+            "exists": true,
+            "bytes": 4388,
+            "sha256": "516b5dff4c650f9c702ff95aa4a5b23130d6459d6036997c9d58e0f9ad219b0e"
+          },
+          {
+            "path": "migrations/billing/0001_billing_command_entitlement_authority.sql",
+            "exists": true,
+            "bytes": 3917,
+            "sha256": "77ff09a123d1385be1e357906f1c403e13ee533c9a3808674f764b5229141ae6"
+          },
+          {
+            "path": "migrations/billing/0002_billing_payment_reference_authority.sql",
+            "exists": true,
+            "bytes": 1063,
+            "sha256": "030d34e25492f7d8e445a27a224dd76f1a45517542303d8b348324b904235781"
+          },
+          {
+            "path": "migrations/billing/0003_premium_software_grants.sql",
+            "exists": true,
+            "bytes": 1998,
+            "sha256": "d3f14d8637377c54f40057e127a81deabed97563e644ab16426bd92491630466"
+          },
+          {
+            "path": "migrations/referrals/0001_referral_authority.sql",
+            "exists": true,
+            "bytes": 5561,
+            "sha256": "1b7f350b70a2503607f525fb2f5e94222e81f1f9486ab667af19d38483142820"
+          },
+          {
+            "path": "migrations/referrals/0002_referral_operational_views.sql",
+            "exists": true,
+            "bytes": 1008,
+            "sha256": "f31ab59da1e3fc8df73a8d92237bbea6d555a4f0f82a051f524d3926626a8821"
+          },
+          {
+            "path": "migrations/referrals/0003_referral_schema_authority.sql",
+            "exists": true,
+            "bytes": 1738,
+            "sha256": "c6f840e85fe811f1765123e2a941a3d5e5882f94bbefcc07b77a5b99fdec9368"
+          },
+          {
+            "path": "migrations/referrals/0004_rewarded_sponsor_eonkeys.sql",
+            "exists": true,
+            "bytes": 1449,
+            "sha256": "05ad6b4b61a7932d0c9f69e4312f49c408ad79f0aec0748989ec559cb3afe6c1"
+          },
+          {
+            "path": "migrations/referrals/0005_rewarded_sponsor_runtime.sql",
+            "exists": true,
+            "bytes": 1393,
+            "sha256": "f3bac3f9d0b725f8ca5881caa3ba3ebaf78d682073b23c66681c26149f3e26c8"
+          },
+          {
+            "path": "migrations/trust/0001_trust_support_incident_authority.sql",
+            "exists": true,
+            "bytes": 3413,
+            "sha256": "431e942c5c89b000923b7b1bcb4d1e26c19a3fe74582473472009cba4f70eee9"
+          },
+          {
+            "path": "migrations/trust/0002_vexrail_economic_aggregate.sql",
+            "exists": true,
+            "bytes": 1262,
+            "sha256": "afc60306c0f9e3e1af2b668016164e2bf46af38a8ee8a7e841dbd02362f0405a"
+          },
+          {
+            "path": "migrations/trust/0003_growth_profitability_authority.sql",
+            "exists": true,
+            "bytes": 8307,
+            "sha256": "cd2b187da46e6e8e16465de4f93ee93dbd8b0ccacf85a4e90564ede99bd15903"
+          },
+          {
+            "path": "migrations/trust/0004_growth_operational_events.sql",
+            "exists": true,
+            "bytes": 3373,
+            "sha256": "8d12b535dfa58542b38683dd13f060815d4505fb855638898fe34d91c943afdf"
+          },
+          {
+            "path": "platform-backend/migrations/0001_init.sql",
+            "exists": true,
+            "bytes": 1899,
+            "sha256": "115442923d4b93991521185fec85ef8f8369378a9dae7b99e935dbeef1771135"
+          },
+          {
+            "path": "platform-backend/migrations/0001_referral_storage.sql",
+            "exists": true,
+            "bytes": 1874,
+            "sha256": "43a16e00e337d3cd7b8b4f52269e219bf286909e4cf8db939b8475a36282e8fa"
+          },
+          {
+            "path": "platform-backend/migrations/0002_epoch_lifecycle.sql",
+            "exists": true,
+            "bytes": 699,
+            "sha256": "14b555b93bdf453e2c1af2995fe8080a3b9877f5c7d8edb538bff8f27839afa9"
+          },
+          {
+            "path": "platform-backend/migrations/0003_swap_reconciliation.sql",
+            "exists": true,
+            "bytes": 1002,
+            "sha256": "69503839ff2a6e05c127c147551b92b83e318e10ddcf2f4b5da27c5d75437bac"
+          },
+          {
+            "path": "platform-backend/migrations/0004_pool_epoch_totals.sql",
+            "exists": true,
+            "bytes": 173,
+            "sha256": "f39e9b680ca8bac1f967320000b3ea1560a31af9ac0b24419a9cac05124e9698"
+          },
+          {
+            "path": "platform-backend/migrations/0005_request_rate_limits.sql",
+            "exists": true,
+            "bytes": 387,
+            "sha256": "06d0e4f1a4554f5c56e51de1def3b0c14dcf7822dfeed4d6eea2ca1e4baeb4fd"
+          },
+          {
+            "path": "platform-backend/migrations/0006_agent_orchestration.sql",
+            "exists": true,
+            "bytes": 1208,
+            "sha256": "11478a092ddb39048057e0e748abb68b5cb9a320333f8074d5b80c146fb1c727"
+          },
+          {
+            "path": "platform-backend/migrations/future/0100_eon_invite_access_milestones_schema.DISABLED.sql",
+            "exists": true,
+            "bytes": 2066,
+            "sha256": "4a6b45447e249252221a92f3daba13e97e209997071294af73f305a479b76dba"
+          }
+        ]
+      },
+      {
+        "id": "legal-support",
+        "ok": true,
+        "fileCount": 5,
+        "categoryDigest": "e6ebb2767b6790818f5b696085c3bcb49aa7791837bdedec2f06cf8453edb242",
+        "files": [
+          {
+            "path": "billing.html",
+            "exists": true,
+            "bytes": 12317,
+            "sha256": "b5499a74a9fbc1fadb06d0815ed4ef80fddcea0d19acce377a201e8171bc4ea5"
+          },
+          {
+            "path": "help.html",
+            "exists": true,
+            "bytes": 18238,
+            "sha256": "b1969703a1894a27b70841bfa2f8cab95c37903318b237b4c7b6a7a15d6f4694"
+          },
+          {
+            "path": "privacy.html",
+            "exists": true,
+            "bytes": 23586,
+            "sha256": "758078af99c043f9a1bc1017c7890104a1cb13261b0dd4fdeac717f7d6443576"
+          },
+          {
+            "path": "support.html",
+            "exists": true,
+            "bytes": 561,
+            "sha256": "585de6e770453b117cff93d56ea1308c100fdadf02562e1d71fcfb39c0517bb7"
+          },
+          {
+            "path": "terms.html",
+            "exists": true,
+            "bytes": 18336,
+            "sha256": "227041ca7131b555d05563694d05b951caf5cb546a1a9534a518966038310be5"
+          }
+        ]
+      },
+      {
+        "id": "evidence",
+        "ok": true,
+        "fileCount": 9,
+        "categoryDigest": "f29c712b2b82438aca304f706c5f7e0dd418491c1294072b2a8f7e79c4e3181e",
+        "files": [
+          {
+            "path": "config/w638-evidence-convergence-board.json",
+            "exists": true,
+            "bytes": 454,
+            "sha256": "0661c466f7b8f7f440a66f65942f5468d03cfb823b31f131b89dc462e56060c3"
+          },
+          {
+            "path": "config/w638-evidence-convergence-contract.mjs",
+            "exists": true,
+            "bytes": 7627,
+            "sha256": "89e714f4b63a5b1866441046feca5f4c0eaffaf99ceb844996cac3cc5f785050"
+          },
+          {
+            "path": "config/w639-production-rehearsal-board.json",
+            "exists": true,
+            "bytes": 534,
+            "sha256": "91e6234cb5a4cb84528e66353e632044c4804faae1544d5df51a8bc7f5a78d6d"
+          },
+          {
+            "path": "config/w639-production-rehearsal-freeze-contract.mjs",
+            "exists": true,
+            "bytes": 7306,
+            "sha256": "850aaa137e3afbfab02165a0633b7d476cca11a7591782becb901b7be777ec99"
+          },
+          {
+            "path": "scripts/launch-evidence-audit.mjs",
+            "exists": true,
+            "bytes": 1375,
+            "sha256": "fb926b6e1a4d76d10e9002ed56775ce7974c4994caf22fcce55dda2d26b80752"
+          },
+          {
+            "path": "scripts/lib/w638-evidence-index.mjs",
+            "exists": true,
+            "bytes": 11050,
+            "sha256": "8a6845de51b78ff8ad88cff79959aa00d683275ec889b94e6759eee6151e5fda"
+          },
+          {
+            "path": "scripts/lib/w639-release-freeze.mjs",
+            "exists": true,
+            "bytes": 8128,
+            "sha256": "6204a18e50f0f6e4a88f39b71e16280523fa53fea932eb3c805fdc2a0143815a"
+          },
+          {
+            "path": "scripts/w638-evidence-convergence-gate.mjs",
+            "exists": true,
+            "bytes": 6002,
+            "sha256": "45e354c255e53f461faa7dc847634282e0aff222e880b2d7b6f677ae7c9d23b3"
+          },
+          {
+            "path": "scripts/w639-production-rehearsal-freeze-gate.mjs",
+            "exists": true,
+            "bytes": 6580,
+            "sha256": "f716779cecb94724fdb63f8a572feeda552e8205f7e8899397f368dbe1b0be5c"
+          }
+        ]
+      }
+    ],
+    "launchCandidateFrozen": false
+  },
+  "build": null,
+  "rehearsal": {
+    "schema": "eonapp.whole-app-production-rehearsal-board.w639.v1",
+    "wave": "W639",
+    "generatedAt": "2026-08-29T21:34:29.809Z",
+    "sourceGateOk": true,
+    "productionVerdict": "not-run",
+    "productionRehearsalPassed": false,
+    "launchCandidateFrozen": false,
+    "freezeDigest": "3f46101692e86ae14cd91c3b19d91fa7f6cc417918045f44624c7864f23b09fa",
+    "evidenceIndexDigest": "c9ae7e74247e8e7d3965d3430eb8b4acd30afb49766d7c57a1e710902be48c2f",
+    "buildDigest": "",
+    "domains": [
+      {
+        "id": "routes",
+        "title": "Canonical routes and navigation",
+        "sourceReady": true,
+        "status": "not-run",
+        "externalEvidence": [
+          "Cloudflare edge redirects",
+          "fresh desktop/mobile route walkthrough"
+        ],
+        "evidenceLaneStatuses": {}
+      },
+      {
+        "id": "account",
+        "title": "Account identity and Vault separation",
+        "sourceReady": true,
+        "status": "not-run",
+        "externalEvidence": [
+          "real Google identity lifecycle",
+          "owner deletion/revocation review"
+        ],
+        "evidenceLaneStatuses": {}
+      },
+      {
+        "id": "projects",
+        "title": "Projects and continuation",
+        "sourceReady": true,
+        "status": "not-run",
+        "externalEvidence": [
+          "real browser create/save/reopen/continue walkthrough"
+        ],
+        "evidenceLaneStatuses": {}
+      },
+      {
+        "id": "forge",
+        "title": "Review-first Forge handoff",
+        "sourceReady": true,
+        "status": "not-run",
+        "externalEvidence": [
+          "real owner-reviewed handoff and return"
+        ],
+        "evidenceLaneStatuses": {}
+      },
+      {
+        "id": "automations",
+        "title": "Automation truth and execution state",
+        "sourceReady": true,
+        "status": "not-run",
+        "externalEvidence": [
+          "real scheduled execution and failure recovery"
+        ],
+        "evidenceLaneStatuses": {}
+      },
+      {
+        "id": "city",
+        "title": "EON City flagship",
+        "sourceReady": true,
+        "status": "not-run",
+        "externalEvidence": [
+          "authenticated production desktop/Android/iOS gameplay evidence"
+        ],
+        "evidenceLaneStatuses": {}
+      },
+      {
+        "id": "creator",
+        "title": "Local Creator, Direct BYOK and companion",
+        "sourceReady": true,
+        "status": "not-run",
+        "externalEvidence": [
+          "W638 local-creator PASS",
+          "W638 direct-provider PASS",
+          "W638 companion PASS"
+        ],
+        "evidenceLaneStatuses": {
+          "local-creator": "not-run",
+          "direct-provider": "not-run",
+          "companion": "not-run"
+        }
+      },
+      {
+        "id": "billing",
+        "title": "Dodo billing lifecycle",
+        "sourceReady": true,
+        "status": "not-run",
+        "externalEvidence": [
+          "W638 billing PASS"
+        ],
+        "evidenceLaneStatuses": {
+          "billing": "not-run"
+        }
+      },
+      {
+        "id": "referral",
+        "title": "Referral, EONKEY and Vault Reveal lifecycle",
+        "sourceReady": true,
+        "status": "not-run",
+        "externalEvidence": [
+          "W638 referral PASS"
+        ],
+        "evidenceLaneStatuses": {
+          "referral": "not-run"
+        }
+      },
+      {
+        "id": "backup-recovery",
+        "title": "Persistence, Capsule and Drive recovery",
+        "sourceReady": true,
+        "status": "not-run",
+        "externalEvidence": [
+          "real update/rollback/corruption/Drive/cross-device recovery evidence"
+        ],
+        "evidenceLaneStatuses": {}
+      },
+      {
+        "id": "incidents-rollback",
+        "title": "Kill switches, incidents and deployment rollback",
+        "sourceReady": true,
+        "status": "not-run",
+        "externalEvidence": [
+          "Cloudflare incident drill",
+          "feature kill-switch drill",
+          "deployment and migration rollback drill"
+        ],
+        "evidenceLaneStatuses": {}
+      }
+    ],
+    "boundaries": {
+      "localBuildCanCertifyProduction": false,
+      "emptyEvidenceCanFreezeLaunchCandidate": false,
+      "destructiveCustomerActionsAutomated": false
+    }
+  },
+  "productionCertified": false,
+  "launchCandidateFrozen": false,
+  "limitations": [
+    "fresh production route/account/project/Forge/automation/City walkthrough",
+    "W638 billing/referral/local Creator/provider/companion lane PASS evidence",
+    "Cloudflare feature kill-switch and incident drill evidence",
+    "deployment rollback plus migration rollback evidence",
+    "fresh screenshots and one owner-reviewed machine-readable evidence index"
+  ]
+}

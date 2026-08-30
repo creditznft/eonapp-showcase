@@ -1,0 +1,21 @@
+{
+  "schema": "eonapp.w274.city-scripted-guide-source-gate.v1",
+  "wave": "W274-A0",
+  "scope": "City Play scripted orientation source-only",
+  "ok": false,
+  "score": 0,
+  "checks": {
+    "registryOnly": true,
+    "schemaAndFiniteCard": true,
+    "explicitBoundary": false,
+    "localNoStorageOrPrivateReads": true,
+    "noRemoteTransport": true,
+    "noAutomaticAction": true,
+    "stationInformationalOnly": true,
+    "accessiblePresentation": true,
+    "noGoPreserved": true,
+    "packageScript": true
+  },
+  "claimFence": "This source baseline proves only finite local guide copy and interaction boundaries. It cannot prove real-world moderation, NPC behavior, social presence, accessibility or device usability.",
+  "releaseDependency": "W260 remains NO-GO; W274 is not a moderation, NPC, social or launch proof."
+}

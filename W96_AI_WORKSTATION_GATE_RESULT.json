@@ -1,0 +1,82 @@
+{
+  "schema": "eon.w96.ai-workstation-gate.v1",
+  "ok": true,
+  "checks": [
+    {
+      "name": "browser html loads workstation module",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "browser title reframed as EON Workstation",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "browser footer mojibake removed",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "workstation exposes public controller",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "workstation has code maker app route",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "workstation has external handoff mode",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "workstation has source reader mode",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "workstation has home stage",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "workstation js syntax clean",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "code maker fallback editor implemented",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "code maker fallback timeout implemented",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "code maker js syntax clean",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "code maker html mojibake removed",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "workstation responsive css added",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "fallback editor css added",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "failed": []
+}

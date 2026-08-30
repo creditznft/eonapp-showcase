@@ -1,0 +1,72 @@
+{
+  "schema": "eonapp.w268.operations-readiness.v1",
+  "decision": "NOT_READY_PENDING_OBSERVED_DRILLS",
+  "authority": {
+    "implementationAuthorMayClose": false,
+    "releaseOwner": {
+      "status": "unassigned"
+    },
+    "supportOwner": {
+      "status": "unassigned"
+    },
+    "rollbackOwner": {
+      "status": "unassigned"
+    }
+  },
+  "requiredExternalDrills": [
+    {
+      "id": "named-owner-and-escalation-confirmation",
+      "required": true,
+      "status": "not-collected",
+      "evidenceRefs": []
+    },
+    {
+      "id": "preview-deployment-and-rollback-drill",
+      "required": true,
+      "status": "not-collected",
+      "evidenceRefs": []
+    },
+    {
+      "id": "pwa-update-and-rollback-on-real-device",
+      "required": true,
+      "status": "not-collected",
+      "evidenceRefs": []
+    },
+    {
+      "id": "browser-local-data-export-restore-study",
+      "required": true,
+      "status": "not-collected",
+      "evidenceRefs": []
+    },
+    {
+      "id": "support-incident-tabletop",
+      "required": true,
+      "status": "not-collected",
+      "evidenceRefs": []
+    },
+    {
+      "id": "cloudflare-binding-and-deployment-identity-review",
+      "required": true,
+      "status": "not-collected",
+      "evidenceRefs": []
+    }
+  ],
+  "localStaticRunbooks": [
+    "incident-triage-and-support-routing",
+    "browser-local-data-export-and-restore",
+    "pwa-update-and-rollback",
+    "cloudflare-preview-live-deployment-rollback",
+    "provider-change-and-byok-incident",
+    "security-disclosure-and-secret-rotation-boundary"
+  ],
+  "prohibitedClaims": [
+    "operationally ready",
+    "rollback tested",
+    "launch ready"
+  ],
+  "provenance": {
+    "restoredBy": "W375 source handover integrity repair",
+    "restoredAt": "2026-06-26",
+    "evidenceCollection": "none"
+  }
+}

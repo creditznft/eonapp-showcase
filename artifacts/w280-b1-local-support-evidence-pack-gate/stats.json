@@ -1,0 +1,7 @@
+{
+  "schema": "eonapp.w280-b1.local-support-evidence-pack-gate-report.v1",
+  "wave": "W280-B1",
+  "ok": true,
+  "interpretation": "PASS proves only a local review-first support pack with no built-in transport or persistence. It is not a staffed support channel, security disclosure process, accessibility result, device result, legal review, deployment, or launch approval.",
+  "errors": []
+}

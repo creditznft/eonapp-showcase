@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="robots" content="index, follow" />
+  <title>EONAPP Tools & Support Router</title>
+  <meta name="description" content="Tools and support router for EONAPP: Workstation-first shortcuts into Build OS, Creator Studio, Trade Terminal, Automation Studio, Market, Realm, Local AI setup, and support triage." />
+  <link rel="canonical" href="https://eonapp.ch/tools.html" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/favicon.ico" />
+  <style>
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .section {
+      padding: 4rem 0;
+    }
+    .section-title {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 700;
+      margin-bottom: .75rem;
+    }
+    .section-sub {
+      color: #94a3b8;
+      margin-bottom: 2rem;
+    }
+    .hero-badge {
+      display: inline-block;
+      padding: .25rem .75rem;
+      border-radius: 2rem;
+      font-size: .8rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      background: rgba(99, 102, 241, .15);
+      border: 1px solid rgba(99, 102, 241, .3);
+      color: #a5b4fc;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      padding: .6rem 1.25rem;
+      border-radius: 1rem;
+      font-weight: 600;
+      font-size: .95rem;
+      border: 2px solid transparent;
+      text-decoration: none;
+      box-sizing: border-box;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      color: #fff;
+    }
+    .btn-outline {
+      border-color: rgba(148, 163, 184, .24);
+      color: #e2e8f0;
+      background: transparent;
+    }
+    .btn-lg {
+      padding: .8rem 1.75rem;
+      font-size: 1rem;
+    }
+    .btn-sm {
+      padding: .35rem .8rem;
+      font-size: .82rem;
+    }
+    .page-shell-pending .shell-utility-rail,
+    .page-shell-pending .tools-shell {
+      visibility: hidden;
+    }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(9, 13, 26, 0.97);
+      border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+    }
+    .header-inner {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) minmax(24rem, 30rem);
+      align-items: center;
+      min-height: 124px;
+      gap: 1rem;
+    }
+    .nav {
+      display: flex;
+      gap: 1rem;
+      min-width: 0;
+      justify-content: center;
+      flex-wrap: nowrap;
+      white-space: nowrap;
+      align-items: center;
+    }
+    .nav a { white-space: nowrap; }
+    .shell-utility-rail {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: .45rem;
+      min-width: 30rem;
+      flex-wrap: nowrap;
+    }
+    .sub-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 1.5rem;
+      min-width: 5.5rem;
+    }
+    .shell-lang-picker {
+      min-width: 15rem;
+      justify-content: flex-start;
+    }
+    .shell-lang-picker .shell-lang-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.1rem;
+      flex: 0 0 1.1rem;
+    }
+    .shell-lang-picker .shell-lang-label {
+      font-size: .82rem;
+      font-weight: 600;
+      color: #cbd5e1;
+      white-space: nowrap;
+    }
+    .shell-lang-picker .shell-lang-select {
+      min-width: 8.5rem;
+      min-height: 1.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      background: rgba(15, 23, 42, 0.92);
+      color: #e2e8f0;
+      padding: .2rem .55rem;
+      font: inherit;
+    }
+    .tools-hero {
+      padding: 3rem 0 1.25rem;
+    }
+    .tools-hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(280px, .9fr);
+      gap: 1rem;
+      align-items: start;
+      min-height: 23rem;
+    }
+    .tools-hero-copy,
+    .tools-hero-panel,
+    .tools-launch-card,
+    .tools-registry-grid {
+      border: 1px solid rgba(148, 163, 184, .18);
+      border-radius: 18px;
+      background: rgba(15, 23, 42, .8);
+    }
+    .tools-hero-copy { min-height: 22rem; padding: 1.25rem; }
+    .tools-hero-panel { min-height: 18rem; padding: 1.05rem; }
+    .tools-hero-sub { min-height: 4.75rem; }
+    .tools-hero-actions { min-height: 3.25rem; align-items: center; }
+    .tools-hero-list { min-height: 7rem; }
+    .tools-section-head { min-height: 6.5rem; }
+    .tools-launch-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: .85rem;
+      min-height: 16rem;
+    }
+    .tools-launch-card {
+      text-align: left;
+      padding: 1rem;
+      width: 100%;
+    }
+    .tools-launch-card h3 { min-height: 2.5rem; }
+    .tools-launch-card p { min-height: 4.5rem; }
+    #tool-live-workspace {
+      min-height: 48rem;
+    }
+    .tools-shell > .section:first-of-type {
+      min-height: 32rem;
+    }
+    .tools-shell > .section:first-of-type > .container {
+      min-height: 32rem;
+    }
+  </style>
+  <link rel="preload" href="/assets/css/base.css" as="style" />
+  <link rel="preload" href="/assets/css/layout.css" as="style" />
+  <link rel="preload" href="/assets/css/components.css" as="style" />
+  <link rel="stylesheet" href="/assets/css/base.css" />
+  <link rel="stylesheet" href="/assets/css/layout.css" />
+  <link rel="stylesheet" href="/assets/css/components.css" />
+  <link rel="stylesheet" href="/assets/css/tools.css" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://www.googletagmanager.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: blob: https:; connect-src 'self' ws: wss: https:; font-src 'self' data: https://cdn.jsdelivr.net; manifest-src 'self'; media-src 'self' blob:; worker-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'" />
+<meta property="og:title" content="EONAPP Tools & Support Router" />
+  <meta property="og:description" content="Tools and support router for EONAPP: Workstation-first shortcuts into Build OS, Creator Studio, Trade Terminal, Automation Studio, Market, Realm, Local AI setup, and support triage." />
+  <meta property="og:url" content="https://eonapp.ch/tools.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://eonapp.ch/assets/img/og/default.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="EONAPP Tools & Support Router" />
+  <meta name="twitter:description" content="Tools and support router for EONAPP: Workstation-first shortcuts into Build OS, Creator Studio, Trade Terminal, Automation Studio, Market, Realm, Local AI setup, and support triage." />
+    <script type="module" src="/assets/js/localStorage-shim.js"></script>
+</head>
+<body data-page-type="tools" data-monetization="disabled" data-w215-monetization-disabled="true" data-tool-kind="tool" class="page-shell-pending">
+<a href="#main" class="skip-to-content">Skip to main content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo">⚡ EONAPP<span>.ch</span></a>
+      <nav class="nav" aria-label="Main">
+        <a href="/workspace" data-nav-label="Workspace">AI</a>
+        <a href="/chat" data-nav-label="Chat">Chat</a>
+        <a href="/vault" data-nav-label="Vault">Vault</a>
+        <a href="/market" data-nav-label="Market">Market</a>
+        <a href="/eoncity" data-nav-label="City">EON City</a>
+        <a href="/rewards" data-nav-label="Status">Status</a>
+        <details class="nav-more">
+          <summary aria-label="More navigation">More</summary>
+          <div class="nav-more-menu">
+            <a href="/trade" data-nav-label="Trade">Trade</a>
+            <a href="/realm-studio" data-nav-label="Realm Studio">Realm Studio</a>
+            <a href="/tools.html" data-nav-label="Operator Tools" aria-current="page">Operator Tools</a>
+            <a href="/support.html" data-nav-label="Support">Support</a>
+          </div>
+        </details>
+      </nav>
+    <div class="shell-utility-rail">
+      <label class="sub-badge shell-lang-picker" data-shell-lang-placeholder="1" aria-label="Language">
+        <span class="shell-lang-icon" aria-hidden="true">🌐</span>
+        <span class="shell-lang-label">Language</span>
+        <select class="shell-lang-select" aria-label="Choose language" disabled>
+          <option>Auto</option>
+        </select>
+      </label>
+      <a class="btn btn-outline btn-sm" href="/profile" aria-label="Open profile" data-shell-profile="1">Profile</a>
+      <span id="sub-badge" class="sub-badge" aria-label="Subscription tier"></span>
+    </div>
+</div>
+  </header>
+
+  <main id="main" class="tools-shell" data-w133-tools-router="support-tools-footer-cleanup">
+    <section class="tools-hero">
+      <div class="container tools-hero-inner">
+        <div class="tools-hero-copy">
+          <div class="hero-badge" data-i18n-key="tools.hero.badge" data-i18n-fallback="Workflow router">Tools router</div>
+          <p class="sr-only">EONAPP Operator Tools Router</p>
+          <h1 data-i18n-key="tools.hero.title" data-i18n-fallback="EONAPP Workflow Router">EONAPP Tools & Support Router</h1>
+          <p class="tools-hero-sub" data-i18n-key="tools.hero.sub" data-i18n-fallback="This page is the clean public router for EONAPP workflows. It sends users to the right production surface: AI Workspace, Projects, Realm Studio, Trade Research, Automations, Market, EON City, Local AI setup, or Support.">This page is the clean public router for EONAPP workflows. It sends users to the right production surface: AI Workspace, Projects, Realm Studio, Trade Research, Automations, Market, EON City, Local AI setup, or Support.</p>
+          <div class="tools-hero-actions">
+            <a href="/workspace" class="btn btn-primary btn-lg" data-i18n-key="tools.hero.cta.workbench" data-i18n-fallback="Open Workstation / Build OS">Open Workstation / Build OS</a>
+            <a href="/realm-studio" class="btn btn-outline btn-lg" data-i18n-key="tools.hero.cta.creator" data-i18n-fallback="Open Creator Suite">Open Creator Suite</a>
+            <a href="/trade" class="btn btn-outline btn-lg">Open Trade Terminal</a>
+            <a href="/automations" class="btn btn-outline btn-lg">Automation Studio</a>
+            <a href="/local-ai" class="btn btn-outline btn-lg" data-i18n-key="tools.hero.cta.localai" data-i18n-fallback="Set Up Local AI">Set Up Local AI</a>
+            <a href="/support.html" class="btn btn-outline btn-lg" data-w133-tools-support-cta="1">Open Support Center</a>
+          </div>
+        </div>
+        <div class="tools-hero-panel">
+          <div class="tools-hero-panel-title" data-i18n-key="tools.hero.panel.title" data-i18n-fallback="Where users should go">Where users should go</div>
+          <ul class="tools-hero-list">
+            <li data-i18n-key="tools.hero.point1" data-i18n-fallback="AI Workspace for EONBOT and projects">AI Workspace for EONBOT and projects</li>
+            <li data-i18n-key="tools.hero.point2" data-i18n-fallback="Trade Research, Realm Studio, Automations">Trade Research, Realm Studio, Automations</li>
+            <li data-i18n-key="tools.hero.point3" data-i18n-fallback="Market, EON City, Vault, Local AI, and Support">Market, EON City, Vault, Local AI, and Support</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="tools-section-head">
+          <h2 class="section-title" data-i18n-key="tools.section.title" data-i18n-fallback="Open the right workflow">Open the right workflow</h2>
+          <p class="section-sub" data-i18n-key="tools.section.sub" data-i18n-fallback="Use the AI cockpit to route work into research, creation, browser execution, or local AI onboarding without exposing extra complexity to users.">Use the AI cockpit to route work into research, creation, browser execution, or local AI onboarding without exposing extra complexity to users.</p>
+        </div>
+        <div class="tools-launch-grid">
+          <button class="tools-launch-card" data-tool-action="workbench" data-fallback-href="/workspace" type="button">
+            <div class="tools-launch-icon">🧠</div>
+            <h3 data-i18n-key="tools.card.workbench.title" data-i18n-fallback="Research and build">Research and build</h3>
+            <p data-i18n-key="tools.card.workbench.desc" data-i18n-fallback="Open the mission engine for deep research, planning, and agent execution.">Open the mission engine for deep research, planning, and agent execution.</p>
+          </button>
+          <button class="tools-launch-card" data-tool-action="creator" data-fallback-href="/realm-studio" type="button">
+            <div class="tools-launch-icon">🎬</div>
+            <h3 data-i18n-key="tools.card.creator.title" data-i18n-fallback="Creator Suite">Creator Suite</h3>
+            <p data-i18n-key="tools.card.creator.desc" data-i18n-fallback="Move from idea to image, video, music, or code with one guided pipeline.">Move from idea to image, video, music, or code with one guided pipeline.</p>
+          </button>
+          <button class="tools-launch-card" data-tool-action="browser" data-fallback-href="/workspace" type="button">
+            <div class="tools-launch-icon">🌐</div>
+            <h3 data-i18n-key="tools.card.browser.title" data-i18n-fallback="Browser Cockpit">Browser Cockpit</h3>
+            <p data-i18n-key="tools.card.browser.desc" data-i18n-fallback="Research live sites, gather evidence, and run browser-based business tasks.">Research live sites, gather evidence, and run browser-based business tasks.</p>
+          </button>
+          <button class="tools-launch-card" data-tool-action="local-ai" data-fallback-href="/local-ai" type="button">
+            <div class="tools-launch-icon">⚙️</div>
+            <h3 data-i18n-key="tools.card.local.title" data-i18n-fallback="Local AI Setup">Local AI Setup</h3>
+            <p data-i18n-key="tools.card.local.desc" data-i18n-fallback="Find Ollama, LM Studio, and compatible local models for zero-token workflows.">Find Ollama, LM Studio, and compatible local models for zero-token workflows.</p>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="tools-section-head">
+          <h2 class="section-title" data-i18n-key="tools.registry.title" data-i18n-fallback="Agent tools behind the scenes">Agent tools behind the scenes</h2>
+          <p class="section-sub" data-i18n-key="tools.registry.sub" data-i18n-fallback="These tools stay behind the scenes; users see clean routes, not confusing internal modules.">These tools stay behind the scenes; users see clean routes, not confusing internal modules.</p>
+        </div>
+        <div id="tools-registry" class="tools-registry-grid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section section-alt" data-w133-tools-support-strip="1">
+      <div class="container">
+        <div class="tools-section-head">
+          <h2 class="section-title">Support and proof routes</h2>
+          <p class="section-sub">Every help path has a visible destination: EONBOT first, admin review only for proof/security exceptions, and public policy links always reachable from the footer.</p>
+        </div>
+        <div class="tools-launch-grid tools-launch-grid--support">
+          <a class="tools-launch-card tools-launch-card--link" href="/support.html">
+            <div class="tools-launch-icon">🛟</div>
+            <h3>Support Center</h3>
+            <p>Campaign status, signed sharing, Vault recovery, AI keys, Market previews, and bug/security triage.</p>
+          </a>
+          <a class="tools-launch-card tools-launch-card--link" href="/trust.html">
+            <div class="tools-launch-icon">✅</div>
+            <h3>Trust Center</h3>
+            <p>Production boundaries, campaign status, wallet safety, and clear user expectations.</p>
+          </a>
+          <a class="tools-launch-card tools-launch-card--link" href="/billing.html">
+            <div class="tools-launch-icon">🧾</div>
+            <h3>Campaign status</h3>
+            <p>No checkout, reward, provider callback, payout, or referral-value campaign is active in this deployment.</p>
+          </a>
+          <a class="tools-launch-card tools-launch-card--link" href="/telegram.html">
+            <div class="tools-launch-icon">✈️</div>
+            <h3>Telegram gateway</h3>
+            <p>Community entry and signed-sharing guidance. No reward action, provider SDK, postback, or grant state is active.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div id="tool-live-workspace" data-w127-tool-workspace="operator-router"></div>
+      </div>
+    </section>
+  </main>
+<script type="module" src="/assets/js/tools-page-deferred.js"></script>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="logo">⚡ EONAPP<span>.ch</span></a>
+      <p>Local-first AI tools, creator workflows, Vault safety, signed sharing, and support routes.</p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer product, help, community, and legal links">
+      <a href="/tools.html">Tools</a>
+      <a href="/support.html">Support</a>
+      <a href="/trust.html">Trust</a>
+      <a href="/billing.html">Billing</a>
+      <a href="/legal.html">Legal</a>
+      <a href="/terms.html">Terms</a>
+      <a href="/privacy.html">Privacy</a>
+    </nav>
+  </div>
+  <div class="footer-bottom container">
+    <p>© EONAPP.ch · Tools, support, trust, and local-first AI workflows</p>
+  </div>
+</footer>
+<!-- -- Mobile PWA Bottom Nav ------------------------------ -->
+<nav class="eon-bottom-nav" aria-label="Quick navigation">
+  <a href="/workspace" class="eon-bottom-nav-item" aria-label="Build"><span class="eon-bnav-icon">⚡</span><span class="eon-bnav-label">Build</span></a>
+  <a href="/realm-studio" class="eon-bottom-nav-item" aria-label="Create"><span class="eon-bnav-icon">🎨</span><span class="eon-bnav-label">Create</span></a>
+  <a href="/trade" class="eon-bottom-nav-item" aria-label="Trade"><span class="eon-bnav-icon">📊</span><span class="eon-bnav-label">Trade</span></a>
+  <a href="/vault" class="eon-bottom-nav-item" aria-label="Vault"><span class="eon-bnav-icon">🏦</span><span class="eon-bnav-label">Vault</span></a>
+  <a href="/chat" class="eon-bottom-nav-item" aria-label="AI Chat"><span class="eon-bnav-icon">💬</span><span class="eon-bnav-label">AI Chat</span></a>
+</nav>
+<script type="module" src="/assets/js/utils/button-truth-guard.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "schema": "eonapp.a15.i23.slo-policy.v1",
+  "sourceAuthority": "assets/js/observability/eon-observability-authority.js",
+  "measurementWindowMinutes": 5,
+  "minimumRequestSample": 20,
+  "alerts": {
+    "apiAvailabilityBelow": 0.995,
+    "functionP95MsAbove": 1200,
+    "api5xxRateAbove": 0.01,
+    "authFailureRateAbove": 0.05,
+    "billingCommandFailureRateAbove": 0.03,
+    "webhookDeliveryFailureRateAbove": 0.02,
+    "supportCaseFailureRateAbove": 0.05,
+    "rollbackRecoveryMinutesAbove": 20
+  },
+  "privacy": {
+    "prompts": false,
+    "replies": false,
+    "requestBodies": false,
+    "credentials": false,
+    "cookies": false,
+    "queryStrings": false,
+    "fullUrls": false,
+    "customStackTraces": false
+  },
+  "automaticRollback": false,
+  "productionEvidenceRequired": true
+}

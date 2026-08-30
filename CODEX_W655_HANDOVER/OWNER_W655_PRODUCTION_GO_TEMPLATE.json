@@ -1,0 +1,12 @@
+{
+  "schema": "eonapp.owner.w655.production-go.v1",
+  "generatedAt": "",
+  "distDigest": "",
+  "previewUrl": "",
+  "deploymentId": "",
+  "previewCertified": false,
+  "overallScore": 0,
+  "criticalDefects": null,
+  "productionGo": false,
+  "ownerDecision": "NO-GO"
+}

@@ -1,0 +1,3 @@
+import test from 'node:test'; import assert from 'node:assert/strict';
+import { buildEonKeyRedemptionDecision } from '../../assets/js/referrals/eon-referral-program-w629.js';
+test('W629E allows only matching individual server entitlements',()=>{const ok=buildEonKeyRedemptionDecision({accountId:'a',grant:{grantId:'g',accountId:'a',keyType:'signal',status:'available'},unlockId:'signal-project-slot-30d'});assert.equal(ok.ok,true);assert.equal(ok.serverEntitlementRequired,true);assert.equal(ok.wholeTierSubstitution,false);const wrong=buildEonKeyRedemptionDecision({accountId:'a',grant:{grantId:'g',accountId:'a',keyType:'signal',status:'available'},unlockId:'builder-premium-workflow-pack'});assert.equal(wrong.ok,false);});

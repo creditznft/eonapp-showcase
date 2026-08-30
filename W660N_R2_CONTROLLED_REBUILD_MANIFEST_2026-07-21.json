@@ -1,0 +1,182 @@
+{
+  "schema": "eonapp.w660n-r2.controlled-rebuild-manifest.v3",
+  "wave": "W660N",
+  "authorityRevision": "W660N-R2",
+  "generatedAt": "2026-07-21T01:30:00+05:30",
+  "supersedes": {
+    "authorityRevision": "W660N-R1",
+    "reason": "Windows-incompatible CODEXDocs/CodexDocs case collision and five ledger path case mismatches; corrected by canonicalizing all seven files under CODEXDocs and regenerating the complete ledger and roots."
+  },
+  "parent": {
+    "wave": "W660M",
+    "completeSourceSha256": "08cd5ea974b12f07a8a9a0ba880f956e3e9b2269608ee339bec3561328a67f06"
+  },
+  "scope": "EONCITY and EONNEXUS end-to-end continuity, physical orb visibility/state, living companion response, and intentional application-shell placement",
+  "runtimeSourceChanged": false,
+  "productionChanged": false,
+  "payload": {
+    "fileCount": 4973,
+    "bytes": 311336383,
+    "canonicalTreeSha256": "242c1873a76dd2642cef092af765a12ed369371afd4f166ce133d239a92a83b0",
+    "leafSetSha256": "93e54e85dcae0533770e4b4f3d6f32a7d9cd790219bd88c3c646ea6f8d8964d9",
+    "algorithm": "sha256-path-null-bytes-null-filehash-lf:utf8-byte-sort:v3-windows-case-safe",
+    "pathCasePolicy": "All paths are exact-case authority; archive contains no case-insensitive collisions; CODEXDocs is canonical.",
+    "excludes": [
+      "node_modules",
+      ".git",
+      ".env*"
+    ],
+    "excludesAuthorityFiles": [
+      "00_START_HERE_W660N_R2_FINAL_AUTHORITY_2026-07-21.md",
+      "W660N_R2_CONTROLLED_REBUILD_MANIFEST_2026-07-21.json",
+      "W660N_R2_FULL_FILE_LEDGER_2026-07-21.json",
+      "scripts/w660n-verify-source-authority.mjs"
+    ]
+  },
+  "authority": {
+    "ledger": {
+      "path": "W660N_R2_FULL_FILE_LEDGER_2026-07-21.json",
+      "bytes": 910991,
+      "sha256": "ecbda12c6d8be676322f2195b98291586d747f3de4f6372345a7f2572e0c1ce0"
+    },
+    "files": [
+      {
+        "path": "W660N_R2_FULL_FILE_LEDGER_2026-07-21.json",
+        "bytes": 910991,
+        "sha256": "ecbda12c6d8be676322f2195b98291586d747f3de4f6372345a7f2572e0c1ce0"
+      },
+      {
+        "path": "scripts/w660n-verify-source-authority.mjs",
+        "bytes": 8302,
+        "sha256": "de4bd26d3bcc9bb781614922059441febcbc4a030e25dafc161e970131fb0097"
+      },
+      {
+        "path": "00_START_HERE_W660N_R2_FINAL_AUTHORITY_2026-07-21.md",
+        "bytes": 1318,
+        "sha256": "6b6a45aeddeca30f9cf388a48aeb2154c4a59534fbca010b264b7cc531f98bd2"
+      }
+    ],
+    "manifestSelfHash": "not-applicable; complete ZIP SHA-256 is the envelope authority"
+  },
+  "distribution": {
+    "fileCount": 580,
+    "bytes": 98151465,
+    "sha256": "6140b8f175a571fb4f35285cb9eefd09856d38c2865a12e4cfd85072ae9d8bfc"
+  },
+  "certification": {
+    "w660nArchitecture": "29/29",
+    "w660nBehavior": "7/7",
+    "w660mLivingWorld": "19/19 + 6/6",
+    "w660fCityNexus": "18/18 + 3/3",
+    "w660gAppShellNexus": "17/17 + 4/4",
+    "w660hChatPageNexus": "20/20 + 6/6",
+    "fullW660ReleaseChain": "passed",
+    "emittedCandidate": "34 effective assets / 68 verified variants / zero failures",
+    "eslint": "zero warnings",
+    "secretScan": "4,128 text files / zero potential secrets",
+    "build": "passed",
+    "smoke": "passed"
+  },
+  "runtimeTruth": {
+    "physicalNexusStations": 9,
+    "intentionalAppPageContexts": 21,
+    "oneAssistant": true,
+    "oneConversationState": true,
+    "oneSelectedProjectState": true,
+    "oneBabylonRenderOwner": true,
+    "reviewFirst": true,
+    "productionChanged": false
+  },
+  "headedEvidence": {
+    "certified": false,
+    "reason": "System Chromium launched, but sandbox navigation to loopback preview was blocked with net::ERR_BLOCKED_BY_ADMINISTRATOR.",
+    "requiredNext": "Codex nine-district, mobile, reduced-motion and application-shell visual acceptance"
+  },
+  "changedFiles": [
+    {
+      "path": "package.json",
+      "bytes": 135090,
+      "sha256": "46822984213ba10d3d8a8508c3ce6cd19be2766b94d90dd5819e30120a480e3f"
+    },
+    {
+      "path": "assets/css/eon-city-product-layer.css",
+      "bytes": 20639,
+      "sha256": "a425b7d3fd77551001e9d62fba16de9c0bf96a3666c131a75bdb7eee86007757"
+    },
+    {
+      "path": "assets/css/eon-nexus-pulse.css",
+      "bytes": 12932,
+      "sha256": "82fb602b8e173cd768a379509361a6c3c6a6d3cbf23fe35304a7ff0b46bedac7"
+    },
+    {
+      "path": "assets/js/city/eon-city-play-core.js",
+      "bytes": 29355,
+      "sha256": "d297752ecf9007b12a2b56d9ac4cca428619b1f914b01aca07029cc448c08f0b"
+    },
+    {
+      "path": "assets/js/city/w659n/eon-city-w659n-product-layer.js",
+      "bytes": 57080,
+      "sha256": "3dfd7482fd0efbdfcf0ef6f48e0bd0376e62bf1597ca1a764e1dc34517944e7a"
+    },
+    {
+      "path": "assets/js/city/w660/eon-city-w660-nexus-hologram.js",
+      "bytes": 12879,
+      "sha256": "b8cfa37fd0c908d844232f6606f4ecd9fde44994a7483b52d4f248295d857af6"
+    },
+    {
+      "path": "assets/js/city/w660m/eon-city-w660m-experience-director.js",
+      "bytes": 11613,
+      "sha256": "e2b6e6bd77694406cea2e8f1cc9418dc928c67b8a0eb45ccb31c9d2d37a3ae58"
+    },
+    {
+      "path": "assets/js/city/w660n/eon-city-w660n-nexus-continuity.js",
+      "bytes": 6987,
+      "sha256": "d5d27ab48d643f5e5f7a77ec17955a85f0a292401a622bafcd7120c6aaf04978"
+    },
+    {
+      "path": "assets/js/nexus/eon-nexus-app-shell.js",
+      "bytes": 14129,
+      "sha256": "4ed81f3c32c21d3d8a8724e2009cd37ed388351a1bbb2618dc85121e21057641"
+    },
+    {
+      "path": "public/assets/css/eon-city-product-layer.css",
+      "bytes": 20639,
+      "sha256": "a425b7d3fd77551001e9d62fba16de9c0bf96a3666c131a75bdb7eee86007757"
+    },
+    {
+      "path": "scripts/w660-city-emitted-candidate-gate.mjs",
+      "bytes": 3747,
+      "sha256": "6c7659fcea4c659ea6da4518c190eae14a7f679b5a75f7eda2d6b6fdea58b45f"
+    },
+    {
+      "path": "scripts/w660f-city-nexus-gate.mjs",
+      "bytes": 3604,
+      "sha256": "d1e13d6c19e316afb0c1c6a1fd7375677198b0a2e85fc1a9d475a4dd8b11f6de"
+    },
+    {
+      "path": "scripts/w660n-eon-nexus-end-to-end-gate.mjs",
+      "bytes": 7019,
+      "sha256": "c632b34c5a0f4432fde8a0251f6ab1f4dc379849c6efe615f117488fedcc0c6c"
+    },
+    {
+      "path": "tests/unit/w660f-city-nexus.test.mjs",
+      "bytes": 4457,
+      "sha256": "1df14e4194c69c4d41e17da77d306d22e60c072aac2e370c9add837d5e1565cd"
+    },
+    {
+      "path": "tests/unit/w660n-eon-nexus-end-to-end.test.mjs",
+      "bytes": 9433,
+      "sha256": "479953b2d66e04357fc942fd2cbbbc51a6768d5e730f80e6bba77948adccfa23"
+    },
+    {
+      "path": "docs/W660N_EONCITY_EONNEXUS_VISION_LOCK_2026-07-20.md",
+      "bytes": 4177,
+      "sha256": "620638295b6d59b954f3e74317fc4923b844195560cae35e15c0b36e50d7726b"
+    },
+    {
+      "path": "docs/W660N_EON_NEXUS_END_TO_END_CONTINUITY_RECEIPT_2026-07-20.md",
+      "bytes": 3376,
+      "sha256": "2c69901df10edd947f1c4e49753483f47305aa5d0e9041c40dbdbff8dda5ea22"
+    }
+  ]
+}

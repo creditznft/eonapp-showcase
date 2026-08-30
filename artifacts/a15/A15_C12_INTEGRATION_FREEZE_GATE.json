@@ -1,0 +1,236 @@
+{
+  "schema": "eonapp.a15.c12.integration-freeze-gate.v1",
+  "wave": "C12",
+  "generatedAt": "2026-08-05T00:59:58.802Z",
+  "ok": true,
+  "passed": 42,
+  "total": 42,
+  "checks": [
+    {
+      "id": "receipt:I00",
+      "pass": true,
+      "detail": "A15_I00_C01_VALIDATION_RECEIPT.json"
+    },
+    {
+      "id": "receipt:I01",
+      "pass": true,
+      "detail": "A15_I01_SYSTEM_DISPOSITION_RECEIPT.json"
+    },
+    {
+      "id": "receipt:I02",
+      "pass": true,
+      "detail": "A15_I02_CURRENT_PRODUCT_AUTHORITY.json"
+    },
+    {
+      "id": "receipt:I03",
+      "pass": true,
+      "detail": "A15_I03_VALIDATION_RECEIPT.json"
+    },
+    {
+      "id": "receipt:I04",
+      "pass": true,
+      "detail": "A15_I04_VALIDATION_RECEIPT.json"
+    },
+    {
+      "id": "receipt:I05",
+      "pass": true,
+      "detail": "A15_I05_VALIDATION_RECEIPT.json"
+    },
+    {
+      "id": "receipt:I06",
+      "pass": true,
+      "detail": "A15_I06_VALIDATION_RECEIPT.json"
+    },
+    {
+      "id": "receipt:I07",
+      "pass": true,
+      "detail": "A15_I07_VALIDATION_RECEIPT.json"
+    },
+    {
+      "id": "receipt:I08",
+      "pass": true,
+      "detail": "A15_I08_VALIDATION_RECEIPT.json"
+    },
+    {
+      "id": "receipt:I09",
+      "pass": true,
+      "detail": "A15_I09_VALIDATION_RECEIPT.json"
+    },
+    {
+      "id": "receipt:I10",
+      "pass": true,
+      "detail": "A15_I10_VALIDATION_RECEIPT.json"
+    },
+    {
+      "id": "receipt:I11",
+      "pass": true,
+      "detail": "A15_I11_VALIDATION_RECEIPT.json"
+    },
+    {
+      "id": "receipt:I12",
+      "pass": true,
+      "detail": "A15_I12_VALIDATION_RECEIPT.json"
+    },
+    {
+      "id": "receipt:I13",
+      "pass": true,
+      "detail": "A15_I13_VALIDATION_RECEIPT.json"
+    },
+    {
+      "id": "receipt:I14",
+      "pass": true,
+      "detail": "A15_I14_VALIDATION_RECEIPT.json"
+    },
+    {
+      "id": "receipt:I15",
+      "pass": true,
+      "detail": "A15_I15_VALIDATION_RECEIPT.json"
+    },
+    {
+      "id": "receipt:I16",
+      "pass": true,
+      "detail": "A15_I16_VALIDATION_RECEIPT.json"
+    },
+    {
+      "id": "receipt:I17",
+      "pass": true,
+      "detail": "A15_I17_VALIDATION_RECEIPT.json"
+    },
+    {
+      "id": "receipt:I18",
+      "pass": true,
+      "detail": "A15_I18_VALIDATION_RECEIPT.json"
+    },
+    {
+      "id": "receipt:I19",
+      "pass": true,
+      "detail": "A15_I19_VALIDATION_RECEIPT.json"
+    },
+    {
+      "id": "receipt:I20",
+      "pass": true,
+      "detail": "A15_I20_VALIDATION_RECEIPT.json"
+    },
+    {
+      "id": "receipt:I21",
+      "pass": true,
+      "detail": "A15_I21_VALIDATION_RECEIPT.json"
+    },
+    {
+      "id": "receipt:I22",
+      "pass": true,
+      "detail": "A15_I22_VALIDATION_RECEIPT.json"
+    },
+    {
+      "id": "receipt:I23",
+      "pass": true,
+      "detail": "A15_I23_VALIDATION_RECEIPT.json"
+    },
+    {
+      "id": "receipt:I24",
+      "pass": true,
+      "detail": "A15_I24_VALIDATION_RECEIPT.json"
+    },
+    {
+      "id": "receipt:I25",
+      "pass": true,
+      "detail": "A15_I25_VALIDATION_RECEIPT.json"
+    },
+    {
+      "id": "receipt:C01",
+      "pass": true,
+      "detail": "A15_I00_C01_VALIDATION_RECEIPT.json"
+    },
+    {
+      "id": "receipt:C02",
+      "pass": true,
+      "detail": "A15_C02_VALIDATION_RECEIPT.json"
+    },
+    {
+      "id": "receipt:C03",
+      "pass": true,
+      "detail": "A15_C03_VALIDATION_RECEIPT.json"
+    },
+    {
+      "id": "receipt:C04",
+      "pass": true,
+      "detail": "A15_C04_VALIDATION_RECEIPT.json"
+    },
+    {
+      "id": "receipt:C05",
+      "pass": true,
+      "detail": "A15_C05_VALIDATION_RECEIPT.json"
+    },
+    {
+      "id": "receipt:C06",
+      "pass": true,
+      "detail": "A15_C06_VALIDATION_RECEIPT.json"
+    },
+    {
+      "id": "receipt:C07",
+      "pass": true,
+      "detail": "A15_C07_VALIDATION_RECEIPT.json"
+    },
+    {
+      "id": "receipt:C08",
+      "pass": true,
+      "detail": "A15_C08_VALIDATION_RECEIPT.json"
+    },
+    {
+      "id": "receipt:C09",
+      "pass": true,
+      "detail": "A15_C09_VALIDATION_RECEIPT.json"
+    },
+    {
+      "id": "receipt:C10",
+      "pass": true,
+      "detail": "A15_C10_VALIDATION_RECEIPT.json"
+    },
+    {
+      "id": "receipt:C11",
+      "pass": true,
+      "detail": "A15_C11_VALIDATION_RECEIPT.json"
+    },
+    {
+      "id": "c12-source-freeze-valid",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "id": "thirty-eight-waves",
+      "pass": true,
+      "detail": "38/38"
+    },
+    {
+      "id": "twelve-source-categories",
+      "pass": true,
+      "detail": "12"
+    },
+    {
+      "id": "codex-handover-ready",
+      "pass": true,
+      "detail": "source authority only"
+    },
+    {
+      "id": "launch-remains-no-go",
+      "pass": true,
+      "detail": "V01-V10 pending"
+    }
+  ],
+  "implementationWavesComplete": 38,
+  "implementationWavesTotal": 38,
+  "sourceCategoryCount": 12,
+  "sourceProgrammeComplete": true,
+  "sourceDigest": "3e0fed3fffeccf5ac81caef5f9a09ca7d1812ff6b956d377bf392a3efccbc316",
+  "targetAcceptanceScore": 9.5,
+  "acceptanceScore": null,
+  "externalCertificationGatesPending": 10,
+  "codexHandoverReady": true,
+  "launchDecision": "NO-GO",
+  "productionReady": false,
+  "automaticDeployment": false,
+  "limitations": [
+    "Source implementation is complete; authenticated rendered, provider, billing-test, device, endurance, Preview and Production evidence remains pending.",
+    "No acceptance score is assigned until the external evidence matrix passes."
+  ]
+}

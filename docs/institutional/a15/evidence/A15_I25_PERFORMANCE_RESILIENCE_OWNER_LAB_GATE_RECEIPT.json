@@ -1,0 +1,29 @@
+{
+  "schema": "eonapp.a15.i25.performance-resilience-owner-lab-gate-receipt.v1",
+  "generatedAt": "2026-08-04T21:10:59.109Z",
+  "wave": "I25",
+  "status": "pass",
+  "coreRouteCount": 13,
+  "coreRoutesReachingCityImplementation": 0,
+  "distinctCityModulesInCoreClosure": 0,
+  "coreClosureDigest": "6b337a26420a7bce7d611912641ec38b512c7b43901418b137092a8b8a8564e5",
+  "cwvThresholds": {
+    "lcpMsP75Max": 2500,
+    "inpMsP75Max": 200,
+    "clsP75Max": 0.1,
+    "minimumSamplesPerRouteProfile": 20
+  },
+  "deterministicCwvEvaluatorPassed": true,
+  "deterministicEnduranceEvaluatorPassed": true,
+  "ownerLabReceiptBindingPassed": true,
+  "sourcePerformancePlansPassed": true,
+  "builtArtifactCertified": false,
+  "authenticatedBrowserCertified": false,
+  "physicalDeviceCertified": false,
+  "productionAuthorized": false,
+  "automaticCertification": false,
+  "externalActionPerformed": false,
+  "policySha256": "b3cbf56cfeabb6b0f538c147a76ea0553fb8c5812c1784dd0ea8d0ac42c24385",
+  "errors": [],
+  "digest": "11b868e8942d1a476e0566156c1cf8e11163c6ac73792bf18d7f5104aab505ee"
+}

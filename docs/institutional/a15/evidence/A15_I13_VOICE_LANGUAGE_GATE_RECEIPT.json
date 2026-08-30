@@ -1,0 +1,92 @@
+{
+  "schema": "eonapp.a15.i13.voice-language-gate-receipt.v1",
+  "generatedAt": "2026-08-04T19:02:50.022Z",
+  "wave": "I13",
+  "status": "pass",
+  "authority": {
+    "schema": "eonapp.voice-session-authority.a15.v1",
+    "dictateAutoSend": false,
+    "dictateEditableBeforeSend": true,
+    "voiceConversationBeta": true,
+    "voiceConversationAutoSendDisclosed": true,
+    "voiceConversationConsentScope": "sessionStorage-bounded",
+    "activeMicrophonePersisted": false,
+    "transcriptPersisted": false,
+    "audioPersisted": false,
+    "microphoneRequiresUserAction": true,
+    "typedFallbackPermanent": true,
+    "stopClearsConsent": true
+  },
+  "review": {
+    "schema": "eonapp.voice-session-authority.a15.v1",
+    "mode": "voice-conversation-beta",
+    "title": "Voice Conversation (Beta)",
+    "locale": "en-US",
+    "routeLabel": "Connected AI + browser voice",
+    "browserAssisted": true,
+    "autoSendFinalTurns": true,
+    "continuousListeningUntilStopped": true,
+    "microphoneStartsOnlyAfterConfirmation": true,
+    "stopEndsMicrophoneAndSpokenOutput": true,
+    "dictateAlternative": "Use Dictate when you want speech converted to editable text without automatic sending.",
+    "privacy": "Browser speech recognition may use a browser or operating-system service. EONAPP does not store audio."
+  },
+  "simulations": {
+    "dictate": {
+      "ok": true,
+      "mode": "dictate",
+      "editableBeforeSend": true,
+      "autoSend": false,
+      "error": ""
+    },
+    "denied": {
+      "ok": false,
+      "error": "voice-disclosures-not-acknowledged"
+    },
+    "granted": {
+      "schema": "eonapp.voice-session-authority.a15.v1",
+      "token": "[session-token-redacted]",
+      "locale": "en-US",
+      "routeLabel": "Connected AI + browser voice",
+      "issuedAt": "2026-08-04T19:00:00.000Z",
+      "expiresAt": "2026-08-04T19:30:00.000Z",
+      "autoSendFinalTurns": true,
+      "continuousListeningUntilStopped": true,
+      "containsAudio": false,
+      "containsTranscript": false,
+      "activeMicrophone": false
+    },
+    "authorized": {
+      "ok": true,
+      "mode": "voice-conversation",
+      "editableBeforeSend": false,
+      "autoSend": true,
+      "continuous": true,
+      "error": ""
+    },
+    "expired": {
+      "ok": false,
+      "error": "voice-consent-missing-or-expired"
+    },
+    "blockedFallback": {
+      "mode": "blocked",
+      "typedChatAvailable": true,
+      "reason": "This browser does not expose speech recognition. Keep typing, use your keyboard or operating-system dictation, or try a supported full browser."
+    }
+  },
+  "sourceFiles": [
+    "assets/js/chat/eon-voice-session-authority.js",
+    "assets/js/chat/eon-voice-fallback-strategy.js",
+    "assets/js/chat/eonbot-voice-capability-gateway.js",
+    "assets/js/chat/eonbot-interaction-preferences.js",
+    "assets/js/chat-page.js",
+    "assets/css/chat.css",
+    "index.html",
+    "chat.html",
+    "scripts/w394b-multilingual-voice-gate.mjs",
+    "scripts/w479v-eonbot-voice-gate.mjs",
+    "tests/unit/a15-i13-voice-language-modes.test.mjs"
+  ],
+  "errors": [],
+  "digest": "0b387f5da2115f90c5cb4c8b27652d055fe76d8ede4ff5392edf8cd9d8848628"
+}

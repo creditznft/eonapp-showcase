@@ -1,0 +1,19 @@
+{
+  "schema": "eonapp.frozen-cloudflare-release.w719.v1",
+  "wave": "W719",
+  "ownerAccepted": false,
+  "previewCertified": false,
+  "productionGo": false,
+  "overallScore": null,
+  "minimumPillarScore": null,
+  "p0Open": 0,
+  "p1Open": 0,
+  "sourceCommit": "",
+  "candidateDigest": "",
+  "pagesRootDigest": "",
+  "previewUrl": "",
+  "previewDeploymentId": "",
+  "rollbackDeploymentId": "",
+  "approvedAt": null,
+  "notes": "Complete only after W718 exact certification, browser/device evidence and Preview verification."
+}

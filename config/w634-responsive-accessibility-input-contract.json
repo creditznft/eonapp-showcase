@@ -1,0 +1,36 @@
+{
+  "schema": "eonapp.contract.w634-responsive-accessibility-input.2026-07-11.v1",
+  "wave": "W634",
+  "requirements": [
+    "Every emitted public document has one main landmark, one static h1 fallback, a valid skip target, a viewport declaration and no duplicate id.",
+    "Every emitted public document is assigned to one responsive layout owner.",
+    "Compact, standard, wide, portrait, landscape, short-landscape and standalone PWA states are source-defined.",
+    "Keyboard, pointer, touch, controller and voice input are descriptive capability states, never automatic permission or execution claims.",
+    "Coarse-pointer controls have a shared 44 CSS-pixel minimum target foundation.",
+    "Keyboard focus remains visibly outlined, including forced-colors mode.",
+    "Reduced-motion preferences disable smooth scrolling and collapse non-essential animation duration.",
+    "Native form validation is announced and aria-invalid is removed after a valid edit.",
+    "The shared bridge must not request media, sensors, fullscreen, orientation lock, controller polling or network access.",
+    "Source certification remains separate from real physical-device, browser, zoom, assistive-technology and PWA evidence."
+  ],
+  "deviceProfiles": [
+    { "id": "desktop-wide", "width": 1440, "height": 900, "expectedLayout": "wide", "expectedOrientation": "landscape", "standalone": false },
+    { "id": "desktop-narrow", "width": 1024, "height": 768, "expectedLayout": "standard", "expectedOrientation": "landscape", "standalone": false },
+    { "id": "android-portrait", "width": 412, "height": 915, "expectedLayout": "compact", "expectedOrientation": "portrait", "coarsePointer": true, "standalone": false },
+    { "id": "iphone-portrait", "width": 390, "height": 844, "expectedLayout": "compact", "expectedOrientation": "portrait", "coarsePointer": true, "standalone": false },
+    { "id": "ipad-portrait", "width": 820, "height": 1180, "expectedLayout": "standard", "expectedOrientation": "portrait", "coarsePointer": true, "standalone": false },
+    { "id": "pwa-portrait", "width": 430, "height": 932, "expectedLayout": "compact", "expectedOrientation": "portrait", "coarsePointer": true, "standalone": true },
+    { "id": "phone-short-landscape", "width": 844, "height": 390, "expectedLayout": "standard", "expectedOrientation": "landscape", "coarsePointer": true, "shortLandscape": true, "standalone": false },
+    { "id": "zoomed-css-viewport", "width": 320, "height": 640, "expectedLayout": "compact", "expectedOrientation": "portrait", "standalone": false }
+  ],
+  "physicalEvidenceRequired": [
+    "Windows keyboard and 200 percent zoom",
+    "Android Chrome portrait and landscape",
+    "iPhone Safari portrait and landscape safe areas",
+    "iPad Safari keyboard and touch",
+    "installed PWA display mode and update transition",
+    "screen reader landmark, name, state and error announcements",
+    "real controller mapping and disconnect behavior",
+    "browser speech availability and typed fallback"
+  ]
+}

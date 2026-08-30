@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <link rel="manifest" href="/manifest.webmanifest">
+  <title>EON Workstation | EONAPP.ch</title>
+  <meta name="description" content="EON Workstation: enterprise AI cockpit for internal apps, safe web reading, Code Maker, EONBOT operations, and external-site access." />
+  <link rel="canonical" href="https://eonapp.ch/eon-browser" />
+  <meta property="og:title" content="EON Workstation | EONAPP.ch" />
+  <meta property="og:description" content="EON Workstation: enterprise AI cockpit for internal EON apps, safe web reading, Code Maker, EONBOT, and external-site access." />
+  <meta property="og:url" content="https://eonapp.ch/eon-browser" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://eonapp.ch/assets/img/og/default.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="EON Workstation | EONAPP.ch" />
+  <meta name="twitter:description" content="Decentralized AI business cockpit on Polygon. Run EONBOT AI, manage agents, and grow your business — no login required." />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://eonapp.ch/"},{"@type":"ListItem","position":2,"name":"EON Workstation","item":"https://eonapp.ch/eon-browser"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"EON Workstation | EONAPP.ch","url":"https://eonapp.ch/eon-browser","applicationCategory":"BusinessApplication","description":"Enterprise AI workstation for EON apps, Code Maker, EONBOT operations, safe web reading, and local-first provider workflows.","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"EONAPP.ch","url":"https://eonapp.ch/"}}</script>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://www.googletagmanager.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: blob: https:; connect-src 'self' ws: wss: https: http://127.0.0.1:* http://localhost:*; font-src 'self' data: https://cdn.jsdelivr.net; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob:; frame-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'" />
+  <style id="ew-critical-shell">
+    body.eon-workstation-v3:not(.ew-legacy-ready) main.browser-page > :not(.eon-browser-chrome):not(.browser-body):not(.ew-drawer) { display: none !important; }
+    body.eon-workstation-v3:not(.ew-legacy-ready) .browser-ai-sidebar,
+    body.eon-workstation-v3 .browser-tab-bar,
+    body.eon-workstation-v3 .browser-nav-bar,
+    body.eon-workstation-v3 .browser-workspace-bar,
+    body.eon-workstation-v3 #eon-newtab-page,
+    body.eon-workstation-v3 #browser-frame-host,
+    body.eon-workstation-v3 #browser-frame-pool,
+    body.eon-workstation-v3 #eon-contextual-feature-gate { display: none !important; }
+    body.eon-workstation-v3 .browser-body { display: block; }
+  </style>
+  <link rel="preload" href="/assets/css/base.css" as="style" />
+  <link rel="preload" href="/assets/css/layout.css" as="style" />
+  <link rel="preload" href="/assets/css/eon-workstation.css" as="style" />
+  <link rel="stylesheet" href="/assets/css/base.css" />
+  <link rel="stylesheet" href="/assets/css/layout.css" />
+  <link rel="stylesheet" href="/assets/css/eon-workstation.css" />
+  <script type="module" src="/assets/js/localStorage-shim.js"></script>
+</head>
+<body class="eon-workstation-v1 eon-workstation-v2 eon-workstation-v3 ew-sidebar-closed" data-page-type="tool" data-tool-kind="browser" data-disable-contextual-feature-gates="1">
+<a href="#main" class="skip-to-content">Skip to main content</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="logo">⚡ EONAPP<span>.ch</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/eon-browser.html" data-i18n-key="nav.ai-cockpit">AI Cockpit</a>
+      <a href="/chat.html" data-i18n-key="nav.ai-chat">AI Chat</a>
+      <a href="/trade">Trade</a>
+      <a href="/vault">Vault</a>
+      <a href="/market">Market</a>
+      <a href="/realm">Realm</a>
+      <a href="/subscription">Plans</a>
+    </nav>
+
+    <span id="sub-badge" class="sub-badge" aria-label="Subscription tier"></span>
+  </div>
+</header>
+<main id="main" class="browser-page">
+  <!-- EON Workstation Chrome: command deck + tabs + address bar -->
+  <div class="eon-browser-chrome">
+    <section id="ew-command-deck" class="ew-command-deck" aria-label="EON Workstation command deck">
+      <div class="ew-command-head">
+        <div>
+          <p class="ew-kicker">Flagship AI operating desk</p>
+          <h1>EON Workstation</h1>
+          <p class="ew-subtitle">Operate EON apps, Code Maker, safe web reading, and EONBOT-guided work from one production cockpit.</p>
+        </div>
+        <div class="ew-active-chip" aria-live="polite">
+          <span id="ew-active-mode">Home</span>
+          <strong id="ew-active-title">Workstation Home</strong>
+        </div>
+      </div>
+      <div class="ew-command-row">
+        <label class="sr-only" for="ew-command-input">Open an EON app or enter a website</label>
+        <input id="ew-command-input" class="ew-command-input" type="text" placeholder="Open Code Maker, chat, vault, EON City — or enter a website" autocomplete="off" spellcheck="false" />
+        <button type="button" class="btn btn-primary" id="ew-open-command">Open</button>
+        <button type="button" class="btn btn-outline" id="ew-read-command">Read web</button>
+        <button type="button" class="btn btn-outline" id="ew-external-command">Open external</button>
+      </div>
+      <div class="ew-mode-row" aria-label="Workstation app shortcuts" data-w137-quick-launchers="canonical">
+        <button type="button" data-ew-open="/code-maker.html">⌘ Code Maker</button>
+        <button type="button" data-ew-open="/chat.html">✦ EONBOT Chat</button>
+        <button type="button" data-ew-open="/vault.html">◆ Vault</button>
+        <button type="button" data-ew-open="/market">◈ Preview Studio</button>
+        <button type="button" data-ew-open="/realm.html">⬢ Realm / EON City</button>
+        <button type="button" data-ew-open="/automations">◎ Automations</button>
+        <button type="button" data-ew-open="/creator-studio.html">▣ Creator Studio</button>
+        <button type="button" data-ew-open="/trade.html">△ Trade Research</button>
+        <button type="button" data-ew-open="/workbench.html#device-lab">▤ Device Lab</button>
+        <button type="button" data-ew-open="/realm-code-preview.html">▥ Code Showcase</button>
+        <button type="button" id="ew-home-command">⌂ Home</button>
+      </div>
+      <div class="ew-drawer-row" aria-label="Workstation control drawers">
+        <button type="button" data-ew-drawer="apps">▦ Apps</button>
+        <button type="button" data-ew-drawer="models">⚙ Models</button>
+        <button type="button" data-ew-drawer="accounts">◉ Accounts</button>
+        <button type="button" data-ew-drawer="passwords">🔑 Passwords</button>
+        <button type="button" data-ew-drawer="notifications">🔔 Notify</button>
+        <button type="button" data-ew-drawer="activity">☷ Activity</button>
+        <button type="button" id="ew-sidebar-toggle" aria-pressed="true">✦ EONBOT rail</button>
+        <span id="ew-live-status" class="ew-live-status" aria-live="polite">Workstation booting…</span>
+      </div>
+    </section>
+    <template id="ew-legacy-chrome-template">
+    <!-- Tab Bar: dynamically rendered by JS -->
+    <div class="browser-tab-bar">
+      <div id="eon-tab-list" class="eon-tab-list" role="tablist" aria-label="Browser tabs"></div>
+      <button class="browser-newtab-btn" id="eon-new-tab-btn" type="button" aria-label="New tab" title="New tab">+</button>
+      <div class="browser-tab-bar-spacer"></div>
+    </div>
+    <!-- Address / Navigation Bar -->
+    <div class="browser-nav-bar">
+      <div class="browser-nav-btns">
+        <button class="browser-ctrl-btn" id="browser-back" type="button" aria-label="Go back" title="Back" disabled>&#8592;</button>
+        <button class="browser-ctrl-btn" id="browser-forward" type="button" aria-label="Go forward" title="Forward" disabled>&#8594;</button>
+        <button class="browser-ctrl-btn" id="browser-refresh" type="button" aria-label="Refresh" title="Refresh page">&#8635;</button>
+        <button class="browser-ctrl-btn" id="browser-home" type="button" aria-label="Home" title="Go to EONAPP home">&#8962;</button>
+      </div>
+      <div class="browser-addressbar-wrap">
+        <span class="browser-lock" aria-hidden="true">&#128274;</span>
+        <input id="browser-url" class="browser-url-input" type="url" value=""
+               placeholder="Open an EON app or enter a website to read/open externally..." autocomplete="off" spellcheck="false" />
+        <button class="browser-go-btn" id="browser-load" type="button" aria-label="Navigate to address">&#8629;</button>
+      </div>
+      <div class="browser-nav-extra">
+        <button class="browser-ctrl-btn" id="browser-fetch-source" type="button" aria-label="Fetch page source" title="Fetch readable source">&#8615;</button>
+        <button class="browser-ctrl-btn" id="browser-bookmark-current" type="button" aria-label="Bookmark current page" title="Bookmark current page">&#9734;</button>
+        <button class="browser-ctrl-btn" id="eon-bookmarks-btn" type="button" aria-label="Bookmarks" title="Saved bookmarks">&#128278;</button>
+        <button class="browser-ctrl-btn" id="eon-apps-btn" type="button" aria-label="EON Apps" title="EON Apps — all built-in pages">&#9867;</button>
+        <button class="browser-ctrl-btn" id="eon-pwdmgr-btn" type="button" aria-label="Password Vault" title="Save &amp; view passwords">&#128273;</button>
+        <button class="browser-ctrl-btn" id="eon-history-btn" type="button" aria-label="History" title="Browsing history">&#128221;</button>
+        <button class="browser-ctrl-btn" id="eon-agent-btn" type="button" aria-label="AI Activity Monitor" title="AI Activity Monitor — live dual-layer view">&#129302;</button>
+        <button class="browser-ctrl-btn" id="eon-accounts-btn" type="button" aria-label="Connected Accounts" title="Connected Accounts — Google, X, LinkedIn">&#128100;</button>
+        <button class="browser-ctrl-btn" id="eon-models-btn" type="button" aria-label="AI Model Picker" title="Discover &amp; switch AI models">&#9881;</button>
+        <button class="browser-ctrl-btn" id="eon-notif-btn" type="button" aria-label="Enable push notifications" title="Enable push notifications">&#128276;</button>
+        <span id="eon-notif-status" class="browser-notif-status" aria-live="polite">Notifications off</span>
+        <div class="eon-ai-pulse-wrap" id="eon-ai-pulse-wrap" role="button" tabindex="0" aria-label="AI Activity status" title="Click to open AI Activity Monitor">
+          <div class="eon-ai-pulse" id="eon-ai-pulse"></div>
+          <span class="eon-ai-pulse-label" id="eon-ai-pulse-label">AI ready</span>
+        </div>
+      <button class="browser-ctrl-btn browser-ai-toggle" id="browser-ai-panel-toggle" type="button"
+                aria-label="Toggle EONBOT AI panel" title="EONBOT AI" aria-pressed="true">&#10022;</button>
+        <div class="browser-provider-chip" id="browser-provider-chip" aria-live="polite">Provider pending</div>
+      </div>
+    </div>
+    <!-- Workspaces Bar: only Cockpit-specific internal tools. Main app nav already lives in the global header. -->
+    <div class="browser-bookmarks-bar browser-workspace-bar" id="eon-bookmarks-bar" aria-label="Cockpit workspaces" data-w137-workspace-bar="canonical">
+      <button class="browser-quick-site browser-bookmark-btn eon-app-shortcut" type="button" data-url="/code-maker.html" title="Code Maker — enterprise browser IDE">⌘ Code Maker</button>
+      <button class="browser-quick-site browser-bookmark-btn eon-app-shortcut" type="button" data-url="/realm-code-preview.html" title="Code Showcase and code explorer">▥ Code Showcase</button>
+      <button class="browser-quick-site browser-bookmark-btn eon-app-shortcut" type="button" data-url="/workbench.html#device-lab" title="Device Lab">▤ Device Lab</button>
+      <button class="browser-quick-site browser-bookmark-btn eon-app-shortcut" type="button" data-url="/creator-studio.html" title="Creator Studio">▣ Creator Studio</button>
+      <button class="browser-quick-site browser-bookmark-btn eon-app-shortcut" type="button" data-url="/automations" title="Automations">◎ Automations</button>
+      <button class="browser-quick-site browser-bookmark-btn eon-app-shortcut" type="button" data-url="/trade.html" title="Trade Research">△ Trade Research</button>
+      <button class="browser-quick-site browser-bookmark-btn eon-app-shortcut" type="button" data-url="/vault" title="Vault profile, backup, and provider verification">🧰 Setup</button>
+      <span id="eon-user-bookmarks" class="browser-user-bookmarks" aria-label="Saved bookmarks"></span>
+    </div>
+
+    </template>
+  </div>
+
+  <div class="browser-body" id="browser-body">
+    <div class="browser-viewport-wrap">
+      <section id="ew-workstation-stage" class="ew-workstation-stage" aria-label="EON Workstation active workspace" aria-live="polite"><div class="ew-stage-loading"><span></span><strong>Starting EON Workstation…</strong><small>Preparing apps, Code Maker, and EONBOT operator rail.</small></div></section>
+      <template id="ew-legacy-viewport-template">
+      <!-- Legacy compatibility viewport mounts on demand -->
+      <span id="browser-current-url" hidden></span>
+      <!-- New Tab Page: shown when no URL is loaded in active tab -->
+      <div class="eon-newtab-page" id="eon-newtab-page" hidden aria-label="New Tab">
+        <div class="eon-newtab-inner">
+          <div class="eon-newtab-logo">⚡ <span>EON</span>APP</div>
+          <p class="eon-newtab-tagline">Your AI business cockpit. EONBOT is ready to operate with you.</p>
+          <div class="eon-newtab-search-wrap">
+            <input id="eon-newtab-search" class="eon-newtab-search" type="text"
+                   placeholder="Search the web or enter an address…" autocomplete="off" spellcheck="false" />
+            <button id="eon-newtab-go" class="eon-newtab-go-btn" type="button" aria-label="Go">→</button>
+          </div>
+          <div class="eon-newtab-apps" aria-label="EON Apps">
+            <button class="eon-newtab-app-card" type="button" data-app-url="/eon-browser.html">
+              <span class="eon-newtab-app-icon">🌐</span><span class="eon-newtab-app-label">AI Cockpit</span>
+            </button>
+            <button class="eon-newtab-app-card" type="button" data-app-url="/chat.html">
+              <span class="eon-newtab-app-icon">💬</span><span class="eon-newtab-app-label">AI Chat</span>
+            </button>
+            <button class="eon-newtab-app-card" type="button" data-app-url="/trade.html">
+              <span class="eon-newtab-app-icon">📈</span><span class="eon-newtab-app-label">Trade</span>
+            </button>
+            <button class="eon-newtab-app-card" type="button" data-app-url="/vault">
+              <span class="eon-newtab-app-icon">🔐</span><span class="eon-newtab-app-label">Vault</span>
+            </button>
+            <button class="eon-newtab-app-card" type="button" data-app-url="/market">
+              <span class="eon-newtab-app-icon">🛒</span><span class="eon-newtab-app-label">Market</span>
+            </button>
+            <button class="eon-newtab-app-card" type="button" data-app-url="/realm">
+              <span class="eon-newtab-app-icon">🌍</span><span class="eon-newtab-app-label">Realm</span>
+            </button>
+            <button class="eon-newtab-app-card" type="button" data-app-url="/workbench.html#device-lab">
+              <span class="eon-newtab-app-icon">▤</span><span class="eon-newtab-app-label">Device Lab</span>
+            </button>
+            <button class="eon-newtab-app-card" type="button" data-app-url="/realm-code-preview.html">
+              <span class="eon-newtab-app-icon">▥</span><span class="eon-newtab-app-label">Code Showcase</span>
+            </button>
+          </div>
+          <p class="eon-newtab-footnote">The rest of the workspaces live inside Cockpit, so the first screen stays simple.</p>
+        </div>
+      </div>
+      <div id="browser-frame-host" class="browser-frame-host">
+        <iframe id="browser-frame" title="Business Cockpit viewport" src="about:blank"></iframe>
+      </div>
+      <div id="browser-frame-pool" class="browser-frame-pool" aria-hidden="true"></div>
+      </template>
+    </div>
+
+    <!-- EONBOT AI Sidebar -->
+    <aside class="browser-ai-sidebar open" id="browser-ai-sidebar" aria-label="EONBOT AI Panel">
+      <div class="browser-ai-sidebar-head">
+        <h2 class="browser-ai-sidebar-title">&#10022; EONBOT AI Operator</h2>
+        <div id="browser-provider-badge" class="browser-provider-badge"></div>
+        <button class="browser-ctrl-btn" id="browser-ai-sidebar-close" type="button" aria-label="Close Copilot panel">&#215;</button>
+      </div>
+
+      <!-- Recovery notice (shown when AI not ready) -->
+      <div class="browser-recovery-card" id="browser-recovery-card">
+        <p id="browser-recovery-copy" class="browser-recovery-copy">If EONBOT AI is not ready yet, you can still fetch source and run tasks manually inside the EON Workstation.</p>
+        <div id="browser-recovery-actions" class="browser-recovery-actions"></div>
+      </div>
+      <div class="browser-identity-card" id="browser-identity-card">
+        <p id="browser-identity-copy" class="browser-identity-copy">Identity summary loading…</p>
+        <div id="browser-identity-meta" class="browser-identity-meta" aria-live="polite"></div>
+        <ul id="browser-identity-attachments" class="browser-identity-list"></ul>
+        <div id="browser-identity-workspaces" class="browser-identity-workspaces"></div>
+        <div id="browser-identity-actions" class="browser-identity-actions"></div>
+      </div>
+
+      <template id="ew-legacy-sidebar-template">
+      <div class="browser-approval-card" id="browser-approval-card" hidden>
+        <p id="browser-approval-copy" class="browser-approval-copy">A risky browser action is waiting for your approval.</p>
+        <div id="browser-approval-meta" class="browser-approval-meta"></div>
+        <p id="browser-approval-note" class="browser-approval-note" hidden>Read and draft tasks may continue with less friction. Submit and sensitive actions always need your review.</p>
+        <ul id="browser-approval-warnings" class="browser-approval-warnings" hidden></ul>
+        <p id="browser-approval-scope" class="browser-approval-scope" hidden></p>
+        <label id="browser-approval-confirm-wrap" class="browser-approval-confirm" hidden>
+          <input id="browser-approval-confirm" type="checkbox" />
+          <span id="browser-approval-confirm-text">I reviewed this browser action and want EONBOT to continue.</span>
+        </label>
+        <label id="browser-approval-remember-wrap" class="browser-approval-remember" hidden>
+          <input id="browser-approval-remember" type="checkbox" />
+          <span id="browser-approval-remember-text">Remember this read/draft approval briefly for this host.</span>
+        </label>
+        <div class="browser-approval-actions">
+          <button class="btn btn-primary btn-sm" id="browser-approval-approve" type="button">Approve and run</button>
+          <button class="btn btn-outline btn-sm" id="browser-approval-cancel" type="button">Cancel</button>
+          <button class="btn btn-outline btn-sm" id="browser-approval-forget" type="button" hidden>Forget saved approvals</button>
+        </div>
+      </div>
+
+      <div class="browser-operator-card" id="browser-operator-card">
+        <p id="browser-operator-copy" class="browser-identity-copy">Browser operator state loading…</p>
+        <div id="browser-operator-meta" class="browser-identity-meta" aria-live="polite"></div>
+        <ul id="browser-operator-context" class="browser-identity-list"></ul>
+        <div id="browser-operator-cleanup" class="browser-operator-cleanup"></div>
+        <div id="browser-operator-actions" class="browser-identity-actions"></div>
+      </div>
+
+      <label class="browser-field-label" for="browser-source">Readable source / Copilot notes</label>
+      <textarea id="browser-source" class="browser-source" rows="5"
+                placeholder="Fetch source to pull clean page text, or paste text here for EONBOT AI."></textarea>
+
+      <label class="browser-field-label" for="browser-query">Ask EONBOT AI about this page or task</label>
+      <div class="browser-query-row">
+        <input id="browser-query" class="browser-query-input" type="text"
+               placeholder="Summarize, find risks, extract key offers..." />
+        <button class="browser-ctrl-btn" id="browser-query-mic" type="button" aria-label="Voice input">&#127908;</button>
+      </div>
+
+      <div class="browser-ai-actions">
+        <button class="btn btn-primary btn-sm" id="browser-summarize" type="button">Summarize</button>
+        <button class="btn btn-outline btn-sm" id="browser-research" type="button">Copilot Mode</button>
+        <button class="btn btn-outline btn-sm" id="browser-extract" type="button">Extract Points</button>
+        <button class="btn btn-outline btn-sm" id="browser-compare" type="button">Compare URLs</button>
+        <button class="btn btn-outline btn-sm" id="browser-creator" type="button">&#8594; Open Create</button>
+      </div>
+
+      <label class="browser-field-label" for="browser-compare-urls">Compare against (one URL per line)</label>
+      <textarea id="browser-compare-urls" class="browser-compare-urls" rows="3"
+                placeholder="https://site-a.com&#10;https://site-b.com"></textarea>
+
+      <div class="browser-output" id="browser-output" aria-live="polite">AI results will appear here.</div>
+      <div id="browser-compare-metrics" class="browser-compare-metrics" aria-live="polite"></div>
+      <div id="browser-compare-visual" class="browser-compare-visual" aria-live="polite"></div>
+
+      <details class="browser-details">
+        <summary>Sessions &amp; Templates</summary>
+        <div class="browser-storage-grid">
+          <div class="browser-storage-card">
+            <label class="browser-field-label" for="browser-session-name">Session name</label>
+            <div class="browser-inline-row">
+              <input id="browser-session-name" class="browser-query-input" type="text" placeholder="Competitor audit" />
+              <button class="btn btn-outline btn-sm" id="browser-session-save" type="button">Save</button>
+            </div>
+            <div class="browser-inline-row">
+              <select id="browser-session-list" class="browser-query-input" aria-label="Saved research sessions" title="Saved research sessions"></select>
+              <button class="btn btn-outline btn-sm" id="browser-session-load" type="button">Load</button>
+            </div>
+            <div class="browser-inline-row">
+              <button class="btn btn-outline btn-sm" id="browser-session-export" type="button">Export</button>
+              <button class="btn btn-outline btn-sm" id="browser-session-import" type="button">Import</button>
+              <input id="browser-session-import-file" type="file" accept="application/json" hidden />
+            </div>
+          </div>
+          <div class="browser-storage-card">
+            <label class="browser-field-label" for="browser-template-name">Template name</label>
+            <div class="browser-inline-row">
+              <input id="browser-template-name" class="browser-query-input" type="text" placeholder="Offer teardown" />
+              <button class="btn btn-outline btn-sm" id="browser-template-save" type="button">Save</button>
+            </div>
+            <div class="browser-inline-row">
+              <select id="browser-template-list" class="browser-query-input" aria-label="Saved research templates" title="Saved research templates"></select>
+              <button class="btn btn-outline btn-sm" id="browser-template-apply" type="button">Apply</button>
+            </div>
+            <div class="browser-inline-row">
+              <button class="btn btn-outline btn-sm" id="browser-template-export" type="button">Export</button>
+              <button class="btn btn-outline btn-sm" id="browser-template-import" type="button">Import</button>
+              <input id="browser-template-import-file" type="file" accept="application/json" hidden />
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="browser-details">
+        <summary>Local Model + GPU</summary>
+        <div class="browser-local-card">
+          <button class="btn btn-outline btn-sm" id="browser-local-check" type="button">Run Local Checks</button>
+          <div id="browser-local-status" class="browser-local-status" aria-live="polite">No checks yet.</div>
+        </div>
+      </details>
+
+      <details class="browser-details">
+        <summary>DOM Automation</summary>
+        <div class="browser-local-card">
+          <div class="browser-inline-row">
+            <button class="btn btn-outline btn-sm" id="browser-automation-scan" type="button">Inspect Active Page</button>
+            <button class="btn btn-outline btn-sm" id="browser-automation-run" type="button">Run Step</button>
+          </div>
+          <div class="browser-inline-row">
+            <select id="browser-automation-action" class="browser-query-input" aria-label="Automation action">
+              <option value="click">Click selector</option>
+              <option value="fill">Fill input</option>
+              <option value="submit">Submit form</option>
+              <option value="select">Select option</option>
+            </select>
+          </div>
+          <div class="browser-inline-row">
+            <input id="browser-automation-selector" class="browser-query-input" type="text" placeholder="#selector or CSS path" autocomplete="off" spellcheck="false" />
+          </div>
+          <div class="browser-inline-row">
+            <input id="browser-automation-value" class="browser-query-input" type="text" placeholder="Value / option text" autocomplete="off" spellcheck="false" />
+          </div>
+          <div id="browser-automation-status" class="browser-local-status" aria-live="polite">Ready for browser-local automation on the active tab.</div>
+        </div>
+      </details>
+
+      <details class="browser-details" open>
+        <summary>Anti-bot / Challenge Review</summary>
+        <div class="browser-local-card">
+          <div class="browser-inline-row">
+            <button class="btn btn-outline btn-sm" id="browser-captcha-scan" type="button">Inspect Challenge</button>
+          </div>
+          <div id="browser-captcha-status" class="browser-local-status" aria-live="polite">No anti-bot challenge detected yet.</div>
+          <p class="browser-local-note">EONAPP can inspect and explain anti-bot or login challenges, but it does not solve or bypass them automatically. You handle CAPTCHA, identity checks, and final account verification yourself.</p>
+        </div>
+      </details>
+
+      <details class="browser-details" open>
+        <summary>Operations Playbooks</summary>
+        <div class="browser-local-card">
+          <div class="browser-inline-row">
+            <select id="browser-ops-playbook" class="browser-query-input" aria-label="Operations playbook">
+              <option value="lead_gen">Lead gen follow-up</option>
+              <option value="discord_ops">Discord/community ops</option>
+              <option value="site_update">Business site update</option>
+              <option value="offer_post">Offer / listing publish</option>
+              <option value="inbox_triage">Inbox triage</option>
+              <option value="account_relogin">Safe relogin flow</option>
+            </select>
+            <button class="btn btn-outline btn-sm" id="browser-ops-prepare" type="button">Prepare playbook</button>
+          </div>
+          <div id="browser-ops-status" class="browser-local-status" aria-live="polite">Choose a playbook to prepare a safe browser operation plan.</div>
+          <div id="browser-ops-plan" class="browser-action-log" aria-live="polite">No playbook prepared yet.</div>
+        </div>
+      </details>
+
+      <details class="browser-details">
+        <summary>Action Log</summary>
+        <div class="browser-local-card">
+          <button class="btn btn-outline btn-sm" id="browser-action-log-clear" type="button">Clear Log</button>
+          <div id="browser-action-log" class="browser-action-log" aria-live="polite">No actions recorded yet.</div>
+        </div>
+      </details>
+
+      <details class="browser-details" open>
+        <summary>Download Manager</summary>
+        <div class="browser-local-card">
+          <div class="browser-download-actions">
+            <button class="btn btn-outline btn-sm" id="browser-download-refresh" type="button">Refresh</button>
+            <button class="btn btn-outline btn-sm" id="browser-download-clear" type="button">Clear Records</button>
+          </div>
+          <div id="browser-download-summary" class="browser-download-summary" aria-live="polite">No downloads recorded yet.</div>
+          <div id="browser-download-list" class="browser-download-list" aria-live="polite"></div>
+        </div>
+      </details>
+      </template>
+    </aside>
+  </div>
+
+  <template id="ew-legacy-panels-template">
+  <!-- Status Bar (Chrome-style bottom bar) -->
+  <div class="browser-status-bar">
+    <span id="browser-status" class="browser-status-text">Browser ready.</span>
+    <span class="browser-status-spacer"></span>
+    <span id="browser-status-hint" class="browser-status-hint"></span>
+  </div>
+
+  <!-- EON Apps Panel drawer -->
+  <div class="eon-browser-panel" id="eon-panel-apps" role="dialog" aria-label="EON Apps" hidden>
+    <div class="eon-panel-head">
+      <span class="eon-panel-title">&#9867; EON Apps</span>
+      <button class="eon-panel-close" id="eon-panel-apps-close" type="button" aria-label="Close apps panel">&#215;</button>
+    </div>
+    <div class="eon-panel-apps-grid">
+      <a class="eon-panel-app-card" href="/chat.html" data-app-url="/chat.html"><span>💬</span>AI Chat</a>
+      <a class="eon-panel-app-card" href="/eon-browser.html" data-app-url="/eon-browser.html"><span>⚡</span>Workstation Home</a>
+      <a class="eon-panel-app-card" href="/creator-studio.html" data-app-url="/creator-studio.html"><span>🎨</span>Creator Studio</a>
+      <a class="eon-panel-app-card" href="/trade.html" data-app-url="/trade.html"><span>📈</span>Trade Research</a>
+      <a class="eon-panel-app-card" href="/vault" data-app-url="/vault"><span>🔐</span>Vault</a>
+      <a class="eon-panel-app-card" href="/market" data-app-url="/market"><span>🛒</span>Market</a>
+      <a class="eon-panel-app-card" href="/realm" data-app-url="/realm"><span>🌍</span>Realm</a>
+      <a class="eon-panel-app-card" href="/realm-code-preview.html" data-app-url="/realm-code-preview.html"><span>▥</span>Code Showcase</a>
+      <a class="eon-panel-app-card" href="/workspace" data-app-url="/workspace"><span>▤</span>Device Lab</a>
+      <a class="eon-panel-app-card" href="/marketplace.html" data-app-url="/marketplace.html"><span>🏪</span>NFT Exchange</a>
+    </div>
+    <p class="eon-panel-note">Click any app to open it in the current tab.</p>
+  </div>
+
+  <!-- Password Vault Panel drawer -->
+  <div class="eon-browser-panel" id="eon-panel-passwords" role="dialog" aria-label="Password Vault" hidden>
+    <div class="eon-panel-head">
+      <span class="eon-panel-title">&#128273; Password Vault</span>
+      <button class="eon-panel-close" id="eon-panel-pwds-close" type="button" aria-label="Close password vault">&#215;</button>
+    </div>
+    <div class="eon-pwd-lock-screen" id="eon-pwd-lock-screen">
+      <p class="eon-pwd-lock-msg">Set a 4–8 digit PIN to encrypt your vault.</p>
+      <input id="eon-pwd-pin" class="eon-pwd-input" type="password" maxlength="8" placeholder="Enter vault PIN…" autocomplete="off" />
+      <button id="eon-pwd-pin-submit" class="btn btn-primary btn-sm" type="button">Unlock Vault</button>
+      <p class="eon-panel-note">&#9888;&#65039; Stored locally, encrypted with AES-GCM. Never sent to any server.</p>
+    </div>
+    <div class="eon-pwd-vault-content" id="eon-pwd-vault-content" hidden>
+      <div id="eon-pwd-list" class="eon-pwd-list" aria-live="polite"></div>
+      <details class="eon-pwd-add-details">
+        <summary>+ Save new credential</summary>
+        <div class="eon-pwd-add-form">
+          <input id="eon-pwd-new-domain" class="eon-pwd-input" type="text" placeholder="Domain (e.g. github.com)" autocomplete="off" />
+          <input id="eon-pwd-new-user" class="eon-pwd-input" type="text" placeholder="Username / Email" autocomplete="off" />
+          <input id="eon-pwd-new-pass" class="eon-pwd-input" type="password" placeholder="Password" autocomplete="new-password" />
+          <button id="eon-pwd-add-btn" class="btn btn-primary btn-sm" type="button">Save Credential</button>
+        </div>
+      </details>
+      <button id="eon-pwd-lock-vault" class="btn btn-outline btn-sm eon-vault-lock-btn" type="button">&#128274; Lock Vault</button>
+    </div>
+  </div>
+
+  <!-- History Panel drawer -->
+  <div class="eon-browser-panel" id="eon-panel-history" role="dialog" aria-label="Browsing History" hidden>
+    <div class="eon-panel-head">
+      <span class="eon-panel-title">&#128221; History</span>
+      <button class="eon-panel-close" id="eon-panel-history-close" type="button" aria-label="Close history panel">&#215;</button>
+    </div>
+    <button class="btn btn-outline btn-sm eon-history-clear-btn-el" id="eon-history-clear-btn" type="button">Clear History</button>
+    <div id="eon-history-list" class="eon-history-list" aria-live="polite"></div>
+  </div>
+
+  <!-- Bookmarks Panel drawer -->
+  <div class="eon-browser-panel" id="eon-panel-bookmarks" role="dialog" aria-label="Saved Bookmarks" hidden>
+    <div class="eon-panel-head">
+      <span class="eon-panel-title">&#128278; Bookmarks</span>
+      <button class="eon-panel-close" id="eon-panel-bookmarks-close" type="button" aria-label="Close bookmarks panel">&#215;</button>
+    </div>
+    <div class="eon-bookmark-actions">
+      <button class="btn btn-primary btn-sm" id="eon-bookmark-current-panel" type="button">Bookmark current page</button>
+      <button class="btn btn-outline btn-sm" id="eon-bookmarks-refresh" type="button">Refresh list</button>
+    </div>
+    <div class="eon-bookmark-editor">
+      <div class="form-group">
+        <label for="eon-bookmark-title">Title</label>
+        <input id="eon-bookmark-title" type="text" placeholder="Bookmark title" autocomplete="off" />
+      </div>
+      <div class="form-group">
+        <label for="eon-bookmark-url">URL</label>
+        <input id="eon-bookmark-url" type="url" placeholder="https://..." autocomplete="off" spellcheck="false" />
+      </div>
+      <div class="form-group">
+        <label for="eon-bookmark-icon">Icon</label>
+        <input id="eon-bookmark-icon" type="text" placeholder="🔖" maxlength="8" autocomplete="off" />
+      </div>
+      <div class="share-actions share-actions-left">
+        <button class="btn btn-outline btn-sm" id="eon-bookmark-save" type="button">Save bookmark</button>
+        <button class="btn btn-outline btn-sm" id="eon-bookmark-reset" type="button">Reset fields</button>
+      </div>
+    </div>
+    <div id="eon-bookmark-list" class="eon-bookmark-list" aria-live="polite"></div>
+  </div>
+
+  <!-- AI Activity Monitor Panel -->
+  <div class="eon-browser-panel eon-panel-agent" id="eon-panel-aiactivity" role="dialog" aria-label="AI Activity Monitor" hidden>
+    <div class="eon-panel-head">
+      <span class="eon-panel-title">&#129302; AI Activity Monitor</span>
+      <button class="eon-panel-close" id="eon-panel-agent-close" type="button" aria-label="Close AI activity panel">&#215;</button>
+    </div>
+    <div class="eon-agent-status-bar" id="eon-agent-status-bar">
+      <div class="eon-agent-dot" id="eon-agent-dot-anim"></div>
+      <span id="eon-agent-status-text">Watching for AI activity&hellip;</span>
+    </div>
+    <div class="eon-agent-layers">
+      <button class="eon-agent-layer-tab active" type="button" data-layer="log">&#128202; Log</button>
+      <button class="eon-agent-layer-tab" type="button" data-layer="dual">&#128302; Dual Layer</button>
+      <button class="eon-agent-layer-tab" type="button" data-layer="abilities">&#9889; Abilities</button>
+    </div>
+    <div class="eon-agent-panel-body">
+      <!-- Log layer -->
+      <div id="eon-agent-layer-log" class="eon-agent-layer-content">
+        <div id="eon-activity-log" class="eon-activity-log" aria-live="polite">
+          <p class="eon-activity-empty">No AI activity yet. Use Summarize, Research, or Ask AI to see live events here.</p>
+        </div>
+      </div>
+      <!-- Dual Layer -->
+      <div id="eon-agent-layer-dual" class="eon-agent-layer-content" hidden>
+        <div class="eon-dual-layer-head">
+          <span class="eon-dual-badge eon-dual-badge--human">&#128065; Human View</span>
+          <span class="eon-dual-badge eon-dual-badge--ai">&#129302; AI Perception</span>
+        </div>
+        <div class="eon-dual-ai-feed" id="eon-dual-ai-feed">
+          <p class="eon-activity-empty">Navigate to a page and run an AI action to see what the AI perceives about it.</p>
+        </div>
+        <div class="eon-dual-session-stats" id="eon-dual-stats">
+          <span>Calls: <strong id="eon-stats-calls">0</strong></span>
+          <span>Tokens&nbsp;est: <strong id="eon-stats-tokens">0</strong></span>
+          <span>Providers: <strong id="eon-stats-providers">&mdash;</strong></span>
+        </div>
+      </div>
+      <!-- Abilities layer -->
+      <div id="eon-agent-layer-abilities" class="eon-agent-layer-content" hidden>
+        <p class="eon-abilities-intro">Your EON NFTs unlock premium browser abilities.<br>Tier: <strong id="eon-current-tier">Starter</strong></p>
+        <div class="eon-abilities-grid" id="eon-abilities-grid"></div>
+        <div class="eon-abilities-unlock-cta">
+          <a href="/market" class="btn btn-primary btn-sm" target="_blank">Upgrade with EON NFT &#8594;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- legacy workspace section removed: all elements now live in browser-body above -->
+  <section class="browser-workspace-compat" hidden></section>
+
+  <!-- Connected Accounts Panel -->
+  <div class="eon-browser-panel" id="eon-panel-accounts" role="dialog" aria-label="Connected Accounts" hidden>
+    <div class="eon-panel-head">
+      <span class="eon-panel-title">&#128100; Connected Accounts</span>
+      <button class="eon-panel-close" id="eon-panel-accounts-close" type="button" aria-label="Close">&#215;</button>
+    </div>
+    <div id="eon-accounts-list" class="eon-accounts-list" aria-live="polite">
+      <p class="eon-activity-empty">Loading accounts&hellip;</p>
+    </div>
+    <div class="eon-acct-settings">
+      <label class="eon-acct-toggle-row">
+        <span class="eon-acct-toggle-label">&#129302; AI Login Suggestions</span>
+        <input type="checkbox" id="eon-ai-login-toggle" class="eon-toggle-input" />
+      </label>
+      <p class="eon-acct-hint">When AI login suggestions are on, Cockpit will offer to use your connected accounts on compatible sites.</p>
+    </div>
+  </div>
+
+  <!-- AI Model Picker Panel -->
+  <div class="eon-browser-panel" id="eon-panel-models" role="dialog" aria-label="AI Model Picker" hidden>
+    <div class="eon-panel-head">
+      <span class="eon-panel-title">&#9881; AI Models</span>
+      <button class="eon-panel-close" id="eon-panel-models-close" type="button" aria-label="Close">&#215;</button>
+    </div>
+    <div class="eon-model-picker-head">
+      <span class="eon-model-count-text" id="eon-model-count">Discovering models&hellip;</span>
+      <button class="btn btn-outline btn-sm" id="eon-refresh-models-btn" type="button">&#8635; Refresh</button>
+    </div>
+    <p class="eon-model-picker-note">Models auto-discovered from your configured API keys. Free models shown first.</p>
+    <div id="eon-model-recommendations" class="eon-model-recommendations" aria-live="polite"></div>
+    <div id="eon-model-picker-list" class="eon-model-picker-list" aria-live="polite">
+      <p class="eon-activity-empty">Add API keys in Vault to see available models here.</p>
+    </div>
+  </div>
+  </template>
+</main>
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="logo">⚡ EONAPP<span>.ch</span></a>
+      <p>AI-native platform for creators, builders &amp; operators.</p>
+    </div>
+    <nav class="footer-nav">
+      <a href="/trade">Trade</a>
+      <a href="/vault">Vault</a>
+      <a href="/market">Market</a>
+      <a href="/marketplace.html">NFT Exchange</a>
+      <a href="/local-ai">Local AI</a>
+      <a href="/about.html">About</a>
+      <a href="/legal.html">Legal</a>
+      <a href="/terms.html">Terms</a>
+      <a href="/billing.html">Billing</a>
+      <a href="/billing.html">Payment finality</a>
+      <a href="/support.html">Support</a>
+      <a href="/privacy.html">Privacy</a>
+    </nav>
+  </div>
+  <div class="footer-bottom container">
+    <p>© EONAPP.ch · AI-native platform for creators &amp; builders</p>
+  </div>
+</footer>
+
+<script type="module" src="/assets/js/eon-workstation-page.js"></script>
+
+<!-- -- Mobile PWA Bottom Nav ------------------------------ -->
+<nav class="eon-bottom-nav" aria-label="Quick navigation">
+  <a href="/build" class="eon-bottom-nav-item" aria-label="Build"><span class="eon-bnav-icon">⚡</span><span class="eon-bnav-label">Build</span></a>
+  <a href="/create" class="eon-bottom-nav-item" aria-label="Create"><span class="eon-bnav-icon">🎨</span><span class="eon-bnav-label">Create</span></a>
+  <a href="/trade" class="eon-bottom-nav-item" aria-label="Trade"><span class="eon-bnav-icon">📊</span><span class="eon-bnav-label">Trade</span></a>
+  <a href="/vault" class="eon-bottom-nav-item" aria-label="Vault"><span class="eon-bnav-icon">🏦</span><span class="eon-bnav-label">Vault</span></a>
+  <a href="/chat.html" class="eon-bottom-nav-item" aria-label="AI Chat"><span class="eon-bnav-icon">💬</span><span class="eon-bnav-label">AI Chat</span></a>
+</nav>
+  <script type="module" src="/assets/js/utils/release-language-picker.js"></script>
+<script type="module" src="/assets/js/utils/button-truth-guard.js"></script>
+</body>
+</html>
+
+
+

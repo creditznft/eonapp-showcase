@@ -1,0 +1,30 @@
+{
+  "schema": "eonapp.w399.prelaunch-handover.validation.v1",
+  "date": "2026-06-28",
+  "node": "22.16.0",
+  "compositeCommand": "npm run verify:w399-prelaunch-candidate",
+  "result": "pass",
+  "unitTests": {"passed": 327, "failed": 0},
+  "gates": {
+    "w390_w391": "9/9",
+    "w406_w407": "7/7",
+    "w388b_w389": "10/10",
+    "w398_w399_measurement": "5/5",
+    "w399_prelaunch": "11/11"
+  },
+  "build": "pass",
+  "smoke": "pass",
+  "siteAudit": "pass",
+  "launchReadiness": "pass",
+  "secretPatternScan": "0 confirmed source files",
+  "productionCertified": false,
+  "manualBlockers": [
+    "Rotate exposed Google OAuth client secret before any callback test.",
+    "Apply only the dedicated identity migration to Preview and Production identity D1 databases.",
+    "Deploy Pages Functions and conduct testing-mode Google login/logout/delete proof.",
+    "Run a separate empty-target encrypted recovery drill.",
+    "Capture real-device City mobile/narrow-desktop evidence.",
+    "Remediate or formally accept the dependency audit findings after compatible upgrade testing.",
+    "Complete human legal/privacy/support release review before any public OAuth or reward/connector activation."
+  ]
+}

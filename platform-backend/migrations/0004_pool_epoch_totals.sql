@@ -1,0 +1,2 @@
+-- Existing unique index idx_epoch_snapshots_unique on epoch_snapshots(sequence, domain)
+-- already covers pool total consistency lookups filtered by sequence and domain.

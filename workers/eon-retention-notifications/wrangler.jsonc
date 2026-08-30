@@ -1,0 +1,118 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "eonapp-retention-notifications",
+  "main": "src/index.js",
+  "compatibility_date": "2026-08-09",
+  "send_metrics": false,
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 0.1
+  },
+  "triggers": {
+    "crons": []
+  },
+  "vars": {
+    "EON_PUSH_ROLLOUT": "disabled"
+  },
+  "d1_databases": [
+    {
+      "binding": "EON_IDENTITY_DB",
+      "database_name": "eonapp-identity-local",
+      "database_id": "00000000-0000-0000-0000-000000000101",
+      "migrations_dir": "../../identity/migrations"
+    }
+  ],
+  "env": {
+    "preview": {
+      "triggers": {
+        "crons": [
+          "* * * * *"
+        ]
+      },
+      "vars": {
+        "EON_PUSH_ROLLOUT": "testing"
+      },
+      "d1_databases": [
+        {
+          "binding": "EON_IDENTITY_DB",
+          "database_name": "eonapp-identity-preview",
+          "database_id": "83b32cf2-67f1-4bbf-8c1d-b1d1517cf9fa",
+          "migrations_dir": "../../identity/migrations"
+        }
+      ],
+      "queues": {
+        "producers": [
+          {
+            "binding": "EON_RETENTION_QUEUE",
+            "queue": "eonapp-retention-notifications-preview"
+          }
+        ],
+        "consumers": [
+          {
+            "queue": "eonapp-retention-notifications-preview",
+            "max_batch_size": 50,
+            "max_batch_timeout": 5,
+            "max_concurrency": 10,
+            "max_retries": 3,
+            "dead_letter_queue": "eonapp-retention-notifications-preview-dlq"
+          }
+        ]
+      }
+    },
+    "production": {
+      "triggers": {
+        "crons": []
+      },
+      "vars": {
+        "EON_PUSH_ROLLOUT": "disabled"
+      },
+      "d1_databases": [
+        {
+          "binding": "EON_IDENTITY_DB",
+          "database_name": "eonapp-identity-prod",
+          "database_id": "947300be-0e59-4fee-9587-27f11389d318",
+          "migrations_dir": "../../identity/migrations"
+        }
+      ],
+      "queues": {
+        "producers": [
+          {
+            "binding": "EON_RETENTION_QUEUE",
+            "queue": "eonapp-retention-notifications-production"
+          }
+        ],
+        "consumers": [
+          {
+            "queue": "eonapp-retention-notifications-production",
+            "max_batch_size": 50,
+            "max_batch_timeout": 5,
+            "max_concurrency": 10,
+            "max_retries": 3,
+            "dead_letter_queue": "eonapp-retention-notifications-production-dlq"
+          }
+        ]
+      }
+    }
+  },
+  // Do not set an explicit CPU limit here: the connected Free-plan account
+  // rejects `cpu_ms`. Queue batches, per-invocation fan-out and consumer
+  // concurrency remain bounded; Cloudflare still enforces the plan default.
+  "queues": {
+    "producers": [
+      {
+        "binding": "EON_RETENTION_QUEUE",
+        "queue": "eonapp-retention-notifications-dev"
+      }
+    ],
+    "consumers": [
+      {
+        "queue": "eonapp-retention-notifications-dev",
+        "max_batch_size": 50,
+        "max_batch_timeout": 5,
+        "max_concurrency": 10,
+        "max_retries": 3,
+        "dead_letter_queue": "eonapp-retention-notifications-dev-dlq"
+      }
+    ]
+  }
+}

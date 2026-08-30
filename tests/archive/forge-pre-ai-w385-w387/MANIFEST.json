@@ -1,0 +1,27 @@
+{
+  "schema": "eonapp.forge-pre-ai-test-archive.w648.2026-07-13.v1",
+  "classification": "non-certifying-historical-exact-copy",
+  "certifying": false,
+  "releaseGate": false,
+  "supersededBy": [
+    "tests/unit/w385-eon-forge-quick-build.test.mjs",
+    "tests/unit/w386-eon-forge-developer-workspace.test.mjs",
+    "tests/unit/w387-eon-forge-integrity-change-review.test.mjs",
+    "tests/unit/w648-forge-ai-builder.test.mjs",
+    "tests/unit/w648-forge-ai-controller.test.mjs"
+  ],
+  "files": [
+    {
+      "path": "tests/archive/forge-pre-ai-w385-w387/w385-eon-forge-quick-build.test.mjs",
+      "sha256": "0d3c811fa954ca108089b4fb821d8656d4735c3710afd2c0fa5fadef7b7f4093"
+    },
+    {
+      "path": "tests/archive/forge-pre-ai-w385-w387/w386-eon-forge-developer-workspace.test.mjs",
+      "sha256": "23481fa1c055fc71531f39e5323453e2e71973320e8a8b07eb5a79ff8caf8c03"
+    },
+    {
+      "path": "tests/archive/forge-pre-ai-w385-w387/w387-eon-forge-integrity-change-review.test.mjs",
+      "sha256": "7b8254d3148a56b62dbadba533aa181494a3453294991efc7fbdb03f04314763"
+    }
+  ]
+}

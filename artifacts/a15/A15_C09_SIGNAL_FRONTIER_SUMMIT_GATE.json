@@ -1,0 +1,328 @@
+{
+  "schema": "eonapp.a15.c09.signal-frontier-summit-gate.v1",
+  "wave": "C09",
+  "generatedAt": "2026-08-04T22:12:56.225Z",
+  "ok": true,
+  "passed": 62,
+  "total": 62,
+  "checks": [
+    {
+      "id": "source-contract-valid",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "id": "exact-owner-matrix",
+      "pass": true,
+      "detail": "35"
+    },
+    {
+      "id": "product-source-coverage",
+      "pass": true,
+      "detail": "28"
+    },
+    {
+      "id": "external-evidence-matrix",
+      "pass": true,
+      "detail": "7"
+    },
+    {
+      "id": "source:signal-companion-rescue",
+      "pass": true,
+      "detail": "assets/js/city/w766/eon-expanse-w767a-companion-continuity.js"
+    },
+    {
+      "id": "test:signal-companion-rescue",
+      "pass": true,
+      "detail": "tests/unit/w767a-expanse-companion-continuity.test.mjs"
+    },
+    {
+      "id": "source:signal-campaign-complete",
+      "pass": true,
+      "detail": "assets/js/city/w766/eon-expanse-w766e-mission-runtime.js"
+    },
+    {
+      "id": "test:signal-campaign-complete",
+      "pass": true,
+      "detail": "tests/unit/w766h-physical-campaign-flow.test.mjs"
+    },
+    {
+      "id": "source:signal-transit-return",
+      "pass": true,
+      "detail": "assets/js/city/w766/eon-city-w766a-world-mode-controller.js"
+    },
+    {
+      "id": "test:signal-transit-return",
+      "pass": true,
+      "detail": "tests/unit/w766a-world-mode-controller.test.mjs"
+    },
+    {
+      "id": "source:signal-label-gps-accessibility",
+      "pass": true,
+      "detail": "assets/js/city/w766/eon-expanse-w767q-accessibility-profile.js"
+    },
+    {
+      "id": "test:signal-label-gps-accessibility",
+      "pass": true,
+      "detail": "tests/unit/w767q-expanse-accessibility-profile.test.mjs"
+    },
+    {
+      "id": "source:productive-create",
+      "pass": true,
+      "detail": "assets/js/city/w766/eon-expanse-w767w-productive-receipt-bridge.js"
+    },
+    {
+      "id": "test:productive-create",
+      "pass": true,
+      "detail": "tests/unit/a15-c05-core-outcome-progress-bridge.test.mjs"
+    },
+    {
+      "id": "source:productive-local-ai",
+      "pass": true,
+      "detail": "assets/js/city/w766/eon-expanse-w767x-verified-result-action.js"
+    },
+    {
+      "id": "test:productive-local-ai",
+      "pass": true,
+      "detail": "tests/unit/a15-c05-core-outcome-progress-bridge.test.mjs"
+    },
+    {
+      "id": "source:productive-automation",
+      "pass": true,
+      "detail": "assets/js/city/w766/eon-expanse-w767w-productive-receipt-bridge.js"
+    },
+    {
+      "id": "test:productive-automation",
+      "pass": true,
+      "detail": "tests/unit/a15-c05-core-outcome-progress-bridge.test.mjs"
+    },
+    {
+      "id": "source:productive-library",
+      "pass": true,
+      "detail": "assets/js/city/w766/eon-expanse-w767x-verified-result-action.js"
+    },
+    {
+      "id": "test:productive-library",
+      "pass": true,
+      "detail": "tests/unit/a15-c05-core-outcome-progress-bridge.test.mjs"
+    },
+    {
+      "id": "source:productive-daily-signal",
+      "pass": true,
+      "detail": "assets/js/city/w766/eon-expanse-w767y-daily-signal.js"
+    },
+    {
+      "id": "test:productive-daily-signal",
+      "pass": true,
+      "detail": "tests/unit/w767y-expanse-daily-signal.test.mjs"
+    },
+    {
+      "id": "source:frontier-unlock-plan",
+      "pass": true,
+      "detail": "assets/js/city/w768/eon-expanse-w768f-my-frontier-planning-view.js"
+    },
+    {
+      "id": "test:frontier-unlock-plan",
+      "pass": true,
+      "detail": "tests/unit/w768f-my-frontier-planning-view.test.mjs"
+    },
+    {
+      "id": "source:frontier-construct-terminal",
+      "pass": true,
+      "detail": "assets/js/city/w768/eon-expanse-w768r-my-frontier-building-terminal.js"
+    },
+    {
+      "id": "test:frontier-construct-terminal",
+      "pass": true,
+      "detail": "tests/unit/w768r-my-frontier-building-terminal.test.mjs"
+    },
+    {
+      "id": "source:frontier-resident-loop",
+      "pass": true,
+      "detail": "assets/js/city/w768/eon-expanse-w768v-my-frontier-resident-authority.js"
+    },
+    {
+      "id": "test:frontier-resident-loop",
+      "pass": true,
+      "detail": "tests/unit/w768v-my-frontier-resident-authority.test.mjs"
+    },
+    {
+      "id": "source:frontier-theme-upgrade",
+      "pass": true,
+      "detail": "assets/js/city/w769/eon-expanse-w769d-my-frontier-district-upgrade.js"
+    },
+    {
+      "id": "test:frontier-theme-upgrade",
+      "pass": true,
+      "detail": "tests/unit/w769d-my-frontier-district-upgrade.test.mjs"
+    },
+    {
+      "id": "source:frontier-reload",
+      "pass": true,
+      "detail": "assets/js/city/w770/eon-expanse-w770f-my-frontier-composition-recovery.js"
+    },
+    {
+      "id": "test:frontier-reload",
+      "pass": true,
+      "detail": "tests/unit/w770f-my-frontier-composition-recovery.test.mjs"
+    },
+    {
+      "id": "source:storm-gateway-entry",
+      "pass": true,
+      "detail": "assets/js/city/w794/eon-expanse-w794a-storm-sector-journey.js"
+    },
+    {
+      "id": "test:storm-gateway-entry",
+      "pass": true,
+      "detail": "tests/unit/w794a-storm-sector-journey.test.mjs"
+    },
+    {
+      "id": "source:storm-weather-restoration",
+      "pass": true,
+      "detail": "assets/js/city/w795/eon-expanse-w795a-storm-sector-mission-runtime.js"
+    },
+    {
+      "id": "test:storm-weather-restoration",
+      "pass": true,
+      "detail": "tests/unit/w795a-storm-sector-mission-runtime.test.mjs"
+    },
+    {
+      "id": "source:storm-relay-repair",
+      "pass": true,
+      "detail": "assets/js/city/w795/eon-expanse-w795a-storm-sector-mission-runtime.js"
+    },
+    {
+      "id": "test:storm-relay-repair",
+      "pass": true,
+      "detail": "tests/unit/w795a-storm-sector-mission-runtime.test.mjs"
+    },
+    {
+      "id": "source:storm-rescue",
+      "pass": true,
+      "detail": "assets/js/city/w795/eon-expanse-w795a-storm-sector-mission-runtime.js"
+    },
+    {
+      "id": "test:storm-rescue",
+      "pass": true,
+      "detail": "tests/unit/w795a-storm-sector-mission-runtime.test.mjs"
+    },
+    {
+      "id": "source:storm-patrols",
+      "pass": true,
+      "detail": "assets/js/city/w796/eon-expanse-w796a-storm-sector-npc-plan.js"
+    },
+    {
+      "id": "test:storm-patrols",
+      "pass": true,
+      "detail": "tests/unit/w796a-storm-sector-npc-plan.test.mjs"
+    },
+    {
+      "id": "source:storm-transit",
+      "pass": true,
+      "detail": "assets/js/city/w797/eon-expanse-w797a-storm-sector-transit.js"
+    },
+    {
+      "id": "test:storm-transit",
+      "pass": true,
+      "detail": "tests/unit/w797a-storm-sector-transit.test.mjs"
+    },
+    {
+      "id": "source:storm-return-reload",
+      "pass": true,
+      "detail": "assets/js/city/w795/eon-expanse-w795a-storm-sector-mission-runtime.js"
+    },
+    {
+      "id": "test:storm-return-reload",
+      "pass": true,
+      "detail": "tests/unit/w795c-storm-sector-mission-persistence.test.mjs"
+    },
+    {
+      "id": "source:capture-signal",
+      "pass": true,
+      "detail": "assets/js/city/w766/eon-expanse-w767s-capture-moment.js"
+    },
+    {
+      "id": "test:capture-signal",
+      "pass": true,
+      "detail": "tests/unit/w767s-expanse-capture-moment.test.mjs"
+    },
+    {
+      "id": "source:capture-frontier",
+      "pass": true,
+      "detail": "assets/js/city/w773/eon-expanse-w773c-my-frontier-capture-director.js"
+    },
+    {
+      "id": "test:capture-frontier",
+      "pass": true,
+      "detail": "tests/unit/w773c-my-frontier-capture-director.test.mjs"
+    },
+    {
+      "id": "source:capture-storm",
+      "pass": true,
+      "detail": "assets/js/city/w800/eon-expanse-w800a-storm-sector-capture-director.js"
+    },
+    {
+      "id": "test:capture-storm",
+      "pass": true,
+      "detail": "tests/unit/w800a-storm-sector-capture-director.test.mjs"
+    },
+    {
+      "id": "source:share-privacy-review",
+      "pass": true,
+      "detail": "assets/js/contracts/city/eon-city-access-distribution-projection.js"
+    },
+    {
+      "id": "test:share-privacy-review",
+      "pass": true,
+      "detail": "tests/unit/a15-c07-city-access-distribution.test.mjs"
+    },
+    {
+      "id": "source:living-side-mission",
+      "pass": true,
+      "detail": "assets/js/city/w778/eon-expanse-w778a-side-mission-transformations.js"
+    },
+    {
+      "id": "test:living-side-mission",
+      "pass": true,
+      "detail": "tests/unit/w778a-side-mission-transformations.test.mjs"
+    },
+    {
+      "id": "source:living-dynamic-event",
+      "pass": true,
+      "detail": "assets/js/city/w766/eon-expanse-w767o-dynamic-event-lifecycle.js"
+    },
+    {
+      "id": "test:living-dynamic-event",
+      "pass": true,
+      "detail": "tests/unit/w767o-expanse-dynamic-event-lifecycle.test.mjs"
+    },
+    {
+      "id": "source:living-repeatable",
+      "pass": true,
+      "detail": "assets/js/city/w779/eon-expanse-w779a-post-campaign-progression.js"
+    },
+    {
+      "id": "test:living-repeatable",
+      "pass": true,
+      "detail": "tests/unit/w779a-post-campaign-progression.test.mjs"
+    },
+    {
+      "id": "no-prepassed-owner-cases",
+      "pass": true,
+      "detail": "source coverage is not owner proof"
+    },
+    {
+      "id": "no-automatic-certification",
+      "pass": true,
+      "detail": "explicit external gates"
+    }
+  ],
+  "sourceProgrammeComplete": true,
+  "renderedOwnerEvidenceComplete": false,
+  "productionReady": false,
+  "limitations": [
+    "Authenticated Chrome, Edge and mobile-landscape evidence remains pending.",
+    "Lite, Balanced and Cinematic foreground performance plus transition soak remain pending.",
+    "No source-only result can satisfy owner playthrough or deployment gates."
+  ]
+}

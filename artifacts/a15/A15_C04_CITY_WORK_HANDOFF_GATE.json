@@ -1,0 +1,81 @@
+{
+  "schema": "eonapp.a15.c04.city-work-handoff-gate.v1",
+  "wave": "C04",
+  "ok": true,
+  "passed": 13,
+  "total": 13,
+  "generatedAt": "2026-08-04T21:22:09.824Z",
+  "stationCount": 10,
+  "checks": [
+    {
+      "id": "ten-command-hub-stations",
+      "pass": true,
+      "detail": "10/10"
+    },
+    {
+      "id": "station-destination-coverage",
+      "pass": true,
+      "detail": "all ten stations resolve"
+    },
+    {
+      "id": "productive-projection-valid",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "id": "versioned-expiring-single-consume",
+      "pass": true,
+      "detail": "I04 authority wrapped"
+    },
+    {
+      "id": "return-receipt-single-consume",
+      "pass": true,
+      "detail": "return receipt bounded"
+    },
+    {
+      "id": "private-content-blocked",
+      "pass": true,
+      "detail": "redacted context only"
+    },
+    {
+      "id": "no-progress-from-navigation",
+      "pass": true,
+      "detail": "C05 remains separate"
+    },
+    {
+      "id": "no-auto-navigation-execution",
+      "pass": true,
+      "detail": "review first"
+    },
+    {
+      "id": "legacy-loop-upgraded",
+      "pass": true,
+      "detail": "W368 adapter"
+    },
+    {
+      "id": "productive-controller-upgraded",
+      "pass": true,
+      "detail": "W751 adapter"
+    },
+    {
+      "id": "runtime-api-exposed",
+      "pass": true,
+      "detail": "runtime can prepare route handoff"
+    },
+    {
+      "id": "return-query-allowlisted",
+      "pass": true,
+      "detail": "exact City return context"
+    },
+    {
+      "id": "no-sensitive-fields-in-contract",
+      "pass": true,
+      "detail": "session-only and non-networked"
+    }
+  ],
+  "limitations": [
+    "Source-only certification.",
+    "No authenticated browser navigation evidence.",
+    "No Core outcome, XP or reward authority is created by C04."
+  ]
+}

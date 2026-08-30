@@ -1,0 +1,32 @@
+# W395 TEMPLATE ONLY — do not rename to wrangler.toml or deploy it unchanged.
+# No secret may appear in this file. Configure live Pages bindings/variables in
+# Cloudflare, or translate this template into your reviewed deploy config.
+# Production and Preview use different D1 databases. Preview Google Login stays
+# disabled until a separate exact Preview OAuth client exists.
+
+name = "eonapp-ch"
+compatibility_date = "2026-06-28"
+pages_build_output_dir = "dist"
+
+[vars]
+APP_ORIGIN = "https://eonapp.ch"
+GOOGLE_REDIRECT_URI = "https://eonapp.ch/api/auth/google/callback"
+EON_AUTH_ROLLOUT = "testing"
+# GOOGLE_OAUTH_CLIENT_ID is configured as a Pages variable, never as a secret.
+# GOOGLE_OAUTH_CLIENT_SECRET, EON_AUTH_SUBJECT_PEPPER,
+# EON_SESSION_SIGNING_KEY and EON_OAUTH_FLOW_SIGNING_KEY are encrypted
+# Cloudflare Secrets and never belong in this repository.
+
+[[d1_databases]]
+binding = "EON_IDENTITY_DB"
+database_name = "eonapp-identity-prod"
+database_id = "REPLACE_WITH_PRODUCTION_D1_DATABASE_ID"
+migrations_dir = "identity/migrations"
+
+# Preview Google Login stays disabled by default.
+# Preview policy (configure separately in Cloudflare):
+# - bind EON_IDENTITY_DB to eonapp-identity-preview, never production.
+# - set EON_AUTH_ROLLOUT=disabled.
+# - do not configure APP_ORIGIN, GOOGLE_REDIRECT_URI, client ID or any identity
+#   secret until a distinct Google OAuth Preview client with one exact callback
+#   has been created and approved.

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Internal RT90 certification installer only. This MSI intentionally packages
+  the unsigned SEA test executable and must never be offered as a public
+  download. The release contract remains empty until Authenticode signing and
+  device certification have independent evidence.
+-->
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Package
+    Name="EON Local Companion (UNSIGNED TEST)"
+    Manufacturer="EONAPP Internal Certification"
+    Version="1.0.0"
+    UpgradeCode="3F9D03CD-BB7F-4D23-8E0C-D89984B5A5D4"
+    Scope="perUser"
+    InstallerVersion="500"
+    Compressed="yes">
+    <MajorUpgrade DowngradeErrorMessage="A newer EON Local Companion test build is already installed." />
+    <MediaTemplate EmbedCab="yes" />
+
+    <StandardDirectory Id="LocalAppDataFolder">
+      <Directory Id="INSTALLFOLDER" Name="EON Local Companion">
+        <Component Id="CompanionExecutable" Guid="*">
+          <File Id="EonLocalCompanionExe" Source="$(var.CompanionExe)" KeyPath="yes" />
+        </Component>
+      </Directory>
+    </StandardDirectory>
+
+    <StandardDirectory Id="ProgramMenuFolder">
+      <Directory Id="EonAppProgramMenu" Name="EONAPP">
+        <Component Id="StartMenuShortcut" Guid="*">
+          <Shortcut Id="EonLocalCompanionShortcut" Name="EON Local Companion (UNSIGNED TEST)" Target="[INSTALLFOLDER]EON-Local-Companion-UNSIGNED-TEST.exe" />
+          <RemoveFolder Id="RemoveEonAppProgramMenu" On="uninstall" />
+          <RegistryValue Root="HKCU" Key="Software\EONAPP\LocalCompanion" Name="UnsignedTestInstalled" Type="integer" Value="1" KeyPath="yes" />
+        </Component>
+      </Directory>
+    </StandardDirectory>
+
+    <!-- Uninstall deliberately removes only browser trust records, not provider credentials or user content. -->
+    <StandardDirectory Id="LocalAppDataFolder">
+      <Directory Id="EonAppTrustDirectory" Name="EONAPP">
+        <Component Id="RemoveTrustedBrowserRecords" Guid="*">
+          <RemoveFile Id="RemoveTrustedBrowserRecord" Name="local-companion-trusted-browsers.json" On="uninstall" />
+          <RegistryValue Root="HKCU" Key="Software\EONAPP\LocalCompanion" Name="TrustCleanupRegistered" Type="integer" Value="1" KeyPath="yes" />
+        </Component>
+      </Directory>
+    </StandardDirectory>
+
+    <Feature Id="MainFeature" Title="EON Local Companion unsigned test" Level="1">
+      <ComponentRef Id="CompanionExecutable" />
+      <ComponentRef Id="StartMenuShortcut" />
+      <ComponentRef Id="RemoveTrustedBrowserRecords" />
+    </Feature>
+  </Package>
+</Wix>

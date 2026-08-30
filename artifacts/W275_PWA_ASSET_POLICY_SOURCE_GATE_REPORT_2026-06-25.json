@@ -1,0 +1,33 @@
+{
+  "schema": "eonapp.w275.pwa-asset-policy-source-readiness.v1",
+  "ok": true,
+  "decision": "SOURCE_READY_EXTERNAL_PWA_EVIDENCE_PENDING",
+  "sourceOnly": true,
+  "errors": [],
+  "warnings": [],
+  "precacheEntryCount": 16,
+  "noStorePaths": [
+    "/admin",
+    "/campaign-admin",
+    "/billing",
+    "/subscription",
+    "/payment",
+    "/api/",
+    "/functions/",
+    "/reward-access",
+    "/rewards",
+    "/telegram",
+    "/vault",
+    "/capsule",
+    "/vault-backup",
+    "/eoncity"
+  ],
+  "externalEvidenceRequired": [
+    "first-install-on-real-device",
+    "user-approved-update-and-refresh",
+    "update-rollback-or-recovery-drill",
+    "offline-and-slow-network-recovery",
+    "storage-pressure-and-cache-eviction-observation"
+  ],
+  "claimFence": "A source pass is not proof of browser installation, update, rollback, offline or storage-pressure behavior."
+}

@@ -1,0 +1,250 @@
+trade-sandbox.html:31:      <p class="eon-trade-disclaimer">This is not a connection screen. It cannot contact an exchange, retrieve account data, create an order, or perform a withdrawal. Use a dedicated testnet account and never paste a key, secret, password or recovery phrase here.</p>
+trade-sandbox.html:42:            <p class="eon-trade-status">Do not paste an API key, token, secret, password, seed phrase, private key or exchange credential. This page will discard those fields if a caller attempts to provide them.</p>
+trade.html:35:      <p class="eon-trade-disclaimer">Trading carries risk. EONAPP does not provide financial advice. Manual reference prices are not live market data, and paper results do not predict real trading outcomes.</p>
+trade.html:85:              <p>The receipt records the exact local research and paper-only boundary. It contains no exchange credential, order request, live-price claim, or trading recommendation.</p>
+profile.html:28:        <p class="eon-hub-subtitle">Your profile avatar and preferences live in this browser profile. EONAPP does not show wallet recovery material, API keys, passwords, or exchange credentials here.</p>
+profile.html:54:      <article id="eon-profile-share-center" class="eon-hub-card"><p class="eon-hub-kicker">Invites</p><h2>Invite &amp; Share Center</h2><p>Create signed EONAPP, EON City, AI Cockpit, or portable Realm identity links. Nothing here publishes private work, creates a public store, tracks clicks, or activates payouts or rewards.</p><div class="eon-device-actions"><button type="button" id="eon-profile-open-share-center" class="eon-hub-primary">Open Share Center</button><a href="/realm-studio">Prepare My Realm</a></div><p id="eon-profile-share-status" class="eon-profile-status" role="status" aria-live="polite"></p></article>
+vault-backup.html:36:          <p class="eon-vault-warning">Keep the downloaded file and passphrase separately. EONAPP cannot recover a forgotten passphrase. Never paste a seed phrase, wallet recovery phrase, password, or API key into EONBOT.</p>
+index.html:67:        <h2>No surprise execution, no hidden money claims.</h2>
+realm-profile.html:51:      <p id="realm-profile-notice" class="notice">A signed Realm link is a public identifier, not a wallet key, password, recovery phrase, reward proof, or payment instruction.</p>
+kpi-dashboard.html:195:          <div class="stat-label">Referral Signups</div>
+kpi-dashboard.html:196:          <div class="stat-value" id="referralSignups">—</div>
+kpi-dashboard.html:199:          <div class="stat-label">Referral Value</div>
+kpi-dashboard.html:200:          <div class="stat-value" id="referralValue">$—</div>
+kpi-dashboard.html:262:      <a href="/marketplace.html">NFT Exchange</a>
+kpi-dashboard.html:318:    document.getElementById('referralSignups').textContent = metrics.growth.referralSignups;
+kpi-dashboard.html:319:    document.getElementById('referralValue').textContent = metrics.growth.referralValue;
+about.html:45:      <a href="/rewards">Campaign status</a>
+about.html:65:      <p>Monetization is intentionally deferred. No ad, offerwall, provider campaign, referral reward, revenue share, payout, subscription checkout, or payment callback is active in this deployment.</p>
+about.html:78:      <p>New invite links use <code>eon2</code> and safe Realm identity links use <code>eon3</code>. Each link carries its own signature and a fresh 128-bit share ID, so it verifies locally without a short-link registry, click tracker, central relationship graph, token, or active reward program.</p>
+about.html:103:      <a href="/rewards">Campaign status</a>
+vault.html:36:          <p>See the safety state of this browser profile without turning the Vault into a dashboard of secrets. Keys, seed phrases, passwords, wallet recovery material and exchange credentials are never rendered here.</p>
+kpi-token-dashboard.html:9:  <title>Token Efficiency Dashboard | EONAPP.ch</title>
+kpi-token-dashboard.html:10:  <meta name="description" content="Real-time monitoring of AI token usage, costs, and efficiency optimizations. All data tracked locally for privacy." />
+kpi-token-dashboard.html:11:  <link rel="canonical" href="https://eonapp.ch/kpi-token-dashboard.html" />
+kpi-token-dashboard.html:12:  <meta property="og:title" content="Token Efficiency Dashboard | EONAPP.ch" />
+kpi-token-dashboard.html:13:  <meta property="og:description" content="Real-time AI token usage, costs, and efficiency monitoring." />
+kpi-token-dashboard.html:14:  <meta property="og:url" content="https://eonapp.ch/kpi-token-dashboard.html" />
+kpi-token-dashboard.html:18:  <meta name="twitter:title" content="Token Efficiency Dashboard | EONAPP.ch" />
+kpi-token-dashboard.html:19:  <meta name="twitter:description" content="Real-time AI token usage, costs, and efficiency monitoring." />
+kpi-token-dashboard.html:25:  <link rel="preload" href="/assets/css/kpi-token-dashboard.css" as="style" />
+kpi-token-dashboard.html:29:  <link rel="stylesheet" href="/assets/css/kpi-token-dashboard.css" />
+kpi-token-dashboard.html:33:<body data-page-type="kpi-token-dashboard">
+kpi-token-dashboard.html:53:  <div class="container kpi-token-dash">
+kpi-token-dashboard.html:54:    <h1 class="page-title">🚀 Token Efficiency Dashboard</h1>
+kpi-token-dashboard.html:56:      Real-time monitoring of AI token usage, costs, and efficiency optimizations.
+kpi-token-dashboard.html:67:    <div id="token-dashboard"></div>
+kpi-token-dashboard.html:81:      <a href="/marketplace.html">NFT Exchange</a>
+kpi-token-dashboard.html:100:<script src="/assets/js/utils/token-counter.js" type="module"></script>
+kpi-token-dashboard.html:104:<script src="/assets/js/utils/ai-token-optimizer.js" type="module"></script>
+kpi-token-dashboard.html:105:<script src="/assets/js/kpi-token-dashboard.js" type="module"></script>
+kpi-token-dashboard.html:132:      tokenMetrics: JSON.parse(localStorage.getItem('eon:token-metrics:v1') || 'null'),
+kpi-token-dashboard.html:140:    link.download = `eon-token-dashboard-export-${Date.now()}.json`;
+archive.html:39:    <p>This route is retained only as a safe landing for retired product links. It does not activate rewards, commerce, token claims, subscriptions, or public seller tools.</p>
+video-editor.html:56:      <div class="hero-cta" data-info-title="Video Production Workflow" data-info-body="Start in Video Lab for structure and edit logic, polish scripts and captions in Creator Studio, then distribute to Realm and marketplace offers.">
+video-editor.html:74:      <a href="/marketplace.html">NFT Exchange</a>
+realm-studio.html:28:        <p class="eon-hub-subtitle">Shape a personal EON City district on this device. You may issue a signed identity link when ready, but no public storefront, seller account, payment, affiliate, or payout is active.</p>
+realm-studio.html:41:        <p class="realm-studio-copy">The label and handle become public metadata only inside a signed identity link. Do not put personal contact details, wallet information, recovery phrases, API keys, passwords, payment requests, or private project details here.</p>
+realm-studio.html:104:        <p>Use this private route to return to the Realm district in EON City. A return is saved only on this device after the City opens; it never creates a follower count, referral event, benefit claim, or public visitor record.</p>
+realm-studio.html:124:        <h2 id="realm-studio-safety-title">Portable identity, not a public marketplace</h2>
+realm-studio.html:147:        <div><strong id="realm-studio-mission">No signed link issued yet</strong><p id="realm-studio-share-note">Link creation, copying, QR generation and opening do not create a reward, payout, click log, public store, or central issued-link record.</p></div>
+legal.html:46:    <p>Read the current product boundaries before using EONAPP. This release is local-first and does not offer payment, token, wallet, NFT sale, or reward activation.</p>
+legal.html:52:      <p>This page follows the current public trust boundary: local-first privacy, safe support evidence, no verified payment activation, no wallet approval or reward program, no investment advice, and no profit or result promises.</p>
+legal.html:54:        <li><strong>Safe evidence:</strong> route, timestamp, browser version, device context, and a redacted screenshot where relevant. No payment proof is requested because no payment path is active.</li>
+legal.html:55:        <li><strong>Never share secrets:</strong> seed phrase, private key, full API key, wallet backup file, password, or full card data.</li>
+legal.html:56:        <li><strong>Manual review:</strong> abuse reports, impersonation concerns, privacy requests, and policy exceptions require human review. No refund or payment-dispute process is active because this release has no checkout.</li>
+legal.html:71:      <p>EONAPP is a local-first AI workdesk and visual workspace. This release does not activate paid access, crypto checkout, wallet payments, token transfers, NFT sales, affiliate commissions, payouts, or reward campaigns. AI, Market preview, City, Realm, and Trade Research surfaces are productivity or preview features, not investment, legal, tax, medical, or income-promise services.</p>
+legal.html:75:      <p>Support can review safe public evidence only. EONAPP will not request seed phrases, private keys, full API keys, wallet backup files, passwords, or full card data. There is no active checkout, wallet transaction, token transfer, refund, or payment-processor case to resolve in this release; abuse and privacy reports are handled through the Support route.</p>
+legal.html:79:      <p>These policies are a launch-safe public baseline, not a substitute for professional legal advice. Before scaling paid traffic, review operating jurisdiction, tax, consumer, payment, crypto, privacy, and platform obligations with qualified counsel.</p>
+referral.html:1:<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="description" content="Open a self-contained signed EONAPP share locally without a central short-link registry."><title>Open EON Share · EONAPP.ch</title><link rel="canonical" href="https://eonapp.ch/referral.html"><link rel="icon" href="/favicon.svg"><style>html{color-scheme:dark}*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;font-family:Inter,system-ui,sans-serif;background:radial-gradient(circle at 20% 10%,#172554,#020617 58%);color:#e2e8f0;padding:1.2rem}.card{width:min(560px,100%);padding:2rem;border:1px solid rgba(125,211,252,.28);border-radius:24px;background:rgba(15,23,42,.88);box-shadow:0 26px 80px rgba(0,0,0,.4)}.mark{font-size:2.2rem}.eyebrow{color:#67e8f9;text-transform:uppercase;letter-spacing:.13em;font-size:.75rem;font-weight:800}h1{font-size:clamp(1.5rem,5vw,2.2rem);margin:.55rem 0}p{color:#a8b3c7;line-height:1.55}.btn{display:inline-flex;margin-top:1rem;padding:.8rem 1.1rem;border-radius:12px;background:#2563eb;color:#fff;text-decoration:none;font-weight:800}body[data-state=error] .card{border-color:rgba(248,113,113,.45)}body[data-state=ok] .card{border-color:rgba(52,211,153,.4)}</style></head><body data-page-type="referral"><a class="skip-link" href="#main">Skip to main content</a><main id="main" class="card"><div class="mark">⚡</div><p class="eyebrow">Instant signed share proof</p><h1 id="referral-status">Verifying this EON share…</h1><p id="referral-detail">Checking the signature locally. The public link itself is never stored in a central short-link database.</p><a id="referral-continue" class="btn" href="/" hidden>Continue</a></main><footer><a href="/support.html">Support</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></footer><script type="module" src="/assets/js/referral-landing-page.js"></script></body></html>
+wallet-risk.html:15:  <title>Wallet & Crypto Risk Notice — EONAPP.ch</title>
+wallet-risk.html:16:  <meta name="description" content="Wallet, EVM chain, token, NFT, and crypto risk notice for EONAPP.ch." />
+wallet-risk.html:17:  <link rel="canonical" href="https://eonapp.ch/wallet-risk.html" />
+wallet-risk.html:18:  <meta property="og:title" content="Wallet & Crypto Risk Notice — EONAPP.ch" />
+wallet-risk.html:19:  <meta property="og:description" content="Wallet, EVM chain, token, NFT, and crypto risk notice for EONAPP.ch." />
+wallet-risk.html:20:  <meta property="og:url" content="https://eonapp.ch/wallet-risk.html" />
+wallet-risk.html:23:  <meta name="twitter:title" content="Wallet & Crypto Risk Notice — EONAPP.ch" />
+wallet-risk.html:24:  <meta name="twitter:description" content="Wallet, EVM chain, token, NFT, and crypto risk notice for EONAPP.ch." />
+wallet-risk.html:25:  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Wallet & Crypto Risk Notice","url":"https://eonapp.ch/wallet-risk.html","description":"Wallet, EVM chain, token, NFT, and crypto risk notice for EONAPP.ch.","publisher":{"@type":"Organization","name":"EONAPP.ch","url":"https://eonapp.ch/"}}</script>
+wallet-risk.html:44:    <span class="badge">Wallet Risk</span>
+wallet-risk.html:45:    <h1>Wallet & Crypto Risk Notice</h1>
+wallet-risk.html:46:    <p>Read this before connecting a wallet, paying directly to an EVM address, using NFT features, rewards, or interacting with crypto surfaces.</p>
+wallet-risk.html:52:      <p>This page follows the public trust policy: verified payment activation, public-proof-only support, local-first privacy, explicit wallet approval, refund exceptions, no investment advice, and no profit or result promises.</p>
+wallet-risk.html:55:        <li><strong>Never share secrets:</strong> seed phrase, private key, full API key, wallet backup file, password, or full card data.</li>
+wallet-risk.html:60:      <h2>Supported direct-payment wallet</h2>
+wallet-risk.html:61:      <p>The direct EVM fallback payment receiver is Admin 1 / treasury: <code>0xf0DbE1026a4CbfD00bad66163Db6f30C62197862</code>. Only use this address through the official EONAPP checkout quote flow, and verify the chain, token, recipient, amount, and quote window before sending.</p>
+wallet-risk.html:65:      <p>The same EVM address format can appear on Ethereum, Polygon, Base, BNB Chain, and other EVM-compatible networks. That does not mean every chain or token is supported by EONAPP. Use only the chains and tokens listed in checkout.</p>
+wallet-risk.html:69:      <p>EONAPP will never ask for your seed phrase, private key, keystore password, recovery phrase, full API key, wallet backup file, password, or full card data. Admin login should use wallet signature proof, not private-key upload.</p>
+wallet-risk.html:73:      <p>Blockchain transactions may be irreversible. Network congestion, RPC failure, wrong-token transfers, chain reorgs, insufficient confirmations, exchange withdrawal delays, sanctions/compliance blocks, and user wallet mistakes can delay or prevent activation.</p>
+wallet-risk.html:76:      <h2>NFT, reward, and market risk</h2>
+wallet-risk.html:77:      <p>Collectibles, rewards, lootboxes, and NFTs may have no market value, no liquidity, and no guaranteed utility. Treat NFT and market features as entertainment and utility features unless explicit production terms say otherwise.</p>
+wallet-risk.html:81:      <p>EONAPP does not promise profit, resale value, income, trading performance, rarity value, appreciation, or liquidity. Do not buy plans, NFTs, rewards, or tokens expecting financial return.</p>
+wallet-risk.html:85:      <p>Crypto access, reporting, taxation, consumer rights, and wallet-service rules vary by jurisdiction. You are responsible for determining whether you may use crypto payments or wallet features where you live.</p>
+wallet-risk.html:93:      <p>Local-first AI tools, crypto payments, and creator workflows. Review the policies before buying paid access.</p>
+wallet-risk.html:99:      <a href="/wallet-risk.html">Wallet Risk</a>
+refund-policy.html:16:  <meta name="description" content="Strict digital-access refund policy for EONAPP.ch subscriptions and crypto payments." />
+refund-policy.html:19:  <meta property="og:description" content="Strict digital-access refund policy for EONAPP.ch subscriptions and crypto payments." />
+refund-policy.html:24:  <meta name="twitter:description" content="Strict digital-access refund policy for EONAPP.ch subscriptions and crypto payments." />
+refund-policy.html:25:  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Refund Policy","url":"https://eonapp.ch/refund-policy.html","description":"Strict digital-access refund policy for EONAPP.ch subscriptions and crypto payments.","publisher":{"@type":"Organization","name":"EONAPP.ch","url":"https://eonapp.ch/"}}</script>
+refund-policy.html:46:    <p>EONAPP is a digital-access product with crypto-aware payments. Refunds are limited, evidence-based, and manually reviewed after verified delivery.</p>
+refund-policy.html:52:      <p>This page follows the public trust policy: verified payment activation, public-proof-only support, local-first privacy, explicit wallet approval, refund exceptions, no investment advice, and no profit or result promises.</p>
+refund-policy.html:55:        <li><strong>Never share secrets:</strong> seed phrase, private key, full API key, wallet backup file, password, or full card data.</li>
+refund-policy.html:61:      <p>Payments for activated digital access are generally final after verified delivery because access is delivered digitally, capacity may be reserved, and crypto transactions are normally irreversible.</p>
+refund-policy.html:65:      <p>EONAPP may review exceptions for duplicate technical payment, confirmed payment received but access not delivered, verified fraud or security incident, processor-required refund, legal rights that cannot be waived, or a documented platform failure that prevents delivery.</p>
+refund-policy.html:68:      <h2>Partial, wrong-chain, or wrong-token payments</h2>
+refund-policy.html:69:      <p>Partial payments do not unlock full access. Wrong-chain, unsupported-token, wrong-address, exchange-withdrawal, or expired-quote payments may be unrecoverable. If recovery is technically possible, manual review may take time and may require processor or public-chain evidence.</p>
+refund-policy.html:73:      <p>Contact support with the email used for NOWPayments, invoice or quote ID, transaction hash, wallet address, chain, token, amount, plan, timestamp, and a short explanation. Do not share private keys, seed phrases, wallet backup files, full API keys, passwords, or full card data.</p>
+refund-policy.html:77:      <p>Crypto payments do not behave like card chargebacks. EONAPP cannot promise reversal after a completed onchain transaction or after a processor marks a payment as completed, forwarded, settled, or otherwise final.</p>
+refund-policy.html:89:      <p>Local-first AI tools, crypto payments, and creator workflows. Review the policies before buying paid access.</p>
+refund-policy.html:96:      <a href="/wallet-risk.html">Wallet Risk</a>
+live-trading-dashboard.html:68:      <a href="/marketplace.html">NFT Exchange</a>
+rewards.html:7:  <meta name="description" content="EONAPP campaign status and safeguards. No reward, offerwall, referral payout, provider callback, or subscription unlock is active." />
+rewards.html:8:  <title>EON Rewards · EONAPP</title>
+rewards.html:9:  <link rel="canonical" href="https://eonapp.ch/rewards" />
+rewards.html:16:  <style>.eon-reward-rule-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin:1rem 0}.eon-reward-rule-grid article,.eon-reward-pending,.eon-reward-consent{display:grid;gap:.45rem;padding:.85rem;border:1px solid rgba(148,163,184,.15);border-radius:.75rem;background:rgba(15,23,42,.44)}.eon-reward-rule-grid strong,.eon-reward-pending strong{color:#f8fafc;font-size:.85rem}.eon-reward-rule-grid span,.eon-reward-pending span,.eon-reward-consent{color:#a9b8cb;font-size:.8rem;line-height:1.5}.eon-reward-consent{grid-template-columns:auto 1fr;align-items:start;margin:1rem 0}.eon-reward-consent input{margin-top:.25rem}.eon-reward-consent a{color:#c7d2fe}.eon-reward-provider-list{display:flex;flex-wrap:wrap;gap:.7rem}.eon-reward-provider-list button{min-height:2.5rem;padding:.55rem .75rem;border:1px solid rgba(129,140,248,.42);border-radius:.7rem;background:rgba(99,102,241,.18);color:#eef2ff;cursor:pointer;font:inherit}.eon-reward-provider-list button:disabled{cursor:not-allowed;opacity:.52}@media(max-width:650px){.eon-reward-rule-grid{grid-template-columns:1fr}}.eon-reward-status{margin:1rem 0 0;color:#bac7dc;font-size:.84rem;line-height:1.45}</style>
+rewards.html:19:<body data-page-type="rewards" data-eon-app-shell="1" data-eon-app-page="rewards" data-monetization="disabled">
+rewards.html:22:    <header class="eon-hub-top" data-w215-monetization-disabled="true"><div><p class="eon-hub-kicker">Campaign safeguards</p><h1 class="eon-hub-title">EON Rewards</h1><p class="eon-hub-subtitle">No reward campaign is active. This page explains the safeguards that must exist before any future provider is considered.</p></div><a class="eon-hub-primary" href="/chat">Ask EONBOT</a></header>
+rewards.html:23:    <div id="eon-rewards-root"></div>
+rewards.html:26:  <script type="module" src="/assets/js/access/rewards-status-page.js"></script>
+billing.html:16:  <meta name="description" content="EONAPP campaign and billing status. No checkout, subscription, payment callback, or payment rail is active in this release." />
+billing.html:19:  <meta property="og:description" content="No checkout, subscription, payment callback, or payment rail is active in this release." />
+billing.html:24:  <meta name="twitter:description" content="No checkout, subscription, payment callback, or payment rail is active in this release." />
+billing.html:25:  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Billing & Campaign Status","url":"https://eonapp.ch/billing","description":"No checkout, subscription, payment callback, or payment rail is active in this release.","publisher":{"@type":"Organization","name":"EONAPP.ch","url":"https://eonapp.ch/"}}</script>
+billing.html:37:      <a href="/rewards">Campaign status</a>
+billing.html:46:    <p><strong>No checkout, subscription, payment rail, provider callback, or payment activation is active in this release.</strong> Do not send funds or payment details in expectation of access.</p>
+billing.html:52:      <p>This page follows the public trust policy: verified payment activation, public-proof-only support, local-first privacy, explicit wallet approval, refund exceptions, no investment advice, and no profit or result promises.</p>
+billing.html:55:        <li><strong>Never share secrets:</strong> seed phrase, private key, full API key, wallet backup file, password, or full card data.</li>
+billing.html:64:      <h2>Current checkout truth</h2>
+billing.html:65:      <p>There is no live checkout or subscription screen in this release. Any future plan, price, renewal period, and payment rail must be shown in a separate verified checkout before funds are requested.</p>
+billing.html:69:      <p>No payment processor is active in this deployment. A future processor integration requires an explicit public launch decision, verified callback/replay handling, refunds/support terms, and Preview/device evidence before any payment request is shown.</p>
+billing.html:72:      <h2>Future wallet policy</h2>
+billing.html:73:      <p>No direct wallet payment is accepted in this release. A future wallet flow must show verified recipient, chain, token, amount, quote window, reversal/irreversibility notice, and support path before a user is asked to sign or transfer anything.</p>
+billing.html:77:      <p>No payment can activate access in this release. Future activation must occur only after server-side verified evidence, with clear expiry, renewal, reversal, and support rules.</p>
+billing.html:81:      <p>There are no active payment receipts or activation claims in this release. Never send private keys, seed phrases, full API keys, wallet backup files, passwords, full card data, or funds to an address based on an assumed future product.</p>
+billing.html:89:      <p>There is no billing dispute path because no payment flow is live. Report suspicious messages or sites through Support and do not share secrets.</p>
+billing.html:104:      <a href="/wallet-risk.html">Wallet Risk</a>
+music-studio.html:74:      <a href="/marketplace.html">NFT Exchange</a>
+eon-browser.html:441:      <a class="eon-panel-app-card" href="/marketplace.html" data-app-url="/marketplace.html"><span>🏪</span>NFT Exchange</a>
+eon-browser.html:547:          <span>Tokens&nbsp;est: <strong id="eon-stats-tokens">0</strong></span>
+eon-browser.html:611:      <a href="/marketplace.html">NFT Exchange</a>
+eon-browser.html:617:      <a href="/billing.html">Payment finality</a>
+support.html:38:      <a href="/rewards">Campaign status</a>
+support.html:49:      <p class="support-lede">EONBOT is the first support line. Pick the matching topic below so the chat opens with the right checklist. Admin review is reserved for payment proof, security exceptions, abuse reports, refund exceptions, and policy cases.</p>
+support.html:52:        <a class="btn btn-outline btn-lg" href="/rewards">View campaign status</a>
+support.html:62:        <li><span>🚫</span><span><strong>Never send secrets:</strong> seed phrase, private key, wallet backup file, full API key, password, or full card data.</span></li>
+support.html:64:        <li><span>🛡️</span><span><strong>Admin review:</strong> payment proof, abuse/security reports, and policy exceptions only.</span></li>
+support.html:78:      <p>This Support Center follows the public trust policy: verified payment activation, public-proof-only support, local-first privacy, explicit wallet approval, refund exceptions, no investment advice, and no profit or result promises.</p>
+support.html:81:      <li><span>🚫</span><span><strong>Never share secrets:</strong> seed phrase, private key, full API key, wallet backup file, password, or full card data.</span></li>
+support.html:95:        <h2>No checkout or reward campaign is active</h2>
+support.html:96:        <p>This deployment does not accept payments, activate subscriptions, grant credits, or run a referral payout. Use the status page for the current boundary.</p>
+support.html:98:        <a class="btn btn-primary btn-sm" href="/rewards">Open campaign status</a>
+support.html:102:        <h2>Referral and Realm link verification</h2>
+support.html:103:        <p>Help with self-contained <code>eon2</code> referral and <code>eon3</code> Realm links, QR scanning, invalid-link checks, or safe public metadata.</p>
+support.html:104:        <ul><li>Share route and browser context</li><li>Never send a secret or payment</li><li>Sharing creates no reward or payout</li></ul>
+support.html:123:        <h2>Market, NFT, lootbox, and starter drop</h2>
+support.html:124:        <p>Starter drop generation, AI Upgrade Market, inventory, lootbox opening, marketplace route, or NFT utility issue.</p>
+support.html:125:        <ul><li>Market/item page</li><li>Drop or lootbox state</li><li>Screenshot context only</li></ul>
+support.html:131:        <p>Broken button, bad route, suspicious payment behavior, console error, abuse, or security-sensitive exception.</p>
+telegram.html:8:  <meta name="description" content="EONAPP Telegram gateway with no active reward or sponsor campaign." />
+telegram.html:26:        <article class="eon-release-card-item"><h2>Campaign status</h2><p>No reward campaign, offerwall, sponsor action, referral payout, or credit claim is active from this Telegram route.</p></article>
+telegram.html:27:        <article class="eon-release-card-item"><h2>Signed sharing</h2><p>Sharing does not create a reward. Use a self-contained signed link for a portable invite or Realm profile when you choose.</p></article>
+telegram.html:33:        <a href="/referral">Create signed link</a>
+telegram.html:35:      <p class="eon-release-fine">This page does not load a provider SDK, request a campaign callback, or promise a reward.</p>
+terms.html:16:  <meta name="description" content="Terms for EONAPP.ch digital tools, subscriptions, AI features, wallet payments, and NFT surfaces." />
+terms.html:19:  <meta property="og:description" content="Terms for EONAPP.ch digital tools, subscriptions, AI features, wallet payments, and NFT surfaces." />
+terms.html:24:  <meta name="twitter:description" content="Terms for EONAPP.ch digital tools, subscriptions, AI features, wallet payments, and NFT surfaces." />
+terms.html:25:  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Terms of Service","url":"https://eonapp.ch/terms.html","description":"Terms for EONAPP.ch digital tools, subscriptions, AI features, wallet payments, and NFT surfaces.","publisher":{"@type":"Organization","name":"EONAPP.ch","url":"https://eonapp.ch/"}}</script>
+terms.html:46:    <p>These terms govern use of EONAPP.ch. This release is local-first and does not activate paid features, wallet payments, token transfers, NFT sales, or a reward program.</p>
+terms.html:52:      <p>This page follows the current public trust boundary: no verified payment activation, no wallet approval, safe public support evidence, local-first privacy, no active refund process, no investment advice, and no profit or result promises.</p>
+terms.html:54:        <li><strong>Safe evidence:</strong> route, timestamp, browser version, device context, and a redacted screenshot where relevant. No payment proof is requested because no payment path is active.</li>
+terms.html:55:        <li><strong>Never share secrets:</strong> seed phrase, private key, full API key, wallet backup file, password, or full card data.</li>
+terms.html:56:        <li><strong>Manual review:</strong> abuse reports, impersonation concerns, privacy requests, and policy exceptions require human review. No refund or payment-dispute process is active because this release has no checkout.</li>
+terms.html:61:      <p>EONAPP provides browser-based AI, Vault, EON City, Market preview, and workflow tools. This release has no paid plan, checkout, subscription term, crypto payment, wallet fallback, or automatic entitlement activation.</p>
+terms.html:69:      <p>No payment rail, checkout, subscription purchase, wallet fallback, token transfer, affiliate payout, or reward campaign is active in this release. Do not send funds, wallet details, payment evidence, or personal information in expectation of access or a reward.</p>
+terms.html:72:      <h2>Wallet and token boundary</h2>
+terms.html:73:      <p>No wallet, token, NFT purchase, or on-chain transfer is active from the current EONAPP product routes. Archived research and historic source files are not a public service offer or an instruction to transact.</p>
+terms.html:81:      <p>You must not use EONAPP to abuse payment rails, misrepresent identity, attack third-party systems, evade laws, distribute malware, steal credentials, impersonate people without consent, bypass platform rules, or conduct unlawful financial activity. Operator/admin areas are restricted to approved administrators.</p>
+terms.html:84:      <h2>NFT, reward, and market surfaces</h2>
+terms.html:85:      <p>Market generation creates private local previews only after an explicit user action. No NFT mint, collectible sale, lootbox, reward, token, referral value, resale, liquidity, income, trading performance, or appreciation claim is active.</p>
+terms.html:93:      <p>Use the Support Center for technical issues, abuse reports, privacy concerns, and policy cases. Send only safe public proof. Do not send seed phrases, private keys, full API keys, wallet backup files, passwords, full card data, or payment evidence.</p>
+tools.html:217:        <a href="/rewards" data-nav-label="Status">Status</a>
+tools.html:295:            <p data-i18n-key="tools.card.local.desc" data-i18n-fallback="Find Ollama, LM Studio, and compatible local models for zero-token workflows.">Find Ollama, LM Studio, and compatible local models for zero-token workflows.</p>
+tools.html:326:            <p>Production boundaries, campaign status, wallet safety, and clear user expectations.</p>
+tools.html:331:            <p>No checkout, reward, provider callback, payout, or referral-value campaign is active in this deployment.</p>
+tools.html:336:            <p>Community entry and signed-sharing guidance. No reward action, provider SDK, postback, or grant state is active.</p>
+privacy.html:37:      <a href="/rewards">Campaign status</a>
+privacy.html:46:    <p>EONAPP is local-first where practical. No paid access, reward campaign, offerwall, referral payout, or provider callback is active in this release.</p>
+privacy.html:52:      <p>This page follows the public trust policy: verified payment activation, public-proof-only support, local-first privacy, explicit wallet approval, refund exceptions, no investment advice, and no profit or result promises.</p>
+privacy.html:55:        <li><strong>Never share secrets:</strong> seed phrase, private key, full API key, wallet backup file, password, or full card data.</li>
+privacy.html:64:      <h2>Payments and processors</h2>
+privacy.html:65:      <p>No checkout, subscription, payment processor, or payment callback is active in this release. Do not send funds or payment details in expectation of access. A future payment product would publish its own activation, processor, retention, refund, and support terms before launch.</p>
+privacy.html:68:      <h2>Wallet and public transaction data</h2>
+privacy.html:69:      <p>No direct wallet-payment rail is active in this release. Never send a wallet payment because of a message, link, or assumed future feature. Public transaction data should be shared with support only when a separately published payment flow explicitly requests it.</p>
+privacy.html:81:      <p>No ad, offerwall, rewarded unlock, sponsor, referral-reward, or revenue-share campaign is active. The Telegram and signed-link routes do not load campaign providers or create rewards. AI providers or optional local runtimes may still be contacted only when you explicitly choose them.</p>
+privacy.html:84:      <h2>Signed referral and Realm links</h2>
+privacy.html:85:      <p>Public <code>eon2</code> referral and <code>eon3</code> Realm links carry signed public metadata and a fresh cryptographic share ID. They contain no wallet secrets, password, payment request, click ledger, payout claim, or active reward value. Do not put real names, private notes, secrets, or sensitive details into a public label or handle.</p>
+privacy.html:93:      <p>Local-first AI tools, crypto payments, and creator workflows. Review the policies before buying paid access.</p>
+privacy.html:100:      <a href="/wallet-risk.html">Wallet Risk</a>
+config/sponsored-discovery-policy.mjs:4: * injection system, popup, interstitial, offerwall or reward mechanism.
+config/sponsored-discovery-policy.mjs:36:  'rewarded_ad',
+functions/csp-report.js:6: * request bodies, cookies, credentials and signed share tokens are never
+functions/README.md:5:All payment, token, reward, ad, referral, social-verification and Telegram handlers were moved to `archive/w228-retired-pages-functions/` and must not be deployed or reactivated without a new reviewed commercial/security release.
+assets/js/eon-city-play-station.js:7: * wallets, rewards, commerce, or remote telemetry.
+assets/js/eon-city-play-station.js:269:    routeReview.innerHTML = `<div class="eon-play-action-review-card"><p class="eon-play-kicker">Prepared route · review required</p><h2>Open ${escapeHtml(action.destinationLabel)}?</h2><p>${escapeHtml(action.purpose)}</p><ul><li>Source: ${escapeHtml(action.landmarkLabel)}</li>${missionCopy}<li>Only the route${mission ? ' and opaque mission receipt' : ''} are prepared; no private City, chat, Vault, provider, project, or account data moves with it.</li><li>No background task, signature, purchase, reward, contract action, or external request will run.</li></ul><div class="eon-play-action-review-actions"><a class="eon-play-primary" href="${escapeHtml(href)}" data-eon-play-confirm-action="${escapeHtml(action.id)}"${mission ? ` data-eon-play-mission-id="${escapeHtml(mission.id)}"` : ''}>Confirm and open ${escapeHtml(action.destinationLabel)}</a><button type="button" class="eon-play-secondary" data-eon-play-cancel-action${mission ? ` data-eon-play-mission-id="${escapeHtml(mission.id)}"` : ''}>Stay in City Play</button></div></div>`;
+assets/js/eon-city-play-station.js:342:      <div class="eon-play-gate-copy"><p class="eon-play-kicker">EON City Play · original Babylon preview</p><h1 id="eon-play-title">Enter the Neon Command District</h1><p>Full-screen, landscape-first City Play is the flagship preview experience. It includes original procedural district art, controlled renderer loading, touch controls, lifecycle cleanup, context-loss fallback, and local frame evidence. Final device and human visual proof is still required.</p><div class="eon-play-capability">${capabilityLines(capability)}</div><p class="eon-play-gate-note">${escapeHtml(capability.guidance)}</p><label class="eon-play-quality">Visual profile <select data-eon-play-quality>${buildQualityOptions(defaultQuality)}</select></label><label class="eon-play-reduced"><input type="checkbox" data-eon-play-reduced ${capability.reducedMotion ? 'checked' : ''}> Reduce effects</label><div class="eon-play-gate-actions"><button type="button" class="eon-play-primary" data-eon-play-start>Enter full-screen Play</button><a class="eon-play-secondary" href="/eoncity">Use City Lite</a><a class="eon-play-tertiary" href="/eoncity/3d">Open Visual Tour</a></div><p class="eon-play-disclosure">No wallet, token, reward, loot, payment, referral, provider request, Chat content, or remote telemetry is active here.</p></div>
+config/eon-invite-architecture.mjs:50:  'Never store raw signed-link tokens, chat content, Vault content, device fingerprints, wallet data, or model prompts in the invite ledger.',
+config/eon-invite-architecture.mjs:51:  'Do not use a referral tree, downline, ranking, commission, cash balance, token balance, or payout amount.',
+config/eon-invite-architecture.mjs:59:  prohibitedFieldNames: Object.freeze(['amount', 'exchange_rate', 'wallet', 'payout', 'coin', 'token', 'pool_points', 'commission', 'resale']),
+config/eon-invite-architecture.mjs:71:      purpose: 'Non-financial, time-bounded capability state only; no points, amount, exchange rate, wallet, transfer or payout fields.'
+config/eon-invite-architecture.mjs:92:  if (tableNames.some((name) => /(wallet|token|coin|payout|commission|pool)/.test(name))) errors.push('Invite ledger table names must remain non-financial.');
+config/eon-invite-architecture.mjs:93:  if (!Array.isArray(EON_INVITE_MINIMAL_LEDGER.prohibitedFieldNames) || !EON_INVITE_MINIMAL_LEDGER.prohibitedFieldNames.includes('payout')) {
+config/access-milestone-pilot-gate.mjs:22:  'No subscription entitlement, cloud AI credit, cash, wallet, coin, Pool Point, EON Lite, crypto, payout, resale or investment wording.',
+config/route-contract.mjs:33:// active rewards, commerce, public profiles, or payouts.
+config/route-contract.mjs:45:  { id: 'rewards-status', from: '/rewards', to: '/rewards.html', status: 200, file: 'rewards.html', lifecycle: 'disabled', expected: ['No reward campaign is active'] },
+config/route-contract.mjs:46:  { id: 'referral', from: '/referral', to: '/referral.html', status: 200, file: 'referral.html', lifecycle: 'local-only', expected: ['Signed'] },
+config/route-contract.mjs:49:  { id: 'share-r', from: '/r', to: '/referral.html', status: 200, file: 'referral.html', lifecycle: 'local-only' },
+config/route-contract.mjs:50:  { id: 'share-r-slash', from: '/r/', to: '/referral.html', status: 200, file: 'referral.html', lifecycle: 'local-only' },
+config/route-contract.mjs:51:  { id: 'share-r-wildcard', from: '/r/*', to: '/referral.html', status: 200, file: 'referral.html', lifecycle: 'local-only' },
+config/route-contract.mjs:52:  { id: 'share-m', from: '/m', to: '/referral.html', status: 200, file: 'referral.html', lifecycle: 'local-only' },
+config/route-contract.mjs:53:  { id: 'share-m-slash', from: '/m/', to: '/referral.html', status: 200, file: 'referral.html', lifecycle: 'local-only' },
+config/route-contract.mjs:54:  { id: 'share-m-wildcard', from: '/m/*', to: '/referral.html', status: 200, file: 'referral.html', lifecycle: 'local-only' }
+config/route-contract.mjs:65:  // token and rewarded-ad copy. They are redirected and excluded from build
+config/route-contract.mjs:71:  { from: '/nowpayments', to: '/billing', status: 301 },
+config/route-contract.mjs:72:  { from: '/nowpayments/*', to: '/billing', status: 301 },
+config/route-contract.mjs:87:  { from: '/wallet-risk', to: '/trade', status: 301 },
+config/route-contract.mjs:88:  { from: '/wallet-risk.html', to: '/trade', status: 301 },
+config/route-contract.mjs:116:  { from: '/marketplace', to: '/market', status: 301 },
+config/route-contract.mjs:117:  { from: '/marketplace.html', to: '/market', status: 301 },
+config/route-contract.mjs:150:  // Commercial, token, mission and reward surfaces remain inactive and archived.
+config/route-contract.mjs:153:  { from: '/reward-access', to: '/rewards', status: 301 },
+config/route-contract.mjs:154:  { from: '/reward-access.html', to: '/rewards', status: 301 },
+config/route-contract.mjs:155:  { from: '/vault-rewards', to: '/archive', status: 301 },
+config/route-contract.mjs:156:  { from: '/vault-rewards.html', to: '/archive', status: 301 },
+config/route-contract.mjs:157:  { from: '/vault-payments', to: '/archive', status: 301 },
+config/route-contract.mjs:158:  { from: '/vault-payments.html', to: '/archive', status: 301 },
+config/route-contract.mjs:159:  { from: '/kpi-token-dashboard', to: '/archive', status: 301 },
+config/route-contract.mjs:160:  { from: '/kpi-token-dashboard.html', to: '/archive', status: 301 },
+config/route-contract.mjs:201:  ['/local-ai', 'local-ai.html'], ['/realm-studio', 'realm-studio.html'], ['/telegram', 'telegram.html'], ['/rewards', 'rewards.html'],
+config/route-contract.mjs:202:  ['/referral', 'referral.html'], ['/archive', 'archive.html'], ['/billing', 'billing.html'],
+config/product-evidence-registry.mjs:7: * local-only, preview, disabled, future, and retired claim.
+config/product-evidence-registry.mjs:50:  'rewards-status': ['tests/unit/w226-commercial-decision-gate.test.mjs', 'tests/unit/w215-monetization-decision.test.mjs', 'tests/unit/w235-access-milestones-disabled.test.mjs', 'tests/unit/w236-w237-no-go.test.mjs'],
+config/product-evidence-registry.mjs:51:  referral: ['tests/unit/w223-invite-share-center.test.mjs', 'tests/unit/w63-signed-share-link.test.mjs'],
+config/product-evidence-registry.mjs:93:export const PRODUCT_CLAIM_EVIDENCE = Object.freeze([
+config/product-evidence-registry.mjs:96:    claim: 'Chat is the primary local-first EONBOT work surface with restorable local threads.',
+config/product-evidence-registry.mjs:103:    claim: 'EONBOT interprets one safe command at a time and prepares only real current routes or a user-tapped local New Chat action; it does not claim external completion.',
+config/product-evidence-registry.mjs:105:    routes: Object.freeze(['/chat', '/projects', '/library', '/workspace', '/automations', '/local-ai', '/market', '/vault', '/trade', '/eoncity', '/eoncity/3d', '/eoncity/play', '/realm-studio', '/profile', '/rewards']),
+config/product-evidence-registry.mjs:110:    claim: 'Invite & Share Center creates signed invitation or portable Realm identity links only; it does not share chats or create rewards, payouts, tracking, commerce, or auto-posting.',
+config/product-evidence-registry.mjs:112:    routes: Object.freeze(['/chat', '/profile', '/workspace', '/referral']),
+config/product-evidence-registry.mjs:117:    claim: 'AI Cockpit can prepare local signed-invite campaign drafts and approval queues, but it does not connect social accounts, auto-post, track clicks, or activate rewards, commission, or payouts.',
+config/product-evidence-registry.mjs:119:    routes: Object.freeze(['/workspace', '/profile', '/referral']),
+config/product-evidence-registry.mjs:124:    claim: 'Market begins empty and creates private local previews only after explicit user action.',
+config/product-evidence-registry.mjs:131:    claim: 'EON City is a local 2D experience with optional 3D rendering of the same safe CityWorldState.',
+config/product-evidence-registry.mjs:138:    claim: 'EON City Play is an optional full-screen Babylon technical proof with explicit user-start, local capability selection, touch controls, lifecycle disposal, and City Lite fallback. It is not a finished game or a product-action surface.',
+config/product-evidence-registry.mjs:145:    claim: 'EON City offers a local, non-monetary First Circuit return loop with safe 2D controls, objective routing, and EONBOT-prepared district guidance.',
+config/product-evidence-registry.mjs:152:    claim: 'My Realm is a local personal district; public publishing and merchant functions are not active.',
+config/product-evidence-registry.mjs:159:    claim: 'Checkout, receipts, affiliate attribution, commissions, payouts, reward campaigns, token actions, and user seller functions are disabled.',
+config/product-evidence-registry.mjs:161:    routes: Object.freeze(['/billing', '/rewards', '/telegram']),
+config/product-evidence-registry.mjs:166:    claim: 'The future EON Invite design is read-only source architecture; no server attribution, qualification, or reward ledger endpoint is active.',
+config/product-evidence-registry.mjs:168:    routes: Object.freeze(['/referral', '/rewards']),
+config/product-evidence-registry.mjs:169:    evidence: Object.freeze(['tests/unit/w234-referral-d1-readonly-audit.test.mjs', 'tests/unit/w236-w237-no-go.test.mjs'])
+config/product-evidence-registry.mjs:173:    claim: 'EON Access Milestones can only be a future, expiring, non-transferable capability program and remain disabled behind a source-level kill switch.',

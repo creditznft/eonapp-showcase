@@ -1,0 +1,160 @@
+{
+  "schema": "eonapp.codex-predeploy-receipt.w624i.2026-07-11.v1",
+  "wave": "W624I",
+  "ok": true,
+  "startedAt": "2026-07-11T05:33:08.752Z",
+  "finishedAt": "2026-07-11T05:34:43.270Z",
+  "sourceFingerprint": {
+    "algorithm": "sha256",
+    "digest": "f980791e49401f6216a237113d642e5fa6df755d00f6fbf0c8d810a2807fbda8",
+    "fileCount": 3513
+  },
+  "resumedStepCount": 4,
+  "stepCount": 23,
+  "steps": [
+    {
+      "script": "test:unit",
+      "args": [],
+      "status": 0,
+      "durationMs": 32819
+    },
+    {
+      "script": "qa:w621-live-dodo-cloudflare-rollout",
+      "args": [],
+      "status": 0,
+      "durationMs": 439
+    },
+    {
+      "script": "qa:w623c-commercial-truth",
+      "args": [],
+      "status": 0,
+      "durationMs": 273
+    },
+    {
+      "script": "qa:w623d-production-reachability",
+      "args": [],
+      "status": 0,
+      "durationMs": 500
+    },
+    {
+      "script": "qa:w623e-information-architecture",
+      "args": [],
+      "status": 0,
+      "durationMs": 453
+    },
+    {
+      "script": "qa:w623h-minimal-referral-ledger",
+      "args": [],
+      "status": 0,
+      "durationMs": 492
+    },
+    {
+      "script": "qa:w623i-referral-scale",
+      "args": [],
+      "status": 0,
+      "durationMs": 476
+    },
+    {
+      "script": "qa:w624a-city-art-bible",
+      "args": [],
+      "status": 0,
+      "durationMs": 434
+    },
+    {
+      "script": "qa:w624b-city-runtime",
+      "args": [],
+      "status": 0,
+      "durationMs": 422
+    },
+    {
+      "script": "qa:w624c-command-district",
+      "args": [],
+      "status": 0,
+      "durationMs": 437
+    },
+    {
+      "script": "qa:w624d-wayfinder-camera",
+      "args": [],
+      "status": 0,
+      "durationMs": 443
+    },
+    {
+      "script": "qa:w624e-eonbot-orbit",
+      "args": [],
+      "status": 0,
+      "durationMs": 567
+    },
+    {
+      "script": "qa:w624f-command-district-npcs",
+      "args": [],
+      "status": 0,
+      "durationMs": 557
+    },
+    {
+      "script": "qa:w624g-productive-rpg-loop",
+      "args": [],
+      "status": 0,
+      "durationMs": 561
+    },
+    {
+      "script": "qa:w624h-truthful-command-center",
+      "args": [],
+      "status": 0,
+      "durationMs": 640
+    },
+    {
+      "script": "qa:w624i-genuine-agent-theatre",
+      "args": [],
+      "status": 0,
+      "durationMs": 622
+    },
+    {
+      "script": "qa:w624d-current-contract-alignment",
+      "args": [],
+      "status": 0,
+      "durationMs": 759
+    },
+    {
+      "script": "qa:w624d-test-archive",
+      "args": [],
+      "status": 0,
+      "durationMs": 585
+    },
+    {
+      "script": "lint",
+      "args": [
+        "--",
+        "--max-warnings=0"
+      ],
+      "status": 0,
+      "durationMs": 7093
+    },
+    {
+      "script": "security:secret-scan",
+      "args": [
+        "--",
+        "--allow-no-history"
+      ],
+      "status": 0,
+      "durationMs": 818
+    },
+    {
+      "script": "build",
+      "args": [],
+      "status": 0,
+      "durationMs": 10815
+    },
+    {
+      "script": "smoke:build",
+      "args": [],
+      "status": 0,
+      "durationMs": 264
+    },
+    {
+      "script": "qa:w623f-certification-v2",
+      "args": [],
+      "status": 0,
+      "durationMs": 514
+    }
+  ]
+}

@@ -1,0 +1,238 @@
+{
+  "schema": "eonapp.independent-certification.w718.v1",
+  "wave": "W718",
+  "ownerApproved": false,
+  "p0Open": 0,
+  "p1Open": 0,
+  "pillars": [
+    {
+      "id": "product-clarity",
+      "label": "Product clarity and first-run journey",
+      "weight": 10,
+      "score": null,
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "projects-atlas",
+      "label": "Projects and Atlas task success",
+      "weight": 10,
+      "score": null,
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "nexus-spatial",
+      "label": "NEXUS spatial quality",
+      "weight": 12,
+      "score": null,
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "city-core",
+      "label": "EONCITY Core art and navigation",
+      "weight": 12,
+      "score": null,
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "command-centre",
+      "label": "Command Centre productivity",
+      "weight": 8,
+      "score": null,
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "expanse",
+      "label": "Expanse flagship experience",
+      "weight": 10,
+      "score": null,
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "performance",
+      "label": "Performance and device adaptation",
+      "weight": 10,
+      "score": null,
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "accessibility",
+      "label": "Accessibility and input",
+      "weight": 7,
+      "score": null,
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "reliability",
+      "label": "Reliability and persistence",
+      "weight": 7,
+      "score": null,
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "security",
+      "label": "Security, privacy and truth",
+      "weight": 6,
+      "score": null,
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "consistency",
+      "label": "Visual and interaction consistency",
+      "weight": 5,
+      "score": null,
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "release",
+      "label": "Release and operations",
+      "weight": 3,
+      "score": null,
+      "evidence": [],
+      "notes": ""
+    }
+  ],
+  "quantitativeGates": [
+    {
+      "id": "world-floor",
+      "target": "0 camera/player/target poses below the allowed world floor",
+      "passed": null,
+      "evidence": []
+    },
+    {
+      "id": "expanse-desktop",
+      "target": "20/20 desktop entry and return attempts",
+      "passed": null,
+      "evidence": []
+    },
+    {
+      "id": "projects-single-owner",
+      "target": "0 duplicate Projects continuation surfaces",
+      "passed": null,
+      "evidence": []
+    },
+    {
+      "id": "atlas-no-project",
+      "target": "useful Atlas visible without a selected project",
+      "passed": null,
+      "evidence": []
+    },
+    {
+      "id": "nexus-input-parity",
+      "target": "selection, inspection and primary action by keyboard, mouse and touch",
+      "passed": null,
+      "evidence": []
+    },
+    {
+      "id": "city-warm-start",
+      "target": "<=8 seconds owner-laptop balanced warm first playable frame",
+      "passed": null,
+      "evidence": []
+    },
+    {
+      "id": "city-low-start",
+      "target": "<=12 seconds selected low-device first playable frame",
+      "passed": null,
+      "evidence": []
+    },
+    {
+      "id": "core-fps",
+      "target": ">=50 FPS sustained owner-laptop balanced Core route",
+      "passed": null,
+      "evidence": []
+    },
+    {
+      "id": "expanse-fps",
+      "target": ">=45 FPS sustained owner-laptop balanced Expanse route",
+      "passed": null,
+      "evidence": []
+    },
+    {
+      "id": "low-fps",
+      "target": ">=30 FPS selected weak-device low mode",
+      "passed": null,
+      "evidence": []
+    },
+    {
+      "id": "memory",
+      "target": "no unbounded growth during 30-minute Core/Expanse/Realm/Core loop",
+      "passed": null,
+      "evidence": []
+    },
+    {
+      "id": "transfer",
+      "target": "<=10 MB compressed desktop initial City; <=4 MB low first play",
+      "passed": null,
+      "evidence": []
+    },
+    {
+      "id": "touch-focus",
+      "target": "visible focus and practical 48x48 CSS pixel touch targets",
+      "passed": null,
+      "evidence": []
+    },
+    {
+      "id": "provenance",
+      "target": "exact wave, source, candidate, build time and rollback authority",
+      "passed": null,
+      "evidence": []
+    }
+  ],
+  "journeys": [
+    {
+      "id": "guest-chat-signin-city",
+      "passed": null,
+      "evidence": []
+    },
+    {
+      "id": "project-atlas-work-object",
+      "passed": null,
+      "evidence": []
+    },
+    {
+      "id": "nexus-compact-split-full-inworld",
+      "passed": null,
+      "evidence": []
+    },
+    {
+      "id": "command-centre-reviewed-action",
+      "passed": null,
+      "evidence": []
+    },
+    {
+      "id": "core-nine-district-transit",
+      "passed": null,
+      "evidence": []
+    },
+    {
+      "id": "expanse-discover-enter-return",
+      "passed": null,
+      "evidence": []
+    },
+    {
+      "id": "realm-my-realm-core-return",
+      "passed": null,
+      "evidence": []
+    },
+    {
+      "id": "project-refresh-update-persistence",
+      "passed": null,
+      "evidence": []
+    },
+    {
+      "id": "low-mode-reduced-motion-recovery",
+      "passed": null,
+      "evidence": []
+    }
+  ]
+}

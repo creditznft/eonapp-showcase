@@ -1,0 +1,98 @@
+[01] npm run qa:w239-public-output-quarantine
+status=0 log=w255-gate-01.log
+  # fail 0
+  # cancelled 0
+  # skipped 0
+  # todo 0
+  # duration_ms 153.517165
+[02] npm run qa:w242-active-source-quarantine
+status=0 log=w255-gate-02.log
+  # fail 0
+  # cancelled 0
+  # skipped 0
+  # todo 0
+  # duration_ms 295.630834
+[03] npm run qa:w243-chat-navigation-theme
+status=0 log=w255-gate-03.log
+  # fail 0
+  # cancelled 0
+  # skipped 0
+  # todo 0
+  # duration_ms 165.136578
+[04] npm run qa:w244-provider-local-ai-truth
+status=0 log=w255-gate-04.log
+  # fail 0
+  # cancelled 0
+  # skipped 0
+  # todo 0
+  # duration_ms 188.788382
+[05] npm run qa:w247-economic-commercial-firewall
+status=0 log=w255-gate-05.log
+  # fail 0
+  # cancelled 0
+  # skipped 0
+  # todo 0
+  # duration_ms 307.280793
+[06] npm run qa:w248-existing-city-visual-tour-audit
+status=0 log=w255-gate-06.log
+  # fail 0
+  # cancelled 0
+  # skipped 0
+  # todo 0
+  # duration_ms 157.654455
+[07] npm run qa:w249-babylon-play-proof-spike:dist
+status=0 log=w255-gate-07.log
+  # fail 0
+  # cancelled 0
+  # skipped 0
+  # todo 0
+  # duration_ms 151.569753
+[08] npm run qa:w250-city-prepared-action
+status=0 log=w255-gate-08.log
+  # fail 0
+  # cancelled 0
+  # skipped 0
+  # todo 0
+  # duration_ms 163.546586
+[09] npm run qa:w251-city-work-gateway
+status=0 log=w255-gate-09.log
+  # fail 0
+  # cancelled 0
+  # skipped 0
+  # todo 0
+  # duration_ms 151.616445
+[10] npm run qa:w252-city-art-provenance
+status=0 log=w255-gate-10.log
+  # fail 0
+  # cancelled 0
+  # skipped 0
+  # todo 0
+  # duration_ms 151.492986
+[11] npm run qa:w253-city-input-orientation-accessibility
+status=0 log=w255-gate-11.log
+  # fail 0
+  # cancelled 0
+  # skipped 0
+  # todo 0
+  # duration_ms 142.083974
+[12] npm run qa:w254-city-performance-governor
+status=0 log=w255-gate-12.log
+  # fail 0
+  # cancelled 0
+  # skipped 0
+  # todo 0
+  # duration_ms 151.881376
+[13] npm run qa:w255-city-parity-registry
+status=0 log=w255-gate-13.log
+  # fail 0
+  # cancelled 0
+  # skipped 0
+  # todo 0
+  # duration_ms 184.569956
+[14] npm run smoke:build
+status=0 log=w255-gate-14.log
+  
+  > smoke:build
+  > node scripts/smoke-check-build.cjs
+  
+  Build smoke check passed (23 required files; dist assets present).

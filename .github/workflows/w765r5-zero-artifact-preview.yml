@@ -1,0 +1,148 @@
+name: W765R5 Zero-Artifact Preview
+
+on:
+  push:
+    branches:
+      - chatgpt/w765r5-command-workspace
+    paths:
+      - automation/w765r5-preview-ready.txt
+
+permissions:
+  contents: write
+  deployments: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+  OVERLAY_PATH: automation/w765r5-transfer/EONAPP_W765R5_GITHUB_OVERLAY_2026-08-01.tar.gz
+  OVERLAY_SHA256: e6018a5afe34ab91b43c15778048456ae378ee3dda67eb17c8cdbba3c6330636
+  PREVIEW_BRANCH: w765r5-owner-review
+
+concurrency:
+  group: w765r5-zero-artifact-preview
+  cancel-in-progress: false
+
+jobs:
+  certify-and-preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    environment:
+      name: preview
+    steps:
+      - name: Check out isolated transfer branch
+        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955
+        with:
+          ref: chatgpt/w765r5-command-workspace
+          fetch-depth: 0
+
+      - name: Use Node 22
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+
+      - name: Verify and reconstruct exact W765R5 source
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f "$OVERLAY_PATH"
+          echo "$OVERLAY_SHA256  $OVERLAY_PATH" | sha256sum --check --strict
+          mapfile -t OVERLAY_FILES < <(tar -tzf "$OVERLAY_PATH")
+          tar -xzf "$OVERLAY_PATH" -C .
+          for path in "${OVERLAY_FILES[@]}"; do
+            test -f "$path" || continue
+            sed -i 's/\r$//' "$path"
+          done
+          rm -rf automation/w765r5-transfer automation/w765r5-preview-ready.txt
+          git config user.name 'eonapp-release-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -A
+          git diff --cached --check
+          git commit -m 'W765R5 exact reconciled source [skip ci]'
+          echo "CANDIDATE_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+
+      - name: Install exact dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm config set registry https://registry.npmjs.org/
+          npm config set audit false
+          npm config set fund false
+          npm ci --include=dev --no-audit --no-fund
+
+      - name: Run W765R5 certification gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          node scripts/w765r5-command-workspace-gate.mjs
+          for test_file in \
+            tests/unit/w765r5-command-workspace.test.mjs \
+            tests/unit/w765r4-live-city-repair.test.mjs \
+            tests/unit/w765r1-production-runtime.test.mjs \
+            tests/unit/w760-w765-command-core-convergence.test.mjs \
+            tests/unit/w760-w765-runtime-integration.test.mjs
+          do
+            node --test "$test_file"
+          done
+          npm run lint -- --max-warnings=0
+          npm run build
+          npm run smoke:build
+          npm run audit:site
+          git diff --check
+
+      - name: Build immutable release candidate
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm run release:candidate -- --commit "$CANDIDATE_SHA"
+          npm run release:candidate:verify -- artifacts/w641-release-candidate
+          test "$(jq -r .commitSha artifacts/w641-release-candidate/candidate-provenance.json)" = "$CANDIDATE_SHA"
+          echo "CANDIDATE_DIGEST=$(jq -r .candidateDigest artifacts/w641-release-candidate/candidate-provenance.json)" >> "$GITHUB_ENV"
+          DEPLOY_ROOT="$RUNNER_TEMP/eonapp-w765r5-preview"
+          node scripts/w660l-stage-pages-deploy-root.mjs --candidate artifacts/w641-release-candidate --output "$DEPLOY_ROOT"
+          test -f "$DEPLOY_ROOT/_routes.json"
+          test -f "$DEPLOY_ROOT/release/candidate-provenance.json"
+          test -f "$DEPLOY_ROOT/functions/api/auth/session.js"
+          echo "DEPLOY_ROOT=$DEPLOY_ROOT" >> "$GITHUB_ENV"
+
+      - name: Publish certified source commit
+        shell: bash
+        run: git push origin HEAD:chatgpt/w765r5-command-workspace
+
+      - name: Validate Cloudflare credentials
+        shell: bash
+        run: |
+          test -n "${{ secrets.CLOUDFLARE_API_TOKEN }}"
+          test -n "${{ secrets.CLOUDFLARE_ACCOUNT_ID }}"
+
+      - name: Deploy one Cloudflare Preview
+        shell: bash
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          set -euo pipefail
+          npx --yes wrangler@4 pages deploy "$DEPLOY_ROOT" \
+            --project-name=eonapp-ch \
+            --branch="$PREVIEW_BRANCH" \
+            --commit-hash="$CANDIDATE_SHA" \
+            --commit-dirty=false
+
+      - name: Verify Preview identity and routes
+        shell: bash
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          set -euo pipefail
+          ALIAS="https://${PREVIEW_BRANCH}.eonapp-ch.pages.dev"
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent --show-error -H 'cache-control: no-store' "$ALIAS/release/candidate-provenance.json?w765r5=$GITHUB_RUN_ID" -o served.json; then break; fi
+            sleep 10
+          done
+          test "$(jq -r .commitSha served.json)" = "$CANDIDATE_SHA"
+          test "$(jq -r .candidateDigest served.json)" = "$CANDIDATE_DIGEST"
+          for route in / /chat /projects /eoncity /api/auth/session /api/city/access /api/billing/status /api/referrals; do
+            code="$(curl --silent --show-error --location --output /dev/null --write-out '%{http_code}' -H 'cache-control: no-store' "$ALIAS$route?w765r5=$GITHUB_RUN_ID")"
+            test "$code" = '200'
+          done
+          echo "Preview verified: $ALIAS/eoncity?release=$CANDIDATE_SHA"
+          echo "No GitHub Actions artifacts were created."

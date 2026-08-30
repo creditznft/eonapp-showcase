@@ -1,0 +1,22 @@
+{
+  "schema": "eonapp.a15.i21.cloudflare-d1-gate-receipt.v1",
+  "generatedAt": "2026-08-29T20:08:30.739Z",
+  "wave": "I21",
+  "status": "pass",
+  "sourceControlledPagesConfig": true,
+  "exactSchemaVersionsRequired": true,
+  "requestTimeDdl": false,
+  "migrationCount": 18,
+  "stagedMigrationCount": 0,
+  "migrationManifestDigest": "6904b5a9db20ed3334ea0a31dd9e05e146b42d523d4d9fdecf766916734cf62d",
+  "unresolvedPlaceholders": [],
+  "externalConfigReady": true,
+  "previewDeployed": false,
+  "productionAuthorized": false,
+  "productionDeployed": false,
+  "recoveryRehearsalPerformed": false,
+  "databaseIdsStoredInReceipt": false,
+  "secretValuesStoredInReceipt": false,
+  "errors": [],
+  "digest": "9bae20a51c75d41dbd5248e70b2ecbf9a4565b0940eac209caf20274888c37fe"
+}

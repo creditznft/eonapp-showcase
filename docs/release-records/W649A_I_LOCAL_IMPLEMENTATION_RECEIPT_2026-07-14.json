@@ -1,0 +1,94 @@
+{
+  "schema": "eonapp.w649.local-implementation-receipt.2026-07-14.v1",
+  "waveRange": "W649A-W649I",
+  "classification": "local-code-complete-with-external-evidence-pending",
+  "productionCertified": false,
+  "productionDeploymentAuthorized": false,
+  "authority": {
+    "handoverSha256": "d5d1118b89eea833216bf303ec6cd9050dd41846cfda7875eac1c32587a72f65",
+    "w648dSourceArchiveSha256": "5720d1bd7054003a3e85a120b7a1fcfb9188e2b1855b99f6e181a25a017ef276",
+    "baselineCommit": "e8d5a4cdf212d6085eae6f921d3d7dc0c78f7fc1",
+    "runtimeIntegrationCommit": "e9611bebfaab525a6ad4a3b773949ff038461032",
+    "productionEmissionFixCommit": "d06794115723c307577a50d3bcb9e979c3b58e35"
+  },
+  "implemented": {
+    "authenticatedEntry": {
+      "signedOutStaticPortalOnly": true,
+      "public3dPreview": false,
+      "heavyRuntimeDynamicImportAfterAuthorizationOnly": true
+    },
+    "assetLibrary": {
+      "logicalAssets": 38,
+      "activeLogicalAssets": 33,
+      "inactiveOrSupersededLogicalAssets": 5,
+      "immutableBinaries": 76,
+      "activeBinaries": 66,
+      "inactiveOrSupersededBinaries": 10,
+      "totalBytes": 82560744,
+      "largestFileBytes": 2780808,
+      "primaryAndDecoderFreeVariants": true,
+      "contentHashedPaths": true
+    },
+    "runtime": {
+      "pathfinderPrimePrimary": true,
+      "pathfinderAFallback": true,
+      "eonbotProceduralFallback": true,
+      "localMeshoptDecoder": true,
+      "animationStateMachine": true,
+      "rootMotionAnchorLock": true,
+      "routeExitDisposal": true,
+      "proximityDistrictStreaming": true,
+      "maxResidentDistricts": 1,
+      "districtCount": 8,
+      "primitiveCollisionProxies": true,
+      "routeOrPanelBackedActions": true
+    },
+    "performanceTruth": {
+      "profiles": ["lite", "balanced", "cinematic"],
+      "litePopulationBound": 1,
+      "preloadAll": false,
+      "proceduralDistantSilhouettes": true,
+      "trueGeometricLodReady": false,
+      "trueGeometricLodCertificationPending": true
+    },
+    "productionBuild": {
+      "w649GlbsEmitted": 76,
+      "localDecoderEmitted": true,
+      "byteAndShaVerificationInSmokeGate": true,
+      "cloudflarePagesMaxFileGateBytes": 26214400
+    }
+  },
+  "localCertification": {
+    "maintainedTestFiles": 286,
+    "tests": 1073,
+    "passed": 1026,
+    "explicitHistoricalSkips": 47,
+    "failed": 0,
+    "archiveAlignment": "10/10",
+    "lintWarnings": 0,
+    "secretScan": "PASS",
+    "dependencyVulnerabilities": 0,
+    "siteAudit": "PASS",
+    "identityGate": "PASS",
+    "pageGate": "PASS_WITH_2_PREEXISTING_WORDING_WARNINGS",
+    "qualityGate": "PASS",
+    "launchReadiness": "PASS"
+  },
+  "externalEvidencePending": [
+    "Playwright Chromium execution in an environment with the matching browser binary",
+    "real Google-authenticated EONAPP storage-state",
+    "desktop and mobile-landscape headed EON City screenshots and network/console exports",
+    "Pathfinder Prime versus Pathfinder A owner visual lock",
+    "animation deformation and clipping review for every launch character",
+    "real-device FPS, memory, context-loss, cache, abort and re-entry proof",
+    "true geometric LOD1/LOD2 generation and visual acceptance",
+    "headed Forge certification",
+    "Cloudflare Preview exact-artifact certification",
+    "owner explicit GO before production"
+  ],
+  "browserAttempt": {
+    "executed": false,
+    "reason": "Playwright Chromium executable was not installed in this container; authenticated lanes also require EONAPP_W649_AUTH_STORAGE_STATE.",
+    "claim": "No browser, Preview, visual, mobile-device or production proof is claimed."
+  }
+}

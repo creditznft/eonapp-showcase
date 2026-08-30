@@ -1,0 +1,18 @@
+character,status,clips,planned_role,source
+Pathfinder Prime,Rigged,11,Primary player candidate,B02–B03 checkpoint
+Pathfinder A Vanguard,Rigged,6,Fallback player / animation donor,B02–B03 checkpoint
+EON Civilian Creator,Rigged,13,Creator Atrium host,B05 checkpoint
+Creator Trade,Rigged,6,Trade Dome host,B06 checkpoint
+EON Architect,Rigged,12,Orientation / architecture guide,B07 checkpoint
+EON X1 Worker,Rigged,9,Forge / maintenance worker,New animated cast delta
+Holo Interface Operator,Rigged,6,Agent theatre / interface operator,B09–B15 checkpoint
+Navigator Archive Vault,Rigged,6,Archive guide,B09–B15 checkpoint
+Vault Steward,Rigged,6,Vault host,B09–B15 checkpoint
+Vault Steward Male,Rigged,6,Alternate Vault host,B09–B15 checkpoint
+Security Sentinel,Rigged,6,Security / patrol NPC,New animated cast delta
+Forge Device Lab Specialist,Rigged,6,Device Lab specialist,New animated cast delta
+Citizen Variant,Rigged,6,Ambient civilian NPC,New animated cast delta
+EONBOT Orbit,Procedural,0 baked,Companion / guide,B04 checkpoint; Babylon.js procedural animation
+M4 Maintenance Specialist,Static,0,Optional future support NPC,B06 checkpoint; no animated package received
+Creator Command,Static,0,Optional future command NPC,B06 checkpoint; no animated package received
+Extra Civilian candidate,Static,0,Optional background variant,B08 checkpoint; separate from animated Citizen Variant

@@ -1,0 +1,980 @@
+TAP version 13
+# Subtest: W766A world seed is deterministic and privacy safe
+ok 1 - W766A world seed is deterministic and privacy safe
+  ---
+  duration_ms: 3.147294
+  type: 'test'
+  ...
+# Subtest: W766A initial state and map expose truthful Gateway Overlook
+ok 2 - W766A initial state and map expose truthful Gateway Overlook
+  ---
+  duration_ms: 0.833692
+  type: 'test'
+  ...
+# Subtest: W766A persistence normalizes duplicate receipts
+ok 3 - W766A persistence normalizes duplicate receipts
+  ---
+  duration_ms: 1.962495
+  type: 'test'
+  ...
+# Subtest: W766A persistence strips unknown and private fields while retaining canonical ledgers
+ok 4 - W766A persistence strips unknown and private fields while retaining canonical ledgers
+  ---
+  duration_ms: 2.243966
+  type: 'test'
+  ...
+# Subtest: W766IR2-G Expanse movement remains finite without inheriting the Command Hub hard radius
+ok 5 - W766IR2-G Expanse movement remains finite without inheriting the Command Hub hard radius
+  ---
+  duration_ms: 0.587263
+  type: 'test'
+  ...
+# Subtest: W767A persistence migrates an entered legacy campaign before objective sanitization
+ok 6 - W767A persistence migrates an entered legacy campaign before objective sanitization
+  ---
+  duration_ms: 1.043811
+  type: 'test'
+  ...
+# Subtest: W766A is integrated into the maintained single Babylon runtime
+ok 7 - W766A is integrated into the maintained single Babylon runtime
+  ---
+  duration_ms: 2.71913
+  type: 'test'
+  ...
+# Subtest: Expanse gate requires review before a separate explicit Enter action
+ok 8 - Expanse gate requires review before a separate explicit Enter action
+  ---
+  duration_ms: 1.481813
+  type: 'test'
+  ...
+# Subtest: Return restores player and camera from the captured snapshot
+ok 9 - Return restores player and camera from the captured snapshot
+  ---
+  duration_ms: 0.92916
+  type: 'test'
+  ...
+# Subtest: W766A requires review and explicit entry before loading
+ok 10 - W766A requires review and explicit entry before loading
+  ---
+  duration_ms: 2.282804
+  type: 'test'
+  ...
+# Subtest: W766A safely cancels entry review when the player navigates away
+ok 11 - W766A safely cancels entry review when the player navigates away
+  ---
+  duration_ms: 2.836524
+  type: 'test'
+  ...
+# Subtest: W766A supports canonical-scene activation and deterministic safe return
+ok 12 - W766A supports canonical-scene activation and deterministic safe return
+  ---
+  duration_ms: 1.495692
+  type: 'test'
+  ...
+# Subtest: W766A fails safely to Hub without a second runtime
+ok 13 - W766A fails safely to Hub without a second runtime
+  ---
+  duration_ms: 0.506872
+  type: 'test'
+  ...
+# Subtest: W766A return snapshot stores only privacy-safe mission progress
+ok 14 - W766A return snapshot stores only privacy-safe mission progress
+  ---
+  duration_ms: 1.643126
+  type: 'test'
+  ...
+# Subtest: W766B uses one canonical five-zone Signal Frontier contract
+ok 15 - W766B uses one canonical five-zone Signal Frontier contract
+  ---
+  duration_ms: 2.380296
+  type: 'test'
+  ...
+# Subtest: W766B mounts authored routes and landmark families
+ok 16 - W766B mounts authored routes and landmark families
+  ---
+  duration_ms: 0.297904
+  type: 'test'
+  ...
+# Subtest: W766B reconstructs partial and completed world state from persistence
+ok 17 - W766B reconstructs partial and completed world state from persistence
+  ---
+  duration_ms: 0.702638
+  type: 'test'
+  ...
+# Subtest: W766B/C remain inside the canonical runtime lifecycle
+ok 18 - W766B/C remain inside the canonical runtime lifecycle
+  ---
+  duration_ms: 1.946131
+  type: 'test'
+  ...
+# Subtest: W766C sector generation is stable for a seed and coordinate
+ok 19 - W766C sector generation is stable for a seed and coordinate
+  ---
+  duration_ms: 8.56299
+  type: 'test'
+  ...
+# Subtest: W766C neighboring sectors share reciprocal edge contracts
+ok 20 - W766C neighboring sectors share reciprocal edge contracts
+  ---
+  duration_ms: 8.303503
+  type: 'test'
+  ...
+# Subtest: W766C streamer mounts rings inside aggregate budget and disposes sectors left behind
+ok 21 - W766C streamer mounts rings inside aggregate budget and disposes sectors left behind
+  ---
+  duration_ms: 22.500442
+  type: 'test'
+  ...
+# Subtest: W766C rejects a sector that exceeds active quality budget
+ok 22 - W766C rejects a sector that exceeds active quality budget
+  ---
+  duration_ms: 0.600174
+  type: 'test'
+  ...
+# Subtest: all named NPC route graphs pass bounded validation
+ok 23 - all named NPC route graphs pass bounded validation
+  ---
+  duration_ms: 3.199713
+  type: 'test'
+  ...
+# Subtest: route validation rejects blocked points and unsafe jumps
+ok 24 - route validation rejects blocked points and unsafe jumps
+  ---
+  duration_ms: 0.441986
+  type: 'test'
+  ...
+# Subtest: route sampling is deterministic and finite
+ok 25 - route sampling is deterministic and finite
+  ---
+  duration_ms: 4.344395
+  type: 'test'
+  ...
+# Subtest: runtime integrates missions, regional Transit and named NPC interactions
+ok 26 - runtime integrates missions, regional Transit and named NPC interactions
+  ---
+  duration_ms: 2.332995
+  type: 'test'
+  ...
+# Subtest: Gateway Overlook mounts NPC authority inside the canonical scene root
+ok 27 - Gateway Overlook mounts NPC authority inside the canonical scene root
+  ---
+  duration_ms: 0.38744
+  type: 'test'
+  ...
+# Subtest: no second Engine, Scene, canvas or render loop appears in W766 modules
+ok 28 - no second Engine, Scene, canvas or render loop appears in W766 modules
+  ---
+  duration_ms: 5.855092
+  type: 'test'
+  ...
+# Subtest: Companion rescue and Beyond the Gate complete once, award XP once and unlock First Light
+ok 29 - Companion rescue and Beyond the Gate complete once, award XP once and unlock First Light
+  ---
+  duration_ms: 20.062905
+  type: 'test'
+  ...
+# Subtest: First Light cannot start early and requires every objective
+ok 30 - First Light cannot start early and requires every objective
+  ---
+  duration_ms: 7.457841
+  type: 'test'
+  ...
+# Subtest: mission state survives reconstruction without duplicate XP
+ok 31 - mission state survives reconstruction without duplicate XP
+  ---
+  duration_ms: 7.147983
+  type: 'test'
+  ...
+# Subtest: campaign exposes seven ordered missions with the companion rescue first
+ok 32 - campaign exposes seven ordered missions with the companion rescue first
+  ---
+  duration_ms: 2.186021
+  type: 'test'
+  ...
+# Subtest: archive and transit missions award canonical XP once
+ok 33 - archive and transit missions award canonical XP once
+  ---
+  duration_ms: 10.463523
+  type: 'test'
+  ...
+# Subtest: reconstructed ledger rejects duplicate archive and transit awards
+ok 34 - reconstructed ledger rejects duplicate archive and transit awards
+  ---
+  duration_ms: 7.083336
+  type: 'test'
+  ...
+# Subtest: mission board exposes only the current unlocked objective guidance
+ok 35 - mission board exposes only the current unlocked objective guidance
+  ---
+  duration_ms: 4.179836
+  type: 'test'
+  ...
+# w766f living content tests passed
+# Subtest: tests/unit/w766f-living-content.test.mjs
+ok 11 - tests/unit/w766f-living-content.test.mjs
+  ---
+  duration_ms: 180.957174
+  type: 'test'
+  ...
+# Subtest: audio director is explicit-user-action gated and changes zone without media files
+ok 37 - audio director is explicit-user-action gated and changes zone without media files
+  ---
+  duration_ms: 3.456806
+  type: 'test'
+  ...
+# Subtest: audio director fails closed when Web Audio is unavailable
+ok 38 - audio director fails closed when Web Audio is unavailable
+  ---
+  duration_ms: 0.523688
+  type: 'test'
+  ...
+# Subtest: full seven-mission campaign awards XP once and exposes completion
+ok 39 - full seven-mission campaign awards XP once and exposes completion
+  ---
+  duration_ms: 15.539052
+  type: 'test'
+  ...
+# Subtest: Signal Vanguard reward requires real Vault chamber entry and is idempotent
+ok 40 - Signal Vanguard reward requires real Vault chamber entry and is idempotent
+  ---
+  duration_ms: 3.899132
+  type: 'test'
+  ...
+# Subtest: missions and objectives reject locked or out-of-order completion
+ok 41 - missions and objectives reject locked or out-of-order completion
+  ---
+  duration_ms: 0.483048
+  type: 'test'
+  ...
+# Subtest: campaign receipt atomically completes final objective and cannot be confirmed twice
+ok 42 - campaign receipt atomically completes final objective and cannot be confirmed twice
+  ---
+  duration_ms: 3.200498
+  type: 'test'
+  ...
+# Subtest: Signal Vanguard selection drives one persistent canonical-player cosmetic
+ok 43 - Signal Vanguard selection drives one persistent canonical-player cosmetic
+  ---
+  duration_ms: 2.661293
+  type: 'test'
+  ...
+# w766g presentation tests passed
+# Subtest: tests/unit/w766g-presentation.test.mjs
+ok 15 - tests/unit/w766g-presentation.test.mjs
+  ---
+  duration_ms: 178.402995
+  type: 'test'
+  ...
+# Subtest: W766G visual director applies bounded zone atmosphere and restores Hub scene state
+ok 45 - W766G visual director applies bounded zone atmosphere and restores Hub scene state
+  ---
+  duration_ms: 1.567836
+  type: 'test'
+  ...
+# Subtest: maintained runtime activates, updates, restores and disposes Expanse visuals
+ok 46 - maintained runtime activates, updates, restores and disposes Expanse visuals
+  ---
+  duration_ms: 1.395328
+  type: 'test'
+  ...
+# Subtest: W766D maps all three named NPCs to maintained animated W649 assets
+ok 47 - W766D maps all three named NPCs to maintained animated W649 assets
+  ---
+  duration_ms: 1.408714
+  type: 'test'
+  ...
+# Subtest: W766D keeps truthful fallback, grounding, click animation and asset disposal behavior
+ok 48 - W766D keeps truthful fallback, grounding, click animation and asset disposal behavior
+  ---
+  duration_ms: 4.340516
+  type: 'test'
+  ...
+# Subtest: Gateway Overlook defers verified W649 hero and NPC assets until explicit entry
+ok 49 - Gateway Overlook defers verified W649 hero and NPC assets until explicit entry
+  ---
+  duration_ms: 0.550541
+  type: 'test'
+  ...
+# Subtest: physical Signal Frontier interaction order completes all seven missions without developer APIs
+ok 50 - physical Signal Frontier interaction order completes all seven missions without developer APIs
+  ---
+  duration_ms: 22.881929
+  type: 'test'
+  ...
+# Subtest: an early physical zone signal is not consumed and can succeed when its mission becomes active
+ok 51 - an early physical zone signal is not consumed and can succeed when its mission becomes active
+  ---
+  duration_ms: 5.293584
+  type: 'test'
+  ...
+# Subtest: objective guidance provides target, distance and near interaction prompt
+ok 52 - objective guidance provides target, distance and near interaction prompt
+  ---
+  duration_ms: 2.014651
+  type: 'test'
+  ...
+# Subtest: primary authored route chain passes browser-world clearance budget
+ok 53 - primary authored route chain passes browser-world clearance budget
+  ---
+  duration_ms: 0.464105
+  type: 'test'
+  ...
+# Subtest: regional transit journey interpolates and completes without teleport-only state
+ok 54 - regional transit journey interpolates and completes without teleport-only state
+  ---
+  duration_ms: 5.808688
+  type: 'test'
+  ...
+# w766h runtime health tests passed
+# Subtest: tests/unit/w766h-runtime-health.test.mjs
+ok 20 - tests/unit/w766h-runtime-health.test.mjs
+  ---
+  duration_ms: 188.361199
+  type: 'test'
+  ...
+# Subtest: runtime integrates one-scene objective marker and staged Transit journey
+ok 56 - runtime integrates one-scene objective marker and staged Transit journey
+  ---
+  duration_ms: 14.901697
+  type: 'test'
+  ...
+# Subtest: physical side, discovery, productive and event anchors use one canonical scene
+ok 57 - physical side, discovery, productive and event anchors use one canonical scene
+  ---
+  duration_ms: 6.312656
+  type: 'test'
+  ...
+# w766h ui overlay integration tests passed
+# Subtest: tests/unit/w766h-ui-overlay-integration.test.mjs
+ok 22 - tests/unit/w766h-ui-overlay-integration.test.mjs
+  ---
+  duration_ms: 202.519018
+  type: 'test'
+  ...
+# Subtest: W766I gives every authored Signal Frontier zone a verified W649 hero landmark
+ok 59 - W766I gives every authored Signal Frontier zone a verified W649 hero landmark
+  ---
+  duration_ms: 2.399052
+  type: 'test'
+  ...
+# Subtest: W766I preserves route-light quality while limiting Balanced duplicate geometry
+ok 60 - W766I preserves route-light quality while limiting Balanced duplicate geometry
+  ---
+  duration_ms: 0.794499
+  type: 'test'
+  ...
+# Subtest: W766I sectors inherit the certified W667 world grammar deterministically
+ok 61 - W766I sectors inherit the certified W667 world grammar deterministically
+  ---
+  duration_ms: 8.714065
+  type: 'test'
+  ...
+# Subtest: W766I continuity composes macro regions, skyline, population and discoveries without a hard border
+ok 62 - W766I continuity composes macro regions, skyline, population and discoveries without a hard border
+  ---
+  duration_ms: 33.242757
+  type: 'test'
+  ...
+# Subtest: frontier contracts and procedural discoveries are review-first, canonical-XP and idempotent
+ok 63 - frontier contracts and procedural discoveries are review-first, canonical-XP and idempotent
+  ---
+  duration_ms: 11.997932
+  type: 'test'
+  ...
+# Subtest: W766I living-frontier state round-trips through the privacy whitelist only
+ok 64 - W766I living-frontier state round-trips through the privacy whitelist only
+  ---
+  duration_ms: 4.032391
+  type: 'test'
+  ...
+# Subtest: W766I integrates the proven world grammar into the existing canonical runtime
+ok 65 - W766I integrates the proven world grammar into the existing canonical runtime
+  ---
+  duration_ms: 2.67534
+  type: 'test'
+  ...
+# Subtest: W766I does not introduce another engine, scene, canvas or render loop
+ok 66 - W766I does not introduce another engine, scene, canvas or render loop
+  ---
+  duration_ms: 1.157195
+  type: 'test'
+  ...
+# Subtest: W766I generated content stays truthful and protected from authored-zone overlap
+ok 67 - W766I generated content stays truthful and protected from authored-zone overlap
+  ---
+  duration_ms: 0.809423
+  type: 'test'
+  ...
+# Subtest: W766IR2-C replaces every double-sided W750 text plane with two front-only faces
+ok 68 - W766IR2-C replaces every double-sided W750 text plane with two front-only faces
+  ---
+  duration_ms: 7.022293
+  type: 'test'
+  ...
+# Subtest: W766IR2-C gives front and rear faces independent textures and the same maintained interaction
+ok 69 - W766IR2-C gives front and rear faces independent textures and the same maintained interaction
+  ---
+  duration_ms: 0.641219
+  type: 'test'
+  ...
+# Subtest: W766IR2-C paints asymmetric rendered calibration on both independent faces
+ok 70 - W766IR2-C paints asymmetric rendered calibration on both independent faces
+  ---
+  duration_ms: 0.403799
+  type: 'test'
+  ...
+# Subtest: W766IR2-A has one canonical Hub Expanse Gate and no Garden or duplicate Overlook authority
+ok 71 - W766IR2-A has one canonical Hub Expanse Gate and no Garden or duplicate Overlook authority
+  ---
+  duration_ms: 6.874112
+  type: 'test'
+  ...
+# Subtest: W766IR2-A interaction registry is built from the canonical Gate and removes the stale sealed gateway
+ok 72 - W766IR2-A interaction registry is built from the canonical Gate and removes the stale sealed gateway
+  ---
+  duration_ms: 1.803319
+  type: 'test'
+  ...
+# Subtest: W766IR2-A world mode still requires separate explicit review, entry and cancel actions
+ok 73 - W766IR2-A world mode still requires separate explicit review, entry and cancel actions
+  ---
+  duration_ms: 1.953582
+  type: 'test'
+  ...
+# Subtest: W766IR2-A routes menu, physical interaction and mission guidance to one visible review dialog
+ok 74 - W766IR2-A routes menu, physical interaction and mission guidance to one visible review dialog
+  ---
+  duration_ms: 1.63995
+  type: 'test'
+  ...
+# Subtest: W766IR2-A Relay opens measured City Readiness rather than an inspect-only fake repair
+ok 75 - W766IR2-A Relay opens measured City Readiness rather than an inspect-only fake repair
+  ---
+  duration_ms: 0.788225
+  type: 'test'
+  ...
+# Subtest: W766IR2-F rewrites mutable City binaries to hash-bearing immutable URLs and removes originals
+ok 76 - W766IR2-F rewrites mutable City binaries to hash-bearing immutable URLs and removes originals
+  ---
+  duration_ms: 22.770338
+  type: 'test'
+  ...
+# Subtest: W766IR2-F unchanged bytes keep the same immutable URL and changed bytes receive a new URL
+ok 77 - W766IR2-F unchanged bytes keep the same immutable URL and changed bytes receive a new URL
+  ---
+  duration_ms: 8.103062
+  type: 'test'
+  ...
+# Subtest: W766IR2-F audit fails closed on any emitted un-hashed City binary or reference
+ok 78 - W766IR2-F audit fails closed on any emitted un-hashed City binary or reference
+  ---
+  duration_ms: 3.453551
+  type: 'test'
+  ...
+# Subtest: W766IR2-F rewrites relative glTF buffer references to their immutable hash-bearing companions
+ok 79 - W766IR2-F rewrites relative glTF buffer references to their immutable hash-bearing companions
+  ---
+  duration_ms: 5.554583
+  type: 'test'
+  ...
+# Subtest: W766IR2-F audit rejects a hash-bearing filename whose bytes no longer match its embedded digest
+ok 80 - W766IR2-F audit rejects a hash-bearing filename whose bytes no longer match its embedded digest
+  ---
+  duration_ms: 11.708775
+  type: 'test'
+  ...
+# Subtest: W766IR2-F source gate passes without pretending Preview or production certification occurred
+ok 81 - W766IR2-F source gate passes without pretending Preview or production certification occurred
+  ---
+  duration_ms: 44.065511
+  type: 'test'
+  ...
+# Subtest: W766IR2-F fail-closed browser mode rejects missing, malformed or production-changing proof
+ok 82 - W766IR2-F fail-closed browser mode rejects missing, malformed or production-changing proof
+  ---
+  duration_ms: 32.916054
+  type: 'test'
+  ...
+# Subtest: W766IR2-F accepts only the complete Preview proof matrix and authenticated full-offline receipt
+ok 83 - W766IR2-F accepts only the complete Preview proof matrix and authenticated full-offline receipt
+  ---
+  duration_ms: 27.816463
+  type: 'test'
+  ...
+# Subtest: W766IR2-H consumes each install prompt once and requires an active explicit gesture
+ok 84 - W766IR2-H consumes each install prompt once and requires an active explicit gesture
+  ---
+  duration_ms: 41.379953
+  type: 'test'
+  ...
+# Subtest: W766IR2-H clears a rejected browser prompt instead of retrying the stale event
+ok 85 - W766IR2-H clears a rejected browser prompt instead of retrying the stale event
+  ---
+  duration_ms: 21.976927
+  type: 'test'
+  ...
+# Subtest: W766IR2-H never treats transient geometry as authority over a logically open Menu
+ok 86 - W766IR2-H never treats transient geometry as authority over a logically open Menu
+  ---
+  duration_ms: 4.708072
+  type: 'test'
+  ...
+# Subtest: W766IR2-H protects maintained transitions and active successor surfaces
+ok 87 - W766IR2-H protects maintained transitions and active successor surfaces
+  ---
+  duration_ms: 0.593124
+  type: 'test'
+  ...
+# Subtest: W766IR2-H still recovers a mature lease after the controller closes and the root disappears
+ok 88 - W766IR2-H still recovers a mature lease after the controller closes and the root disappears
+  ---
+  duration_ms: 0.478199
+  type: 'test'
+  ...
+# Subtest: W766IR2-H leaves a controller-closed but still visible surface for explicit reconciliation instead of auto-closing it
+ok 89 - W766IR2-H leaves a controller-closed but still visible surface for explicit reconciliation instead of auto-closing it
+  ---
+  duration_ms: 0.374886
+  type: 'test'
+  ...
+# Subtest: W766IR2-H runtime exposes controller lifecycle separately from geometry diagnostics
+ok 90 - W766IR2-H runtime exposes controller lifecycle separately from geometry diagnostics
+  ---
+  duration_ms: 1.281634
+  type: 'test'
+  ...
+# Subtest: W766IR2-H moves focus out before hiding maintained dialogs
+ok 91 - W766IR2-H moves focus out before hiding maintained dialogs
+  ---
+  duration_ms: 1.260779
+  type: 'test'
+  ...
+# Subtest: W766IR2-H Accessible Map and Readiness use the same focus-safe lifecycle contract
+ok 92 - W766IR2-H Accessible Map and Readiness use the same focus-safe lifecycle contract
+  ---
+  duration_ms: 0.441015
+  type: 'test'
+  ...
+# Subtest: W766IR2-H provides explicit atomic Menu routes to Transit and Readiness
+ok 93 - W766IR2-H provides explicit atomic Menu routes to Transit and Readiness
+  ---
+  duration_ms: 1.295792
+  type: 'test'
+  ...
+# Subtest: W766IR2-H headed-browser contract waits beyond grace and exercises visible Menu handoffs
+ok 94 - W766IR2-H headed-browser contract waits beyond grace and exercises visible Menu handoffs
+  ---
+  duration_ms: 0.659847
+  type: 'test'
+  ...
+# Subtest: W766IR2-H supports repeated Menu and Map lease cycles without stale owners
+ok 95 - W766IR2-H supports repeated Menu and Map lease cycles without stale owners
+  ---
+  duration_ms: 5.396801
+  type: 'test'
+  ...
+# Subtest: W766IR2-H preserves raw spatial and FPS evidence for headed-browser diagnosis
+ok 96 - W766IR2-H preserves raw spatial and FPS evidence for headed-browser diagnosis
+  ---
+  duration_ms: 1.080459
+  type: 'test'
+  ...
+# Subtest: W766IR2-B input leases support exactly the six blocking owners
+ok 97 - W766IR2-B input leases support exactly the six blocking owners
+  ---
+  duration_ms: 2.358365
+  type: 'test'
+  ...
+# Subtest: W766IR2-B rejects duplicate acquire and unknown release while preserving active leases
+ok 98 - W766IR2-B rejects duplicate acquire and unknown release while preserving active leases
+  ---
+  duration_ms: 5.934751
+  type: 'test'
+  ...
+# Subtest: W766IR2-B releases every owner deterministically on disposal
+ok 99 - W766IR2-B releases every owner deterministically on disposal
+  ---
+  duration_ms: 0.987279
+  type: 'test'
+  ...
+# Subtest: W766IR2-G identifies only mature leases whose owning surface disappeared
+ok 100 - W766IR2-G identifies only mature leases whose owning surface disappeared
+  ---
+  duration_ms: 1.132817
+  type: 'test'
+  ...
+# Subtest: W766IR2-B survives twenty City Menu and accessible-map cycles without changing runtime identities
+ok 101 - W766IR2-B survives twenty City Menu and accessible-map cycles without changing runtime identities
+  ---
+  duration_ms: 16.612304
+  type: 'test'
+  ...
+# Subtest: W766IR2-B runtime routes every blocking surface through the named lease authority
+ok 102 - W766IR2-B runtime routes every blocking surface through the named lease authority
+  ---
+  duration_ms: 14.819663
+  type: 'test'
+  ...
+# Subtest: W766IR2-B accessible map fully styles controls and exposes all maintained outside actions
+ok 103 - W766IR2-B accessible map fully styles controls and exposes all maintained outside actions
+  ---
+  duration_ms: 4.636482
+  type: 'test'
+  ...
+# Subtest: W766IR2-B readiness view acquires and releases its movement lease explicitly
+ok 104 - W766IR2-B readiness view acquires and releases its movement lease explicitly
+  ---
+  duration_ms: 16.812471
+  type: 'test'
+  ...
+# Subtest: W766IR2-D keeps one stable content-addressed City cache in both workers
+ok 105 - W766IR2-D keeps one stable content-addressed City cache in both workers
+  ---
+  duration_ms: 9.041835
+  type: 'test'
+  ...
+# Subtest: W766IR2-F cache hit serves unchanged immutable, W649 and W659F bytes without another fetch
+ok 106 - W766IR2-F cache hit serves unchanged immutable, W649 and W659F bytes without another fetch
+  ---
+  duration_ms: 101.81458
+  type: 'test'
+  ...
+# Subtest: W766IR2-D changed hash downloads once while unchanged hashes remain local
+ok 107 - W766IR2-D changed hash downloads once while unchanged hashes remain local
+  ---
+  duration_ms: 12.525178
+  type: 'test'
+  ...
+# Subtest: W766IR2-D migrates prior release-specific City art before deleting the old owned cache
+ok 108 - W766IR2-D migrates prior release-specific City art before deleting the old owned cache
+  ---
+  duration_ms: 11.720784
+  type: 'test'
+  ...
+# Subtest: W766IR2-0 accepts only the four reviewed mount reasons with required evidence
+ok 109 - W766IR2-0 accepts only the four reviewed mount reasons with required evidence
+  ---
+  duration_ms: 3.135881
+  type: 'test'
+  ...
+# Subtest: W766IR2-0 identities are stable for the same browser objects and readiness events are bounded/private-safe
+ok 110 - W766IR2-0 identities are stable for the same browser objects and readiness events are bounded/private-safe
+  ---
+  duration_ms: 7.68173
+  type: 'test'
+  ...
+# Subtest: W766IR2-0 rejects a second access-station mount while a healthy runtime is active
+ok 111 - W766IR2-0 rejects a second access-station mount while a healthy runtime is active
+  ---
+  duration_ms: 6.884293
+  type: 'test'
+  ...
+# Subtest: W766IR2-0 source stages replacements and records runtime identity instead of destroying first
+ok 112 - W766IR2-0 source stages replacements and records runtime identity instead of destroying first
+  ---
+  duration_ms: 23.630573
+  type: 'test'
+  ...
+# Subtest: W766IR2-E build manifest covers canonical EONAPP routes and separates City bytes with SHA-256 integrity
+ok 113 - W766IR2-E build manifest covers canonical EONAPP routes and separates City bytes with SHA-256 integrity
+  ---
+  duration_ms: 30.487355
+  type: 'test'
+  ...
+# Subtest: W766IR2-E authenticated capability is bound to the deployed manifest and returns no private account data
+ok 114 - W766IR2-E authenticated capability is bound to the deployed manifest and returns no private account data
+  ---
+  duration_ms: 81.288507
+  type: 'test'
+  ...
+# Subtest: W766IR2-E atomically installs whole EONAPP + City, reloads both offline, keeps APIs truthful, and bypasses Local AI loopback
+ok 115 - W766IR2-E atomically installs whole EONAPP + City, reloads both offline, keeps APIs truthful, and bypasses Local AI loopback
+  ---
+  duration_ms: 75.696479
+  type: 'test'
+  ...
+# Subtest: W766IR2-E serves installed JSON, media and compressed City textures offline instead of bypassing the pack
+ok 116 - W766IR2-E serves installed JSON, media and compressed City textures offline instead of bypassing the pack
+  ---
+  duration_ms: 18.88172
+  type: 'test'
+  ...
+# Subtest: W766IR2-E requests best-effort persistent browser storage only during explicit installation
+ok 117 - W766IR2-E requests best-effort persistent browser storage only during explicit installation
+  ---
+  duration_ms: 0.987183
+  type: 'test'
+  ...
+# Subtest: W766IR2-E release updates reuse unchanged offline bytes and download only changed entries
+ok 118 - W766IR2-E release updates reuse unchanged offline bytes and download only changed entries
+  ---
+  duration_ms: 58.124315
+  type: 'test'
+  ...
+# Subtest: W766IR2-E City authorization expiry keeps core EONAPP and Local AI ready while denying offline City
+ok 119 - W766IR2-E City authorization expiry keeps core EONAPP and Local AI ready while denying offline City
+  ---
+  duration_ms: 28.861218
+  type: 'test'
+  ...
+# Subtest: W766IR2-E detects missing offline bytes and marks the installed pack for repair
+ok 120 - W766IR2-E detects missing offline bytes and marks the installed pack for repair
+  ---
+  duration_ms: 20.315651
+  type: 'test'
+  ...
+# Subtest: W766IR2-F detects wrong cached URLs even when the total entry count is unchanged
+ok 121 - W766IR2-F detects wrong cached URLs even when the total entry count is unchanged
+  ---
+  duration_ms: 46.06348
+  type: 'test'
+  ...
+# Subtest: W766IR2-E failed integrity repair preserves the previously active offline pack
+ok 122 - W766IR2-E failed integrity repair preserves the previously active offline pack
+  ---
+  duration_ms: 36.534529
+  type: 'test'
+  ...
+# Subtest: W766IR2-E offline City access requires a valid installed City pack and never invents cloud synchronization
+ok 123 - W766IR2-E offline City access requires a valid installed City pack and never invents cloud synchronization
+  ---
+  duration_ms: 1.548622
+  type: 'test'
+  ...
+# Subtest: W766IR2-E exposes truthful whole-app offline status and accepts only device-local AI endpoints
+ok 124 - W766IR2-E exposes truthful whole-app offline status and accepts only device-local AI endpoints
+  ---
+  duration_ms: 5.11588
+  type: 'test'
+  ...
+# Subtest: W766IR2-E serializes offline-pack mutations and requests persistent browser storage only from an explicit install flow
+ok 125 - W766IR2-E serializes offline-pack mutations and requests persistent browser storage only from an explicit install flow
+  ---
+  duration_ms: 5.143732
+  type: 'test'
+  ...
+# Subtest: W766IR2-G keeps remote Expanse review open until explicit Enter or Cancel
+ok 126 - W766IR2-G keeps remote Expanse review open until explicit Enter or Cancel
+  ---
+  duration_ms: 2.332169
+  type: 'test'
+  ...
+# Subtest: W766IR2-G performs atomic surface handoffs before opening a second blocking surface
+ok 127 - W766IR2-G performs atomic surface handoffs before opening a second blocking surface
+  ---
+  duration_ms: 0.574023
+  type: 'test'
+  ...
+# Subtest: W766IR2-G closes Transit synchronously and recovers hidden overlay leases
+ok 128 - W766IR2-G closes Transit synchronously and recovers hidden overlay leases
+  ---
+  duration_ms: 0.881332
+  type: 'test'
+  ...
+# Subtest: W766IR2-G keeps lightweight overlays at foreground FPS and suspends dock-cap sampling
+ok 129 - W766IR2-G keeps lightweight overlays at foreground FPS and suspends dock-cap sampling
+  ---
+  duration_ms: 1.526142
+  type: 'test'
+  ...
+# Subtest: W766IR2-G recovers an under-floor camera without remounting the runtime
+ok 130 - W766IR2-G recovers an under-floor camera without remounting the runtime
+  ---
+  duration_ms: 2.688586
+  type: 'test'
+  ...
+# Subtest: W766IR2-G preserves the complete visible Transit and Expanse click chains
+ok 131 - W766IR2-G preserves the complete visible Transit and Expanse click chains
+  ---
+  duration_ms: 1.40538
+  type: 'test'
+  ...
+# Subtest: W766IR2-G catches controller exceptions and leaves movement recoverable
+ok 132 - W766IR2-G catches controller exceptions and leaves movement recoverable
+  ---
+  duration_ms: 1.432375
+  type: 'test'
+  ...
+# Subtest: W766IR2-G keeps Expanse movement outside the Command Hub clamp and restores the Hub camera mode
+ok 133 - W766IR2-G keeps Expanse movement outside the Command Hub clamp and restores the Hub camera mode
+  ---
+  duration_ms: 1.482987
+  type: 'test'
+  ...
+# Subtest: W766IR2-G exposes a visible safe return control and truthful active world telemetry
+ok 134 - W766IR2-G exposes a visible safe return control and truthful active world telemetry
+  ---
+  duration_ms: 1.518139
+  type: 'test'
+  ...
+# Subtest: W766IR2-G final Preview gate proves the real failure path rather than calling internal overlay APIs
+ok 135 - W766IR2-G final Preview gate proves the real failure path rather than calling internal overlay APIs
+  ---
+  duration_ms: 1.622392
+  type: 'test'
+  ...
+# Subtest: W767A accepts only a visibly presented grounded hero asset
+ok 136 - W767A accepts only a visibly presented grounded hero asset
+  ---
+  duration_ms: 2.666022
+  type: 'test'
+  ...
+# Subtest: W767A rejects a promise-resolved asset with no visible renderable meshes
+ok 137 - W767A rejects a promise-resolved asset with no visible renderable meshes
+  ---
+  duration_ms: 0.54921
+  type: 'test'
+  ...
+# Subtest: W767A rejects incorrectly scaled, floating or misplaced assets
+ok 138 - W767A rejects incorrectly scaled, floating or misplaced assets
+  ---
+  duration_ms: 3.699788
+  type: 'test'
+  ...
+# Subtest: companion continuity projects the rescue sequence without a second identity
+ok 139 - companion continuity projects the rescue sequence without a second identity
+  ---
+  duration_ms: 10.720797
+  type: 'test'
+  ...
+# Subtest: bonded EONBOT follows in Expanse and remains in Transit formation
+ok 140 - bonded EONBOT follows in Expanse and remains in Transit formation
+  ---
+  duration_ms: 0.342453
+  type: 'test'
+  ...
+# Subtest: Hub continuity keeps the one canonical companion visible
+ok 141 - Hub continuity keeps the one canonical companion visible
+  ---
+  duration_ms: 3.870059
+  type: 'test'
+  ...
+# Subtest: legacy review-only ledgers migrate into the rescue prologue without losing the reviewed step
+ok 142 - legacy review-only ledgers migrate into the rescue prologue without losing the reviewed step
+  ---
+  duration_ms: 17.550292
+  type: 'test'
+  ...
+# Subtest: legacy entered campaigns restore companion continuity without resetting XP or Beyond progress
+ok 143 - legacy entered campaigns restore companion continuity without resetting XP or Beyond progress
+  ---
+  duration_ms: 13.067924
+  type: 'test'
+  ...
+# Subtest: W767A keeps exactly one canonical EONBOT identity across Hub and Expanse
+ok 144 - W767A keeps exactly one canonical EONBOT identity across Hub and Expanse
+  ---
+  duration_ms: 12.702702
+  type: 'test'
+  ...
+# Subtest: W767A entry, rescue, Transit and return all synchronize the companion projection
+ok 145 - W767A entry, rescue, Transit and return all synchronize the companion projection
+  ---
+  duration_ms: 1.779234
+  type: 'test'
+  ...
+# Subtest: W767A provides a physical rescue sequence and a compact first-arrival explanation
+ok 146 - W767A provides a physical rescue sequence and a compact first-arrival explanation
+  ---
+  duration_ms: 0.408199
+  type: 'test'
+  ...
+# Subtest: W767A hero fallbacks are suppressed only after asset-truth presentation passes
+ok 147 - W767A hero fallbacks are suppressed only after asset-truth presentation passes
+  ---
+  duration_ms: 0.407174
+  type: 'test'
+  ...
+# Subtest: W767B ground circuit route is bounded and points toward the active target
+ok 148 - W767B ground circuit route is bounded and points toward the active target
+  ---
+  duration_ms: 2.99733
+  type: 'test'
+  ...
+# Subtest: W767B label arbitration keeps one objective and at most two visible nearby interactions
+ok 149 - W767B label arbitration keeps one objective and at most two visible nearby interactions
+  ---
+  duration_ms: 2.087362
+  type: 'test'
+  ...
+# Subtest: W767B guide controller requires explicit action and leads EONBOT ahead without teleporting to the objective
+ok 150 - W767B guide controller requires explicit action and leads EONBOT ahead without teleporting to the objective
+  ---
+  duration_ms: 2.599705
+  type: 'test'
+  ...
+# Subtest: W767B isolates Command Hub markers and launchers while Expanse is active
+ok 151 - W767B isolates Command Hub markers and launchers while Expanse is active
+  ---
+  duration_ms: 2.741247
+  type: 'test'
+  ...
+# Subtest: W767B exposes an Expanse-only HUD and explicit EONBOT guidance control
+ok 152 - W767B exposes an Expanse-only HUD and explicit EONBOT guidance control
+  ---
+  duration_ms: 1.049309
+  type: 'test'
+  ...
+# Subtest: W767B renders bounded ground-circuit route segments from player to objective
+ok 153 - W767B renders bounded ground-circuit route segments from player to objective
+  ---
+  duration_ms: 0.539236
+  type: 'test'
+  ...
+# Subtest: W767C deduplicates authored child meshes and formats safe interaction labels
+ok 154 - W767C deduplicates authored child meshes and formats safe interaction labels
+  ---
+  duration_ms: 3.887769
+  type: 'test'
+  ...
+# Subtest: W767C retains one distant objective and at most two visible nearby interactions
+ok 155 - W767C retains one distant objective and at most two visible nearby interactions
+  ---
+  duration_ms: 6.060218
+  type: 'test'
+  ...
+# Subtest: W767C gateway exposes explicit proximity interaction without bypassing child authorities
+ok 156 - W767C gateway exposes explicit proximity interaction without bypassing child authorities
+  ---
+  duration_ms: 16.232467
+  type: 'test'
+  ...
+# Subtest: W767C runtime supports keyboard E and occlusion-aware world labels
+ok 157 - W767C runtime supports keyboard E and occlusion-aware world labels
+  ---
+  duration_ms: 10.982258
+  type: 'test'
+  ...
+# Subtest: W767D produces a release-ready report only after every hero zone is visibly presented
+ok 158 - W767D produces a release-ready report only after every hero zone is visibly presented
+  ---
+  duration_ms: 7.373392
+  type: 'test'
+  ...
+# Subtest: W767D distinguishes loading proxies from rejected procedural fallbacks
+ok 159 - W767D distinguishes loading proxies from rejected procedural fallbacks
+  ---
+  duration_ms: 4.133594
+  type: 'test'
+  ...
+# Subtest: W767D export contains bounded asset evidence and strips unrelated private fields
+ok 160 - W767D export contains bounded asset evidence and strips unrelated private fields
+  ---
+  duration_ms: 1.057272
+  type: 'test'
+  ...
+# Subtest: W767D is exposed through the canonical Gateway and runtime without adding a second scene owner
+ok 161 - W767D is exposed through the canonical Gateway and runtime without adding a second scene owner
+  ---
+  duration_ms: 27.188873
+  type: 'test'
+  ...
+1..161
+# tests 161
+# suites 0
+# pass 161
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3755.942447

@@ -1,0 +1,15 @@
+/* W198 — clean Chat-first entry for the optional existing Three.js workstation. */
+.eoncity-3d-main { display:grid; gap:1rem; }
+.eoncity-3d-top-actions { display:flex; flex-wrap:wrap; gap:.55rem; }
+.eoncity-3d-room-strip { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:.55rem; }
+.eoncity-3d-room-strip a { display:grid; gap:.18rem; min-height:5.7rem; padding:.72rem; border:1px solid rgba(148,163,184,.17); border-radius:.8rem; background:linear-gradient(145deg,rgba(30,41,59,.64),rgba(15,23,42,.86)); color:#dbeafe; text-decoration:none; }
+.eoncity-3d-room-strip a:hover,.eoncity-3d-room-strip a:focus-visible { border-color:rgba(165,180,252,.72); color:#fff; transform:translateY(-1px); }
+.eoncity-3d-room-strip span { color:#c4b5fd; font-size:1rem; }
+.eoncity-3d-room-strip strong { color:#f8fafc; font-size:.78rem; }
+.eoncity-3d-room-strip small { color:#98a9c0; font-size:.68rem; line-height:1.35; }
+.eoncity-3d-root { min-height:min(76vh,52rem); overflow:hidden; border:1px solid rgba(129,140,248,.24); border-radius:1rem; background:#060a14; }
+.eoncity-3d-entry .realm3d-preflight { min-height:min(72vh,50rem); }
+.eoncity-3d-entry .realm3d-shell { min-height:min(72vh,50rem); }
+.eoncity-3d-entry .realm3d-legacy-surface,.eoncity-3d-entry .site-header,.eoncity-3d-entry .site-footer { display:none !important; }
+@media (max-width:980px) { .eoncity-3d-room-strip { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+@media (max-width:640px) { .eoncity-3d-top-actions { width:100%; } .eoncity-3d-top-actions > * { flex:1; text-align:center; justify-content:center; } .eoncity-3d-room-strip { grid-template-columns:repeat(2,minmax(0,1fr)); } .eoncity-3d-root { min-height:34rem; } }

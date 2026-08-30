@@ -1,0 +1,29 @@
+{
+  "schema": "eonapp.w525.data-continuity-remediation-receipt.v1",
+  "scope": "Source-only remediation. No deployment, device, cloud-provider, OAuth, Web3/IPFS, or launch evidence.",
+  "status": "pass",
+  "tests": "575/575 current runnable-product tests pass",
+  "checks": [
+    "canonical release verification",
+    "lint max-warnings=0",
+    "production build",
+    "W518 Capsule source gate",
+    "W519 source and built-output quarantine",
+    "W520/W521/W522 source and build gates",
+    "production dependency audit omit=dev",
+    "portable clean checkout before and after"
+  ],
+  "portableSourceIdentity": "recorded in package-root final verification record",
+  "changedActiveFiles": [
+    "assets/js/local-first/eon-data-continuity.js",
+    "assets/js/utils/cloud-backup-connectors.js",
+    "assets/js/utils/vault.js",
+    "assets/js/vault/eon-vault-page.js",
+    "vault.html",
+    "assets/js/profile-page.js",
+    "assets/css/eon-vault-v2.css",
+    "tests/unit/w525-data-continuity-vault-profile.test.mjs",
+    "scripts/run-current-unit-suite.mjs"
+  ],
+  "archivedHistoricalContract": "archive/w519-legacy-transport-control/tests/unit/w21-vault-referral-backup.archived.mjs"
+}

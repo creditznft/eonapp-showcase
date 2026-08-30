@@ -1,0 +1,23 @@
+{
+  "schema": "eonapp.w476.b.source-gate.v1",
+  "wave": "W476-B",
+  "ok": true,
+  "sourceOnly": true,
+  "productionReleaseApproved": false,
+  "paymentActivationApproved": false,
+  "dodoActivationApproved": false,
+  "localImageVideoAdapterClaimed": false,
+  "functionRouteCount": 11,
+  "manualEvidenceCount": 9,
+  "releaseBlockedBy": [
+    "reviewed-cloudflare-preview-or-production-deployment",
+    "browser-csp-delivery-and-authorised-redaction-review",
+    "local-text-runtime-cors-pna-proof",
+    "api-conditional-negative-matrix-review",
+    "analytics-privacy-bridge-proof",
+    "update-rollback-data-survival-proof",
+    "desktop-android-ios-evidence",
+    "owner-evidence-review"
+  ],
+  "issues": []
+}

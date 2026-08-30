@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+<rect width="100%" height="100%" fill="#0b1020"/>
+<text x="60" y="52" fill="#ffffff" font-family="Arial, sans-serif" font-size="30" font-weight="700">EONAPP W747 — Living Nexus Spatial Foundation</text>
+<text x="60" y="82" fill="#aab5d6" font-family="Arial, sans-serif" font-size="16">Source-authority design map only — not headed browser evidence</text>
+<line x1="100" y1="930" x2="100" y2="-70" stroke="#26304d" stroke-width="1"/>
+<line x1="100" y1="930" x2="1100" y2="930" stroke="#26304d" stroke-width="1"/>
+<line x1="200" y1="930" x2="200" y2="-70" stroke="#26304d" stroke-width="1"/>
+<line x1="100" y1="830" x2="1100" y2="830" stroke="#26304d" stroke-width="1"/>
+<line x1="300" y1="930" x2="300" y2="-70" stroke="#26304d" stroke-width="1"/>
+<line x1="100" y1="730" x2="1100" y2="730" stroke="#26304d" stroke-width="1"/>
+<line x1="400" y1="930" x2="400" y2="-70" stroke="#26304d" stroke-width="1"/>
+<line x1="100" y1="630" x2="1100" y2="630" stroke="#26304d" stroke-width="1"/>
+<line x1="500" y1="930" x2="500" y2="-70" stroke="#26304d" stroke-width="1"/>
+<line x1="100" y1="530" x2="1100" y2="530" stroke="#26304d" stroke-width="1"/>
+<line x1="600" y1="930" x2="600" y2="-70" stroke="#26304d" stroke-width="1"/>
+<line x1="100" y1="430" x2="1100" y2="430" stroke="#26304d" stroke-width="1"/>
+<line x1="700" y1="930" x2="700" y2="-70" stroke="#26304d" stroke-width="1"/>
+<line x1="100" y1="330" x2="1100" y2="330" stroke="#26304d" stroke-width="1"/>
+<line x1="800" y1="930" x2="800" y2="-70" stroke="#26304d" stroke-width="1"/>
+<line x1="100" y1="230" x2="1100" y2="230" stroke="#26304d" stroke-width="1"/>
+<line x1="900" y1="930" x2="900" y2="-70" stroke="#26304d" stroke-width="1"/>
+<line x1="100" y1="130" x2="1100" y2="130" stroke="#26304d" stroke-width="1"/>
+<line x1="1000" y1="930" x2="1000" y2="-70" stroke="#26304d" stroke-width="1"/>
+<line x1="100" y1="30" x2="1100" y2="30" stroke="#26304d" stroke-width="1"/>
+<line x1="1100" y1="930" x2="1100" y2="-70" stroke="#26304d" stroke-width="1"/>
+<line x1="100" y1="-70" x2="1100" y2="-70" stroke="#26304d" stroke-width="1"/>
+<rect x="547.0" y="106.0" width="106.0" height="199.0" fill="#43c6ac" fill-opacity="0.16" stroke="#43c6ac" stroke-width="2" stroke-dasharray="8 6"/>
+<text x="665" y="205.5" fill="#73e6d0" font-family="Arial" font-size="14">Arrival reveal corridor</text>
+<circle cx="600" cy="430" r="120" fill="#8f6cff" fill-opacity="0.18" stroke="#b49cff" stroke-width="4"/>
+<text x="600" y="422" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="18" font-weight="700">Protected Nexus Hero Zone</text>
+<text x="600" y="446" text-anchor="middle" fill="#d9d0ff" font-family="Arial" font-size="14">12 m diameter</text>
+<circle cx="374.0" cy="418.0" r="10" fill="#ffcf66"/>
+<text x="374.0" y="402.0" text-anchor="middle" fill="#ffdf91" font-family="Arial" font-size="14" font-weight="700">Creator Wing</text>
+<circle cx="600" cy="662.0" r="10" fill="#ffcf66"/>
+<text x="600" y="646.0" text-anchor="middle" fill="#ffdf91" font-family="Arial" font-size="14" font-weight="700">Operations Wing</text>
+<circle cx="826.0" cy="418.0" r="10" fill="#ffcf66"/>
+<text x="826.0" y="402.0" text-anchor="middle" fill="#ffdf91" font-family="Arial" font-size="14" font-weight="700">Knowledge Wing</text>
+<circle cx="924.0" cy="294.0" r="10" fill="#ffcf66"/>
+<text x="924.0" y="278.0" text-anchor="middle" fill="#ffdf91" font-family="Arial" font-size="14" font-weight="700">Systems Wing</text>
+<circle cx="298.0" cy="214.0" r="10" fill="#ffcf66"/>
+<text x="298.0" y="198.0" text-anchor="middle" fill="#ffdf91" font-family="Arial" font-size="14" font-weight="700">Personal / Transit Wing</text>
+<circle cx="600" cy="430" r="49.0" fill="#8f6cff" fill-opacity="0.24" stroke="#ffffff" stroke-width="2"/>
+<text x="600" y="434" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="12">eonbot nexus</text>
+<circle cx="384.0" cy="502.0" r="61.0" fill="#2a77d4" fill-opacity="0.24" stroke="#76b7ff" stroke-width="2"/>
+<text x="384.0" y="506.0" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="12">create forge</text>
+<circle cx="364.0" cy="334.0" r="53.0" fill="#2a77d4" fill-opacity="0.24" stroke="#76b7ff" stroke-width="2"/>
+<text x="364.0" y="338.0" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="12">share capture</text>
+<circle cx="496.0" cy="662.0" r="55.0" fill="#2a77d4" fill-opacity="0.24" stroke="#76b7ff" stroke-width="2"/>
+<text x="496.0" y="666.0" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="12">command console</text>
+<circle cx="704.0" cy="662.0" r="55.0" fill="#2a77d4" fill-opacity="0.24" stroke="#76b7ff" stroke-width="2"/>
+<text x="704.0" y="666.0" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="12">automation theatre</text>
+<circle cx="816.0" cy="502.0" r="50.0" fill="#2a77d4" fill-opacity="0.24" stroke="#76b7ff" stroke-width="2"/>
+<text x="816.0" y="506.0" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="12">project atlas</text>
+<circle cx="836.0" cy="334.0" r="51.0" fill="#2a77d4" fill-opacity="0.24" stroke="#76b7ff" stroke-width="2"/>
+<text x="836.0" y="338.0" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="12">library vault</text>
+<circle cx="960" cy="260.0" r="61.0" fill="#2a77d4" fill-opacity="0.24" stroke="#76b7ff" stroke-width="2"/>
+<text x="960" y="264.0" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="12">local ai lab</text>
+<circle cx="240" cy="260.0" r="60" fill="#2a77d4" fill-opacity="0.24" stroke="#76b7ff" stroke-width="2"/>
+<text x="240" y="264.0" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="12">my realm portal</text>
+<circle cx="320" cy="146.0" r="61.0" fill="#2a77d4" fill-opacity="0.24" stroke="#76b7ff" stroke-width="2"/>
+<text x="320" y="150.0" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="12">plans access</text>
+<circle cx="600" cy="591.0" r="32.0" fill="#ff7a90" fill-opacity="0.25" stroke="#ff9aac" stroke-width="2"/>
+<text x="600" y="595.0" text-anchor="middle" fill="#ffd6de" font-family="Arial" font-size="11">Table</text>
+<circle cx="549.0" cy="599.0" r="21.0" fill="#ff7a90" fill-opacity="0.25" stroke="#ff9aac" stroke-width="2"/>
+<text x="549.0" y="603.0" text-anchor="middle" fill="#ffd6de" font-family="Arial" font-size="11">Seat</text>
+<circle cx="653.0" cy="597.0" r="43.0" fill="#ff7a90" fill-opacity="0.25" stroke="#ff9aac" stroke-width="2"/>
+<text x="653.0" y="601.0" text-anchor="middle" fill="#ffd6de" font-family="Arial" font-size="11">Hologram</text>
+<circle cx="647.0" cy="387.0" r="16.0" fill="#ff7a90" fill-opacity="0.25" stroke="#ff9aac" stroke-width="2"/>
+<text x="647.0" y="391.0" text-anchor="middle" fill="#ffd6de" font-family="Arial" font-size="11">Dock</text>
+<path d="M 600 92.0 L 588 118.0 L 612 118.0 Z" fill="#7fffd4" stroke="#ffffff" stroke-width="2"/>
+<text x="618" y="111.0" fill="#bfffee" font-family="Arial" font-size="14">Safe spawn</text>
+<rect x="820" y="650" width="320" height="190" rx="14" fill="#141b31" stroke="#34405f"/>
+<text x="845" y="685" fill="#ffffff" font-family="Arial" font-size="18" font-weight="700">Static validation</text>
+<text x="845" y="718" fill="#cfd7ee" font-family="Arial" font-size="14">• 42/42 focused tests pass</text>
+<text x="845" y="746" fill="#cfd7ee" font-family="Arial" font-size="14">• 60/60 maintained tests pass</text>
+<text x="845" y="774" fill="#cfd7ee" font-family="Arial" font-size="14">• 41 assets / 82 variants verified</text>
+<text x="845" y="802" fill="#cfd7ee" font-family="Arial" font-size="14">• Browser evidence blocked by dependencies</text>
+</svg>

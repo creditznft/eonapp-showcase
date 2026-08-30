@@ -1,0 +1,74 @@
+{
+  "schema": "eonapp.a15.i06.no-eviction-capacity-receipt.v1",
+  "wave": "I06",
+  "status": "pass",
+  "capacityAuthority": {
+    "schema": "eonapp.capacity-authority.a15.v1",
+    "resourceCount": 16,
+    "resources": [
+      "universal-projects",
+      "ordinary-projects",
+      "ordinary-library",
+      "project-tasks",
+      "project-artifacts",
+      "project-automation-links",
+      "forge-projects",
+      "forge-snapshots",
+      "forge-receipts",
+      "creator-jobs",
+      "creator-assets",
+      "w631-projects",
+      "w631-automations",
+      "w631-versions",
+      "w631-outcomes",
+      "w631-history"
+    ],
+    "capabilityLimitInjectionSupported": true,
+    "storageSafetyReserveRequired": true,
+    "silentEvictionAllowed": false,
+    "automaticDeletionAllowed": false
+  },
+  "boundaryProof": {
+    "project161Blocked": true,
+    "projectBytesPreserved": true,
+    "library501Blocked": true,
+    "libraryBytesPreserved": true
+  },
+  "unifiedLibrary": {
+    "rebuildPassed": true,
+    "sourceCounts": {
+      "ordinaryLibrary": 1,
+      "projectArtifacts": 1,
+      "creatorAssets": 1
+    },
+    "recordCount": 3,
+    "contentBodiesCopied": false
+  },
+  "actions": {
+    "archive": true,
+    "restore": true,
+    "export": true,
+    "delete": true,
+    "upgrade": true,
+    "automatic": false
+  },
+  "boundaries": {
+    "coreCoupledRouteCount": 0,
+    "cityCoreImplementationModuleCount": 0
+  },
+  "forbiddenStoreSliceMatches": [],
+  "sourceDigests": {
+    "capacity": "a410a48a13cc2b40f6a27787107b2e2a042886083542db2b304f22c24b22db83",
+    "transaction": "977d203eae24ab40d7d0c58a6c40bf0e37475848b8382a6a0bf20bad64061504",
+    "libraryIndex": "9e84887642ef838ff2f938082f04b18b10c47897462219222707c8dfd6a3c3af",
+    "ordinary": "0d9a1bd09384916c9faf0a44662698880b3052d61f49e82eb65ae2341aa86c32",
+    "w631": "bc8a81890e20f0ff92e5e46c5c61a454550021c334160d27718e56fd0b992d42",
+    "forge": "86f00d2c43581aa8a8c1294e317baa9d844a1e1c1720f43150a3558680985c9d",
+    "creatorJobs": "6847f26f973c5dab7ec6693ed800c80a201f7818a4db489ceee68c9aae987ac5",
+    "creatorAssets": "33061d1cc115859602b2d38de5b5be36f8a16f9f861e335e23d8e6ca6169c82b",
+    "workspaceUi": "92c7369a09141aa4151487a5e81c2155b2f4bd2994ea301e8aabcdfa7d7308c3",
+    "projectsUi": "60af83caedad778b9d281e4f6e2c8aca62a14c144425274adc22a6cd546390e2"
+  },
+  "errors": [],
+  "digest": "9a016128b66f1de0775ff006e9ac705d8f0f8c61db27c09e8db3481b75627188"
+}

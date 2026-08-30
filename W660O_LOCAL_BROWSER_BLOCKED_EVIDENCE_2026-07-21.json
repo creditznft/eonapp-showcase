@@ -1,0 +1,19 @@
+{
+  "schema": "eonapp.w660o.local-browser-blocked-evidence.v1",
+  "wave": "W660O",
+  "date": "2026-07-21",
+  "environment": "OpenAI sandbox container",
+  "server": {
+    "vitePreview": "http://127.0.0.1:4174",
+    "curlBillingStatus": 200,
+    "curlSupportStatus": 200
+  },
+  "browser": {
+    "engine": "system Chromium via Playwright",
+    "executable": "/usr/bin/chromium",
+    "result": "blocked-before-page-load",
+    "error": "net::ERR_BLOCKED_BY_ADMINISTRATOR"
+  },
+  "interpretation": "The HTTP server and pages were reachable by curl, but the sandbox administrator policy blocked Chromium loopback navigation. No visual screenshot or headed-browser acceptance is claimed for W660O.",
+  "productionChanged": false
+}

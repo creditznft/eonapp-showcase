@@ -1,0 +1,15 @@
+{
+  "schema": "eonapp.billing.certification-board.w628.v1",
+  "wave": "W628F",
+  "sourceComplete": true,
+  "publicAvailabilityClaimAllowed": false,
+  "verdict": "no-go-real-dodo-lifecycle-evidence-pending",
+  "requiredEvidence": [
+    "realCheckout", "providerWebhook", "d1Ledger", "entitlementActivation", "crossSessionRefresh",
+    "portal", "cancellation", "reactivation", "failedPayment", "refund", "dispute", "duplicateReplay",
+    "outOfOrder", "forgedRejected", "tierChange", "receiptTaxLinks", "rollbackSupport"
+  ],
+  "permanentCommand": ["npm ci", "npm run verify:codex-predeploy"],
+  "browserUnlockAllowed": false,
+  "liveCustomerEvidenceIncluded": false
+}

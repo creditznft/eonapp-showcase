@@ -1,0 +1,19 @@
+/* W201 — local device-readiness proof surface. */
+.eon-device-check-root { display:grid; gap:1rem; }
+.eon-device-card { display:grid; gap:.9rem; padding:1rem; border:1px solid rgba(148,163,184,.18); border-radius:1rem; background:linear-gradient(145deg,rgba(30,41,59,.66),rgba(15,23,42,.86)); }
+.eon-device-card h2 { margin:0; color:#f8fafc; font-size:1.08rem; }
+.eon-device-card p { margin:0; color:#a9b8cb; line-height:1.55; font-size:.84rem; }
+.eon-device-recommendation { display:flex; align-items:center; gap:.65rem; padding:.8rem; border:1px solid rgba(129,140,248,.34); border-radius:.75rem; background:rgba(79,70,229,.12); color:#e0e7ff; }
+.eon-device-recommendation strong { color:#fff; }
+.eon-device-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.65rem; }
+.eon-device-metric { min-height:4.5rem; padding:.7rem; border:1px solid rgba(148,163,184,.14); border-radius:.7rem; background:rgba(2,6,23,.28); }
+.eon-device-metric span { display:block; color:#91a3bb; font-size:.7rem; }
+.eon-device-metric strong { display:block; margin-top:.28rem; color:#edf2ff; font-size:.82rem; }
+.eon-device-list { display:grid; gap:.45rem; margin:0; padding:0; list-style:none; }
+.eon-device-list li { padding:.6rem .7rem; border-radius:.65rem; background:rgba(2,6,23,.25); color:#cbd5e1; font-size:.79rem; }
+.eon-device-list li.is-pass { border-left:3px solid #34d399; }
+.eon-device-list li.is-warn { border-left:3px solid #fbbf24; }
+.eon-device-actions { display:flex; flex-wrap:wrap; gap:.6rem; }
+.eon-device-actions button,.eon-device-actions a { display:inline-flex; align-items:center; justify-content:center; min-height:2.45rem; padding:.55rem .72rem; border:1px solid rgba(148,163,184,.24); border-radius:.68rem; background:rgba(15,23,42,.62); color:#dbeafe; font:inherit; font-size:.8rem; font-weight:750; text-decoration:none; cursor:pointer; }
+.eon-device-actions button:hover,.eon-device-actions button:focus-visible,.eon-device-actions a:hover { border-color:rgba(165,180,252,.7); color:#fff; }
+@media (max-width:720px) { .eon-device-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }

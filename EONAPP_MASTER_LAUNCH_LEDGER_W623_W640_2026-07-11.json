@@ -1,0 +1,654 @@
+{
+  "schema": "eonapp.master-launch-ledger.w623-w640.w639-current.2026-07-11.v1",
+  "generatedAt": "2026-07-11",
+  "currentCheckpoint": "W639 source complete; production evidence and owner rehearsal pending",
+  "nextWave": "W640 final owner GO/NO-GO certification and launch handover",
+  "releaseState": "source-complete-through-w639-public-production-no-go-launch-candidate-not-frozen",
+  "canonicalArchitecture": {
+    "plansUsdMonthly": {
+      "plus": 4.99,
+      "studio": 14.99,
+      "power": 29.99,
+      "max": 49.9
+    },
+    "trialDays": 7,
+    "referralReward": "EONKEYS-only",
+    "eonKeysWholeTierOrSubscription": false,
+    "cloudflareCreatorGenerationBackend": false,
+    "creatorRails": [
+      "local-runtime",
+      "direct-user-owned-byok",
+      "guide"
+    ],
+    "cityTarget": "productive-stylized-rpg-workspace",
+    "productLanguages": [
+      "en",
+      "hi",
+      "es",
+      "pt",
+      "fr",
+      "de",
+      "ar",
+      "ru",
+      "zh",
+      "ja",
+      "ko"
+    ],
+    "languageSettingsSurface": "profile-hidden-from-main-chat",
+    "guideBrowserVoiceNoAiKey": true,
+    "browserSpeechOfflineGuaranteed": false,
+    "localSpeechCompanion": "planned-proof-required",
+    "viralShareProgramActive": false,
+    "viralSourceReadinessScore": 9.7,
+    "voiceFallback": [
+      "browser-assisted",
+      "os-dictation",
+      "device-read-aloud",
+      "future-authenticated-local-companion"
+    ],
+    "referralServerFoundation": "source-ready-rollout-controlled-existing-billing-d1",
+    "referralRolloutSetting": "EON_REFERRAL_ROLLOUT=testing|production",
+    "newReferralDatabaseRequired": false,
+    "newReferralSecretRequired": false,
+    "referralCronOrQueueRequired": false,
+    "inAppAdvertising": false,
+    "watchAdRewards": false,
+    "externalReferralPromotion": "allowed-after-account-programme-active-honest-non-spammy-disclosed",
+    "viralDeployedScoreUntilProof": 7.2,
+    "privacySafeReferralMeasurement": "qualified-ledger-aggregates-only-no-click-impression-social-post-tracking",
+    "cityArtBible": "Productive Nocturne",
+    "cityArtBibleSchema": "eon.city.art-bible.w624a.v1",
+    "cityCommandDistrictExpansionThreshold": 9.0,
+    "cityFlagshipOwnerApprovalThreshold": 9.5,
+    "cityFinalArtApproved": false,
+    "cityTargetFrames": [
+      "desktop-arrival",
+      "mobile-arrival",
+      "cast-lineup"
+    ],
+    "cityW624CRuntimeVisualScore": null,
+    "cityCommandDistrictSourceArchitectureComplete": true,
+    "cityCommandDistrictExpansionAllowed": false,
+    "cityCommandDistrictVisualProofState": "managed-browser-blocked-owner-codex-proof-required",
+    "cityWayfinderSchema": "eon.city.wayfinder-experience.w624d.v1",
+    "cityWayfinderStates": 9,
+    "cityWayfinderCameraProfiles": 5,
+    "cityW624DBrowserDeviceProofState": "pending-owner-codex-real-browser-device",
+    "currentTestSuiteManifest": "config/w624d-current-unit-test-manifest.json",
+    "currentTestFileCount": 276,
+    "currentTestPassedAssertions": 962,
+    "archivedExactAssertionCount": 47,
+    "archivedExactFileCount": 36,
+    "stableCodexPredeployCommand": "npm run verify:codex-predeploy",
+    "cityWayfinderStateCount": 9,
+    "cityWayfinderCameraProfileCount": 5,
+    "cityWayfinderLiveDeviceProofState": "owner-codex-browser-and-physical-device-proof-required",
+    "currentUnitTestFiles": 276,
+    "currentUnitTests": 1009,
+    "currentUnitPasses": 962,
+    "archivedHistoricalAssertions": 47,
+    "archivedHistoricalTestFiles": 36,
+    "currentUnitFailures": 0,
+    "codexPredeployCommand": "npm run verify:codex-predeploy",
+    "cityW624FRuntimeCrowdProofState": "managed-browser-blocked-owner-codex-proof-required",
+    "cityNpcSchema": "eon.city.command-district-npc-system.w624f.v1",
+    "cityNpcArchetypeCount": 4,
+    "cityNpcStateCount": 9,
+    "cityNpcLodProfiles": [
+      "disabled",
+      "lite",
+      "balanced",
+      "cinematic"
+    ],
+    "codexPredeployWave": "W639-source-batch",
+    "codexPredeployStageCount": 75,
+    "codexPredeployResumable": true,
+    "codexPredeployFingerprint": "see-packaged-machine-receipt",
+    "codexPredeployPassedStages": "see-packaged-machine-receipt",
+    "codexPredeployOk": "see-packaged-machine-receipt",
+    "productionReachableFiles": "see-packaged-machine-receipt",
+    "productionImportEdges": "see-packaged-machine-receipt",
+    "productionQuarantinedReachable": "see-packaged-machine-receipt",
+    "finalSecretScanTextFiles": "see-packaged-machine-receipt",
+    "finalSecretScanPotentialSecrets": "see-packaged-machine-receipt",
+    "distributionFileCount": "see-packaged-machine-receipt",
+    "distributionSha256": "see-packaged-machine-receipt",
+    "cityTruthfulCommandCenterSchema": "eon.city.truthful-command-center.w624h.v1",
+    "cityTruthfulCommandCenterFamilyCount": 6,
+    "cityTruthfulCommandCenterStateCount": 7,
+    "cityW624HBrowserDeviceProofState": "managed-browser-blocked-owner-codex-production-proof-required",
+    "cityGenuineAgentTheatreSchema": "eon.city.genuine-agent-theatre.w624i.v1",
+    "cityGenuineAgentTheatreStateCount": 8,
+    "cityGenuineAgentTheatreRails": [
+      "local",
+      "direct-byok",
+      "guide",
+      "unavailable"
+    ],
+    "cityW624ILiveJobProofState": "managed-browser-blocked-real-local-and-direct-byok-proof-required",
+    "directByokSourceProgramme": "W626A-W626H-source-complete-real-evidence-pending",
+    "directByokCloudflareProxy": false,
+    "creatorCompanionBinding": "127.0.0.1:47826-loopback-only",
+    "creatorCompanionSignedRelease": false,
+    "ordinaryBrowserPermanentProviderKeyStorage": false,
+    "reviewedDirectProviders": [
+      "fal",
+      "replicate"
+    ],
+    "reviewedProviderModelsEnabled": 0,
+    "directByokPublicAvailability": false,
+    "wholeAppUxProgramme": "W630-source-complete-real-route-device-evidence-pending",
+    "rootCalmDefault": "chat-eonbot",
+    "wholeAppSearchableCommands": true,
+    "wholeAppContextContinuation": "local-pointer-review-first",
+    "wholeAppVoiceAutostart": false,
+    "projectOperatingProgramme": "W631-source-complete-real-remote-deploy-execution-evidence-pending",
+    "forgeRemoteExecutionWithoutProof": false,
+    "automationSchedulingMode": "prepared-only-until-executor-proof",
+    "accountVaultCustodyProgramme": "W632-source-complete-real-account-companion-restore-evidence-pending",
+    "identityIsBackup": false,
+    "restoreMode": "preview-confirm-conflict-choice-no-auto-merge",
+    "publicWholeAppCertification": false,
+    "nextSourceWave": "W640",
+    "responsiveAccessibilityInputProgramme": "W634-source-complete-real-device-assistive-evidence-pending",
+    "performanceCacheUpdateSafetyProgramme": "W635-source-complete-real-edge-offline-update-rollback-evidence-pending",
+    "serviceWorkerRegistration": "centralized-updateViaCache-none",
+    "serviceWorkerAutomaticActivation": false,
+    "serviceWorkerAutomaticReload": false,
+    "securityPrivacyAbuseProgramme": "W636-source-complete-independent-penetration-waf-rate-limit-live-webhook-and-owner-secret-review-pending",
+    "boundedMutationAndWebhookBodies": true,
+    "browserPersistentAdminHmac": false,
+    "plaintextProviderAliasRead": false,
+    "providerIdentifiersInPublicBillingStatus": false,
+    "persistenceMigrationRecoveryProgramme": "W637-source-complete-real-update-corruption-quota-interruption-drive-cross-device-evidence-pending",
+    "indexedDbInventoryCount": 5,
+    "portableRestoreTransactionalRollback": true,
+    "portableRestoreExactReviewedFile": true,
+    "plaintextVaultImportDefault": false,
+    "googleDriveAutomaticSync": false,
+    "legacyProviderKeyCompatibilityStore": "migration-read-delete-only-new-write-export-import-retired-not-post-quantum",
+    "knownIndexedDbDatabaseCount": 5,
+    "portableRestoreMode": "digest-bound-reviewed-preview-single-add-only-transaction-post-verify",
+    "automaticCloudRestore": false,
+    "automaticCrossDeviceSync": false,
+    "evidenceConvergenceProgramme": "W638-source-complete-five-lanes-59-requirements-production-not-run",
+    "evidenceConvergenceLaneCount": 5,
+    "evidenceConvergenceRequirementCount": 59,
+    "productionEvidenceVerdict": "not-run",
+    "productionRehearsalProgramme": "W639-source-complete-eleven-domains-launch-candidate-not-frozen",
+    "productionRehearsalDomainCount": 11,
+    "releaseFreezeCategoryCount": 10,
+    "releaseFreezeCriticalFileCount": 58,
+    "launchCandidateFrozen": false,
+    "currentMaintainedTestFiles": 278
+  },
+  "waves": [
+    {
+      "wave": "W623A",
+      "status": "complete",
+      "title": "Trustworthy baseline, first Comfy source adapter and audit",
+      "nextAction": ""
+    },
+    {
+      "wave": "W623B",
+      "status": "proof-pending",
+      "title": "Real Windows/Comfy image output",
+      "nextAction": "Execute during W625A evidence lane"
+    },
+    {
+      "wave": "W623C",
+      "status": "complete",
+      "title": "Canonical commercial truth",
+      "nextAction": ""
+    },
+    {
+      "wave": "W623D",
+      "status": "complete",
+      "title": "Production reachability and legacy-value quarantine",
+      "nextAction": ""
+    },
+    {
+      "wave": "W623E",
+      "status": "complete",
+      "title": "ChatGPT-style information architecture",
+      "nextAction": "",
+      "completionEvidence": "Unified /create surface, canonical five-item primary navigation, ten legacy aliases redirected, focused tests/lint/build green"
+    },
+    {
+      "wave": "W623F",
+      "status": "complete",
+      "title": "Certification v2, Guide/copy and multilingual voice source foundation",
+      "nextAction": "",
+      "completionEvidence": "24/24 certification checks; core 11-language routing/copy; Guide browser voice without model; stale deployment held NO-GO"
+    },
+    {
+      "wave": "W623G",
+      "status": "complete",
+      "title": "Share Command Center, viral creation loops and no-key voice fallback",
+      "nextAction": "",
+      "completionEvidence": "22/22 gate; 6/6 tests; 31 active app/site-shell pages; organic sharing and no-key voice foundation; referral authority moved to W623H"
+    },
+    {
+      "wave": "W623H",
+      "status": "complete",
+      "title": "Minimal referral authority and EONKEY lifecycle foundation",
+      "nextAction": "",
+      "completionEvidence": "20/20 compatibility gate; SQL identity/grant/retention/redemption/reversal proof; dedicated referral D1 preferred with temporary billing fallback; source viral score 9.7/10"
+    },
+    {
+      "wave": "W623I",
+      "status": "live-testing-activation-complete-lifecycle-proof-pending",
+      "title": "Dedicated referral D1 scale architecture and Cloudflare activation kit",
+      "nextAction": "Run genuine two-account, Dodo-origin retained-payment, 14-day maturity, refund/dispute reversal, physical-device share and scale/rate-limit evidence; do not fabricate lifecycle events",
+      "completionEvidence": "Owner-provided Cloudflare/Codex completion: Production EON_REFERRALS_DB bound to the existing dedicated referral D1, both migrations applied non-destructively, EON_REFERRAL_ROLLOUT=testing, deployment 63ec539b-a552-451d-b99b-28aae3e561b5, three public status endpoints returned 200; live business lifecycle proof remains pending"
+    },
+    {
+      "wave": "W624A",
+      "status": "source-complete-owner-review-pending",
+      "title": "City art bible and Productive Nocturne quality target",
+      "nextAction": "Owner reviews target frames before W624C visual approval; art direction remains authoritative",
+      "completionEvidence": "17/17 W624A gate; 5/5 unit tests; six pillars; six Command landmarks; Wayfinder + EONBOT Orbit + five productive NPCs; three original target frames; 100-point scorecard"
+    },
+    {
+      "wave": "W624B",
+      "status": "source-complete-live-proof-pending",
+      "title": "City runtime consolidation",
+      "nextAction": "Preserve one runtime owner and capture authenticated/browser/device recovery proof during W624C or final Codex certification",
+      "completionEvidence": "19/19 W624B gate; 5/5 unit tests; one /eoncity renderer entry; 11 runtime states; 12 recovery cases; versioned local asset manifest; static compatibility redirects"
+    },
+    {
+      "wave": "W624C",
+      "status": "source-complete-runtime-visual-proof-pending",
+      "title": "Command District vertical slice",
+      "nextAction": "Run npm run proof:w624c-command-district:browser on an owner/Codex machine with Chromium/WebGL, review desktop/mobile captures, and score against W624A before district expansion",
+      "completionEvidence": "24/24 W624C gate; 6/6 focused tests; six review-first destinations; seven paths; seven collision volumes; one authoritative spawn; six unstuck points; first-10-second and first-60-second contracts; build/smoke green; managed browser blocked by administrator policy so runtime visual score remains null"
+    },
+    {
+      "wave": "W624D",
+      "status": "source-complete-live-device-proof-pending",
+      "title": "Wayfinder player and collision-aware camera",
+      "nextAction": "Run npm run proof:w624d-wayfinder-camera:browser and physical keyboard/touch/controller checks on an owner/Codex machine; preserve the W624C district-expansion block",
+      "completionEvidence": "20/20 W624D source gate; 6/6 focused tests; nine Wayfinder states; five camera profiles; collision-aware camera; visible cycle/reset/pose controls; deterministic current suite 814 tests / 767 pass / 47 exact archived skips / 0 fail; 36 original files checksummed in a non-certifying archive; alignment 16/16; archive 10/10; build/smoke green"
+    },
+    {
+      "wave": "W624E",
+      "status": "source-complete-browser-device-proof-pending",
+      "title": "EONBOT Orbit companion",
+      "nextAction": "Run npm run proof:w624e-eonbot-orbit:browser on an owner/Codex machine with Chromium/WebGL, then physical-device/reduced-motion/optional-voice checks; preserve the W624C district-expansion block",
+      "completionEvidence": "22/22 W624E source gate; 6/6 focused tests; nine local presentation states; five non-repeating route hints; six real destination hints; saved-project count-only privacy; visible mute/show-less/help/dismiss/restore controls; maintained suite 820 total / 773 pass / 47 exact archived skips / 0 fail; managed browser receipt BLOCKED because Playwright Chromium executable was unavailable"
+    },
+    {
+      "wave": "W624F",
+      "status": "source-complete-browser-device-crowd-proof-pending",
+      "title": "NPC production system",
+      "nextAction": "Run npm run proof:w624f-command-district-npcs:browser with Chromium/WebGL, then physical-device crowd/LOD/reduced-motion checks; preserve the W624C district-expansion block",
+      "completionEvidence": "25/25 W624F source gate; 6/6 focused tests; four bounded Productive Nocturne guides; nine local states; four authored branch paths; two-step review-first interactions; balanced/lite/disabled LOD; maintained suite 826 total / 779 pass / 47 exact archived skips / 0 fail; W409 updated to maintained authored-path patrol truth; managed browser receipt BLOCKED because Playwright Chromium was unavailable; exact Codex predeploy 20/20; reachability 352/610/0; final secret scan 3535/0; distribution 55020c6e675aa046b113c3b2182db691a5afdedebb6dd8f42b320423b5f50d85"
+    },
+    {
+      "wave": "W624G",
+      "status": "source-complete-browser-device-genuine-outcome-proof-pending",
+      "title": "Productive RPG loop",
+      "nextAction": "Run browser/device proof and genuine owner-side product outcome lifecycle checks; preserve bounded receipt/privacy/no-reward contract and W624C district-expansion block",
+      "completionEvidence": "31/31 W624G source gate; 6/6 focused tests; six mission families; nine honest states; real bounded outcome writers across Projects/Local AI/Vault/Create/Automations/Capsule; maintained suite 832 total / 785 current pass / 47 exact archived skips / 0 fail; 226 maintained files; alignment 17/17; archive 10/10; test:unit nine serial resumable chunks; browser receipt BLOCKED because Chromium was unavailable; reachability 353/617/0; secret scan 3543/0; build/smoke pass; distribution 185e143f16f84bdf50680d080864ec16bbd2e9fb130fbe9cd8410195547d3442"
+    },
+    {
+      "wave": "W624H",
+      "status": "source-complete-browser-device-live-status-proof-pending",
+      "title": "Truthful Command Center",
+      "nextAction": "Run real browser/device and production-authenticated status proof; preserve read-only source/authority/timestamp/freshness, review-first routing and privacy boundaries",
+      "completionEvidence": "33/33 W624H source gate; 6/6 focused tests; six status families; seven honest states; server-authoritative billing; bounded local counts/receipts; maintained suite 838 total / 791 current pass / 47 exact archived skips / 0 fail; 227 maintained files; alignment 17/17; archive 10/10; browser receipt BLOCKED because Chromium unavailable; reachability 354/621/0; secret scan 3568/0; build/smoke pass; distribution 7e64ce1b42399c2076ac99a0674ba412e7a0da481793328dfa883a6a509cb724"
+    },
+    {
+      "wave": "W624I",
+      "status": "source-complete-real-local-direct-byok-browser-device-proof-pending",
+      "title": "Genuine Agent Theatre",
+      "nextAction": "Run one real Local job and one real user-approved Direct BYOK job end to end; preserve review-first native actions, privacy and no-invented-progress boundaries",
+      "completionEvidence": "34/34 W624I source gate; 6/6 focused tests; exact eight-state lifecycle; four execution rails; W435 plus explicit Local/Direct BYOK bounded adapters; maintained suite 844 total / 797 current pass / 47 exact archived skips / 0 fail; 228 maintained files; alignment 17/17; archive 10/10; browser receipt BLOCKED because Chromium unavailable; reachability 355/623/0; final secret scan 3589/0; build/smoke pass; distribution a7ab55d325af210ac4bbeff22fc280b82674ccb948a0f7cddd4b615e2c4eaf43"
+    },
+    {
+      "wave": "W624J",
+      "status": "source-complete-native-share-collaboration-browser-proof-pending",
+      "title": "Sharing Center",
+      "nextAction": "Run native share completion, real collaboration delivery/acceptance and production-authenticated browser proof; preserve review-first manifests and strict separation from referral/EONKEY rewards",
+      "completionEvidence": "26/26 W624J source checks; 6/6 focused tests; six finite share families; prepare/review/platform action separation; private fields structurally excluded; no click/impression/social-post tracking; no referral or EONKEY mutation"
+    },
+    {
+      "wave": "W624K",
+      "status": "source-complete-physical-audio-controller-mobile-thermal-proof-pending",
+      "title": "Audio, accessibility, mobile and controller",
+      "nextAction": "Run physical sound, controller, touch/safe-area/orientation, battery and thermal evidence; preserve muted-by-default captions-first behavior and non-3D fallback",
+      "completionEvidence": "35/35 W624K source checks; 6/6 focused tests; six muted-by-default audio channels; captions primary; reduced sensory/motion, contrast, text scale, keyboard/touch/controller/remap/safe-area/large-target/battery-saver preferences; no automatic audio/fullscreen/orientation/sensor/network action"
+    },
+    {
+      "wave": "W624L",
+      "status": "source-complete-physical-device-visual-owner-flagship-certification-pending",
+      "title": "Performance and flagship certification",
+      "nextAction": "Collect low/mid/high physical-device evidence, sustained/recovery/PWA results, W624A runtime visual comparison and owner approval; no public flagship GO before at least 9.5/10 overall and no category below 9.0",
+      "completionEvidence": "39/39 W624L source checks; 6/6 focused tests; combined W624J-L maintained suite 231 files / 862 assertions / 815 current passes / 47 exact archived skips / 0 failures; stable resumable Codex predeploy 26/26; reachability 360 files / 632 edges / 0 quarantined; secret scan 3604/0; production distribution 465 files / 295 minified / 40.85% reduction / SHA-256 f267241146a3d20cecb9c38595beccb45b558459ce39780e5ef0eb19ee88cbab; browser proof BLOCKED because Chromium unavailable"
+    },
+    {
+      "wave": "W625A",
+      "status": "source-tooling-complete-real-owner-proof-pending",
+      "title": "First real local image proof",
+      "nextAction": "Run program/EONAPP_W625A_OWNER_CODEX_REAL_COMFY_PROOF_COMMANDS_2026-07-11.md on the owner Windows machine and prove one real 512x512 image plus runtime-stopped, no-checkpoint, blocked endpoint/CORS, timeout, cancellation, restart/retry and reset/refresh lanes.",
+      "completionEvidence": "Source now requires generate/fetch/preview/save/reopen with SHA-256 digest match; explicit queue/running/cancel/timeout states; redacted receipt; W625A focused gate 8/8 and 6/6 unit assertions. No real owner ComfyUI evidence was run in the managed environment.",
+      "proofState": "source-tooling-ready-real-owner-runtime-proof-pending"
+    },
+    {
+      "wave": "W625B",
+      "status": "source-complete-real-device-compatibility-evidence-pending",
+      "title": "Local image workflow registry",
+      "nextAction": "Use the owner W625A run to validate the selected installed checkpoint and low-VRAM profile without widening endpoints or installing anything automatically.",
+      "completionEvidence": "One versioned allowlisted standard-node txt2img workflow; low/medium/high bounded profiles; fixed 512x512 12-step batch-one proof lane; explicit checkpoint-family classification; W625B focused gate 7/7 and 5/5 unit assertions."
+    },
+    {
+      "wave": "W625C",
+      "status": "source-foundation-complete-advanced-workflows-and-real-quality-proof-pending",
+      "title": "Excellent image creation",
+      "nextAction": "Do not activate advanced edits before W625A. After real proof, implement separately allowlisted reference/variation/edit/outpaint/upscale workflows with privacy and device evidence.",
+      "completionEvidence": "Proof-gated aspect, quality and seed controls; session-only history; negative prompt guidance; redacted export; explicit unavailable boundaries for reference/inpaint/outpaint/upscale/video; W625C focused gate 7/7 and 3/3 unit assertions."
+    },
+    {
+      "wave": "W625D",
+      "status": "source-complete-real-device-evidence-pending",
+      "title": "Local video capability detection",
+      "nextAction": "Run capability detection on the owner approximately 4 GB RTX 3050 fallback lane and on a supported reference device; verify no scan side effects or unsafe submission.",
+      "completionEvidence": "Approved-loopback capability evaluator; 8 GiB usable-VRAM reviewed minimum; 16 GiB RAM minimum and 32 GiB recommendation; 35 GiB storage floor; supported/experimental/unsupported verdict; redacted evidence; focused source gate 8/8 and unit assertions 8/8.",
+      "proofState": "source-complete-owner-and-reference-device-evidence-pending"
+    },
+    {
+      "wave": "W625E",
+      "status": "source-tooling-complete-real-owner-reference-video-proof-pending",
+      "title": "First real local video",
+      "nextAction": "Execute program/EONAPP_W625E_OWNER_CODEX_REAL_VIDEO_PROOF_COMMANDS_2026-07-11.md and the canonical W625E runbook: prove the owner 4 GB blocked fallback, then generate one real reviewed 512x288, 33-frame, 16-fps image-to-video result on a supported reference machine through EONAPP.",
+      "proofState": "source-tooling-ready-real-reference-video-proof-pending",
+      "completionEvidence": "Loopback scan/upload/submit/history/cancel/view lifecycle; strict reviewed-workflow and digest confirmation; EONAPP preview/save/reopen/SHA-256/playback contract; eleven mandatory negative/recovery lanes; focused source gate 10/10 and unit assertions 8/8. No real video was executed in the managed environment."
+    },
+    {
+      "wave": "W625F",
+      "status": "source-complete-reviewed-native-workflow-compatibility-evidence-pending",
+      "title": "Local video product workflow",
+      "nextAction": "On the supported W625E reference machine, export/review the native ComfyUI API workflow, confirm its exact session digest and required models, and prove the bounded image-to-video recipe without custom nodes.",
+      "completionEvidence": "API-format size/node bounds; native class/role allowlist; forbidden network/execution and custom-node rejection; exact SHA-256 confirmation; bounded I2V parameter patching; focused source gate 8/8 and unit assertions 6/6.",
+      "proofState": "source-complete-real-workflow-compatibility-pending"
+    },
+    {
+      "wave": "W625G",
+      "status": "source-complete-real-device-calibration-pending",
+      "title": "Efficiency governor",
+      "nextAction": "Record directional workload/storage observations on the supported reference machine without converting estimates into promises; verify low-disk block, AC/thermal warnings and user-controlled cleanup.",
+      "completionEvidence": "512x288/33-frame/16-fps conservative defaults; bounded resolution/frame/FPS/steps; batch and queue one; low-storage blocker; battery/thermal warnings; proposal-only cleanup protecting saved media; focused source gate 8/8 and unit assertions 6/6.",
+      "proofState": "source-complete-real-device-calibration-pending"
+    },
+    {
+      "wave": "W625H",
+      "status": "certification-tooling-complete-real-evidence-certification-pending",
+      "title": "Local creator certification",
+      "nextAction": "Populate the fixed benchmark and certification board only from passed W625A and W625E receipts, all eleven recovery lanes, the supported reference-device run and owner 4 GB fallback. Keep no-go until every row passes.",
+      "completionEvidence": "Evidence-gated certification evaluator; fixed image/video benchmark identifiers; quality/latency/memory/recovery/privacy/integrity/update rows default pending; supported-profiles-only verdict; source integration alone always no-go; focused source gate 9/9 and unit assertions 5/5.",
+      "proofState": "tooling-complete-real-certification-pending"
+    },
+    {
+      "wave": "W626A",
+      "status": "source-complete-real-network-boundary-proof-pending",
+      "title": "BYOK job/threat model",
+      "nextAction": "Run signed companion network capture and prove user device to selected provider only; no EONAPP server proxy or media storage.",
+      "completionEvidence": "Provider-neutral contract, endpoint/origin/media allowlists, explicit approval/budget/model review, bounded payloads and redacted receipts; focused gate 8/8 and unit cases 3/3.",
+      "proofState": "source-complete-real-network-boundary-proof-pending"
+    },
+    {
+      "wave": "W626B",
+      "status": "source-complete-signed-release-and-device-proof-pending",
+      "title": "Creator Companion",
+      "nextAction": "Build and sign platform packages; prove install, OS secure credential storage, loopback origin auth, update, diagnostics and uninstall on real devices.",
+      "completionEvidence": "Loopback-only companion source with short-lived pairing/HMAC sessions and DPAPI/Keychain/Secret Service stores; no plaintext fallback; focused gate 8/8 and unit cases 2/2.",
+      "proofState": "source-complete-signed-release-and-device-proof-pending"
+    },
+    {
+      "wave": "W626C",
+      "status": "source-complete-real-two-provider-image-proof-pending",
+      "title": "External image adapters",
+      "nextAction": "Owner-review and enable one image model per provider, then prove real submit/progress/cancel/result/rate-limit paths through EONAPP and the signed companion.",
+      "completionEvidence": "fal and Replicate image adapters with manual redirects, no automatic paid retry and allowlisted media origins; focused gate 8/8 and unit cases 2/2.",
+      "proofState": "source-complete-real-two-provider-image-proof-pending"
+    },
+    {
+      "wave": "W626D",
+      "status": "source-complete-real-two-provider-video-proof-pending",
+      "title": "External video adapters",
+      "nextAction": "Owner-review one video model per provider and prove real text/image-to-video, long-running recovery, cancellation and expiry handling.",
+      "completionEvidence": "fal and Replicate video adapters retain explicit long-running states and reject unreviewed model identifiers; focused gate 8/8 and unit case 1/1.",
+      "proofState": "source-complete-real-two-provider-video-proof-pending"
+    },
+    {
+      "wave": "W626E",
+      "status": "source-complete-real-unified-lifecycle-proof-pending",
+      "title": "Unified direct job fabric",
+      "nextAction": "Prove local and Direct BYOK jobs coexist in Creator and Agent Theatre without rail confusion or provider-state loss.",
+      "completionEvidence": "One bounded local/direct projection and timestamp normalization with provider-specific progressive disclosure; focused gate 8/8 and unit case 1/1.",
+      "proofState": "source-complete-real-unified-lifecycle-proof-pending"
+    },
+    {
+      "wave": "W626F",
+      "status": "source-complete-supported-mobile-proof-pending",
+      "title": "Mobile secure path",
+      "nextAction": "Prove a reviewed OAuth/short-lived/native path on supported iOS and Android; keep permanent browser-key entry unavailable.",
+      "completionEvidence": "Mobile policy rejects permanent browser credentials and exposes honest desktop/unavailable fallback; focused gate 8/8 and unit case 1/1.",
+      "proofState": "source-complete-supported-mobile-proof-pending"
+    },
+    {
+      "wave": "W626G",
+      "status": "source-complete-real-provider-recovery-proof-pending",
+      "title": "Spending/outage/moderation safety",
+      "nextAction": "Exercise budget stop, quota, rate limit, moderation, outage, expiry, region and account-state lanes on real provider accounts without automatic paid retry.",
+      "completionEvidence": "Per-job confirmation, hard budget stops and honest provider recovery categories; focused gate 8/8 and unit cases 2/2.",
+      "proofState": "source-complete-real-provider-recovery-proof-pending"
+    },
+    {
+      "wave": "W626H",
+      "status": "certification-tooling-complete-real-provider-and-mobile-evidence-pending",
+      "title": "BYOK privacy certification",
+      "nextAction": "Populate every fixed evidence row from signed-companion desktop/mobile runs and retain no-go until all rows and network boundaries pass.",
+      "completionEvidence": "Fail-closed certification board plus bounded redacted local history deletion/export; focused gate 9/9 and unit cases 3/3; source integration alone no-go.",
+      "proofState": "certification-tooling-complete-real-provider-and-mobile-evidence-pending"
+    },
+    {
+      "wave": "W627A",
+      "status": "source-complete-real-evidence-pending",
+      "title": "One Create experience",
+      "nextAction": "Run real image/video, keyboard/touch, Library/Project/Forge/City continuation and update/export/restore evidence; keep public certification no-go until all rows pass."
+    },
+    {
+      "wave": "W627B",
+      "status": "source-complete-real-evidence-pending",
+      "title": "Beginner/advanced modes",
+      "nextAction": "Run real image/video, keyboard/touch, Library/Project/Forge/City continuation and update/export/restore evidence; keep public certification no-go until all rows pass."
+    },
+    {
+      "wave": "W627C",
+      "status": "source-complete-real-evidence-pending",
+      "title": "Unified job lifecycle",
+      "nextAction": "Run real image/video, keyboard/touch, Library/Project/Forge/City continuation and update/export/restore evidence; keep public certification no-go until all rows pass."
+    },
+    {
+      "wave": "W627D",
+      "status": "source-complete-real-evidence-pending",
+      "title": "Creator Library",
+      "nextAction": "Run real image/video, keyboard/touch, Library/Project/Forge/City continuation and update/export/restore evidence; keep public certification no-go until all rows pass."
+    },
+    {
+      "wave": "W627E",
+      "status": "source-complete-real-evidence-pending",
+      "title": "Project integration",
+      "nextAction": "Run real image/video, keyboard/touch, Library/Project/Forge/City continuation and update/export/restore evidence; keep public certification no-go until all rows pass."
+    },
+    {
+      "wave": "W627F",
+      "status": "source-complete-real-evidence-pending",
+      "title": "Data survival",
+      "nextAction": "Run real image/video, keyboard/touch, Library/Project/Forge/City continuation and update/export/restore evidence; keep public certification no-go until all rows pass."
+    },
+    {
+      "wave": "W627G",
+      "status": "source-complete-real-evidence-pending",
+      "title": "Creator certification",
+      "nextAction": "Run real image/video, keyboard/touch, Library/Project/Forge/City continuation and update/export/restore evidence; keep public certification no-go until all rows pass."
+    },
+    {
+      "wave": "W628A",
+      "status": "source-complete-real-customer-provider-d1-evidence-pending",
+      "title": "Real customer checkout",
+      "nextAction": "Run genuine Dodo customer checkout, provider-origin signed webhook, D1 entitlement, cross-session refresh, portal/cancel/reactivate, failed payment, refund, dispute, duplicate, out-of-order, forged rejection, tier change and receipt/tax-link evidence; keep public billing certification no-go until every required row passes."
+    },
+    {
+      "wave": "W628B",
+      "status": "source-complete-real-customer-provider-d1-evidence-pending",
+      "title": "Real Dodo-origin webhook",
+      "nextAction": "Run genuine Dodo customer checkout, provider-origin signed webhook, D1 entitlement, cross-session refresh, portal/cancel/reactivate, failed payment, refund, dispute, duplicate, out-of-order, forged rejection, tier change and receipt/tax-link evidence; keep public billing certification no-go until every required row passes."
+    },
+    {
+      "wave": "W628C",
+      "status": "source-complete-real-customer-provider-d1-evidence-pending",
+      "title": "Entitlement activation",
+      "nextAction": "Run genuine Dodo customer checkout, provider-origin signed webhook, D1 entitlement, cross-session refresh, portal/cancel/reactivate, failed payment, refund, dispute, duplicate, out-of-order, forged rejection, tier change and receipt/tax-link evidence; keep public billing certification no-go until every required row passes."
+    },
+    {
+      "wave": "W628D",
+      "status": "source-complete-real-customer-provider-d1-evidence-pending",
+      "title": "Portal/cancellation",
+      "nextAction": "Run genuine Dodo customer checkout, provider-origin signed webhook, D1 entitlement, cross-session refresh, portal/cancel/reactivate, failed payment, refund, dispute, duplicate, out-of-order, forged rejection, tier change and receipt/tax-link evidence; keep public billing certification no-go until every required row passes."
+    },
+    {
+      "wave": "W628E",
+      "status": "source-complete-real-customer-provider-d1-evidence-pending",
+      "title": "Expiry/failure/refund/dispute",
+      "nextAction": "Run genuine Dodo customer checkout, provider-origin signed webhook, D1 entitlement, cross-session refresh, portal/cancel/reactivate, failed payment, refund, dispute, duplicate, out-of-order, forged rejection, tier change and receipt/tax-link evidence; keep public billing certification no-go until every required row passes."
+    },
+    {
+      "wave": "W628F",
+      "status": "source-complete-real-customer-provider-d1-evidence-pending",
+      "title": "Billing certification",
+      "nextAction": "Run genuine Dodo customer checkout, provider-origin signed webhook, D1 entitlement, cross-session refresh, portal/cancel/reactivate, failed payment, refund, dispute, duplicate, out-of-order, forged rejection, tier change and receipt/tax-link evidence; keep public billing certification no-go until every required row passes."
+    },
+    {
+      "wave": "W629A",
+      "status": "source-complete-real-referral-provider-production-evidence-pending",
+      "title": "Signed referral attribution",
+      "nextAction": "Run genuine distinct-account signed attribution, one-time server milestone, real retained-paid Dodo, cap, duplicate/race, refund/dispute/support reversal, redemption revocation, canonical Vault Reveal migration and privacy evidence; keep public referral certification no-go until every W629H row passes."
+    },
+    {
+      "wave": "W629B",
+      "status": "source-complete-real-referral-provider-production-evidence-pending",
+      "title": "Qualification events",
+      "nextAction": "Run genuine distinct-account signed attribution, one-time server milestone, real retained-paid Dodo, cap, duplicate/race, refund/dispute/support reversal, redemption revocation, canonical Vault Reveal migration and privacy evidence; keep public referral certification no-go until every W629H row passes."
+    },
+    {
+      "wave": "W629C",
+      "status": "source-complete-real-referral-provider-production-evidence-pending",
+      "title": "EONKEY grant ledger",
+      "nextAction": "Run genuine distinct-account signed attribution, one-time server milestone, real retained-paid Dodo, cap, duplicate/race, refund/dispute/support reversal, redemption revocation, canonical Vault Reveal migration and privacy evidence; keep public referral certification no-go until every W629H row passes."
+    },
+    {
+      "wave": "W629D",
+      "status": "source-complete-real-referral-provider-production-evidence-pending",
+      "title": "Refund/dispute/abuse reversal",
+      "nextAction": "Run genuine distinct-account signed attribution, one-time server milestone, real retained-paid Dodo, cap, duplicate/race, refund/dispute/support reversal, redemption revocation, canonical Vault Reveal migration and privacy evidence; keep public referral certification no-go until every W629H row passes."
+    },
+    {
+      "wave": "W629E",
+      "status": "source-complete-real-referral-provider-production-evidence-pending",
+      "title": "Feature-unlock redemption",
+      "nextAction": "Run genuine distinct-account signed attribution, one-time server milestone, real retained-paid Dodo, cap, duplicate/race, refund/dispute/support reversal, redemption revocation, canonical Vault Reveal migration and privacy evidence; keep public referral certification no-go until every W629H row passes."
+    },
+    {
+      "wave": "W629F",
+      "status": "source-complete-real-referral-provider-production-evidence-pending",
+      "title": "Referral/key UX",
+      "nextAction": "Run genuine distinct-account signed attribution, one-time server milestone, real retained-paid Dodo, cap, duplicate/race, refund/dispute/support reversal, redemption revocation, canonical Vault Reveal migration and privacy evidence; keep public referral certification no-go until every W629H row passes."
+    },
+    {
+      "wave": "W629G",
+      "status": "source-complete-real-referral-provider-production-evidence-pending",
+      "title": "Vault Reveal integration",
+      "nextAction": "Run genuine distinct-account signed attribution, one-time server milestone, real retained-paid Dodo, cap, duplicate/race, refund/dispute/support reversal, redemption revocation, canonical Vault Reveal migration and privacy evidence; keep public referral certification no-go until every W629H row passes."
+    },
+    {
+      "wave": "W629H",
+      "status": "source-complete-real-referral-provider-production-evidence-pending",
+      "title": "Referral red-team certification",
+      "nextAction": "Run genuine distinct-account signed attribution, one-time server milestone, real retained-paid Dodo, cap, duplicate/race, refund/dispute/support reversal, redemption revocation, canonical Vault Reveal migration and privacy evidence; keep public referral certification no-go until every W629H row passes."
+    },
+    {
+      "wave": "W630",
+      "status": "source-complete-real-route-device-account-provider-evidence-pending",
+      "title": "ChatGPT-style whole-app UX",
+      "nextAction": "Execute genuine route/device continuation, project/Forge/automation provider proof, account/session/delete, signed companion custody and restore evidence; keep public certification no-go until required rows pass."
+    },
+    {
+      "wave": "W631",
+      "status": "source-complete-real-route-device-account-provider-evidence-pending",
+      "title": "Projects/Workspace/Forge/Automations",
+      "nextAction": "Execute genuine route/device continuation, project/Forge/automation provider proof, account/session/delete, signed companion custody and restore evidence; keep public certification no-go until required rows pass."
+    },
+    {
+      "wave": "W632",
+      "status": "source-complete-real-route-device-account-provider-evidence-pending",
+      "title": "Vault/account/secure key custody",
+      "nextAction": "Execute genuine route/device continuation, project/Forge/automation provider proof, account/session/delete, signed companion custody and restore evidence; keep public certification no-go until required rows pass."
+    },
+    {
+      "wave": "W633",
+      "status": "source-complete-production-edge-device-crawler-evidence-pending",
+      "title": "Every-route audit, alias retirement and navigation cleanup",
+      "nextAction": "Run production edge probes, desktop/Android/iPhone-iPad walkthroughs, service-worker update-route continuity and external crawler canonical observation. Begin W634 source certification without fabricating those pending lanes."
+    },
+    {
+      "wave": "W634",
+      "status": "source-complete-physical-device-assistive-evidence-pending",
+      "title": "Responsive layout, accessibility and input certification",
+      "nextAction": "Run real desktop/Android/iPhone-iPad/PWA, screen-reader, zoom, orientation, keyboard, touch and controller evidence; preserve capability truth and no-permission-on-load boundaries.",
+      "completionEvidence": "Shared capability bridge; static heading and duplicate-ID repairs; 68/68 W634 permanent stages; 273 maintained files; 941 current passes; 47 explicit historical skips; 0 failures."
+    },
+    {
+      "wave": "W635",
+      "status": "source-complete-production-edge-offline-update-rollback-evidence-pending",
+      "title": "Performance, caching, service-worker and update-safety hardening",
+      "nextAction": "Run real Cloudflare cache-header, service-worker install/update/offline/rollback/storage-pressure and physical-device continuity evidence; begin W636 without converting source budgets into production proof.",
+      "completionEvidence": "Current-release-only cache reads; unsafe response/query caching rejected; centralized no-HTTP-cache registration; explicit activation then reload; deferred optional shell workloads; 30/30 public build budgets under class limits; permanent W635 receipt authoritative."
+    },
+    {
+      "wave": "W636",
+      "status": "source-complete-independent-security-production-evidence-pending",
+      "title": "Security, privacy, secrets and abuse-resistance audit",
+      "nextAction": "Run independent penetration testing, Cloudflare WAF/rate-limit proof, real signed Dodo replay/conflict evidence, abuse review and owner production-secret/binding review.",
+      "completionEvidence": "21/21 source gate; bounded strict request parsing; exact checkout host; webhook ID/payload binding; private identifier suppression; immutable workflow pins; legacy provider-key compatibility path made migration-only and non-post-quantum."
+    },
+    {
+      "wave": "W637",
+      "status": "source-complete-real-recovery-drive-device-evidence-pending",
+      "title": "Production persistence, migration, backup and recovery certification",
+      "nextAction": "Run real update/rollback data survival, corrupted IndexedDB/quota, interrupted Capsule recovery, explicit Drive snapshot lifecycle and separate-profile cross-device recovery evidence.",
+      "completionEvidence": "18/18 source gate; five-database inventory; digest-bound preview; single add-only transaction; zero partial writes on precommit failure; post-commit verification truth; explicit Drive snapshots only."
+    },
+    {
+      "wave": "W638",
+      "status": "source-complete-production-evidence-not-run",
+      "title": "Billing, referral, Creator and provider evidence convergence",
+      "nextAction": "Populate only redacted genuine evidence records; derive independent lane verdicts; do not use source/synthetic fixtures as production proof.",
+      "completionEvidence": "10/10 source gate; five lanes and 59 requirements; SHA-256 artifact indexing; secret/direct-identifier rejection; prior owner approval for destructive actions; production verdict NOT-RUN."
+    },
+    {
+      "wave": "W639",
+      "status": "source-complete-production-rehearsal-not-run-launch-candidate-not-frozen",
+      "title": "Whole-app production rehearsal and launch-candidate freeze",
+      "nextAction": "Run the real production walkthrough, incident/kill-switch/rollback drills and populate the owner-reviewed rehearsal board for the exact freeze digest.",
+      "completionEvidence": "10/10 source gate; 58 critical files across 10 freeze categories; 12 SQL migrations fingerprinted; 11 rehearsal domains; local build cannot freeze a launch candidate."
+    },
+    {
+      "wave": "W640",
+      "status": "next-owner-decision-wave",
+      "title": "Final owner GO/NO-GO certification and launch handover",
+      "nextAction": "Run final owner GO/NO-GO board. Current starting decision is NO-GO until every mandatory W638 lane and W639 rehearsal domain is PASS for the exact frozen source/deployment."
+    }
+  ]
+}

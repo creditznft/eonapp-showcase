@@ -1,0 +1,266 @@
+EONPACKAGE -> EONAPP.ch adaptation audit
+=======================================
+
+Purpose
+-------
+This document records what was reviewed inside `C:\Users\goavi\Downloads\eonpackage`, what actually fits EONAPP.ch, and what should stay out of this static Cloudflare Pages product.
+
+Final decision
+--------------
+EONAPP.ch should borrow only the local-first growth systems from eonpackage.
+
+Do port:
+- stronger browser identity
+- invite-chain links
+- QR sharing
+- daily challenges
+- streak/XP loops
+- cleaner rewarded monetization patterns
+- stronger vault encryption settings
+
+Do not port:  
+- wallets
+- staking
+- token systems
+- smart contracts
+- P2P storage
+- fake global referrals
+- tournament state
+- IPFS/libp2p
+
+What was audited in eonpackage
+------------------------------
+Most relevant source ideas:
+- `src/utils/GuestCodeGenerator_V5.ts`
+- `src/hooks/useReferralLinks.ts`
+- `src/services/OffChainReferralService_V5_1.ts`
+- `src/services/SecureLocalStorage_V5.ts`
+- `src/services/WalletBackupService_V5.ts`
+- `src/services/DailyChallengesService_V5.ts`
+- `src/services/AchievementsService_V5.ts`
+- `src/services/LootBoxEconomy_V5.ts`
+- `src/services/P2PMultiplayerService_V5.ts`
+- `src/monetization/WatchToEarnAds_V5.tsx`
+- `src/services/AdNetworkService.ts`
+
+What fits EONAPP.ch right now
+-----------------------------
+1. Stronger identity
+- eonpackage used a much stronger guest ID strategy than the older EONAPP profile ID.
+- EONAPP.ch now uses a stronger browser identity format through:
+  - `assets/js/utils/identity.js`
+- This is now the local-first UID for challenge and invite flows.
+
+2. Invite-chain instead of fake referrals
+- eonpackage had deep referral ideas, but a pure static site cannot keep a shared referral tree honestly.
+- The correct static adaptation is:
+  - challenge/invite links
+  - encoded invite trail in URL
+  - QR handoff
+  - local attribution only
+  - local referral-return rewards when downstream users send chain links back
+- Implemented in:
+  - `assets/js/utils/profile.js`
+  - `assets/js/vault-page.js`
+  - `vault.html`
+
+What this means:
+- every share carries a trail
+- recipients can see upstream chain depth
+- the site does not pretend to have a global referral database
+- this is honest and Cloudflare-friendly
+
+3. Daily challenges and streaks
+- eonpackage had a much heavier challenge system.
+- EONAPP.ch now has the static version:
+  - 3 daily challenges
+  - XP accumulation
+  - streak tracking
+  - local completion state
+- Implemented in:
+  - `assets/js/utils/challenges.js`
+  - `assets/js/utils/profile.js`
+  - `assets/js/vault-page.js`
+
+Tracked event types:
+- tool runs
+- shares
+- challenge wins
+- rewarded unlocks
+- vault exports
+- favorites
+
+4. Rewarded monetization upgrade
+- eonpackage contained reward/ad-loop ideas that were too heavy in React or tied to other systems.
+- EONAPP.ch now uses the clean static version:
+  - quick sponsor unlock
+  - CPA offerwall option
+  - daily/session caps
+  - profile-safe filtering by page type
+- Implemented in:
+  - `assets/js/ads/config.js`
+  - `assets/js/ads/AdManager.js`
+  - `assets/js/tools/ToolEngine.js`
+  - `assets/js/utils/share.js`
+
+Current providers prepared in config:
+- Monetag smartlink
+- CPAlead offerwall
+- AdGate offerwall
+
+Important rule:
+- finance-style tools use quick unlock only
+- offerwalls are for quiz/social/game bonus layers
+- first useful result stays free
+
+5. Vault hardening
+- eonpackage used stronger backup settings than the original EONAPP vault export.
+- EONAPP.ch now uses:
+  - stronger PBKDF2 setting for new exports
+  - versioned vault decrypt compatibility
+- Implemented in:
+  - `assets/js/utils/vault.js`
+
+What was intentionally rejected
+-------------------------------
+1. Full P2P storage (kubo-rpc-client / IPFS PubSub)
+- P2PStorageSystem in eonpackage uses kubo-rpc-client and IPFS PubSub.
+- Both require Node.js. Neither runs in a browser natively.
+- GunDB replaces this role: it is CDN-loadable, browser-native, and already live.
+- Decision: GunDB IS the P2P layer. IPFS PubSub is NOT.
+
+2. Wallet and token systems as user-facing friction
+- Smart contracts exist (11 EONLite contracts, fully tested).
+- But wallet connect is NOT a first-session requirement.
+- The app runs fully without a wallet. Token claims are unlocked on the user's terms.
+- Decision: local-first first, on-chain optional.
+
+3. P2PTournamentService wallet multi-sig
+- eonpackage's tournament service requires wallet address signatures for result multi-sig.
+- This is not portable to EONAPP.CH without wallet-connect UX.
+- Decision: use UID-based tournament lite (async duels + GunDB leaderboard) instead.
+
+4. Large React/TSX feature surfaces
+- eonpackage contains logic worth learning from
+- the actual React components do not belong in this vanilla static architecture
+
+What was added this session
+---------------------------
+Files added:
+- `assets/js/utils/identity.js`
+- `assets/js/utils/challenges.js`
+- `EONPACKAGE-ADAPTATION.txt`
+
+Files upgraded:
+- `assets/js/utils/profile.js`
+- `assets/js/utils/share.js`
+- `assets/js/utils/vault.js`
+- `assets/js/ads/config.js`
+- `assets/js/ads/AdManager.js`
+- `assets/js/tools/ToolEngine.js`
+- `assets/js/tools/defs/rarerank.js`
+- `assets/js/tools/defs/crypto-fate.js`
+- `assets/js/vault-page.js`
+- `assets/css/components.css`
+- `vault.html`
+
+Also polished:
+- favicon links across live pages
+
+What was added in the P2P session (latest)
+-------------------------------------------
+This session overrode some of the earlier "do not port" decisions after auditing eonpackage's
+actual P2P services and deciding on GunDB as the correct vanilla-JS-compatible replacement.
+
+Files added:
+- `assets/js/utils/ipfs-gateway.js`
+  - IPFS + Arweave gateway client using pure `fetch()`
+  - No npm, no node, no IPFS daemon required
+  - 5 IPFS gateways + 3 Arweave gateways, health tracking, circuit breaker, latency-weighted sort
+  - Adapted from: `eonpackage/src/utils/IPFSGatewayClient_V5.ts`
+
+- `assets/js/utils/p2p-discovery.js`
+  - GunDB-based P2P offer discovery (CDN-loaded, browser-native)
+  - Replaces IPFS PubSub from eonpackage's `PureP2PSwapService_V5.ts`
+  - 2 public relay peers + local localStorage cache fallback
+  - API: `publishOffer`, `browseOffers`, `withdrawOffer`, `markOfferAccepted`, `getP2PStatus`
+  - 7-day offer TTL, per-UID rate limit (20 offers max), real-time subscription stream
+
+Files upgraded:
+- `assets/js/vault-page.js` — P2P toggle, live browse panel, offer creation/accept wired to GunDB
+
+Multiplayer decision (CEO-level, final)
+----------------------------------------
+After auditing `P2PMultiplayerService_V5.ts` in eonpackage:
+
+Tier 1 — Async challenge duels (BUILT, URL-first):
+- Module: `assets/js/utils/p2p-multiplayer.js` ✅ COMPLETE
+- Deterministic seeds: both players play same seed, scores compared locally
+- Challenge URL carries: gameId + seed + score + challengerUID + expiry (btoa encoded)
+- No WebRTC, no NAT issues, works across devices without live connection
+- GunDB is optional enhancement only — all challenge flows work URL-only
+- Wired into: reaction-sprint, word-blitz, orbit-survivor, memory-chain, void-raider, neon-dash, merge-grid, color-sprint, tap-reactor
+
+Tier 2 — Nostr relay discovery (BUILT, replaces GunDB):
+- Module: `assets/js/utils/p2p-nostr.js` ✅ NEW
+- Protocol: Nostr NIP-01 over WebSocket to public relays
+- Relays: relay.damus.io, nos.lol, relay.snort.social, nostr.wine, relay.nostr.band, relay.primal.net
+- 50+ independent public relays — no single point of failure
+- Ephemeral keypair per player (generated once, stored in localStorage)
+- Events: kind 20001, tagged with #t:eon-game:{gameId}
+- No hosting required by EONAPP. No CDN script needed (pure WebSocket).
+- Status: optional discovery layer, activated when browsing live challenges
+
+Tier 3 — Real-time WebRTC 1v1 (Phase 2, future):
+- Module: planned `assets/js/utils/p2p-room.js`
+- Signaling: Nostr DM (NIP-04) or URL exchange — NO GunDB needed
+- STUN: Google (stun.l.google.com:19302) — free, permanent
+- Only needed for specific live PvP games
+
+GunDB status (DEPRECATED from required stack):
+- Reason: community relays (relay.peer.ooo, peer.wallie.io) are volunteer-hosted, volatile
+- Nostr provides better decentralization (50+ relays, cryptographic signing)
+- URL-only challenges work with ZERO relay dependency (always-on)
+- GunDB code kept in p2p-multiplayer.js but clearly marked optional, wrapped in try/catch
+- Decision: Do NOT add any new GunDB dependencies
+
+Explicitly NOT porting:
+- P2PStorageSystem (kubo-rpc-client, requires Node.js)
+- Tournament wallet multi-sig (wallet signatures add legal drag)
+- IPFS PubSub signaling (requires Node.js, kubo daemon)
+
+Best next moves
+---------------
+1. ✅ Fix games path: void-raider + reaction-sprint = flagship, word-blitz + orbit-survivor + memory-chain = live
+2. ✅ Build p2p-multiplayer.js (async duels, URL-first with optional GunDB)
+3. ✅ Build p2p-nostr.js (Nostr relay discovery, replaces GunDB as optional layer)
+4. ✅ Promote tarot-oracle + rarerank to flagship in app-data.js
+5. Activate CI/CD: copy DEPLOY-WORKFLOW.yml.txt to .github/workflows/deploy.yml
+6. Build flagship game: Dungeon Crawl Zero (Phaser.js roguelike, 6000+ lines)
+7. Build flagship tool: Dream Interpreter AI (400+ symbol DB, simulated chatbot)
+8. Build flagship tool: Archetype Deep Scan (Jungian archetypes, 35-question flow)
+9. Provision real Cloudflare D1 database → deploy Worker
+10. Deploy smart contracts to Polygon Amoy testnet
+
+Hard rule going forward
+-----------------------
+If a feature from eonpackage needs:
+- shared mutable truth
+- anti-fraud enforcement
+- wallet signatures
+- global persistence
+- backend moderation
+
+it is not a phase-1 EONAPP.ch feature.
+
+EONAPP.ch wins by being:
+- static
+- fast
+- local-first
+- viral
+- P2P-connected via URL challenges + Nostr discovery (no central server)
+- honest about what is and is not real
+
+The P2P layer (Nostr) is the exception: it adds shared discovery without central authority.
+Nostr events are ephemeral, signed, and eventually-consistent — it is a broadcast channel,
+not a ledger. The trust anchor remains the signed challenge URLs and local vault state.

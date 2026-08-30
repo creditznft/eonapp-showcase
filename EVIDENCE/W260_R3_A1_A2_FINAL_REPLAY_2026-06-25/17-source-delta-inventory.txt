@@ -1,0 +1,23 @@
+# W260-R3 A1/A2 source delta inventory
+Files /mnt/data/eonapp_w260r2_stage/EONAPP_W260_R2_W266_W276_EVIDENCE_HARDENING_FREEZE_2026-06-25/CodexAuditPack/lighthouse-routes.json and /mnt/data/eonapp_r3a2_work/EONAPP_W260-R3 A2_AI_API_LH_REBASELINE_2026-06-25/CodexAuditPack/lighthouse-routes.json differ
+Files /mnt/data/eonapp_w260r2_stage/EONAPP_W260_R2_W266_W276_EVIDENCE_HARDENING_FREEZE_2026-06-25/CodexAuditPack/lighthouse-routes.md and /mnt/data/eonapp_r3a2_work/EONAPP_W260-R3 A2_AI_API_LH_REBASELINE_2026-06-25/CodexAuditPack/lighthouse-routes.md differ
+Only in /mnt/data/eonapp_r3a2_work/EONAPP_W260-R3 A2_AI_API_LH_REBASELINE_2026-06-25/CodexAuditPack: w107-final-merge-prep
+Only in /mnt/data/eonapp_r3a2_work/EONAPP_W260-R3 A2_AI_API_LH_REBASELINE_2026-06-25/EVIDENCE: R3A1_AI_API_CHANGE_CONTROL_2026-06-25
+Only in /mnt/data/eonapp_r3a2_work/EONAPP_W260-R3 A2_AI_API_LH_REBASELINE_2026-06-25/EVIDENCE: W260-R3 A1_W260-R3 A2_FINAL_REPLAY_2026-06-25
+Only in /mnt/data/eonapp_r3a2_work/EONAPP_W260-R3 A2_AI_API_LH_REBASELINE_2026-06-25/EVIDENCE: R3A2_LIGHTHOUSE_REBASELINE_2026-06-25
+Only in /mnt/data/eonapp_r3a2_work/EONAPP_W260-R3 A2_AI_API_LH_REBASELINE_2026-06-25/HANDOFF: W260-R3 A1_W260-R3 A2_AI_API_LIGHTHOUSE_2026-06-25
+Files /mnt/data/eonapp_w260r2_stage/EONAPP_W260_R2_W266_W276_EVIDENCE_HARDENING_FREEZE_2026-06-25/assets/js/free-ai-power-page.js and /mnt/data/eonapp_r3a2_work/EONAPP_W260-R3 A2_AI_API_LH_REBASELINE_2026-06-25/assets/js/free-ai-power-page.js differ
+Only in /mnt/data/eonapp_r3a2_work/EONAPP_W260-R3 A2_AI_API_LH_REBASELINE_2026-06-25/assets/js/utils: r3a1-ai-api-change-control.js
+Only in /mnt/data/eonapp_r3a2_work/EONAPP_W260-R3 A2_AI_API_LH_REBASELINE_2026-06-25/config: ai-api-contracts.mjs
+Only in /mnt/data/eonapp_r3a2_work/EONAPP_W260-R3 A2_AI_API_LH_REBASELINE_2026-06-25/docs: R3A1_AI_API_CHANGE_CONTROL_AND_W260-R3 A2_LIGHTHOUSE_PLAN_2026-06-25.md
+Files /mnt/data/eonapp_w260r2_stage/EONAPP_W260_R2_W266_W276_EVIDENCE_HARDENING_FREEZE_2026-06-25/package.json and /mnt/data/eonapp_r3a2_work/EONAPP_W260-R3 A2_AI_API_LH_REBASELINE_2026-06-25/package.json differ
+Only in /mnt/data/eonapp_r3a2_work/EONAPP_W260-R3 A2_AI_API_LH_REBASELINE_2026-06-25/release-evidence: R3A1_AI_API_CHANGE_CONTROL_2026-06-25
+Only in /mnt/data/eonapp_r3a2_work/EONAPP_W260-R3 A2_AI_API_LH_REBASELINE_2026-06-25/release-evidence: R3A2_LIGHTHOUSE_REBASELINE_2026-06-25
+Files /mnt/data/eonapp_w260r2_stage/EONAPP_W260_R2_W266_W276_EVIDENCE_HARDENING_FREEZE_2026-06-25/scripts/lhci-static-server.mjs and /mnt/data/eonapp_r3a2_work/EONAPP_W260-R3 A2_AI_API_LH_REBASELINE_2026-06-25/scripts/lhci-static-server.mjs differ
+Files /mnt/data/eonapp_w260r2_stage/EONAPP_W260_R2_W266_W276_EVIDENCE_HARDENING_FREEZE_2026-06-25/scripts/run-current-unit-suite.mjs and /mnt/data/eonapp_r3a2_work/EONAPP_W260-R3 A2_AI_API_LH_REBASELINE_2026-06-25/scripts/run-current-unit-suite.mjs differ
+Files /mnt/data/eonapp_w260r2_stage/EONAPP_W260_R2_W266_W276_EVIDENCE_HARDENING_FREEZE_2026-06-25/scripts/w107-main-lighthouse-direct.mjs and /mnt/data/eonapp_r3a2_work/EONAPP_W260-R3 A2_AI_API_LH_REBASELINE_2026-06-25/scripts/w107-main-lighthouse-direct.mjs differ
+Only in /mnt/data/eonapp_r3a2_work/EONAPP_W260-R3 A2_AI_API_LH_REBASELINE_2026-06-25/scripts: r3a1-ai-api-contract-gate.mjs
+Only in /mnt/data/eonapp_r3a2_work/EONAPP_W260-R3 A2_AI_API_LH_REBASELINE_2026-06-25/scripts: r3a2-lighthouse-route-contract-gate.mjs
+Only in /mnt/data/eonapp_r3a2_work/EONAPP_W260-R3 A2_AI_API_LH_REBASELINE_2026-06-25/tests/unit: r3a1-ai-api-change-control.test.mjs
+Only in /mnt/data/eonapp_r3a2_work/EONAPP_W260-R3 A2_AI_API_LH_REBASELINE_2026-06-25/tests/unit: r3a2-lighthouse-static-server.test.mjs
+Only in /mnt/data/eonapp_r3a2_work/EONAPP_W260-R3 A2_AI_API_LH_REBASELINE_2026-06-25: tmp

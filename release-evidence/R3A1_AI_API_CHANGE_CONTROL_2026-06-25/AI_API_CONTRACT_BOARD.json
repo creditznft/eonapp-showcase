@@ -1,0 +1,55 @@
+{
+  "schema": "eonapp.r3a1.ai-api-change-control.v1",
+  "contractSchema": "eonapp.w476.ai-api-contracts.v2",
+  "asOf": "2026-08-15",
+  "reviewCadence": "monthly-and-before-provider-merge",
+  "verdict": "STATIC_CONTRACTS_PASS",
+  "activeHostedProviderIds": [
+    "groq",
+    "gemini",
+    "cerebras",
+    "mistral",
+    "deepseek",
+    "perplexity",
+    "together",
+    "fireworks",
+    "huggingface",
+    "openai",
+    "openrouter",
+    "xai",
+    "qwen"
+  ],
+  "reviewedHostedProviderIds": [
+    "groq",
+    "gemini",
+    "cerebras",
+    "mistral",
+    "deepseek",
+    "perplexity",
+    "together",
+    "nvidia",
+    "sambanova",
+    "fireworks",
+    "huggingface",
+    "openai",
+    "openrouter",
+    "xai",
+    "qwen"
+  ],
+  "nvidia": {
+    "currentRuntimeBaseUrl": "https://integrate.api.nvidia.com/v1",
+    "deprecatedTeamScopedPathDetected": false,
+    "migrationRequiredInCurrentSource": false,
+    "claim": "NVIDIA API Catalog/NIM endpoint is guarded; no team-scoped NGC management URL is configured."
+  },
+  "claimFence": [
+    "Static-contract pass is not a live provider-account, quota, billing, model-availability, CORS, or inference success claim.",
+    "Every active browser-hosted provider remains BYOK and must pass a user-initiated authenticated model-list verification before EONBOT marks it ready; reviewed providers blocked by browser transport remain disabled until that transport boundary changes.",
+    "No API key, account identifier, user model list, or vendor response is stored in this source evidence board."
+  ],
+  "externalEvidence": {
+    "providerAccountCompatibility": "not-collected-in-source-freeze",
+    "previewByokProbe": "not-collected-in-source-freeze",
+    "productionProviderMonitoring": "not-collected-in-source-freeze"
+  }
+}

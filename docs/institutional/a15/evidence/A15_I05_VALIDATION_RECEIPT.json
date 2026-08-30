@@ -1,0 +1,109 @@
+{
+  "schema": "eonapp.a15.i05.validation-receipt.v1",
+  "generatedAt": "2026-08-04T15:54:46.344749Z",
+  "wave": "I05",
+  "baselineCommit": "a3c2081",
+  "status": "pass-source-and-dependency-free",
+  "scope": "Universal Project Registry and Lifecycle Migration",
+  "results": {
+    "projectRegistryTests": {
+      "passed": 8,
+      "failed": 0
+    },
+    "targetedCompatibilityTests": {
+      "passed": 28,
+      "failed": 0
+    },
+    "w766W802DependencyFreeRegression": {
+      "testFiles": 203,
+      "passed": 770,
+      "failed": 0
+    },
+    "w766ir2SourceCertification": {
+      "passed": true,
+      "criteriaPassed": 10,
+      "criteriaTotal": 10,
+      "browserCertified": false,
+      "authenticatedOfflineCertified": false
+    },
+    "a15AuthorityGates": {
+      "i01": true,
+      "i02": true,
+      "i03": true,
+      "c02": true,
+      "c03": true,
+      "i04": true,
+      "i05": true
+    },
+    "secretScan": {
+      "passed": true,
+      "textFilesScanned": 5133
+    },
+    "syntaxAndDiff": {
+      "passed": true
+    }
+  },
+  "registry": {
+    "schema": "eonapp.project-registry.a15.v1",
+    "sourceFamilies": [
+      "ordinary",
+      "workspace-legacy",
+      "w631",
+      "forge",
+      "creator-job",
+      "creator-asset"
+    ],
+    "lifecycleStates": [
+      "active",
+      "archived"
+    ],
+    "contentBodiesCopied": false,
+    "legacyStoresMutatedByMigration": false,
+    "migrationIdempotent": true,
+    "rollbackProven": true,
+    "liveAdapters": [
+      "ordinary Projects",
+      "W631 continuity",
+      "Forge",
+      "Creator jobs",
+      "Creator assets",
+      "Continue"
+    ]
+  },
+  "invariants": {
+    "silentMigrationDeletion": false,
+    "crossDeviceSyncClaimed": false,
+    "automaticExternalAction": false,
+    "coreImportsCityImplementation": false,
+    "cityImportsCoreImplementation": false,
+    "previewDeploymentPerformed": false,
+    "productionDeploymentPerformed": false
+  },
+  "externalBlockers": [
+    "Locked dependency install remains blocked by private registry 404 for ws@7.5.11.",
+    "Production build and built-artifact validation remain blocked by the locked install.",
+    "Authenticated Chrome, Edge and mobile-landscape evidence remains pending.",
+    "No Preview or Production deployment authority was used."
+  ],
+  "workingTreeEntriesAtReceipt": [
+    " M assets/js/create/creator-job-lifecycle.js",
+    " M assets/js/create/creator-library-store.js",
+    " M assets/js/eon-app-shell.js",
+    " M assets/js/forge/eon-forge-quick-build.js",
+    " M assets/js/retention/eon-continue-resolver.js",
+    " M assets/js/utils/eon-workspace-store.js",
+    " M assets/js/workspace/eon-project-operating-system.js",
+    " M config/generated/a15-system-disposition-registry.json",
+    " M docs/institutional/a15/evidence/A15_I01_SYSTEM_DISPOSITION_RECEIPT.json",
+    " M docs/institutional/a15/evidence/A15_I03_MINIMAL_CORE_SHELL_RECEIPT.json",
+    " M docs/institutional/a15/evidence/A15_I04_CANONICAL_DESTINATION_HANDOFF_RECEIPT.json",
+    "?? assets/js/projects/eon-project-registry-bootstrap.js",
+    "?? assets/js/projects/eon-project-registry-migration.js",
+    "?? assets/js/projects/eon-project-registry.js",
+    "?? docs/institutional/a15/evidence/A15_I05_UNIVERSAL_PROJECT_REGISTRY_RECEIPT.json",
+    "?? scripts/a15-i05-universal-project-registry-gate.mjs",
+    "?? tests/unit/a15-i05-project-registry-integration.test.mjs",
+    "?? tests/unit/a15-i05-universal-project-registry.test.mjs"
+  ],
+  "digest": "70695e9e53ac63b433cb246ff1a933eb53fd93f5f2bf344a49f5ad40dffa8419"
+}

@@ -1,0 +1,1592 @@
+/* EON Workstation v3 critical flagship styles. Legacy browser CSS loads on demand. */
+
+/* --------------------------------------------------------------------------
+   W96 EON Workstation enterprise rebuild overlay
+   -------------------------------------------------------------------------- */
+.eon-workstation-v1 .browser-page {
+  --ew-card: rgba(7, 13, 28, 0.92);
+  --ew-card-2: rgba(10, 21, 45, 0.88);
+  --ew-line: rgba(125, 211, 252, 0.22);
+  --ew-glow: rgba(34, 211, 238, 0.32);
+  --ew-text: #e5f6ff;
+  --ew-muted: #9fb4cc;
+  background:
+    radial-gradient(circle at 16% 8%, rgba(34, 211, 238, 0.18), transparent 28rem),
+    radial-gradient(circle at 82% 0%, rgba(168, 85, 247, 0.16), transparent 28rem),
+    linear-gradient(180deg, #020617 0%, #06111f 44%, #020617 100%);
+}
+
+.eon-workstation-v1 .eon-browser-chrome {
+  display: grid;
+  gap: 0.72rem;
+  padding: clamp(0.75rem, 1vw, 1rem);
+  border: 1px solid var(--ew-line);
+  border-radius: 24px;
+  background: linear-gradient(140deg, rgba(2, 6, 23, 0.95), rgba(8, 19, 43, 0.92));
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255,255,255,0.06);
+  overflow: visible;
+}
+
+.ew-command-deck {
+  display: grid;
+  gap: 0.78rem;
+  padding: clamp(0.9rem, 1.4vw, 1.25rem);
+  border: 1px solid rgba(125, 211, 252, 0.2);
+  border-radius: 22px;
+  background:
+    linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(8, 47, 73, 0.42)),
+    radial-gradient(circle at 90% 10%, rgba(59, 130, 246, 0.14), transparent 18rem);
+}
+
+.ew-command-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.ew-kicker {
+  margin: 0 0 0.25rem;
+  color: #67e8f9;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.ew-command-head h1,
+.ew-home-hero h1,
+.ew-external-card h2 {
+  margin: 0;
+  color: var(--ew-text);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+}
+
+.ew-command-head h1 { font-size: clamp(1.45rem, 2.4vw, 2.55rem); }
+.ew-home-hero h1 { font-size: clamp(1.85rem, 4vw, 4rem); max-width: 820px; }
+.ew-subtitle,
+.ew-home-hero p,
+.ew-external-card p {
+  margin: 0.35rem 0 0;
+  color: var(--ew-muted);
+}
+
+.ew-active-chip {
+  min-width: min(280px, 45vw);
+  display: grid;
+  gap: 0.18rem;
+  padding: 0.72rem 0.85rem;
+  border: 1px solid rgba(34, 211, 238, 0.24);
+  border-radius: 16px;
+  background: rgba(2, 6, 23, 0.72);
+  text-align: right;
+}
+
+.ew-active-chip span {
+  color: #67e8f9;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.ew-active-chip strong {
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.ew-command-row {
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) auto auto auto;
+  gap: 0.6rem;
+  align-items: stretch;
+}
+
+.ew-command-input,
+.eon-workstation-v1 .browser-url-input {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid rgba(125, 211, 252, 0.25);
+  border-radius: 16px;
+  background: rgba(2, 6, 23, 0.72);
+  color: #f8fafc;
+  padding: 0.75rem 0.95rem;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+.ew-mode-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.ew-mode-row button,
+.ew-app-card,
+.eon-workstation-v1 .browser-quick-site {
+  border: 1px solid rgba(125, 211, 252, 0.22);
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.68);
+  color: #dff7ff;
+  cursor: pointer;
+  transition: transform 140ms ease, border-color 140ms ease, box-shadow 140ms ease, background 140ms ease;
+}
+
+.ew-mode-row button {
+  padding: 0.55rem 0.78rem;
+  font-weight: 800;
+}
+
+.ew-mode-row button:hover,
+.ew-app-card:hover,
+.eon-workstation-v1 .browser-quick-site:hover,
+.ew-active-app {
+  transform: translateY(-1px);
+  border-color: rgba(103, 232, 249, 0.65) !important;
+  box-shadow: 0 12px 36px rgba(34, 211, 238, 0.14);
+  background: rgba(8, 47, 73, 0.74) !important;
+}
+
+.eon-workstation-v1 .browser-tab-bar,
+.eon-workstation-v1 .browser-nav-bar,
+.eon-workstation-v1 .browser-workspace-bar {
+  max-width: 100%;
+  min-width: 0;
+}
+
+.eon-workstation-v1 .browser-nav-bar {
+  display: grid;
+  grid-template-columns: auto minmax(280px, 1fr) auto;
+  gap: 0.55rem;
+  align-items: center;
+}
+
+.eon-workstation-v1 .browser-addressbar-wrap {
+  min-width: 220px;
+  max-width: 100%;
+}
+
+.eon-workstation-v1 .browser-nav-extra {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  max-width: min(620px, 42vw);
+  gap: 0.34rem;
+}
+
+.eon-workstation-v1 .browser-notif-status {
+  max-width: 3.2rem;
+  padding: 0.3rem 0.48rem;
+  border: 1px solid rgba(125, 211, 252, 0.22);
+  border-radius: 999px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 0.72rem;
+}
+
+.eon-workstation-v1 .browser-provider-chip,
+.eon-workstation-v1 .eon-ai-pulse-label {
+  max-width: 9rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.eon-workstation-v1 .browser-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 420px);
+  gap: clamp(0.8rem, 1.2vw, 1.2rem);
+  align-items: stretch;
+}
+
+.eon-workstation-v1 .browser-viewport-wrap {
+  min-width: 0;
+}
+
+.eon-workstation-v1 .browser-frame-host {
+  min-height: clamp(620px, 74vh, 920px);
+  border: 1px solid rgba(125, 211, 252, 0.18);
+  border-radius: 24px;
+  background:
+    linear-gradient(150deg, rgba(2, 6, 23, 0.96), rgba(15, 23, 42, 0.9)),
+    radial-gradient(circle at 20% 10%, rgba(34, 211, 238, 0.13), transparent 26rem);
+  overflow: hidden;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 24px 70px rgba(0,0,0,0.28);
+}
+
+.eon-workstation-v1 #browser-frame,
+.eon-workstation-v1 .browser-tab-frame,
+.eon-workstation-v1 .ew-active-frame {
+  width: 100%;
+  min-height: clamp(620px, 74vh, 920px);
+  height: 100%;
+  border: 0;
+  background: #020617;
+}
+
+.ew-home-stage {
+  min-height: clamp(620px, 74vh, 920px);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: clamp(1rem, 2vw, 2rem);
+  padding: clamp(1rem, 2vw, 2rem);
+  color: var(--ew-text);
+}
+
+.ew-home-hero {
+  border: 1px solid rgba(125, 211, 252, 0.18);
+  border-radius: 28px;
+  padding: clamp(1rem, 2vw, 2rem);
+  background:
+    radial-gradient(circle at 84% 20%, rgba(168, 85, 247, 0.18), transparent 18rem),
+    linear-gradient(135deg, rgba(8, 47, 73, 0.55), rgba(15, 23, 42, 0.82));
+}
+
+.ew-home-actions,
+.ew-external-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.1rem;
+}
+
+.ew-app-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.ew-app-card {
+  display: grid;
+  gap: 0.4rem;
+  min-height: 150px;
+  padding: 1rem;
+  border-radius: 22px;
+  text-align: left;
+}
+
+.ew-app-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  color: #67e8f9;
+  background: rgba(14, 165, 233, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(103, 232, 249, 0.22);
+  font-size: 1.25rem;
+}
+
+.ew-app-card strong {
+  color: #fff;
+  font-size: 1rem;
+}
+
+.ew-app-card small {
+  color: var(--ew-muted);
+  line-height: 1.35;
+}
+
+.ew-external-card {
+  width: min(760px, calc(100% - 2rem));
+  margin: clamp(1rem, 5vh, 4rem) auto;
+  padding: clamp(1.2rem, 2vw, 2rem);
+  border: 1px solid rgba(251, 191, 36, 0.28);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(251, 191, 36, 0.14), transparent 18rem),
+    linear-gradient(140deg, rgba(15, 23, 42, 0.96), rgba(69, 26, 3, 0.42));
+  color: var(--ew-text);
+}
+
+.ew-external-orb {
+  width: 3.4rem;
+  height: 3.4rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(251, 191, 36, 0.16);
+  color: #fde68a;
+  font-size: 1.6rem;
+  box-shadow: inset 0 0 0 1px rgba(253, 230, 138, 0.24);
+}
+
+.ew-external-url {
+  margin-top: 1rem;
+  padding: 0.72rem 0.85rem;
+  border-radius: 14px;
+  background: rgba(2, 6, 23, 0.64);
+  color: #fde68a;
+  word-break: break-all;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.86rem;
+}
+
+.ew-trust-list {
+  margin: 1rem 0 0;
+  padding-left: 1.15rem;
+  color: #cbd5e1;
+}
+
+.eon-workstation-v1 .browser-ai-sidebar {
+  min-width: 0;
+  border-radius: 24px;
+  border: 1px solid rgba(125, 211, 252, 0.18);
+  background: rgba(2, 6, 23, 0.9);
+  box-shadow: 0 24px 70px rgba(0,0,0,0.24);
+}
+
+@media (max-width: 1180px) {
+  .eon-workstation-v1 .browser-body { grid-template-columns: 1fr; }
+  .eon-workstation-v1 .browser-ai-sidebar { width: 100%; max-width: none; }
+  .ew-app-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .eon-workstation-v1 .browser-nav-bar { grid-template-columns: 1fr; }
+  .eon-workstation-v1 .browser-nav-extra { max-width: 100%; justify-content: flex-start; }
+}
+
+@media (max-width: 760px) {
+  .ew-command-head { display: grid; }
+  .ew-active-chip { min-width: 0; width: 100%; text-align: left; }
+  .ew-command-row { grid-template-columns: 1fr; }
+  .ew-app-grid { grid-template-columns: 1fr; }
+  .eon-workstation-v1 .browser-nav-extra .browser-ctrl-btn:nth-of-type(n+5) { display: none; }
+  .eon-workstation-v1 .browser-frame-host,
+  .eon-workstation-v1 #browser-frame,
+  .eon-workstation-v1 .browser-tab-frame,
+  .ew-home-stage { min-height: 68vh; }
+}
+
+/* W96 Session 2 — enterprise drawer workstation + native Code Maker */
+.eon-workstation-v2 .browser-nav-extra {
+  display: none !important;
+}
+
+.eon-workstation-v2 .browser-nav-bar {
+  grid-template-columns: auto minmax(320px, 1fr) !important;
+}
+
+.eon-workstation-v2 .browser-addressbar-wrap {
+  min-width: 320px;
+}
+
+.eon-workstation-v2 .browser-workspace-bar {
+  display: none !important;
+}
+
+.ew-drawer-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 0.78rem;
+}
+
+.ew-drawer-row button {
+  border: 1px solid rgba(125, 211, 252, 0.2);
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.78);
+  color: #dff7ff;
+  padding: 0.52rem 0.78rem;
+  font-weight: 850;
+  cursor: pointer;
+}
+
+.ew-drawer-row button:hover,
+.ew-drawer-row button:focus-visible {
+  border-color: rgba(103, 232, 249, 0.7);
+  box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.12);
+}
+
+.ew-live-status {
+  margin-left: auto;
+  max-width: min(480px, 100%);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #a7f3d0;
+  font-size: 0.82rem;
+  font-weight: 750;
+}
+
+.ew-live-status.ew-status-error {
+  color: #fca5a5;
+}
+
+.ew-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: grid;
+  justify-items: end;
+  background: rgba(2, 6, 23, 0.5);
+  backdrop-filter: blur(6px);
+}
+
+.ew-drawer[hidden] {
+  display: none !important;
+}
+
+.ew-drawer-panel {
+  width: min(440px, 94vw);
+  height: 100%;
+  overflow: auto;
+  border-left: 1px solid rgba(125, 211, 252, 0.22);
+  background:
+    radial-gradient(circle at 20% 0%, rgba(34, 211, 238, 0.16), transparent 20rem),
+    linear-gradient(180deg, rgba(2, 6, 23, 0.98), rgba(15, 23, 42, 0.98));
+  color: #e5f7ff;
+  box-shadow: -28px 0 80px rgba(0, 0, 0, 0.42);
+  padding: 1rem;
+}
+
+.ew-drawer-panel header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid rgba(125, 211, 252, 0.16);
+}
+
+.ew-drawer-panel h2 {
+  margin: 0;
+  color: #fff;
+  font-size: 1.15rem;
+}
+
+#ew-drawer-close {
+  width: 2.35rem;
+  height: 2.35rem;
+  border: 1px solid rgba(125, 211, 252, 0.24);
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.86);
+  color: #e5f7ff;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.ew-drawer-body {
+  display: grid;
+  gap: 0.85rem;
+  padding-top: 1rem;
+}
+
+.ew-drawer-desc {
+  margin: 0;
+  color: #a7c7d9;
+  line-height: 1.45;
+}
+
+.ew-drawer-apps {
+  display: grid;
+  gap: 0.68rem;
+}
+
+.ew-drawer-apps button {
+  display: grid;
+  grid-template-columns: 2.1rem 1fr;
+  gap: 0.25rem 0.72rem;
+  align-items: center;
+  text-align: left;
+  padding: 0.78rem;
+  border: 1px solid rgba(125, 211, 252, 0.18);
+  border-radius: 18px;
+  color: #e5f7ff;
+  background: rgba(15, 23, 42, 0.72);
+  cursor: pointer;
+}
+
+.ew-drawer-apps button span {
+  grid-row: 1 / span 2;
+  width: 2.1rem;
+  height: 2.1rem;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  color: #67e8f9;
+  background: rgba(34, 211, 238, 0.12);
+}
+
+.ew-drawer-apps button strong { color: #fff; }
+.ew-drawer-apps button small { color: #a7c7d9; line-height: 1.35; }
+
+.ew-drawer-stack {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.ew-drawer-stack p {
+  margin: 0;
+  color: #cbd5e1;
+  line-height: 1.45;
+}
+
+.ew-code-studio {
+  min-height: clamp(680px, 76vh, 960px);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 1rem;
+  padding: clamp(0.85rem, 1.6vw, 1.35rem);
+  color: #e5f7ff;
+}
+
+.ew-code-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: start;
+  border: 1px solid rgba(125, 211, 252, 0.16);
+  border-radius: 22px;
+  padding: 1rem;
+  background:
+    radial-gradient(circle at 80% 0%, rgba(168, 85, 247, 0.16), transparent 18rem),
+    rgba(15, 23, 42, 0.72);
+}
+
+.ew-code-head h2 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.4rem, 2.4vw, 2.25rem);
+}
+
+.ew-code-head p:not(.ew-kicker) {
+  margin: 0.35rem 0 0;
+  color: #a7c7d9;
+  max-width: 780px;
+}
+
+.ew-code-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.ew-code-grid {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(320px, 0.92fr) minmax(360px, 1.08fr);
+  gap: 1rem;
+}
+
+.ew-code-editors {
+  min-height: 0;
+  display: grid;
+  grid-template-rows: repeat(3, minmax(150px, 1fr));
+  gap: 0.75rem;
+}
+
+.ew-code-editors label,
+.ew-code-preview-wrap {
+  min-height: 0;
+  display: grid;
+  border: 1px solid rgba(125, 211, 252, 0.16);
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(2, 6, 23, 0.72);
+}
+
+.ew-code-editors label span,
+.ew-code-preview-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.52rem 0.72rem;
+  border-bottom: 1px solid rgba(125, 211, 252, 0.12);
+  color: #93e6ff;
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ew-code-preview-bar small {
+  color: #94a3b8;
+  letter-spacing: 0;
+  text-transform: none;
+  font-weight: 700;
+}
+
+.ew-code-editors textarea {
+  min-height: 0;
+  width: 100%;
+  height: 100%;
+  resize: none;
+  border: 0;
+  outline: none;
+  padding: 0.72rem;
+  color: #dff7ff;
+  background: #020617;
+  font: 0.86rem/1.45 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.ew-code-preview-wrap {
+  grid-template-rows: auto 1fr;
+}
+
+#ew-code-preview {
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+  border: 0;
+  background: #fff;
+}
+
+@media (max-width: 980px) {
+  .ew-code-head { display: grid; }
+  .ew-code-actions { justify-content: flex-start; }
+  .ew-code-grid { grid-template-columns: 1fr; }
+  .ew-code-editors { grid-template-rows: repeat(3, minmax(180px, 28vh)); }
+  #ew-code-preview { min-height: 420px; }
+}
+
+@media (max-width: 760px) {
+  .eon-workstation-v2 .browser-nav-bar {
+    grid-template-columns: 1fr !important;
+  }
+  .eon-workstation-v2 .browser-addressbar-wrap {
+    min-width: 0;
+  }
+  .ew-live-status {
+    width: 100%;
+    margin-left: 0;
+  }
+  .ew-drawer-panel {
+    width: 100vw;
+  }
+  .ew-code-studio {
+    min-height: 70vh;
+    padding: 0.65rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   W96 Session 3 — stable EON Workstation v3 production surface
+   -------------------------------------------------------------------------- */
+.eon-workstation-v3 {
+  --ew-card: rgba(7, 13, 28, 0.94);
+  --ew-card-2: rgba(10, 21, 45, 0.9);
+  --ew-line: rgba(125, 211, 252, 0.22);
+  --ew-glow: rgba(34, 211, 238, 0.28);
+  --ew-text: #e8f7ff;
+  --ew-muted: #9fb4cc;
+  --ew-cyan: #67e8f9;
+  --ew-purple: #a78bfa;
+  --ew-green: #a7f3d0;
+  background: #020617;
+}
+
+.eon-workstation-v3 .browser-page {
+  width: min(1760px, 100%);
+  margin-inline: auto;
+  padding: clamp(0.65rem, 1.4vw, 1.35rem);
+  background:
+    radial-gradient(circle at 12% 0%, rgba(34, 211, 238, 0.13), transparent 30rem),
+    radial-gradient(circle at 88% 4%, rgba(139, 92, 246, 0.14), transparent 28rem),
+    linear-gradient(180deg, #020617 0%, #06111f 48%, #020617 100%);
+}
+
+.eon-workstation-v3 .site-header .header-inner {
+  min-width: 0;
+  gap: clamp(0.75rem, 1.5vw, 1.5rem);
+}
+
+.eon-workstation-v3 .site-header .nav {
+  min-width: 0;
+  flex-wrap: wrap;
+  row-gap: 0.35rem;
+}
+
+.eon-workstation-v3 .eon-browser-chrome {
+  position: relative;
+  display: block;
+  padding: 0;
+  border: 0;
+  border-radius: 28px;
+  background: transparent;
+  box-shadow: none;
+  overflow: visible;
+}
+
+.eon-workstation-v3 .browser-tab-bar,
+.eon-workstation-v3 .browser-nav-bar,
+.eon-workstation-v3 .browser-workspace-bar,
+.eon-workstation-v3 #eon-newtab-page,
+.eon-workstation-v3 #browser-frame-host,
+.eon-workstation-v3 #browser-frame-pool,
+.eon-workstation-v3 #eon-contextual-feature-gate {
+  display: none !important;
+}
+
+.eon-workstation-v3 .ew-command-deck {
+  position: relative;
+  z-index: 4;
+  display: grid;
+  gap: 0.82rem;
+  margin: 0;
+  padding: clamp(1rem, 1.8vw, 1.45rem);
+  border: 1px solid rgba(125, 211, 252, 0.24);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 88% 2%, rgba(139, 92, 246, 0.22), transparent 24rem),
+    radial-gradient(circle at 8% 100%, rgba(14, 165, 233, 0.15), transparent 22rem),
+    linear-gradient(135deg, rgba(8, 18, 39, 0.98), rgba(10, 31, 58, 0.96));
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+
+.eon-workstation-v3 .ew-command-row {
+  grid-template-columns: minmax(260px, 1fr) auto auto auto;
+}
+
+.eon-workstation-v3 .ew-command-input {
+  min-height: 46px;
+  font-size: 0.95rem;
+}
+
+.eon-workstation-v3 .ew-mode-row,
+.eon-workstation-v3 .ew-drawer-row {
+  align-items: center;
+}
+
+.eon-workstation-v3 .ew-mode-row button,
+.eon-workstation-v3 .ew-drawer-row button {
+  min-height: 38px;
+}
+
+.eon-workstation-v3 #ew-sidebar-toggle[aria-pressed="true"] {
+  border-color: rgba(167, 243, 208, 0.42);
+  color: #d1fae5;
+  background: rgba(6, 78, 59, 0.34);
+}
+
+.eon-workstation-v3 .browser-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 420px);
+  gap: clamp(0.85rem, 1.2vw, 1.25rem);
+  align-items: stretch;
+  margin-top: clamp(0.85rem, 1.2vw, 1.2rem);
+  min-width: 0;
+}
+
+.eon-workstation-v3.ew-sidebar-closed .browser-body {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.eon-workstation-v3 .browser-viewport-wrap {
+  min-width: 0;
+  min-height: clamp(680px, 76vh, 980px);
+  border: 1px solid rgba(125, 211, 252, 0.18);
+  border-radius: 28px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 16% 4%, rgba(34, 211, 238, 0.11), transparent 30rem),
+    linear-gradient(160deg, rgba(2, 6, 23, 0.98), rgba(9, 20, 42, 0.96));
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.ew-workstation-stage {
+  min-width: 0;
+  min-height: clamp(680px, 76vh, 980px);
+  color: var(--ew-text);
+  overflow: auto;
+  scrollbar-color: rgba(103, 232, 249, 0.32) transparent;
+}
+
+.eon-workstation-v3 .browser-ai-sidebar {
+  position: sticky;
+  top: 0.75rem;
+  align-self: start;
+  width: 100%;
+  min-width: 0;
+  max-height: calc(100vh - 1.5rem);
+  overflow: auto;
+  border: 1px solid rgba(125, 211, 252, 0.2);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 84% 0%, rgba(139, 92, 246, 0.13), transparent 18rem),
+    rgba(2, 6, 23, 0.94);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.eon-workstation-v3 .browser-ai-sidebar[hidden],
+.eon-workstation-v3 .browser-ai-sidebar.ew-rail-collapsed {
+  display: none !important;
+}
+
+.ew-home-stage {
+  min-height: inherit;
+  display: grid;
+  align-content: start;
+  gap: clamp(1rem, 2vw, 1.6rem);
+  padding: clamp(1rem, 2vw, 2rem);
+}
+
+.ew-home-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(270px, 360px);
+  gap: clamp(1rem, 2vw, 2rem);
+  align-items: stretch;
+  border: 1px solid rgba(125, 211, 252, 0.2);
+  border-radius: 30px;
+  padding: clamp(1.25rem, 2.4vw, 2.4rem);
+  background:
+    radial-gradient(circle at 80% 16%, rgba(139, 92, 246, 0.2), transparent 22rem),
+    linear-gradient(135deg, rgba(8, 47, 73, 0.62), rgba(15, 23, 42, 0.9));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+.ew-home-copy {
+  display: grid;
+  align-content: center;
+}
+
+.ew-home-copy h1 {
+  margin: 0;
+  max-width: 920px;
+  color: #fff;
+  font-size: clamp(2rem, 4.3vw, 4.65rem);
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+}
+
+.ew-home-copy > p:not(.ew-kicker) {
+  max-width: 850px;
+  color: #b7cadb;
+  line-height: 1.65;
+}
+
+.ew-posture-card {
+  display: grid;
+  gap: 0.65rem;
+  align-content: center;
+  padding: 1rem;
+  border: 1px solid rgba(167, 139, 250, 0.24);
+  border-radius: 24px;
+  background: rgba(2, 6, 23, 0.68);
+}
+
+.ew-posture-label {
+  margin: 0 0 0.15rem;
+  color: #c4b5fd;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+}
+
+.ew-posture-card > div,
+.ew-drawer-metric {
+  display: grid;
+  grid-template-columns: minmax(90px, auto) minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.7rem 0.78rem;
+  border-radius: 16px;
+  background: rgba(15, 23, 42, 0.72);
+}
+
+.ew-posture-card span,
+.ew-drawer-metric span {
+  color: #8ea7bd;
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.ew-posture-card strong,
+.ew-drawer-metric strong {
+  min-width: 0;
+  color: #e8f7ff;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ew-home-section {
+  display: grid;
+  gap: 0.9rem;
+  padding: clamp(1rem, 1.5vw, 1.35rem);
+  border: 1px solid rgba(125, 211, 252, 0.14);
+  border-radius: 26px;
+  background: rgba(8, 15, 31, 0.72);
+}
+
+.ew-home-section > header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: end;
+}
+
+.ew-home-section h2 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.25rem, 2vw, 1.85rem);
+}
+
+.ew-app-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ew-app-grid-secondary {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ew-app-card {
+  position: relative;
+  min-height: 176px;
+  align-content: start;
+  border-radius: 24px;
+  padding: 1.05rem;
+  overflow: hidden;
+}
+
+.ew-app-card::after {
+  content: "";
+  position: absolute;
+  inset: auto -24px -44px auto;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: rgba(34, 211, 238, 0.08);
+  pointer-events: none;
+}
+
+.ew-app-card em {
+  align-self: end;
+  color: #7dd3fc;
+  font-size: 0.72rem;
+  font-style: normal;
+  font-weight: 850;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.ew-app-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid rgba(125, 211, 252, 0.16);
+  background: rgba(2, 6, 23, 0.94);
+  backdrop-filter: blur(14px);
+}
+
+.ew-app-toolbar > div:first-child {
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+  min-width: 0;
+}
+
+.ew-app-toolbar-icon {
+  width: 2.2rem;
+  height: 2.2rem;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  border-radius: 14px;
+  color: var(--ew-cyan);
+  background: rgba(34, 211, 238, 0.12);
+}
+
+.ew-app-toolbar p,
+.ew-app-toolbar small {
+  margin: 0;
+}
+
+.ew-app-toolbar p { color: #fff; font-weight: 900; }
+.ew-app-toolbar small { color: #8ea7bd; }
+
+.ew-app-toolbar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.45rem;
+}
+
+.ew-app-frame-wrap {
+  min-height: calc(clamp(680px, 76vh, 980px) - 65px);
+}
+
+.ew-app-frame {
+  display: block;
+  width: 100%;
+  min-height: calc(clamp(680px, 76vh, 980px) - 65px);
+  border: 0;
+  background: #020617;
+}
+
+.ew-code-studio {
+  min-height: inherit;
+  padding: clamp(0.85rem, 1.6vw, 1.35rem);
+}
+
+.ew-code-head {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  backdrop-filter: blur(14px);
+}
+
+.ew-code-editors label span small {
+  color: #64748b;
+  letter-spacing: 0;
+  text-transform: none;
+  font-weight: 700;
+}
+
+.ew-code-editors textarea:focus {
+  box-shadow: inset 0 0 0 2px rgba(103, 232, 249, 0.42);
+}
+
+.ew-code-shortcuts {
+  margin: 0;
+  color: #8ea7bd;
+  font-size: 0.8rem;
+}
+
+.ew-code-shortcuts kbd {
+  padding: 0.18rem 0.4rem;
+  border: 1px solid rgba(125, 211, 252, 0.22);
+  border-radius: 8px;
+  background: rgba(15, 23, 42, 0.8);
+  color: #dff7ff;
+}
+
+.ew-external-card,
+.ew-reader-stage {
+  width: min(900px, calc(100% - 2rem));
+  margin: clamp(1rem, 5vh, 4rem) auto;
+  padding: clamp(1.25rem, 2.6vw, 2.5rem);
+  border-radius: 30px;
+}
+
+.ew-trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1.2rem;
+}
+
+.ew-trust-grid article {
+  display: grid;
+  gap: 0.45rem;
+  padding: 0.9rem;
+  border: 1px solid rgba(251, 191, 36, 0.16);
+  border-radius: 18px;
+  background: rgba(2, 6, 23, 0.54);
+}
+
+.ew-trust-grid strong { color: #fde68a; }
+.ew-trust-grid span { color: #cbd5e1; line-height: 1.5; }
+
+.ew-reader-stage {
+  border: 1px solid rgba(103, 232, 249, 0.22);
+  background: rgba(8, 18, 39, 0.88);
+}
+
+.ew-reader-stage > header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: start;
+}
+
+.ew-reader-stage h2 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.5rem, 3vw, 2.8rem);
+}
+
+.ew-reader-stage p { color: #a7c7d9; }
+
+.ew-reader-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+#ew-reader-text {
+  max-height: 68vh;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  padding: 1rem;
+  border: 1px solid rgba(125, 211, 252, 0.14);
+  border-radius: 18px;
+  background: #020617;
+  color: #dbeafe;
+  font: 0.85rem/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.ew-loading-orb {
+  width: 3rem;
+  height: 3rem;
+  border: 3px solid rgba(103, 232, 249, 0.2);
+  border-top-color: #67e8f9;
+  border-radius: 50%;
+  animation: ew-spin 0.85s linear infinite;
+}
+
+@keyframes ew-spin { to { transform: rotate(360deg); } }
+
+.ew-safety-banner,
+.ew-empty-state,
+.ew-activity-preview {
+  display: grid;
+  gap: 0.45rem;
+  padding: 0.85rem;
+  border: 1px solid rgba(125, 211, 252, 0.16);
+  border-radius: 18px;
+  background: rgba(15, 23, 42, 0.72);
+  color: #cbd5e1;
+}
+
+.ew-safety-banner strong { color: #a7f3d0; }
+.ew-safety-banner span { line-height: 1.5; }
+.ew-activity-preview { max-height: 42vh; overflow: auto; }
+
+@media (max-width: 1180px) {
+  .eon-workstation-v3 .browser-body { grid-template-columns: 1fr; }
+  .eon-workstation-v3 .browser-ai-sidebar { position: relative; top: auto; max-height: none; }
+  .ew-home-hero { grid-template-columns: 1fr; }
+  .ew-app-grid, .ew-app-grid-secondary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 860px) {
+  .eon-workstation-v3 .ew-command-row { grid-template-columns: 1fr 1fr 1fr; }
+  .eon-workstation-v3 .ew-command-input { grid-column: 1 / -1; }
+  .ew-trust-grid { grid-template-columns: 1fr; }
+  .ew-app-toolbar, .ew-reader-stage > header { display: grid; }
+  .ew-app-toolbar-actions, .ew-reader-actions { justify-content: flex-start; }
+}
+
+@media (max-width: 620px) {
+  .eon-workstation-v3 .browser-page { padding: 0.45rem; }
+  .eon-workstation-v3 .ew-command-deck { border-radius: 22px; padding: 0.82rem; }
+  .eon-workstation-v3 .ew-command-head { display: grid; }
+  .eon-workstation-v3 .ew-command-row { grid-template-columns: 1fr; }
+  .eon-workstation-v3 .ew-command-input { grid-column: auto; }
+  .eon-workstation-v3 .ew-mode-row, .eon-workstation-v3 .ew-drawer-row { gap: 0.4rem; }
+  .eon-workstation-v3 .ew-mode-row button, .eon-workstation-v3 .ew-drawer-row button { flex: 1 1 calc(50% - 0.4rem); }
+  .eon-workstation-v3 .ew-live-status { flex: 1 0 100%; width: 100%; }
+  .ew-home-stage { padding: 0.72rem; }
+  .ew-home-hero, .ew-home-section { border-radius: 22px; padding: 1rem; }
+  .ew-home-copy h1 { font-size: clamp(2rem, 12vw, 3.2rem); }
+  .ew-app-grid, .ew-app-grid-secondary { grid-template-columns: 1fr; }
+  .ew-app-card { min-height: 148px; }
+  .ew-posture-card > div { grid-template-columns: 1fr; }
+  .ew-posture-card strong { text-align: left; }
+  .ew-code-grid { grid-template-columns: 1fr; }
+  .ew-code-actions { justify-content: flex-start; }
+  .ew-code-actions .btn { flex: 1 1 calc(50% - 0.5rem); }
+  .ew-code-editors { grid-template-rows: repeat(3, minmax(220px, 32vh)); }
+  #ew-code-preview { min-height: 58vh; }
+  .ew-drawer-panel { width: 100vw; }
+  .ew-external-card, .ew-reader-stage { width: calc(100% - 1rem); margin: 0.5rem auto; border-radius: 22px; }
+}
+
+.ew-stage-loading {
+  min-height: clamp(680px, 76vh, 980px);
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 0.65rem;
+  padding: 2rem;
+  color: #dff7ff;
+  text-align: center;
+}
+.ew-stage-loading span {
+  width: 3rem;
+  height: 3rem;
+  border: 3px solid rgba(103, 232, 249, 0.16);
+  border-top-color: #67e8f9;
+  border-radius: 50%;
+  animation: ew-spin 0.85s linear infinite;
+}
+.ew-stage-loading small { color: #8ea7bd; }
+
+/* Keep the accessible command label out of the grid flow even when legacy CSS resets .sr-only. */
+.eon-workstation-v3 .ew-command-row > .sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Workstation mobile shell: bottom navigation already provides primary routes, so keep the top bar calm. */
+@media (max-width: 620px) {
+  .eon-workstation-v3 .site-header .header-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0.55rem;
+    min-height: 0;
+    padding-block: 0.55rem;
+  }
+  .eon-workstation-v3 .site-header .nav {
+    display: none !important;
+  }
+  .eon-workstation-v3 .site-header .shell-utility-rail {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    min-width: 0;
+  }
+  .eon-workstation-v3 .site-header .shell-language-control,
+  .eon-workstation-v3 .site-header select {
+    min-width: 0;
+    max-width: 100%;
+  }
+  .eon-workstation-v3 .ew-active-chip {
+    min-width: 0;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* W96 Session 3 performance shell: keep the flagship route useful before the
+   large language/provider/operator modules are requested. */
+.ew-shell-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: .65rem;
+  margin-left: auto;
+  min-width: 0;
+}
+
+.ew-language-control {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  min-width: 0;
+  padding: .32rem .55rem;
+  border: 1px solid rgba(129, 140, 248, .35);
+  border-radius: .7rem;
+  background: rgba(15, 23, 42, .74);
+}
+
+.ew-language-control select {
+  min-width: 8.5rem;
+  max-width: 11rem;
+  border: 0;
+  outline: 0;
+  color: #dbeafe;
+  background: transparent;
+  font: inherit;
+  font-weight: 750;
+}
+
+.ew-language-control option { color: #0f172a; }
+
+.ew-profile-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.35rem;
+  padding: .45rem .82rem;
+  border: 1px solid rgba(148, 163, 184, .38);
+  border-radius: .75rem;
+  color: #e2e8f0;
+  text-decoration: none;
+  font-weight: 800;
+  background: rgba(15, 23, 42, .72);
+}
+
+.ew-profile-link:hover,
+.ew-profile-link:focus-visible {
+  color: #fff;
+  border-color: rgba(103, 232, 249, .7);
+  outline: 2px solid transparent;
+}
+
+.ew-runtime-state {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin: 0 0 .85rem;
+  padding: .32rem .58rem;
+  border: 1px solid rgba(103, 232, 249, .22);
+  border-radius: 999px;
+  color: #a5f3fc;
+  background: rgba(8, 47, 73, .3);
+  font-size: .76rem;
+  font-weight: 800;
+}
+
+body.eon-workstation-v3.ew-sidebar-closed .browser-body {
+  grid-template-columns: minmax(0, 1fr) !important;
+}
+
+@media (max-width: 1120px) {
+  body.eon-workstation-v3 .site-header .header-inner {
+    flex-wrap: wrap;
+    row-gap: .65rem;
+  }
+  body.eon-workstation-v3 .site-header .nav {
+    order: 3;
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+  .ew-shell-actions { margin-left: auto; }
+}
+
+@media (max-width: 720px) {
+  body.eon-workstation-v3 .site-header .header-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    padding-block: .7rem;
+  }
+  body.eon-workstation-v3 .site-header .logo { justify-self: start; }
+  body.eon-workstation-v3 .site-header .nav { display: none !important; }
+  .ew-shell-actions {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: .5rem;
+  }
+  .ew-language-control { width: 100%; }
+  .ew-language-control select { width: 100%; max-width: none; }
+  .ew-profile-link { min-width: 5.5rem; }
+}
+
+/* Mobile accessibility: the hidden compatibility status remains readable if exposed. */
+.eon-workstation-v3 .browser-status-bar,
+.eon-workstation-v3 .browser-status-text,
+.eon-workstation-v3 .browser-status-text.success {
+  color: #dbeafe;
+}
+
+@media (min-width: 1121px) {
+  body.eon-workstation-v3 .site-header .header-inner {
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr) max-content;
+    align-items: center;
+    column-gap: 1.15rem;
+  }
+  body.eon-workstation-v3 .site-header .logo { grid-column: 1; }
+  body.eon-workstation-v3 .site-header .nav {
+    grid-column: 2;
+    width: auto;
+    justify-content: center;
+    flex-wrap: nowrap;
+    overflow: hidden;
+  }
+  body.eon-workstation-v3 .site-header #sub-badge:empty { display: none; }
+  body.eon-workstation-v3 .site-header .ew-shell-actions {
+    grid-column: 3;
+    margin-left: 0;
+    justify-self: end;
+  }
+}
+
+/* W129 Workstation professional OS rebuild: one large active app surface, left launcher, right EONBOT rail, bottom dock. */
+body.eon-workstation-v4[data-w129-workstation-os="professional"] .browser-body {
+  grid-template-columns: minmax(0, 1fr) minmax(330px, 400px);
+  min-height: calc(100vh - 270px);
+}
+
+body.eon-workstation-v4[data-w129-workstation-os="professional"] .browser-viewport-wrap {
+  min-height: clamp(760px, 82vh, 1120px);
+}
+
+body.eon-workstation-v4[data-w129-workstation-os="professional"] .ew-workstation-stage {
+  min-height: clamp(760px, 82vh, 1120px);
+}
+
+.ew-w129-pro-home {
+  grid-template-columns: minmax(178px, 230px) minmax(0, 1fr);
+  align-items: start;
+}
+
+.ew-w129-pro-home > .ew-w129-app-launcher {
+  position: sticky;
+  top: 1rem;
+  align-self: start;
+}
+
+.ew-w129-app-launcher {
+  display: grid;
+  gap: .52rem;
+  padding: .72rem;
+  border: 1px solid rgba(125, 211, 252, .22);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(103, 232, 249, .14), transparent 18rem),
+    rgba(2, 6, 23, .72);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+}
+
+.ew-w129-app-launcher button {
+  display: grid;
+  grid-template-columns: 2.1rem minmax(0, 1fr) auto;
+  gap: .55rem;
+  align-items: center;
+  min-height: 46px;
+  padding: .55rem .66rem;
+  border: 1px solid rgba(125, 211, 252, .18);
+  border-radius: 18px;
+  color: #e0faff;
+  background: rgba(8, 47, 73, .3);
+  text-align: left;
+  cursor: pointer;
+}
+
+.ew-w129-app-launcher button:hover,
+.ew-w129-app-launcher button:focus-visible {
+  border-color: rgba(103, 232, 249, .48);
+  transform: translateY(-1px);
+}
+
+.ew-w129-app-launcher span {
+  display: grid;
+  place-items: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 14px;
+  background: rgba(103, 232, 249, .12);
+}
+
+.ew-w129-app-launcher strong,
+.ew-w129-app-launcher small { min-width: 0; }
+.ew-w129-app-launcher small { color: #8ea7bd; font-size: .68rem; font-weight: 800; }
+
+.ew-w129-bottom-dock {
+  position: sticky;
+  bottom: .6rem;
+  z-index: 6;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .45rem;
+  padding: .58rem;
+  border: 1px solid rgba(125, 211, 252, .2);
+  border-radius: 22px;
+  background: rgba(2, 6, 23, .88);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 18px 55px rgba(0,0,0,.34), inset 0 1px 0 rgba(255,255,255,.05);
+}
+
+.ew-w129-bottom-dock button {
+  min-height: 38px;
+  border: 1px solid rgba(125, 211, 252, .2);
+  border-radius: 999px;
+  padding: .48rem .7rem;
+  color: #dff7ff;
+  background: rgba(15, 23, 42, .84);
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.ew-w129-bottom-dock button:hover,
+.ew-w129-bottom-dock button:focus-visible {
+  border-color: rgba(103, 232, 249, .5);
+  background: rgba(8, 47, 73, .75);
+}
+
+.ew-w129-bottom-dock span {
+  margin-left: auto;
+  color: #a5f3fc;
+  font-size: .78rem;
+  font-weight: 850;
+}
+
+.ew-w129-active-app-surface .ew-app-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  backdrop-filter: blur(18px);
+}
+
+.ew-w129-active-app-surface .ew-app-frame-wrap[data-w129-active-surface="single-large"] {
+  min-height: calc(clamp(760px, 82vh, 1120px) - 72px);
+  height: calc(100vh - 230px);
+  max-height: 1040px;
+  border-top: 1px solid rgba(125, 211, 252, .14);
+}
+
+.ew-w129-active-app-surface .ew-app-frame {
+  width: 100%;
+  height: 100%;
+  min-height: calc(clamp(760px, 82vh, 1120px) - 72px);
+}
+
+.ew-w129-stage-fullscreen {
+  position: fixed !important;
+  inset: .75rem !important;
+  z-index: 9999 !important;
+  min-height: calc(100vh - 1.5rem) !important;
+  border: 1px solid rgba(103, 232, 249, .4);
+  border-radius: 24px;
+  background: #020617;
+  box-shadow: 0 40px 120px rgba(0,0,0,.58);
+}
+
+.ew-w129-stage-fullscreen .ew-app-frame-wrap,
+.ew-w129-stage-fullscreen .ew-app-frame {
+  height: calc(100vh - 6.5rem) !important;
+  min-height: calc(100vh - 6.5rem) !important;
+}
+
+body.ew-w129-fullscreen-active {
+  overflow: hidden;
+}
+
+body.eon-workstation-v4 .browser-ai-sidebar.open {
+  min-height: clamp(540px, 70vh, 920px);
+}
+
+@media (max-width: 1180px) {
+  .ew-w129-pro-home {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .ew-w129-app-launcher {
+    position: static;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  body.eon-workstation-v4[data-w129-workstation-os="professional"] .browser-body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .ew-w129-app-launcher {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+  .ew-w129-app-launcher button {
+    min-width: 11rem;
+  }
+  .ew-w129-bottom-dock {
+    position: sticky;
+    bottom: .3rem;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+  .ew-w129-bottom-dock button { white-space: nowrap; }
+  .ew-w129-bottom-dock span { min-width: max-content; }
+  .ew-w129-active-app-surface .ew-app-frame-wrap[data-w129-active-surface="single-large"],
+  .ew-w129-active-app-surface .ew-app-frame {
+    height: 72vh;
+    min-height: 72vh;
+  }
+}

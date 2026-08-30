@@ -1,0 +1,105 @@
+{
+  "schema": "eonapp.a15.i12.local-connection-gate-receipt.v1",
+  "generatedAt": "2026-08-09T00:57:00.497Z",
+  "wave": "I12",
+  "status": "pass",
+  "authority": {
+    "schema": "eonapp.local-connection-authority.a15.v1",
+    "runtimeIds": [
+      "ollama",
+      "lmstudio",
+      "jan",
+      "acestep"
+    ],
+    "textRuntimeIds": [
+      "ollama",
+      "lmstudio",
+      "jan"
+    ],
+    "mediaRuntimeIds": [
+      "acestep"
+    ],
+    "credentialStorage": "sessionStorage-only",
+    "directTransport": "one-attempt",
+    "bridgeFallback": "paired-loopback-only-after-direct-network-block",
+    "cloudFallback": false,
+    "lanAllowed": false,
+    "arbitraryLoopbackPortsAllowed": false,
+    "offlineLocalityClaimRequiresSuccessfulOfflineSelfTest": true,
+    "receiptsContainCredentials": false
+  },
+  "routes": {
+    "localAiCount": 8,
+    "creatorCompanion": [
+      "/create",
+      "/create/",
+      "/create.html",
+      "/eoncity",
+      "/eoncity.html"
+    ],
+    "creatorCompanionEndpoint": "http://127.0.0.1:47826",
+    "rootAndPublicHeadersMatch": true
+  },
+  "simulations": {
+    "direct": {
+      "schema": "eonapp.local-connection-receipt.a15.v1",
+      "runtimeId": "lmstudio",
+      "transport": "direct-browser",
+      "endpointClass": "127.0.0.1:1234",
+      "path": "/v1/models",
+      "authenticated": true,
+      "status": 200,
+      "ok": true,
+      "localityState": "loopback-verified-offline-proof-pending",
+      "offlineProofRequested": false,
+      "browserReportedOffline": false,
+      "elapsedMs": 34,
+      "error": "",
+      "containsCredential": false,
+      "containsPrompt": false,
+      "containsReply": false
+    },
+    "bridge": {
+      "schema": "eonapp.local-connection-receipt.a15.v1",
+      "runtimeId": "ollama",
+      "transport": "paired-local-bridge",
+      "endpointClass": "127.0.0.1:11434",
+      "path": "/api/tags",
+      "authenticated": false,
+      "status": 200,
+      "ok": true,
+      "localityState": "loopback-verified-offline-proof-pending",
+      "offlineProofRequested": false,
+      "browserReportedOffline": false,
+      "elapsedMs": 1,
+      "error": "",
+      "containsCredential": false,
+      "containsPrompt": false,
+      "containsReply": false
+    },
+    "httpFailure": {
+      "directCalls": 1,
+      "bridgeCalls": 0
+    },
+    "locality": {
+      "online": "loopback-verified-offline-proof-pending",
+      "offline": "offline-proven",
+      "cloudTagged": "cloud-backed-tag-blocked"
+    }
+  },
+  "sourceFiles": [
+    "assets/js/local-ai/eon-local-connection-authority.js",
+    "assets/js/local-ai/eon-local-bridge-client.js",
+    "assets/js/local-ai/local-runtime-status.js",
+    "assets/js/local-ai/local-ai-page.js",
+    "assets/js/chat/ai-runtime.js",
+    "assets/js/chat-page.js",
+    "assets/js/direct-byok/companion-client.js",
+    "config/local-ai-browser-contract.mjs",
+    "config/eon-creator-companion-browser-contract.mjs",
+    "_headers",
+    "public/_headers"
+  ],
+  "errors": [],
+  "digest": "9b77d742a9f491470a93ee6177d4efa89e08e64d86beb45c88c455edfa16a512"
+}

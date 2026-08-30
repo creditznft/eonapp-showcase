@@ -1,0 +1,986 @@
+{
+  "schema": "eonapp.a15.current-product-authority.v1",
+  "status": "pass",
+  "currentProductRoutes": [
+    {
+      "id": "preview-studio",
+      "from": "/preview-studio",
+      "to": "/market.html",
+      "status": 200,
+      "file": "market.html",
+      "lifecycle": "local-preview",
+      "expected": [
+        "Preview Studio"
+      ]
+    },
+    {
+      "id": "chat",
+      "from": "/",
+      "to": "/index.html",
+      "status": 200,
+      "file": "index.html",
+      "lifecycle": "live",
+      "expected": [
+        "What would you like to make?"
+      ]
+    },
+    {
+      "id": "create",
+      "from": "/create",
+      "to": "/create.html",
+      "status": 200,
+      "file": "create.html",
+      "lifecycle": "live",
+      "expected": [
+        "Create something"
+      ]
+    },
+    {
+      "id": "projects",
+      "from": "/projects",
+      "to": "/projects.html",
+      "status": 200,
+      "file": "projects.html",
+      "lifecycle": "live",
+      "expected": [
+        "Projects"
+      ]
+    },
+    {
+      "id": "library",
+      "from": "/library",
+      "to": "/library.html",
+      "status": 200,
+      "file": "library.html",
+      "lifecycle": "live",
+      "expected": [
+        "Library"
+      ]
+    },
+    {
+      "id": "workspace",
+      "from": "/workspace",
+      "to": "/workspace.html",
+      "status": 200,
+      "file": "workspace.html",
+      "lifecycle": "live",
+      "expected": [
+        "Workspace"
+      ]
+    },
+    {
+      "id": "forge",
+      "from": "/forge",
+      "to": "/forge.html",
+      "status": 200,
+      "file": "forge.html",
+      "lifecycle": "local-first-builder",
+      "expected": [
+        "EON Forge"
+      ]
+    },
+    {
+      "id": "eoncity",
+      "from": "/eoncity",
+      "to": "/eoncity.html",
+      "status": 200,
+      "file": "eoncity.html",
+      "lifecycle": "direct-babylon-city",
+      "expected": [
+        "Checking City access"
+      ]
+    },
+    {
+      "id": "insights",
+      "from": "/insights",
+      "to": "/trade.html",
+      "status": 200,
+      "file": "trade.html",
+      "lifecycle": "local-research",
+      "expected": [
+        "Research Lab"
+      ]
+    },
+    {
+      "id": "automations",
+      "from": "/automations",
+      "to": "/automations.html",
+      "status": 200,
+      "file": "automations.html",
+      "lifecycle": "live",
+      "expected": [
+        "Automation"
+      ]
+    },
+    {
+      "id": "profile",
+      "from": "/profile",
+      "to": "/profile.html",
+      "status": 200,
+      "file": "profile.html",
+      "lifecycle": "live",
+      "expected": [
+        "Profile"
+      ]
+    },
+    {
+      "id": "vault",
+      "from": "/vault",
+      "to": "/vault.html",
+      "status": 200,
+      "file": "vault.html",
+      "lifecycle": "live",
+      "expected": [
+        "Vault"
+      ]
+    },
+    {
+      "id": "capsule",
+      "from": "/capsule",
+      "to": "/capsule.html",
+      "status": 200,
+      "file": "capsule.html",
+      "lifecycle": "local-only",
+      "expected": [
+        "Portable Workspace Capsule"
+      ]
+    },
+    {
+      "id": "local-ai",
+      "from": "/local-ai",
+      "to": "/local-ai.html",
+      "status": 200,
+      "file": "local-ai.html",
+      "lifecycle": "local-only",
+      "expected": [
+        "Local AI"
+      ]
+    },
+    {
+      "id": "realm-studio",
+      "from": "/realm-studio",
+      "to": "/realm-studio.html",
+      "status": 200,
+      "file": "realm-studio.html",
+      "lifecycle": "local-only",
+      "expected": [
+        "Realm Studio"
+      ]
+    },
+    {
+      "id": "guides",
+      "from": "/guides",
+      "to": "/guides/index.html",
+      "status": 200,
+      "file": "guides/index.html",
+      "lifecycle": "editorial-acquisition",
+      "expected": [
+        "EONAPP Guides",
+        "AI cost",
+        "Local AI"
+      ]
+    },
+    {
+      "id": "guide-ai-api-cost-calculator",
+      "from": "/guides/ai-api-cost-calculator",
+      "to": "/guides/ai-api-cost-calculator.html",
+      "status": 200,
+      "file": "guides/ai-api-cost-calculator.html",
+      "lifecycle": "editorial-acquisition-utility",
+      "expected": [
+        "AI API Cost Calculator",
+        "per 1M tokens"
+      ]
+    },
+    {
+      "id": "guide-local-ai-hardware-checker",
+      "from": "/guides/local-ai-hardware-checker",
+      "to": "/guides/local-ai-hardware-checker.html",
+      "status": 200,
+      "file": "guides/local-ai-hardware-checker.html",
+      "lifecycle": "editorial-acquisition-utility",
+      "expected": [
+        "Local AI Hardware Checker",
+        "RAM",
+        "VRAM"
+      ]
+    },
+    {
+      "id": "guide-local-ai-vs-cloud-ai",
+      "from": "/guides/local-ai-vs-cloud-ai",
+      "to": "/guides/local-ai-vs-cloud-ai.html",
+      "status": 200,
+      "file": "guides/local-ai-vs-cloud-ai.html",
+      "lifecycle": "editorial-acquisition-utility",
+      "expected": [
+        "Local AI vs Cloud AI",
+        "decision"
+      ]
+    },
+    {
+      "id": "guide-ai-small-business",
+      "from": "/guides/ai-for-small-business",
+      "to": "/guides/ai-for-small-business.html",
+      "status": 200,
+      "file": "guides/ai-for-small-business.html",
+      "lifecycle": "editorial-acquisition-utility",
+      "expected": [
+        "AI for Small Business",
+        "ROI"
+      ]
+    },
+    {
+      "id": "about",
+      "from": "/about",
+      "to": "/about.html",
+      "status": 200,
+      "file": "about.html",
+      "lifecycle": "live"
+    },
+    {
+      "id": "privacy",
+      "from": "/privacy",
+      "to": "/privacy.html",
+      "status": 200,
+      "file": "privacy.html",
+      "lifecycle": "live"
+    },
+    {
+      "id": "terms",
+      "from": "/terms",
+      "to": "/terms.html",
+      "status": 200,
+      "file": "terms.html",
+      "lifecycle": "live"
+    },
+    {
+      "id": "legal",
+      "from": "/legal",
+      "to": "/legal.html",
+      "status": 200,
+      "file": "legal.html",
+      "lifecycle": "live"
+    },
+    {
+      "id": "settings",
+      "from": "/settings",
+      "to": "/settings.html",
+      "status": 200,
+      "file": "settings.html",
+      "lifecycle": "live"
+    },
+    {
+      "id": "help",
+      "from": "/help",
+      "to": "/help.html",
+      "status": 200,
+      "file": "help.html",
+      "lifecycle": "live"
+    },
+    {
+      "id": "editorial-policy",
+      "from": "/editorial-policy",
+      "to": "/editorial-policy.html",
+      "status": 200,
+      "file": "editorial-policy.html",
+      "lifecycle": "editorial-trust"
+    },
+    {
+      "id": "advertising-disclosure",
+      "from": "/advertising-disclosure",
+      "to": "/advertising-disclosure.html",
+      "status": 200,
+      "file": "advertising-disclosure.html",
+      "lifecycle": "editorial-trust"
+    },
+    {
+      "id": "status",
+      "from": "/status",
+      "to": "/status.html",
+      "status": 200,
+      "file": "status.html",
+      "lifecycle": "live-operational"
+    },
+    {
+      "id": "install",
+      "from": "/install",
+      "to": "/install.html",
+      "status": 200,
+      "file": "install.html",
+      "lifecycle": "live"
+    },
+    {
+      "id": "billing",
+      "from": "/billing",
+      "to": "/billing.html",
+      "status": 200,
+      "file": "billing.html",
+      "lifecycle": "live-sensitive",
+      "expected": [
+        "Plans & billing"
+      ]
+    },
+    {
+      "id": "eon-keys",
+      "from": "/eon-keys",
+      "to": "/eon-keys.html",
+      "status": 200,
+      "file": "eon-keys.html",
+      "lifecycle": "proof-gated-referral",
+      "expected": [
+        "EON Keys"
+      ]
+    },
+    {
+      "id": "rewards-status",
+      "from": "/rewards",
+      "to": "/rewards.html",
+      "status": 200,
+      "file": "rewards.html",
+      "lifecycle": "live-sensitive",
+      "expected": [
+        "Rewards & sponsored experiences"
+      ]
+    }
+  ],
+  "emittedCompatibilityRoutes": [
+    {
+      "id": "telegram",
+      "from": "/telegram",
+      "to": "/telegram.html",
+      "status": 200,
+      "file": "telegram.html",
+      "lifecycle": "disabled",
+      "expected": [
+        "Telegram"
+      ]
+    },
+    {
+      "id": "referral",
+      "from": "/referral",
+      "to": "/referral.html",
+      "status": 200,
+      "file": "referral.html",
+      "lifecycle": "local-only",
+      "expected": [
+        "Signed"
+      ]
+    },
+    {
+      "id": "archive",
+      "from": "/archive",
+      "to": "/archive.html",
+      "status": 200,
+      "file": "archive.html",
+      "lifecycle": "retired",
+      "expected": [
+        "retired"
+      ]
+    },
+    {
+      "id": "market-compatibility",
+      "from": "/market",
+      "to": "/market.html",
+      "status": 200,
+      "file": "market.html",
+      "lifecycle": "compatibility-hidden",
+      "expected": [
+        "Compatibility preview"
+      ]
+    },
+    {
+      "id": "realm-public-future",
+      "from": "/u/*",
+      "to": "/realm-profile.html?user=:splat",
+      "status": 200,
+      "file": "realm-profile.html",
+      "lifecycle": "future",
+      "expected": [
+        "Realm"
+      ]
+    },
+    {
+      "id": "share-r",
+      "from": "/r",
+      "to": "/referral.html",
+      "status": 200,
+      "file": "referral.html",
+      "lifecycle": "local-only"
+    },
+    {
+      "id": "share-r-slash",
+      "from": "/r/",
+      "to": "/referral.html",
+      "status": 200,
+      "file": "referral.html",
+      "lifecycle": "local-only"
+    },
+    {
+      "id": "share-r-wildcard",
+      "from": "/r/*",
+      "to": "/referral.html",
+      "status": 200,
+      "file": "referral.html",
+      "lifecycle": "local-only"
+    },
+    {
+      "id": "share-m",
+      "from": "/m",
+      "to": "/referral.html",
+      "status": 200,
+      "file": "referral.html",
+      "lifecycle": "local-only"
+    },
+    {
+      "id": "share-m-slash",
+      "from": "/m/",
+      "to": "/referral.html",
+      "status": 200,
+      "file": "referral.html",
+      "lifecycle": "local-only"
+    },
+    {
+      "id": "share-m-wildcard",
+      "from": "/m/*",
+      "to": "/referral.html",
+      "status": 200,
+      "file": "referral.html",
+      "lifecycle": "local-only"
+    }
+  ],
+  "redirectOnlyCompatibilityRoutes": [
+    {
+      "id": "support-compatibility",
+      "from": "/support",
+      "to": "/help",
+      "status": 301,
+      "file": "support.html",
+      "lifecycle": "compatibility"
+    },
+    {
+      "id": "chat-legacy",
+      "from": "/chat",
+      "to": "/",
+      "status": 301,
+      "file": "chat.html",
+      "lifecycle": "compatibility",
+      "expected": [
+        "EONBOT"
+      ]
+    },
+    {
+      "id": "chat-html-legacy",
+      "from": "/chat.html",
+      "to": "/",
+      "status": 301,
+      "file": "chat.html",
+      "lifecycle": "compatibility",
+      "expected": [
+        "EONBOT"
+      ]
+    }
+  ],
+  "buildRouteRows": [
+    {
+      "id": "preview-studio",
+      "from": "/preview-studio",
+      "to": "/market.html",
+      "status": 200,
+      "file": "market.html",
+      "lifecycle": "local-preview",
+      "expected": [
+        "Preview Studio"
+      ]
+    },
+    {
+      "id": "chat",
+      "from": "/",
+      "to": "/index.html",
+      "status": 200,
+      "file": "index.html",
+      "lifecycle": "live",
+      "expected": [
+        "What would you like to make?"
+      ]
+    },
+    {
+      "id": "create",
+      "from": "/create",
+      "to": "/create.html",
+      "status": 200,
+      "file": "create.html",
+      "lifecycle": "live",
+      "expected": [
+        "Create something"
+      ]
+    },
+    {
+      "id": "projects",
+      "from": "/projects",
+      "to": "/projects.html",
+      "status": 200,
+      "file": "projects.html",
+      "lifecycle": "live",
+      "expected": [
+        "Projects"
+      ]
+    },
+    {
+      "id": "library",
+      "from": "/library",
+      "to": "/library.html",
+      "status": 200,
+      "file": "library.html",
+      "lifecycle": "live",
+      "expected": [
+        "Library"
+      ]
+    },
+    {
+      "id": "workspace",
+      "from": "/workspace",
+      "to": "/workspace.html",
+      "status": 200,
+      "file": "workspace.html",
+      "lifecycle": "live",
+      "expected": [
+        "Workspace"
+      ]
+    },
+    {
+      "id": "forge",
+      "from": "/forge",
+      "to": "/forge.html",
+      "status": 200,
+      "file": "forge.html",
+      "lifecycle": "local-first-builder",
+      "expected": [
+        "EON Forge"
+      ]
+    },
+    {
+      "id": "eoncity",
+      "from": "/eoncity",
+      "to": "/eoncity.html",
+      "status": 200,
+      "file": "eoncity.html",
+      "lifecycle": "direct-babylon-city",
+      "expected": [
+        "Checking City access"
+      ]
+    },
+    {
+      "id": "insights",
+      "from": "/insights",
+      "to": "/trade.html",
+      "status": 200,
+      "file": "trade.html",
+      "lifecycle": "local-research",
+      "expected": [
+        "Research Lab"
+      ]
+    },
+    {
+      "id": "automations",
+      "from": "/automations",
+      "to": "/automations.html",
+      "status": 200,
+      "file": "automations.html",
+      "lifecycle": "live",
+      "expected": [
+        "Automation"
+      ]
+    },
+    {
+      "id": "profile",
+      "from": "/profile",
+      "to": "/profile.html",
+      "status": 200,
+      "file": "profile.html",
+      "lifecycle": "live",
+      "expected": [
+        "Profile"
+      ]
+    },
+    {
+      "id": "vault",
+      "from": "/vault",
+      "to": "/vault.html",
+      "status": 200,
+      "file": "vault.html",
+      "lifecycle": "live",
+      "expected": [
+        "Vault"
+      ]
+    },
+    {
+      "id": "capsule",
+      "from": "/capsule",
+      "to": "/capsule.html",
+      "status": 200,
+      "file": "capsule.html",
+      "lifecycle": "local-only",
+      "expected": [
+        "Portable Workspace Capsule"
+      ]
+    },
+    {
+      "id": "local-ai",
+      "from": "/local-ai",
+      "to": "/local-ai.html",
+      "status": 200,
+      "file": "local-ai.html",
+      "lifecycle": "local-only",
+      "expected": [
+        "Local AI"
+      ]
+    },
+    {
+      "id": "realm-studio",
+      "from": "/realm-studio",
+      "to": "/realm-studio.html",
+      "status": 200,
+      "file": "realm-studio.html",
+      "lifecycle": "local-only",
+      "expected": [
+        "Realm Studio"
+      ]
+    },
+    {
+      "id": "guides",
+      "from": "/guides",
+      "to": "/guides/index.html",
+      "status": 200,
+      "file": "guides/index.html",
+      "lifecycle": "editorial-acquisition",
+      "expected": [
+        "EONAPP Guides",
+        "AI cost",
+        "Local AI"
+      ]
+    },
+    {
+      "id": "guide-ai-api-cost-calculator",
+      "from": "/guides/ai-api-cost-calculator",
+      "to": "/guides/ai-api-cost-calculator.html",
+      "status": 200,
+      "file": "guides/ai-api-cost-calculator.html",
+      "lifecycle": "editorial-acquisition-utility",
+      "expected": [
+        "AI API Cost Calculator",
+        "per 1M tokens"
+      ]
+    },
+    {
+      "id": "guide-local-ai-hardware-checker",
+      "from": "/guides/local-ai-hardware-checker",
+      "to": "/guides/local-ai-hardware-checker.html",
+      "status": 200,
+      "file": "guides/local-ai-hardware-checker.html",
+      "lifecycle": "editorial-acquisition-utility",
+      "expected": [
+        "Local AI Hardware Checker",
+        "RAM",
+        "VRAM"
+      ]
+    },
+    {
+      "id": "guide-local-ai-vs-cloud-ai",
+      "from": "/guides/local-ai-vs-cloud-ai",
+      "to": "/guides/local-ai-vs-cloud-ai.html",
+      "status": 200,
+      "file": "guides/local-ai-vs-cloud-ai.html",
+      "lifecycle": "editorial-acquisition-utility",
+      "expected": [
+        "Local AI vs Cloud AI",
+        "decision"
+      ]
+    },
+    {
+      "id": "guide-ai-small-business",
+      "from": "/guides/ai-for-small-business",
+      "to": "/guides/ai-for-small-business.html",
+      "status": 200,
+      "file": "guides/ai-for-small-business.html",
+      "lifecycle": "editorial-acquisition-utility",
+      "expected": [
+        "AI for Small Business",
+        "ROI"
+      ]
+    },
+    {
+      "id": "about",
+      "from": "/about",
+      "to": "/about.html",
+      "status": 200,
+      "file": "about.html",
+      "lifecycle": "live"
+    },
+    {
+      "id": "privacy",
+      "from": "/privacy",
+      "to": "/privacy.html",
+      "status": 200,
+      "file": "privacy.html",
+      "lifecycle": "live"
+    },
+    {
+      "id": "terms",
+      "from": "/terms",
+      "to": "/terms.html",
+      "status": 200,
+      "file": "terms.html",
+      "lifecycle": "live"
+    },
+    {
+      "id": "legal",
+      "from": "/legal",
+      "to": "/legal.html",
+      "status": 200,
+      "file": "legal.html",
+      "lifecycle": "live"
+    },
+    {
+      "id": "settings",
+      "from": "/settings",
+      "to": "/settings.html",
+      "status": 200,
+      "file": "settings.html",
+      "lifecycle": "live"
+    },
+    {
+      "id": "help",
+      "from": "/help",
+      "to": "/help.html",
+      "status": 200,
+      "file": "help.html",
+      "lifecycle": "live"
+    },
+    {
+      "id": "editorial-policy",
+      "from": "/editorial-policy",
+      "to": "/editorial-policy.html",
+      "status": 200,
+      "file": "editorial-policy.html",
+      "lifecycle": "editorial-trust"
+    },
+    {
+      "id": "advertising-disclosure",
+      "from": "/advertising-disclosure",
+      "to": "/advertising-disclosure.html",
+      "status": 200,
+      "file": "advertising-disclosure.html",
+      "lifecycle": "editorial-trust"
+    },
+    {
+      "id": "status",
+      "from": "/status",
+      "to": "/status.html",
+      "status": 200,
+      "file": "status.html",
+      "lifecycle": "live-operational"
+    },
+    {
+      "id": "install",
+      "from": "/install",
+      "to": "/install.html",
+      "status": 200,
+      "file": "install.html",
+      "lifecycle": "live"
+    },
+    {
+      "id": "billing",
+      "from": "/billing",
+      "to": "/billing.html",
+      "status": 200,
+      "file": "billing.html",
+      "lifecycle": "live-sensitive",
+      "expected": [
+        "Plans & billing"
+      ]
+    },
+    {
+      "id": "eon-keys",
+      "from": "/eon-keys",
+      "to": "/eon-keys.html",
+      "status": 200,
+      "file": "eon-keys.html",
+      "lifecycle": "proof-gated-referral",
+      "expected": [
+        "EON Keys"
+      ]
+    },
+    {
+      "id": "rewards-status",
+      "from": "/rewards",
+      "to": "/rewards.html",
+      "status": 200,
+      "file": "rewards.html",
+      "lifecycle": "live-sensitive",
+      "expected": [
+        "Rewards & sponsored experiences"
+      ]
+    },
+    {
+      "id": "telegram",
+      "from": "/telegram",
+      "to": "/telegram.html",
+      "status": 200,
+      "file": "telegram.html",
+      "lifecycle": "disabled",
+      "expected": [
+        "Telegram"
+      ]
+    },
+    {
+      "id": "referral",
+      "from": "/referral",
+      "to": "/referral.html",
+      "status": 200,
+      "file": "referral.html",
+      "lifecycle": "local-only",
+      "expected": [
+        "Signed"
+      ]
+    },
+    {
+      "id": "archive",
+      "from": "/archive",
+      "to": "/archive.html",
+      "status": 200,
+      "file": "archive.html",
+      "lifecycle": "retired",
+      "expected": [
+        "retired"
+      ]
+    },
+    {
+      "id": "market-compatibility",
+      "from": "/market",
+      "to": "/market.html",
+      "status": 200,
+      "file": "market.html",
+      "lifecycle": "compatibility-hidden",
+      "expected": [
+        "Compatibility preview"
+      ]
+    },
+    {
+      "id": "realm-public-future",
+      "from": "/u/*",
+      "to": "/realm-profile.html?user=:splat",
+      "status": 200,
+      "file": "realm-profile.html",
+      "lifecycle": "future",
+      "expected": [
+        "Realm"
+      ]
+    },
+    {
+      "id": "share-r",
+      "from": "/r",
+      "to": "/referral.html",
+      "status": 200,
+      "file": "referral.html",
+      "lifecycle": "local-only"
+    },
+    {
+      "id": "share-r-slash",
+      "from": "/r/",
+      "to": "/referral.html",
+      "status": 200,
+      "file": "referral.html",
+      "lifecycle": "local-only"
+    },
+    {
+      "id": "share-r-wildcard",
+      "from": "/r/*",
+      "to": "/referral.html",
+      "status": 200,
+      "file": "referral.html",
+      "lifecycle": "local-only"
+    },
+    {
+      "id": "share-m",
+      "from": "/m",
+      "to": "/referral.html",
+      "status": 200,
+      "file": "referral.html",
+      "lifecycle": "local-only"
+    },
+    {
+      "id": "share-m-slash",
+      "from": "/m/",
+      "to": "/referral.html",
+      "status": 200,
+      "file": "referral.html",
+      "lifecycle": "local-only"
+    },
+    {
+      "id": "share-m-wildcard",
+      "from": "/m/*",
+      "to": "/referral.html",
+      "status": 200,
+      "file": "referral.html",
+      "lifecycle": "local-only"
+    }
+  ],
+  "buildHtmlEntryFiles": [
+    "404.html",
+    "about.html",
+    "advertising-disclosure.html",
+    "archive.html",
+    "automations.html",
+    "billing.html",
+    "capsule.html",
+    "create.html",
+    "editorial-policy.html",
+    "eon-keys.html",
+    "eoncity.html",
+    "forge.html",
+    "guides/ai-api-cost-calculator.html",
+    "guides/ai-for-small-business.html",
+    "guides/index.html",
+    "guides/local-ai-hardware-checker.html",
+    "guides/local-ai-vs-cloud-ai.html",
+    "help.html",
+    "index.html",
+    "install.html",
+    "legal.html",
+    "library.html",
+    "local-ai.html",
+    "market.html",
+    "offline.html",
+    "privacy.html",
+    "profile.html",
+    "projects.html",
+    "realm-profile.html",
+    "realm-studio.html",
+    "referral.html",
+    "rewards.html",
+    "settings.html",
+    "status.html",
+    "telegram.html",
+    "terms.html",
+    "trade.html",
+    "vault.html",
+    "workspace.html"
+  ],
+  "capabilityAuthority": {
+    "governanceAuthority": "config/a15-current-product-authority.mjs",
+    "runtimeProjection": "assets/js/capabilities/capability-truth-registry.js",
+    "serverEntitlementProjection": "assets/js/billing/eon-server-entitlement-ledger.js",
+    "status": "provisional-no-launch",
+    "successorWave": "I09",
+    "invariant": "No other capability catalogue may claim current launch authority before I09 replaces this provisional projection."
+  },
+  "testAuthority": {
+    "currentUnitManifest": "config/w624d-current-unit-test-manifest.json",
+    "sourceCertification": "scripts/w766ir2-source-certification-gate.mjs",
+    "a15BaselineGate": "scripts/a15-i00-c01-baseline-authority.mjs",
+    "externalCertification": "docs/handover/w802b-storm-sector-source-complete-external-gates/evidence/W802B_EXTERNAL_CERTIFICATION_EVIDENCE.json",
+    "status": "source-gates-current-external-gates-blocked"
+  },
+  "errors": [],
+  "digest": "9c15f042235d9a9a79941fa2a8721533d9bfc021b82ce6ea0290222cdb4897e7"
+}

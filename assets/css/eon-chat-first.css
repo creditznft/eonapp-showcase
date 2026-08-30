@@ -1,0 +1,234 @@
+/* W229 — calm Chat-first surface. The primary route is the conversation and its persistent composer. */
+body[data-eon-app-shell="1"][data-page-type="chat"] { display: block; min-height: 100dvh; overflow: hidden; }
+body[data-eon-app-shell="1"][data-page-type="chat"] .eon-chat-page-title {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+body[data-eon-app-shell="1"][data-page-type="chat"] > main.chat-page-main {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  min-height: 100dvh;
+  margin-left: var(--eon-app-rail-width);
+  overflow: hidden;
+}
+body[data-eon-app-shell="1"][data-page-type="chat"] .chat-container {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  width: min(56rem, 100%);
+  max-width: 56rem;
+  height: auto;
+  min-height: 0;
+  max-height: none;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-right: 1px solid color-mix(in srgb, var(--clr-border) 55%, transparent);
+  border-left: 1px solid color-mix(in srgb, var(--clr-border) 55%, transparent);
+  border-radius: 0;
+  background: color-mix(in srgb, var(--clr-bg) 42%, transparent);
+}
+body[data-eon-app-shell="1"][data-page-type="chat"] .chat-inner-header {
+  position: relative;
+  inset: auto;
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  width: 100%;
+  min-height: 4.35rem;
+  padding: .72rem .9rem;
+  border: 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--clr-border) 60%, transparent);
+  border-radius: 0;
+  background: color-mix(in srgb, var(--clr-bg) 88%, transparent);
+  box-shadow: none;
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+}
+body[data-eon-app-shell="1"][data-page-type="chat"] .chat-bot-avatar-large { width: 2.35rem; height: 2.35rem; font-size: 1.08rem; }
+body[data-eon-app-shell="1"][data-page-type="chat"] .chat-inner-header-info { flex: 1 1 auto; min-width: 0; min-height: 0; }
+body[data-eon-app-shell="1"][data-page-type="chat"] .chat-inner-header-info strong { overflow: hidden; font-size: .86rem; text-overflow: ellipsis; white-space: nowrap; }
+body[data-eon-app-shell="1"][data-page-type="chat"] .chat-status-line { min-height: 0; font-size: .68rem; }
+body[data-eon-app-shell="1"][data-page-type="chat"] .chat-model-settings-link,
+body[data-eon-app-shell="1"][data-page-type="chat"] #chat-provider-badge,
+body[data-eon-app-shell="1"][data-page-type="chat"] .eonbot-emotion-strip,
+body[data-eon-app-shell="1"][data-page-type="chat"] .chat-speech-language-control,
+body[data-eon-app-shell="1"][data-page-type="chat"] #chat-voice-mode,
+body[data-eon-app-shell="1"][data-page-type="chat"] #chat-tts-toggle { display: none !important; }
+body[data-eon-app-shell="1"][data-page-type="chat"] .chat-voice-btn { width: 2.2rem; min-width: 2.2rem; height: 2.2rem; border-radius: .68rem; font-size: .86rem; }
+
+.eon-chat-header-actions { display: flex; align-items: center; gap: .42rem; margin-left: .1rem; }
+.eon-chat-header-share,
+.eon-chat-overflow-button { min-height: 2.2rem; border: 1px solid color-mix(in srgb, var(--clr-border) 72%, transparent); border-radius: .68rem; background: color-mix(in srgb, var(--clr-surface) 86%, transparent); color: var(--clr-text); font: inherit; font-size: .75rem; font-weight: 720; }
+.eon-chat-header-share { display: inline-flex; align-items: center; gap: .32rem; padding: 0 .72rem; }
+.eon-chat-header-share:hover,
+.eon-chat-header-share:focus-visible,
+.eon-chat-overflow-button:hover,
+.eon-chat-overflow-button:focus-visible { border-color: color-mix(in srgb, var(--clr-accent) 56%, var(--clr-border)); background: color-mix(in srgb, var(--clr-accent) 13%, var(--clr-surface)); }
+.eon-chat-overflow-wrap { position: relative; }
+.eon-chat-overflow-button { width: 2.2rem; padding: 0; font-size: 1.08rem; line-height: 1; }
+.eon-chat-overflow-menu { position: absolute; z-index: 120; top: calc(100% + .4rem); right: 0; display: grid; min-width: 11.3rem; padding: .32rem; border: 1px solid color-mix(in srgb, var(--clr-border) 80%, transparent); border-radius: .78rem; background: var(--clr-surface); box-shadow: 0 16px 38px color-mix(in srgb, var(--clr-bg) 55%, transparent); }
+.eon-chat-overflow-menu[hidden] { display: none !important; }
+.eon-chat-overflow-menu button,
+.eon-chat-overflow-menu a { display: block; padding: .5rem .58rem; border: 0; border-radius: .48rem; background: transparent; color: var(--clr-text); font: inherit; font-size: .78rem; text-align: left; text-decoration: none; }
+.eon-chat-overflow-menu button:hover,
+.eon-chat-overflow-menu button:focus-visible,
+.eon-chat-overflow-menu a:hover,
+.eon-chat-overflow-menu a:focus-visible { background: color-mix(in srgb, var(--clr-accent) 13%, transparent); color: var(--clr-text); }
+
+body[data-eon-app-shell="1"][data-page-type="chat"] .chat-controls-panel { flex: 0 0 auto; height: auto; min-height: 0; max-height: min(28rem, 48dvh); padding: .8rem; overflow: auto; border: 0; border-bottom: 1px solid color-mix(in srgb, var(--clr-border) 50%, transparent); background: color-mix(in srgb, var(--clr-surface) 36%, transparent); }
+body[data-eon-app-shell="1"][data-page-type="chat"] .chat-controls-panel[data-ready="0"] { display: none; }
+body[data-eon-app-shell="1"][data-page-type="chat"] .chat-control-grid { min-height: 0; }
+body[data-eon-app-shell="1"][data-page-type="chat"] .chat-control-card { min-height: 0; }
+body[data-eon-app-shell="1"][data-page-type="chat"] .chat-messages { flex: 1 1 auto; min-height: 0; padding: 1.45rem clamp(.9rem, 3vw, 1.65rem) 1.2rem; overflow-y: auto; }
+body[data-eon-app-shell="1"][data-page-type="chat"] .eon-chat-welcome { max-width: 26rem; margin: auto; padding: 1.2rem 0; color: var(--clr-text-muted); font-size: 1rem; }
+body[data-eon-app-shell="1"][data-page-type="chat"] .chat-input-bar { position: relative; z-index: 3; display: flex; flex: 0 0 auto; bottom: auto; right: auto; left: auto; gap: .5rem; padding: .78rem clamp(.8rem, 2.3vw, 1.2rem) calc(.78rem + env(safe-area-inset-bottom)); border: 0; border-top: 1px solid color-mix(in srgb, var(--clr-border) 60%, transparent); border-radius: 0; background: color-mix(in srgb, var(--clr-bg) 94%, transparent); box-shadow: none; }
+body[data-eon-app-shell="1"][data-page-type="chat"] .chat-input-field { min-height: 2.7rem; max-height: 28dvh; font-size: .94rem; line-height: 1.35; resize: none; overflow-y: hidden; }
+body[data-eon-app-shell="1"][data-page-type="chat"] .chat-send-btn { width: 2.7rem; height: 2.7rem; }
+
+@media (max-width: 960px) {
+  body[data-eon-app-shell="1"][data-page-type="chat"] > main.chat-page-main { height: calc(100dvh - var(--eon-app-mobilebar-height)); min-height: calc(100dvh - var(--eon-app-mobilebar-height)); margin-left: 0; padding-top: var(--eon-app-mobilebar-height); }
+  body[data-eon-app-shell="1"][data-page-type="chat"] .chat-container { width: 100%; border-right: 0; border-left: 0; }
+}
+
+@media (max-width: 640px) {
+  body[data-eon-app-shell="1"][data-page-type="chat"] .chat-inner-header { min-height: 4rem; padding: .6rem .72rem; gap: .48rem; }
+  body[data-eon-app-shell="1"][data-page-type="chat"] .chat-bot-avatar-large { width: 2.05rem; height: 2.05rem; font-size: .95rem; }
+  body[data-eon-app-shell="1"][data-page-type="chat"] .chat-inner-header-info strong { font-size: .78rem; }
+  body[data-eon-app-shell="1"][data-page-type="chat"] .chat-status-line { font-size: .62rem; }
+  body[data-eon-app-shell="1"][data-page-type="chat"] #chat-voice-mode,
+  body[data-eon-app-shell="1"][data-page-type="chat"] #chat-tts-toggle { display: none; }
+    body[data-eon-app-shell="1"][data-page-type="chat"] .chat-messages { padding: 1rem .82rem; }
+  body[data-eon-app-shell="1"][data-page-type="chat"] .chat-input-bar { gap: .38rem; padding: .62rem .7rem calc(.62rem + env(safe-area-inset-bottom)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .eon-chat-header-share,
+  .eon-chat-overflow-button { transition: none; }
+}
+
+/* W219 — truthful EONBOT mode surface */
+.eonbot-capability-card { display: grid; gap: .65rem; }
+.eonbot-mode-list { display: grid; gap: .5rem; margin: 0; padding: 0; list-style: none; }
+.eonbot-mode-row { display: grid; gap: .28rem; padding: .7rem; border: 1px solid rgba(148, 163, 184, .18); border-radius: .75rem; }
+.eonbot-mode-row.is-active { border-color: rgba(99, 102, 241, .7); background: rgba(99, 102, 241, .08); }
+.eonbot-mode-row > div { display: flex; align-items: center; justify-content: space-between; gap: .5rem; }
+.eonbot-mode-row span { font-size: .78rem; color: var(--eon-muted, #94a3b8); }
+.eonbot-mode-row p { margin: 0; color: var(--eon-muted, #cbd5e1); font-size: .88rem; }
+.eonbot-proactive-note { display: grid; gap: .45rem; padding: .7rem; border-radius: .75rem; border: 1px solid rgba(45, 212, 191, .24); background: rgba(45, 212, 191, .06); }
+.eonbot-proactive-note p { margin: 0; }
+.eonbot-proactive-note > div { display: flex; flex-wrap: wrap; gap: .45rem; }
+
+/* UX-1 — the visible header entry opens one compact sign-in dialog.
+   It is deliberately not a backup/profile detour. */
+.eon-chat-header-account,
+.eon-chat-overflow-button { min-height: 2.2rem; border: 1px solid color-mix(in srgb, var(--clr-border) 72%, transparent); border-radius: .68rem; background: color-mix(in srgb, var(--clr-surface) 86%, transparent); color: var(--clr-text); font: inherit; font-size: .75rem; font-weight: 720; }
+.eon-chat-header-account { display: inline-flex; align-items: center; gap: .36rem; padding: 0 .66rem; text-decoration: none; }
+.eon-chat-header-account[data-identity-state="available"] { border-color: color-mix(in srgb, var(--clr-accent) 54%, var(--clr-border)); background: color-mix(in srgb, var(--clr-accent) 10%, var(--clr-surface)); }
+.eon-chat-header-account[data-identity-state="signed-in"] { border-color: color-mix(in srgb, var(--clr-accent) 36%, var(--clr-border)); }
+.eon-chat-header-account:hover,
+.eon-chat-header-account:focus-visible { border-color: color-mix(in srgb, var(--clr-accent) 62%, var(--clr-border)); background: color-mix(in srgb, var(--clr-accent) 14%, var(--clr-surface)); color: var(--clr-text); }
+@media (max-width: 640px) {
+  .eon-chat-header-share { width: 2.2rem; padding: 0; justify-content: center; }
+  .eon-chat-header-share span:last-child { display: none; }
+  .eon-chat-header-account { width: 2.2rem; padding: 0; justify-content: center; }
+  .eon-chat-header-account span:last-child { display: none; }
+}
+
+/* W424 — quiet, ChatGPT-like first header. Runtime detail stays available in
+   Settings and accessible status updates, not in the everyday conversation bar. */
+body[data-eon-app-shell="1"][data-page-type="chat"] .chat-status-line { display: none; }
+body[data-eon-app-shell="1"][data-page-type="chat"] .chat-inner-header { min-height: 3.85rem; }
+.eon-chat-header-account { border-radius: 999px; }
+.eon-chat-header-account-glyph { display: inline-grid; width: 1rem; height: 1rem; place-items: center; }
+.eon-chat-header-account-glyph .eon-avatar { width: 1.2rem !important; height: 1.2rem !important; border-radius: 50% !important; }
+.eon-chat-header-account[data-identity-state="signed-in"] { padding-inline: .42rem .58rem; }
+@media (max-width: 640px) {
+  body[data-eon-app-shell="1"][data-page-type="chat"] .chat-status-line { display: none; }
+}
+
+@media (max-width: 960px) {
+  body[data-eon-app-shell="1"][data-page-type="chat"] .eon-chat-header-account {
+    display: none !important;
+  }
+}
+
+/* L95 — narrow Chat headers have one compact action owner. Share/Profile stay
+   available in the overflow menu instead of squeezing EONBOT identity/status. */
+@media (max-width: 720px) {
+  body[data-eon-app-shell="1"][data-page-type="chat"] .eon-chat-header-actions {
+    flex: 0 0 auto;
+    gap: .22rem;
+    margin-left: auto;
+  }
+  body[data-eon-app-shell="1"][data-page-type="chat"] .eon-chat-header-share,
+  body[data-eon-app-shell="1"][data-page-type="chat"] .eon-chat-header-account {
+    display: none !important;
+  }
+  body[data-eon-app-shell="1"][data-page-type="chat"] .eon-chat-overflow-button {
+    width: 2.5rem;
+    min-width: 2.5rem;
+    min-height: 2.5rem;
+  }
+  body[data-eon-app-shell="1"][data-page-type="chat"] .chat-inner-header-info {
+    min-width: 0;
+  }
+}
+
+
+/* W424 — keep the first conversation screen focused. Setup controls and
+   account guidance live behind Settings/Profile instead of competing with the
+   composer before a person has asked for anything. */
+body[data-eon-app-shell="1"][data-page-type="chat"] .chat-controls-panel,
+body[data-eon-app-shell="1"][data-page-type="chat"] .eon-chat-account-onboarding {
+  display: none !important;
+}
+
+/* W660H — invariant chat viewport. Only the message stream scrolls; the header
+   and composer remain visible at every supported window size. */
+body[data-eon-app-shell='1'][data-eon-app-page='chat'] {
+  height: 100dvh;
+  min-height: 0;
+  overflow: hidden !important;
+}
+body[data-eon-app-shell='1'][data-eon-app-page='chat'] > main.chat-page-main {
+  position: relative;
+  height: 100dvh !important;
+  min-height: 0 !important;
+  max-height: 100dvh;
+  overflow: hidden !important;
+}
+body[data-eon-app-shell='1'][data-eon-app-page='chat'] .chat-container {
+  flex: 1 1 auto;
+  height: 100% !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  overflow: hidden !important;
+}
+body[data-eon-app-shell='1'][data-eon-app-page='chat'] .chat-messages,
+body[data-eon-app-shell='1'][data-eon-app-page='chat'] .eonbot-home-stage {
+  min-height: 0 !important;
+  max-height: none !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain;
+}
+body[data-eon-app-shell='1'][data-eon-app-page='chat'] .chat-input-bar {
+  z-index: 45;
+  flex: 0 0 auto;
+}
+@media (max-width: 960px) {
+  body[data-eon-app-shell='1'][data-eon-app-page='chat'] > main.chat-page-main {
+    height: 100dvh !important;
+    max-height: 100dvh;
+    padding-top: var(--eon-app-mobilebar-height);
+  }
+}

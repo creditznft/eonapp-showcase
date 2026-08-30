@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <script src="/assets/js/eon-theme-bootstrap.js?release=w722-2026-07-27"></script>
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com; font-src 'self' data:; manifest-src 'self'; media-src 'self' blob:; worker-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="/assets/css/base.css" />
+  <link rel="stylesheet" href="/assets/css/layout.css" />
+  <link rel="stylesheet" href="/assets/css/components.css" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <meta property="og:site_name" content="EONAPP" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Privacy — EONAPP" />
+  <meta property="og:description" content="Understand EONAPP privacy, local-first storage and review-first product boundaries." />
+  <meta property="og:url" content="https://eonapp.ch/privacy" />
+  <meta property="og:image" content="https://eonapp.ch/assets/media/social/eonapp-trust-1200x630-social-v1.png?v=social-v1" />
+  <meta property="og:image:secure_url" content="https://eonapp.ch/assets/media/social/eonapp-trust-1200x630-social-v1.png?v=social-v1" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Privacy — EONAPP social preview" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Privacy — EONAPP" />
+  <meta name="twitter:description" content="Understand EONAPP privacy, local-first storage and review-first product boundaries." />
+  <meta name="twitter:image" content="https://eonapp.ch/assets/media/social/eonapp-trust-1200x630-social-v1.png?v=social-v1" />
+  <meta name="twitter:image:alt" content="Privacy — EONAPP social preview" />
+  <meta name="eon:social-square" content="https://eonapp.ch/assets/media/social/eonapp-trust-1080x1080-social-v1.png?v=social-v1" />
+  <title>Privacy Notes — EONAPP.ch</title>
+  <meta name="description" content="Privacy notes for EONAPP.ch local-first storage, optional identity-only Google Login, encrypted backups, and inactive campaign boundaries." />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Privacy Notes","url":"https://eonapp.ch/privacy","description":"Privacy notes for local-first storage, signed public links, Vault backups, and inactive campaign boundaries.","publisher":{"@type":"Organization","name":"EONAPP.ch","url":"https://eonapp.ch/"}}</script>
+  <link rel="canonical" href="https://eonapp.ch/privacy" />
+  <meta name="robots" content="index, follow" />
+</head>
+<body data-page-type="static" data-monetization="subscription" data-billing-provider="dodo">
+<a href="#main" class="skip-to-content">Skip to main content</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="logo">⚡ EONAPP<span>.ch</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/workspace">Workspace</a>
+      <a href="/">EONBOT Chat</a>
+      <a href="/vault">Vault</a>
+      <a href="/preview-studio">Preview Studio</a>
+      <a href="/eon-keys">EONKEYS</a>
+    <a href="/status">Status</a></nav>
+    <span id="sub-badge" class="sub-badge" aria-label="Subscription tier"></span>
+  </div>
+</header>
+<main id="main" class="policy-layout">
+  <div class="tool-header">
+    <span class="badge">Privacy</span>
+    <h1>Privacy notes</h1>
+    <p>EONAPP is local-first where practical. Optional paid access uses Dodo Payments hosted checkout and server-verified entitlements. EONAPP does not operate an offerwall, cash referral payout, wallet payment rail, or Cloudflare AI-generation backend.</p>
+    <p><strong>Last updated:</strong> 17 August 2026</p>
+  </div>
+  <div class="policy-stack">
+    <section class="policy-card w143-trust-proof" data-w143-trust-copy-proof="true" aria-labelledby="w143-trust-copy-title">
+      <h2 id="w143-trust-copy-title">Public trust policy</h2>
+      <p>This page follows the public trust policy: verified payment activation, public-proof-only support, local-first privacy, no wallet or chain action, refund exceptions, no investment advice, and no profit or result promises.</p>
+      <ul>
+        <li><strong>Safe evidence:</strong> invoice ID, public transaction hash, quote ID, plan, amount, timestamp, URL, and device context only.</li>
+        <li><strong>Never share secrets:</strong> seed phrase, private key, full API key, wallet backup file, password, or full card data.</li>
+        <li><strong>Manual review:</strong> refunds, unsupported crypto transfers, abuse reports, and policy exceptions require human review and may need third-party processor evidence.</li>
+      </ul>
+    </section>
+    <section class="policy-card">
+      <h2>Local-first storage</h2>
+      <p>EONAPP stores many preferences, badges, plan status, renewal reminders, result history, generated assets, optional vault profile data, and feature state in your browser. Clearing browser storage may erase local state unless you exported a vault backup or kept independent receipt proof.</p>
+    </section>
+    <section class="policy-card" id="google-login-data">
+      <h2>Optional Google Login and account metadata</h2>
+      <p>Guest use remains available. When optional Google Login is enabled, EONAPP requests only identity scopes: <code>openid</code>, <code>email</code>, and <code>profile</code>. It does not request Gmail, Drive, Calendar, Contacts, YouTube, or other Google-service access.</p>
+      <p>Cloudflare may hold a random EON account ID, a protected reference to the Google identity, verified-email and session metadata, plus minimal Dodo customer/subscription references and tier/status fields required for entitlement and billing support. EONAPP does not keep raw Chat, prompts, AI outputs, Vault data, provider keys, files, projects, Realm layouts, City progress, browser storage exports, Google access/refresh tokens, or card data in this identity account service.</p>
+      <p><strong>Important:</strong> Google Login is not a backup and does not create automatic cloud sync. Create and keep your own encrypted backup for local work you cannot lose. You can delete the minimal cloud account/session metadata from Profile; local data remains on your device because it was never uploaded.</p>
+    </section>
+    <section class="policy-card">
+      <h2>Payments and processors</h2>
+      <p>Paid subscriptions use Dodo Payments hosted checkout. Dodo processes payment details under its own terms; EONAPP receives server-side lifecycle events and stores minimal customer/subscription references, plan, status and timestamps needed for entitlement, cancellation, expiry, refund/dispute handling and support. EONAPP does not store full card data.</p>
+    </section>
+    <section class="policy-card">
+      <h2>Wallet and public transaction data</h2>
+      <p>No direct wallet-payment rail is active in this release. Never send a wallet payment because of a message, link, or assumed future feature. Public transaction data should be shared with support only when a separately published payment flow explicitly requests it.</p>
+    </section>
+    <section class="policy-card">
+      <h2>Vault and backups</h2>
+      <p>Your exported vault file is controlled by you. If you encrypt it with a passphrase, remember the passphrase. EONAPP does not keep a server-side recovery copy unless a future account product explicitly says so in its own terms.</p>
+    </section>
+    <section class="policy-card">
+      <h2>AI provider keys</h2>
+      <p>If you enter your own AI API keys, keep them secret. BYOK flows should keep keys in your device vault and send them only to the relevant provider when you initiate a request. Support should only receive masked provider names or test results, not full key values.</p>
+      <p><strong>Sponsored AI EONBOT route:</strong> signed-in free accounts in configured economic-pilot countries may use EON Sponsored AI · Vexrail, and an eligible anonymous visitor may receive one guarded Sponsored AI try before sign-in when the guest-one-shot policy is enabled. The visible conversation messages selected for the request are then sent through EONAPP's same-origin server route to Vexrail for model completion, contextual analytics and, when relevant, contextual sponsored recommendations. For upstream conversation continuity, EONAPP derives a salted pseudonymous identifier from the signed-in account and the browser conversation identifier; the raw EON account ID is not placed in that Vexrail conversation header. The Sponsored AI prompt builder does not inject EONAPP's local memory ledger, recent local activity projection or queued client-only research packet into Vexrail. For abuse control, EONAPP derives short-lived salted rate-limit buckets from the signed-in account and Cloudflare-provided network address; raw network addresses are not stored in the rate-limit ledger. Coarse Cloudflare country/ASN and available bot-risk signals may be used only to decide Sponsored AI eligibility and abuse controls. Vexrail publisher credentials remain server-side. EONAPP also applies a conservative server-side detector that rejects some obvious secrets and sensitive identifiers before Vexrail contact; this is a safety layer, not a guarantee that all sensitive information can be recognized. Because Vexrail processes conversation context, do not use this route for secrets, API keys, sensitive personal data or material that must remain device-local. When EONAPP recognizes a paid, trial or grace account session, the route remains off by default. The user may explicitly select Sponsored AI when the same configured pilot-country policy permits it; that opt-in is limited to the Vexrail chat route and does not turn ordinary display advertising on. Paid Sponsored AI uses separate hourly/daily fair-use limits, while request-count and token-weighted account/country/global safety budgets, network controls and human verification also apply. After the guarded guest one-shot is used or unavailable, a browser with no valid account session must sign in to continue hosted Sponsored AI and may otherwise use Guide Mode, Local AI or BYOK. Local AI stays on the selected local runtime, and BYOK provider credentials are never forwarded to Vexrail. Vexrail's OpenAI-compatible API can return contextual recommendations within ordinary assistant content rather than as a separate ad object. EONAPP therefore identifies the route itself as <strong>EON Sponsored AI · Vexrail</strong>; a particular answer may or may not contain a contextual recommendation. The upstream model is selected dynamically from Vexrail's currently available catalogue subject to EONAPP's verified economics and quality policy, so model availability can change without requiring a different user-facing route.</p>
+    </section>
+    <section class="policy-card" id="aggregate-measurement" data-w476-aggregate-measurement="true">
+      <h2>Aggregate measurement and local diagnostics</h2>
+      <p>EONAPP can use Google Analytics for aggregate traffic and approved product-route measurement only after you enable it in <a href="/profile#eon-profile-aggregate-analytics">Profile</a>. The setting is off until you choose it and applies only to the production EONAPP site.</p>
+      <p>When enabled, EONAPP sends approved logical route IDs only. It does not send chat messages, files, Vault contents, credentials, account identifiers, Google OAuth information, signed Realm shares, referral codes, local model names, raw URLs, URL queries, fragments, or user-entered values to Analytics. Advertising audiences, Google Signals, remarketing, cross-domain linking, and ad personalization are disabled in the bridge.</p>
+      <p>Redacted local diagnostics are separate, off by default, and stay only in this browser profile. When you explicitly enable them in <a href="/profile#eon-profile-measurement">Profile</a>, limited local route and event summaries exclude chat content, credentials, URL queries, and fragments. You can switch them off or clear them at any time.</p>
+      <p>This page does not make a legal determination for your jurisdiction. The product default is no aggregate measurement until you actively enable it.</p>
+    </section>
+    <section class="policy-card" id="advertising">
+      <h2>Advertising, Sponsor Transmissions and EONKEYS</h2>
+      <p>Subscriptions remain EONAPP's primary monetization. Signed-in free accounts in configured economic-pilot countries may use the separately labelled Sponsored AI Vexrail route; anonymous visitors may not; paid/trial/grace accounts may use it only by explicit selection. Separately, signed-in free accounts may, after an explicit browser choice, see restrained third-party sponsored cards on selected non-chat surfaces. Standard display advertising is kept separate from private EONBOT conversation content: EONAPP does not intentionally pass Local AI prompts, BYOK credentials, Vault contents or private project content into a standard display-ad request. Third-party advertising providers may still process technical information such as device, network, cookie/consent and advertising-event data under their own notices and the deployed consent configuration.</p>
+      <p><strong>Sponsor Transmissions are different from banner ads.</strong> A voluntary rewarded offer can grant one non-transferable Sponsor EONKEY only after EONAPP creates a signed server session and validates the required ordered VAST playback events, minimum timing, expiry, caps and replay protections for the qualifying completion. This is EONAPP server validation of the rewarded VAST flow, not a claim that ExoClick cryptographically signs each completed view. The exact offered reward, limits and expiry are shown before the user chooses the offer. Ordinary impressions, banner clicks, shares, browser timers and unsanctioned client-only callbacks never mint Sponsor EONKEYS. Sponsor offers are optional, may have no fill, and are never required for normal EON City/world progression.</p>
+      <p>Ordinary ExoClick display formats are disabled in the current production policy. Google AdSense is restricted to reviewed public guide/editorial surfaces after site approval, policy-safe placement review and the required consent/CMP controls. EONAPP does not enable ordinary banner/display ads inside private work surfaces or EON City gameplay. Sponsor Terminal video is a separate voluntary rewarded flow. When its rewarded runtime is configured, EONAPP can grant exactly one consumable Sponsor EONKEY after the signed server session validates the required VAST completion sequence; unavailable, skipped, early, duplicate or replayed sessions grant nothing.</p>
+      <p>You can allow or disable standard sponsored cards in <a href="/profile#eon-profile-sponsored-content">Profile</a>. Paid subscription accounts receive no ordinary display advertising and are not automatically routed to sponsored Vexrail. They may explicitly select Sponsored AI when the same configured pilot-country policy permits it without changing ordinary-ad eligibility. Voluntary rewarded Sponsor Transmissions are a separate opt-in system and can remain available to free and paid signed-in accounts when a verified provider has inventory.</p>
+    </section>
+    <section class="policy-card" id="cookies-consent">
+      <h2>Cookies, consent and advertising storage</h2>
+      <p>EONAPP keeps essential session/security storage separate from optional measurement and advertising choices. Standard third-party display scripts are not intentionally mounted by EONAPP on the selected free-account surfaces until this browser records an explicit sponsored-card choice. You can change that choice in Profile. Disabling optional sponsored cards does not remove ordinary Free access, Local AI or BYOK access.</p>
+      <p>Advertising providers can use cookies, local storage, device/network identifiers or similar technologies where their approved configuration and applicable law permit. On reviewed public guide pages, Infolinks may process page/context and advertising-event data when its publisher integration is active. Zyntent may receive only a separately reviewed commercial intent and limited request metadata when that Sponsored Discovery provider is explicitly enabled; it must not receive Local AI/BYOK history, answers, memory or provider keys. SmartLink partners are user-initiated outbound sponsored links rather than private-chat data recipients. Provider availability, geography and consent requirements can differ. Google display advertising remains disabled until EONAPP has a policy-safe placement and the required certified consent/CMP configuration for the relevant region. The deployed consent authority must take precedence over a provider's fill opportunity.</p>
+      <p>Rewarded Sponsor Transmissions are separately opt-in per offer. Starting one does not constitute consent to unrelated standard display placements. A declined, skipped or unavailable Sponsor Transmission does not reduce normal product or world progression.</p>
+    </section>
+    <section class="policy-card">
+      <h2>Signed referral and Realm links</h2>
+      <p>Public <code>eon2</code> referral and <code>eon3</code> Realm links carry signed public metadata and a fresh cryptographic share ID. They contain no wallet secrets, password, payment request, payout claim or browser-granted reward value. A signed referral identifier may be used for later server-side attribution, but clicks or shares alone never grant EONKEYS. Do not put real names, private notes, secrets, or sensitive details into a public label or handle.</p>
+    </section>
+
+    <section class="policy-card" data-eon-operator-identity aria-labelledby="operator-record-title">
+      <h2 id="operator-record-title">Operator, supplier and data-controller record</h2>
+      <p data-eon-operator-status>Checking the deployed operator configuration…</p>
+      <dl><dt>Legal operator/supplier</dt><dd data-eon-operator-field="legalName"></dd><dt>Trading name</dt><dd data-eon-operator-field="tradingName"></dd><dt>Business address</dt><dd data-eon-operator-field="address"></dd><dt>Country</dt><dd data-eon-operator-field="country"></dd><dt>Support contact</dt><dd data-eon-operator-field="supportContact"></dd><dt>Privacy contact</dt><dd data-eon-operator-field="privacyContact"></dd><dt>Security contact</dt><dd data-eon-operator-field="securityContact"></dd><dt>Governing law</dt><dd data-eon-operator-field="governingLaw"></dd><dt>Venue</dt><dd data-eon-operator-field="venue"></dd></dl>
+      <p>Paid launch remains blocked if this deployment does not expose a complete, owner- and counsel-approved record.</p>
+    </section>
+
+    <section class="policy-card"><h2>Purposes and legal bases</h2><p>EONAPP processes only the data required for the selected function: identity/session security, subscription and transaction administration, referral/Sponsor-EONKEY integrity, optional advertising and consent controls, private support cases, security/abuse prevention and legal compliance. Depending on the deployed operator jurisdiction and the request, the legal basis may be contract performance, steps requested before contract, consent, legitimate interests in security and service integrity, or compliance with a legal obligation. The deployed operator record and reviewed policy determine the applicable basis.</p></section>
+    <section class="policy-card"><h2>Data inventory, retention and deletion</h2><ul><li><strong>Device-owned work:</strong> Chat, Projects, Library, Vault, local AI settings, Creator media and City progress normally remain in browser storage until the user exports or deletes them.</li><li><strong>Identity/session:</strong> minimal account and session records are retained only for account access and security, then deleted or expired according to the identity schema.</li><li><strong>Billing/referral:</strong> provider references, lifecycle events, commands, entitlements and required accounting/anti-fraud records follow their declared retention and legal obligations.</li><li><strong>Support/security:</strong> redacted case facts, status, owner role and public response are retained only for case handling, audit, defence and required security/legal follow-up.</li></ul><p>“Delete account” cannot truthfully promise immediate deletion of records that must be retained by law or a payment provider. The response must identify what was deleted, what remains locally, and what is retained with its reason.</p></section>
+    <section class="policy-card"><h2>International transfers and subprocessors</h2><p>Google may process identity authentication; Dodo Payments processes hosted checkout, payment and customer-portal activity; Vexrail processes conversation context only when an eligible user explicitly selects EON Sponsored AI · Vexrail; paid/trial/grace accounts are off by default and require explicit selection; enabled display/rewarded advertising providers process only the data involved in their approved advertising flow and consent state; and a user-selected BYOK AI provider processes only requests the user explicitly sends to it. Cloudflare provides hosting, security and D1 infrastructure where configured. Local AI and other browser-local work are not sent to Vexrail merely because they exist on the device. Transfer safeguards and the current subprocessor register require owner/counsel verification before paid launch.</p></section>
+    <section class="policy-card"><h2>Your privacy rights</h2><p>Subject to applicable law, a person may request access, export, correction, restriction, objection or deletion through a private <a href="/help?caseCategory=privacy-rights#trust-support-case">privacy-rights case</a>. A real case ID is issued; the request is reviewed rather than decided by browser state. Identity verification must be proportionate and must not require provider keys, recovery phrases, full card data or private workspace content.</p></section>
+    <section class="policy-card"><h2>Children</h2><p>EONAPP is not directed to children who cannot lawfully consent to the relevant digital service or data processing in their jurisdiction. Paid access and account use must follow the age and parental-authorisation rules that apply to the deployed operator. The operator must publish a counsel-reviewed minimum-age rule before public paid launch.</p></section>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="logo">⚡ EONAPP<span>.ch</span></a>
+      <p>Local-first AI tools, EON City, and creator workflows. Review the current product boundary before sharing data.</p>
+    </div>
+    <nav class="footer-nav" aria-label="Legal and site links">
+      <a href="/legal">Legal</a>
+      <a href="/terms">Terms</a>
+      <a href="/billing">Billing</a>
+      <a href="/billing">Billing status</a>
+      <a href="/legal">Product boundary</a>
+      <a href="/help">Support</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/legal">Product boundary</a>
+    </nav>
+  </div>
+</footer>
+<script type="module" src="/assets/js/site-shell-bootstrap.js"></script>
+<script type="module" src="/assets/js/legal-trust-copy-proof.js"></script>
+<script type="module">import { installPublicTrustConfig } from '/assets/js/trust/eon-trust-public-page.js'; installPublicTrustConfig();</script>
+<script type="module" src="/assets/js/utils/accessibility-autoload.js"></script>
+</body>
+</html>

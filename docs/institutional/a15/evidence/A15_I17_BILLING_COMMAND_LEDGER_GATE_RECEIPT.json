@@ -1,0 +1,37 @@
+{
+  "schema": "eonapp.a15.i17.billing-command-ledger-gate-receipt.v1",
+  "generatedAt": "2026-08-04T19:39:52.849Z",
+  "wave": "I17",
+  "status": "pass",
+  "authority": {
+    "schema": "eon.billing-command.a15.v1",
+    "accountScopedIdempotency": true,
+    "onePendingCheckoutPerAccount": true,
+    "oneActiveSubscriptionPerAccount": true,
+    "oneTrialReservationPerAccount": true,
+    "browserCanGrantEntitlement": false,
+    "signedWebhookReconciliationRequired": true
+  },
+  "catalogue": {
+    "maxMonthlyUsd": 49.99,
+    "trialDays": 7,
+    "catalogueValid": true
+  },
+  "sourceFiles": [
+    "assets/js/billing/eon-billing-command-ledger.js",
+    "assets/js/billing/eon-billing-client-idempotency.js",
+    "assets/js/billing/eon-dodo-live-runtime.js",
+    "functions/api/billing/checkout.js",
+    "functions/api/billing/subscription-action.js",
+    "assets/js/commerce/eon-commercial-catalog.js"
+  ],
+  "claims": {
+    "realDodoCatalogueQueried": false,
+    "providerChargeCreated": false,
+    "entitlementGrantedByBrowser": false,
+    "previewDeployed": false,
+    "productionDeployed": false
+  },
+  "errors": [],
+  "digest": "4093f5c677d5e9f45a6e24390fd88425f642b662727697a4d93dc8ecd4d30cf4"
+}

@@ -1,0 +1,154 @@
+/* W189–W190 — low-device 2D EON City Operator Map. No canvas/WebGL needed. */
+.eon-operator-shell { display:grid; gap:1rem; }
+.eon-operator-top { margin-bottom:.2rem; }
+.eon-operator-top-actions { display:flex; flex-wrap:wrap; gap:.55rem; }
+.eon-operator-secondary { min-height:2.5rem; padding:.55rem .78rem; border:1px solid rgba(148,163,184,.26); border-radius:.7rem; background:rgba(15,23,42,.52); color:#dbeafe; font:inherit; font-size:.84rem; font-weight:720; cursor:pointer; }
+.eon-operator-secondary:hover, .eon-operator-secondary:focus-visible { border-color:rgba(165,180,252,.62); color:#fff; }
+.eon-operator-map-card, .eon-operator-panel { border:1px solid rgba(148,163,184,.16); border-radius:1rem; background:linear-gradient(150deg,rgba(30,41,59,.66),rgba(15,23,42,.82)); box-shadow:0 14px 36px rgba(2,6,23,.12); }
+.eon-operator-map-card { padding:1rem; overflow:hidden; }
+.eon-operator-map-legend { display:flex; flex-wrap:wrap; align-items:center; gap:.7rem 1rem; margin-bottom:.8rem; color:#9fb0c7; font-size:.72rem; }
+.eon-operator-map-legend i { display:inline-block; width:.55rem; height:.55rem; margin-right:.28rem; border-radius:99px; background:#94a3b8; }
+.eon-operator-map-legend i.is-active { background:#fbbf24; box-shadow:0 0 12px rgba(251,191,36,.55); }
+.eon-operator-map-legend i.is-complete { background:#34d399; }
+.eon-operator-map-legend i.is-ready { background:#818cf8; }
+.eon-operator-map { position:relative; display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); grid-template-rows:repeat(8,minmax(3.5rem,1fr)); gap:.55rem; min-height:34rem; padding:1rem; border:1px solid rgba(129,140,248,.2); border-radius:.9rem; background:
+  linear-gradient(90deg,rgba(99,102,241,.06) 1px,transparent 1px),
+  linear-gradient(rgba(99,102,241,.06) 1px,transparent 1px),
+  radial-gradient(circle at 50% 50%,rgba(79,70,229,.22),transparent 42%),
+  rgba(2,6,23,.5);
+  background-size:2.25rem 2.25rem,2.25rem 2.25rem,auto,auto; }
+.eon-operator-room { position:relative; display:flex; align-items:center; gap:.6rem; min-width:0; padding:.72rem; border:1px solid rgba(148,163,184,.25); border-radius:.8rem; background:linear-gradient(145deg,rgba(30,41,59,.9),rgba(15,23,42,.86)); color:#f8fafc; text-decoration:none; box-shadow:0 12px 22px rgba(2,6,23,.16); transition:transform .16s ease,border-color .16s ease,background .16s ease; }
+.eon-operator-room:hover, .eon-operator-room:focus-visible { transform:translateY(-2px); border-color:rgba(165,180,252,.7); background:linear-gradient(145deg,rgba(55,48,163,.42),rgba(15,23,42,.9)); color:#fff; }
+.eon-operator-room-icon { display:grid; place-items:center; flex:0 0 2rem; width:2rem; height:2rem; border:1px solid rgba(165,180,252,.24); border-radius:.62rem; background:rgba(99,102,241,.12); color:#dbeafe; font-size:1rem; }
+.eon-operator-room-copy { display:grid; gap:.18rem; min-width:0; }
+.eon-operator-room-copy strong { overflow:hidden; font-size:.78rem; text-overflow:ellipsis; white-space:nowrap; }
+.eon-operator-room-copy span { overflow:hidden; color:#a9b8cb; font-size:.68rem; text-overflow:ellipsis; white-space:nowrap; }
+.eon-operator-room-command { grid-column:1 / span 4; grid-row:1 / span 2; }
+.eon-operator-room-builder { grid-column:9 / span 4; grid-row:1 / span 2; }
+.eon-operator-room-automation { grid-column:1 / span 3; grid-row:4 / span 2; }
+.eon-operator-room-market { grid-column:10 / span 3; grid-row:4 / span 2; }
+.eon-operator-room-vault { grid-column:1 / span 3; grid-row:7 / span 2; }
+.eon-operator-room-trade { grid-column:10 / span 3; grid-row:7 / span 2; }
+.eon-operator-room-portal { grid-column:5 / span 4; grid-row:7 / span 2; }
+.eon-operator-room-workstation { grid-column:4 / span 6; grid-row:3 / span 3; border-color:rgba(129,140,248,.54); background:radial-gradient(circle at 50% 0,rgba(129,140,248,.28),transparent 55%),linear-gradient(145deg,rgba(49,46,129,.55),rgba(15,23,42,.92)); }
+.eon-operator-room-workstation .eon-operator-room-icon { width:2.5rem; height:2.5rem; flex-basis:2.5rem; border-color:rgba(196,181,253,.5); background:rgba(99,102,241,.25); font-size:1.2rem; }
+.eon-operator-map-caption { margin:.75rem .1rem 0; color:#9fb0c7; font-size:.78rem; line-height:1.45; }
+.eon-operator-grid { display:grid; grid-template-columns:minmax(0,1.25fr) minmax(16rem,.75fr); gap:1rem; }
+.eon-operator-panel { padding:1rem; }
+.eon-operator-panel-head { display:flex; align-items:flex-start; justify-content:space-between; gap:.7rem; margin-bottom:.8rem; }
+.eon-operator-panel-head h2 { margin:0; color:#f8fafc; font-size:1rem; }
+.eon-operator-panel-head p { margin:.32rem 0 0; color:#9fb0c7; font-size:.76rem; line-height:1.4; }
+.eon-operator-panel-head a { color:#c7d2fe; font-size:.76rem; text-decoration:none; }
+.eon-operator-panel-head a:hover { color:#fff; }
+.eon-operator-activity-list { display:grid; gap:.55rem; margin:0; padding:0; list-style:none; }
+.eon-operator-activity-list li { display:grid; grid-template-columns:auto minmax(0,1fr) auto; align-items:center; gap:.55rem; padding:.58rem .62rem; border:1px solid rgba(148,163,184,.12); border-radius:.68rem; background:rgba(2,6,23,.24); }
+.eon-operator-activity-list strong { display:block; overflow:hidden; color:#e8edff; font-size:.78rem; text-overflow:ellipsis; white-space:nowrap; }
+.eon-operator-activity-list span { display:block; overflow:hidden; margin-top:.15rem; color:#92a4bc; font-size:.69rem; text-overflow:ellipsis; white-space:nowrap; }
+.eon-operator-activity-list a { color:#c7d2fe; font-size:.7rem; text-decoration:none; }
+.eon-operator-activity-dot { width:.55rem; height:.55rem; border-radius:99px; background:#94a3b8; }
+.eon-operator-activity-dot.is-active,.eon-operator-activity-dot.is-waiting { background:#fbbf24; box-shadow:0 0 10px rgba(251,191,36,.45); }
+.eon-operator-activity-dot.is-complete { background:#34d399; }
+.eon-operator-activity-dot.is-ready { background:#818cf8; }
+.eon-operator-activity-dot.is-failed { background:#fb7185; }
+.eon-operator-empty { margin:0; color:#9fb0c7; font-size:.8rem; line-height:1.5; }
+.eon-operator-stats { display:grid; gap:.55rem; margin:0; }
+.eon-operator-stats div { display:flex; align-items:baseline; justify-content:space-between; gap:.7rem; padding-bottom:.5rem; border-bottom:1px solid rgba(148,163,184,.1); }
+.eon-operator-stats dt { color:#9fb0c7; font-size:.76rem; }
+.eon-operator-stats dd { margin:0; color:#e8edff; font-size:.75rem; text-align:right; }
+.eon-operator-quick { display:flex; flex-wrap:wrap; gap:.45rem; margin-top:.8rem; }
+.eon-operator-quick a { padding:.38rem .52rem; border:1px solid rgba(148,163,184,.2); border-radius:.55rem; color:#cbd5e1; font-size:.72rem; text-decoration:none; }
+.eon-operator-quick a:hover { border-color:rgba(165,180,252,.55); color:#fff; }
+@media (max-width:880px) { .eon-operator-grid { grid-template-columns:1fr; } .eon-operator-map { min-height:31rem; } }
+@media (max-width:640px) { .eon-operator-top { display:grid; } .eon-operator-map { grid-template-columns:repeat(2,minmax(0,1fr)); grid-template-rows:none; min-height:0; padding:.7rem; background-size:1.8rem 1.8rem,1.8rem 1.8rem,auto,auto; } .eon-operator-room, .eon-operator-room-command, .eon-operator-room-builder, .eon-operator-room-automation, .eon-operator-room-market, .eon-operator-room-vault, .eon-operator-room-trade, .eon-operator-room-portal, .eon-operator-room-workstation { grid-column:auto; grid-row:auto; min-height:5.3rem; } .eon-operator-room-workstation { grid-column:1 / -1; order:-1; } .eon-operator-map-legend { display:grid; gap:.35rem; } .eon-operator-top-actions { width:100%; } .eon-operator-top-actions > * { flex:1; text-align:center; justify-content:center; } }
+@media (prefers-reduced-motion:reduce) { .eon-operator-room { transition:none; } }
+
+/* W221 — CityWorldState + lightweight 2D RPG vertical slice. */
+.eon-city-rpg-shell { gap:1rem; }
+.eon-city-rpg-card { overflow:hidden; border:1px solid rgba(129,140,248,.22); border-radius:1rem; background:linear-gradient(145deg,rgba(15,23,42,.88),rgba(2,6,23,.92)); box-shadow:0 18px 44px rgba(2,6,23,.24); }
+.eon-city-rpg-stage { display:grid; grid-template-columns:minmax(0,1.62fr) minmax(16rem,.62fr); min-height:35rem; }
+.eon-city-canvas-wrap { position:relative; min-height:35rem; overflow:hidden; background:#091423; }
+.eon-city-canvas { display:block; width:100%; height:100%; min-height:35rem; touch-action:manipulation; outline:none; cursor:crosshair; }
+.eon-city-canvas:focus-visible { box-shadow:inset 0 0 0 3px rgba(94,234,212,.8); }
+.eon-city-canvas-help { position:absolute; right:.85rem; bottom:.75rem; max-width:28rem; margin:0; padding:.42rem .58rem; border:1px solid rgba(148,163,184,.24); border-radius:.55rem; background:rgba(2,6,23,.76); color:#dbeafe; font-size:.69rem; line-height:1.4; pointer-events:none; }
+.eon-city-toast { position:absolute; top:.8rem; left:50%; z-index:2; max-width:min(88%,34rem); padding:.5rem .7rem; border-radius:.65rem; background:rgba(8,18,34,.88); color:#e2e8f0; font-size:.77rem; line-height:1.35; text-align:center; transform:translateX(-50%); pointer-events:none; }
+.eon-city-toast:empty { display:none; }
+.eon-city-sidepanel { display:grid; align-content:start; gap:.72rem; padding:.85rem; border-left:1px solid rgba(148,163,184,.16); background:linear-gradient(180deg,rgba(15,23,42,.98),rgba(8,15,28,.98)); }
+.eon-city-sidepanel section { padding:.72rem; border:1px solid rgba(148,163,184,.16); border-radius:.78rem; background:rgba(15,23,42,.52); }
+.eon-city-eyebrow { margin:0 0 .32rem; color:#94a3b8; font-size:.66rem; font-weight:760; letter-spacing:.08em; text-transform:uppercase; }
+.eon-city-objective h2,.eon-city-interaction h2 { margin:0; color:#f8fafc; font-size:.94rem; }
+.eon-city-objective p:not(.eon-city-eyebrow),.eon-city-interaction p:not(.eon-city-eyebrow) { margin:.35rem 0 0; color:#a9b8cb; font-size:.76rem; line-height:1.48; }
+.eon-city-interaction { display:grid; gap:.5rem; }
+.eon-city-interaction .eon-hub-primary { display:inline-flex; align-items:center; justify-content:center; min-height:2.35rem; padding:.5rem .68rem; border-radius:.65rem; font-size:.76rem; text-align:center; text-decoration:none; }
+.eon-city-controls { display:grid; gap:.55rem; }
+.eon-city-dpad { display:grid; grid-template-columns:repeat(3,2.36rem); justify-content:center; gap:.28rem; }
+.eon-city-dpad span { min-height:2.36rem; }
+.eon-city-dpad button,.eon-city-controls > .eon-operator-secondary { min-height:2.36rem; border:1px solid rgba(165,180,252,.33); border-radius:.58rem; background:rgba(30,41,59,.86); color:#e2e8f0; font:inherit; cursor:pointer; }
+.eon-city-dpad button:hover,.eon-city-dpad button:focus-visible { border-color:rgba(94,234,212,.75); background:rgba(45,62,94,.9); }
+.eon-city-controls > .eon-operator-secondary { width:100%; }
+.eon-city-minimap ol { display:grid; gap:.35rem; margin:0; padding:0; list-style:none; }
+.eon-city-minimap li { display:grid; grid-template-columns:auto minmax(0,1fr) auto; align-items:center; gap:.4rem; padding:.38rem .1rem; border-bottom:1px solid rgba(148,163,184,.09); color:#9fb0c7; }
+.eon-city-minimap li.is-discovered { color:#e2e8f0; }
+.eon-city-minimap strong { display:block; overflow:hidden; color:inherit; font-size:.72rem; text-overflow:ellipsis; white-space:nowrap; }
+.eon-city-minimap small { display:block; overflow:hidden; margin-top:.08rem; color:#7f91aa; font-size:.63rem; text-overflow:ellipsis; white-space:nowrap; }
+.eon-city-minimap button { min-height:1.8rem; padding:.2rem .42rem; border:1px solid rgba(165,180,252,.28); border-radius:.48rem; background:transparent; color:#c7d2fe; font:inherit; font-size:.64rem; cursor:pointer; }
+.eon-city-minimap button:hover,.eon-city-minimap button:focus-visible { border-color:rgba(94,234,212,.7); color:#fff; }
+@media (max-width:980px) { .eon-city-rpg-stage { grid-template-columns:1fr; } .eon-city-sidepanel { grid-template-columns:repeat(2,minmax(0,1fr)); border-top:1px solid rgba(148,163,184,.16); border-left:0; } .eon-city-minimap { grid-column:1 / -1; } .eon-city-minimap ol { grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:.8rem; } }
+@media (max-width:640px) { .eon-city-canvas-wrap,.eon-city-canvas { min-height:22rem; } .eon-city-sidepanel { grid-template-columns:1fr; padding:.7rem; } .eon-city-minimap { grid-column:auto; } .eon-city-minimap ol { grid-template-columns:1fr; } .eon-city-canvas-help { right:.5rem; bottom:.5rem; left:.5rem; max-width:none; font-size:.63rem; } .eon-city-toast { top:.5rem; font-size:.69rem; } }
+@media (prefers-reduced-motion:reduce) { .eon-city-canvas { scroll-behavior:auto; } .eon-city-toast { transition:none; } }
+
+
+/* W228 — premium 2D City art-direction pass. The canvas remains deterministic and low-device safe. */
+.eon-city-canvas-wrap{isolation:isolate;background:radial-gradient(circle at 50% 0%,rgba(94,234,212,.13),transparent 42%),#07111f}
+.eon-city-canvas-wrap::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(255,255,255,.025),transparent 18%,transparent 80%,rgba(2,6,23,.22));mix-blend-mode:screen}
+.eon-city-world-strip{position:absolute;z-index:3;top:.8rem;left:.8rem;display:grid;grid-template-columns:auto auto;align-items:center;gap:.25rem .5rem;max-width:calc(100% - 1.6rem);padding:.52rem .7rem;border:1px solid rgba(148,163,184,.25);border-radius:.75rem;background:rgba(2,6,23,.76);box-shadow:0 10px 25px rgba(2,6,23,.28);backdrop-filter:blur(10px);color:#dbeafe}
+.eon-city-world-strip span{grid-column:1/-1;color:#5eead4;font-size:.59rem;font-weight:800;letter-spacing:.12em}.eon-city-world-strip strong{font-size:.75rem}.eon-city-world-strip small{color:#9fb0c7;font-size:.67rem}.eon-city-world-strip b{color:#f8fafc}
+.eon-city-rpg-card{background:linear-gradient(145deg,rgba(12,24,45,.92),rgba(2,6,23,.96));box-shadow:0 24px 60px rgba(2,6,23,.34)}
+.eon-city-sidepanel section{box-shadow:inset 0 1px 0 rgba(255,255,255,.025)}
+.eon-city-objective{background:linear-gradient(145deg,rgba(20,48,75,.5),rgba(15,23,42,.56))!important}
+.eon-city-interaction{background:linear-gradient(145deg,rgba(42,31,80,.32),rgba(15,23,42,.56))!important}
+.eon-city-minimap li{transition:border-color .18s ease,background .18s ease}.eon-city-minimap li.is-discovered{background:linear-gradient(90deg,rgba(94,234,212,.065),transparent)}
+.eon-city-canvas-help{z-index:3;backdrop-filter:blur(8px)}
+@media (max-width:640px){.eon-city-world-strip{top:.5rem;left:.5rem;padding:.42rem .55rem}.eon-city-world-strip span{font-size:.52rem}.eon-city-world-strip strong{font-size:.69rem}.eon-city-world-strip small{font-size:.61rem}}
+@media (prefers-reduced-motion:reduce){.eon-city-minimap li{transition:none}}
+
+/* W231 — Flagship 2D RPG art and gameplay HUD. The canvas is still deterministic,
+   asset-free and intentionally light enough to degrade on lower-end devices. */
+.eon-city-rpg-shell .eon-hub-title{letter-spacing:-.038em;text-wrap:balance}
+.eon-city-rpg-shell .eon-hub-kicker{color:#7dd3fc}
+.eon-city-rpg-card{position:relative;border-color:rgba(94,234,212,.24)}
+.eon-city-canvas-wrap::before{content:"";position:absolute;z-index:1;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 50%,transparent 42%,rgba(2,6,23,.24) 100%);mix-blend-mode:multiply}
+.eon-city-canvas{position:relative;z-index:0;image-rendering:auto}
+.eon-city-quest-tracker{position:absolute;z-index:3;top:.8rem;right:.8rem;display:grid;grid-template-columns:auto auto;align-items:baseline;gap:.12rem .45rem;max-width:calc(100% - 1.6rem);padding:.5rem .68rem;border:1px solid rgba(251,191,36,.32);border-radius:.75rem;background:linear-gradient(145deg,rgba(35,31,12,.84),rgba(2,6,23,.8));box-shadow:0 10px 28px rgba(2,6,23,.34);backdrop-filter:blur(10px)}
+.eon-city-quest-tracker span{grid-column:1/-1;color:#fcd34d;font-size:.57rem;font-weight:850;letter-spacing:.12em}.eon-city-quest-tracker strong{color:#fff7ed;font-size:.82rem}.eon-city-quest-tracker small{overflow:hidden;color:#cbd5e1;font-size:.62rem;text-overflow:ellipsis;white-space:nowrap}
+.eon-city-objective .eon-operator-secondary{width:100%;margin-top:.62rem}.eon-city-objective [data-city-objective-step]{color:#fcd34d}
+.eon-city-minimap li.is-objective{border-color:rgba(251,191,36,.32);border-radius:.5rem;background:linear-gradient(90deg,rgba(251,191,36,.11),rgba(251,191,36,.015));box-shadow:inset 3px 0 0 rgba(251,191,36,.78)}
+.eon-city-minimap li.is-objective strong{color:#fff7ed}.eon-city-minimap li.is-objective small{color:#fde68a}.eon-city-minimap li.is-objective button{border-color:rgba(251,191,36,.5);color:#fde68a}
+.eon-city-canvas-help{z-index:4;border-color:rgba(125,211,252,.23);background:rgba(2,6,23,.82)}
+.eon-city-toast{z-index:5;border:1px solid rgba(94,234,212,.26);box-shadow:0 12px 30px rgba(2,6,23,.32)}
+.eon-city-sidepanel{background:linear-gradient(180deg,rgba(13,27,48,.99),rgba(5,12,24,.99))}
+.eon-city-sidepanel section{border-color:rgba(148,163,184,.17)}
+@media (max-width:640px){.eon-city-quest-tracker{top:auto;right:.5rem;bottom:3.05rem;padding:.4rem .52rem}.eon-city-quest-tracker span{font-size:.5rem}.eon-city-quest-tracker strong{font-size:.72rem}.eon-city-quest-tracker small{font-size:.57rem;max-width:12rem}.eon-city-canvas-help{padding:.38rem .48rem}}
+@media (prefers-reduced-motion:reduce){.eon-city-canvas-wrap::before{display:none}.eon-city-quest-tracker{backdrop-filter:none}}
+
+/* W232 — EONBOT transparency receipt and private Realm return status. */
+.eon-city-command-receipt,.eon-city-realm-return { position:relative; overflow:hidden; border-color:rgba(94,234,212,.26)!important; background:linear-gradient(145deg,rgba(13,83,77,.2),rgba(15,23,42,.64)); }
+.eon-city-command-receipt::after,.eon-city-realm-return::after { content:""; position:absolute; inset:auto -1rem -1.7rem auto; width:5rem; height:5rem; border:1px solid rgba(94,234,212,.2); border-radius:99px; box-shadow:0 0 0 1rem rgba(94,234,212,.04),0 0 0 2rem rgba(94,234,212,.025); pointer-events:none; }
+.eon-city-command-receipt h2,.eon-city-realm-return h2 { margin:.12rem 0 .36rem; color:#e6fffb; font-size:.94rem; }.eon-city-command-receipt p:not(.eon-city-eyebrow),.eon-city-realm-return p:not(.eon-city-eyebrow){margin:0;color:#b9d9d5;font-size:.76rem;line-height:1.5}
+
+/* W286-B1 City Lite visualizes only bounded local Agent Presence cues. */
+.eon-operator-panel .eon-operator-presence-list{display:grid;gap:.45rem}.eon-operator-presence-item{display:flex;align-items:flex-start;justify-content:space-between;gap:.6rem;padding:.58rem .65rem;border:1px solid rgba(148,163,184,.2);border-radius:.65rem;background:rgba(15,23,42,.46)}.eon-operator-presence-item strong{display:block;color:#e7f2ff;font-size:.78rem}.eon-operator-presence-item span{display:block;color:#aebfd8;font-size:.72rem;line-height:1.35}.eon-operator-presence-item em{font-style:normal;font-size:.68rem;color:#9fefd8;white-space:nowrap}
+
+/* W363 — illustrated City Overview detail controls and readable landmark hierarchy.
+   The view remains canvas-rendered, local-only, and intentionally separate from
+   Babylon Immersive Work Mode. */
+.eon-city-visual-detail{position:relative;overflow:hidden;border-color:rgba(125,211,252,.25)!important;background:linear-gradient(145deg,rgba(14,48,73,.46),rgba(15,23,42,.66))!important}
+.eon-city-visual-detail::after{content:"";position:absolute;right:-1.6rem;bottom:-2.1rem;width:7rem;height:7rem;border:1px solid rgba(125,211,252,.17);border-radius:999px;box-shadow:0 0 0 1rem rgba(125,211,252,.035),0 0 0 2rem rgba(125,211,252,.018);pointer-events:none}
+.eon-city-visual-detail p:not(.eon-city-eyebrow){position:relative;z-index:1;margin:.52rem 0 0;color:#bcd3e7;font-size:.72rem;line-height:1.45}
+.eon-city-visual-choice{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.36rem;margin-top:.56rem}
+.eon-city-visual-choice .eon-operator-secondary{min-height:2.2rem;padding:.36rem .3rem;border-color:rgba(125,211,252,.27);background:rgba(2,6,23,.34);color:#dbeafe;font-size:.68rem}
+.eon-city-visual-choice .eon-operator-secondary:hover,.eon-city-visual-choice .eon-operator-secondary:focus-visible{border-color:rgba(94,234,212,.8);background:rgba(8,47,73,.62)}
+.eon-city-visual-choice .eon-operator-secondary.is-selected{border-color:rgba(94,234,212,.86);background:linear-gradient(145deg,rgba(13,112,105,.5),rgba(8,47,73,.7));box-shadow:0 0 0 1px rgba(94,234,212,.13),0 10px 24px rgba(2,6,23,.18);color:#edfffb}
+.eon-city-rpg-card .eon-city-canvas{outline-offset:4px}
+.eon-city-rpg-card .eon-city-canvas:focus-visible{outline:2px solid rgba(94,234,212,.92)}
+@media (max-width:640px){.eon-city-visual-choice{gap:.28rem}.eon-city-visual-choice .eon-operator-secondary{min-height:2.5rem;font-size:.64rem}.eon-city-visual-detail p:not(.eon-city-eyebrow){font-size:.68rem}}
+@media (prefers-reduced-motion:reduce){.eon-city-visual-detail::after{display:none}.eon-city-visual-choice .eon-operator-secondary.is-selected{box-shadow:none}}

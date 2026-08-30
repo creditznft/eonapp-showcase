@@ -1,0 +1,91 @@
+{
+  "schema": "eonapp.w260.release-board.v1",
+  "releaseScope": "public-release-certification",
+  "verdict": "NO_GO",
+  "authority": {
+    "noSelfApproval": true,
+    "implementationAuthorMayApprove": false,
+    "releaseOwner": {
+      "status": "unassigned"
+    },
+    "supportOwner": {
+      "status": "unassigned"
+    },
+    "rollbackOwner": {
+      "status": "unassigned"
+    },
+    "independentReviewer": {
+      "status": "unassigned"
+    }
+  },
+  "requiredEvidence": [
+    {
+      "id": "w259-device-matrix",
+      "required": true,
+      "status": "not-collected",
+      "evidenceRefs": []
+    },
+    {
+      "id": "preview-live-browser-proof",
+      "required": true,
+      "status": "not-collected",
+      "evidenceRefs": []
+    },
+    {
+      "id": "pwa-update-rollback-drill",
+      "required": true,
+      "status": "not-collected",
+      "evidenceRefs": []
+    },
+    {
+      "id": "git-history-deployment-identity-review",
+      "required": true,
+      "status": "not-collected",
+      "evidenceRefs": []
+    },
+    {
+      "id": "data-preservation-restore-proof",
+      "required": true,
+      "status": "not-collected",
+      "evidenceRefs": []
+    },
+    {
+      "id": "accessibility-and-fallback-review",
+      "required": true,
+      "status": "not-collected",
+      "evidenceRefs": []
+    },
+    {
+      "id": "security-environment-and-legal-review",
+      "required": true,
+      "status": "not-collected",
+      "evidenceRefs": []
+    },
+    {
+      "id": "release-support-rollback-signoff",
+      "required": true,
+      "status": "not-collected",
+      "evidenceRefs": []
+    }
+  ],
+  "sourceFreeze": {
+    "localStaticReplay": {
+      "status": "passed",
+      "limitation": "Local static replay is not browser, device, PWA update/rollback, deployed environment, support or independent release proof."
+    }
+  },
+  "chainSafety": {
+    "c0iStatus": "exit-blocked",
+    "browserChainRuntime": "disabled"
+  },
+  "prohibitedClaims": [
+    "launch ready",
+    "production certified",
+    "independent approval"
+  ],
+  "provenance": {
+    "restoredBy": "W375 source handover integrity repair",
+    "restoredAt": "2026-06-26",
+    "evidenceCollection": "none"
+  }
+}

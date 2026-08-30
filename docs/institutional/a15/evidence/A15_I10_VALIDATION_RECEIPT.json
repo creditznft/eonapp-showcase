@@ -1,0 +1,159 @@
+{
+  "schema": "eonapp.a15.i10.validation-receipt.v1",
+  "generatedAt": "2026-08-04T23:38:35+05:30",
+  "wave": "I10",
+  "baselineCommit": "87f70d4a9cdcbeca82571999ee2eee2741ebe294",
+  "title": "Canonical AI Request Executor",
+  "decision": "source-wave-ready-to-commit",
+  "verification": {
+    "institutionalGate": {
+      "passed": true,
+      "command": "npm run qa:a15-i10-ai-executor",
+      "activeRoots": 6,
+      "focusedTests": 33
+    },
+    "maintainedSourceSuite": {
+      "passed": true,
+      "maintainedFiles": 381,
+      "runnableFilesPassed": 372,
+      "dependencyBlockedFiles": 9,
+      "tests": 1491,
+      "testsPassed": 1444,
+      "testsSkipped": 47,
+      "testsFailed": 0,
+      "blockedPackage": "@babylonjs/core"
+    },
+    "w766ir2SourceCertification": {
+      "passed": true,
+      "criteriaPassed": 10,
+      "criteriaTotal": 10,
+      "browserCertified": false,
+      "authenticatedOfflineCertified": false
+    },
+    "repositoryAuthority": {
+      "passed": true,
+      "trackedFiles": 5486,
+      "activeModules": 528,
+      "quarantinedMissingImportFiles": 194,
+      "deterministicHtmlInputs": 31
+    },
+    "secretScan": {
+      "passed": true,
+      "textFilesScanned": 5163
+    },
+    "syntaxAndDiff": {
+      "passed": true
+    }
+  },
+  "authority": {
+    "foregroundOnly": true,
+    "userInitiationRequired": true,
+    "consentSourceRequired": true,
+    "maxAttempts": 1,
+    "hiddenRetryAllowed": false,
+    "providerFallbackAllowed": false,
+    "modelFallbackAllowed": false,
+    "cancellationOwnedByExecutor": true,
+    "settlementReceiptContainsPrompt": false,
+    "settlementReceiptContainsReply": false,
+    "settlementReceiptContainsApiKey": false,
+    "activeLegacyOrchestratorLoaded": false
+  },
+  "activeClosureResults": [
+    {
+      "root": "assets/js/chat-page.js",
+      "moduleCount": 107,
+      "executorReachable": true,
+      "forbiddenModuleCount": 0,
+      "unresolvedImportCount": 0
+    },
+    {
+      "root": "assets/js/utils/mission-engine.js",
+      "moduleCount": 24,
+      "executorReachable": true,
+      "forbiddenModuleCount": 0,
+      "unresolvedImportCount": 0
+    },
+    {
+      "root": "assets/js/forge/forge-ai-controller.js",
+      "moduleCount": 23,
+      "executorReachable": true,
+      "forbiddenModuleCount": 0,
+      "unresolvedImportCount": 0
+    },
+    {
+      "root": "assets/js/workbench-ai.js",
+      "moduleCount": 28,
+      "executorReachable": true,
+      "forbiddenModuleCount": 0,
+      "unresolvedImportCount": 0
+    },
+    {
+      "root": "assets/js/eon-browser-page.js",
+      "moduleCount": 61,
+      "executorReachable": true,
+      "forbiddenModuleCount": 0,
+      "unresolvedImportCount": 0
+    },
+    {
+      "root": "assets/js/code-maker-page.js",
+      "moduleCount": 40,
+      "executorReachable": true,
+      "forbiddenModuleCount": 0,
+      "unresolvedImportCount": 0
+    }
+  ],
+  "invariants": [
+    "Every active Chat, Mission, Forge, Workbench, Browser and Code Maker AI path reaches one canonical foreground executor.",
+    "A provider request requires an explicit user action, an explicit consent source and one exact provider/model pair.",
+    "Transient failures, 429/503 responses and timeouts do not trigger hidden retries or provider/model switching.",
+    "Cancellation settles the request once and cannot fall through to another provider.",
+    "Normal Chat no longer loads AgentOrchestrator, ProviderOrchestrator, RequestOrchestratorBridge or EON Auto Router.",
+    "Legacy mission manifests may be imported only as review-only local plans; legacy execution authority is never restored.",
+    "The canonical request receipt contains metadata only and excludes prompts, replies, API keys and endpoint credentials.",
+    "Core and City remain connected by versioned contracts only."
+  ],
+  "sourceDigests": {
+    "assets/js/ai-kernel/eon-ai-request-executor.js": "39d9ccd2dae5d6521ca1d4669202a609da5b2d477e0404c348220dfde507c947",
+    "assets/js/chat/ai-runtime.js": "30dc53fa19321497469b52c23b4297df5403589d2fd1ab0680b882c33e6f864f",
+    "assets/js/chat-page.js": "dd25777fb01ebdb318a6acb07ff0442ab44ecb31332fd8a51a171bb87c56e49c",
+    "assets/js/utils/mission-engine.js": "60e96393c4e74808b58775d45a770203379c448619d105a3e0132c01b9c56c07",
+    "assets/js/utils/mission-durability.js": "d1e77164fa207924f4c7c9f94284d3e147641b8b5ae7c1c3058c08f969e67b03",
+    "assets/js/utils/ai-readiness.js": "5c1bc764514a51d7ee42bac70de0967d105829637d1bcc999c30ffbba9772f36",
+    "assets/js/forge/forge-ai-controller.js": "29d879f27c32d484693b79db113876bce2dc42d17640fa6c612a1572621264e5",
+    "assets/js/utils/automation-workflow-engine.js": "a7d2765c9c1bc522052c8a1d2f9246740e975728b89c687d2b3e961e8619d868",
+    "assets/js/city/eon-city-eonbot-quick-work.js": "357cc70361b8cdd00b4472baf0629646d913b4774ba9b45a1ceebc1de784a26e",
+    "scripts/a15-i10-ai-request-executor-gate.mjs": "6c3f28a579d55601af30c98078eb376dd9523a6db4d3381ee3570ee5c3fa0c69",
+    "tests/unit/a15-i10-ai-request-executor.test.mjs": "42a6bb8a0c9ec101d6cdeb0c88f041782f7d0d6f6530da945ee22c251269a173",
+    "tests/unit/mission-durability.test.mjs": "578237e0592d110cb9d7ba73ea8155eb571f10b4101c89fe47441d41c9ef5a2c",
+    "tests/unit/ai-readiness.test.mjs": "c802503ba58bc2fa14c2e6ec3df4e0da0522e522a6a01b71d2a9a8d26e8ce97a"
+  },
+  "externalBlockers": [
+    "Private npm registry returns 404 for locked ws@7.5.11.",
+    "Installed npm is 10.9.2 while the repository requires 11.12.1.",
+    "Nine maintained City test files remain dependency-blocked by unavailable @babylonjs/core.",
+    "Production build and built-artifact validation remain blocked by unavailable exact dependencies.",
+    "Authenticated browser, Preview and Production certification remain pending."
+  ],
+  "workingTreeAtReceipt": [
+    "M assets/js/chat-page.js",
+    " M assets/js/chat/ai-runtime.js",
+    " M assets/js/city/eon-city-eonbot-quick-work.js",
+    " M assets/js/forge/forge-ai-controller.js",
+    " M assets/js/utils/ai-readiness.js",
+    " M assets/js/utils/automation-workflow-engine.js",
+    " M assets/js/utils/mission-durability.js",
+    " M assets/js/utils/mission-engine.js",
+    " M config/generated/a15-system-disposition-registry.json",
+    " M docs/institutional/a15/evidence/A15_I01_SYSTEM_DISPOSITION_RECEIPT.json",
+    " M package.json",
+    " M tests/unit/ai-readiness.test.mjs",
+    " M tests/unit/mission-durability.test.mjs",
+    "?? assets/js/ai-kernel/eon-ai-request-executor.js",
+    "?? docs/institutional/a15/evidence/A15_I10_AI_REQUEST_EXECUTOR_GATE_RECEIPT.json",
+    "?? docs/institutional/a15/evidence/A15_I10_VALIDATION_RECEIPT.json",
+    "?? scripts/a15-i10-ai-request-executor-gate.mjs",
+    "?? tests/unit/a15-i10-ai-request-executor.test.mjs"
+  ],
+  "receiptDigest": "sha256:b2a0e801fcb76021bf51ca978b7eeefda3dd29c3f3d874a70420e0472a85aa41"
+}

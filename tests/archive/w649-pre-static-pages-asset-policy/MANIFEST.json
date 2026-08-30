@@ -1,0 +1,18 @@
+{
+  "schema": "eonapp.city-static-pages-policy-test-archive.w649.2026-07-14.v1",
+  "classification": "non-certifying-historical-exact-copy",
+  "certifying": false,
+  "releaseGate": false,
+  "reason": "W649 uses authenticated browser boot control plus ordinary same-origin content-hashed Cloudflare Pages assets; it does not require or add an EONCITY-specific edge asset relay.",
+  "supersededBy": [
+    "tests/unit/w554c-eon-city-client-load.test.mjs",
+    "tests/unit/w649-eoncity-authenticated-entry.test.mjs",
+    "tests/unit/w649-eoncity-asset-manifests.test.mjs"
+  ],
+  "files": [
+    {
+      "path": "tests/archive/w649-pre-static-pages-asset-policy/w554c-eon-city-client-load.test.mjs",
+      "sha256": "7ce0ae3b73fc57e6068f92168f42893e1530dec592e285a57a44adc86e9f287b"
+    }
+  ]
+}

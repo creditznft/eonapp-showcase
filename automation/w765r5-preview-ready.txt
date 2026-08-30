@@ -1,0 +1,6 @@
+W765R5 Preview authorization
+Triggered: 2026-08-01
+Run: 3
+Production authorization: false
+Preview branch: w765r5-owner-review
+Overlay SHA-256: e6018a5afe34ab91b43c15778048456ae378ee3dda67eb17c8cdbba3c6330636

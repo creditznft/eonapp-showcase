@@ -1,0 +1,78 @@
+{
+  "schema": "eonapp.validation-receipt.w624b.2026-07-11.v1",
+  "wave": "W624B",
+  "status": "source-complete-live-device-proof-pending",
+  "sourceRevision": "01a8c157dc21b1dabb741e306238065a0d566d23",
+  "releaseState": "limited-preview-no-go-public-launch",
+  "architecture": {
+    "canonicalRoute": "/eoncity",
+    "accessRoute": "/api/city/access",
+    "runtimeOwner": "assets/js/city/eon-city-runtime-owner.js",
+    "stateCount": 11,
+    "recoveryCaseCount": 12,
+    "coreAssetCount": 5,
+    "optionalAssetCount": 5,
+    "fallbackCount": 4,
+    "timerBasedProgress": false,
+    "compatibilityDocumentsMountRenderer": false,
+    "guestMayBootHeavyRenderer": false,
+    "queryStringMayGrantAccess": false,
+    "localStorageMayGrantAccess": false
+  },
+  "validation": {
+    "w624bGate": "19/19",
+    "w624bTests": "5/5",
+    "w624aGate": "17/17",
+    "w624aTests": "5/5",
+    "w392DirectEntryGate": "15/15",
+    "w392Tests": "3/3",
+    "w416RendererGate": "8/8",
+    "w416Tests": "5/5",
+    "w427BootGate": "9/9",
+    "w427Tests": "3/3",
+    "w428RetirementGate": "10/10",
+    "w428Tests": "2/2",
+    "w432ToolingGate": "9/9",
+    "w432Tests": "3/3",
+    "w554cGate": "14/14",
+    "w554cTests": "6/6",
+    "w554cBuiltOutput": "14/14",
+    "w623cCommercialTruth": "64/64",
+    "w623fCertification": "24/24",
+    "w623fTests": "6/6",
+    "w623iScaleGate": "16/16",
+    "w623iTests": "4/4",
+    "eslint": {
+      "errors": 0,
+      "warnings": 0
+    },
+    "secretScan": {
+      "textFiles": 3428,
+      "potentialSecrets": 0
+    },
+    "productionReachability": {
+      "reachableFiles": 348,
+      "importEdges": 600,
+      "quarantinedReachable": 0
+    },
+    "build": "passed",
+    "buildSmoke": "passed"
+  },
+  "distribution": {
+    "fileCount": 462,
+    "minifiedFiles": 292,
+    "savedPercent": 41.05,
+    "sha256": "b8acea9dd8fb16d053875f34192820a32c613102774180f4914ce1736807452a"
+  },
+  "pendingEvidence": [
+    "authenticated production boot",
+    "desktop/mobile runtime screenshots",
+    "physical-device WebGL context-loss recovery",
+    "low-memory recovery",
+    "sustained performance and thermal evidence",
+    "W624A target-frame runtime parity",
+    "final Command District visual score",
+    "owner visual approval"
+  ],
+  "nextWave": "W624C"
+}

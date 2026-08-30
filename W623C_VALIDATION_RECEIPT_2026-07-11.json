@@ -1,0 +1,53 @@
+{
+  "schema": "eonapp.w623c.validation-receipt.v1",
+  "generatedAt": "2026-07-11T00:00:00+05:30",
+  "wave": "W623C",
+  "title": "Canonical Commercial Truth",
+  "status": "source_complete_focused_certification_green",
+  "decisions": {
+    "monthlyUsd": {
+      "plus": 4.99,
+      "studio": 14.99,
+      "power": 29.99,
+      "max": 49.9
+    },
+    "trialDays": 7,
+    "referralReward": "EONKEYS_ONLY",
+    "eonKeysScope": "individual_features_limits_workflows_templates_cosmetics",
+    "forbiddenEonKeysRewards": [
+      "free_subscription_tier",
+      "whole_plan_entitlement",
+      "first_month_discount",
+      "renewal_credit",
+      "cash_value",
+      "provider_credit",
+      "unlimited_ai_generation"
+    ],
+    "creatorExecution": [
+      "local_ai",
+      "user_owned_byok"
+    ],
+    "cloudflareAiGenerationBackend": false
+  },
+  "validation": {
+    "canonicalGate": {
+      "passed": true,
+      "checks": 64
+    },
+    "affectedTests": {
+      "passed": 53,
+      "failed": 0
+    },
+    "targetedLint": "passed_zero_warnings",
+    "productionBuild": {
+      "passed": true,
+      "distFiles": 450,
+      "minifiedFiles": 288,
+      "savedPercent": 41.08,
+      "distributionSha256": "bc9c032979db72d35e8a08df1e151f940d78e090596a204eb20d5621b2baea64"
+    },
+    "broadHistoricalSuiteRerun": false,
+    "broadSuiteReason": "Focused completion path used to avoid stale, long-running historical loops; W623A remains the broad maintained-suite checkpoint."
+  },
+  "nextWave": "W623D"
+}

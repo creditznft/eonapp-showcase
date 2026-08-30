@@ -1,0 +1,285 @@
+TAP version 13
+# Subtest: W731 establishes one compact runtime owner and removes retired world layers from the launch import graph
+ok 1 - W731 establishes one compact runtime owner and removes retired world layers from the launch import graph
+  ---
+  duration_ms: 18.008637
+  type: 'test'
+  ...
+# Subtest: W731 launch assets are local, content-hashed and never block the first playable frame
+ok 2 - W731 launch assets are local, content-hashed and never block the first playable frame
+  ---
+  duration_ms: 8.395328
+  type: 'test'
+  ...
+# Subtest: W731 active runtime owns exactly one engine, scene and render loop
+ok 3 - W731 active runtime owns exactly one engine, scene and render loop
+  ---
+  duration_ms: 9.545854
+  type: 'test'
+  ...
+# Subtest: W736A installs the bounded first-frame guard before exporting W731
+ok 4 - W736A installs the bounded first-frame guard before exporting W731
+  ---
+  duration_ms: 1.87143
+  type: 'test'
+  ...
+# Subtest: W736A imports Babylon Ray and supplies bounded matrix fallbacks
+ok 5 - W736A imports Babylon Ray and supplies bounded matrix fallbacks
+  ---
+  duration_ms: 0.397183
+  type: 'test'
+  ...
+# Subtest: W736A guard cannot create a second Babylon owner
+ok 6 - W736A guard cannot create a second Babylon owner
+  ---
+  duration_ms: 0.68192
+  type: 'test'
+  ...
+# Subtest: W741 gives the Command Hub exactly one visible City Menu launcher authority
+ok 7 - W741 gives the Command Hub exactly one visible City Menu launcher authority
+  ---
+  duration_ms: 28.31707
+  type: 'test'
+  ...
+# Subtest: W741 menu closes with Escape, restores focus and remains restart-deduplicated
+ok 8 - W741 menu closes with Escape, restores focus and remains restart-deduplicated
+  ---
+  duration_ms: 5.525148
+  type: 'test'
+  ...
+# Subtest: W741 shows no more than three decluttered markers plus one nearby interaction card
+ok 9 - W741 shows no more than three decluttered markers plus one nearby interaction card
+  ---
+  duration_ms: 14.718709
+  type: 'test'
+  ...
+# Subtest: W742 restores Share Command Center as a permanent City action with Creator Capture inside
+ok 10 - W742 restores Share Command Center as a permanent City action with Creator Capture inside
+  ---
+  duration_ms: 12.850965
+  type: 'test'
+  ...
+# Subtest: W742 keeps subscription discovery contextual, explicit and visibly non-advertising
+ok 11 - W742 keeps subscription discovery contextual, explicit and visibly non-advertising
+  ---
+  duration_ms: 4.715044
+  type: 'test'
+  ...
+# Subtest: W744 gives station NPCs bounded real micro-routes without walking in place
+ok 12 - W744 gives station NPCs bounded real micro-routes without walking in place
+  ---
+  duration_ms: 6.256439
+  type: 'test'
+  ...
+# Subtest: W742 gives exterior citizens actual walk/run paths and articulated motion
+ok 13 - W742 gives exterior citizens actual walk/run paths and articulated motion
+  ---
+  duration_ms: 5.718113
+  type: 'test'
+  ...
+# Subtest: W742 cast replacement remains part of the maintained Command Hub provenance
+ok 14 - W742 cast replacement remains part of the maintained Command Hub provenance
+  ---
+  duration_ms: 0.5273
+  type: 'test'
+  ...
+# Subtest: W743 binds the City runtime, manifest and service worker to one current provenance
+ok 15 - W743 binds the City runtime, manifest and service worker to one current provenance
+  ---
+  duration_ms: 13.382466
+  type: 'test'
+  ...
+# Subtest: W743 enforces quality-specific concurrency and resident asset budgets
+ok 16 - W743 enforces quality-specific concurrency and resident asset budgets
+  ---
+  duration_ms: 2.749535
+  type: 'test'
+  ...
+# Subtest: W743 arrival camera clears every station footprint and no longer sits behind My Realm
+ok 17 - W743 arrival camera clears every station footprint and no longer sits behind My Realm
+  ---
+  duration_ms: 5.936469
+  type: 'test'
+  ...
+# Subtest: W743 refuses materialless or all-white untextured authored hero assets
+ok 18 - W743 refuses materialless or all-white untextured authored hero assets
+  ---
+  duration_ms: 0.395308
+  type: 'test'
+  ...
+# Subtest: W743 pauses hidden rendering, restores WebGL safely and applies real bounded performance protection
+ok 19 - W743 pauses hidden rendering, restores WebGL safely and applies real bounded performance protection
+  ---
+  duration_ms: 5.008704
+  type: 'test'
+  ...
+# Subtest: W744 completes all ten stations as structure-terminal-NPC micro-locations
+ok 20 - W744 completes all ten stations as structure-terminal-NPC micro-locations
+  ---
+  duration_ms: 9.152591
+  type: 'test'
+  ...
+# Subtest: W744 corrects the Command Status station, route and rejected coat character
+ok 21 - W744 corrects the Command Status station, route and rejected coat character
+  ---
+  duration_ms: 1.778063
+  type: 'test'
+  ...
+# Subtest: W744 station and work-surface routing has no missing local page
+ok 22 - W744 station and work-surface routing has no missing local page
+  ---
+  duration_ms: 1.284947
+  type: 'test'
+  ...
+# Subtest: W744 assigns content-hashed authored structures, terminals, role NPCs and ambient assets within budgets
+ok 23 - W744 assigns content-hashed authored structures, terminals, role NPCs and ambient assets within budgets
+  ---
+  duration_ms: 1.162137
+  type: 'test'
+  ...
+# Subtest: W744 outside Command Centre discoveries use exact authored assets and stay bounded
+ok 24 - W744 outside Command Centre discoveries use exact authored assets and stay bounded
+  ---
+  duration_ms: 8.34007
+  type: 'test'
+  ...
+# Subtest: W744 role cast has real locomotion and stationary work gestures
+ok 25 - W744 role cast has real locomotion and stationary work gestures
+  ---
+  duration_ms: 0.919709
+  type: 'test'
+  ...
+# Subtest: W744 runtime builds the premium Command Centre, real 3D Nexus and bounded ambient life
+ok 26 - W744 runtime builds the premium Command Centre, real 3D Nexus and bounded ambient life
+  ---
+  duration_ms: 13.811868
+  type: 'test'
+  ...
+# Subtest: W744 assigns every active ready W649 world asset and stages the authored hero cast before reveal
+ok 27 - W744 assigns every active ready W649 world asset and stages the authored hero cast before reveal
+  ---
+  duration_ms: 9.12092
+  type: 'test'
+  ...
+# Subtest: W744 preserves review-first sharing, Creator Capture and non-ad subscription monetisation
+ok 28 - W744 preserves review-first sharing, Creator Capture and non-ad subscription monetisation
+  ---
+  duration_ms: 15.682984
+  type: 'test'
+  ...
+# Subtest: W744 red-team authority keeps cache, source and deploy boundaries explicit
+ok 29 - W744 red-team authority keeps cache, source and deploy boundaries explicit
+  ---
+  duration_ms: 5.512864
+  type: 'test'
+  ...
+# Subtest: W745 gives EONBOT a complete bounded curiosity cycle instead of a stiff orbit
+ok 30 - W745 gives EONBOT a complete bounded curiosity cycle instead of a stiff orbit
+  ---
+  duration_ms: 4.309644
+  type: 'test'
+  ...
+# Subtest: W745 uses Pathfinder Prime idle variants and gestures without walking in place
+ok 31 - W745 uses Pathfinder Prime idle variants and gestures without walking in place
+  ---
+  duration_ms: 1.433269
+  type: 'test'
+  ...
+# Subtest: W745 runtime animates EONBOT scan effects, playful movement and live circuit pulses
+ok 32 - W745 runtime animates EONBOT scan effects, playful movement and live circuit pulses
+  ---
+  duration_ms: 5.540753
+  type: 'test'
+  ...
+# Subtest: W745 final CEO audit keeps every station meaningful, interactive and routed to a real surface
+ok 33 - W745 final CEO audit keeps every station meaningful, interactive and routed to a real surface
+  ---
+  duration_ms: 8.169799
+  type: 'test'
+  ...
+# Subtest: W745 final asset audit assigns every active ready world asset and excludes unsafe static candidates
+ok 34 - W745 final asset audit assigns every active ready world asset and excludes unsafe static candidates
+  ---
+  duration_ms: 0.970461
+  type: 'test'
+  ...
+# Subtest: W745 cache authority and deployment boundary are explicit for Codex
+ok 35 - W745 cache authority and deployment boundary are explicit for Codex
+  ---
+  duration_ms: 5.522424
+  type: 'test'
+  ...
+# Subtest: W747 locks one protected 12 metre Nexus Hero Zone and five coherent wings
+ok 36 - W747 locks one protected 12 metre Nexus Hero Zone and five coherent wings
+  ---
+  duration_ms: 10.036941
+  type: 'test'
+  ...
+# Subtest: W747 camera and spawn authority are finite, floor-safe and reveal the centre
+ok 37 - W747 camera and spawn authority are finite, floor-safe and reveal the centre
+  ---
+  duration_ms: 1.675771
+  type: 'test'
+  ...
+# Subtest: W747 loaded-bound diagnostics catch real occlusion, overlap, role and floor defects
+ok 38 - W747 loaded-bound diagnostics catch real occlusion, overlap, role and floor defects
+  ---
+  duration_ms: 10.567315
+  type: 'test'
+  ...
+# Subtest: W747 retires only the duplicate central Orientation Hall and preserves Archive Garden
+ok 39 - W747 retires only the duplicate central Orientation Hall and preserves Archive Garden
+  ---
+  duration_ms: 2.280206
+  type: 'test'
+  ...
+# Subtest: W747 moves the command furniture into the operations crescent and synchronizes EONBOT dock authority
+ok 40 - W747 moves the command furniture into the operations crescent and synchronizes EONBOT dock authority
+  ---
+  duration_ms: 0.467272
+  type: 'test'
+  ...
+# Subtest: W747 runtime uses actual post-transform GLB bounds and keeps diagnostics advanced-only
+ok 41 - W747 runtime uses actual post-transform GLB bounds and keeps diagnostics advanced-only
+  ---
+  duration_ms: 5.666602
+  type: 'test'
+  ...
+# Subtest: W747 preserves one Babylon owner, Menu and shared work-surface flows
+ok 42 - W747 preserves one Babylon owner, Menu and shared work-surface flows
+  ---
+  duration_ms: 3.789629
+  type: 'test'
+  ...
+1..42
+# tests 42
+# suites 0
+# pass 42
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1046.738337
+{
+  "schema": "eonapp.w745.launch-asset-binary-integrity.v1",
+  "ok": true,
+  "entriesChecked": 41,
+  "variantsChecked": 82,
+  "bytesChecked": 79149292,
+  "pathfinderClips": [
+    "Idle_02",
+    "Idle_11",
+    "Walking",
+    "Running",
+    "Big_Wave_Hello",
+    "Hand_on_Hip_Gesture",
+    "Checkout_Gesture",
+    "Open_Door",
+    "Jump_with_Arms_Open",
+    "Victory_Cheer",
+    "Lower_Weapon_Look_Raise"
+  ],
+  "eonbotRuntimeDirected": true
+}
+W745 ASSET BINARY INTEGRITY PASS
+W747 LOCAL SOURCE PASS — HEADED BROWSER SCREENSHOTS/VIDEO REQUIRED BEFORE W747 CAN BE MARKED COMPLETE

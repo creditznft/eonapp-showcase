@@ -1,0 +1,84 @@
+{
+  "schema": "eonapp.validation-receipt.w624i.2026-07-11.v1",
+  "wave": "W624I",
+  "status": "source-complete-live-local-and-direct-byok-proof-pending",
+  "releaseState": "limited-preview-no-go-public-launch",
+  "sourceFingerprint": {
+    "algorithm": "sha256",
+    "digest": "f980791e49401f6216a237113d642e5fa6df755d00f6fbf0c8d810a2807fbda8",
+    "fileCount": 3513
+  },
+  "implementation": {
+    "schema": "eon.city.genuine-agent-theatre.w624i.v1",
+    "states": [
+      "queued",
+      "preparing",
+      "waiting-for-user",
+      "running",
+      "paused",
+      "failed",
+      "cancelled",
+      "completed"
+    ],
+    "rails": [
+      "local",
+      "direct-byok",
+      "guide",
+      "unavailable"
+    ],
+    "cityExecutesJobs": false,
+    "reviewRequiredBeforeNativeAction": true,
+    "w435MayClaimRunning": false,
+    "directByokRequiresExplicitApproval": true,
+    "privatePayloadFieldsRejected": true
+  },
+  "validation": {
+    "w624iGate": "34/34",
+    "w624iTests": "6/6",
+    "maintainedFiles": 228,
+    "unitAssertions": 844,
+    "currentPasses": 797,
+    "historicalSkips": 47,
+    "failures": 0,
+    "alignment": "17/17",
+    "archiveIntegrity": "10/10",
+    "eslint": {
+      "errors": 0,
+      "warnings": 0
+    },
+    "secretScan": {
+      "textFiles": 3589,
+      "potentialSecrets": 0
+    },
+    "productionReachability": {
+      "reachableFiles": 355,
+      "importEdges": 623,
+      "quarantinedReachable": 0
+    },
+    "build": "passed",
+    "buildSmoke": "passed",
+    "postBuildCertification": "24/24",
+    "codexPredeploy": {
+      "status": "23/23",
+      "resumedStepCount": 4,
+      "fingerprint": "f980791e49401f6216a237113d642e5fa6df755d00f6fbf0c8d810a2807fbda8"
+    }
+  },
+  "distribution": {
+    "fileCount": 463,
+    "minifiedFiles": 293,
+    "savedPercent": 40.89,
+    "sha256": "a7ab55d325af210ac4bbeff22fc280b82674ccb948a0f7cddd4b615e2c4eaf43"
+  },
+  "browserEvidence": {
+    "status": "BLOCKED",
+    "reason": "Playwright Chromium unavailable in managed environment"
+  },
+  "pendingEvidence": [
+    "one real Local job end-to-end",
+    "one real user-approved Direct BYOK job end-to-end",
+    "authenticated production browser proof",
+    "physical-device and owner visual approval"
+  ],
+  "nextWave": "W624J"
+}

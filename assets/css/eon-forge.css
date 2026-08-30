@@ -1,0 +1,292 @@
+/* W386 — EON Forge local developer workspace. Product shell uses theme tokens only. */
+:root { color-scheme:dark; }
+.eon-forge { width:min(1440px,100%); margin:0 auto; padding:clamp(1rem,3vw,2.25rem); color:var(--clr-text); }
+.eon-forge-hero { display:flex; align-items:end; justify-content:space-between; gap:1rem; margin-bottom:1rem; padding:clamp(1.25rem,3vw,2.1rem); border:1px solid var(--clr-border); border-radius:1.25rem; background:linear-gradient(145deg,color-mix(in srgb,var(--clr-surface) 94%,var(--clr-bg)),color-mix(in srgb,var(--clr-bg) 97%,var(--clr-surface))); box-shadow:0 1.4rem 3.6rem color-mix(in srgb,var(--clr-bg) 58%,transparent); }
+.eon-forge-hero-compact { padding-block:clamp(1.1rem,2.2vw,1.65rem); }
+.eon-forge-kicker,.eon-forge-project-eyebrow { margin:0 0 .55rem; color:var(--clr-accent); font-size:.72rem; font-weight:800; letter-spacing:.13em; text-transform:uppercase; }
+.eon-forge-hero h1 { margin:0; color:var(--clr-text); font-size:clamp(2.1rem,4.2vw,4.15rem); letter-spacing:-.055em; line-height:.98; }
+.eon-forge-hero-compact h1 { font-size:clamp(2rem,3.5vw,3.45rem); }
+.eon-forge-hero-copy { max-width:51rem; margin:.95rem 0 0; color:var(--clr-text-muted); line-height:1.62; }
+.eon-forge-hero-actions,.eon-forge-project-actions,.eon-forge-build-actions,.eon-forge-device-controls,.eon-forge-editor-toolbar-actions { display:flex; flex-wrap:wrap; gap:.55rem; }
+.eon-forge-hero-actions { justify-content:flex-end; }
+.eon-forge-button,.eon-forge-button-secondary,.eon-forge-danger,.eon-forge-view-tab,.eon-forge-file-tree-row,.eon-forge-project-row,.eon-forge-device-button,.eon-forge-file-tab { font:inherit; }
+.eon-forge-button,.eon-forge-button-secondary,.eon-forge-danger { min-height:2.62rem; display:inline-flex; align-items:center; justify-content:center; gap:.45rem; padding:.6rem .86rem; border:1px solid var(--clr-border); border-radius:.78rem; cursor:pointer; font-size:.84rem; font-weight:780; text-decoration:none; }
+.eon-forge-button { color:var(--clr-bg); background:var(--clr-text); border-color:color-mix(in srgb,var(--clr-text) 72%,var(--clr-border)); }
+.eon-forge-button-secondary { color:var(--clr-text); background:color-mix(in srgb,var(--clr-surface) 82%,transparent); }
+.eon-forge-danger { width:100%; margin-top:1rem; color:var(--clr-text-muted); background:transparent; }
+.eon-forge-button:hover,.eon-forge-button:focus-visible,.eon-forge-button-secondary:hover,.eon-forge-button-secondary:focus-visible,.eon-forge-danger:hover,.eon-forge-danger:focus-visible { outline:2px solid var(--clr-link-hover); outline-offset:3px; filter:brightness(1.05); }
+.eon-forge-button[disabled],.eon-forge-button-secondary[disabled],.eon-forge-danger[disabled] { opacity:.5; cursor:not-allowed; }
+.eon-forge-start { display:grid; grid-template-columns:minmax(0,1.25fr) minmax(19rem,.75fr); gap:1rem; }
+.eon-forge-panel,.eon-forge-projects,.eon-forge-main-panel,.eon-forge-inspector { border:1px solid var(--clr-border); border-radius:1rem; background:color-mix(in srgb,var(--clr-surface) 91%,var(--clr-bg)); }
+.eon-forge-start-main { padding:clamp(1.1rem,3vw,1.8rem); }
+.eon-forge-start h2,.eon-forge-workspace h2 { margin:0; color:var(--clr-text); font-size:1.35rem; }
+.eon-forge-start p,.eon-forge-panel-copy,.eon-forge-note,.eon-forge-inspector > p { color:var(--clr-text-muted); line-height:1.58; }
+.eon-forge-brief { width:100%; min-height:10rem; margin-top:1rem; resize:vertical; padding:1rem; border:1px solid var(--clr-border); border-radius:.85rem; color:var(--clr-text); background:color-mix(in srgb,var(--clr-bg) 76%,var(--clr-surface)); font:inherit; line-height:1.5; }
+.eon-forge-brief:focus,.eon-forge-title-input:focus,.eon-forge-select:focus,.eon-forge-code-input:focus { outline:2px solid var(--clr-link-hover); outline-offset:2px; border-color:transparent; }
+.eon-forge-build-fields { display:grid; grid-template-columns:minmax(0,1fr) minmax(12rem,.62fr) minmax(12rem,.62fr); gap:.75rem; margin-top:.85rem; }
+.eon-forge-field { display:grid; gap:.4rem; color:var(--clr-text-muted); font-size:.78rem; font-weight:700; }
+.eon-forge-title-input,.eon-forge-select { min-height:2.7rem; width:100%; padding:.58rem .72rem; border:1px solid var(--clr-border); border-radius:.72rem; color:var(--clr-text); background:color-mix(in srgb,var(--clr-bg) 74%,var(--clr-surface)); font:inherit; }
+.eon-forge-build-actions { align-items:center; margin-top:1rem; }
+.eon-forge-build-status { min-height:1.35rem; margin:.9rem 0 0; color:var(--clr-text-muted); font-size:.81rem; }
+.eon-forge-side { display:grid; gap:.75rem; padding:1rem; }
+.eon-forge-side section { padding:.95rem; border:1px solid color-mix(in srgb,var(--clr-border) 88%,transparent); border-radius:.8rem; background:color-mix(in srgb,var(--clr-bg) 48%,transparent); }
+.eon-forge-side h3 { margin:0 0 .45rem; color:var(--clr-text); font-size:.95rem; }
+.eon-forge-side p { margin:0; font-size:.84rem; }
+.eon-forge-side ul { display:grid; gap:.35rem; margin:.75rem 0 0; padding:0; list-style:none; color:var(--clr-text-muted); font-size:.81rem; }
+.eon-forge-side li::before { content:'✓'; margin-right:.45rem; color:var(--clr-accent); }
+.eon-forge-developer-workspace { display:grid; grid-template-columns:minmax(13.5rem,.33fr) minmax(0,1.72fr) minmax(18rem,.51fr); gap:.85rem; align-items:start; }
+.eon-forge-projects { position:sticky; top:1rem; padding:.8rem; overflow:hidden; }
+.eon-forge-projects-head { display:flex; align-items:center; justify-content:space-between; gap:.5rem; padding:.25rem .2rem .7rem; }
+.eon-forge-projects h2 { font-size:1rem; }
+.eon-forge-project-list { display:grid; gap:.42rem; max-height:18rem; overflow:auto; padding-right:.1rem; }
+.eon-forge-project-row { width:100%; display:grid; gap:.16rem; padding:.7rem; text-align:left; color:var(--clr-text); border:1px solid transparent; border-radius:.72rem; background:transparent; cursor:pointer; }
+.eon-forge-project-row:hover,.eon-forge-project-row:focus-visible,.eon-forge-project-row.is-active { border-color:color-mix(in srgb,var(--clr-accent) 55%,var(--clr-border)); background:color-mix(in srgb,var(--clr-accent) 11%,var(--clr-surface)); outline:none; }
+.eon-forge-project-row strong { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-size:.88rem; }
+.eon-forge-project-row small,.eon-forge-file-tree-row small { color:var(--clr-text-muted); font-size:.72rem; }
+.eon-forge-file-tree { display:grid; gap:.35rem; margin-top:1rem; padding-top:.9rem; border-top:1px solid var(--clr-border); }
+.eon-forge-file-tree > div { display:flex; align-items:center; justify-content:space-between; gap:.5rem; padding:0 .2rem .25rem; }
+.eon-forge-file-tree h3 { margin:0; font-size:.9rem; }
+.eon-forge-file-tree > div > span { color:var(--clr-text-muted); font-size:.7rem; }
+.eon-forge-file-tree-row { width:100%; display:grid; grid-template-columns:1rem minmax(0,1fr) auto; align-items:center; gap:.42rem; padding:.55rem .58rem; border:1px solid transparent; border-radius:.65rem; color:var(--clr-text-muted); background:transparent; cursor:pointer; text-align:left; }
+.eon-forge-file-tree-row span { color:var(--clr-accent); }
+.eon-forge-file-tree-row strong { overflow:hidden; font-size:.78rem; text-overflow:ellipsis; white-space:nowrap; }
+.eon-forge-file-tree-row:hover,.eon-forge-file-tree-row:focus-visible,.eon-forge-file-tree-row.is-active { color:var(--clr-text); border-color:color-mix(in srgb,var(--clr-accent) 50%,var(--clr-border)); background:color-mix(in srgb,var(--clr-accent) 10%,var(--clr-surface)); outline:none; }
+.eon-forge-main-panel { min-width:0; overflow:hidden; }
+.eon-forge-project-bar { display:flex; align-items:flex-start; justify-content:space-between; gap:.75rem; padding:1rem; border-bottom:1px solid var(--clr-border); }
+.eon-forge-project-bar h2 { overflow-wrap:anywhere; }
+.eon-forge-project-bar p:not(.eon-forge-project-eyebrow) { margin:.35rem 0 0; color:var(--clr-text-muted); font-size:.8rem; line-height:1.45; }
+.eon-forge-project-actions { justify-content:flex-end; align-items:center; }
+.eon-forge-project-actions .eon-forge-button,.eon-forge-project-actions .eon-forge-button-secondary { min-height:2.28rem; padding:.44rem .62rem; font-size:.78rem; }
+.eon-forge-save-state { padding:.43rem .58rem; border:1px solid color-mix(in srgb,var(--clr-border) 78%,transparent); border-radius:.58rem; color:var(--clr-text-muted); font-size:.72rem; white-space:nowrap; }
+.eon-forge-save-state.is-dirty { color:var(--clr-text); border-color:color-mix(in srgb,var(--clr-accent) 55%,var(--clr-border)); background:color-mix(in srgb,var(--clr-accent) 10%,var(--clr-surface)); }
+.eon-forge-view-tabs { display:flex; gap:.3rem; padding:.65rem .85rem; border-bottom:1px solid var(--clr-border); overflow:auto; }
+.eon-forge-view-tab,.eon-forge-device-button { border:1px solid var(--clr-border); border-radius:.58rem; color:var(--clr-text-muted); background:transparent; padding:.4rem .62rem; cursor:pointer; font-size:.75rem; font-weight:720; white-space:nowrap; }
+.eon-forge-view-tab.is-active,.eon-forge-device-button.is-active,.eon-forge-view-tab:hover,.eon-forge-view-tab:focus-visible,.eon-forge-device-button:hover,.eon-forge-device-button:focus-visible { color:var(--clr-text); border-color:color-mix(in srgb,var(--clr-accent) 58%,var(--clr-border)); background:color-mix(in srgb,var(--clr-accent) 10%,var(--clr-surface)); outline:none; }
+.eon-forge-preview-pane,.eon-forge-editor-pane,.eon-forge-changes-pane { min-width:0; padding:1rem; }
+.eon-forge-preview-toolbar,.eon-forge-editor-toolbar,.eon-forge-changes-head,.eon-forge-quality-head { display:flex; align-items:flex-start; justify-content:space-between; gap:.8rem; }
+.eon-forge-preview-toolbar p,.eon-forge-editor-toolbar p,.eon-forge-changes-head p,.eon-forge-history p,.eon-forge-quality-head p { margin:0; color:var(--clr-accent); font-size:.7rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
+.eon-forge-preview-toolbar small,.eon-forge-editor-note { display:block; margin-top:.25rem; color:var(--clr-text-muted); font-size:.75rem; line-height:1.45; }
+.eon-forge-preview-frame-wrap { display:flex; justify-content:center; min-height:33rem; margin-top:.85rem; padding:.85rem; overflow:auto; border:1px solid color-mix(in srgb,var(--clr-border) 88%,transparent); border-radius:.85rem; background:color-mix(in srgb,var(--clr-bg) 78%,var(--clr-surface)); }
+.eon-forge-preview-frame-wrap.is-tablet .eon-forge-preview-frame { width:min(100%,48rem); }
+.eon-forge-preview-frame-wrap.is-mobile .eon-forge-preview-frame { width:min(100%,25rem); }
+.eon-forge-preview-frame { width:100%; min-height:31rem; border:1px solid color-mix(in srgb,var(--clr-border) 84%,transparent); border-radius:.62rem; background:var(--clr-surface); box-shadow:0 1rem 2.8rem color-mix(in srgb,var(--clr-bg) 60%,transparent); }
+.eon-forge-preview-caption { margin:.75rem 0 0; color:var(--clr-text-muted); font-size:.74rem; line-height:1.5; }
+.eon-forge-editor-toolbar h3,.eon-forge-changes-head h3,.eon-forge-history h3,.eon-forge-quality-head h3 { margin:.22rem 0 0; color:var(--clr-text); font-size:1rem; }
+.eon-forge-editor-note { margin:.75rem 0; }
+.eon-forge-editor { display:grid; grid-template-columns:auto minmax(0,1fr); min-height:35rem; overflow:hidden; border:1px solid color-mix(in srgb,var(--clr-border) 86%,transparent); border-radius:.8rem; background:color-mix(in srgb,var(--clr-bg) 85%,var(--clr-surface)); }
+.eon-forge-line-numbers { min-width:3.6rem; max-height:35rem; margin:0; padding:.95rem .65rem; overflow:hidden; border-right:1px solid color-mix(in srgb,var(--clr-border) 80%,transparent); color:var(--clr-text-muted); background:color-mix(in srgb,var(--clr-bg) 90%,var(--clr-surface)); font:500 .75rem/1.65 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; text-align:right; user-select:none; }
+.eon-forge-code-input { width:100%; min-width:0; min-height:35rem; resize:vertical; margin:0; padding:.95rem 1rem; border:0; color:var(--clr-text); background:transparent; font:500 .81rem/1.65 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; tab-size:2; white-space:pre; overflow:auto; }
+.eon-forge-changes-pane { display:grid; gap:1rem; }
+.eon-forge-change-list,.eon-forge-history-list { display:grid; gap:.55rem; }
+.eon-forge-change-list article,.eon-forge-history-list article { display:flex; align-items:center; justify-content:space-between; gap:.8rem; padding:.75rem .8rem; border:1px solid color-mix(in srgb,var(--clr-border) 84%,transparent); border-radius:.75rem; background:color-mix(in srgb,var(--clr-bg) 48%,transparent); }
+.eon-forge-change-list article > span,.eon-forge-history-list article span { color:var(--clr-text-muted); font-size:.75rem; }
+.eon-forge-change-list button,.eon-forge-history-list button { min-height:2rem; border:1px solid var(--clr-border); border-radius:.55rem; color:var(--clr-text); background:transparent; padding:.35rem .55rem; cursor:pointer; font:inherit; font-size:.72rem; font-weight:720; }
+.eon-forge-history { display:grid; gap:.75rem; padding-top:1rem; border-top:1px solid var(--clr-border); }
+.eon-forge-history-list article > div { display:grid; gap:.18rem; min-width:0; }
+.eon-forge-history-list strong { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-size:.82rem; }
+.eon-forge-history-current { color:var(--clr-accent) !important; font-size:.7rem !important; font-weight:800; }
+.eon-forge-inspector { position:sticky; top:1rem; padding:.95rem; }
+.eon-forge-inspector h2 { font-size:1.06rem; }
+.eon-forge-inspector > p:not(.eon-forge-kicker) { margin:.55rem 0 0; font-size:.84rem; line-height:1.5; }
+.eon-forge-inspector-actions { display:grid; gap:.55rem; margin-top:1rem; }
+.eon-forge-inspector .eon-forge-button,.eon-forge-inspector .eon-forge-button-secondary { width:100%; }
+.eon-forge-quality { display:grid; gap:.7rem; margin-top:1rem; padding-top:1rem; border-top:1px solid var(--clr-border); }
+.eon-forge-quality-count { color:var(--clr-text-muted); font-size:.7rem; white-space:nowrap; }
+.eon-forge-quality-count strong { color:var(--clr-text); }
+.eon-forge-quality ul { display:grid; gap:.48rem; margin:0; padding:0; list-style:none; }
+.eon-forge-quality li { display:grid; gap:.18rem; padding:.62rem .68rem; border:1px solid color-mix(in srgb,var(--clr-border) 80%,transparent); border-radius:.62rem; color:var(--clr-text-muted); font-size:.73rem; line-height:1.45; }
+.eon-forge-quality li strong { color:var(--clr-text); }
+.eon-forge-quality li.is-error { border-color:color-mix(in srgb,var(--clr-accent) 62%,var(--clr-border)); }
+.eon-forge-quality li.is-warning { background:color-mix(in srgb,var(--clr-surface) 65%,transparent); }
+.eon-forge-quality small { color:var(--clr-text-muted); font-size:.68rem; line-height:1.45; }
+.eon-forge-inspector-meta { display:grid; gap:.55rem; margin-top:1rem; padding-top:1rem; border-top:1px solid var(--clr-border); }
+.eon-forge-inspector-meta div { display:flex; align-items:center; justify-content:space-between; gap:.6rem; color:var(--clr-text-muted); font-size:.73rem; }
+.eon-forge-inspector-meta strong { color:var(--clr-text); font-size:.73rem; text-align:right; }
+.eon-forge-truth { display:flex; gap:.6rem; align-items:baseline; margin-top:1rem; padding:.72rem .85rem; border:1px solid color-mix(in srgb,var(--clr-border) 84%,transparent); border-radius:.8rem; color:var(--clr-text-muted); background:color-mix(in srgb,var(--clr-surface) 62%,transparent); font-size:.8rem; }
+.eon-forge-truth strong { color:var(--clr-text); white-space:nowrap; }
+.eon-forge-empty { padding:1.25rem; border:1px dashed var(--clr-border); border-radius:.75rem; color:var(--clr-text-muted); font-size:.84rem; text-align:center; }
+@media (max-width:1220px) { .eon-forge-developer-workspace { grid-template-columns:minmax(13rem,.42fr) minmax(0,1fr); } .eon-forge-inspector { position:static; grid-column:1 / -1; } .eon-forge-inspector-actions { grid-template-columns:repeat(3,minmax(0,1fr)); } .eon-forge-danger { grid-column:1 / -1; } }
+@media (max-width:900px) { .eon-forge-hero { align-items:flex-start; flex-direction:column; } .eon-forge-hero-actions { justify-content:flex-start; } .eon-forge-start,.eon-forge-developer-workspace { grid-template-columns:1fr; } .eon-forge-projects,.eon-forge-inspector { position:static; } .eon-forge-project-list { grid-template-columns:repeat(auto-fit,minmax(12rem,1fr)); max-height:none; } .eon-forge-file-tree { grid-template-columns:repeat(2,minmax(0,1fr)); } .eon-forge-file-tree > div { grid-column:1 / -1; } .eon-forge-preview-frame-wrap { min-height:25rem; } .eon-forge-preview-frame { min-height:24rem; } }
+@media (max-width:650px) { .eon-forge { padding:1rem; } .eon-forge-build-fields { grid-template-columns:1fr; } .eon-forge-project-bar,.eon-forge-preview-toolbar,.eon-forge-editor-toolbar,.eon-forge-changes-head,.eon-forge-quality-head { align-items:flex-start; flex-direction:column; } .eon-forge-project-actions { justify-content:flex-start; } .eon-forge-inspector-actions { grid-template-columns:1fr; } .eon-forge-preview-frame-wrap { padding:.55rem; min-height:21rem; } .eon-forge-preview-frame { min-height:20rem; } .eon-forge-editor { min-height:25rem; } .eon-forge-code-input { min-height:25rem; } .eon-forge-line-numbers { max-height:25rem; } .eon-forge-file-tree { grid-template-columns:1fr; } .eon-forge-change-list article,.eon-forge-history-list article { align-items:flex-start; flex-direction:column; } .eon-forge-truth { align-items:flex-start; flex-direction:column; gap:.25rem; } }
+@media (prefers-reduced-motion:reduce) { * { scroll-behavior:auto !important; } }
+/* W387 — controlled local assets, import review and change receipts. */
+.eon-forge-add-asset { width:100%; min-height:2.28rem; margin-top:.35rem; border:1px dashed color-mix(in srgb,var(--clr-accent) 56%,var(--clr-border)); border-radius:.65rem; color:var(--clr-text); background:color-mix(in srgb,var(--clr-accent) 7%,transparent); cursor:pointer; font:720 .75rem/1.2 inherit; }
+.eon-forge-add-asset:hover,.eon-forge-add-asset:focus-visible { outline:2px solid var(--clr-link-hover); outline-offset:2px; background:color-mix(in srgb,var(--clr-accent) 14%,var(--clr-surface)); }
+.eon-forge-asset-preview { display:grid; place-items:center; min-height:22rem; margin-top:.9rem; padding:1rem; overflow:auto; border:1px solid color-mix(in srgb,var(--clr-border) 84%,transparent); border-radius:.8rem; background:color-mix(in srgb,var(--clr-bg) 78%,var(--clr-surface)); }
+.eon-forge-asset-preview img { display:block; max-width:100%; max-height:34rem; border-radius:.55rem; box-shadow:0 1rem 2.8rem color-mix(in srgb,var(--clr-bg) 65%,transparent); }
+.eon-forge-receipts { display:grid; gap:.75rem; padding-top:1rem; border-top:1px solid var(--clr-border); }
+.eon-forge-receipts > div > p { margin:0; color:var(--clr-accent); font-size:.7rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
+.eon-forge-receipts h3 { margin:.22rem 0 0; color:var(--clr-text); font-size:1rem; }
+.eon-forge-receipt-list { display:grid; gap:.55rem; }
+.eon-forge-receipt-list article { display:flex; align-items:center; justify-content:space-between; gap:.8rem; padding:.75rem .8rem; border:1px solid color-mix(in srgb,var(--clr-border) 84%,transparent); border-radius:.75rem; background:color-mix(in srgb,var(--clr-bg) 48%,transparent); }
+.eon-forge-receipt-list article > div { display:grid; gap:.18rem; min-width:0; }
+.eon-forge-receipt-list strong { color:var(--clr-text); font-size:.82rem; }
+.eon-forge-receipt-list span { color:var(--clr-text-muted); font-size:.75rem; }
+.eon-forge-receipt-list button { min-height:2rem; border:1px solid var(--clr-border); border-radius:.55rem; color:var(--clr-text); background:transparent; padding:.35rem .55rem; cursor:pointer; font:inherit; font-size:.72rem; font-weight:720; }
+.eon-forge-import-review { display:grid; grid-template-columns:minmax(0,1fr) minmax(15rem,.8fr); gap:.85rem; align-items:start; margin-bottom:.9rem; padding:1rem; border:1px solid color-mix(in srgb,var(--clr-accent) 48%,var(--clr-border)); border-radius:1rem; background:color-mix(in srgb,var(--clr-accent) 9%,var(--clr-surface)); }
+.eon-forge-import-review p { margin:.45rem 0 0; color:var(--clr-text-muted); font-size:.82rem; line-height:1.5; }
+.eon-forge-import-review h2 { margin:.18rem 0 0; color:var(--clr-text); font-size:1.08rem; }
+.eon-forge-import-review > div > p:first-child { margin:0; color:var(--clr-accent); font-size:.7rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
+.eon-forge-import-files { display:flex; flex-wrap:wrap; gap:.35rem; align-content:flex-start; }
+.eon-forge-import-files span { max-width:100%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; padding:.35rem .48rem; border:1px solid color-mix(in srgb,var(--clr-border) 82%,transparent); border-radius:.52rem; color:var(--clr-text-muted); background:color-mix(in srgb,var(--clr-bg) 55%,transparent); font:.72rem/1.2 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+.eon-forge-import-actions { display:flex; flex-wrap:wrap; gap:.55rem; grid-column:1 / -1; }
+@media (max-width:650px) { .eon-forge-import-review { grid-template-columns:1fr; } .eon-forge-receipt-list article { align-items:flex-start; flex-direction:column; } }
+
+/* W648 — trusted Forge AI builder and review-before-apply workspace. */
+.eon-forge-ai-card { display:grid; gap:.85rem; margin-bottom:1rem; padding-bottom:1rem; border-bottom:1px solid var(--clr-border); }
+.eon-forge-ai-card > h2 { margin:0; font-size:1.12rem; }
+.eon-forge-ai-card > p:not(.eon-forge-kicker):not(.eon-forge-ai-note) { margin:0; color:var(--clr-text-muted); font-size:.8rem; line-height:1.52; }
+.eon-forge-ai-readiness { display:grid; grid-template-columns:auto minmax(0,1fr) auto; align-items:center; gap:.58rem; padding:.7rem; border:1px solid var(--clr-border); border-radius:.72rem; background:color-mix(in srgb,var(--clr-bg) 54%,transparent); }
+.eon-forge-ai-readiness > span { color:var(--clr-text-muted); font-size:.8rem; }
+.eon-forge-ai-readiness.is-ready > span { color:var(--clr-accent); }
+.eon-forge-ai-readiness div { display:grid; gap:.12rem; min-width:0; }
+.eon-forge-ai-readiness strong { color:var(--clr-text); font-size:.76rem; }
+.eon-forge-ai-readiness small { overflow:hidden; color:var(--clr-text-muted); font-size:.68rem; text-overflow:ellipsis; white-space:nowrap; }
+.eon-forge-ai-readiness a { color:var(--clr-link); font-size:.7rem; font-weight:750; }
+.eon-forge-ai-instruction { width:100%; min-height:7.5rem; resize:vertical; padding:.72rem; border:1px solid var(--clr-border); border-radius:.72rem; color:var(--clr-text); background:color-mix(in srgb,var(--clr-bg) 74%,var(--clr-surface)); font:inherit; line-height:1.48; }
+.eon-forge-ai-instruction:focus { outline:2px solid var(--clr-link-hover); outline-offset:2px; border-color:transparent; }
+.eon-forge-ai-files { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.38rem; margin:0; padding:.7rem; border:1px solid var(--clr-border); border-radius:.72rem; }
+.eon-forge-ai-files legend { padding:0 .35rem; color:var(--clr-text-muted); font-size:.7rem; font-weight:760; }
+.eon-forge-ai-files label { display:flex; align-items:center; gap:.35rem; min-width:0; color:var(--clr-text-muted); font:.7rem/1.2 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+.eon-forge-ai-files input,.eon-forge-ai-consent input { accent-color:var(--clr-accent); }
+.eon-forge-ai-consent { display:flex; align-items:flex-start; gap:.52rem; padding:.68rem; border:1px solid color-mix(in srgb,var(--clr-accent) 40%,var(--clr-border)); border-radius:.72rem; color:var(--clr-text-muted); background:color-mix(in srgb,var(--clr-accent) 6%,transparent); font-size:.7rem; line-height:1.45; }
+.eon-forge-ai-consent-start { margin-top:1rem; max-width:56rem; }
+.eon-forge-ai-actions { display:flex; flex-wrap:wrap; gap:.55rem; }
+.eon-forge-ai-card .eon-forge-ai-actions .eon-forge-button,.eon-forge-ai-card .eon-forge-ai-actions .eon-forge-button-secondary { width:auto; flex:1 1 8rem; }
+.eon-forge-ai-note,.eon-forge-ai-error { margin:0; color:var(--clr-text-muted); font-size:.7rem; line-height:1.48; }
+.eon-forge-ai-error { padding:.75rem; border:1px solid color-mix(in srgb,var(--clr-accent) 48%,var(--clr-border)); border-radius:.72rem; color:var(--clr-text); }
+.eon-forge-project-controls { display:grid; gap:.55rem; }
+.eon-forge-project-controls h2 { margin:0; font-size:1.06rem; }
+.eon-forge-project-controls > p:not(.eon-forge-kicker) { margin:0; color:var(--clr-text-muted); font-size:.8rem; line-height:1.5; }
+.eon-forge-ai-review { display:grid; gap:1rem; padding:1rem; }
+.eon-forge-ai-progress { display:flex; align-items:center; gap:.85rem; min-height:11rem; padding:1rem; border:1px solid color-mix(in srgb,var(--clr-accent) 45%,var(--clr-border)); border-radius:.9rem; background:color-mix(in srgb,var(--clr-accent) 7%,var(--clr-surface)); }
+.eon-forge-ai-progress > div { display:grid; gap:.25rem; flex:1; }
+.eon-forge-ai-progress p,.eon-forge-ai-review-head p,.eon-forge-ai-proposed-preview > div > p,.eon-forge-ai-source-review > div > p { margin:0; color:var(--clr-accent); font-size:.68rem; font-weight:800; letter-spacing:.11em; text-transform:uppercase; }
+.eon-forge-ai-progress h3,.eon-forge-ai-review-head h3 { margin:0; color:var(--clr-text); }
+.eon-forge-ai-progress span,.eon-forge-ai-review-head span { color:var(--clr-text-muted); font-size:.76rem; }
+.eon-forge-ai-spinner { width:1.25rem; height:1.25rem; flex:0 0 auto; border:.16rem solid color-mix(in srgb,var(--clr-accent) 25%,transparent); border-top-color:var(--clr-accent); border-radius:50%; animation:eon-forge-ai-spin .8s linear infinite; }
+@keyframes eon-forge-ai-spin { to { transform:rotate(360deg); } }
+.eon-forge-ai-review-head { display:flex; align-items:flex-start; justify-content:space-between; gap:1rem; padding:1rem; border:1px solid color-mix(in srgb,var(--clr-accent) 45%,var(--clr-border)); border-radius:.9rem; background:color-mix(in srgb,var(--clr-accent) 8%,var(--clr-surface)); }
+.eon-forge-ai-review-head > div:first-child { display:grid; gap:.28rem; }
+.eon-forge-ai-change-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.65rem; }
+.eon-forge-ai-change-grid article { display:grid; gap:.55rem; padding:.8rem; border:1px solid var(--clr-border); border-radius:.8rem; background:color-mix(in srgb,var(--clr-bg) 48%,transparent); }
+.eon-forge-ai-change-grid article > div { display:flex; align-items:center; justify-content:space-between; gap:.5rem; }
+.eon-forge-ai-change-grid strong { color:var(--clr-text); font:.76rem/1.2 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+.eon-forge-ai-change-grid span,.eon-forge-ai-change-grid p { margin:0; color:var(--clr-text-muted); font-size:.7rem; }
+.eon-forge-ai-change-grid button { justify-self:start; min-height:2rem; padding:.35rem .55rem; border:1px solid var(--clr-border); border-radius:.55rem; color:var(--clr-text); background:transparent; cursor:pointer; font:700 .7rem/1 inherit; }
+.eon-forge-ai-source-review { display:grid; gap:.55rem; }
+.eon-forge-ai-source-review > div { display:flex; align-items:baseline; justify-content:space-between; gap:.5rem; }
+.eon-forge-ai-source-review strong { color:var(--clr-text); font:.75rem/1.2 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+.eon-forge-ai-source-review pre { max-height:28rem; margin:0; padding:1rem; overflow:auto; border:1px solid var(--clr-border); border-radius:.8rem; color:var(--clr-text); background:color-mix(in srgb,var(--clr-bg) 76%,var(--clr-surface)); font:.73rem/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; white-space:pre; }
+.eon-forge-ai-proposed-preview { display:grid; gap:.65rem; }
+.eon-forge-ai-proposed-preview > div:first-child { display:flex; align-items:baseline; justify-content:space-between; gap:.6rem; }
+.eon-forge-ai-proposed-preview small { color:var(--clr-text-muted); font-size:.68rem; }
+@media (max-width:900px) { .eon-forge-ai-change-grid { grid-template-columns:1fr; } }
+@media (max-width:650px) { .eon-forge-ai-files { grid-template-columns:1fr; } .eon-forge-ai-review-head,.eon-forge-ai-progress { align-items:flex-start; flex-direction:column; } .eon-forge-ai-review-head .eon-forge-ai-actions { width:100%; } .eon-forge-ai-review-head .eon-forge-button,.eon-forge-ai-review-head .eon-forge-button-secondary { flex:1; } .eon-forge-ai-proposed-preview > div:first-child,.eon-forge-ai-source-review > div { align-items:flex-start; flex-direction:column; } }
+@media (prefers-reduced-motion:reduce) { .eon-forge-ai-spinner { animation:none; } }
+
+/* W648B — AI quality presets, bounded context meter, and before/after review. */
+.eon-forge-ai-presets { display:flex; flex-wrap:wrap; gap:.4rem; }
+.eon-forge-ai-presets button { min-height:2rem; padding:.38rem .58rem; border:1px solid color-mix(in srgb,var(--clr-border) 86%,transparent); border-radius:999px; color:var(--clr-text-muted); background:color-mix(in srgb,var(--clr-bg) 56%,transparent); cursor:pointer; font:720 .68rem/1.1 inherit; }
+.eon-forge-ai-presets button:hover,.eon-forge-ai-presets button:focus-visible { outline:2px solid var(--clr-link-hover); outline-offset:2px; color:var(--clr-text); border-color:color-mix(in srgb,var(--clr-accent) 55%,var(--clr-border)); background:color-mix(in srgb,var(--clr-accent) 10%,var(--clr-surface)); }
+.eon-forge-ai-context { display:grid; gap:.38rem; padding:.65rem .7rem; border:1px solid var(--clr-border); border-radius:.72rem; background:color-mix(in srgb,var(--clr-bg) 50%,transparent); }
+.eon-forge-ai-context > div:first-child { display:flex; align-items:center; justify-content:space-between; gap:.7rem; }
+.eon-forge-ai-context strong { color:var(--clr-text); font-size:.72rem; }
+.eon-forge-ai-context span,.eon-forge-ai-context small { color:var(--clr-text-muted); font-size:.66rem; }
+.eon-forge-ai-context-track { height:.28rem; overflow:hidden; border-radius:999px; background:color-mix(in srgb,var(--clr-border) 70%,transparent); }
+.eon-forge-ai-context-track span { display:block; width:0; height:100%; border-radius:inherit; background:var(--clr-accent); transition:width .2s ease; }
+.eon-forge-ai-context.is-warning { border-color:color-mix(in srgb,var(--clr-accent) 58%,var(--clr-border)); background:color-mix(in srgb,var(--clr-accent) 7%,var(--clr-surface)); }
+.eon-forge-ai-source-compare { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.65rem; }
+.eon-forge-ai-source-compare article { min-width:0; border:1px solid var(--clr-border); border-radius:.8rem; overflow:hidden; background:color-mix(in srgb,var(--clr-bg) 76%,var(--clr-surface)); }
+.eon-forge-ai-source-compare header { padding:.55rem .72rem; border-bottom:1px solid var(--clr-border); color:var(--clr-text-muted); background:color-mix(in srgb,var(--clr-surface) 72%,transparent); font-size:.67rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+.eon-forge-ai-source-compare pre { max-height:32rem; margin:0; padding:.85rem; overflow:auto; border:0; border-radius:0; }
+@media (max-width:900px) { .eon-forge-ai-source-compare { grid-template-columns:1fr; } }
+@media (max-width:650px) { .eon-forge-ai-context > div:first-child { align-items:flex-start; flex-direction:column; gap:.15rem; } .eon-forge-ai-presets { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); } .eon-forge-ai-presets button { width:100%; border-radius:.6rem; } }
+@media (prefers-reduced-motion:reduce) { .eon-forge-ai-context-track span { transition:none; } }
+
+/* W648C — professional task selection, bounded diff rows, and review clarity. */
+.eon-forge-ai-action-help { display:block; color:var(--clr-text-muted); font-size:.68rem; font-weight:520; line-height:1.45; }
+.eon-forge-ai-source-review > small { color:var(--clr-text-muted); font-size:.68rem; line-height:1.45; }
+.eon-forge-ai-diff-pane header { display:flex; align-items:center; justify-content:space-between; gap:.7rem; }
+.eon-forge-ai-diff-pane header strong { color:var(--clr-text); font-size:.7rem; }
+.eon-forge-ai-diff-pane header span { color:var(--clr-text-muted); font-size:.62rem; letter-spacing:0; text-transform:none; }
+.eon-forge-ai-diff-pane pre { display:grid; align-content:start; padding:0; }
+.eon-forge-ai-diff-row { display:grid; grid-template-columns:3.4rem minmax(0,1fr); min-width:max-content; border-bottom:1px solid color-mix(in srgb,var(--clr-border) 45%,transparent); }
+.eon-forge-ai-diff-row:last-child { border-bottom:0; }
+.eon-forge-ai-diff-row b { padding:.16rem .55rem; color:var(--clr-text-muted); background:color-mix(in srgb,var(--clr-bg) 48%,transparent); font:500 .65rem/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; text-align:right; user-select:none; }
+.eon-forge-ai-diff-row code { display:block; min-width:0; padding:.16rem .65rem; color:var(--clr-text); font:.68rem/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; white-space:pre; }
+.eon-forge-ai-diff-pane.is-before .eon-forge-ai-diff-row.is-changed { background:color-mix(in srgb,#ef5a67 11%,transparent); }
+.eon-forge-ai-diff-pane.is-after .eon-forge-ai-diff-row.is-changed { background:color-mix(in srgb,#37c98b 11%,transparent); }
+.eon-forge-ai-diff-pane.is-before .eon-forge-ai-diff-row.is-changed b { color:#ff9da6; }
+.eon-forge-ai-diff-pane.is-after .eon-forge-ai-diff-row.is-changed b { color:#7ee4b8; }
+@media (max-width:650px) { .eon-forge-ai-diff-row { grid-template-columns:2.8rem minmax(0,1fr); } .eon-forge-ai-diff-row b { padding-inline:.35rem; } }
+
+/* W662H — Forge presented as one truthful Nexus stage path, not another card wall. */
+.eon-forge-nexus-stage {
+  position: relative;
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr);
+  gap: 1rem;
+  align-items: center;
+  margin: 0 auto 1rem;
+  width: min(92rem, calc(100% - 2rem));
+  padding: .85rem 1rem;
+  border: 1px solid rgba(103, 232, 249, .24);
+  border-radius: 1rem;
+  background: linear-gradient(120deg, rgba(3, 12, 28, .94), rgba(19, 12, 49, .9));
+  box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, .22);
+}
+.eon-forge-nexus-stage__orb {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 3.5rem;
+  aspect-ratio: 1;
+  border: 1px solid rgba(103, 232, 249, .65);
+  border-radius: 50%;
+  box-shadow: 0 0 1.6rem rgba(103, 232, 249, .18), inset 0 0 1rem rgba(167, 139, 250, .18);
+}
+.eon-forge-nexus-stage__orb::before,
+.eon-forge-nexus-stage__orb::after {
+  content: '';
+  position: absolute;
+  inset: .35rem;
+  border: 1px solid rgba(167, 139, 250, .58);
+  border-radius: 50%;
+  transform: rotate(32deg) scaleY(.52);
+}
+.eon-forge-nexus-stage__orb::after { transform: rotate(-38deg) scaleY(.6); }
+.eon-forge-nexus-stage__orb span { width: 1.15rem; aspect-ratio: 1; border-radius: 50%; background: #67e8f9; box-shadow: 0 0 1rem #67e8f9; }
+.eon-forge-nexus-stage ol { position: relative; display: grid; grid-template-columns: repeat(7, minmax(5.4rem, 1fr)); gap: .45rem; margin: 0; padding: 0; list-style: none; }
+.eon-forge-nexus-stage ol::before { content: ''; position: absolute; left: 4%; right: 4%; top: 1.05rem; height: 1px; background: linear-gradient(90deg, rgba(103,232,249,.2), rgba(167,139,250,.7), rgba(248,199,97,.28)); }
+.eon-forge-nexus-stage li { position: relative; z-index: 1; display: grid; justify-items: center; gap: .15rem; min-width: 0; text-align: center; }
+.eon-forge-nexus-stage li > span { display: grid; place-items: center; width: 2.1rem; aspect-ratio: 1; border: 1px solid rgba(148,163,184,.36); border-radius: 50%; background: #07111f; color: #b9c9d8; font-size: .7rem; font-weight: 900; }
+.eon-forge-nexus-stage li strong { color: #eef8ff; font-size: .68rem; }
+.eon-forge-nexus-stage li small { color: #94a8ba; font-size: .57rem; text-transform: uppercase; letter-spacing: .05em; }
+.eon-forge-nexus-stage li[data-status="complete"] > span { border-color: #67e8f9; color: #04131a; background: #67e8f9; box-shadow: 0 0 1rem rgba(103,232,249,.28); }
+.eon-forge-nexus-stage li[data-status="active"] > span { border-color: #f8c761; color: #1c1303; background: #f8c761; box-shadow: 0 0 1.1rem rgba(248,199,97,.34); }
+.eon-forge-nexus-stage li[data-status="available"] > span { border-color: #a78bfa; color: #f5f3ff; box-shadow: inset 0 0 .65rem rgba(167,139,250,.28); }
+.eon-forge-nexus-stage li[data-status="needs-attention"] > span { border-color: #fb7185; color: #fff1f2; background: rgba(127,29,29,.66); }
+@media (max-width: 900px) {
+  .eon-forge-nexus-stage { grid-template-columns: 1fr; }
+  .eon-forge-nexus-stage__orb { margin-inline: auto; }
+  .eon-forge-nexus-stage ol { grid-template-columns: repeat(4, minmax(0, 1fr)); row-gap: .8rem; }
+  .eon-forge-nexus-stage ol::before { display: none; }
+}
+@media (max-width: 560px) {
+  .eon-forge-nexus-stage { width: calc(100% - 1rem); padding: .7rem; }
+  .eon-forge-nexus-stage ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .eon-forge-nexus-stage * { animation: none !important; transition: none !important; }
+}
+
+/* RT89 — review-first GitHub publishing lane. */
+.eon-forge-github-publish { margin-top:1rem; padding-top:1rem; border-top:1px solid var(--clr-border); }
+.eon-forge-github-publish select,.eon-forge-github-publish input[type="text"],.eon-forge-github-publish input:not([type]) { width:100%; min-width:0; border:1px solid var(--clr-border); border-radius:.65rem; background:var(--clr-surface); color:var(--clr-text); padding:.62rem .7rem; font:inherit; }
+.eon-forge-github-private { display:flex; align-items:flex-start; gap:.5rem; color:var(--clr-text-muted); font-size:.78rem; line-height:1.4; }
+.eon-forge-github-receipt { display:grid; gap:.35rem; padding:.7rem; border:1px solid var(--clr-border); border-radius:.75rem; background:color-mix(in srgb,var(--clr-surface) 92%,var(--clr-accent) 8%); }
+.eon-forge-github-receipt > span,.eon-forge-github-receipt > small { overflow-wrap:anywhere; color:var(--clr-text-muted); }
+.eon-forge-github-rollback { display:grid; gap:.55rem; margin-top:.7rem; padding:.75rem; border:1px solid color-mix(in srgb,var(--clr-border) 82%,var(--clr-accent) 18%); border-radius:.78rem; background:color-mix(in srgb,var(--clr-surface) 95%,var(--clr-accent) 5%); }
+.eon-forge-github-rollback > p,.eon-forge-github-rollback > small { margin:0; color:var(--clr-text-muted); font-size:.74rem; line-height:1.45; }
+.eon-forge-github-rollback .eon-forge-ai-actions { margin-top:.1rem; }

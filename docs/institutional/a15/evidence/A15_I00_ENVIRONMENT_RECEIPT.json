@@ -1,0 +1,28 @@
+{
+  "schema": "eonapp.a15.i00.environment-receipt.v1",
+  "generatedAt": "2026-08-04T13:52:28Z",
+  "branch": "launch/a15-core-city-integration",
+  "currentHead": "fdc92595ca6d8fb941f45afb598a4a282dc70e62",
+  "sourceBaselineCommit": "fdc92595ca6d8fb941f45afb598a4a282dc70e62",
+  "sourceBaselineIsAncestor": true,
+  "a14BaselineCommit": "a6cf226d39073701b3d3b04c1f8d4582aec495a3",
+  "node": "v22.16.0",
+  "npmInstalled": "10.9.2",
+  "npmRequired": "11.12.1",
+  "registry": "https://packages.applied-caas-gateway1.internal.api.openai.org/artifactory/api/npm/npm-public",
+  "workingTreeCleanBeforeGeneration": true,
+  "currentChangesPlanningOnly": true,
+  "nonPlanningChanges": [],
+  "dependencyState": {
+    "lockedInstallKnownBlocker": "private npm mirror 404 for locked ws@7.5.11",
+    "productionBuild": "blocked-until-exact-install",
+    "builtArtifactGate": "blocked-until-exact-install",
+    "lockfileMutationAllowed": false
+  },
+  "archive": {
+    "expectedSha256": "76ea76c72f55f75a0d371116a65b675abe35265b3438ac092bb42bc04e2542ec",
+    "suppliedFile": "EONAPP_W802B_FULL_SOURCE_AND_HISTORY_fdc9259_2026-08-04(1).zip",
+    "suppliedSha256": "76ea76c72f55f75a0d371116a65b675abe35265b3438ac092bb42bc04e2542ec",
+    "verified": true
+  }
+}

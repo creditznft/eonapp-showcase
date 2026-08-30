@@ -1,0 +1,52 @@
+{
+  "schema": "eonapp.w272.csp-network-supplychain-source-readiness.v1",
+  "decision": "SOURCE_CONTROLS_PASS_EXTERNAL_EDGE_AND_AUDIT_PENDING",
+  "scope": "source-only",
+  "requiredExternalEvidence": [
+    {
+      "id": "edge-header-capture",
+      "status": "pending-independent-review",
+      "owner": "release owner",
+      "evidence": "Preview and live header capture for canonical, Telegram and retired routes.",
+      "required": true,
+      "evidenceRefs": []
+    },
+    {
+      "id": "csp-report-review",
+      "status": "pending-independent-review",
+      "owner": "security reviewer",
+      "evidence": "Redacted CSP report review after normal browsing and BYOK provider verification.",
+      "required": true,
+      "evidenceRefs": []
+    },
+    {
+      "id": "network-allowlist-review",
+      "status": "pending-owner-decision",
+      "owner": "provider owner",
+      "evidence": "Observed endpoint inventory and explicit decision on narrowing broad https/wss allowances.",
+      "required": true,
+      "evidenceRefs": []
+    },
+    {
+      "id": "supply-chain-review",
+      "status": "pending-independent-review",
+      "owner": "security reviewer",
+      "evidence": "Fresh lockfile audit, SBOM review and dependency remediation decision.",
+      "required": true,
+      "evidenceRefs": []
+    },
+    {
+      "id": "sourcemap-release-check",
+      "status": "pending-release-owner",
+      "owner": "release owner",
+      "evidence": "Preview/live confirmation that production sourcemaps are absent or access-controlled.",
+      "required": true,
+      "evidenceRefs": []
+    }
+  ],
+  "claimFence": [
+    "This board records source-only readiness and does not prove browser, device, provider, account, legal, privacy, security or production behavior.",
+    "No external evidence reference is collected in this source freeze.",
+    "This board cannot approve beta, launch, payment, trading, prediction-market or provider activation."
+  ]
+}

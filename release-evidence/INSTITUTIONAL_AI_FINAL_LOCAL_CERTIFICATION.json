@@ -1,0 +1,397 @@
+{
+  "schema": "eonapp.institutional-ai-final-local-certification.v1",
+  "baseCommit": "016e306fe9050a93b17f020a0e9792071dd2ce72",
+  "baseTree": "958fa8e6df22621495bc8e62cd47d146f895c72f",
+  "tiers": {
+    "authority": [
+      {
+        "id": "institutional-source-authority",
+        "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/institutional-ai-v2-gate.mjs"
+      },
+      {
+        "id": "first-prompt-grounding-authority",
+        "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/w605-ai-grounding-and-output-gate.mjs"
+      },
+      {
+        "id": "local-connection-authority",
+        "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/a15-i12-local-connection-authority-gate.mjs"
+      },
+      {
+        "id": "a15-boundary-enforcement",
+        "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/a15-boundary-gate.mjs --enforce"
+      }
+    ],
+    "core": [
+      {
+        "id": "institutional-core-tests",
+        "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe --test tests/unit/institutional-ai-v2.test.mjs tests/unit/institutional-ai-red-team.test.mjs tests/unit/institutional-ai-city-viral-retention.test.mjs tests/unit/institutional-hosted-music-byok.test.mjs tests/unit/institutional-hosted-media-byok.test.mjs tests/unit/institutional-creator-iteration.test.mjs tests/unit/institutional-eonbot-recent-outcomes.test.mjs"
+      }
+    ],
+    "media": [
+      {
+        "id": "comfyui-image-authority",
+        "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/w623a-comfyui-local-image-gate.mjs"
+      },
+      {
+        "id": "real-local-image-authority",
+        "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/w625a-real-local-image-tooling-gate.mjs"
+      },
+      {
+        "id": "local-video-capability-authority",
+        "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/w625d-local-video-capability-gate.mjs"
+      },
+      {
+        "id": "real-local-video-contract",
+        "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/w625e-real-local-video-contract-gate.mjs"
+      },
+      {
+        "id": "local-video-product-workflow",
+        "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/w625f-local-video-product-workflow-gate.mjs"
+      },
+      {
+        "id": "local-video-efficiency-governor",
+        "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/w625g-local-video-efficiency-governor-gate.mjs"
+      },
+      {
+        "id": "local-creator-certification-source",
+        "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/w625h-local-creator-certification-gate.mjs"
+      },
+      {
+        "id": "image-video-local-regression",
+        "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe --test tests/unit/w623a-comfyui-local-image.test.mjs tests/unit/w625a-real-local-image-tooling.test.mjs tests/unit/w625b-local-image-workflow-registry.test.mjs tests/unit/w625c-image-creation-foundation.test.mjs tests/unit/w625d-local-video-capability.test.mjs tests/unit/w625e-real-local-video-contract.test.mjs tests/unit/w625f-local-video-product-workflow.test.mjs tests/unit/w625g-local-video-efficiency-governor.test.mjs tests/unit/w625h-local-creator-certification.test.mjs tests/unit/w626b-creator-companion.test.mjs"
+      }
+    ],
+    "retention": [
+      {
+        "id": "activity-center-authority",
+        "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/w434-notification-center-gate.mjs"
+      },
+      {
+        "id": "city-fairness-authority",
+        "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/w565-city-fairness-safety-gate.mjs"
+      },
+      {
+        "id": "share-pack-authority",
+        "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/w388a1-eon-share-pack-gate.mjs"
+      },
+      {
+        "id": "remix-card-authority",
+        "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/w388a2-remix-cards-gate.mjs"
+      },
+      {
+        "id": "eonbot-shareable-authority",
+        "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/w388a3-eonbot-shareable-gate.mjs"
+      },
+      {
+        "id": "pwa-asset-policy-authority",
+        "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/w275-pwa-asset-policy-gate.mjs"
+      },
+      {
+        "id": "retention-viral-pwa-regression",
+        "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe --test tests/unit/w434-notification-center.test.mjs tests/unit/w565-city-fairness-safety.test.mjs tests/unit/w388a1-eon-share-pack.test.mjs tests/unit/w388a2-remix-cards.test.mjs tests/unit/w388a3-eonbot-shareable.test.mjs tests/unit/w275-pwa-asset-policy.test.mjs"
+      }
+    ],
+    "security": [
+      {
+        "id": "w267-red-team",
+        "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/w267-red-team-source-audit-gate.mjs"
+      },
+      {
+        "id": "w484-user-facing-red-team",
+        "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/w484-user-facing-red-team-gate.mjs"
+      },
+      {
+        "id": "direct-job-threat-model",
+        "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/w626a-direct-job-threat-model-gate.mjs"
+      },
+      {
+        "id": "direct-spending-safety",
+        "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe --test tests/unit/w626g-direct-spending-safety.test.mjs"
+      },
+      {
+        "id": "security-trust",
+        "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/w214-security-trust-gate.mjs"
+      },
+      {
+        "id": "security-trust-tests",
+        "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe --test tests/unit/w214-security-trust.test.mjs"
+      },
+      {
+        "id": "institutional-release-block",
+        "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/w444-institutional-certification-gate.mjs"
+      },
+      {
+        "id": "institutional-release-block-tests",
+        "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe --test tests/unit/w444-institutional-certification.test.mjs"
+      },
+      {
+        "id": "historical-code-closure",
+        "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/w487-institutional-code-closure-gate.mjs"
+      },
+      {
+        "id": "historical-code-closure-tests",
+        "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe --test tests/unit/w487-institutional-code-closure.test.mjs"
+      },
+      {
+        "id": "hostile-city-machine-score",
+        "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/w758-hostile-red-team-machine-score-gate.mjs"
+      }
+    ],
+    "hygiene": [
+      {
+        "id": "diff-whitespace",
+        "command": "git diff --check"
+      },
+      {
+        "id": "final-runner-syntax",
+        "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe --check scripts/institutional-ai-final-local-certification.mjs"
+      }
+    ]
+  },
+  "externalProofRequired": true,
+  "productionAuthorizedBySource": false,
+  "generatedAt": "2026-08-09T00:58:21.784Z",
+  "selectedTiers": [
+    "authority",
+    "core",
+    "media",
+    "retention",
+    "security",
+    "hygiene"
+  ],
+  "durationMs": 84274,
+  "pass": true,
+  "results": [
+    {
+      "tier": "authority",
+      "id": "institutional-source-authority",
+      "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/institutional-ai-v2-gate.mjs",
+      "status": 0,
+      "durationMs": 1123
+    },
+    {
+      "tier": "authority",
+      "id": "first-prompt-grounding-authority",
+      "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/w605-ai-grounding-and-output-gate.mjs",
+      "status": 0,
+      "durationMs": 887
+    },
+    {
+      "tier": "authority",
+      "id": "local-connection-authority",
+      "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/a15-i12-local-connection-authority-gate.mjs",
+      "status": 0,
+      "durationMs": 987
+    },
+    {
+      "tier": "authority",
+      "id": "a15-boundary-enforcement",
+      "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/a15-boundary-gate.mjs --enforce",
+      "status": 0,
+      "durationMs": 2056
+    },
+    {
+      "tier": "core",
+      "id": "institutional-core-tests",
+      "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe --test tests/unit/institutional-ai-v2.test.mjs tests/unit/institutional-ai-red-team.test.mjs tests/unit/institutional-ai-city-viral-retention.test.mjs tests/unit/institutional-hosted-music-byok.test.mjs tests/unit/institutional-hosted-media-byok.test.mjs tests/unit/institutional-creator-iteration.test.mjs tests/unit/institutional-eonbot-recent-outcomes.test.mjs",
+      "status": 0,
+      "durationMs": 6844
+    },
+    {
+      "tier": "media",
+      "id": "comfyui-image-authority",
+      "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/w623a-comfyui-local-image-gate.mjs",
+      "status": 0,
+      "durationMs": 931
+    },
+    {
+      "tier": "media",
+      "id": "real-local-image-authority",
+      "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/w625a-real-local-image-tooling-gate.mjs",
+      "status": 0,
+      "durationMs": 967
+    },
+    {
+      "tier": "media",
+      "id": "local-video-capability-authority",
+      "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/w625d-local-video-capability-gate.mjs",
+      "status": 0,
+      "durationMs": 934
+    },
+    {
+      "tier": "media",
+      "id": "real-local-video-contract",
+      "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/w625e-real-local-video-contract-gate.mjs",
+      "status": 0,
+      "durationMs": 873
+    },
+    {
+      "tier": "media",
+      "id": "local-video-product-workflow",
+      "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/w625f-local-video-product-workflow-gate.mjs",
+      "status": 0,
+      "durationMs": 847
+    },
+    {
+      "tier": "media",
+      "id": "local-video-efficiency-governor",
+      "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/w625g-local-video-efficiency-governor-gate.mjs",
+      "status": 0,
+      "durationMs": 913
+    },
+    {
+      "tier": "media",
+      "id": "local-creator-certification-source",
+      "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/w625h-local-creator-certification-gate.mjs",
+      "status": 0,
+      "durationMs": 914
+    },
+    {
+      "tier": "media",
+      "id": "image-video-local-regression",
+      "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe --test tests/unit/w623a-comfyui-local-image.test.mjs tests/unit/w625a-real-local-image-tooling.test.mjs tests/unit/w625b-local-image-workflow-registry.test.mjs tests/unit/w625c-image-creation-foundation.test.mjs tests/unit/w625d-local-video-capability.test.mjs tests/unit/w625e-real-local-video-contract.test.mjs tests/unit/w625f-local-video-product-workflow.test.mjs tests/unit/w625g-local-video-efficiency-governor.test.mjs tests/unit/w625h-local-creator-certification.test.mjs tests/unit/w626b-creator-companion.test.mjs",
+      "status": 0,
+      "durationMs": 9030
+    },
+    {
+      "tier": "retention",
+      "id": "activity-center-authority",
+      "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/w434-notification-center-gate.mjs",
+      "status": 0,
+      "durationMs": 905
+    },
+    {
+      "tier": "retention",
+      "id": "city-fairness-authority",
+      "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/w565-city-fairness-safety-gate.mjs",
+      "status": 0,
+      "durationMs": 955
+    },
+    {
+      "tier": "retention",
+      "id": "share-pack-authority",
+      "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/w388a1-eon-share-pack-gate.mjs",
+      "status": 0,
+      "durationMs": 874
+    },
+    {
+      "tier": "retention",
+      "id": "remix-card-authority",
+      "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/w388a2-remix-cards-gate.mjs",
+      "status": 0,
+      "durationMs": 837
+    },
+    {
+      "tier": "retention",
+      "id": "eonbot-shareable-authority",
+      "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/w388a3-eonbot-shareable-gate.mjs",
+      "status": 0,
+      "durationMs": 861
+    },
+    {
+      "tier": "retention",
+      "id": "pwa-asset-policy-authority",
+      "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/w275-pwa-asset-policy-gate.mjs",
+      "status": 0,
+      "durationMs": 861
+    },
+    {
+      "tier": "retention",
+      "id": "retention-viral-pwa-regression",
+      "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe --test tests/unit/w434-notification-center.test.mjs tests/unit/w565-city-fairness-safety.test.mjs tests/unit/w388a1-eon-share-pack.test.mjs tests/unit/w388a2-remix-cards.test.mjs tests/unit/w388a3-eonbot-shareable.test.mjs tests/unit/w275-pwa-asset-policy.test.mjs",
+      "status": 0,
+      "durationMs": 5890
+    },
+    {
+      "tier": "security",
+      "id": "w267-red-team",
+      "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/w267-red-team-source-audit-gate.mjs",
+      "status": 0,
+      "durationMs": 870
+    },
+    {
+      "tier": "security",
+      "id": "w484-user-facing-red-team",
+      "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/w484-user-facing-red-team-gate.mjs",
+      "status": 0,
+      "durationMs": 869
+    },
+    {
+      "tier": "security",
+      "id": "direct-job-threat-model",
+      "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/w626a-direct-job-threat-model-gate.mjs",
+      "status": 0,
+      "durationMs": 870
+    },
+    {
+      "tier": "security",
+      "id": "direct-spending-safety",
+      "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe --test tests/unit/w626g-direct-spending-safety.test.mjs",
+      "status": 0,
+      "durationMs": 1751
+    },
+    {
+      "tier": "security",
+      "id": "security-trust",
+      "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/w214-security-trust-gate.mjs",
+      "status": 0,
+      "durationMs": 851
+    },
+    {
+      "tier": "security",
+      "id": "security-trust-tests",
+      "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe --test tests/unit/w214-security-trust.test.mjs",
+      "status": 0,
+      "durationMs": 1870
+    },
+    {
+      "tier": "security",
+      "id": "institutional-release-block",
+      "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/w444-institutional-certification-gate.mjs",
+      "status": 0,
+      "durationMs": 939
+    },
+    {
+      "tier": "security",
+      "id": "institutional-release-block-tests",
+      "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe --test tests/unit/w444-institutional-certification.test.mjs",
+      "status": 0,
+      "durationMs": 1805
+    },
+    {
+      "tier": "security",
+      "id": "historical-code-closure",
+      "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/w487-institutional-code-closure-gate.mjs",
+      "status": 0,
+      "durationMs": 905
+    },
+    {
+      "tier": "security",
+      "id": "historical-code-closure-tests",
+      "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe --test tests/unit/w487-institutional-code-closure.test.mjs",
+      "status": 0,
+      "durationMs": 1787
+    },
+    {
+      "tier": "security",
+      "id": "hostile-city-machine-score",
+      "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe scripts/w758-hostile-red-team-machine-score-gate.mjs",
+      "status": 0,
+      "durationMs": 32204
+    },
+    {
+      "tier": "hygiene",
+      "id": "diff-whitespace",
+      "command": "git diff --check",
+      "status": 0,
+      "durationMs": 174
+    },
+    {
+      "tier": "hygiene",
+      "id": "final-runner-syntax",
+      "command": "C:\\Users\\credi\\eon-tools\\node-v22.22.3-win-x64\\node.exe --check scripts/institutional-ai-final-local-certification.mjs",
+      "status": 0,
+      "durationMs": 879
+    }
+  ]
+}

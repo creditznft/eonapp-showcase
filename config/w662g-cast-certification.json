@@ -1,0 +1,1022 @@
+{
+  "schema": "eonapp.w662g.cast-certification.2026-07-23.v1",
+  "generatedFrom": {
+    "characterManifest": "eon.city.w649.characters.v1",
+    "animationManifest": "eon.city.w649.animations.v1",
+    "districtManifest": "eon.city.w649.districts.v1"
+  },
+  "truthBoundary": {
+    "sourceAndHashProofDoesNotEqualVisualAcceptance": true,
+    "fallbackIsAllowedOnlyWhenTruthfullyReported": true,
+    "animationClipNamesDoNotProveDeformationQuality": true,
+    "browserAndAuthenticatedHumanProofRemainSeparate": true
+  },
+  "counts": {
+    "castAssets": 15,
+    "animatedProfiles": 15,
+    "districts": 9,
+    "expectedVariantFiles": 30
+  },
+  "roster": [
+    {
+      "assetId": "eoncity-pathfinder-prime-11clips",
+      "intendedRole": "Primary player candidate",
+      "district": "All districts",
+      "sourceFile": "eoncity_pathfinder_prime_11clips.glb",
+      "lifecycle": "active",
+      "loadTier": "Tier 1",
+      "variants": {
+        "primary": {
+          "path": "/assets/city/w649/primary/characters/eoncity_pathfinder_prime_11clips.4fc5f5bc696f.glb",
+          "bytes": 736580,
+          "sha256": "4fc5f5bc696fa6a992ca86466be39f7e87b156e1589841b6dc5d797081d78b10",
+          "integrity": "sha256-4fc5f5bc696fa6a992ca86466be39f7e87b156e1589841b6dc5d797081d78b10"
+        },
+        "fallback": {
+          "path": "/assets/city/w649/fallback/characters/eoncity_pathfinder_prime_11clips.bd52fc0c68a6.glb",
+          "bytes": 1272504,
+          "sha256": "bd52fc0c68a60a8944eb94b7d33737409473f95ef4df8c68b40cccaaaeb73a18",
+          "integrity": "sha256-bd52fc0c68a60a8944eb94b7d33737409473f95ef4df8c68b40cccaaaeb73a18"
+        }
+      },
+      "animationClipCount": 11,
+      "animationClips": [
+        "Idle_02",
+        "Idle_11",
+        "Walking",
+        "Running",
+        "Big_Wave_Hello",
+        "Hand_on_Hip_Gesture",
+        "Checkout_Gesture",
+        "Open_Door",
+        "Jump_with_Arms_Open",
+        "Victory_Cheer",
+        "Lower_Weapon_Look_Raise"
+      ],
+      "animationAliases": {
+        "idle": "Idle_02",
+        "idle-alt": "Idle_11",
+        "walk": "Walking",
+        "run": "Running",
+        "wave": "Big_Wave_Hello",
+        "open": "Open_Door",
+        "victory": "Victory_Cheer",
+        "jump": "Jump_with_Arms_Open",
+        "interact": "Hand_on_Hip_Gesture"
+      },
+      "requiredBehaviorProof": [
+        "idle",
+        "walk",
+        "run",
+        "turn",
+        "inspect"
+      ],
+      "districtLinks": [
+        {
+          "districtId": "bootstrap",
+          "actions": [
+            "controls",
+            "eonbot"
+          ]
+        }
+      ],
+      "sourcePresent": true,
+      "exactBytesAndHashRequired": true,
+      "activeRuntimeImportExpected": true,
+      "fallbackPolicy": "decoder-free-fallback-only-when-primary-unavailable",
+      "automatedAssetProof": true,
+      "browserLoadedProof": false,
+      "fallbackInactiveProof": false,
+      "animationVisualProof": false,
+      "functionalRoleProof": false,
+      "terminalOrDockProof": false,
+      "authenticatedHumanProof": false
+    },
+    {
+      "assetId": "eoncity-pathfinder-a-vanguard-6clips",
+      "intendedRole": "Fallback player and animation donor",
+      "district": "Fallback only",
+      "sourceFile": "eoncity_pathfinder_a_vanguard_6clips.glb",
+      "lifecycle": "active",
+      "loadTier": "Tier 3",
+      "variants": {
+        "primary": {
+          "path": "/assets/city/w649/primary/characters/eoncity_pathfinder_a_vanguard_6clips.341989730eef.glb",
+          "bytes": 1044088,
+          "sha256": "341989730eef8df7648c6bcd5d7df322123f5e890f8a5c8022253cc68fab4f08",
+          "integrity": "sha256-341989730eef8df7648c6bcd5d7df322123f5e890f8a5c8022253cc68fab4f08"
+        },
+        "fallback": {
+          "path": "/assets/city/w649/fallback/characters/eoncity_pathfinder_a_vanguard_6clips.f87948576117.glb",
+          "bytes": 2780808,
+          "sha256": "f87948576117253d0bb8bef9d50f9ed57ebb3d178f9c4374ea4a011646606654",
+          "integrity": "sha256-f87948576117253d0bb8bef9d50f9ed57ebb3d178f9c4374ea4a011646606654"
+        }
+      },
+      "animationClipCount": 6,
+      "animationClips": [
+        "Idle_12",
+        "Walking",
+        "Running",
+        "Wave_One_Hand",
+        "Agree_Gesture",
+        "Open_Door"
+      ],
+      "animationAliases": {
+        "idle": "Idle_12",
+        "walk": "Walking",
+        "run": "Running",
+        "wave": "Wave_One_Hand",
+        "open": "Open_Door",
+        "interact": "Agree_Gesture"
+      },
+      "requiredBehaviorProof": [
+        "idle",
+        "walk",
+        "run",
+        "turn",
+        "inspect"
+      ],
+      "districtLinks": [
+        {
+          "districtId": "bootstrap",
+          "actions": [
+            "controls",
+            "eonbot"
+          ]
+        }
+      ],
+      "sourcePresent": true,
+      "exactBytesAndHashRequired": true,
+      "activeRuntimeImportExpected": true,
+      "fallbackPolicy": "animation-donor-and-last-resort",
+      "automatedAssetProof": true,
+      "browserLoadedProof": false,
+      "fallbackInactiveProof": false,
+      "animationVisualProof": false,
+      "functionalRoleProof": false,
+      "terminalOrDockProof": false,
+      "authenticatedHumanProof": false
+    },
+    {
+      "assetId": "eoncity-eonbot-orbit",
+      "intendedRole": "EONBOT companion",
+      "district": "All districts / EONBOT Dock",
+      "sourceFile": "eoncity_eonbot_orbit.glb",
+      "lifecycle": "active",
+      "loadTier": "Tier 1",
+      "variants": {
+        "primary": {
+          "path": "/assets/city/w649/primary/characters/eoncity_eonbot_orbit.aea90f2bde34.glb",
+          "bytes": 959796,
+          "sha256": "aea90f2bde3493b28b832590a77e91de88fb7f9aea6197b9d3b1bc807155922c",
+          "integrity": "sha256-aea90f2bde3493b28b832590a77e91de88fb7f9aea6197b9d3b1bc807155922c"
+        },
+        "fallback": {
+          "path": "/assets/city/w649/fallback/characters/eoncity_eonbot_orbit.cacb66f6bfd8.glb",
+          "bytes": 1671316,
+          "sha256": "cacb66f6bfd8233a44d500a21f7c8aa0b262063dbcc6b08afa0a3e8cd6d02b00",
+          "integrity": "sha256-cacb66f6bfd8233a44d500a21f7c8aa0b262063dbcc6b08afa0a3e8cd6d02b00"
+        }
+      },
+      "animationClipCount": 0,
+      "animationClips": [],
+      "animationAliases": {},
+      "requiredBehaviorProof": [
+        "hover",
+        "follow",
+        "inspect",
+        "dock"
+      ],
+      "districtLinks": [
+        {
+          "districtId": "bootstrap",
+          "actions": [
+            "controls",
+            "eonbot"
+          ]
+        }
+      ],
+      "sourcePresent": true,
+      "exactBytesAndHashRequired": true,
+      "activeRuntimeImportExpected": true,
+      "fallbackPolicy": "decoder-free-fallback-only-when-primary-unavailable",
+      "automatedAssetProof": true,
+      "browserLoadedProof": false,
+      "fallbackInactiveProof": false,
+      "animationVisualProof": false,
+      "functionalRoleProof": false,
+      "terminalOrDockProof": false,
+      "authenticatedHumanProof": false
+    },
+    {
+      "assetId": "eoncity-eonbot-charging-station",
+      "intendedRole": "EONBOT dock",
+      "district": "EONBOT Dock / Creator Atrium",
+      "sourceFile": "eoncity_eonbot_charging_station.glb",
+      "lifecycle": "active",
+      "loadTier": "Tier 2",
+      "variants": {
+        "primary": {
+          "path": "/assets/city/w649/primary/characters/eoncity_eonbot_charging_station.8ad81c8b0461.glb",
+          "bytes": 464700,
+          "sha256": "8ad81c8b04610c10ef499c75585a5ef2887a17a59c8dcd007655d1a0b8164aaf",
+          "integrity": "sha256-8ad81c8b04610c10ef499c75585a5ef2887a17a59c8dcd007655d1a0b8164aaf"
+        },
+        "fallback": {
+          "path": "/assets/city/w649/fallback/characters/eoncity_eonbot_charging_station.a7a12d2d127c.glb",
+          "bytes": 990628,
+          "sha256": "a7a12d2d127c41771f43b653de776cb91a40a840323244dc7b80b1cd14492287",
+          "integrity": "sha256-a7a12d2d127c41771f43b653de776cb91a40a840323244dc7b80b1cd14492287"
+        }
+      },
+      "animationClipCount": 0,
+      "animationClips": [],
+      "animationAliases": {},
+      "requiredBehaviorProof": [
+        "available",
+        "occupied",
+        "release"
+      ],
+      "districtLinks": [
+        {
+          "districtId": "creator-atrium",
+          "actions": [
+            "continue-project",
+            "projects",
+            "workspace",
+            "command-deck"
+          ]
+        }
+      ],
+      "sourcePresent": true,
+      "exactBytesAndHashRequired": true,
+      "activeRuntimeImportExpected": true,
+      "fallbackPolicy": "decoder-free-fallback-only-when-primary-unavailable",
+      "automatedAssetProof": true,
+      "browserLoadedProof": false,
+      "fallbackInactiveProof": false,
+      "animationVisualProof": false,
+      "functionalRoleProof": false,
+      "terminalOrDockProof": false,
+      "authenticatedHumanProof": false
+    },
+    {
+      "assetId": "eoncity-civilian-creator-13clips",
+      "intendedRole": "Creator Atrium host",
+      "district": "Creator Atrium",
+      "sourceFile": "eoncity_civilian_creator_13clips.glb",
+      "lifecycle": "active",
+      "loadTier": "Tier 2",
+      "variants": {
+        "primary": {
+          "path": "/assets/city/w649/primary/characters/eoncity_civilian_creator_13clips.12b6959f6a9d.glb",
+          "bytes": 762688,
+          "sha256": "12b6959f6a9daf7df80380e9db37e77d8168af37e3df7e5d1f9eec840c3b4957",
+          "integrity": "sha256-12b6959f6a9daf7df80380e9db37e77d8168af37e3df7e5d1f9eec840c3b4957"
+        },
+        "fallback": {
+          "path": "/assets/city/w649/fallback/characters/eoncity_civilian_creator_13clips.f1c7450613b7.glb",
+          "bytes": 1325980,
+          "sha256": "f1c7450613b700f7ce8b05d6fcc22f06d045006b2766dc34c16b5e918d00c7dc",
+          "integrity": "sha256-f1c7450613b700f7ce8b05d6fcc22f06d045006b2766dc34c16b5e918d00c7dc"
+        }
+      },
+      "animationClipCount": 13,
+      "animationClips": [
+        "Checkout Gesture",
+        "Female Bend Over Pick Up Inspect",
+        "Idle 02",
+        "Idle 12",
+        "Jump With Arms Open",
+        "Lower Weapon Look Raise",
+        "Running",
+        "Step Forward And Push",
+        "Talk With Hands Open",
+        "Victory Cheer",
+        "Walking",
+        "Wave One Hand",
+        "Open Door"
+      ],
+      "animationAliases": {
+        "idle": "Idle 02",
+        "walk": "Walking",
+        "run": "Running",
+        "wave": "Wave One Hand",
+        "talk": "Talk With Hands Open",
+        "open": "Open Door",
+        "victory": "Victory Cheer",
+        "jump": "Jump With Arms Open",
+        "interact": "Checkout Gesture"
+      },
+      "requiredBehaviorProof": [
+        "idle",
+        "walk",
+        "run",
+        "turn",
+        "inspect"
+      ],
+      "districtLinks": [
+        {
+          "districtId": "creator-atrium",
+          "actions": [
+            "continue-project",
+            "projects",
+            "workspace",
+            "command-deck"
+          ]
+        }
+      ],
+      "sourcePresent": true,
+      "exactBytesAndHashRequired": true,
+      "activeRuntimeImportExpected": true,
+      "fallbackPolicy": "decoder-free-fallback-only-when-primary-unavailable",
+      "automatedAssetProof": true,
+      "browserLoadedProof": false,
+      "fallbackInactiveProof": false,
+      "animationVisualProof": false,
+      "functionalRoleProof": false,
+      "terminalOrDockProof": false,
+      "authenticatedHumanProof": false
+    },
+    {
+      "assetId": "eoncity-creator-trade-6clips",
+      "intendedRole": "Trade Dome information steward",
+      "district": "Trade Dome",
+      "sourceFile": "eoncity_creator_trade_6clips.glb",
+      "lifecycle": "active",
+      "loadTier": "Tier 2",
+      "variants": {
+        "primary": {
+          "path": "/assets/city/w649/primary/characters/eoncity_creator_trade_6clips.6228f6260804.glb",
+          "bytes": 814752,
+          "sha256": "6228f6260804cf95fd6c97af8322c051a6982ba6d3e5e75a1e42e60044362c0d",
+          "integrity": "sha256-6228f6260804cf95fd6c97af8322c051a6982ba6d3e5e75a1e42e60044362c0d"
+        },
+        "fallback": {
+          "path": "/assets/city/w649/fallback/characters/eoncity_creator_trade_6clips.07e6a8385c66.glb",
+          "bytes": 2043836,
+          "sha256": "07e6a8385c66237f044bd5e72a1bf175ff57bae3d0c5fc79c17af28cbb4531e9",
+          "integrity": "sha256-07e6a8385c66237f044bd5e72a1bf175ff57bae3d0c5fc79c17af28cbb4531e9"
+        }
+      },
+      "animationClipCount": 6,
+      "animationClips": [
+        "Idle 11",
+        "Walking",
+        "Running",
+        "Wave One Hand",
+        "Talk With Hands Open",
+        "Open Door"
+      ],
+      "animationAliases": {
+        "idle": "Idle 11",
+        "walk": "Walking",
+        "run": "Running",
+        "wave": "Wave One Hand",
+        "talk": "Talk With Hands Open",
+        "open": "Open Door"
+      },
+      "requiredBehaviorProof": [
+        "idle",
+        "walk",
+        "run",
+        "turn",
+        "inspect"
+      ],
+      "districtLinks": [
+        {
+          "districtId": "trade-dome",
+          "actions": [
+            "studio-collection-information"
+          ]
+        }
+      ],
+      "sourcePresent": true,
+      "exactBytesAndHashRequired": true,
+      "activeRuntimeImportExpected": true,
+      "fallbackPolicy": "decoder-free-fallback-only-when-primary-unavailable",
+      "automatedAssetProof": true,
+      "browserLoadedProof": false,
+      "fallbackInactiveProof": false,
+      "animationVisualProof": false,
+      "functionalRoleProof": false,
+      "terminalOrDockProof": false,
+      "authenticatedHumanProof": false
+    },
+    {
+      "assetId": "eoncity-eon-architect-12clips",
+      "intendedRole": "Orientation and architecture guide",
+      "district": "Orientation Hall / AI Tower",
+      "sourceFile": "eoncity_eon_architect_12clips.glb",
+      "lifecycle": "active",
+      "loadTier": "Tier 2",
+      "variants": {
+        "primary": {
+          "path": "/assets/city/w649/primary/characters/eoncity_eon_architect_12clips.2a8d47a9cadc.glb",
+          "bytes": 781444,
+          "sha256": "2a8d47a9cadc6ea37109b569deb6294ef7467cd0e4c77d67c27934c2aa1afc9d",
+          "integrity": "sha256-2a8d47a9cadc6ea37109b569deb6294ef7467cd0e4c77d67c27934c2aa1afc9d"
+        },
+        "fallback": {
+          "path": "/assets/city/w649/fallback/characters/eoncity_eon_architect_12clips.7a560e79784b.glb",
+          "bytes": 1327740,
+          "sha256": "7a560e79784b288bf9515735950143fe24810bfe06519081ae07c34e6634163a",
+          "integrity": "sha256-7a560e79784b288bf9515735950143fe24810bfe06519081ae07c34e6634163a"
+        }
+      },
+      "animationClipCount": 12,
+      "animationClips": [
+        "Alert",
+        "Combat_Stance",
+        "Formal_Bow",
+        "Idle_12",
+        "Relax_arms_then_strike_battle_pose",
+        "running",
+        "Talk_Passionately",
+        "Talk_with_Hands_Open",
+        "Victory_Cheer",
+        "walking_man",
+        "Wave_One_Hand",
+        "open_door"
+      ],
+      "animationAliases": {
+        "idle": "Idle_12",
+        "walk": "walking_man",
+        "run": "running",
+        "wave": "Wave_One_Hand",
+        "talk": "Talk_Passionately",
+        "open": "open_door",
+        "victory": "Victory_Cheer",
+        "interact": "Alert"
+      },
+      "requiredBehaviorProof": [
+        "idle",
+        "walk",
+        "run",
+        "turn",
+        "inspect"
+      ],
+      "districtLinks": [
+        {
+          "districtId": "orientation-hall",
+          "actions": [
+            "start-here",
+            "district-map",
+            "projects"
+          ]
+        }
+      ],
+      "sourcePresent": true,
+      "exactBytesAndHashRequired": true,
+      "activeRuntimeImportExpected": true,
+      "fallbackPolicy": "decoder-free-fallback-only-when-primary-unavailable",
+      "automatedAssetProof": true,
+      "browserLoadedProof": false,
+      "fallbackInactiveProof": false,
+      "animationVisualProof": false,
+      "functionalRoleProof": false,
+      "terminalOrDockProof": false,
+      "authenticatedHumanProof": false
+    },
+    {
+      "assetId": "eoncity-holo-interface-operator-6clips",
+      "intendedRole": "Command Deck / Agent Theatre operator",
+      "district": "Agent Theatre / Forge",
+      "sourceFile": "eoncity_holo_interface_operator_6clips.glb",
+      "lifecycle": "active",
+      "loadTier": "Tier 2",
+      "variants": {
+        "primary": {
+          "path": "/assets/city/w649/primary/characters/eoncity_holo_interface_operator_6clips.f0b0c25f89ac.glb",
+          "bytes": 829884,
+          "sha256": "f0b0c25f89ac57e9131a97d3002ab39b4bd390b9005abbd511d855782ecc3be4",
+          "integrity": "sha256-f0b0c25f89ac57e9131a97d3002ab39b4bd390b9005abbd511d855782ecc3be4"
+        },
+        "fallback": {
+          "path": "/assets/city/w649/fallback/characters/eoncity_holo_interface_operator_6clips.1b69b55cbbf7.glb",
+          "bytes": 2091480,
+          "sha256": "1b69b55cbbf74cc758dc18ceca7cb7653aa17232b28026b7b362795c1868e544",
+          "integrity": "sha256-1b69b55cbbf74cc758dc18ceca7cb7653aa17232b28026b7b362795c1868e544"
+        }
+      },
+      "animationClipCount": 6,
+      "animationClips": [
+        "Idle_11",
+        "running",
+        "Talk_with_Hands_Open",
+        "walking_man",
+        "Wave_One_Hand",
+        "open_door"
+      ],
+      "animationAliases": {
+        "idle": "Idle_11",
+        "walk": "walking_man",
+        "run": "running",
+        "wave": "Wave_One_Hand",
+        "talk": "Talk_with_Hands_Open",
+        "open": "open_door"
+      },
+      "requiredBehaviorProof": [
+        "idle",
+        "walk",
+        "run",
+        "turn",
+        "inspect"
+      ],
+      "districtLinks": [
+        {
+          "districtId": "forge-basilica",
+          "actions": [
+            "forge",
+            "review-ai-proposal",
+            "device-lab"
+          ]
+        },
+        {
+          "districtId": "agent-theatre",
+          "actions": [
+            "receipt-backed-agent-states"
+          ]
+        }
+      ],
+      "sourcePresent": true,
+      "exactBytesAndHashRequired": true,
+      "activeRuntimeImportExpected": true,
+      "fallbackPolicy": "decoder-free-fallback-only-when-primary-unavailable",
+      "automatedAssetProof": true,
+      "browserLoadedProof": false,
+      "fallbackInactiveProof": false,
+      "animationVisualProof": false,
+      "functionalRoleProof": false,
+      "terminalOrDockProof": false,
+      "authenticatedHumanProof": false
+    },
+    {
+      "assetId": "eoncity-navigator-archive-vault-6clips",
+      "intendedRole": "Archive and wayfinding guide",
+      "district": "Archive Canopy",
+      "sourceFile": "eoncity_navigator_archive_vault_6clips.glb",
+      "lifecycle": "active",
+      "loadTier": "Tier 2",
+      "variants": {
+        "primary": {
+          "path": "/assets/city/w649/primary/characters/eoncity_navigator_archive_vault_6clips.c15c8c99528c.glb",
+          "bytes": 802060,
+          "sha256": "c15c8c99528cc710e5217238bac6d1f31aed2852a2ab041eeba1b1ab2d017926",
+          "integrity": "sha256-c15c8c99528cc710e5217238bac6d1f31aed2852a2ab041eeba1b1ab2d017926"
+        },
+        "fallback": {
+          "path": "/assets/city/w649/fallback/characters/eoncity_navigator_archive_vault_6clips.ca91b2f2c308.glb",
+          "bytes": 2086964,
+          "sha256": "ca91b2f2c3089d0c9214526c74b0975954ad18b613a4099e96bd1806164de522",
+          "integrity": "sha256-ca91b2f2c3089d0c9214526c74b0975954ad18b613a4099e96bd1806164de522"
+        }
+      },
+      "animationClipCount": 6,
+      "animationClips": [
+        "Idle_12",
+        "running",
+        "Talk_with_Hands_Open",
+        "walking_man",
+        "Wave_One_Hand",
+        "open_door"
+      ],
+      "animationAliases": {
+        "idle": "Idle_12",
+        "walk": "walking_man",
+        "run": "running",
+        "wave": "Wave_One_Hand",
+        "talk": "Talk_with_Hands_Open",
+        "open": "open_door"
+      },
+      "requiredBehaviorProof": [
+        "idle",
+        "walk",
+        "run",
+        "turn",
+        "inspect"
+      ],
+      "districtLinks": [
+        {
+          "districtId": "archive-canopy",
+          "actions": [
+            "library",
+            "workspace"
+          ]
+        }
+      ],
+      "sourcePresent": true,
+      "exactBytesAndHashRequired": true,
+      "activeRuntimeImportExpected": true,
+      "fallbackPolicy": "decoder-free-fallback-only-when-primary-unavailable",
+      "automatedAssetProof": true,
+      "browserLoadedProof": false,
+      "fallbackInactiveProof": false,
+      "animationVisualProof": false,
+      "functionalRoleProof": false,
+      "terminalOrDockProof": false,
+      "authenticatedHumanProof": false
+    },
+    {
+      "assetId": "eoncity-vault-steward-6clips",
+      "intendedRole": "Primary Vault steward",
+      "district": "Vault Station",
+      "sourceFile": "eoncity_vault_steward_6clips.glb",
+      "lifecycle": "active",
+      "loadTier": "Tier 2",
+      "variants": {
+        "primary": {
+          "path": "/assets/city/w649/primary/characters/eoncity_vault_steward_6clips.017befdd2805.glb",
+          "bytes": 837640,
+          "sha256": "017befdd28051ec94d0cca1bec85bc539bc952fc46ac80783d98cb4aa4ac5203",
+          "integrity": "sha256-017befdd28051ec94d0cca1bec85bc539bc952fc46ac80783d98cb4aa4ac5203"
+        },
+        "fallback": {
+          "path": "/assets/city/w649/fallback/characters/eoncity_vault_steward_6clips.1a08e2959d76.glb",
+          "bytes": 2148188,
+          "sha256": "1a08e2959d766e470da0d6c6c5ec517dc4400ed68fd26c054e305cdda0135e18",
+          "integrity": "sha256-1a08e2959d766e470da0d6c6c5ec517dc4400ed68fd26c054e305cdda0135e18"
+        }
+      },
+      "animationClipCount": 6,
+      "animationClips": [
+        "Checkout_Gesture",
+        "Idle_11",
+        "Idle_15",
+        "running",
+        "Talk_with_Hands_Open",
+        "walking_man"
+      ],
+      "animationAliases": {
+        "idle": "Idle_11",
+        "idle-alt": "Idle_15",
+        "walk": "walking_man",
+        "run": "running",
+        "talk": "Talk_with_Hands_Open",
+        "interact": "Checkout_Gesture"
+      },
+      "requiredBehaviorProof": [
+        "idle",
+        "walk",
+        "run",
+        "turn",
+        "inspect"
+      ],
+      "districtLinks": [
+        {
+          "districtId": "vault-station",
+          "actions": [
+            "vault",
+            "receipts",
+            "settings"
+          ]
+        }
+      ],
+      "sourcePresent": true,
+      "exactBytesAndHashRequired": true,
+      "activeRuntimeImportExpected": true,
+      "fallbackPolicy": "decoder-free-fallback-only-when-primary-unavailable",
+      "automatedAssetProof": true,
+      "browserLoadedProof": false,
+      "fallbackInactiveProof": false,
+      "animationVisualProof": false,
+      "functionalRoleProof": false,
+      "terminalOrDockProof": false,
+      "authenticatedHumanProof": false
+    },
+    {
+      "assetId": "eoncity-vault-steward-male-6clips",
+      "intendedRole": "Vault alternate / shift variant",
+      "district": "Vault Station",
+      "sourceFile": "eoncity_vault_steward_male_6clips.glb",
+      "lifecycle": "active",
+      "loadTier": "Tier 3",
+      "variants": {
+        "primary": {
+          "path": "/assets/city/w649/primary/characters/eoncity_vault_steward_male_6clips.27faedc866a9.glb",
+          "bytes": 937032,
+          "sha256": "27faedc866a9ccc646cdebb98f8f07291a3fcc304ae092141ce057ab141db4b3",
+          "integrity": "sha256-27faedc866a9ccc646cdebb98f8f07291a3fcc304ae092141ce057ab141db4b3"
+        },
+        "fallback": {
+          "path": "/assets/city/w649/fallback/characters/eoncity_vault_steward_male_6clips.9d7c3566318f.glb",
+          "bytes": 2212752,
+          "sha256": "9d7c3566318f3246ee47d7e5354e6b4332228b0a1984d13a6c2cc003f3f8ad27",
+          "integrity": "sha256-9d7c3566318f3246ee47d7e5354e6b4332228b0a1984d13a6c2cc003f3f8ad27"
+        }
+      },
+      "animationClipCount": 6,
+      "animationClips": [
+        "Idle_11",
+        "Idle_15",
+        "running",
+        "Talk_with_Hands_Open",
+        "walking_man",
+        "open_door"
+      ],
+      "animationAliases": {
+        "idle": "Idle_11",
+        "idle-alt": "Idle_15",
+        "walk": "walking_man",
+        "run": "running",
+        "talk": "Talk_with_Hands_Open",
+        "open": "open_door"
+      },
+      "requiredBehaviorProof": [
+        "idle",
+        "walk",
+        "run",
+        "turn",
+        "inspect"
+      ],
+      "districtLinks": [
+        {
+          "districtId": "vault-station",
+          "actions": [
+            "vault",
+            "receipts",
+            "settings"
+          ]
+        }
+      ],
+      "sourcePresent": true,
+      "exactBytesAndHashRequired": true,
+      "activeRuntimeImportExpected": true,
+      "fallbackPolicy": "decoder-free-fallback-only-when-primary-unavailable",
+      "automatedAssetProof": true,
+      "browserLoadedProof": false,
+      "fallbackInactiveProof": false,
+      "animationVisualProof": false,
+      "functionalRoleProof": false,
+      "terminalOrDockProof": false,
+      "authenticatedHumanProof": false
+    },
+    {
+      "assetId": "security-sentinel-6clips",
+      "intendedRole": "Security and patrol NPC",
+      "district": "Vault / portals / district patrol",
+      "sourceFile": "security_sentinel_6clips.glb",
+      "lifecycle": "active",
+      "loadTier": "Tier 2",
+      "variants": {
+        "primary": {
+          "path": "/assets/city/w649/primary/characters/security_sentinel_6clips.26d14b127a0a.glb",
+          "bytes": 818680,
+          "sha256": "26d14b127a0abb4b2fcb89bba41d0e196ee9e1bde97f99c7e3d83e3e7485f144",
+          "integrity": "sha256-26d14b127a0abb4b2fcb89bba41d0e196ee9e1bde97f99c7e3d83e3e7485f144"
+        },
+        "fallback": {
+          "path": "/assets/city/w649/fallback/characters/security_sentinel_6clips.42604c429969.glb",
+          "bytes": 2069068,
+          "sha256": "42604c429969f24f56a0673ab2aa15a0b6ec31828445731d3456b902408c9670",
+          "integrity": "sha256-42604c429969f24f56a0673ab2aa15a0b6ec31828445731d3456b902408c9670"
+        }
+      },
+      "animationClipCount": 6,
+      "animationClips": [
+        "Hand_on_Hip_Gesture",
+        "Idle",
+        "Lower_Weapon_Look_Raise",
+        "Running",
+        "Walking",
+        "Wave_One_Hand"
+      ],
+      "animationAliases": {
+        "idle": "Idle",
+        "walk": "Walking",
+        "run": "Running",
+        "wave": "Wave_One_Hand",
+        "interact": "Hand_on_Hip_Gesture"
+      },
+      "requiredBehaviorProof": [
+        "idle",
+        "walk",
+        "run",
+        "turn",
+        "inspect"
+      ],
+      "districtLinks": [
+        {
+          "districtId": "vault-station",
+          "actions": [
+            "vault",
+            "receipts",
+            "settings"
+          ]
+        }
+      ],
+      "sourcePresent": true,
+      "exactBytesAndHashRequired": true,
+      "activeRuntimeImportExpected": true,
+      "fallbackPolicy": "decoder-free-fallback-only-when-primary-unavailable",
+      "automatedAssetProof": true,
+      "browserLoadedProof": false,
+      "fallbackInactiveProof": false,
+      "animationVisualProof": false,
+      "functionalRoleProof": false,
+      "terminalOrDockProof": false,
+      "authenticatedHumanProof": false
+    },
+    {
+      "assetId": "forge-device-lab-specialist-6clips",
+      "intendedRole": "Forge and Device Lab specialist",
+      "district": "Forge Basilica / Device Lab",
+      "sourceFile": "forge_device_lab_specialist_6clips.glb",
+      "lifecycle": "active",
+      "loadTier": "Tier 2",
+      "variants": {
+        "primary": {
+          "path": "/assets/city/w649/primary/characters/forge_device_lab_specialist_6clips.addd169329d5.glb",
+          "bytes": 865016,
+          "sha256": "addd169329d54a6533e48b2ee96beacfb70c3852794d1c688912902241e3f3c7",
+          "integrity": "sha256-addd169329d54a6533e48b2ee96beacfb70c3852794d1c688912902241e3f3c7"
+        },
+        "fallback": {
+          "path": "/assets/city/w649/fallback/characters/forge_device_lab_specialist_6clips.e74a918e3f3a.glb",
+          "bytes": 2144020,
+          "sha256": "e74a918e3f3acee7d85e60f89cfc19047cfde8fda8ad63afb4d513e29653ba27",
+          "integrity": "sha256-e74a918e3f3acee7d85e60f89cfc19047cfde8fda8ad63afb4d513e29653ba27"
+        }
+      },
+      "animationClipCount": 6,
+      "animationClips": [
+        "Idle_12",
+        "Running",
+        "Talk_with_Hands_Open",
+        "Walking",
+        "Wave_One_Hand",
+        "Open_Door"
+      ],
+      "animationAliases": {
+        "idle": "Idle_12",
+        "walk": "Walking",
+        "run": "Running",
+        "wave": "Wave_One_Hand",
+        "talk": "Talk_with_Hands_Open",
+        "open": "Open_Door"
+      },
+      "requiredBehaviorProof": [
+        "idle",
+        "walk",
+        "run",
+        "turn",
+        "inspect"
+      ],
+      "districtLinks": [
+        {
+          "districtId": "forge-basilica",
+          "actions": [
+            "forge",
+            "review-ai-proposal",
+            "device-lab"
+          ]
+        }
+      ],
+      "sourcePresent": true,
+      "exactBytesAndHashRequired": true,
+      "activeRuntimeImportExpected": true,
+      "fallbackPolicy": "decoder-free-fallback-only-when-primary-unavailable",
+      "automatedAssetProof": true,
+      "browserLoadedProof": false,
+      "fallbackInactiveProof": false,
+      "animationVisualProof": false,
+      "functionalRoleProof": false,
+      "terminalOrDockProof": false,
+      "authenticatedHumanProof": false
+    },
+    {
+      "assetId": "citizen-variant-6clips",
+      "intendedRole": "Ambient citizen variant",
+      "district": "Creator Atrium / streets / Trade Dome",
+      "sourceFile": "citizen_variant_6clips.glb",
+      "lifecycle": "active",
+      "loadTier": "Tier 3",
+      "variants": {
+        "primary": {
+          "path": "/assets/city/w649/primary/characters/citizen_variant_6clips.10414ac70a6e.glb",
+          "bytes": 852124,
+          "sha256": "10414ac70a6e4cd5972311304c4277d73b52f14a0eb44b2c690fbd808750eef6",
+          "integrity": "sha256-10414ac70a6e4cd5972311304c4277d73b52f14a0eb44b2c690fbd808750eef6"
+        },
+        "fallback": {
+          "path": "/assets/city/w649/fallback/characters/citizen_variant_6clips.33ef24a6480c.glb",
+          "bytes": 2224768,
+          "sha256": "33ef24a6480cc51a25f05b00af72b55cb6902883e3c0066ac128681f874c7500",
+          "integrity": "sha256-33ef24a6480cc51a25f05b00af72b55cb6902883e3c0066ac128681f874c7500"
+        }
+      },
+      "animationClipCount": 6,
+      "animationClips": [
+        "Checkout_Gesture",
+        "Discuss_While_Moving",
+        "Idle_3",
+        "Running",
+        "Walking",
+        "Wave_One_Hand"
+      ],
+      "animationAliases": {
+        "idle": "Idle_3",
+        "walk": "Walking",
+        "run": "Running",
+        "wave": "Wave_One_Hand",
+        "interact": "Checkout_Gesture"
+      },
+      "requiredBehaviorProof": [
+        "idle",
+        "walk",
+        "run",
+        "turn",
+        "inspect"
+      ],
+      "districtLinks": [
+        {
+          "districtId": "trade-dome",
+          "actions": [
+            "studio-collection-information"
+          ]
+        }
+      ],
+      "sourcePresent": true,
+      "exactBytesAndHashRequired": true,
+      "activeRuntimeImportExpected": true,
+      "fallbackPolicy": "decoder-free-fallback-only-when-primary-unavailable",
+      "automatedAssetProof": true,
+      "browserLoadedProof": false,
+      "fallbackInactiveProof": false,
+      "animationVisualProof": false,
+      "functionalRoleProof": false,
+      "terminalOrDockProof": false,
+      "authenticatedHumanProof": false
+    },
+    {
+      "assetId": "eon-x1-worker-9clips",
+      "intendedRole": "Forge worker and maintenance NPC",
+      "district": "Forge Basilica / Device Lab",
+      "sourceFile": "eon_x1_worker_9clips.glb",
+      "lifecycle": "active",
+      "loadTier": "Tier 2",
+      "variants": {
+        "primary": {
+          "path": "/assets/city/w649/primary/characters/eon_x1_worker_9clips.0cca7479c814.glb",
+          "bytes": 732836,
+          "sha256": "0cca7479c8143df9f94a5584d7464689eefebd7bb5881edde45b7c944d5620d6",
+          "integrity": "sha256-0cca7479c8143df9f94a5584d7464689eefebd7bb5881edde45b7c944d5620d6"
+        },
+        "fallback": {
+          "path": "/assets/city/w649/fallback/characters/eon_x1_worker_9clips.ae79b51adc7a.glb",
+          "bytes": 1248080,
+          "sha256": "ae79b51adc7a7e8f63a2b7ddd0e36a1a0c47cb0ae43c2e263d923c20673927e2",
+          "integrity": "sha256-ae79b51adc7a7e8f63a2b7ddd0e36a1a0c47cb0ae43c2e263d923c20673927e2"
+        }
+      },
+      "animationClipCount": 9,
+      "animationClips": [
+        "Agree_Gesture",
+        "Carry_Heavy_Object_Walk",
+        "Female_Bend_Over_Pick_Up_Inspect",
+        "Idle_12",
+        "Lower_Weapon_Look_Raise",
+        "Running",
+        "Step_Forward_and_Push",
+        "Walking",
+        "Wave_One_Hand"
+      ],
+      "animationAliases": {
+        "idle": "Idle_12",
+        "walk": "Carry_Heavy_Object_Walk",
+        "run": "Running",
+        "wave": "Wave_One_Hand",
+        "interact": "Agree_Gesture"
+      },
+      "requiredBehaviorProof": [
+        "idle",
+        "walk",
+        "run",
+        "turn",
+        "inspect"
+      ],
+      "districtLinks": [
+        {
+          "districtId": "forge-basilica",
+          "actions": [
+            "forge",
+            "review-ai-proposal",
+            "device-lab"
+          ]
+        }
+      ],
+      "sourcePresent": true,
+      "exactBytesAndHashRequired": true,
+      "activeRuntimeImportExpected": true,
+      "fallbackPolicy": "decoder-free-fallback-only-when-primary-unavailable",
+      "automatedAssetProof": true,
+      "browserLoadedProof": false,
+      "fallbackInactiveProof": false,
+      "animationVisualProof": false,
+      "functionalRoleProof": false,
+      "terminalOrDockProof": false,
+      "authenticatedHumanProof": false
+    }
+  ]
+}

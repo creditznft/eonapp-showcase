@@ -1,0 +1,32 @@
+# EONAPP.ch — GitHub Actions: Auto-deploy to Cloudflare Pages
+# Place this at: .github/workflows/deploy.yml
+# (Create .github/workflows/ folder first)
+#
+# Required GitHub Secrets:
+#   CLOUDFLARE_API_TOKEN — Get from Cloudflare Dashboard > My Profile > API Tokens
+#   CLOUDFLARE_ACCOUNT_ID — Found in Cloudflare Dashboard > Overview right sidebar
+
+# NOTE: This file shows the workflow. To activate:
+# 1. Create folder: .github/workflows/
+# 2. Save this file as: .github/workflows/deploy.yml (remove the .txt extension)
+# 3. Add the secrets in GitHub repo Settings > Secrets
+
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: eonapp-ch
+          directory: .
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}

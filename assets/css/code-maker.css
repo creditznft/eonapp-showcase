@@ -1,0 +1,626 @@
+main#main {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - var(--header-height, 3.5rem));
+}
+
+.cm-launch-hero {
+  padding: 1rem 0 0.85rem;
+  background:
+    radial-gradient(circle at top left, rgba(167, 139, 250, 0.14), transparent 26%),
+    radial-gradient(circle at top right, rgba(34, 211, 238, 0.12), transparent 24%);
+}
+
+.cm-launch-hero-inner {
+  width: min(1400px, calc(100vw - 1.5rem));
+  margin: 0 auto;
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: 1.2fr auto;
+  align-items: center;
+}
+
+.cm-launch-kicker {
+  margin: 0 0 0.45rem;
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #7dd3fc;
+}
+
+.cm-launch-hero h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.35rem);
+  line-height: 1.02;
+  letter-spacing: -0.05em;
+}
+
+.cm-launch-copy {
+  margin: 0.65rem 0 0;
+  color: #cbd5e1;
+  max-width: 68ch;
+  line-height: 1.55;
+}
+
+.cm-launch-actions {
+  display: flex;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.cm-launch-steps {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.cm-launch-step {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.8rem 0.9rem;
+  border-radius: 0.95rem;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  color: #e2e8f0;
+}
+
+.cm-launch-step strong {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #7c3aed, #06b6d4);
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.cm-launch-step span {
+  color: #cbd5e1;
+  font-size: 0.92rem;
+}
+
+/* ============================================================
+   EON Code Maker — Browser IDE Styles
+   ============================================================ */
+
+/* ── Shell ────────────────────────────────────────────────── */
+.cm-shell {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+  background: #0d0d1a;
+  color: #e2e8f0;
+}
+
+/* ── Toolbar ─────────────────────────────────────────────── */
+.cm-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.45rem 0.85rem;
+  background: #151525;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.cm-toolbar-left  { display: flex; align-items: center; gap: 0.75rem; flex: 1; min-width: 0; }
+.cm-toolbar-center { display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0; }
+.cm-toolbar-right { display: flex; align-items: center; gap: 0.4rem; flex-shrink: 0; }
+
+.cm-logo {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #a78bfa;
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+}
+
+/* File Tabs */
+.cm-file-tabs {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.cm-file-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.3rem 0.7rem;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 0.4rem;
+  color: rgba(148,163,184,0.65);
+  font-size: 0.78rem;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+
+.cm-file-tab:hover { background: rgba(255,255,255,0.06); color: #e2e8f0; }
+.cm-file-tab.active {
+  background: rgba(167,139,250,0.14);
+  border-color: rgba(167,139,250,0.45);
+  color: #c4b5fd;
+}
+
+.cm-tab-icon { font-size: 0.7rem; }
+
+/* Project name input */
+.cm-project-input {
+  padding: 0.3rem 0.65rem;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 0.4rem;
+  color: #e2e8f0;
+  font-size: 0.82rem;
+  min-width: 160px;
+  transition: border-color 0.2s;
+}
+.cm-project-input:focus { outline: none; border-color: rgba(167,139,250,0.5); }
+
+/* ── Body: editor + preview ──────────────────────────────── */
+.cm-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ── Editor pane ─────────────────────────────────────────── */
+.cm-editor-pane {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 50%;
+  min-width: 240px;
+  max-width: calc(100% - 240px);
+  overflow: hidden;
+  border-right: 1px solid rgba(255,255,255,0.07);
+  position: relative;
+}
+
+.cm-editor-container {
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Resize handle */
+.cm-resize-handle {
+  width: 5px;
+  background: rgba(255,255,255,0.06);
+  cursor: col-resize;
+  flex-shrink: 0;
+  transition: background 0.2s;
+  z-index: 10;
+}
+.cm-resize-handle:hover { background: rgba(167,139,250,0.4); }
+
+/* ── AI Assist Drawer (slides up from bottom of editor) ──── */
+.cm-ai-drawer {
+  position: absolute;
+  bottom: 0;
+  left: 0; right: 0;
+  background: #0f0f1a;
+  border-top: 1px solid rgba(167,139,250,0.25);
+  z-index: 50;
+  animation: cmDrawerSlideUp 0.22s ease;
+  max-height: 55%;
+  overflow-y: auto;
+}
+@keyframes cmDrawerSlideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.cm-ai-drawer-head {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.cm-ai-drawer-title {
+  flex: 1;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #a78bfa;
+}
+.cm-ai-drawer-close {
+  background: none; border: none;
+  color: rgba(148,163,184,0.5);
+  font-size: 1.1rem; cursor: pointer; padding: 0;
+  width: 1.6rem; height: 1.6rem;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.15s, color 0.15s;
+}
+.cm-ai-drawer-close:hover { background: rgba(255,255,255,0.1); color: #e2e8f0; }
+
+.cm-ai-templates {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  padding: 0.6rem 1rem;
+}
+.cm-ai-tmpl-btn {
+  padding: 0.2rem 0.6rem;
+  background: rgba(167,139,250,0.1);
+  border: 1px solid rgba(167,139,250,0.2);
+  border-radius: 0.35rem;
+  color: #c4b5fd;
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.cm-ai-tmpl-btn:hover { background: rgba(167,139,250,0.22); }
+
+.cm-ai-input-row {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0 1rem 0.75rem;
+  align-items: flex-end;
+}
+.cm-ai-textarea {
+  flex: 1;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 0.5rem;
+  color: #e2e8f0;
+  font-size: 0.82rem;
+  padding: 0.55rem 0.75rem;
+  resize: none;
+  font-family: system-ui, sans-serif;
+  transition: border-color 0.2s;
+}
+.cm-ai-textarea:focus { outline: none; border-color: rgba(167,139,250,0.5); }
+.cm-ai-output {
+  padding: 0.5rem 1rem 0.75rem;
+  font-size: 0.78rem;
+  color: #86efac;
+  background: rgba(134,239,172,0.06);
+  border-top: 1px solid rgba(134,239,172,0.12);
+}
+
+.cm-deploy-drawer {
+  position: absolute;
+  inset: auto 0 0 0;
+  background: #0f0f1a;
+  border-top: 1px solid rgba(34, 211, 238, 0.22);
+  z-index: 55;
+  animation: cmDrawerSlideUp 0.22s ease;
+  max-height: 60%;
+  overflow-y: auto;
+}
+
+.cm-deploy-copy {
+  padding: 0.6rem 1rem 0.2rem;
+  color: #cbd5e1;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.cm-deploy-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+  padding: 0.75rem 1rem 0.25rem;
+}
+
+.cm-deploy-field {
+  display: grid;
+  gap: 0.35rem;
+  color: #cbd5e1;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.cm-deploy-field span {
+  color: #94a3b8;
+}
+
+.cm-deploy-input,
+.cm-deploy-select {
+  width: 100%;
+  padding: 0.55rem 0.7rem;
+  border-radius: 0.55rem;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.05);
+  color: #e2e8f0;
+  font-size: 0.84rem;
+}
+
+.cm-deploy-input:focus,
+.cm-deploy-select:focus {
+  outline: none;
+  border-color: rgba(34, 211, 238, 0.45);
+}
+
+.cm-deploy-actions {
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  padding: 0.7rem 1rem 0.2rem;
+}
+
+.cm-deploy-output {
+  margin: 0.45rem 1rem 1rem;
+  padding: 0.75rem 0.85rem;
+  border-radius: 0.7rem;
+  background: rgba(34, 211, 238, 0.08);
+  border: 1px solid rgba(34, 211, 238, 0.16);
+  color: #c4f1ff;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+/* ── Preview pane ────────────────────────────────────────── */
+.cm-preview-pane {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 240px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.cm-preview-pane.cm-preview-fullscreen {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+}
+
+.cm-preview-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.75rem;
+  background: #151525;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  flex-shrink: 0;
+}
+.cm-preview-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: rgba(148,163,184,0.7);
+  flex: 1;
+}
+.cm-preview-device-btns {
+  display: flex;
+  gap: 0.25rem;
+}
+.cm-device-btn {
+  background: none;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 0.3rem;
+  color: rgba(148,163,184,0.5);
+  font-size: 0.8rem;
+  width: 1.8rem; height: 1.8rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.cm-device-btn:hover { background: rgba(255,255,255,0.06); color: #e2e8f0; }
+.cm-device-btn.active { background: rgba(167,139,250,0.15); border-color: rgba(167,139,250,0.3); color: #a78bfa; }
+
+.cm-preview-wrap {
+  flex: 1;
+  overflow: auto;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.cm-preview-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  background: #fff;
+}
+
+/* Status bar */
+.cm-status-bar {
+  display: flex;
+  align-items: center;
+  padding: 0.2rem 0.75rem;
+  background: #0d0d1a;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  font-size: 0.7rem;
+  color: rgba(148,163,184,0.5);
+  flex-shrink: 0;
+}
+.cm-status-spacer { flex: 1; }
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .cm-launch-hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .cm-launch-actions {
+    justify-content: flex-start;
+  }
+
+  .cm-launch-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .cm-body { flex-direction: column; }
+  .cm-editor-pane { flex: 0 0 50vh; max-width: 100%; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .cm-resize-handle { display: none; }
+  .cm-toolbar { gap: 0.4rem; }
+  .cm-toolbar-center { display: none; }
+  .cm-deploy-fields { grid-template-columns: 1fr; }
+}
+
+/* W96 Workstation reliability: fallback editor when Monaco cannot load. */
+.cm-fallback-editor-host {
+  display: block;
+  min-height: 100%;
+  background: #020617;
+}
+.cm-fallback-editor {
+  height: 100%;
+  min-height: 520px;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 0.65rem;
+  padding: 0.75rem;
+}
+.cm-fallback-notice {
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid rgba(34, 211, 238, 0.24);
+  border-radius: 14px;
+  color: #c7f9ff;
+  background: linear-gradient(135deg, rgba(8, 47, 73, 0.58), rgba(15, 23, 42, 0.92));
+  font-size: 0.86rem;
+}
+.cm-fallback-notice span { color: #9fb4cc; }
+.cm-fallback-pane {
+  display: none;
+  width: 100%;
+  height: 100%;
+  min-height: 440px;
+  resize: none;
+  border: 1px solid rgba(125, 211, 252, 0.18);
+  border-radius: 16px;
+  padding: 1rem;
+  color: #e2e8f0;
+  background: #070d1c;
+  font: 13.5px/1.55 "Cascadia Code", "JetBrains Mono", Consolas, monospace;
+  outline: none;
+}
+.cm-fallback-pane.active { display: block; }
+.cm-fallback-pane:focus {
+  border-color: rgba(34, 211, 238, 0.68);
+  box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.11);
+}
+
+
+/* Session 5 — EON Code OS cockpit polish */
+.cm-code-os-board {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.cm-code-os-card {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.85rem 0.9rem;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(17, 24, 39, 0.88));
+  border: 1px solid rgba(125, 211, 252, 0.14);
+  box-shadow: 0 16px 35px rgba(2, 6, 23, 0.24);
+}
+
+.cm-code-os-card strong {
+  color: #e0f2fe;
+  font-size: 0.84rem;
+}
+
+.cm-code-os-card span {
+  color: #9fb4cc;
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+
+.cm-codeos-drawer {
+  position: absolute;
+  inset: auto 0 0 0;
+  z-index: 58;
+  max-height: min(72%, 560px);
+  overflow-y: auto;
+  background: #07111f;
+  border-top: 1px solid rgba(125, 211, 252, 0.24);
+  box-shadow: 0 -24px 70px rgba(0, 0, 0, 0.38);
+  animation: cmDrawerSlideUp 0.22s ease;
+}
+
+.cm-codeos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  padding: 0.9rem 1rem 1rem;
+}
+
+.cm-codeos-panel {
+  display: grid;
+  gap: 0.55rem;
+  align-content: start;
+  padding: 0.85rem;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  background: rgba(15, 23, 42, 0.7);
+}
+
+.cm-codeos-panel-wide {
+  grid-column: 1 / -1;
+}
+
+.cm-codeos-panel h2 {
+  margin: 0;
+  color: #bfdbfe;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+
+.cm-codeos-panel p,
+.cm-codeos-list {
+  margin: 0;
+  color: #cbd5e1;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.cm-codeos-list {
+  padding-left: 1.05rem;
+}
+
+.cm-codeos-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.cm-codeos-receipt {
+  white-space: pre-wrap;
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  border: 1px solid rgba(34, 197, 94, 0.18);
+  background: rgba(5, 46, 22, 0.32);
+  color: #bbf7d0;
+  font: 0.78rem/1.5 "Cascadia Code", Consolas, monospace;
+}
+
+@media (max-width: 980px) {
+  .cm-code-os-board,
+  .cm-codeos-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .cm-code-os-board,
+  .cm-codeos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cm-codeos-drawer {
+    max-height: 82%;
+  }
+}

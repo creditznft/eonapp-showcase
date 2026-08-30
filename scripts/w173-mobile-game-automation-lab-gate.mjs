@@ -1,0 +1,12 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const lab = fs.readFileSync('assets/js/realm3d/engine/EonCityMobileGameAutomationLab.js', 'utf8');
+const spec = fs.readFileSync('e2e/w173-mobile-game-automation-lab.spec.js', 'utf8');
+assert.match(lab, /MOBILE_GAME_AUTOMATION_LAB_VERSION/);
+assert.match(spec, /iphone-se-portrait/);
+assert.match(lab, /all-overlays-dismissible/);
+assert.match(lab, /sponsor-boost-not-blocking-gameplay/);
+assert.match(spec, /setViewportSize/);
+assert.match(spec, /data-eoncity-close-panels/);
+assert.match(spec, /#rw-map/);
+console.log('W173 mobile game automation lab gate passed');

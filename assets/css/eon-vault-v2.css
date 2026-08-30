@@ -1,0 +1,85 @@
+/* W525B — calm, ChatGPT-like Vault workspace. Recovery stays local-first; advanced key controls never mix with backup. */
+body[data-vault-v2="1"] #eon-vault-v2 { min-height:100dvh; padding:clamp(1rem,3vw,2.3rem); }
+.eon-vault-shell { width:min(1180px,100%); margin:0 auto; }
+.eon-vault-hero{display:flex;justify-content:space-between;align-items:end;gap:1.25rem;padding:clamp(1.25rem,4vw,2.45rem);border:1px solid rgba(129,140,248,.27);border-radius:1.3rem;background:radial-gradient(circle at 88% 0%,rgba(99,102,241,.2),transparent 40%),linear-gradient(145deg,rgba(30,41,59,.75),rgba(15,23,42,.95));}
+.eon-vault-kicker{margin:0 0 .55rem;color:#a5b4fc;font-size:.72rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase}
+.eon-vault-hero h1{margin:0;color:#f8fafc;font-size:clamp(2rem,4vw,3.2rem);letter-spacing:-.045em}
+.eon-vault-hero p:not(.eon-vault-kicker){max-width:46rem;margin:.75rem 0 0;color:#a9b8cb;line-height:1.6}
+.eon-vault-hero-actions{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:.6rem}
+.eon-vault-badge{padding:.42rem .58rem;border:1px solid rgba(52,211,153,.34);border-radius:999px;background:rgba(16,185,129,.08);color:#bbf7d0;font-size:.72rem;font-weight:800;white-space:nowrap}
+.eon-vault-workspace{display:grid;grid-template-columns:minmax(10.7rem,.72fr) minmax(0,3fr);gap:1rem;margin-top:1rem;align-items:start}
+.eon-vault-nav{position:sticky;top:1rem;display:grid;gap:.18rem;padding:.55rem;border:1px solid rgba(148,163,184,.16);border-radius:1rem;background:linear-gradient(165deg,rgba(30,41,59,.72),rgba(15,23,42,.92));box-shadow:0 14px 30px rgba(2,6,23,.17)}
+.eon-vault-nav button{display:flex;align-items:center;width:100%;min-height:2.35rem;padding:.45rem .58rem;border:1px solid transparent;border-radius:.62rem;background:transparent;color:#b9c7da;font:inherit;font-size:.8rem;font-weight:730;text-align:left;cursor:pointer}
+.eon-vault-nav button:hover,.eon-vault-nav button:focus-visible{border-color:rgba(129,140,248,.34);background:rgba(99,102,241,.11);color:#fff;outline:none}
+.eon-vault-nav button[aria-selected="true"]{border-color:rgba(129,140,248,.48);background:linear-gradient(135deg,rgba(99,102,241,.26),rgba(124,58,237,.17));color:#fff}
+.eon-vault-panels{min-width:0}.eon-vault-panel{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;min-width:0}.eon-vault-panel[hidden]{display:none!important}
+.eon-vault-card{min-width:0;padding:1.05rem;border:1px solid rgba(148,163,184,.16);border-radius:1rem;background:linear-gradient(165deg,rgba(30,41,59,.72),rgba(15,23,42,.92));box-shadow:0 14px 30px rgba(2,6,23,.17)}
+.eon-vault-card.is-wide{grid-column:1/-1}.eon-vault-card h2{margin:0;color:#f8fafc;font-size:1.05rem}.eon-vault-card p{margin:.5rem 0 0;color:#a9b8cb;font-size:.82rem;line-height:1.5}
+.eon-vault-overview-card{display:grid;gap:.2rem;background:radial-gradient(circle at 100% 0%,rgba(56,189,248,.1),transparent 36%),linear-gradient(165deg,rgba(30,41,59,.74),rgba(15,23,42,.94))}
+.eon-vault-overview-status{color:#dbeafe!important;max-width:58rem}.eon-vault-overview-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.65rem;margin-top:.85rem}.eon-vault-overview-list>div{display:grid;gap:.26rem;padding:.7rem;border:1px solid rgba(148,163,184,.15);border-radius:.75rem;background:rgba(2,6,23,.22)}.eon-vault-overview-list strong{color:#f8fafc;font-size:.79rem}.eon-vault-overview-list span{color:#a9b8cb;font-size:.73rem;line-height:1.4}
+.eon-vault-state{display:block;margin-top:.8rem;color:#dbeafe;font-size:.82rem;font-weight:750;line-height:1.45}.eon-vault-muted{display:block;margin-top:.45rem;color:#8ea0b8;font-size:.75rem;line-height:1.45}
+.eon-vault-chip-list{display:flex;gap:.45rem;flex-wrap:wrap;margin-top:.85rem;min-height:1.5rem;color:#9fb1c8;font-size:.78rem}.eon-vault-chip{padding:.3rem .45rem;border:1px solid rgba(129,140,248,.26);border-radius:999px;background:rgba(99,102,241,.1);color:#e0e7ff;font-size:.72rem}
+.eon-vault-actions{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem}.eon-vault-primary,.eon-vault-secondary{display:inline-flex;align-items:center;justify-content:center;min-height:2.55rem;padding:.54rem .78rem;border-radius:.72rem;font:inherit;font-size:.82rem;font-weight:780;cursor:pointer;text-decoration:none}.eon-vault-primary{border:1px solid rgba(165,180,252,.58);background:linear-gradient(135deg,#6366f1,#7c3aed);color:#fff}.eon-vault-primary:hover{filter:brightness(1.08)}.eon-vault-secondary{border:1px solid rgba(148,163,184,.24);background:rgba(15,23,42,.58);color:#e0e7ff}.eon-vault-secondary:hover,.eon-vault-secondary:focus-visible{border-color:rgba(165,180,252,.58);background:rgba(99,102,241,.14);outline:none}
+.eon-vault-notices{display:grid;gap:.65rem;margin:.85rem 0 0;padding-left:1.15rem;color:#b9c7da;font-size:.8rem;line-height:1.5}.eon-vault-warning{margin-top:.9rem;padding:.8rem;border-left:3px solid #f59e0b;border-radius:.5rem;background:rgba(245,158,11,.07);color:#fde68a;font-size:.78rem;line-height:1.45}.eon-vault-status{min-height:1.35rem;margin:.7rem 0 0;color:#bbf7d0;font-size:.78rem;line-height:1.45}
+
+/* Explicit encrypted Vault recovery controls. */
+.eon-vault-form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;margin-top:1rem}.eon-vault-field{display:grid;gap:.38rem;color:#cbd5e1;font-size:.78rem;font-weight:760}.eon-vault-field input,.eon-vault-field select{width:100%;min-height:2.65rem;border:1px solid rgba(148,163,184,.28);border-radius:.72rem;background:rgba(2,6,23,.55);color:#f8fafc;padding:.55rem .7rem;font:inherit;font-weight:500}.eon-vault-field code{color:#ddd6fe}.eon-vault-danger{min-height:2.55rem;padding:.54rem .78rem;border:1px solid rgba(248,113,113,.45);border-radius:.72rem;background:rgba(127,29,29,.22);color:#fecaca;font:inherit;font-size:.82rem;font-weight:780;cursor:pointer}.eon-vault-danger:hover{background:rgba(127,29,29,.34)}
+
+/* Vault Reveals are deliberately separate from security and recovery. */
+.eon-vault-reveals{display:grid;gap:1rem}.eon-vault-reveals-head{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem}.eon-vault-reveals-head h2{margin:0;color:#f8fafc;font-size:1.1rem}.eon-vault-reveals-head p:not(.eon-vault-kicker){max-width:48rem;margin:.5rem 0 0;color:#a9b8cb;font-size:.82rem;line-height:1.55}.eon-vault-reveal-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.72rem}.eon-vault-reveal-card{display:grid;grid-template-columns:2.75rem minmax(0,1fr);gap:.68rem;min-width:0;padding:.8rem;border:1px solid rgba(148,163,184,.18);border-radius:.82rem;background:rgba(2,6,23,.24)}.eon-vault-reveal-card h3{margin:0;color:#f8fafc;font-size:.86rem}.eon-vault-reveal-card p{margin:.28rem 0 0;color:#a9b8cb;font-size:.75rem;line-height:1.42}.eon-vault-reveal-card small{display:block;margin-top:.5rem;color:#8ea0b8;font-size:.68rem;line-height:1.35}.eon-vault-reveal-tier{color:#c4b5fd!important;font-size:.66rem!important;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.eon-vault-reveal-mark{display:grid;place-items:center;width:2.6rem;height:2.6rem;border:1px solid rgba(129,140,248,.42);border-radius:.74rem;background:radial-gradient(circle at 32% 26%,rgba(56,189,248,.44),transparent 42%),linear-gradient(145deg,rgba(99,102,241,.24),rgba(15,23,42,.72));color:#e0e7ff;font-size:1.3rem}.eon-vault-reveal-mark>span{display:block;animation:eon-vault-reveal-float 4.8s ease-in-out infinite}.eon-vault-reveal-note{margin:0;padding:.72rem;border:1px solid rgba(245,158,11,.22);border-radius:.7rem;background:rgba(245,158,11,.06);color:#fde68a;font-size:.74rem;line-height:1.45}@keyframes eon-vault-reveal-float{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-3px) rotate(4deg)}}@media(prefers-reduced-motion:reduce){.eon-vault-reveal-mark>span{animation:none}}
+
+/* Local-first continuity truth and Drive-ready disclosure. */
+.eon-vault-continuity{display:grid;gap:.58rem;margin-top:.8rem;color:#cbd5e1;font-size:.8rem;line-height:1.5}.eon-vault-continuity p{margin:0}.eon-vault-continuity strong{color:#f8fafc}.eon-vault-google-drive{display:grid;gap:.65rem}.eon-vault-google-drive h3{margin:0;color:#f8fafc;font-size:.98rem}.eon-vault-drive-kicker{color:#bbf7d0;font-size:.68rem;font-weight:820;letter-spacing:.08em;text-transform:uppercase}.eon-vault-drive-list{display:grid;gap:.45rem;margin:.1rem 0 0;padding-left:1.15rem;color:#cbd5e1;font-size:.78rem;line-height:1.48}.cloud-backup-connectors{display:grid;gap:.85rem}.cloud-backup-head h3{margin:.2rem 0 0;color:#f8fafc;font-size:1rem}.cloud-backup-head p{max-width:54rem}.cloud-backup-head strong{display:block;margin-top:.55rem;color:#bbf7d0;font-size:.76rem;line-height:1.45}.cloud-backup-kicker{color:#a5b4fc;font-size:.68rem;font-weight:820;letter-spacing:.09em;text-transform:uppercase}.cloud-backup-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.72rem}.cloud-backup-card{display:grid;gap:.42rem;padding:.82rem;border:1px solid rgba(148,163,184,.18);border-radius:.82rem;background:rgba(2,6,23,.24)}.cloud-backup-card>strong{color:#f8fafc;font-size:.88rem}.cloud-backup-card>span{color:#dbeafe;font-size:.75rem;line-height:1.42}.cloud-backup-card>small{color:#8ea0b8;font-size:.7rem;line-height:1.38}.cloud-backup-actions{display:flex;flex-wrap:wrap;gap:.48rem;margin-top:.25rem}.cloud-backup-actions .btn{min-height:2.35rem;padding:.48rem .62rem;border-radius:.68rem;font-size:.75rem;font-weight:760}.cloud-backup-note{margin:0!important;color:#a9b8cb!important;font-size:.76rem!important}.cloud-backup-consent-preview{display:grid;gap:.42rem;padding:.8rem;border:1px solid rgba(129,140,248,.34);border-radius:.78rem;background:rgba(99,102,241,.08);color:#dbeafe;font-size:.76rem;line-height:1.48}.cloud-backup-consent-preview p{margin:0}.cloud-backup-consent-preview code{color:#ddd6fe;word-break:break-word}
+
+/* W537 — compress Capsule to primary actions first, advanced recovery second. */
+.eon-capsule-primary-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-top:1rem}
+.eon-capsule-primary-grid>.eon-vault-card[data-eon-capsule-card="export"],
+.eon-capsule-primary-grid>.eon-vault-card[data-eon-capsule-card="restore"]{grid-column:span 1}
+.eon-capsule-primary-grid>.eon-capsule-disclosure{grid-column:1/-1}
+.eon-capsule-disclosure{padding:0;overflow:hidden}
+.eon-capsule-disclosure summary{display:grid;gap:.3rem;padding:1rem 1.05rem;cursor:pointer;list-style:none}
+.eon-capsule-disclosure summary::-webkit-details-marker{display:none}
+.eon-capsule-summary-title{color:#f8fafc;font-size:1rem;font-weight:780}
+.eon-capsule-summary-copy{color:#a9b8cb;font-size:.78rem;line-height:1.45}
+.eon-capsule-disclosure-body{display:grid;gap:.8rem;padding:0 1.05rem 1.05rem}
+.eon-capsule-disclosure-body>.eon-vault-warning{margin-top:0}
+.eon-capsule-advanced-card{background:linear-gradient(165deg,rgba(26,34,51,.74),rgba(10,16,28,.96))}
+.eon-capsule-advanced-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.eon-capsule-advanced-block{display:grid;gap:.45rem;padding:.92rem;border:1px solid rgba(148,163,184,.15);border-radius:.82rem;background:rgba(2,6,23,.22)}
+.eon-capsule-advanced-block h2{margin:0;color:#f8fafc;font-size:.98rem}
+.eon-capsule-advanced-block p{margin:0;color:#a9b8cb;font-size:.8rem;line-height:1.48}
+
+@media(max-width:900px){.eon-vault-workspace{grid-template-columns:1fr}.eon-vault-nav{position:static;display:flex;overflow:auto;padding:.45rem}.eon-vault-nav button{width:auto;flex:0 0 auto;white-space:nowrap}.eon-vault-overview-list{grid-template-columns:1fr}.eon-vault-panel{grid-template-columns:1fr}.eon-vault-card.is-wide{grid-column:auto}.eon-vault-reveal-grid{grid-template-columns:1fr}.eon-vault-reveals-head{flex-direction:column;align-items:start}.eon-capsule-primary-grid{grid-template-columns:1fr}.eon-capsule-primary-grid>.eon-vault-card[data-eon-capsule-card="export"],.eon-capsule-primary-grid>.eon-vault-card[data-eon-capsule-card="restore"]{grid-column:auto}.eon-capsule-advanced-grid{grid-template-columns:1fr}}
+@media(max-width:760px){.eon-vault-form-grid{grid-template-columns:1fr}.cloud-backup-grid{grid-template-columns:1fr}}
+@media(max-width:580px){body[data-vault-v2="1"] #eon-vault-v2{padding:.85rem}.eon-vault-hero{padding:1.1rem;flex-direction:column;align-items:start}.eon-vault-hero-actions{justify-content:flex-start}}
+
+/* W662H — one consistent provider surface. Native selects stay dark instead of
+   inheriting a bright operating-system menu that conflicts with Vault/Nexus. */
+#provider-check{
+  border-color:rgba(103,232,249,.24);
+  background:
+    radial-gradient(circle at 92% 0%,rgba(34,211,238,.11),transparent 34%),
+    linear-gradient(165deg,rgba(30,41,59,.78),rgba(15,23,42,.96));
+}
+#provider-check .eon-vault-form-grid{align-items:start}
+#provider-check .eon-vault-field input,
+#provider-check .eon-vault-field select{
+  color-scheme:dark;
+  border-color:rgba(129,140,248,.36);
+  background:linear-gradient(180deg,rgba(15,23,42,.96),rgba(2,6,23,.9));
+  color:#f8fafc;
+}
+#provider-check .eon-vault-field select option{background:#0f172a;color:#f8fafc}
+#provider-check .eon-vault-field input:hover,
+#provider-check .eon-vault-field select:hover{border-color:rgba(103,232,249,.52)}
+#provider-check .eon-vault-field input:focus-visible,
+#provider-check .eon-vault-field select:focus-visible,
+#provider-check button:focus-visible{
+  outline:3px solid #67e8f9;
+  outline-offset:3px;
+  border-color:rgba(103,232,249,.75);
+}
+#provider-check .eon-vault-check{grid-template-columns:auto minmax(0,1fr);align-items:center;align-self:center}
+#provider-check .eon-vault-check input{width:1.05rem;min-height:1.05rem;accent-color:#818cf8}
+#provider-check .eon-vault-actions{grid-column:1/-1}
+@media(max-width:760px){#provider-check .eon-vault-actions>*{flex:1 1 100%}}

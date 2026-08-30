@@ -1,0 +1,17 @@
+{
+  "schema": "eonapp.production-quarantine.w623d.v1",
+  "status": "enforced-by-build-gate",
+  "canonicalRails": {
+    "subscriptions": "Dodo Payments hosted checkout and server entitlement ledger",
+    "referrals": "Server-ledger EONKEYS feature/limit unlocks only",
+    "creatorExecution": "Local runtime or user-owned external provider credentials only"
+  },
+  "quarantineMeaning": "Files remain in the source archive for migration, evidence, or historical tests but may not be imported by any production HTML, service worker, or Cloudflare function entrypoint.",
+  "forbiddenFamilies": [
+    "NFT minting or marketplace engine",
+    "wallet, token, crypto, payout, commission or cash reward rail",
+    "retired pricing/catalogue implementations",
+    "ad-sponsored subscription or free-tier substitution",
+    "browser-side referral value grants"
+  ]
+}

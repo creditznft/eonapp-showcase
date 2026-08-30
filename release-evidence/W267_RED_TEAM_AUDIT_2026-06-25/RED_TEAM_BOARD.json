@@ -1,0 +1,66 @@
+{
+  "schema": "eonapp.w267.red-team-audit.v1",
+  "decision": "NO_GO_PENDING_INDEPENDENT_REVIEW",
+  "authority": {
+    "implementationAuthorMayClose": false,
+    "independentReviewer": {
+      "status": "unassigned"
+    }
+  },
+  "requiredExternalEvidence": [
+    {
+      "id": "independent-threat-model-review",
+      "required": true,
+      "status": "not-collected",
+      "evidenceRefs": []
+    },
+    {
+      "id": "prompt-injection-and-abuse-exercise",
+      "required": true,
+      "status": "not-collected",
+      "evidenceRefs": []
+    },
+    {
+      "id": "preview-live-network-and-csp-review",
+      "required": true,
+      "status": "not-collected",
+      "evidenceRefs": []
+    },
+    {
+      "id": "git-history-and-environment-secret-review",
+      "required": true,
+      "status": "not-collected",
+      "evidenceRefs": []
+    },
+    {
+      "id": "privacy-retention-and-user-rights-review",
+      "required": true,
+      "status": "not-collected",
+      "evidenceRefs": []
+    },
+    {
+      "id": "rollback-and-kill-switch-tabletop",
+      "required": true,
+      "status": "not-collected",
+      "evidenceRefs": []
+    }
+  ],
+  "localStaticLanes": [
+    "truthful-capability-copy",
+    "secret-protection",
+    "approval-first-actions",
+    "local-first-diagnostics",
+    "commercial-and-chain-firewall",
+    "invite-and-milestone-fail-closed"
+  ],
+  "prohibitedClaims": [
+    "independently red-teamed",
+    "security approved",
+    "launch ready"
+  ],
+  "provenance": {
+    "restoredBy": "W375 source handover integrity repair",
+    "restoredAt": "2026-06-26",
+    "evidenceCollection": "none"
+  }
+}

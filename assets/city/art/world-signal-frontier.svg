@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">Signal Frontier abstract world art</title>
+<desc id="desc">A luminous signal beacon with concentric transmission arcs above a futuristic grid.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#101d19"/>
+    <stop offset="0.55" stop-color="#152a25"/>
+    <stop offset="1" stop-color="#0a1012"/>
+  </linearGradient>
+  <radialGradient id="pulse">
+    <stop offset="0" stop-color="#dfffee" stop-opacity=".95"/>
+    <stop offset=".18" stop-color="#91ffd0" stop-opacity=".65"/>
+    <stop offset=".55" stop-color="#55d7b0" stop-opacity=".18"/>
+    <stop offset="1" stop-color="#55d7b0" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="beam" x1="0" y1="1" x2="0" y2="0">
+    <stop offset="0" stop-color="#6de9bf" stop-opacity=".02"/>
+    <stop offset=".55" stop-color="#7fffd4" stop-opacity=".22"/>
+    <stop offset="1" stop-color="#c7ffe9" stop-opacity=".68"/>
+  </linearGradient>
+  <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+    <path d="M64 0H0V64" fill="none" stroke="#7fffd4" stroke-opacity=".08" stroke-width="1"/>
+  </pattern>
+</defs>
+<rect width="1200" height="675" fill="url(#bg)"/>
+<circle cx="600" cy="306" r="260" fill="url(#pulse)"/>
+<path d="M118 675 405 402h390l287 273Z" fill="#0a1514" opacity=".72"/>
+<path d="M118 675 405 402h390l287 273Z" fill="url(#grid)" opacity=".8"/>
+<g fill="none" stroke="#70e7c0" stroke-opacity=".16">
+  <path d="M600 402 600 675"/><path d="M500 402 416 675"/><path d="M700 402 784 675"/>
+  <path d="M430 455h340"/><path d="M366 516h468"/><path d="M295 584h610"/>
+</g>
+<path d="M600 141 567 392h66Z" fill="url(#beam)" stroke="#a8ffe0" stroke-opacity=".72" stroke-width="2"/>
+<circle cx="600" cy="264" r="14" fill="#d9ffef"/>
+<circle cx="600" cy="264" r="38" fill="none" stroke="#8fffd1" stroke-opacity=".68" stroke-width="3"/>
+<circle cx="600" cy="264" r="76" fill="none" stroke="#7df6c8" stroke-opacity=".38" stroke-width="3"/>
+<circle cx="600" cy="264" r="118" fill="none" stroke="#67dcb3" stroke-opacity=".22" stroke-width="3"/>
+<g fill="none" stroke-linecap="round">
+  <path d="M472 257a132 132 0 0 1 256 0" stroke="#baffdf" stroke-opacity=".7" stroke-width="6"/>
+  <path d="M418 247a188 188 0 0 1 364 0" stroke="#72e4bd" stroke-opacity=".36" stroke-width="5"/>
+  <path d="M362 238a245 245 0 0 1 476 0" stroke="#5ac9a8" stroke-opacity=".22" stroke-width="4"/>
+</g>
+<g fill="#a8ffe0"><circle cx="435" cy="429" r="5"/><circle cx="764" cy="442" r="5"/><circle cx="332" cy="537" r="4"/><circle cx="861" cy="550" r="4"/></g>
+<g stroke="#8fffd1" stroke-opacity=".25"><path d="M435 429 600 392 764 442"/><path d="M332 537 600 392 861 550"/></g>
+<g fill="none" stroke="#98f5d1" stroke-opacity=".18"><path d="M74 95h128M74 95v78"/><path d="M1126 95H998m128 0v78"/></g>
+</svg>

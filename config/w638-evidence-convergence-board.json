@@ -1,0 +1,16 @@
+{
+  "schema": "eonapp.production-evidence-board.w638.v1",
+  "wave": "W638",
+  "generatedAt": null,
+  "records": [],
+  "declaration": {
+    "containsSecrets": false,
+    "containsSessionCookies": false,
+    "containsFullCustomerIdentifiers": false,
+    "containsFullEmailAddresses": false,
+    "syntheticEvidenceCanCertify": false,
+    "sourceEvidenceCanCertify": false
+  },
+  "currentVerdict": "not-run",
+  "productionCertified": false
+}

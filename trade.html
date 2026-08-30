@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <script src="/assets/js/eon-theme-bootstrap.js?release=w722-2026-07-27"></script>
+  <meta name="theme-color" content="#111411" />
+  <meta name="description" content="EONAPP Research Lab: local research, CSV charts, thesis notes, historical scenario review, uncertainty logs and business research. No live market feed, exchange connection or order path." />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="stylesheet" href="/assets/css/base.css" />
+  <link rel="stylesheet" href="/assets/css/layout.css" />
+  <link rel="stylesheet" href="/assets/css/eon-app-shell.css" />
+  <link rel="stylesheet" href="/assets/css/eon-trade-v2.css" />
+  <script type="module" src="/assets/js/localStorage-shim.js"></script>
+  <title>Research Lab · EONAPP</title>
+  <link rel="canonical" href="https://eonapp.ch/insights" />
+  <meta name="robots" content="index, follow" />
+</head>
+<body data-page-type="research" data-eon-app-shell="1" data-eon-app-page="insights" data-research-lab="1">
+  <a href="#eon-market-intelligence" class="skip-to-content">Skip to Research Lab</a>
+  <main id="eon-market-intelligence">
+    <section class="mi-shell" aria-labelledby="mi-title">
+      <header class="mi-hero">
+        <div>
+          <p class="mi-kicker">EON Research Lab · inside Apps · local data only</p>
+          <h1 id="mi-title">Research Lab</h1>
+          <p>Build a transparent research view from manual reference values or a CSV you provide. Record a thesis, inspect a historical path, calibrate forecasts, and create business-research briefs—without a broker connection, live feed, credential form or exchange order.</p>
+        </div>
+        <div class="mi-hero-side">
+          <div class="mi-badges" aria-label="Research Lab safety status">
+            <span class="mi-badge is-safe">Local research</span>
+            <span class="mi-badge">No live price feed</span>
+            <span class="mi-badge">No orders</span>
+          </div>
+          <div class="mi-mode-switch" role="group" aria-label="Research layout">
+            <button type="button" data-mi-mode="guided" aria-pressed="true">Guided</button>
+            <button type="button" data-mi-mode="pro" aria-pressed="false">Professional</button>
+          </div>
+        </div>
+      </header>
+
+      <p class="mi-disclaimer">This is an informational research workspace, not personal investment advice, a price target, or a profit claim. Local historical reviews do not predict future outcomes. Scenario Studio has no monetary stake, prize, payout, token, redemption, transfer or tradable contract.</p>
+
+      <nav class="mi-desk-nav" aria-label="Insights and Forecasts desks">
+        <a href="/insights?desk=market" data-mi-desk="market">Research Lab</a>
+        <a href="/insights?desk=business" data-mi-desk="business">Business Research</a>
+        <a href="/insights?desk=forecast" data-mi-desk="forecast">Scenario Studio</a>
+        <a href="/insights?desk=research" data-mi-desk="research">Research Journal</a>
+        <a href="/insights?desk=data" data-mi-desk="data">Local Data Lab</a>
+      </nav>
+
+      <section id="mi-market-desk" class="mi-canvas-card" aria-labelledby="mi-canvas-title" tabindex="-1">
+        <div class="mi-section-heading">
+          <div><p class="mi-eyebrow">Research canvas</p><h2 id="mi-canvas-title">Local chart, data provenance and historical review</h2></div>
+          <button id="mi-ask-eonbot" type="button" class="mi-primary-button">Ask EONBOT to structure research</button>
+        </div>
+        <div class="mi-canvas-grid">
+          <aside id="mi-data-desk" class="mi-data-panel" aria-label="Local data controls" tabindex="-1">
+            <label class="mi-field">Selected local series
+              <select id="mi-dataset-select"></select>
+            </label>
+            <div class="mi-divider"></div>
+            <h3>Add manual reference</h3>
+            <form id="mi-manual-point-form" class="mi-form">
+              <label class="mi-field">Symbol or subject<input id="mi-manual-symbol" maxlength="30" value="REFERENCE" /></label>
+              <div class="mi-form-split">
+                <label class="mi-field">Date<input id="mi-manual-time" type="date" /></label>
+                <label class="mi-field">Reference value<input id="mi-manual-value" type="number" min="0.000001" step="any" placeholder="e.g. 100" /></label>
+              </div>
+              <button class="mi-secondary-button" type="submit">Add local observation</button>
+            </form>
+            <div class="mi-divider"></div>
+            <h3>Import your CSV</h3>
+            <p class="mi-small-copy">Accepted columns include date/time plus close, price or value. The file stays in this browser.</p>
+            <label class="mi-field">Optional symbol label<input id="mi-csv-symbol" maxlength="30" value="CSV" /></label>
+            <input id="mi-csv-input" class="mi-file-input" type="file" accept=".csv,text/csv" />
+          </aside>
+          <div class="mi-chart-panel">
+            <div class="mi-chart-heading"><div><h3 id="mi-dataset-label">No local dataset</h3><p id="mi-dataset-source">Add manual reference values or import a CSV to begin.</p></div></div>
+            <canvas id="mi-chart" role="img" aria-label="Local research chart"></canvas>
+            <p id="mi-chart-empty" class="mi-chart-empty">No automatic data is loaded. Add at least two local observations to chart a historical path.</p>
+            <div id="mi-series-metrics" class="mi-metrics" aria-live="polite"></div>
+          </div>
+        </div>
+      </section>
+
+      <div class="mi-grid">
+        <section id="mi-research-desk" class="mi-card mi-pro-card" aria-labelledby="mi-thesis-heading" tabindex="-1">
+          <div class="mi-section-heading compact"><div><p class="mi-eyebrow">Research journal</p><h2 id="mi-thesis-heading">Thesis & invalidation</h2></div></div>
+          <form id="mi-thesis-form" class="mi-form">
+            <div class="mi-form-split"><label class="mi-field">Domain<select id="mi-thesis-domain"><option value="market">Market</option><option value="business">Business</option><option value="ecommerce">E-commerce</option></select></label><label class="mi-field">Review horizon<input id="mi-thesis-horizon" maxlength="80" placeholder="e.g. next quarterly review" /></label></div>
+            <label class="mi-field">Thesis title<input id="mi-thesis-title" maxlength="120" placeholder="What are you investigating?" /></label>
+            <label class="mi-field">Claim<textarea id="mi-thesis-claim" maxlength="1000" placeholder="State the working explanation, not a guaranteed outcome."></textarea></label>
+            <label class="mi-field">What would disprove it?<textarea id="mi-thesis-invalidation" maxlength="700" placeholder="Name evidence or a condition that would change your view."></textarea></label>
+            <button type="submit" class="mi-secondary-button">Record thesis</button>
+          </form>
+          <div id="mi-thesis-list" class="mi-record-list" aria-live="polite"></div>
+        </section>
+
+        <section class="mi-card mi-pro-card" aria-labelledby="mi-evidence-title">
+          <div class="mi-section-heading compact"><div><p class="mi-eyebrow">Evidence trail</p><h2 id="mi-evidence-title">Evidence journal</h2></div></div>
+          <form id="mi-evidence-form" class="mi-form">
+            <div class="mi-form-split"><label class="mi-field">Source type<select id="mi-evidence-source"><option value="user-note">Your note</option><option value="document">Document</option><option value="dataset">Dataset</option><option value="external-link">External reference</option></select></label><label class="mi-field">Source label<input id="mi-evidence-label" maxlength="120" placeholder="Where did this come from?" /></label></div>
+            <label class="mi-field">Why it matters<textarea id="mi-evidence-note" maxlength="1200" placeholder="Record the fact, caveat and relevance."></textarea></label>
+            <button type="submit" class="mi-secondary-button">Add evidence note</button>
+          </form>
+          <div id="mi-evidence-list" class="mi-record-list" aria-live="polite"></div>
+        </section>
+
+        <section class="mi-card" aria-labelledby="mi-scenario-title">
+          <div class="mi-section-heading compact"><div><p class="mi-eyebrow">Scenario lab</p><h2 id="mi-scenario-title">Historical scenario review</h2></div></div>
+          <p class="mi-small-copy">This is a deterministic reading of the selected local series. It does not model real-world execution, does not predict the next move, and does not create an external order.</p>
+          <div id="mi-scenario-result" class="mi-scenario-result" aria-live="polite"></div>
+        </section>
+
+        <section id="mi-forecast-desk" class="mi-card" aria-labelledby="mi-forecast-title-heading" tabindex="-1">
+          <div class="mi-section-heading compact"><div><p class="mi-eyebrow">Scenario Studio</p><h2 id="mi-forecast-title-heading">Calibrated uncertainty log</h2></div><span id="mi-forecast-summary" class="mi-summary-chip"></span></div>
+          <p class="mi-small-copy">Record probabilities and resolve outcomes yourself later. This is a private, non-monetary uncertainty journal—not a prediction market.</p>
+          <form id="mi-forecast-form" class="mi-form">
+            <div class="mi-form-split"><label class="mi-field">Domain<select id="mi-forecast-domain"><option value="market">Market research</option><option value="business">Business</option><option value="ecommerce">E-commerce</option><option value="general">General</option></select></label><label class="mi-field">Probability (1–99%)<input id="mi-forecast-probability" type="number" min="1" max="99" value="50" /></label></div>
+            <label class="mi-field">Forecast question<input id="mi-forecast-title" maxlength="160" placeholder="A concrete, time-bound event" /></label>
+            <label class="mi-field">Resolution rule<textarea id="mi-forecast-rule" maxlength="900" placeholder="How will YES or NO be checked later?"></textarea></label>
+            <label class="mi-field">Resolution date<input id="mi-forecast-date" type="date" /></label>
+            <button type="submit" class="mi-secondary-button">Record forecast</button>
+          </form>
+          <div id="mi-forecast-list" class="mi-record-list" aria-live="polite"></div>
+        </section>
+
+        <section id="mi-business-desk" class="mi-card mi-card-wide" aria-labelledby="mi-business-title" tabindex="-1">
+          <div class="mi-section-heading compact"><div><p class="mi-eyebrow">Business Intelligence</p><h2 id="mi-business-title">The practical V1: demand, pricing, reviews and operations</h2></div></div>
+          <p class="mi-small-copy">Use the same evidence-first process for a shop, product, campaign, venue or service. It is a research brief, not an automatic commercial action.</p>
+          <form id="mi-business-form" class="mi-business-form">
+            <label class="mi-field">Research lens<select id="mi-business-lens"><option>Demand & pricing</option><option>Customer review themes</option><option>Inventory & seasonality</option><option>Campaign measurement</option><option>Competitor observation</option></select></label>
+            <label class="mi-field mi-field-grow">Question to investigate<input id="mi-business-question" maxlength="900" placeholder="e.g. Which offer could improve weekday bookings, and what evidence would validate it?" /></label>
+            <button type="submit" class="mi-secondary-button">Create local brief</button>
+          </form>
+        </section>
+
+        <section class="mi-card mi-card-wide mi-receipt-card" aria-labelledby="mi-receipt-title">
+          <div><p class="mi-eyebrow">Trust & portability</p><h2 id="mi-receipt-title">Research receipt & local backup</h2><p id="mi-receipt-summary" class="mi-small-copy"></p></div>
+          <div class="mi-actions"><button id="mi-export-receipt" type="button" class="mi-secondary-button">Export safety receipt</button><button id="mi-export-workspace" type="button" class="mi-secondary-button">Export local workspace</button></div>
+        </section>
+      </div>
+      <p id="mi-status" class="mi-status" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+  <script type="module" src="/assets/js/eon-app-shell.js"></script>
+  <script type="module" src="/assets/js/trade/eon-trade-page.js"></script>
+</body>
+</html>

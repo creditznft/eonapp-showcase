@@ -1,0 +1,3325 @@
+diff -ruN /mnt/data/eonapp_patch_original/assets/css/code-maker.css /mnt/data/eonapp_patch_work/assets/css/code-maker.css
+--- /mnt/data/eonapp_patch_original/assets/css/code-maker.css	2026-06-08 21:00:38.481182556 +0000
++++ /mnt/data/eonapp_patch_work/assets/css/code-maker.css	2026-06-08 20:59:59.209773881 +0000
+@@ -462,3 +462,48 @@
+   .cm-toolbar-center { display: none; }
+   .cm-deploy-fields { grid-template-columns: 1fr; }
+ }
++
++/* W96 Workstation reliability: fallback editor when Monaco cannot load. */
++.cm-fallback-editor-host {
++  display: block;
++  min-height: 100%;
++  background: #020617;
++}
++.cm-fallback-editor {
++  height: 100%;
++  min-height: 520px;
++  display: grid;
++  grid-template-rows: auto 1fr;
++  gap: 0.65rem;
++  padding: 0.75rem;
++}
++.cm-fallback-notice {
++  display: grid;
++  gap: 0.2rem;
++  padding: 0.75rem 0.9rem;
++  border: 1px solid rgba(34, 211, 238, 0.24);
++  border-radius: 14px;
++  color: #c7f9ff;
++  background: linear-gradient(135deg, rgba(8, 47, 73, 0.58), rgba(15, 23, 42, 0.92));
++  font-size: 0.86rem;
++}
++.cm-fallback-notice span { color: #9fb4cc; }
++.cm-fallback-pane {
++  display: none;
++  width: 100%;
++  height: 100%;
++  min-height: 440px;
++  resize: none;
++  border: 1px solid rgba(125, 211, 252, 0.18);
++  border-radius: 16px;
++  padding: 1rem;
++  color: #e2e8f0;
++  background: #070d1c;
++  font: 13.5px/1.55 "Cascadia Code", "JetBrains Mono", Consolas, monospace;
++  outline: none;
++}
++.cm-fallback-pane.active { display: block; }
++.cm-fallback-pane:focus {
++  border-color: rgba(34, 211, 238, 0.68);
++  box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.11);
++}
+diff -ruN /mnt/data/eonapp_patch_original/assets/css/eon-browser.css /mnt/data/eonapp_patch_work/assets/css/eon-browser.css
+--- /mnt/data/eonapp_patch_original/assets/css/eon-browser.css	2026-06-08 21:00:38.480690070 +0000
++++ /mnt/data/eonapp_patch_work/assets/css/eon-browser.css	2026-06-08 20:58:20.247920327 +0000
+@@ -1982,3 +1982,360 @@
+ @media (max-width: 720px) {
+   .eon-social-schedule-row { grid-template-columns: 1fr; }
+ }
++
++/* --------------------------------------------------------------------------
++   W96 EON Workstation enterprise rebuild overlay
++   -------------------------------------------------------------------------- */
++.eon-workstation-v1 .browser-page {
++  --ew-card: rgba(7, 13, 28, 0.92);
++  --ew-card-2: rgba(10, 21, 45, 0.88);
++  --ew-line: rgba(125, 211, 252, 0.22);
++  --ew-glow: rgba(34, 211, 238, 0.32);
++  --ew-text: #e5f6ff;
++  --ew-muted: #9fb4cc;
++  background:
++    radial-gradient(circle at 16% 8%, rgba(34, 211, 238, 0.18), transparent 28rem),
++    radial-gradient(circle at 82% 0%, rgba(168, 85, 247, 0.16), transparent 28rem),
++    linear-gradient(180deg, #020617 0%, #06111f 44%, #020617 100%);
++}
++
++.eon-workstation-v1 .eon-browser-chrome {
++  display: grid;
++  gap: 0.72rem;
++  padding: clamp(0.75rem, 1vw, 1rem);
++  border: 1px solid var(--ew-line);
++  border-radius: 24px;
++  background: linear-gradient(140deg, rgba(2, 6, 23, 0.95), rgba(8, 19, 43, 0.92));
++  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255,255,255,0.06);
++  overflow: visible;
++}
++
++.ew-command-deck {
++  display: grid;
++  gap: 0.78rem;
++  padding: clamp(0.9rem, 1.4vw, 1.25rem);
++  border: 1px solid rgba(125, 211, 252, 0.2);
++  border-radius: 22px;
++  background:
++    linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(8, 47, 73, 0.42)),
++    radial-gradient(circle at 90% 10%, rgba(59, 130, 246, 0.14), transparent 18rem);
++}
++
++.ew-command-head {
++  display: flex;
++  align-items: flex-start;
++  justify-content: space-between;
++  gap: 1rem;
++}
++
++.ew-kicker {
++  margin: 0 0 0.25rem;
++  color: #67e8f9;
++  font-size: 0.72rem;
++  font-weight: 800;
++  letter-spacing: 0.16em;
++  text-transform: uppercase;
++}
++
++.ew-command-head h1,
++.ew-home-hero h1,
++.ew-external-card h2 {
++  margin: 0;
++  color: var(--ew-text);
++  line-height: 1.02;
++  letter-spacing: -0.04em;
++}
++
++.ew-command-head h1 { font-size: clamp(1.45rem, 2.4vw, 2.55rem); }
++.ew-home-hero h1 { font-size: clamp(1.85rem, 4vw, 4rem); max-width: 820px; }
++.ew-subtitle,
++.ew-home-hero p,
++.ew-external-card p {
++  margin: 0.35rem 0 0;
++  color: var(--ew-muted);
++}
++
++.ew-active-chip {
++  min-width: min(280px, 45vw);
++  display: grid;
++  gap: 0.18rem;
++  padding: 0.72rem 0.85rem;
++  border: 1px solid rgba(34, 211, 238, 0.24);
++  border-radius: 16px;
++  background: rgba(2, 6, 23, 0.72);
++  text-align: right;
++}
++
++.ew-active-chip span {
++  color: #67e8f9;
++  font-size: 0.7rem;
++  font-weight: 800;
++  letter-spacing: 0.12em;
++  text-transform: uppercase;
++}
++
++.ew-active-chip strong {
++  color: #fff;
++  font-size: 0.95rem;
++}
++
++.ew-command-row {
++  display: grid;
++  grid-template-columns: minmax(260px, 1fr) auto auto auto;
++  gap: 0.6rem;
++  align-items: stretch;
++}
++
++.ew-command-input,
++.eon-workstation-v1 .browser-url-input {
++  width: 100%;
++  min-width: 0;
++  border: 1px solid rgba(125, 211, 252, 0.25);
++  border-radius: 16px;
++  background: rgba(2, 6, 23, 0.72);
++  color: #f8fafc;
++  padding: 0.75rem 0.95rem;
++  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
++}
++
++.ew-mode-row {
++  display: flex;
++  flex-wrap: wrap;
++  gap: 0.5rem;
++}
++
++.ew-mode-row button,
++.ew-app-card,
++.eon-workstation-v1 .browser-quick-site {
++  border: 1px solid rgba(125, 211, 252, 0.22);
++  border-radius: 999px;
++  background: rgba(15, 23, 42, 0.68);
++  color: #dff7ff;
++  cursor: pointer;
++  transition: transform 140ms ease, border-color 140ms ease, box-shadow 140ms ease, background 140ms ease;
++}
++
++.ew-mode-row button {
++  padding: 0.55rem 0.78rem;
++  font-weight: 800;
++}
++
++.ew-mode-row button:hover,
++.ew-app-card:hover,
++.eon-workstation-v1 .browser-quick-site:hover,
++.ew-active-app {
++  transform: translateY(-1px);
++  border-color: rgba(103, 232, 249, 0.65) !important;
++  box-shadow: 0 12px 36px rgba(34, 211, 238, 0.14);
++  background: rgba(8, 47, 73, 0.74) !important;
++}
++
++.eon-workstation-v1 .browser-tab-bar,
++.eon-workstation-v1 .browser-nav-bar,
++.eon-workstation-v1 .browser-workspace-bar {
++  max-width: 100%;
++  min-width: 0;
++}
++
++.eon-workstation-v1 .browser-nav-bar {
++  display: grid;
++  grid-template-columns: auto minmax(280px, 1fr) auto;
++  gap: 0.55rem;
++  align-items: center;
++}
++
++.eon-workstation-v1 .browser-addressbar-wrap {
++  min-width: 220px;
++  max-width: 100%;
++}
++
++.eon-workstation-v1 .browser-nav-extra {
++  display: flex;
++  flex-wrap: wrap;
++  justify-content: flex-end;
++  max-width: min(620px, 42vw);
++  gap: 0.34rem;
++}
++
++.eon-workstation-v1 .browser-notif-status {
++  max-width: 3.2rem;
++  padding: 0.3rem 0.48rem;
++  border: 1px solid rgba(125, 211, 252, 0.22);
++  border-radius: 999px;
++  overflow: hidden;
++  white-space: nowrap;
++  text-overflow: ellipsis;
++  font-size: 0.72rem;
++}
++
++.eon-workstation-v1 .browser-provider-chip,
++.eon-workstation-v1 .eon-ai-pulse-label {
++  max-width: 9rem;
++  overflow: hidden;
++  text-overflow: ellipsis;
++  white-space: nowrap;
++}
++
++.eon-workstation-v1 .browser-body {
++  display: grid;
++  grid-template-columns: minmax(0, 1fr) minmax(340px, 420px);
++  gap: clamp(0.8rem, 1.2vw, 1.2rem);
++  align-items: stretch;
++}
++
++.eon-workstation-v1 .browser-viewport-wrap {
++  min-width: 0;
++}
++
++.eon-workstation-v1 .browser-frame-host {
++  min-height: clamp(620px, 74vh, 920px);
++  border: 1px solid rgba(125, 211, 252, 0.18);
++  border-radius: 24px;
++  background:
++    linear-gradient(150deg, rgba(2, 6, 23, 0.96), rgba(15, 23, 42, 0.9)),
++    radial-gradient(circle at 20% 10%, rgba(34, 211, 238, 0.13), transparent 26rem);
++  overflow: hidden;
++  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 24px 70px rgba(0,0,0,0.28);
++}
++
++.eon-workstation-v1 #browser-frame,
++.eon-workstation-v1 .browser-tab-frame,
++.eon-workstation-v1 .ew-active-frame {
++  width: 100%;
++  min-height: clamp(620px, 74vh, 920px);
++  height: 100%;
++  border: 0;
++  background: #020617;
++}
++
++.ew-home-stage {
++  min-height: clamp(620px, 74vh, 920px);
++  display: grid;
++  grid-template-rows: auto 1fr;
++  gap: clamp(1rem, 2vw, 2rem);
++  padding: clamp(1rem, 2vw, 2rem);
++  color: var(--ew-text);
++}
++
++.ew-home-hero {
++  border: 1px solid rgba(125, 211, 252, 0.18);
++  border-radius: 28px;
++  padding: clamp(1rem, 2vw, 2rem);
++  background:
++    radial-gradient(circle at 84% 20%, rgba(168, 85, 247, 0.18), transparent 18rem),
++    linear-gradient(135deg, rgba(8, 47, 73, 0.55), rgba(15, 23, 42, 0.82));
++}
++
++.ew-home-actions,
++.ew-external-actions {
++  display: flex;
++  flex-wrap: wrap;
++  gap: 0.65rem;
++  margin-top: 1.1rem;
++}
++
++.ew-app-grid {
++  display: grid;
++  grid-template-columns: repeat(4, minmax(0, 1fr));
++  gap: 0.8rem;
++}
++
++.ew-app-card {
++  display: grid;
++  gap: 0.4rem;
++  min-height: 150px;
++  padding: 1rem;
++  border-radius: 22px;
++  text-align: left;
++}
++
++.ew-app-icon {
++  width: 2.4rem;
++  height: 2.4rem;
++  display: grid;
++  place-items: center;
++  border-radius: 16px;
++  color: #67e8f9;
++  background: rgba(14, 165, 233, 0.12);
++  box-shadow: inset 0 0 0 1px rgba(103, 232, 249, 0.22);
++  font-size: 1.25rem;
++}
++
++.ew-app-card strong {
++  color: #fff;
++  font-size: 1rem;
++}
++
++.ew-app-card small {
++  color: var(--ew-muted);
++  line-height: 1.35;
++}
++
++.ew-external-card {
++  width: min(760px, calc(100% - 2rem));
++  margin: clamp(1rem, 5vh, 4rem) auto;
++  padding: clamp(1.2rem, 2vw, 2rem);
++  border: 1px solid rgba(251, 191, 36, 0.28);
++  border-radius: 28px;
++  background:
++    radial-gradient(circle at 10% 0%, rgba(251, 191, 36, 0.14), transparent 18rem),
++    linear-gradient(140deg, rgba(15, 23, 42, 0.96), rgba(69, 26, 3, 0.42));
++  color: var(--ew-text);
++}
++
++.ew-external-orb {
++  width: 3.4rem;
++  height: 3.4rem;
++  display: grid;
++  place-items: center;
++  border-radius: 50%;
++  background: rgba(251, 191, 36, 0.16);
++  color: #fde68a;
++  font-size: 1.6rem;
++  box-shadow: inset 0 0 0 1px rgba(253, 230, 138, 0.24);
++}
++
++.ew-external-url {
++  margin-top: 1rem;
++  padding: 0.72rem 0.85rem;
++  border-radius: 14px;
++  background: rgba(2, 6, 23, 0.64);
++  color: #fde68a;
++  word-break: break-all;
++  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
++  font-size: 0.86rem;
++}
++
++.ew-trust-list {
++  margin: 1rem 0 0;
++  padding-left: 1.15rem;
++  color: #cbd5e1;
++}
++
++.eon-workstation-v1 .browser-ai-sidebar {
++  min-width: 0;
++  border-radius: 24px;
++  border: 1px solid rgba(125, 211, 252, 0.18);
++  background: rgba(2, 6, 23, 0.9);
++  box-shadow: 0 24px 70px rgba(0,0,0,0.24);
++}
++
++@media (max-width: 1180px) {
++  .eon-workstation-v1 .browser-body { grid-template-columns: 1fr; }
++  .eon-workstation-v1 .browser-ai-sidebar { width: 100%; max-width: none; }
++  .ew-app-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
++  .eon-workstation-v1 .browser-nav-bar { grid-template-columns: 1fr; }
++  .eon-workstation-v1 .browser-nav-extra { max-width: 100%; justify-content: flex-start; }
++}
++
++@media (max-width: 760px) {
++  .ew-command-head { display: grid; }
++  .ew-active-chip { min-width: 0; width: 100%; text-align: left; }
++  .ew-command-row { grid-template-columns: 1fr; }
++  .ew-app-grid { grid-template-columns: 1fr; }
++  .eon-workstation-v1 .browser-nav-extra .browser-ctrl-btn:nth-of-type(n+5) { display: none; }
++  .eon-workstation-v1 .browser-frame-host,
++  .eon-workstation-v1 #browser-frame,
++  .eon-workstation-v1 .browser-tab-frame,
++  .ew-home-stage { min-height: 68vh; }
++}
+diff -ruN /mnt/data/eonapp_patch_original/assets/js/code-maker-page.js /mnt/data/eonapp_patch_work/assets/js/code-maker-page.js
+--- /mnt/data/eonapp_patch_original/assets/js/code-maker-page.js	2026-06-08 21:00:38.479841046 +0000
++++ /mnt/data/eonapp_patch_work/assets/js/code-maker-page.js	2026-06-08 20:59:39.014474322 +0000
+@@ -6,106 +6,106 @@
+ import { buildDeployManifest, copyDeployManifest, openDeployGuide, prepareDeployBundle, verifyDeployBundle } from './utils/builder-deploy.js';
+ import { runMissionEngine } from './utils/mission-engine.js';
+ import { showToast } from './utils/share.js';
+-
+-// ── Default starter code ──────────────────────────────────────────────────────
++
++// ── Default starter code ──────────────────────────────────────────────────────
+ /** @type {{ html: string; css: string; js: string }} */
+ const DEFAULTS = {
+-  html: `<!DOCTYPE html>
+-<html lang="en">
+-<head>
+-  <meta charset="UTF-8" />
+-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+-  <title>My Project</title>
+-  <link rel="stylesheet" href="style.css" />
+-</head>
+-<body>
+-  <div class="container">
+-    <h1>Hello from EON Code Maker ⚡</h1>
+-    <p>Edit the HTML, CSS, and JS tabs — then press <strong>Run</strong> to see your changes live.</p>
+-    <button id="demo-btn" class="btn">Click Me</button>
+-    <div id="output" class="output"></div>
+-  </div>
++  html: `<!DOCTYPE html>
++<html lang="en">
++<head>
++  <meta charset="UTF-8" />
++  <meta name="viewport" content="width=device-width, initial-scale=1" />
++  <title>My Project</title>
++  <link rel="stylesheet" href="style.css" />
++</head>
++<body>
++  <div class="container">
++    <h1>Hello from EON Code Maker ⚡</h1>
++    <p>Edit the HTML, CSS, and JS tabs — then press <strong>Run</strong> to see your changes live.</p>
++    <button id="demo-btn" class="btn">Click Me</button>
++    <div id="output" class="output"></div>
++  </div>
+   <script src="script.js"></script>
+-</body>
+-</html>`,
+-
+-  css: `/* EON Code Maker — starter styles */
+-* { box-sizing: border-box; margin: 0; padding: 0; }
+-
+-body {
+-  font-family: system-ui, sans-serif;
+-  background: #0f0f1a;
+-  color: #e2e8f0;
+-  min-height: 100vh;
+-  display: flex;
+-  align-items: center;
+-  justify-content: center;
+-  padding: 2rem;
+-}
+-
+-.container {
+-  max-width: 600px;
+-  width: 100%;
+-  text-align: center;
+-}
+-
+-h1 {
+-  font-size: 2rem;
+-  font-weight: 800;
+-  background: linear-gradient(135deg, #a78bfa, #38bdf8);
+-  -webkit-background-clip: text;
+-  -webkit-text-fill-color: transparent;
+-  background-clip: text;
+-  margin-bottom: 1rem;
+-}
+-
+-p {
+-  color: rgba(148, 163, 184, 0.85);
+-  line-height: 1.6;
+-  margin-bottom: 2rem;
+-}
+-
+-.btn {
+-  padding: 0.65rem 1.5rem;
+-  background: linear-gradient(135deg, #7c3aed, #2563eb);
+-  color: #fff;
+-  border: none;
+-  border-radius: 0.5rem;
+-  font-size: 1rem;
+-  font-weight: 600;
+-  cursor: pointer;
+-  transition: opacity 0.2s, transform 0.1s;
+-}
+-
+-.btn:hover { opacity: 0.9; transform: scale(1.03); }
+-.btn:active { transform: scale(0.98); }
+-
+-.output {
+-  margin-top: 1.5rem;
+-  padding: 1rem;
+-  background: rgba(255,255,255,0.04);
+-  border: 1px solid rgba(255,255,255,0.08);
+-  border-radius: 0.5rem;
+-  min-height: 3rem;
+-  font-size: 0.9rem;
+-  color: #a78bfa;
+-}`,
+-
+-  js: `// EON Code Maker — starter script
+-const btn = document.getElementById('demo-btn');
+-const output = document.getElementById('output');
+-
+-let clickCount = 0;
+-
+-btn.addEventListener('click', () => {
+-  clickCount++;
+-  output.textContent = \`✅ Button clicked \${clickCount} time\${clickCount !== 1 ? 's' : ''}! Your code is working.\`;
+-  btn.style.background = \`linear-gradient(135deg, hsl(\${clickCount * 40 % 360},70%,55%), hsl(\${(clickCount * 40 + 60) % 360},70%,50%))\`;
+-});
+-
+-console.log('EON Code Maker script loaded ⚡');`
+-};
+-
++</body>
++</html>`,
++
++  css: `/* EON Code Maker — starter styles */
++* { box-sizing: border-box; margin: 0; padding: 0; }
++
++body {
++  font-family: system-ui, sans-serif;
++  background: #0f0f1a;
++  color: #e2e8f0;
++  min-height: 100vh;
++  display: flex;
++  align-items: center;
++  justify-content: center;
++  padding: 2rem;
++}
++
++.container {
++  max-width: 600px;
++  width: 100%;
++  text-align: center;
++}
++
++h1 {
++  font-size: 2rem;
++  font-weight: 800;
++  background: linear-gradient(135deg, #a78bfa, #38bdf8);
++  -webkit-background-clip: text;
++  -webkit-text-fill-color: transparent;
++  background-clip: text;
++  margin-bottom: 1rem;
++}
++
++p {
++  color: rgba(148, 163, 184, 0.85);
++  line-height: 1.6;
++  margin-bottom: 2rem;
++}
++
++.btn {
++  padding: 0.65rem 1.5rem;
++  background: linear-gradient(135deg, #7c3aed, #2563eb);
++  color: #fff;
++  border: none;
++  border-radius: 0.5rem;
++  font-size: 1rem;
++  font-weight: 600;
++  cursor: pointer;
++  transition: opacity 0.2s, transform 0.1s;
++}
++
++.btn:hover { opacity: 0.9; transform: scale(1.03); }
++.btn:active { transform: scale(0.98); }
++
++.output {
++  margin-top: 1.5rem;
++  padding: 1rem;
++  background: rgba(255,255,255,0.04);
++  border: 1px solid rgba(255,255,255,0.08);
++  border-radius: 0.5rem;
++  min-height: 3rem;
++  font-size: 0.9rem;
++  color: #a78bfa;
++}`,
++
++  js: `// EON Code Maker — starter script
++const btn = document.getElementById('demo-btn');
++const output = document.getElementById('output');
++
++let clickCount = 0;
++
++btn.addEventListener('click', () => {
++  clickCount++;
++  output.textContent = \`✅ Button clicked \${clickCount} time\${clickCount !== 1 ? 's' : ''}! Your code is working.\`;
++  btn.style.background = \`linear-gradient(135deg, hsl(\${clickCount * 40 % 360},70%,55%), hsl(\${(clickCount * 40 + 60) % 360},70%,50%))\`;
++});
++
++console.log('EON Code Maker script loaded ⚡');`
++};
++
+ const LS_KEY_PREFIX = 'eon:code-maker:v1:';
+ /** @type {Record<'html' | 'css' | 'js', { getValue: () => string; setValue: (value: string) => void }>} */
+ const editors = /** @type {any} */ ({});
+@@ -113,7 +113,7 @@
+ let activeFile = 'html';
+ let monacoReady = false;
+ /** @typedef {'html' | 'css' | 'js'} CodeFile */
+-
++
+ function escapePreviewJson(/** @type {string} */ value) {
+   return JSON.stringify(String(value || '')).replace(/</g, '\\u003c');
+ }
+@@ -139,26 +139,26 @@
+ }
+ 
+ function runPreview() {
+-const frame = /** @type {any} */ (document.getElementById('cm-preview-frame'));
+-  if (!frame || !monacoReady) return;
+-  const html = buildPreviewDocument();
++const frame = /** @type {any} */ (document.getElementById('cm-preview-frame'));
++  if (!frame || !monacoReady) return;
++  const html = buildPreviewDocument();
+   frame.srcdoc = html;
+   setStatus('Preview updated.');
+   updateCharCount();
+ }
+-
++
+ function setStatus(/** @type {string} */ msg, isError = false) {
+-  const el = document.getElementById('cm-status-text');
+-  if (el) { el.textContent = msg; el.style.color = isError ? '#f87171' : ''; }
+-}
+-
+-function updateCharCount() {
+-  const total = Object.values(editors).reduce((n, e) => n + (e?.getValue().length || 0), 0);
+-  const el = document.getElementById('cm-char-count');
+-  if (el) el.textContent = `${total.toLocaleString()} chars`;
+-}
+-
+-// ── Auto-save to localStorage ─────────────────────────────────────────────────
++  const el = document.getElementById('cm-status-text');
++  if (el) { el.textContent = msg; el.style.color = isError ? '#f87171' : ''; }
++}
++
++function updateCharCount() {
++  const total = Object.values(editors).reduce((n, e) => n + (e?.getValue().length || 0), 0);
++  const el = document.getElementById('cm-char-count');
++  if (el) el.textContent = `${total.toLocaleString()} chars`;
++}
++
++// ── Auto-save to localStorage ─────────────────────────────────────────────────
+ /**
+  * @param {CodeFile} file
+  */
+@@ -172,11 +172,60 @@
+ function loadFile(file) {
+   try { return localStorage.getItem(LS_KEY_PREFIX + file) || null; } catch { return null; }
+ }
+-
+-// ── Monaco setup ──────────────────────────────────────────────────────────────
++
++
++
++// Enterprise fallback editor: keeps Code Maker usable when Monaco CDN is slow,
++// blocked, or unavailable inside the Workstation iframe.
++function initFallbackEditor(reason = 'Monaco editor is unavailable.') {
++  if (monacoReady || document.getElementById('cm-fallback-editor')) return;
++  const container = document.getElementById('cm-editor-container');
++  if (!container) return;
++  container.classList.add('cm-fallback-editor-host');
++  container.innerHTML = `
++    <div class="cm-fallback-editor" id="cm-fallback-editor">
++      <div class="cm-fallback-notice">
++        <strong>Code Maker fallback editor active.</strong>
++        <span>${String(reason || '').replace(/[<>]/g, '')} You can still edit HTML, CSS, JS, run preview, export, and use AI assist.</span>
++      </div>
++      <textarea class="cm-fallback-pane active" data-fallback-file="html" spellcheck="false" aria-label="HTML editor"></textarea>
++      <textarea class="cm-fallback-pane" data-fallback-file="css" spellcheck="false" aria-label="CSS editor"></textarea>
++      <textarea class="cm-fallback-pane" data-fallback-file="js" spellcheck="false" aria-label="JavaScript editor"></textarea>
++    </div>`;
++  document.querySelectorAll('.cm-fallback-pane').forEach((node) => {
++    const file = /** @type {CodeFile} */ (node.getAttribute('data-fallback-file') || 'html');
++    node.value = loadFile(file) || DEFAULTS[file];
++    editors[file] = {
++      getValue: () => String(node.value || ''),
++      setValue: (value) => { node.value = String(value || ''); saveFile(file); }
++    };
++    node.addEventListener('input', () => { saveFile(file); updateCharCount(); });
++    node.addEventListener('keydown', (event) => {
++      if ((event.ctrlKey || event.metaKey) && event.key === 'Enter') runPreview();
++    });
++  });
++  document.querySelectorAll('.cm-file-tab').forEach((btn) => {
++    btn.addEventListener('click', () => {
++      const next = /** @type {CodeFile} */ (btn.dataset.file || 'html');
++      activeFile = next;
++      document.querySelectorAll('.cm-file-tab').forEach((tab) => tab.classList.toggle('active', tab.dataset.file === next));
++      document.querySelectorAll('.cm-fallback-pane').forEach((pane) => pane.classList.toggle('active', pane.getAttribute('data-fallback-file') === next));
++      setStatus(`Editing ${next === 'js' ? 'script.js' : next === 'css' ? 'style.css' : 'index.html'} in fallback editor.`);
++      updateCharCount();
++    });
++  });
++  monacoReady = true;
++  window._cmGetCode = (/** @type {CodeFile} */ file) => editors[file]?.getValue?.() || DEFAULTS[file];
++  window._cmSetCode = (/** @type {CodeFile} */ file, /** @type {string} */ value) => { editors[file]?.setValue?.(value); updateCharCount(); };
++  setStatus('Code Maker fallback ready. Press Run or Ctrl+Enter to preview.');
++  updateCharCount();
++  setTimeout(runPreview, 120);
++}
++
++// ── Monaco setup ──────────────────────────────────────────────────────────────
+ function initMonaco() {
+   if (!window.require) {
+-    setStatus('Monaco loader not available — check your internet connection.', true);
++    initFallbackEditor('Monaco loader was not available.');
+     return;
+   }
+ 
+@@ -187,34 +236,34 @@
+   /** @type {any} */ (window.require).config({
+     paths: { vs: 'https://cdn.jsdelivr.net/npm/monaco-editor@0.47.0/min/vs' }
+   });
+-
++
+   /** @type {any} */ (window.require)(['vs/editor/editor.main'], function () {
+     const monaco = window.monaco;
+     if (!monaco) {
+-      setStatus('Monaco editor failed to load.', true);
++      initFallbackEditor('Monaco editor failed to load.');
+       return;
+     }
+ 
+     monaco.editor.defineTheme('eon-dark', {
+-      base: 'vs-dark',
+-      inherit: true,
+-      rules: [
+-        { token: 'comment', foreground: '4b5563', fontStyle: 'italic' },
+-        { token: 'string', foreground: '86efac' },
+-        { token: 'keyword', foreground: 'a78bfa', fontStyle: 'bold' },
+-        { token: 'number', foreground: 'fcd34d' }
+-      ],
+-      colors: {
+-        'editor.background':           '#0f0f1a',
+-        'editor.foreground':           '#e2e8f0',
+-        'editorLineNumber.foreground': '#374151',
+-        'editor.lineHighlightBackground': '#1e1e2e',
+-        'editorCursor.foreground':     '#a78bfa',
+-        'editor.selectionBackground':  '#312e5880',
+-        'editorIndentGuide.background1': '#1e293b'
+-      }
+-    });
+-
++      base: 'vs-dark',
++      inherit: true,
++      rules: [
++        { token: 'comment', foreground: '4b5563', fontStyle: 'italic' },
++        { token: 'string', foreground: '86efac' },
++        { token: 'keyword', foreground: 'a78bfa', fontStyle: 'bold' },
++        { token: 'number', foreground: 'fcd34d' }
++      ],
++      colors: {
++        'editor.background':           '#0f0f1a',
++        'editor.foreground':           '#e2e8f0',
++        'editorLineNumber.foreground': '#374151',
++        'editor.lineHighlightBackground': '#1e1e2e',
++        'editorCursor.foreground':     '#a78bfa',
++        'editor.selectionBackground':  '#312e5880',
++        'editorIndentGuide.background1': '#1e293b'
++      }
++    });
++
+     /** @type {{ html: 'html'; css: 'css'; js: 'javascript' }} */
+     const LANG_MAP = { html: 'html', css: 'css', js: 'javascript' };
+     const container = document.getElementById('cm-editor-container');
+@@ -225,29 +274,29 @@
+ 
+     const initialLang = LANG_MAP[activeFile];
+     const initialValue = loadFile(activeFile) || DEFAULTS[activeFile];
+-
+-    const mainEditor = monaco.editor.create(container, {
+-      value:         initialValue,
+-      language:      initialLang,
+-      theme:         'eon-dark',
+-      fontSize:       14,
+-      fontFamily:    '"Cascadia Code", "Fira Code", "JetBrains Mono", Consolas, monospace',
+-      fontLigatures:  true,
+-      lineHeight:     22,
+-      minimap:        { enabled: false },
+-      scrollBeyondLastLine: false,
+-      wordWrap:       'on',
+-      automaticLayout: true,
+-      tabSize:        2,
+-      insertSpaces:   true,
+-      formatOnPaste:  true,
+-      formatOnType:   false,
+-      suggestOnTriggerCharacters: true,
+-      quickSuggestions: true,
+-      padding:        { top: 12, bottom: 12 }
+-    });
+-
+-    // Create hidden models for each file
++
++    const mainEditor = monaco.editor.create(container, {
++      value:         initialValue,
++      language:      initialLang,
++      theme:         'eon-dark',
++      fontSize:       14,
++      fontFamily:    '"Cascadia Code", "Fira Code", "JetBrains Mono", Consolas, monospace',
++      fontLigatures:  true,
++      lineHeight:     22,
++      minimap:        { enabled: false },
++      scrollBeyondLastLine: false,
++      wordWrap:       'on',
++      automaticLayout: true,
++      tabSize:        2,
++      insertSpaces:   true,
++      formatOnPaste:  true,
++      formatOnType:   false,
++      suggestOnTriggerCharacters: true,
++      quickSuggestions: true,
++      padding:        { top: 12, bottom: 12 }
++    });
++
++    // Create hidden models for each file
+     /** @type {Record<'html' | 'css' | 'js', any>} */
+     const models = /** @type {any} */ ({});
+     /** @type {Array<'html' | 'css' | 'js'>} */
+@@ -259,53 +308,53 @@
+       models[f]  = monaco.editor.createModel(loadFile(f) || DEFAULTS[f], lang, uri);
+       editors[f] = { getValue: () => models[f].getValue(), setValue: (v) => models[f].setValue(v) };
+     });
+-
+-    // Actually use the main editor's model
+-    editors.html = { getValue: () => (activeFile === 'html' ? mainEditor.getValue() : (models.html?.getValue() || DEFAULTS.html)), setValue: (v) => { if (activeFile === 'html') mainEditor.setValue(v); else models.html.setValue(v); } };
+-    editors.css  = { getValue: () => (activeFile === 'css'  ? mainEditor.getValue() : (models.css?.getValue()  || DEFAULTS.css)),  setValue: (v) => { if (activeFile === 'css')  mainEditor.setValue(v); else models.css.setValue(v);  } };
+-    editors.js   = { getValue: () => (activeFile === 'js'   ? mainEditor.getValue() : (models.js?.getValue()   || DEFAULTS.js)),   setValue: (v) => { if (activeFile === 'js')   mainEditor.setValue(v); else models.js.setValue(v);   } };
+-
+-    // File-tab switching — swap the model
++
++    // Actually use the main editor's model
++    editors.html = { getValue: () => (activeFile === 'html' ? mainEditor.getValue() : (models.html?.getValue() || DEFAULTS.html)), setValue: (v) => { if (activeFile === 'html') mainEditor.setValue(v); else models.html.setValue(v); } };
++    editors.css  = { getValue: () => (activeFile === 'css'  ? mainEditor.getValue() : (models.css?.getValue()  || DEFAULTS.css)),  setValue: (v) => { if (activeFile === 'css')  mainEditor.setValue(v); else models.css.setValue(v);  } };
++    editors.js   = { getValue: () => (activeFile === 'js'   ? mainEditor.getValue() : (models.js?.getValue()   || DEFAULTS.js)),   setValue: (v) => { if (activeFile === 'js')   mainEditor.setValue(v); else models.js.setValue(v);   } };
++
++    // File-tab switching — swap the model
+     document.querySelectorAll('.cm-file-tab').forEach((/** @type {Element} */ btn) => {
+       btn.addEventListener('click', () => {
+     const newFile = /** @type {CodeFile} */ (btn.dataset.file || 'html');
+         // Save current model content to its model
+         if (activeFile !== newFile) {
+           models[activeFile]?.setValue(mainEditor.getValue());
+-          saveFile(activeFile);
+-          activeFile = newFile;
+-          mainEditor.setModel(models[newFile]);
+-          mainEditor.focus();
++          saveFile(activeFile);
++          activeFile = newFile;
++          mainEditor.setModel(models[newFile]);
++          mainEditor.focus();
+           document.querySelectorAll('.cm-file-tab').forEach((/** @type {Element} */ t) =>
+             t.classList.toggle('active', t.dataset.file === newFile)
+           );
+-          setStatus(`Editing ${newFile === 'js' ? 'script.js' : newFile === 'css' ? 'style.css' : 'index.html'}`);
+-          updateCharCount();
+-        }
+-      });
+-    });
+-
+-    // Initialize models properly
+-    mainEditor.setModel(models.html);
+-
+-    // Auto-save + char count on change
+-    mainEditor.onDidChangeModelContent(() => {
+-      models[activeFile]?.setValue(mainEditor.getValue());
+-      saveFile(activeFile);
+-      updateCharCount();
+-    });
+-
+-    monacoReady = true;
+-    setStatus('Code Maker ready. Press Run or Ctrl+Enter to preview.');
+-    updateCharCount();
+-
+-    // Auto-run initial preview
+-    setTimeout(runPreview, 300);
+-
+-    // Ctrl+Enter to run
+-    mainEditor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, runPreview);
+-
+-    // Expose for AI assist
++          setStatus(`Editing ${newFile === 'js' ? 'script.js' : newFile === 'css' ? 'style.css' : 'index.html'}`);
++          updateCharCount();
++        }
++      });
++    });
++
++    // Initialize models properly
++    mainEditor.setModel(models.html);
++
++    // Auto-save + char count on change
++    mainEditor.onDidChangeModelContent(() => {
++      models[activeFile]?.setValue(mainEditor.getValue());
++      saveFile(activeFile);
++      updateCharCount();
++    });
++
++    monacoReady = true;
++    setStatus('Code Maker ready. Press Run or Ctrl+Enter to preview.');
++    updateCharCount();
++
++    // Auto-run initial preview
++    setTimeout(runPreview, 300);
++
++    // Ctrl+Enter to run
++    mainEditor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, runPreview);
++
++    // Expose for AI assist
+     window._cmGetCode = (/** @type {CodeFile} */ file) => (file === activeFile ? mainEditor.getValue() : models[file]?.getValue() || DEFAULTS[file]);
+     window._cmSetCode = (/** @type {CodeFile} */ file, /** @type {string} */ value) => {
+       if (file === activeFile) mainEditor.setValue(value);
+@@ -314,9 +363,9 @@
+     };
+   });
+ }
+-
+-// ── Preview device switcher ────────────────────────────────────────────────────
+-function initDeviceSwitcher() {
++
++// ── Preview device switcher ────────────────────────────────────────────────────
++function initDeviceSwitcher() {
+   document.querySelectorAll('.cm-device-btn').forEach(btn => {
+     btn.addEventListener('click', () => {
+       const w = btn.dataset.w || '';
+@@ -325,78 +374,78 @@
+       document.querySelectorAll('.cm-device-btn').forEach(b => b.classList.toggle('active', b === btn));
+     });
+   });
+-}
+-
+-// ── Resize handle (drag to resize editor/preview split) ───────────────────────
+-function initResizeHandle() {
+-  const handle = document.getElementById('cm-resize-handle');
+-  const editorPane  = document.getElementById('cm-editor-pane');
+-  const previewPane = document.getElementById('cm-preview-pane');
+-  if (!handle || !editorPane || !previewPane) return;
+-
+-  let dragging = false;
+-  let startX = 0, startW = 0;
+-
+-  handle.addEventListener('mousedown', e => {
+-    dragging = true;
+-    startX = e.clientX;
+-    startW = editorPane.getBoundingClientRect().width;
+-    document.body.style.cursor = 'col-resize';
+-    document.body.style.userSelect = 'none';
+-  });
+-
+-  document.addEventListener('mousemove', e => {
+-    if (!dragging) return;
+-    const delta = e.clientX - startX;
+-    const totalW = editorPane.parentElement?.getBoundingClientRect().width || 1000;
+-    const newW = Math.max(240, Math.min(totalW - 240, startW + delta));
+-    editorPane.style.flex = `0 0 ${newW}px`;
+-  });
+-
+-  document.addEventListener('mouseup', () => {
+-    if (!dragging) return;
+-    dragging = false;
+-    document.body.style.cursor = '';
+-    document.body.style.userSelect = '';
+-  });
+-}
+-
+-// ── AI Assist ─────────────────────────────────────────────────────────────────
++}
++
++// ── Resize handle (drag to resize editor/preview split) ───────────────────────
++function initResizeHandle() {
++  const handle = document.getElementById('cm-resize-handle');
++  const editorPane  = document.getElementById('cm-editor-pane');
++  const previewPane = document.getElementById('cm-preview-pane');
++  if (!handle || !editorPane || !previewPane) return;
++
++  let dragging = false;
++  let startX = 0, startW = 0;
++
++  handle.addEventListener('mousedown', e => {
++    dragging = true;
++    startX = e.clientX;
++    startW = editorPane.getBoundingClientRect().width;
++    document.body.style.cursor = 'col-resize';
++    document.body.style.userSelect = 'none';
++  });
++
++  document.addEventListener('mousemove', e => {
++    if (!dragging) return;
++    const delta = e.clientX - startX;
++    const totalW = editorPane.parentElement?.getBoundingClientRect().width || 1000;
++    const newW = Math.max(240, Math.min(totalW - 240, startW + delta));
++    editorPane.style.flex = `0 0 ${newW}px`;
++  });
++
++  document.addEventListener('mouseup', () => {
++    if (!dragging) return;
++    dragging = false;
++    document.body.style.cursor = '';
++    document.body.style.userSelect = '';
++  });
++}
++
++// ── AI Assist ─────────────────────────────────────────────────────────────────
+ /**
+  * @param {string} prompt
+  */
+ async function runAIAssist(prompt) {
+-  const outputEl = document.getElementById('cm-ai-output');
+-  if (!outputEl) return;
+-  outputEl.hidden = false;
+-  outputEl.textContent = '⟳ Generating code…';
+-  setStatus('AI is writing code…');
+-
++  const outputEl = document.getElementById('cm-ai-output');
++  if (!outputEl) return;
++  outputEl.hidden = false;
++  outputEl.textContent = '⟳ Generating code…';
++  setStatus('AI is writing code…');
++
+   try {
+     const currentHtml = window._cmGetCode?.('html') || '';
+     const currentCss  = window._cmGetCode?.('css')  || '';
+     const currentJs   = window._cmGetCode?.('js')   || '';
+-
+-    const systemPrompt = `You are an expert web developer. Generate complete, working HTML/CSS/JS code.
+-Return your answer as a JSON object with exactly these keys: {"html":"...","css":"...","js":"..."}.
+-Do not include backticks or markdown fences — only raw JSON.
+-Write modern, clean, accessible code. Use CSS custom properties and flexbox/grid.
+-Current project files are provided as context.`;
+-
+-    const userPrompt = `${prompt}
+-
+-Current code context:
+-=== index.html ===
+-${currentHtml.slice(0, 2000)}
+-
+-=== style.css ===
+-${currentCss.slice(0, 1500)}
+-
+-=== script.js ===
+-${currentJs.slice(0, 1000)}
+-
+-Generate updated code for all three files. Return only the JSON object.`;
+-
++
++    const systemPrompt = `You are an expert web developer. Generate complete, working HTML/CSS/JS code.
++Return your answer as a JSON object with exactly these keys: {"html":"...","css":"...","js":"..."}.
++Do not include backticks or markdown fences — only raw JSON.
++Write modern, clean, accessible code. Use CSS custom properties and flexbox/grid.
++Current project files are provided as context.`;
++
++    const userPrompt = `${prompt}
++
++Current code context:
++=== index.html ===
++${currentHtml.slice(0, 2000)}
++
++=== style.css ===
++${currentCss.slice(0, 1500)}
++
++=== script.js ===
++${currentJs.slice(0, 1000)}
++
++Generate updated code for all three files. Return only the JSON object.`;
++
+     const reply = await runMissionEngine({
+       mode: 'build',
+       prompt: userPrompt,
+@@ -413,58 +462,58 @@
+       }
+     });
+     const text  = String(reply?.text || '').trim();
+-
+-    // Extract JSON from response
+-    let parsed;
+-    try {
+-      const jsonMatch = text.match(/\{[\s\S]*\}/);
+-      parsed = JSON.parse(jsonMatch?.[0] || text);
+-    } catch {
+-      // Fallback: show raw output
+-      outputEl.textContent = text.slice(0, 1000);
+-      setStatus('AI responded — review the output above.', false);
+-      return;
+-    }
+-
+-    // Apply generated code
+-    if (parsed.html) window._cmSetCode('html', parsed.html);
+-    if (parsed.css)  window._cmSetCode('css',  parsed.css);
+-    if (parsed.js)   window._cmSetCode('js',   parsed.js);
+-
+-    outputEl.textContent = '✅ Code generated! Preview updated.';
+-    setStatus('AI code applied — preview updated.');
+-
+-    // Dispatch to activity monitor
+-    document.dispatchEvent(new CustomEvent('eon:ai-action', { detail: { provider: 'AI', action: 'code-generation', detail: prompt.slice(0, 80), outputLength: (parsed.html?.length || 0) + (parsed.css?.length || 0) + (parsed.js?.length || 0) } }));
+-
+-    setTimeout(runPreview, 100);
++
++    // Extract JSON from response
++    let parsed;
++    try {
++      const jsonMatch = text.match(/\{[\s\S]*\}/);
++      parsed = JSON.parse(jsonMatch?.[0] || text);
++    } catch {
++      // Fallback: show raw output
++      outputEl.textContent = text.slice(0, 1000);
++      setStatus('AI responded — review the output above.', false);
++      return;
++    }
++
++    // Apply generated code
++    if (parsed.html) window._cmSetCode('html', parsed.html);
++    if (parsed.css)  window._cmSetCode('css',  parsed.css);
++    if (parsed.js)   window._cmSetCode('js',   parsed.js);
++
++    outputEl.textContent = '✅ Code generated! Preview updated.';
++    setStatus('AI code applied — preview updated.');
++
++    // Dispatch to activity monitor
++    document.dispatchEvent(new CustomEvent('eon:ai-action', { detail: { provider: 'AI', action: 'code-generation', detail: prompt.slice(0, 80), outputLength: (parsed.html?.length || 0) + (parsed.css?.length || 0) + (parsed.js?.length || 0) } }));
++
++    setTimeout(runPreview, 100);
+   } catch (err) {
+     const errorMessage = err instanceof Error ? err.message : 'Unknown error';
+     outputEl.textContent = `AI error: ${errorMessage}. Check your API keys in Vault.`;
+     setStatus('AI code generation failed.', true);
+   }
+ }
+-
+-// ── Export as ZIP ─────────────────────────────────────────────────────────────
++
++// ── Export as ZIP ─────────────────────────────────────────────────────────────
+ async function exportProject() {
+   const name = /** @type {HTMLInputElement | null} */ (document.getElementById('cm-project-name'))?.value || 'my-project';
+-  const files = {
+-    'index.html': window._cmGetCode?.('html') || DEFAULTS.html,
+-    'style.css':  window._cmGetCode?.('css')  || DEFAULTS.css,
+-    'script.js':  window._cmGetCode?.('js')   || DEFAULTS.js
+-  };
+-
+-  // Create a simple multi-file download (no JSZip needed — just download each)
+-  // For a real ZIP, use JSZip CDN. For now, create individual downloads:
+-  for (const [filename, content] of Object.entries(files)) {
+-    const blob = new Blob([content], { type: 'text/plain' });
+-    const url  = URL.createObjectURL(blob);
+-    const a    = document.createElement('a');
+-    a.href = url; a.download = `${name}-${filename}`;
+-    document.body.appendChild(a); a.click(); a.remove();
+-    URL.revokeObjectURL(url);
+-    await new Promise(r => setTimeout(r, 100));
+-  }
++  const files = {
++    'index.html': window._cmGetCode?.('html') || DEFAULTS.html,
++    'style.css':  window._cmGetCode?.('css')  || DEFAULTS.css,
++    'script.js':  window._cmGetCode?.('js')   || DEFAULTS.js
++  };
++
++  // Create a simple multi-file download (no JSZip needed — just download each)
++  // For a real ZIP, use JSZip CDN. For now, create individual downloads:
++  for (const [filename, content] of Object.entries(files)) {
++    const blob = new Blob([content], { type: 'text/plain' });
++    const url  = URL.createObjectURL(blob);
++    const a    = document.createElement('a');
++    a.href = url; a.download = `${name}-${filename}`;
++    document.body.appendChild(a); a.click(); a.remove();
++    URL.revokeObjectURL(url);
++    await new Promise(r => setTimeout(r, 100));
++  }
+   setStatus(`Exported ${Object.keys(files).length} files.`);
+ }
+ 
+@@ -535,13 +584,14 @@
+   });
+   await copyDeployManifest(manifest);
+ }
+-
+-// ── Init ──────────────────────────────────────────────────────────────────────
+-document.addEventListener('DOMContentLoaded', () => {
+-  initMonaco();
+-  initDeviceSwitcher();
+-  initResizeHandle();
+-
++
++// ── Init ──────────────────────────────────────────────────────────────────────
++document.addEventListener('DOMContentLoaded', () => {
++  initMonaco();
++setTimeout(() => { if (!monacoReady) initFallbackEditor('Monaco CDN timed out or was blocked.'); }, 4500);
++  initDeviceSwitcher();
++  initResizeHandle();
++
+   document.getElementById('cm-btn-run')?.addEventListener('click', runPreview);
+   document.getElementById('cm-preview-refresh')?.addEventListener('click', runPreview);
+   document.getElementById('cm-btn-export')?.addEventListener('click', exportProject);
+@@ -551,10 +601,10 @@
+   });
+ 
+   document.getElementById('cm-btn-fullscreen')?.addEventListener('click', () => {
+-    const pp = document.getElementById('cm-preview-pane');
+-    pp?.classList.toggle('cm-preview-fullscreen');
+-  });
+-
++    const pp = document.getElementById('cm-preview-pane');
++    pp?.classList.toggle('cm-preview-fullscreen');
++  });
++
+   document.getElementById('cm-preview-newwindow')?.addEventListener('click', () => {
+     if (!monacoReady) return;
+     const html = buildPreviewDocument();
+@@ -565,7 +615,7 @@
+       win.document.close();
+     }
+   });
+-
++
+   document.getElementById('cm-btn-open-browser')?.addEventListener('click', () => {
+     window.location.href = '/eon-browser.html';
+   });
+@@ -591,33 +641,33 @@
+   document.getElementById('cm-deploy-guide')?.addEventListener('click', openDeployGuide);
+ 
+   // AI Assist drawer
+-  document.getElementById('cm-btn-ai')?.addEventListener('click', () => {
+-    const drawer = document.getElementById('cm-ai-drawer');
+-    if (drawer) drawer.hidden = !drawer.hidden;
+-  });
+-  document.getElementById('cm-ai-drawer-close')?.addEventListener('click', () => {
+-    const drawer = document.getElementById('cm-ai-drawer');
+-    if (drawer) drawer.hidden = true;
+-  });
+-
+-  // Quick template buttons
+-  document.querySelectorAll('.cm-ai-tmpl-btn').forEach(btn => {
+-    btn.addEventListener('click', () => {
+-      const textarea = document.getElementById('cm-ai-prompt');
+-      if (textarea) textarea.value = btn.dataset.prompt || '';
+-      textarea?.focus();
+-    });
+-  });
+-
+-  document.getElementById('cm-ai-submit')?.addEventListener('click', () => {
+-    const prompt = (document.getElementById('cm-ai-prompt')?.value || '').trim();
+-    if (prompt) runAIAssist(prompt);
+-  });
+-
++  document.getElementById('cm-btn-ai')?.addEventListener('click', () => {
++    const drawer = document.getElementById('cm-ai-drawer');
++    if (drawer) drawer.hidden = !drawer.hidden;
++  });
++  document.getElementById('cm-ai-drawer-close')?.addEventListener('click', () => {
++    const drawer = document.getElementById('cm-ai-drawer');
++    if (drawer) drawer.hidden = true;
++  });
++
++  // Quick template buttons
++  document.querySelectorAll('.cm-ai-tmpl-btn').forEach(btn => {
++    btn.addEventListener('click', () => {
++      const textarea = document.getElementById('cm-ai-prompt');
++      if (textarea) textarea.value = btn.dataset.prompt || '';
++      textarea?.focus();
++    });
++  });
++
++  document.getElementById('cm-ai-submit')?.addEventListener('click', () => {
++    const prompt = (document.getElementById('cm-ai-prompt')?.value || '').trim();
++    if (prompt) runAIAssist(prompt);
++  });
++
+   document.getElementById('cm-ai-prompt')?.addEventListener('keydown', (/** @type {KeyboardEvent} */ e) => {
+     if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
+       const prompt = (/** @type {HTMLTextAreaElement} */ (e.target).value || '').trim();
+       if (prompt) runAIAssist(prompt);
+     }
+   });
+-});
++});
+diff -ruN /mnt/data/eonapp_patch_original/assets/js/eon-browser-agent.js /mnt/data/eonapp_patch_work/assets/js/eon-browser-agent.js
+--- /mnt/data/eonapp_patch_original/assets/js/eon-browser-agent.js	1970-01-01 00:00:00.000000000 +0000
++++ /mnt/data/eonapp_patch_work/assets/js/eon-browser-agent.js	2026-06-08 20:54:15.353299227 +0000
+@@ -0,0 +1,634 @@
++/**
++ * EON Browser — AI Agent Layer
++ * AI Activity Monitor · Dual-Layer Perception · Proactive EONBOT · NFT Ability Gates
++ */
++
++import {
++  detectCaptchaChallengeFromDoc,
++  getCaptchaSummary,
++  renderCaptchaSummary
++} from './utils/captcha-assist.js';
++
++// ── Escape helper ──────────────────────────────────────────────────────────────
++/**
++ * @param {any} s
++ */
++function esc(s) {
++  return String(s || '')
++    .replace(/&/g, '&amp;')
++    .replace(/</g, '&lt;')
++    .replace(/>/g, '&gt;')
++    .replace(/"/g, '&quot;');
++}
++
++// ============================================================
++// EON AI Activity Monitor
++// ============================================================
++const EONActivityMonitor = (() => {
++  /** @type {any[]} */
++  const events = [];
++  let sessionCalls = 0;
++  let sessionTokensEst = 0;
++  const sessionProviders = new Set();
++
++  const PROVIDER_COLORS = {
++    openrouter: '#a78bfa',
++    groq: '#f59e0b',
++    openai: '#10b981',
++    fireworks: '#f97316',
++    cerebras: '#3b82f6',
++    local: '#22c55e',
++    llm: '#e879f9',
++    unknown: '#94a3b8'
++  };
++
++  /**
++   * @param {any} provider
++   */
++  function getColor(provider) {
++    const p = String(provider || '').toLowerCase();
++    for (const [k, v] of Object.entries(PROVIDER_COLORS)) {
++      if (p.includes(k)) return v;
++    }
++    return PROVIDER_COLORS.unknown;
++  }
++
++  /**
++   * @param {any} provider
++   * @param {any} action
++   * @param {any} detail
++   * @param {any} outputLength
++   */
++  function log(provider, action, detail, outputLength) {
++    const ev = {
++      id: (typeof crypto !== 'undefined' && crypto.randomUUID)
++        ? crypto.randomUUID().slice(0, 8) : Date.now().toString(36),
++      provider: String(provider || 'AI'),
++      action:   String(action   || 'action'),
++      detail:   String(detail   || '').slice(0, 140),
++      ts:       Date.now(),
++      outputLength: Number(outputLength || 0)
++    };
++    events.unshift(ev);
++    if (events.length > 60) events.splice(60);
++
++    sessionCalls++;
++    sessionTokensEst += Math.round((ev.outputLength || 200) / 4);
++    sessionProviders.add(ev.provider);
++
++    setPulseActive(true);
++    renderAll();
++    setTimeout(() => setPulseActive(false), 5000);
++  }
++
++  /**
++   * @param {boolean} active
++   */
++  function setPulseActive(active) {
++    const dot        = document.getElementById('eon-ai-pulse');
++    const label      = document.getElementById('eon-ai-pulse-label');
++    const agentDot   = document.getElementById('eon-agent-dot-anim');
++    const statusText = document.getElementById('eon-agent-status-text');
++
++    if (dot)   dot.className   = 'eon-ai-pulse' + (active ? ' eon-ai-pulse--active' : '');
++    if (agentDot) agentDot.className = 'eon-agent-dot' + (active ? ' eon-agent-dot--active' : '');
++
++    if (active && events[0]) {
++      const e = events[0];
++      if (label)      label.textContent      = e.provider.toUpperCase() + ' · ' + e.action;
++      if (statusText) statusText.textContent = '⚡ ' + e.provider + ' — ' + e.action;
++    } else {
++      if (label)      label.textContent      = 'AI ready';
++      if (statusText) statusText.textContent = 'Watching for AI activity…';
++    }
++  }
++
++  function renderActivityLog() {
++    const list = document.getElementById('eon-activity-log');
++    if (!list) return;
++    if (!events.length) {
++      list.innerHTML = '<p class="eon-activity-empty">No AI activity yet. Use Summarize, Research Mode, or Ask AI.</p>';
++      return;
++    }
++    list.innerHTML = events.slice(0, 25).map(ev => {
++      const color = getColor(ev.provider);
++      const time  = new Date(ev.ts).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
++      return `<div class="eon-activity-entry">
++        <div class="eon-activity-header">
++          <span class="eon-activity-provider" style="color:${color}">${esc(ev.provider)}</span>
++          <span class="eon-activity-action">${esc(ev.action)}</span>
++          <span class="eon-activity-time">${time}</span>
++        </div>
++        ${ev.detail ? `<div class="eon-activity-detail">${esc(ev.detail)}</div>` : ''}
++        ${ev.outputLength ? `<div class="eon-activity-meta">${ev.outputLength.toLocaleString()} chars output · ~${Math.round(ev.outputLength/4).toLocaleString()} tokens</div>` : ''}
++      </div>`;
++    }).join('');
++  }
++
++  function renderDualLayer() {
++    const feed = document.getElementById('eon-dual-ai-feed');
++    if (!feed) return;
++
++    if (!events.length) {
++      feed.innerHTML = '<p class="eon-activity-empty">Navigate to a page and run an AI action to see what the AI perceives.</p>';
++    } else {
++      feed.innerHTML = events.slice(0, 12).map((ev, i) => {
++        const color  = getColor(ev.provider);
++        const age    = Math.round((Date.now() - ev.ts) / 1000);
++        const ageStr = age < 60 ? `${age}s ago` : `${Math.round(age / 60)}m ago`;
++        return `<div class="eon-dual-feed-row" style="animation-delay:${i * 0.06}s">
++          <div class="eon-dual-feed-brain" style="color:${color}">🧠</div>
++          <div class="eon-dual-feed-info">
++            <div class="eon-dual-feed-provider" style="color:${color}">${esc(ev.provider)}</div>
++            <div class="eon-dual-feed-action">${esc(ev.action)}</div>
++            ${ev.detail ? `<div class="eon-dual-feed-detail">${esc(ev.detail)}</div>` : ''}
++          </div>
++          <span class="eon-dual-feed-age">${ageStr}</span>
++        </div>`;
++      }).join('');
++    }
++
++    const callsEl     = document.getElementById('eon-stats-calls');
++    const tokensEl    = document.getElementById('eon-stats-tokens');
++    const providersEl = document.getElementById('eon-stats-providers');
++    if (callsEl)     callsEl.textContent     = String(sessionCalls);
++    if (tokensEl)    tokensEl.textContent    = sessionTokensEst.toLocaleString();
++    if (providersEl) providersEl.textContent = [...sessionProviders].join(', ') || '—';
++  }
++
++  function renderAll() {
++    renderActivityLog();
++    renderDualLayer();
++  }
++
++window.EONActivityMonitor = { log, events, renderAll, setPulseActive };
++  return { log, events, renderAll };
++})();
++
++// ============================================================
++// EON Browser DOM Automation
++// Browser-local helpers for same-origin tabs. This is not a
++// cross-site bot or CAPTCHA solver; it is a user-owned action
++// helper for pages the cockpit can already see.
++// ============================================================
++const EONBrowserAutomation = (() => {
++  function getActiveFrameContext() {
++    const frame = window.EONTabSystem?.getActiveFrame?.();
++    if (!frame) {
++      throw new Error('Open a page in a browser tab first.');
++    }
++    let doc = null;
++    let win = null;
++    try {
++      win = frame.contentWindow;
++      doc = frame.contentDocument;
++    } catch {}
++    if (!doc || !win) {
++      throw new Error('The active page is cross-origin or blocked. DOM automation only works on browser-local pages.');
++    }
++    return { frame, doc, win };
++  }
++
++  /**
++   * @param {string} message
++   * @param {boolean} [ok]
++   */
++  function syncAutomationStatus(message, ok = true) {
++    const el = document.getElementById('browser-automation-status');
++    if (el) el.textContent = message;
++    EONActivityMonitor.log('local', ok ? 'automation' : 'automation-failed', message, message.length);
++  }
++
++  /**
++   * @param {Element} el
++   */
++  function dispatchInput(el) {
++    try {
++      el.dispatchEvent(new Event('input', { bubbles: true, cancelable: true }));
++      el.dispatchEvent(new Event('change', { bubbles: true, cancelable: true }));
++    } catch {}
++  }
++
++  /**
++   * @param {string} selector
++   */
++  function click(selector) {
++    const { doc } = getActiveFrameContext();
++    const el = doc.querySelector(selector);
++    if (!el) throw new Error(`No element matches "${selector}".`);
++    if (typeof el.click === 'function') el.click();
++    else el.dispatchEvent(new window.MouseEvent('click', { bubbles: true, cancelable: true, view: window }));
++    syncAutomationStatus(`Clicked ${selector}.`, true);
++    return { ok: true, action: 'click', selector };
++  }
++
++  /**
++   * @param {string} selector
++   * @param {any} value
++   */
++  function fill(selector, value) {
++    const { doc } = getActiveFrameContext();
++    const el = doc.querySelector(selector);
++    if (!el) throw new Error(`No element matches "${selector}".`);
++    if (!('value' in el)) throw new Error(`"${selector}" is not an input or textarea.`);
++    /** @type {HTMLInputElement | HTMLTextAreaElement} */ (el).value = String(value || '');
++    dispatchInput(el);
++    syncAutomationStatus(`Filled ${selector}.`, true);
++    return { ok: true, action: 'fill', selector, value: String(value || '') };
++  }
++
++  /**
++   * @param {string} selector
++   */
++  function submit(selector) {
++    const { doc } = getActiveFrameContext();
++    const el = doc.querySelector(selector);
++    if (!el) throw new Error(`No element matches "${selector}".`);
++    const form = el.closest?.('form') || (el.tagName === 'FORM' ? el : null);
++    if (!form) throw new Error(`"${selector}" does not belong to a form.`);
++    const isSubmitControl = ['BUTTON', 'INPUT'].includes(String(el.tagName || '').toUpperCase());
++    if (typeof form.requestSubmit === 'function') form.requestSubmit(isSubmitControl ? el : undefined);
++    else form.submit();
++    syncAutomationStatus(`Submitted form for ${selector}.`, true);
++    return { ok: true, action: 'submit', selector };
++  }
++
++  /**
++   * @param {string} selector
++   * @param {any} value
++   */
++  function select(selector, value) {
++    const { doc } = getActiveFrameContext();
++    const el = doc.querySelector(selector);
++    if (!el) throw new Error(`No element matches "${selector}".`);
++    if (el.tagName !== 'SELECT') throw new Error(`"${selector}" is not a <select>.`);
++    const selectEl = /** @type {HTMLSelectElement} */ (el);
++    const options = [...selectEl.options];
++    const match = options.find((opt) => opt.value === value || String(opt.textContent || '').trim().toLowerCase() === String(value || '').trim().toLowerCase());
++    if (!match) throw new Error(`No option matches "${value}".`);
++    selectEl.value = match.value;
++    dispatchInput(selectEl);
++    syncAutomationStatus(`Selected "${match.textContent || match.value}" in ${selector}.`, true);
++    return { ok: true, action: 'select', selector, value: match.value };
++  }
++
++  function inspectActivePage() {
++    const { frame, doc } = getActiveFrameContext();
++    const title = String(doc.title || '').trim() || 'Untitled page';
++    const url = String(frame.dataset?.url || frame.src || '').trim();
++    const fields = doc.querySelectorAll('input, textarea, select, button, [contenteditable="true"]').length;
++    const anchors = doc.querySelectorAll('a').length;
++    const summary = `${title} · ${url || 'same-origin page'} · ${fields} controls · ${anchors} links`;
++    syncAutomationStatus(summary, true);
++    return { ok: true, summary, title, url, fields, anchors };
++  }
++
++  function inspectCaptcha() {
++    const { frame, doc } = getActiveFrameContext();
++    const challenge = detectCaptchaChallengeFromDoc(doc);
++    const summary = challenge?.ok ? `${getCaptchaSummary(challenge)} Review it manually in the active page.` : getCaptchaSummary(challenge);
++    syncAutomationStatus(summary, challenge.ok !== false);
++    const box = document.getElementById('browser-captcha-status');
++    if (box) box.textContent = summary;
++    return { ...challenge, summary, frameUrl: String(frame.dataset?.url || frame.src || '') };
++  }
++
++  async function solveCaptcha() {
++    throw new Error('Automatic CAPTCHA solving has been removed. Review the challenge yourself and continue manually.');
++  }
++
++  /**
++   * @param {any} [payload]
++   */
++  function runStep(payload = {}) {
++    const action = String(payload.action || '').trim().toLowerCase();
++    const selector = String(payload.selector || '').trim();
++    const value = String(payload.value || '').trim();
++    if (!action) throw new Error('Choose an automation action first.');
++    if (!selector) throw new Error('Enter a selector first.');
++    switch (action) {
++      case 'click': return click(selector);
++      case 'fill': return fill(selector, value);
++      case 'submit': return submit(selector);
++      case 'select': return select(selector, value);
++      default: throw new Error(`Unsupported automation action: ${action}`);
++    }
++  }
++
++  return { inspectActivePage, inspectCaptcha, solveCaptcha, runStep, click, fill, submit, select };
++})();
++
++function refreshCaptchaAssistPanel() {
++  const status = document.getElementById('browser-captcha-status');
++  if (status) {
++    renderCaptchaSummary(status, detectCaptchaChallengeFromDoc(window.EONTabSystem?.getActiveFrame?.()?.contentDocument || document));
++  }
++}
++
++document.getElementById('browser-captcha-scan')?.addEventListener('click', () => {
++  try {
++    const result = EONBrowserAutomation.inspectCaptcha();
++    if (result?.ok === false) {
++      const box = document.getElementById('browser-captcha-status');
++      if (box) box.textContent = result.message || 'No CAPTCHA challenge found.';
++    }
++  } catch (error) {
++    const msg = `Challenge scan failed: ${/** @type {Error} */ (error).message || 'Unknown error'}`;
++    const box = document.getElementById('browser-captcha-status');
++    if (box) box.textContent = msg;
++    EONActivityMonitor.log('local', 'captcha-scan-failed', msg, msg.length);
++  }
++});
++
++
++refreshCaptchaAssistPanel();
++
++window.EONBrowserAutomation = EONBrowserAutomation;
++
++// ── Activity panel tab switching ──────────────────────────────────────────────
++document.addEventListener('DOMContentLoaded', () => {
++  document.querySelectorAll('.eon-agent-layer-tab').forEach((/** @type {any} */ tab) => {
++    tab.addEventListener('click', () => {
++      const layer = tab.dataset.layer;
++      document.querySelectorAll('.eon-agent-layer-tab').forEach((/** @type {any} */ t) =>
++        t.classList.toggle('active', t === tab)
++      );
++      document.querySelectorAll('.eon-agent-layer-content').forEach((/** @type {any} */ c) => {
++        c.hidden = c.id !== 'eon-agent-layer-' + layer;
++      });
++      if (layer === 'dual')      EONActivityMonitor.renderAll();
++      if (layer === 'abilities') window.renderAbilityGrid?.();
++    });
++  });
++
++  document.getElementById('eon-panel-agent-close')?.addEventListener('click', () =>
++    window.closeAllPanels?.()
++  );
++  document.getElementById('eon-agent-btn')?.addEventListener('click', () =>
++    window.openPanel?.('eon-panel-aiactivity')
++  );
++  document.getElementById('eon-ai-pulse-wrap')?.addEventListener('click', () =>
++    window.openPanel?.('eon-panel-aiactivity')
++  );
++
++  document.getElementById('browser-automation-scan')?.addEventListener('click', () => {
++    try {
++      const result = EONBrowserAutomation.inspectActivePage();
++      const status = document.getElementById('browser-automation-status');
++      if (status) status.textContent = result.summary;
++    } catch (err) {
++      const msg = String((/** @type {any} */ (err))?.message || 'Could not inspect active page.');
++      const status = document.getElementById('browser-automation-status');
++      if (status) status.textContent = msg;
++      EONActivityMonitor.log('local', 'automation-failed', msg, msg.length);
++    }
++  });
++
++  document.getElementById('browser-automation-run')?.addEventListener('click', () => {
++    const action = String(document.getElementById('browser-automation-action')?.value || '');
++    const selector = String(document.getElementById('browser-automation-selector')?.value || '');
++    const value = String(document.getElementById('browser-automation-value')?.value || '');
++    try {
++      EONBrowserAutomation.runStep({ action, selector, value });
++    } catch (err) {
++      const msg = String((/** @type {any} */ (err))?.message || 'Automation step failed.');
++      const status = document.getElementById('browser-automation-status');
++      if (status) status.textContent = msg;
++      EONActivityMonitor.log('local', 'automation-failed', msg, msg.length);
++    }
++  });
++});
++
++// ============================================================
++// Proactive EONBOT System
++// ============================================================
++(function initProactiveBot() {
++  /** @type {ReturnType<typeof setTimeout> | null} */
++  let proactiveTimer = null;
++  let lastNotifiedUrl = '';
++  let hasGreeted = false;
++
++  const HINTS = [
++    { match: 'github.com',   icon: '💻', msg: 'I can summarize this repository or explain the code.',           actions: [{ label: 'Fetch & Summarize', action: 'fetch' }, { label: 'Research', action: 'research' }] },
++    { match: 'youtube.com',  icon: '🎬', msg: 'I can help you extract insights or create content from this.',    actions: [{ label: 'Research Mode',    action: 'research' }] },
++    { match: 'twitter.com',  icon: '🐦', msg: 'I can analyze this thread or help you craft a response.',         actions: [{ label: 'Extract Points',   action: 'extract' }] },
++    { match: 'reddit.com',   icon: '📋', msg: 'I can summarize this discussion and extract the key insights.',   actions: [{ label: 'Summarize',        action: 'summarize' }] },
++    { match: 'medium.com',   icon: '✍️', msg: 'I can summarize this article and find content angles for EON.',   actions: [{ label: 'Summarize',        action: 'summarize' }] },
++    { match: 'linkedin.com', icon: '💼', msg: 'I can analyze this profile or draft a professional message.',     actions: [{ label: 'Research',         action: 'research' }] },
++    { match: 'docs.',        icon: '📚', msg: 'I can explain this documentation or generate code examples.',     actions: [{ label: 'Summarize',        action: 'summarize' }] },
++    { match: 'news',         icon: '📰', msg: 'I can extract the key facts and create a creator briefing.',      actions: [{ label: 'Extract Points',   action: 'extract' }] }
++  ];
++
++  /**
++   * @param {string} url
++   */
++  function getHint(url) {
++    try {
++      const host = new URL(url).hostname.replace('www.', '');
++      const full = host + url;
++      return HINTS.find(h => full.includes(h.match)) || null;
++    } catch { return null; }
++  }
++
++  /**
++   * @param {any} icon
++   * @param {string} message
++   * @param {any[]} [actions]
++   */
++  function showToast(icon, message, actions) {
++    document.getElementById('eon-proactive-toast')?.remove();
++    const toast = document.createElement('div');
++    toast.id = 'eon-proactive-toast';
++    toast.className = 'eon-proactive-toast';
++    toast.setAttribute('role', 'status');
++    toast.setAttribute('aria-live', 'polite');
++
++    const btnsHtml = (actions || []).map(a =>
++      `<button class="eon-toast-action-btn" data-action="${esc(a.action)}">${esc(a.label)}</button>`
++    ).join('');
++
++    toast.innerHTML = `
++      <div class="eon-toast-head">
++        <span class="eon-toast-icon-el">${icon || '💬'}</span>
++        <span class="eon-toast-bot-name">EONBOT</span>
++        <button class="eon-toast-dismiss" aria-label="Dismiss">×</button>
++      </div>
++      <p class="eon-toast-body">${esc(message)}</p>
++      ${btnsHtml ? `<div class="eon-toast-btns">${btnsHtml}</div>` : ''}
++    `;
++
++    const viewport = document.querySelector('.browser-viewport-wrap') || document.body;
++    viewport.appendChild(toast);
++
++    const auto = setTimeout(() => toast.remove(), 14000);
++    toast.querySelector('.eon-toast-dismiss')?.addEventListener('click', () => { clearTimeout(auto); toast.remove(); });
++    toast.querySelectorAll('.eon-toast-action-btn').forEach((/** @type {any} */ btn) => {
++      btn.addEventListener('click', () => {
++        clearTimeout(auto); toast.remove();
++        const actionMap = { summarize: 'browser-summarize', research: 'browser-research', extract: 'browser-extract', fetch: 'browser-fetch-source' };
++        const elId = actionMap[/** @type {keyof typeof actionMap} */ (btn.getAttribute('data-action') || '')];
++        if (elId) document.getElementById(elId)?.click();
++      });
++    });
++  }
++
++  /**
++   * @param {string} url
++   */
++  function scheduleContextualPrompt(url) {
++    if (proactiveTimer) clearTimeout(proactiveTimer);
++    if (!url || url === lastNotifiedUrl || /^(about:|\/|#)/.test(url)) return;
++    proactiveTimer = setTimeout(() => {
++      lastNotifiedUrl = url;
++      const hint = getHint(url);
++      if (hint) {
++        showToast(hint.icon, hint.msg, hint.actions);
++      } else {
++        showToast('🤖', 'I can analyze this page, extract key points, or run deep research on it.', [
++          { label: 'Summarize', action: 'summarize' },
++          { label: 'Research',  action: 'research' }
++        ]);
++      }
++    }, 5500);
++  }
++
++  function greetOnLoad() {
++    if (hasGreeted) return;
++    hasGreeted = true;
++    setTimeout(() => {
++      showToast('👋', 'Welcome to EON Browser! Enter any URL and I\'ll offer to analyze it. Or pick an app from the bookmarks bar.', [
++        { label: 'Open Chat', action: 'summarize' }
++      ]);
++    }, 3500);
++  }
++
++  // Hook URL bar
++  document.getElementById('browser-load')?.addEventListener('click', () => {
++    scheduleContextualPrompt(document.getElementById('browser-url')?.value || '');
++  });
++  document.getElementById('browser-url')?.addEventListener('keydown', (/** @type {KeyboardEvent} */ e) => {
++    if (e.key === 'Enter') scheduleContextualPrompt(String((/** @type {HTMLInputElement} */ (e.target)).value || ''));
++  });
++
++  // Greet on first new-tab open
++  document.addEventListener('eon:tab:newtab', greetOnLoad);
++  // Also try on page load if user lands directly
++  setTimeout(greetOnLoad, 3500);
++
++  window.EONProactiveBot = { scheduleContextualPrompt, showToast, greetOnLoad };
++})();
++
++// ============================================================
++// EON NFT Ability System
++// ============================================================
++const _EONAbilities = (() => {
++  const ABILITIES = {
++    MULTI_TAB:      { name: 'Multi-Tab Browsing',        tier: null,      icon: '🗂️',  desc: 'Open multiple tabs simultaneously' },
++    EONBOT_CHAT:    { name: 'EONBOT Chat',               tier: null,      icon: '💬',  desc: 'Full EONBOT chat in every tab' },
++    PAGE_SUMMARIZE: { name: 'Page Summarization',        tier: null,      icon: '📝',  desc: 'AI summarizes any web page' },
++    PASSWORD_VAULT: { name: 'Password Vault',            tier: 'STARTER', icon: '🔑',  desc: 'AES-GCM encrypted credential storage' },
++    HISTORY:        { name: 'Browsing History',          tier: 'STARTER', icon: '📋',  desc: 'Persistent session browsing history' },
++    RESEARCH_MODE:  { name: 'Deep Research Mode',        tier: 'STARTER', icon: '🔬',  desc: 'Multi-angle AI research packs' },
++    AI_AGENT_LAYER: { name: 'AI Activity Monitor',       tier: 'PRO',     icon: '🤖',  desc: 'Live dual-layer AI perception view' },
++    AUTO_FETCH:     { name: 'Auto Page Analysis',        tier: 'PRO',     icon: '⚡',  desc: 'AI auto-analyzes every page on load' },
++    PROACTIVE_BOT:  { name: 'Proactive EONBOT',         tier: 'PRO',     icon: '🎙️', desc: 'Contextual AI suggestions as you browse' },
++    BACKGROUND_AI:  { name: 'Background AI Tasks',       tier: 'ULTRA',   icon: '🧠',  desc: 'AI runs tasks while you do other work' },
++    MULTI_AGENT:    { name: 'Multi-Agent Orchestration', tier: 'ULTRA',   icon: '🌐',  desc: 'Chain multiple AI agents on complex tasks' },
++    AUTO_LOGIN:     { name: 'AI Auto-Login',             tier: 'ULTRA',   icon: '🚀',  desc: 'AI uses vault credentials to log in for you' }
++  };
++
++  const TIERS = {
++    STARTER: { name: 'EON Starter NFT', color: '#a78bfa', bg: 'rgba(167,139,250,0.12)', label: 'Free with signup' },
++    PRO:     { name: 'EON Pro NFT',     color: '#f59e0b', bg: 'rgba(245,158,11,0.12)',  label: 'EON Marketplace' },
++    ULTRA:   { name: 'EON Ultra NFT',   color: '#f97316', bg: 'rgba(249,115,22,0.12)',  label: 'Rare drop — EON Vault' }
++  };
++
++  function getOwned() {
++    try { return JSON.parse(localStorage.getItem('eon:nft-abilities:v1') || '{}'); }
++    catch { return {}; }
++  }
++
++  /**
++   * @param {keyof typeof ABILITIES} key
++   */
++  function hasAbility(key) {
++    const ab = ABILITIES[key];
++    if (!ab || !ab.tier) return true;
++    if (ab.tier === 'STARTER') return true;
++    const owned = getOwned();
++    if (ab.tier === 'PRO')   return Boolean(owned.PRO || owned.ULTRA);
++    if (ab.tier === 'ULTRA') return Boolean(owned.ULTRA);
++    return false;
++  }
++
++  /**
++   * @param {keyof typeof ABILITIES} key
++   */
++  function showUnlockModal(key) {
++    const ab = ABILITIES[key];
++    if (!ab?.tier) return;
++      const tier = TIERS[/** @type {keyof typeof TIERS} */ (ab.tier)];
++    document.getElementById('eon-ability-modal')?.remove();
++    const m = document.createElement('div');
++    m.id = 'eon-ability-modal';
++    m.className = 'eon-ability-modal-overlay';
++    m.innerHTML = `
++      <div class="eon-ability-modal-box" style="--tier-color:${tier.color};--tier-bg:${tier.bg}">
++        <div class="eon-ability-modal-icon">${ab.icon}</div>
++        <h3 class="eon-ability-modal-title">${esc(ab.name)}</h3>
++        <p class="eon-ability-modal-desc">${esc(ab.desc)}</p>
++        <div class="eon-ability-modal-tier">
++          Requires: <strong style="color:${tier.color}">${esc(tier.name)}</strong>
++          <span class="eon-ability-tier-label">${esc(tier.label)}</span>
++        </div>
++        <div class="eon-ability-modal-btns">
++          <a href="/vault.html#nft" class="btn btn-primary btn-sm" target="_blank">Get ${esc(tier.name)}</a>
++          <a href="/marketplace.html" class="btn btn-outline btn-sm" target="_blank">Browse Marketplace</a>
++          <button class="btn btn-outline btn-sm" id="eon-ability-modal-close">Close</button>
++        </div>
++        <p class="eon-ability-modal-note">⚡ EON NFTs are utility tokens on Polygon Mainnet. They unlock real browser features.</p>
++      </div>`;
++    document.body.appendChild(m);
++    m.querySelector('#eon-ability-modal-close')?.addEventListener('click', () => m.remove());
++    m.addEventListener('click', (/** @type {MouseEvent} */ e) => { if (e.target === m) m.remove(); });
++  }
++
++  function renderAbilityGrid() {
++    const grid   = document.getElementById('eon-abilities-grid');
++    const tierEl = document.getElementById('eon-current-tier');
++    if (!grid) return;
++    const owned = getOwned();
++    if (tierEl) tierEl.textContent = owned.ULTRA ? 'Ultra' : owned.PRO ? 'Pro' : 'Starter';
++
++    grid.innerHTML = Object.entries(ABILITIES).map(([key, ab]) => {
++      const abilityKey = /** @type {keyof typeof ABILITIES} */ (key);
++      const unlocked  = hasAbility(abilityKey);
++      const tierInfo  = ab.tier ? TIERS[/** @type {keyof typeof TIERS} */ (ab.tier)] : null;
++      const tierColor = tierInfo ? tierInfo.color : '#22c55e';
++      return `<div class="eon-ability-card${unlocked ? '' : ' eon-ability-card--locked'}" data-key="${esc(key)}" title="${esc(ab.desc)}">
++        <div class="eon-ability-card-icon">${ab.icon}</div>
++        <div class="eon-ability-card-name">${esc(ab.name)}</div>
++        <div class="eon-ability-card-status" style="color:${tierColor}">
++          ${unlocked ? '✓ Active' : '🔒 ' + esc(tierInfo ? tierInfo.name : '')}
++        </div>
++      </div>`;
++    }).join('');
++
++    grid.querySelectorAll('.eon-ability-card--locked').forEach((/** @type {any} */ card) =>
++      card.addEventListener('click', () => showUnlockModal(/** @type {keyof typeof ABILITIES} */ (card.dataset.key || 'MULTI_TAB')))
++    );
++  }
++
++  window.EONAbilities        = { hasAbility, showUnlockModal, renderAbilityGrid, ABILITIES, TIERS };
++  window.renderAbilityGrid   = renderAbilityGrid;
++  return { hasAbility, showUnlockModal, renderAbilityGrid };
++})();
++
++void _EONAbilities;
++
++// ── React to AI action events dispatched by eon-browser-page.js ───────────────
++document.addEventListener('eon:ai-action', (/** @type {Event} */ e) => {
++  const { provider, action, detail, outputLength, url } = e.detail || {};
++  const fullDetail = url ? `${detail || ''} · ${String(url).slice(0, 60)}` : detail;
++  window.EONActivityMonitor?.log(provider || 'AI', action || 'AI action', fullDetail, outputLength);
++});
+diff -ruN /mnt/data/eonapp_patch_original/assets/js/eon-workstation-page.js /mnt/data/eonapp_patch_work/assets/js/eon-workstation-page.js
+--- /mnt/data/eonapp_patch_original/assets/js/eon-workstation-page.js	1970-01-01 00:00:00.000000000 +0000
++++ /mnt/data/eonapp_patch_work/assets/js/eon-workstation-page.js	2026-06-08 20:56:57.867319122 +0000
+@@ -0,0 +1,376 @@
++// EON Workstation v1 — enterprise cockpit override for eon-browser.html
++// This module intentionally sits beside the legacy browser controller and takes
++// over the user-facing workstation behavior without deleting the old tools.
++
++const WORKSTATION_APPS = Object.freeze([
++  { id: 'code-maker', label: 'Code Maker', icon: '⌘', url: '/code-maker.html', desc: 'Browser IDE and implementation workspace', primary: true },
++  { id: 'chat', label: 'EONBOT Chat', icon: '✦', url: '/chat.html', desc: 'AI operator chat with provider routing', primary: true },
++  { id: 'vault', label: 'Vault', icon: '◆', url: '/vault.html', desc: 'Keys, backup, identity, rewards', primary: true },
++  { id: 'market', label: 'Marketplace', icon: '◈', url: '/marketplace.html', desc: 'NFT passes, lootboxes, upgrade market', primary: true },
++  { id: 'realm', label: 'Realm / EON City', icon: '⬢', url: '/realm.html', desc: '3D workspace and realm preview', primary: true },
++  { id: 'creator', label: 'Creator Studio', icon: '▣', url: '/creator-studio.html', desc: 'Campaigns, media, creator flows', primary: false },
++  { id: 'trade', label: 'Trade', icon: '△', url: '/trade', desc: 'Research and market workspace', primary: false },
++  { id: 'rewards', label: 'Reward Access', icon: '◇', url: '/reward-access.html', desc: 'Ads, social, subscription, passes', primary: false }
++]);
++
++const INTERNAL_HOSTS = new Set(['eonapp.ch', 'localhost', '127.0.0.1']);
++const state = {
++  activeMode: 'apps',
++  activeUrl: '',
++  activeLabel: 'Workstation Home',
++  lastExternalUrl: ''
++};
++
++function $(id) { return document.getElementById(id); }
++function q(sel, root = document) { return root.querySelector(sel); }
++function qa(sel, root = document) { return Array.from(root.querySelectorAll(sel)); }
++function escapeHtml(value = '') {
++  return String(value).replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
++}
++
++function setLegacyStatus(message, ok = true) {
++  const status = $('browser-status');
++  if (status) {
++    status.textContent = message;
++    status.classList.toggle('error', !ok);
++    status.classList.toggle('success', ok);
++  }
++  const rail = $('browser-operator-copy');
++  if (rail) rail.textContent = message;
++}
++
++function normalizeCommand(raw = '') {
++  const s = String(raw || '').trim();
++  if (!s) return '';
++  if (s.startsWith('/')) return s;
++  if (/^https?:\/\//i.test(s)) return s;
++  if (/^(chat|ai)$/i.test(s)) return '/chat.html';
++  if (/^(code|codemaker|code maker|ide)$/i.test(s)) return '/code-maker.html';
++  if (/^(vault|keys|backup)$/i.test(s)) return '/vault.html';
++  if (/^(market|marketplace|nft)$/i.test(s)) return '/marketplace.html';
++  if (/^(realm|eoncity|eon city|city)$/i.test(s)) return '/realm.html';
++  if (/^(creator|studio)$/i.test(s)) return '/creator-studio.html';
++  if (/^(reward|rewards|ads)$/i.test(s)) return '/reward-access.html';
++  if (s.includes('.') && !s.includes(' ')) return `https://${s}`;
++  return `https://www.google.com/search?q=${encodeURIComponent(s)}`;
++}
++
++function isInternalUrl(url = '') {
++  const normalized = normalizeCommand(url);
++  if (!normalized) return false;
++  if (normalized.startsWith('/')) return true;
++  try {
++    const host = new URL(normalized, window.location.origin).hostname.replace(/^www\./i, '').toLowerCase();
++    return INTERNAL_HOSTS.has(host) || host.endsWith('.eonapp.ch');
++  } catch {
++    return false;
++  }
++}
++
++function resolveInternalPath(url = '') {
++  const normalized = normalizeCommand(url);
++  if (!normalized) return '/';
++  if (normalized.startsWith('/')) return normalized;
++  try {
++    const parsed = new URL(normalized, window.location.origin);
++    if (isInternalUrl(parsed.href)) return `${parsed.pathname}${parsed.search}${parsed.hash}` || '/';
++  } catch {}
++  return normalized;
++}
++
++function ensureViewportFrame() {
++  const host = $('browser-frame-host');
++  if (!host) return null;
++  let frame = $('browser-frame');
++  if (!frame) {
++    frame = document.createElement('iframe');
++    frame.id = 'browser-frame';
++    frame.title = 'EON Workstation app viewport';
++    frame.className = 'browser-tab-frame ew-active-frame';
++    host.appendChild(frame);
++  }
++  frame.hidden = false;
++  frame.classList.add('ew-active-frame');
++  const newtab = $('eon-newtab-page');
++  if (newtab) newtab.hidden = true;
++  host.classList.remove('ew-external-mode', 'ew-home-mode');
++  return frame;
++}
++
++function updateChrome({ mode = state.activeMode, url = state.activeUrl, label = state.activeLabel } = {}) {
++  state.activeMode = mode;
++  state.activeUrl = url;
++  state.activeLabel = label;
++  const urlInput = $('browser-url');
++  if (urlInput) urlInput.value = url || '';
++  const current = $('browser-current-url');
++  if (current) current.textContent = url || '';
++  const title = $('ew-active-title');
++  if (title) title.textContent = label || 'Workstation';
++  const modeEl = $('ew-active-mode');
++  if (modeEl) modeEl.textContent = mode === 'external' ? 'External handoff' : mode === 'reader' ? 'Web reader' : mode === 'app' ? 'EON app' : 'Home';
++  const host = $('browser-frame-host');
++  if (host) host.dataset.ewMode = mode;
++  qa('[data-ew-mode]').forEach((btn) => btn.classList.toggle('active', btn.getAttribute('data-ew-mode') === mode));
++}
++
++function openInternalApp(url, label = '') {
++  const resolved = resolveInternalPath(url);
++  const app = WORKSTATION_APPS.find((item) => item.url === resolved || item.url.replace(/\.html$/, '') === resolved.replace(/\.html$/, ''));
++  const finalLabel = label || app?.label || resolved;
++  const frame = ensureViewportFrame();
++  if (!frame) return false;
++  frame.src = resolved;
++  updateChrome({ mode: 'app', url: resolved, label: finalLabel });
++  setLegacyStatus(`Opened ${finalLabel} inside EON Workstation.`, true);
++  markShortcutActive(resolved);
++  try {
++    window.EONTabSystem?.navigateCurrentTab?.(resolved);
++  } catch {}
++  return true;
++}
++
++function markShortcutActive(url = '') {
++  const resolved = resolveInternalPath(url);
++  qa('[data-url], [data-app-url], [data-ew-open]').forEach((el) => {
++    const candidate = el.getAttribute('data-url') || el.getAttribute('data-app-url') || el.getAttribute('data-ew-open') || '';
++    el.classList.toggle('ew-active-app', resolveInternalPath(candidate) === resolved);
++  });
++}
++
++function showExternalHandoff(rawUrl, reason = 'External sites often block iframe embedding.') {
++  const url = normalizeCommand(rawUrl);
++  const host = $('browser-frame-host');
++  if (!host || !url) return false;
++  state.lastExternalUrl = url;
++  const frame = $('browser-frame');
++  if (frame) frame.hidden = true;
++  const newtab = $('eon-newtab-page');
++  if (newtab) newtab.hidden = true;
++  host.classList.add('ew-external-mode');
++  host.classList.remove('ew-home-mode');
++  host.innerHTML = `
++    <section class="ew-external-card" aria-label="External site handoff">
++      <div class="ew-external-orb">↗</div>
++      <p class="ew-kicker">Open-web handoff</p>
++      <h2>${escapeHtml(new URL(url).hostname.replace(/^www\./i, ''))}</h2>
++      <p>${escapeHtml(reason)} EON Workstation keeps your AI plan, notes, approval log, and source reader here while the external site opens in a real browser tab.</p>
++      <div class="ew-external-url">${escapeHtml(url)}</div>
++      <div class="ew-external-actions">
++        <button type="button" class="btn btn-primary" id="ew-open-external-now">Open external tab</button>
++        <button type="button" class="btn btn-outline" id="ew-read-external-now">Read with EON source reader</button>
++        <button type="button" class="btn btn-outline" id="ew-copy-external-now">Copy URL</button>
++      </div>
++      <ul class="ew-trust-list">
++        <li>No fake iframe promise: Google, banks, social sites, and many SaaS apps block embedding.</li>
++        <li>Submit, login, payment, wallet, and delete actions still require explicit user approval.</li>
++        <li>Use EONBOT for planning/extraction, then finish sensitive actions yourself in the external tab.</li>
++      </ul>
++    </section>`;
++  $('ew-open-external-now')?.addEventListener('click', () => window.open(url, '_blank', 'noopener,noreferrer'));
++  $('ew-read-external-now')?.addEventListener('click', () => fetchReadableIntoSource(url));
++  $('ew-copy-external-now')?.addEventListener('click', async () => {
++    try { await navigator.clipboard.writeText(url); setLegacyStatus('External URL copied.', true); } catch { setLegacyStatus('Copy failed. Select the URL manually.', false); }
++  });
++  updateChrome({ mode: 'external', url, label: 'External site handoff' });
++  setLegacyStatus('External site prepared. Open it in a real tab or read source here.', true);
++  return true;
++}
++
++async function fetchReadableIntoSource(url = state.lastExternalUrl) {
++  const normalized = normalizeCommand(url);
++  if (!normalized) return;
++  const sourceEl = $('browser-source');
++  const outputEl = $('browser-output');
++  setLegacyStatus('Fetching readable source for EONBOT…', true);
++  try {
++    const readerUrl = isInternalUrl(normalized)
++      ? resolveInternalPath(normalized)
++      : `https://r.jina.ai/http://${normalized.replace(/^https?:\/\//i, '')}`;
++    const response = await fetch(readerUrl);
++    if (!response.ok) throw new Error(`HTTP ${response.status}`);
++    const text = await response.text();
++    if (sourceEl) sourceEl.value = text.slice(0, 18000);
++    if (outputEl) outputEl.textContent = `Readable source loaded for ${normalized}. Ask EONBOT to summarize, extract, compare, or plan next actions.`;
++    updateChrome({ mode: 'reader', url: normalized, label: 'Web reader source' });
++    setLegacyStatus('Readable source loaded into Workstation.', true);
++  } catch (error) {
++    if (outputEl) outputEl.textContent = `Could not fetch readable source for ${normalized}. Open the site externally, then paste text or use EONBOT for a manual plan.`;
++    setLegacyStatus(`Readable source failed: ${error?.message || error}`, false);
++  }
++}
++
++function handleCommand(raw, { forceExternal = false, forceReader = false } = {}) {
++  const url = normalizeCommand(raw);
++  if (!url) {
++    renderWorkstationHome();
++    return false;
++  }
++  if (forceReader) {
++    fetchReadableIntoSource(url);
++    return true;
++  }
++  if (!forceExternal && isInternalUrl(url)) return openInternalApp(url);
++  return showExternalHandoff(url, forceExternal ? 'You chose Open External mode.' : 'This is an external website, so Workstation will not pretend it can embed it like Chrome.');
++}
++
++function renderWorkstationHome() {
++  const host = $('browser-frame-host');
++  if (!host) return;
++  const frame = $('browser-frame');
++  if (frame) frame.hidden = true;
++  const newtab = $('eon-newtab-page');
++  if (newtab) newtab.hidden = true;
++  host.classList.add('ew-home-mode');
++  host.classList.remove('ew-external-mode');
++  host.innerHTML = `
++    <section class="ew-home-stage" aria-label="EON Workstation home">
++      <div class="ew-home-hero">
++        <p class="ew-kicker">EON Workstation</p>
++        <h1>Operate EONAPP from one enterprise AI desk.</h1>
++        <p>Open internal apps reliably, read external pages safely, launch Code Maker, monitor providers, and keep EONBOT beside every task.</p>
++        <div class="ew-home-actions">
++          <button type="button" class="btn btn-primary" data-ew-open="/code-maker.html">Open Code Maker</button>
++          <button type="button" class="btn btn-outline" data-ew-open="/chat.html">Open EONBOT Chat</button>
++          <button type="button" class="btn btn-outline" data-ew-open="/realm.html">Open EON City</button>
++        </div>
++      </div>
++      <div class="ew-app-grid" aria-label="Workstation apps">
++        ${WORKSTATION_APPS.map((app) => `
++          <button type="button" class="ew-app-card" data-ew-open="${escapeHtml(app.url)}">
++            <span class="ew-app-icon">${escapeHtml(app.icon)}</span>
++            <strong>${escapeHtml(app.label)}</strong>
++            <small>${escapeHtml(app.desc)}</small>
++          </button>`).join('')}
++      </div>
++    </section>`;
++  qa('[data-ew-open]', host).forEach((btn) => btn.addEventListener('click', () => openInternalApp(btn.getAttribute('data-ew-open') || '/')));
++  updateChrome({ mode: 'apps', url: '', label: 'Workstation Home' });
++  setLegacyStatus('Workstation home ready.', true);
++}
++
++function buildCommandDeck() {
++  if ($('ew-command-deck')) return;
++  const chrome = q('.eon-browser-chrome');
++  if (!chrome) return;
++  const deck = document.createElement('section');
++  deck.id = 'ew-command-deck';
++  deck.className = 'ew-command-deck';
++  deck.innerHTML = `
++    <div class="ew-command-head">
++      <div>
++        <p class="ew-kicker">Flagship rebuild v1</p>
++        <h1>EON Workstation</h1>
++        <p class="ew-subtitle">Enterprise AI cockpit: internal apps, safe web reader, external handoff, EONBOT operator.</p>
++      </div>
++      <div class="ew-active-chip" aria-live="polite"><span id="ew-active-mode">Home</span><strong id="ew-active-title">Workstation Home</strong></div>
++    </div>
++    <div class="ew-command-row">
++      <input id="ew-command-input" class="ew-command-input" type="text" placeholder="Open Code Maker, chat, vault, realm — or enter a website to read/open externally" autocomplete="off" spellcheck="false" />
++      <button type="button" class="btn btn-primary" id="ew-open-command">Open</button>
++      <button type="button" class="btn btn-outline" id="ew-read-command">Read web</button>
++      <button type="button" class="btn btn-outline" id="ew-external-command">Open external</button>
++    </div>
++    <div class="ew-mode-row" aria-label="Workstation mode shortcuts">
++      <button type="button" data-ew-open="/code-maker.html">⌘ Code Maker</button>
++      <button type="button" data-ew-open="/chat.html">✦ EONBOT</button>
++      <button type="button" data-ew-open="/vault.html">◆ Vault</button>
++      <button type="button" data-ew-open="/marketplace.html">◈ Market</button>
++      <button type="button" data-ew-open="/realm.html">⬢ EON City</button>
++      <button type="button" id="ew-home-command">⌂ Home</button>
++    </div>`;
++  chrome.prepend(deck);
++  $('ew-open-command')?.addEventListener('click', () => handleCommand($('ew-command-input')?.value || $('browser-url')?.value || ''));
++  $('ew-read-command')?.addEventListener('click', () => handleCommand($('ew-command-input')?.value || $('browser-url')?.value || '', { forceReader: true }));
++  $('ew-external-command')?.addEventListener('click', () => handleCommand($('ew-command-input')?.value || $('browser-url')?.value || '', { forceExternal: true }));
++  $('ew-home-command')?.addEventListener('click', renderWorkstationHome);
++  $('ew-command-input')?.addEventListener('keydown', (event) => {
++    if (event.key === 'Enter') handleCommand(event.currentTarget.value || '');
++  });
++  qa('[data-ew-open]', deck).forEach((btn) => btn.addEventListener('click', () => openInternalApp(btn.getAttribute('data-ew-open') || '/')));
++}
++
++function patchLegacyControls() {
++  // Compact noisy status text that was overflowing near Connected Accounts.
++  const notif = $('eon-notif-status');
++  if (notif) {
++    notif.textContent = 'Off';
++    notif.title = 'Notifications are off. Use the bell to manage notification setup.';
++  }
++
++  // Make workspace shortcuts deterministic and stop legacy double navigation.
++  qa('.browser-quick-site, .eon-newtab-app-card').forEach((btn) => {
++    btn.addEventListener('click', (event) => {
++      const el = event.currentTarget;
++      const url = el.getAttribute('data-url') || el.getAttribute('data-app-url') || '';
++      if (!url) return;
++      event.preventDefault();
++      event.stopPropagation();
++      event.stopImmediatePropagation?.();
++      openInternalApp(url, el.textContent?.trim() || 'EON app');
++    }, true);
++  });
++
++  $('browser-load')?.addEventListener('click', (event) => {
++    event.preventDefault();
++    event.stopPropagation();
++    event.stopImmediatePropagation?.();
++    handleCommand($('browser-url')?.value || '');
++  }, true);
++
++  $('browser-url')?.addEventListener('keydown', (event) => {
++    if (event.key !== 'Enter') return;
++    event.preventDefault();
++    event.stopPropagation();
++    event.stopImmediatePropagation?.();
++    handleCommand(event.currentTarget.value || '');
++  }, true);
++
++  $('eon-new-tab-btn')?.addEventListener('click', (event) => {
++    event.preventDefault();
++    event.stopPropagation();
++    event.stopImmediatePropagation?.();
++    renderWorkstationHome();
++  }, true);
++
++  $('browser-home')?.addEventListener('click', (event) => {
++    event.preventDefault();
++    event.stopPropagation();
++    event.stopImmediatePropagation?.();
++    renderWorkstationHome();
++  }, true);
++}
++
++function patchFooterEncoding() {
++  qa('footer .logo').forEach((el) => {
++    if (el.textContent.includes('âš¡')) el.innerHTML = '⚡ EONAPP<span>.ch</span>';
++  });
++  qa('.footer-bottom p').forEach((el) => {
++    el.textContent = el.textContent.replace(/Â©/g, '©').replace(/Â·/g, '·');
++  });
++}
++
++function boot() {
++  document.body.classList.add('eon-workstation-v1');
++  buildCommandDeck();
++  patchLegacyControls();
++  patchFooterEncoding();
++  // Start in a stable home instead of a blank/blocked iframe. Users can open apps explicitly.
++  setTimeout(() => {
++    const activeUrl = $('browser-url')?.value || '';
++    if (!activeUrl || activeUrl === 'about:blank' || activeUrl.includes('google.com/search')) renderWorkstationHome();
++  }, 50);
++}
++
++if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
++else boot();
++
++window.EONWorkstation = Object.freeze({
++  openInternalApp,
++  showExternalHandoff,
++  fetchReadableIntoSource,
++  renderWorkstationHome,
++  handleCommand,
++  apps: WORKSTATION_APPS,
++  state
++});
+diff -ruN /mnt/data/eonapp_patch_original/assets/js/utils/eon-browser.js /mnt/data/eonapp_patch_work/assets/js/utils/eon-browser.js
+--- /mnt/data/eonapp_patch_original/assets/js/utils/eon-browser.js	1970-01-01 00:00:00.000000000 +0000
++++ /mnt/data/eonapp_patch_work/assets/js/utils/eon-browser.js	2026-06-08 20:54:15.353885938 +0000
+@@ -0,0 +1,681 @@
++/**
++ * EON Browser Platform — Browse Mode for EONAPP.CH
++ * ==================================================
++ * Adapted from eonpackage/src/platforms/EON_Browser_Platform_V5.tsx
++ * for vanilla JS, localStorage-first persistence, and EONAPP WorkBench.
++ *
++ * Browser-mode workspace for tabs, saved sessions, agent tasks,
++ * bookmarks, and AI-powered browsing. Displays sites via iframe
++ * where X-Frame-Options allows.
++ *
++ * Features:
++ * - Tab management (open, close, pin, navigate)
++ * - Session persistence (save/restore workspace state)
++ * - Bookmark management with folders
++ * - AI Agent tasks (navigate, extract, post drafts)
++ * - Quick Sites directory (50+ curated sites)
++ * - URL bar with search engine integration
++ * - History tracking per session
++ * - Privacy settings (cookie policy, fingerprint)
++ *
++ * @module utils/eon-browser
++ */
++
++import { runMissionEngine } from './mission-engine.js';
++import * as aiRuntimeModule from '../chat/ai-runtime.js';
++
++// Browser global type cast for custom window properties.
++// Fallback to globalThis so Node-based smoke tests can import the module safely.
++const appWin = /** @type {any} */ (typeof window !== 'undefined' ? window : globalThis);
++
++// -- Storage keys --
++const TABS_KEY = 'eon:browser:tabs:v1';
++const SESSIONS_KEY = 'eon:browser:sessions:v1';
++const BOOKMARKS_KEY = 'eon:browser:bookmarks:v1';
++const HISTORY_KEY = 'eon:browser:history:v1';
++const SETTINGS_KEY = 'eon:browser:settings:v1';
++const AGENT_TASKS_KEY = 'eon:browser:agent-tasks:v1';
++
++// -- Quick Sites (curated directory) --
++export const /** @type {any} */
++QUICK_SITES = [
++  // Social
++  { name: 'X / Twitter', url: 'https://twitter.com', icon: 'X', category: 'Social', allowsEmbed: false },
++  { name: 'Reddit', url: 'https://reddit.com', icon: 'R', category: 'Social', allowsEmbed: false },
++  { name: 'LinkedIn', url: 'https://linkedin.com', icon: 'Li', category: 'Social', allowsEmbed: false },
++  { name: 'Discord', url: 'https://discord.com', icon: 'Dc', category: 'Social', allowsEmbed: false },
++  { name: 'Telegram', url: 'https://web.telegram.org', icon: 'Tg', category: 'Social', allowsEmbed: false },
++  { name: 'Bluesky', url: 'https://bsky.app', icon: 'Bs', category: 'Social', allowsEmbed: false },
++  { name: 'Mastodon', url: 'https://mastodon.social', icon: 'Ma', category: 'Social', allowsEmbed: false },
++  // Video
++  { name: 'YouTube', url: 'https://youtube.com', icon: 'Yt', category: 'Video', allowsEmbed: false },
++  { name: 'Twitch', url: 'https://twitch.tv', icon: 'Tw', category: 'Video', allowsEmbed: false },
++  { name: 'Vimeo', url: 'https://vimeo.com', icon: 'Vm', category: 'Video', allowsEmbed: false },
++  // Work
++  { name: 'Gmail', url: 'https://mail.google.com', icon: 'Gm', category: 'Work', allowsEmbed: false },
++  { name: 'Google Docs', url: 'https://docs.google.com', icon: 'Gd', category: 'Work', allowsEmbed: false },
++  { name: 'Notion', url: 'https://notion.so', icon: 'No', category: 'Work', allowsEmbed: false },
++  { name: 'GitHub', url: 'https://github.com', icon: 'Gh', category: 'Work', allowsEmbed: false },
++  { name: 'Figma', url: 'https://figma.com', icon: 'Fi', category: 'Work', allowsEmbed: false },
++  { name: 'Slack', url: 'https://app.slack.com', icon: 'Sl', category: 'Work', allowsEmbed: false },
++  { name: 'Trello', url: 'https://trello.com', icon: 'Tr', category: 'Work', allowsEmbed: false },
++  // AI Tools
++  { name: 'ChatGPT', url: 'https://chat.openai.com', icon: 'Cp', category: 'AI Tools', allowsEmbed: false },
++  { name: 'Claude', url: 'https://claude.ai', icon: 'Cl', category: 'AI Tools', allowsEmbed: false },
++  { name: 'Gemini', url: 'https://gemini.google.com', icon: 'Ge', category: 'AI Tools', allowsEmbed: false },
++  { name: 'Perplexity', url: 'https://perplexity.ai', icon: 'Pp', category: 'AI Tools', allowsEmbed: false },
++  { name: 'Midjourney', url: 'https://midjourney.com', icon: 'Mj', category: 'AI Tools', allowsEmbed: false },
++  // Crypto
++  { name: 'CoinGecko', url: 'https://coingecko.com', icon: 'Cg', category: 'Crypto', allowsEmbed: false },
++  { name: 'Etherscan', url: 'https://etherscan.io', icon: 'Et', category: 'Crypto', allowsEmbed: false },
++  { name: 'Uniswap', url: 'https://app.uniswap.org', icon: 'Un', category: 'Crypto', allowsEmbed: false },
++  { name: 'OpenSea', url: 'https://opensea.io', icon: 'Os', category: 'Crypto', allowsEmbed: false },
++  { name: 'TradingView', url: 'https://tradingview.com', icon: 'Tv', category: 'Crypto', allowsEmbed: false },
++  { name: 'DeFiLlama', url: 'https://defillama.com', icon: 'Dl', category: 'Crypto', allowsEmbed: false },
++  // News
++  { name: 'HackerNews', url: 'https://news.ycombinator.com', icon: 'Hn', category: 'News', allowsEmbed: true },
++  { name: 'ProductHunt', url: 'https://producthunt.com', icon: 'Ph', category: 'News', allowsEmbed: false },
++  { name: 'Medium', url: 'https://medium.com', icon: 'Md', category: 'News', allowsEmbed: false },
++  { name: 'Wikipedia', url: 'https://wikipedia.org', icon: 'Wk', category: 'News', allowsEmbed: false },
++  { name: 'Dev.to', url: 'https://dev.to', icon: 'Dv', category: 'News', allowsEmbed: true }
++];
++
++// -- AI Task Templates --
++export const /** @type {any} */
++AI_TEMPLATES = [
++  { id: 'tmpl-social-post', name: 'Social Media Post', description: 'Draft and schedule posts', category: 'Marketing', icon: 'S', steps: ['Define topic', 'Generate copy', 'Review', 'Schedule'] },
++  { id: 'tmpl-thread-writer', name: 'Twitter Thread', description: 'Create engaging threads', category: 'Marketing', icon: 'T', steps: ['Input idea', 'Generate tweets', 'Add hooks', 'Export'] },
++  { id: 'tmpl-seo-content', name: 'SEO Blog Post', description: 'Research and write SEO articles', category: 'Content', icon: 'B', steps: ['Keyword', 'Research', 'Outline', 'Write'] },
++  { id: 'tmpl-competitor-research', name: 'Competitor Research', description: 'Analyze competitor sites', category: 'Research', icon: 'R', steps: ['Competitor URLs', 'Navigate', 'Extract', 'Compare'] },
++  { id: 'tmpl-market-scan', name: 'Market Scan', description: 'Find unmet needs across forums', category: 'Research', icon: 'M', steps: ['Market', 'Scan', 'Cluster', 'Report'] },
++  { id: 'tmpl-price-compare', name: 'Price Comparison', description: 'Compare prices across products', category: 'Research', icon: 'P', steps: ['Product', 'Search', 'Extract', 'Compare'] },
++  { id: 'tmpl-data-extract', name: 'Data Extraction', description: 'Extract structured data from pages', category: 'Data', icon: 'D', steps: ['URL', 'Identify data', 'Extract', 'Format'] },
++  { id: 'tmpl-summarize', name: 'Page Summarizer', description: 'Summarize any web page', category: 'Content', icon: 'Z', steps: ['Navigate', 'Read', 'Summarize', 'Export'] }
++];
++
++// -- Search engines --
++const /** @type {any} */
++SEARCH_ENGINES = {
++  google: { name: 'Google', url: 'https://www.google.com/search?q=' },
++  duckduckgo: { name: 'DuckDuckGo', url: 'https://duckduckgo.com/?q=' },
++  perplexity: { name: 'Perplexity', url: 'https://perplexity.ai/search?q=' }
++};
++
++// -- URL security helpers (SF-9) --
++// Only allow http: and https: schemes. Block javascript:, data:, file:, vbscript:, blob:
++const /** @type {any} */
++ALLOWED_SCHEMES = new Set(['https:', 'http:']);
++
++// Basic phishing/abuse denylist — expandable; does NOT replace a real blocklist feed
++const /** @type {any} */
++URL_DENYLIST = new Set([
++  'bit.ly', 'tinyurl.com', 'cutt.ly', 'rebrand.ly', 'short.link',
++  'is.gd', 'v.gd', 'bc.vc', 'adf.ly', 'linktr.ee', 'grabify.link',
++  'iplogger.org', 'iplogger.com', 'blasze.tk', 'blasze.com', '2no.co',
++  'yip.su', 'trackurl.it', 'l-page.vip', 'getlinkinfo.com',
++  'qr-code-generator-free.com', 'free.fr'
++]);
++
++/**
++ * Validate and sanitize a URL before embedding in an iframe.
++ * @param {string} rawUrl
++ * @returns {{ ok: boolean, url: string, reason?: string }}
++ */
++export function validateBrowserUrl(/** @type {any} */ rawUrl) {
++  if (!rawUrl || typeof rawUrl !== 'string') return { ok: false, url: '', reason: 'empty' };
++  const trimmed = rawUrl.trim();
++  let /** @type {any} */
++parsed;
++  try {
++    parsed = new URL(trimmed);
++  } catch {
++    // Not a valid URL
++    return { ok: false, url: '', reason: 'invalid URL' };
++  }
++  if (!ALLOWED_SCHEMES.has(parsed.protocol)) {
++    return { ok: false, url: '', reason: `disallowed scheme: ${parsed.protocol}` };
++  }
++  if (URL_DENYLIST.has(parsed.hostname.toLowerCase())) {
++    return { ok: false, url: '', reason: 'URL shortener/tracker blocked' };
++  }
++  // Return the canonical form (prevents double-encoding tricks)
++  return { ok: true, url: parsed.href };
++}
++
++/**
++ * Escape a URL for safe use as an HTML attribute value.
++ * This prevents `"` breakout from attribute context even if validation is bypassed.
++ * @param {string} url
++ * @returns {string}
++ */
++export function escapeUrlAttr(/** @type {any} */ url) {
++  return String(url || '')
++    .replace(/&/g, '&amp;')
++    .replace(/"/g, '&quot;')
++    .replace(/'/g, '&#39;')
++    .replace(/</g, '&lt;')
++    .replace(/>/g, '&gt;');
++}
++
++// -- Helpers --
++function cryptoId() {
++  const bytes = new Uint8Array(8);
++  if (!window.crypto?.getRandomValues) throw new Error('crypto.getRandomValues required');
++  window.crypto.getRandomValues(bytes);
++  return Array.from(bytes, /** @type {any} */ b => b.toString(16).padStart(2, '0')).join('');
++}
++
++function loadJson(/** @type {any} */ key, /** @type {any} */ fallback) {
++  try {
++    const raw = localStorage.getItem(key);
++    const parsed = raw ? JSON.parse(raw) : null;
++    return parsed && typeof parsed === 'object' ? parsed : fallback;
++  } catch { return fallback; }
++}
++
++function saveJson(/** @type {any} */ key, /** @type {any} */ value) {
++  try { localStorage.setItem(key, JSON.stringify(value)); } catch {}
++}
++
++function getDomainFromUrl(/** @type {any} */ url) {
++  try { return new URL(url).hostname; } catch { return url; }
++}
++
++function getFaviconUrl(/** @type {any} */ url) {
++  const domain = getDomainFromUrl(url);
++  return `https://www.google.com/s2/favicons?domain=${domain}&sz=32`;
++}
++
++// -- Service class --
++class EONBrowserService {
++  constructor() {
++    /** @type {any[]} */
++    this.tabs = [];
++    /** @type {any[]} */
++    this.sessions = [];
++    /** @type {any[]} */
++    this.bookmarks = [];
++    /** @type {any[]} */
++    this.history = [];
++    /** @type {any[]} */
++    this.agentTasks = [];
++    this.activeTabId = null;
++    this.activeSessionId = null;
++    this.settings = {
++      searchEngine: 'google',
++      cookiePolicy: { blockTracking: true, thirdPartyCookiesAllowed: false, httpsOnly: true, doNotTrack: true },
++      adBlockerEnabled: false,
++      homeUrl: ''
++    };
++    this._hydrate();
++  }
++
++  // -- Tab management --
++  openTab(/** @type {any} */ url, /** @type {any} */ title) {
++    url = url || '';
++    // SF-9: validate URL before creating tab
++    if (url) {
++      const validation = validateBrowserUrl(url);
++      if (!validation.ok) {
++        if (appWin.DEBUG) console.warn('[EONBrowser] Blocked URL:', url, validation.reason);
++        url = '';
++      } else {
++        url = validation.url;
++      }
++    }
++    title = title || getDomainFromUrl(url);
++    const /** @type {any} */
++tab = {
++      id: `tab-${cryptoId()}`,
++      title,
++      url,
++      displayUrl: url,
++      favicon: url ? getFaviconUrl(url) : '',
++      status: url ? 'loading' : 'empty',
++      sessionId: this.activeSessionId || 'default',
++      isAIControlled: false,
++      isPinned: false,
++      isIncognito: false,
++      canEmbed: false,
++      loadedAt: Date.now()
++    };
++    this.tabs.push(tab);
++    this.activeTabId = tab.id;
++    this._addHistory(url, title);
++    this._persist();
++    return tab;
++  }
++
++  closeTab(/** @type {any} */ tabId) {
++    const idx = this.tabs.findIndex(/** @type {any} */ t => t.id === tabId);
++    if (idx === -1) return;
++    this.tabs.splice(idx, 1);
++    if (this.activeTabId === tabId) {
++      this.activeTabId = this.tabs.length > 0 ? this.tabs[Math.max(0, idx - 1)].id : null;
++    }
++    this._persist();
++  }
++
++  navigateTab(/** @type {any} */ tabId, /** @type {any} */ url) {
++    const tab = this.tabs.find(/** @type {any} */ t => t.id === tabId);
++    if (!tab) return;
++    // SF-9: validate URL before navigating
++    if (url) {
++      const validation = validateBrowserUrl(url);
++      if (!validation.ok) {
++        if (appWin.DEBUG) console.warn('[EONBrowser] Blocked navigation:', url, validation.reason);
++        return null;
++      }
++      url = validation.url;
++    }
++    tab.url = url;
++    tab.displayUrl = url;
++    tab.title = getDomainFromUrl(url);
++    tab.favicon = getFaviconUrl(url);
++    tab.status = 'loading';
++    tab.loadedAt = Date.now();
++    this._addHistory(url, tab.title);
++    this._persist();
++    return tab;
++  }
++
++  setActiveTab(/** @type {any} */ tabId) {
++    this.activeTabId = tabId;
++    this._persist();
++  }
++
++  getActiveTab() {
++    return this.tabs.find(/** @type {any} */ t => t.id === this.activeTabId) || null;
++  }
++
++  pinTab(/** @type {any} */ tabId) {
++    const tab = this.tabs.find(/** @type {any} */ t => t.id === tabId);
++    if (tab) { tab.isPinned = !tab.isPinned; this._persist(); }
++    return tab;
++  }
++
++  // -- Session management --
++  createSession(/** @type {any} */ name, /** @type {any} */ color) {
++    const /** @type {any} */
++session = {
++      id: `sess-${cryptoId()}`,
++      name: name || 'New Session',
++      color: color || 'blue',
++      bookmarks: [],
++      history: [],
++      proxyLabel: 'Direct',
++      createdAt: Date.now(),
++      isIncognito: false
++    };
++    this.sessions.push(session);
++    this.activeSessionId = session.id;
++    this._persist();
++    return session;
++  }
++
++  switchSession(/** @type {any} */ sessionId) {
++    this.activeSessionId = sessionId;
++    this._persist();
++  }
++
++  deleteSession(/** @type {any} */ sessionId) {
++    this.sessions = this.sessions.filter(/** @type {any} */ s => s.id !== sessionId);
++    if (this.activeSessionId === sessionId) {
++      this.activeSessionId = this.sessions.length > 0 ? this.sessions[0].id : null;
++    }
++    this._persist();
++  }
++
++  // -- Bookmark management --
++  addBookmark(/** @type {any} */ url, /** @type {any} */ title, /** @type {any} */ folderId) {
++    const /** @type {any} */
++bm = {
++      id: `bm-${cryptoId()}`,
++      url,
++      title: title || getDomainFromUrl(url),
++      favicon: getFaviconUrl(url),
++      folderId: folderId || null,
++      addedAt: Date.now()
++    };
++    this.bookmarks.push(bm);
++    this._persist();
++
++    if (appWin.EonPoolPoints?.awardPoints) {
++      appWin.EonPoolPoints.awardPoints('signal-save', `Bookmarked: ${bm.title}`);
++    }
++    return bm;
++  }
++
++  removeBookmark(/** @type {any} */ bookmarkId) {
++    this.bookmarks = this.bookmarks.filter(/** @type {any} */ b => b.id !== bookmarkId);
++    this._persist();
++  }
++
++  getBookmarksByFolder(/** @type {any} */ folderId) {
++    return this.bookmarks.filter(/** @type {any} */ b => b.folderId === folderId);
++  }
++
++  // -- AI Agent Tasks --
++  createAgentTask(/** @type {any} */ goal, /** @type {any} */ model) {
++    const /** @type {any} */
++task = {
++      id: `agent-${cryptoId()}`,
++      goal,
++      steps: [],
++      status: 'planning',
++      model: model || 'default',
++      tabId: this.activeTabId,
++      createdAt: Date.now(),
++      extractedData: '',
++      requiresApproval: true,
++      completedAt: null,
++      successRate: null
++    };
++    this.agentTasks.push(task);
++    this._persist();
++
++    if (appWin.EonPoolPoints?.awardPoints) {
++      appWin.EonPoolPoints.awardPoints('mission-run', `Created browser agent task: ${goal.slice(0, 50)}`);
++    }
++    return task;
++  }
++
++  updateAgentTask(/** @type {any} */ taskId, /** @type {any} */ updates) {
++    const task = this.agentTasks.find(/** @type {any} */ t => t.id === taskId);
++    if (!task) return;
++    Object.assign(task, updates);
++    this._persist();
++    return task;
++  }
++
++  completeAgentTask(/** @type {any} */ taskId, /** @type {any} */ extractedData, /** @type {any} */ successRate) {
++    const task = this.agentTasks.find(/** @type {any} */ t => t.id === taskId);
++    if (!task) return;
++    task.status = 'done';
++    task.extractedData = extractedData || '';
++    task.successRate = successRate || null;
++    task.completedAt = Date.now();
++    this._persist();
++
++    if (appWin.EonPoolPoints?.awardPoints) {
++      appWin.EonPoolPoints.awardPoints('mission-first', `Completed browser agent task: ${task.goal.slice(0, 50)}`);
++    }
++    return task;
++  }
++
++  // -- Search --
++  search(/** @type {any} */ query) {
++    const engine = (/** @type {any} */ (SEARCH_ENGINES))[this.settings.searchEngine] || SEARCH_ENGINES.google;
++    const searchUrl = engine.url + encodeURIComponent(query);
++    return this.openTab(searchUrl, `Search: ${query}`);
++  }
++
++  // -- Settings --
++  updateSettings(/** @type {any} */ updates) {
++    Object.assign(this.settings, updates);
++    this._persist();
++  }
++
++  // -- Reading List --
++  addToReadingList(/** @type {any} */ url, /** @type {any} */ title) {
++    const /** @type {any} */
++item = {
++      id: `rl-${cryptoId()}`,
++      url,
++      title: title || getDomainFromUrl(url),
++      favicon: getFaviconUrl(url),
++      addedAt: Date.now(),
++      readAt: null,
++      isRead: false,
++      notes: ''
++    };
++    if (!this._readingList) this._readingList = loadJson('eon:browser:reading-list:v1', []);
++    this._readingList.push(item);
++    saveJson('eon:browser:reading-list:v1', this._readingList.slice(-200));
++    return item;
++  }
++
++  markReadingListItemRead(/** @type {any} */ itemId) {
++    if (!this._readingList) this._readingList = loadJson('eon:browser:reading-list:v1', []);
++    const item = this._readingList.find((/** @type {any} */ i) => i.id === itemId);
++    if (item) {
++      item.isRead = true;
++      item.readAt = Date.now();
++      saveJson('eon:browser:reading-list:v1', this._readingList);
++    }
++  }
++
++  removeReadingListItem(/** @type {any} */ itemId) {
++    if (!this._readingList) this._readingList = loadJson('eon:browser:reading-list:v1', []);
++    this._readingList = this._readingList.filter((/** @type {any} */ i) => i.id !== itemId);
++    saveJson('eon:browser:reading-list:v1', this._readingList);
++  }
++
++  getReadingList() {
++    if (!this._readingList) this._readingList = loadJson('eon:browser:reading-list:v1', []);
++    return this._readingList;
++  }
++
++  // -- Tab Groups --
++  createTabGroup(/** @type {any} */ name, /** @type {any} */ color) {
++    if (!this._tabGroups) this._tabGroups = loadJson('eon:browser:tab-groups:v1', []);
++    const /** @type {any} */
++group = {
++      id: `tg-${cryptoId()}`,
++      name: name || 'New Group',
++      color: color || 'blue',
++      tabIds: [],
++      collapsed: false,
++      createdAt: Date.now()
++    };
++    this._tabGroups.push(group);
++    saveJson('eon:browser:tab-groups:v1', this._tabGroups);
++    return group;
++  }
++
++  addTabToGroup(/** @type {any} */ tabId, /** @type {any} */ groupId) {
++    if (!this._tabGroups) this._tabGroups = loadJson('eon:browser:tab-groups:v1', []);
++    const group = this._tabGroups.find((/** @type {any} */ g) => g.id === groupId);
++    if (group && !group.tabIds.includes(tabId)) {
++      group.tabIds.push(tabId);
++      saveJson('eon:browser:tab-groups:v1', this._tabGroups);
++    }
++  }
++
++  removeTabFromGroup(/** @type {any} */ tabId, /** @type {any} */ groupId) {
++    if (!this._tabGroups) this._tabGroups = loadJson('eon:browser:tab-groups:v1', []);
++    const group = this._tabGroups.find((/** @type {any} */ g) => g.id === groupId);
++    if (group) {
++      group.tabIds = group.tabIds.filter((/** @type {any} */ id) => id !== tabId);
++      saveJson('eon:browser:tab-groups:v1', this._tabGroups);
++    }
++  }
++
++  getTabGroups() {
++    if (!this._tabGroups) this._tabGroups = loadJson('eon:browser:tab-groups:v1', []);
++    return this._tabGroups;
++  }
++
++  deleteTabGroup(/** @type {any} */ groupId) {
++    if (!this._tabGroups) this._tabGroups = loadJson('eon:browser:tab-groups:v1', []);
++    this._tabGroups = this._tabGroups.filter((/** @type {any} */ g) => g.id !== groupId);
++    saveJson('eon:browser:tab-groups:v1', this._tabGroups);
++  }
++
++  // -- Page Notes --
++  addPageNote(/** @type {any} */ url, /** @type {any} */ text) {
++    if (!this._pageNotes) this._pageNotes = loadJson('eon:browser:page-notes:v1', []);
++    const /** @type {any} */
++note = {
++      id: `note-${cryptoId()}`,
++      url,
++      domain: getDomainFromUrl(url),
++      text,
++      createdAt: Date.now(),
++      updatedAt: Date.now()
++    };
++    this._pageNotes.push(note);
++    if (this._pageNotes.length > 500) this._pageNotes = this._pageNotes.slice(-500);
++    saveJson('eon:browser:page-notes:v1', this._pageNotes);
++
++    if (appWin.EonPoolPoints?.awardPoints) {
++      appWin.EonPoolPoints.awardPoints('signal-save', `Added page note for ${note.domain}`);
++    }
++    return note;
++  }
++
++  getPageNotes(/** @type {any} */ url) {
++    if (!this._pageNotes) this._pageNotes = loadJson('eon:browser:page-notes:v1', []);
++    if (url) return this._pageNotes.filter((/** @type {any} */ n) => n.url === url);
++    return this._pageNotes;
++  }
++
++  deletePageNote(/** @type {any} */ noteId) {
++    if (!this._pageNotes) this._pageNotes = loadJson('eon:browser:page-notes:v1', []);
++    this._pageNotes = this._pageNotes.filter((/** @type {any} */ n) => n.id !== noteId);
++    saveJson('eon:browser:page-notes:v1', this._pageNotes);
++  }
++
++  // -- AI Page Summarization --
++  async summarizePage(/** @type {any} */ url, /** @type {any} */ aiRuntime) {
++    if (!aiRuntime) {
++      aiRuntime = aiRuntimeModule;
++    }
++
++    const domain = getDomainFromUrl(url);
++    const prompt = `Summarize the key information that would typically be found on ${domain}. 
++Since I cannot directly read the page content, provide a general summary of what ${domain} is known for, its main features, and typical content. 
++Keep the summary under 150 words. Format: 3-5 bullet points.`;
++
++    try {
++      const settings = aiRuntime.loadAISettings();
++      const reply = await runMissionEngine({
++        mode: 'browse',
++        prompt,
++        history: [],
++        systemPrompt: 'You are a web content summarizer. Provide concise, factual summaries.',
++        settings,
++        taskType: 'browse',
++        origin: 'browser-utils',
++        metadata: {
++          surface: 'browser',
++          url,
++          domain,
++          action: 'summarize'
++        }
++      });
++
++      const result = String(reply?.text || '');
++      if (result) {
++        if (appWin.EonPoolPoints?.awardPoints) {
++          appWin.EonPoolPoints.awardPoints('mission-run', `Summarized page: ${domain}`);
++        }
++        return { success: true, summary: result.trim(), url, domain };
++      }
++      return { success: false, error: 'AI returned empty' };
++    } catch (/** @type {any} */
++err) {
++      return { success: false, error: (/** @type {Error} */ (err)).message };
++    }
++  }
++
++  // -- AI Web Research Agent --
++  async runResearchAgent(/** @type {any} */ topic, /** @type {any} */ depth, /** @type {any} */ aiRuntime) {
++    if (!aiRuntime) {
++      aiRuntime = aiRuntimeModule;
++    }
++
++    const depthLevel = depth || 'standard';
++    const prompt = depthLevel === 'deep'
++      ? `Conduct deep research on: "${topic}". Provide: 1) Overview, 2) Key players/entities, 3) Recent developments, 4) Market data if applicable, 5) Future outlook, 6) Sources to verify. Be thorough and factual.`
++      : `Research and summarize: "${topic}". Provide: 1) Brief overview, 2) Key facts, 3) Recent developments. Keep under 300 words.`;
++
++    try {
++      const settings = aiRuntime.loadAISettings();
++      const reply = await runMissionEngine({
++        mode: 'research',
++        prompt,
++        history: [],
++        systemPrompt: 'You are a research analyst. Provide factual, well-structured research summaries. Always distinguish facts from speculation.',
++        settings,
++        taskType: 'research',
++        origin: 'browser-utils',
++        metadata: {
++          surface: 'browser',
++          topic,
++          depth: depthLevel,
++          action: 'research'
++        }
++      });
++
++      const result = String(reply?.text || '');
++      if (result) {
++        const task = this.createAgentTask(`Research: ${topic}`, settings?.model || 'auto');
++        this.completeAgentTask(task.id, result.trim(), 85);
++
++        if (appWin.EonPoolPoints?.awardPoints) {
++          appWin.EonPoolPoints.awardPoints('mission-run', `Research agent: ${topic.slice(0, 50)}`);
++        }
++        return { success: true, research: result.trim(), taskId: task.id };
++      }
++      return { success: false, error: 'AI returned empty' };
++    } catch (/** @type {any} */
++err) {
++      return { success: false, error: (/** @type {Error} */ (err)).message };
++    }
++  }
++
++  // -- History --
++  _addHistory(/** @type {any} */ url, /** @type {any} */ title) {
++    if (!url) return;
++    this.history.push({
++      id: `hist-${cryptoId()}`,
++      url,
++      title: title || getDomainFromUrl(url),
++      visitedAt: Date.now(),
++      sessionId: this.activeSessionId || 'default'
++    });
++    // Keep last 500 entries
++    if (this.history.length > 500) this.history = this.history.slice(-500);
++  }
++
++  getHistory(/** @type {any} */ limit) {
++    return this.history.slice(-(limit || 50)).reverse();
++  }
++
++  clearHistory() {
++    this.history = [];
++    this._persist();
++  }
++
++  // -- Private --
++  _hydrate() {
++    this.tabs = loadJson(TABS_KEY, []);
++    this.sessions = loadJson(SESSIONS_KEY, []);
++    this.bookmarks = loadJson(BOOKMARKS_KEY, []);
++    this.history = loadJson(HISTORY_KEY, []);
++    this.agentTasks = loadJson(AGENT_TASKS_KEY, []);
++    this.settings = loadJson(SETTINGS_KEY, this.settings);
++
++    if (this.tabs.length > 0) {
++      this.activeTabId = this.tabs[this.tabs.length - 1].id;
++    }
++    if (this.sessions.length > 0) {
++      this.activeSessionId = this.sessions[0].id;
++    }
++  }
++
++  _persist() {
++    saveJson(TABS_KEY, this.tabs);
++    saveJson(SESSIONS_KEY, this.sessions);
++    saveJson(BOOKMARKS_KEY, this.bookmarks);
++    saveJson(HISTORY_KEY, this.history.slice(-500));
++    saveJson(AGENT_TASKS_KEY, this.agentTasks.slice(-100));
++    saveJson(SETTINGS_KEY, this.settings);
++  }
++}
++
++// -- Singleton --
++const eonBrowserService = new EONBrowserService();
++export default eonBrowserService;
++export { EONBrowserService };
+diff -ruN /mnt/data/eonapp_patch_original/code-maker.html /mnt/data/eonapp_patch_work/code-maker.html
+--- /mnt/data/eonapp_patch_original/code-maker.html	2026-06-08 21:00:38.477211315 +0000
++++ /mnt/data/eonapp_patch_work/code-maker.html	2026-06-08 21:00:01.019374092 +0000
+@@ -196,7 +196,7 @@
+ <footer class="site-footer">
+   <div class="container footer-inner">
+     <div class="footer-brand">
+-      <a href="/" class="logo">âš¡ EONAPP<span>.ch</span></a>
++      <a href="/" class="logo">⚡ EONAPP<span>.ch</span></a>
+       <p>AI-native platform for creators, builders &amp; operators.</p>
+     </div>
+     <nav class="footer-nav">
+@@ -210,7 +210,7 @@
+     </nav>
+   </div>
+   <div class="footer-bottom container">
+-    <p>Â© EONAPP.ch Â· AI-native platform for creators &amp; builders</p>
++    <p>© EONAPP.ch · AI-native platform for creators &amp; builders</p>
+   </div>
+ </footer>
+ 
+diff -ruN /mnt/data/eonapp_patch_original/eon-browser.html /mnt/data/eonapp_patch_work/eon-browser.html
+--- /mnt/data/eonapp_patch_original/eon-browser.html	2026-06-08 21:00:38.476490337 +0000
++++ /mnt/data/eonapp_patch_work/eon-browser.html	2026-06-08 20:57:36.157913276 +0000
+@@ -4,19 +4,19 @@
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+   <link rel="manifest" href="/manifest.webmanifest">
+-  <title>AI Business Cockpit | EONAPP.ch</title>
+-  <meta name="description" content="The AI Business Cockpit for browser-assisted work. Launch EONBOT AI, open cockpit workspaces, and run business tasks directly in the browser." />
++  <title>EON Workstation | EONAPP.ch</title>
++  <meta name="description" content="EON Workstation: enterprise AI cockpit for internal apps, safe web reading, Code Maker, EONBOT operations, and external-site handoff." />
+   <link rel="canonical" href="https://eonapp.ch/eon-browser" />
+-  <meta property="og:title" content="AI Business Cockpit | EONAPP.ch" />
+-  <meta property="og:description" content="EON AI Business Cockpit: browser-assisted work hub on Polygon. Launch EONBOT AI, open cockpit workspaces, and run business tasks directly in your browser." />
++  <meta property="og:title" content="EON Workstation | EONAPP.ch" />
++  <meta property="og:description" content="EON Workstation: enterprise AI cockpit for internal EON apps, safe web reading, Code Maker, EONBOT, and external-site handoff." />
+   <meta property="og:url" content="https://eonapp.ch/eon-browser" />
+   <meta property="og:type" content="website" />
+   <meta property="og:image" content="https://eonapp.ch/assets/img/og/default.svg" />
+   <meta name="twitter:card" content="summary_large_image" />
+-  <meta name="twitter:title" content="AI Business Cockpit | EONAPP.ch" />
++  <meta name="twitter:title" content="EON Workstation | EONAPP.ch" />
+   <meta name="twitter:description" content="Decentralized AI business cockpit on Polygon. Run EONBOT AI, manage agents, and grow your business — no login required." />
+-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://eonapp.ch/"},{"@type":"ListItem","position":2,"name":"AI Business Cockpit","item":"https://eonapp.ch/eon-browser"}]}</script>
+-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"AI Business Cockpit | EONAPP.ch","url":"https://eonapp.ch/eon-browser","applicationCategory":"BusinessApplication","description":"AI-powered decentralized business cockpit on Polygon. Launch EONBOT, run agent missions, manage your workspace — local-first, no login.","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"EONAPP.ch","url":"https://eonapp.ch/"}}</script>
++  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://eonapp.ch/"},{"@type":"ListItem","position":2,"name":"EON Workstation","item":"https://eonapp.ch/eon-browser"}]}</script>
++  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"EON Workstation | EONAPP.ch","url":"https://eonapp.ch/eon-browser","applicationCategory":"BusinessApplication","description":"Enterprise AI workstation for EON apps, Code Maker, EONBOT operations, safe web reading, and local-first provider workflows.","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"EONAPP.ch","url":"https://eonapp.ch/"}}</script>
+   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: blob: https:; connect-src 'self' ws: wss: https: http://127.0.0.1:* http://localhost:*; font-src 'self' data: https://cdn.jsdelivr.net; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob:; frame-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'" />
+     <link rel="preload" href="/assets/css/base.css" as="style" />
+@@ -48,7 +48,7 @@
+   </div>
+ </header>
+ <main id="main" class="browser-page">
+-  <!-- Browser Chrome: tabs + address bar -->
++  <!-- EON Workstation Chrome: command deck + tabs + address bar -->
+   <div class="eon-browser-chrome">
+     <!-- Tab Bar: dynamically rendered by JS -->
+     <div class="browser-tab-bar">
+@@ -67,7 +67,7 @@
+       <div class="browser-addressbar-wrap">
+         <span class="browser-lock" aria-hidden="true">&#128274;</span>
+         <input id="browser-url" class="browser-url-input" type="url" value=""
+-               placeholder="Search or enter address..." autocomplete="off" spellcheck="false" />
++               placeholder="Open an EON app or enter a website to read/open externally..." autocomplete="off" spellcheck="false" />
+         <button class="browser-go-btn" id="browser-load" type="button" aria-label="Navigate to address">&#8629;</button>
+       </div>
+       <div class="browser-nav-extra">
+@@ -93,7 +93,7 @@
+     </div>
+     <!-- Workspaces Bar: only Cockpit-specific internal tools. Main app nav already lives in the global header. -->
+     <div class="browser-bookmarks-bar browser-workspace-bar" id="eon-bookmarks-bar" aria-label="Cockpit workspaces">
+-      <button class="browser-quick-site browser-bookmark-btn eon-app-shortcut" type="button" data-url="/code-maker.html" title="Code Maker — Browser IDE">☁ Code Maker</button>
++      <button class="browser-quick-site browser-bookmark-btn eon-app-shortcut" type="button" data-url="/code-maker.html" title="Code Maker — enterprise browser IDE">⌘ Code Maker</button>
+       <button class="browser-quick-site browser-bookmark-btn eon-app-shortcut" type="button" data-url="/kpi-dashboard.html" title="KPI Dashboard">📊 KPI Dashboard</button>
+       <button class="browser-quick-site browser-bookmark-btn eon-app-shortcut" type="button" data-url="/creator-studio.html" title="Creator Studio">🎬 Creator Studio</button>
+       <button class="browser-quick-site browser-bookmark-btn eon-app-shortcut" type="button" data-url="/onboarding.html" title="Onboarding and backup setup">🧰 Setup</button>
+@@ -157,7 +157,7 @@
+ 
+       <!-- Recovery notice (shown when AI not ready) -->
+       <div class="browser-recovery-card" id="browser-recovery-card">
+-        <p id="browser-recovery-copy" class="browser-recovery-copy">If EONBOT AI is not ready yet, you can still fetch source and run tasks manually inside the AI Business Cockpit.</p>
++        <p id="browser-recovery-copy" class="browser-recovery-copy">If EONBOT AI is not ready yet, you can still fetch source and run tasks manually inside the EON Workstation.</p>
+         <div id="browser-recovery-actions" class="browser-recovery-actions"></div>
+       </div>
+       <div class="browser-identity-card" id="browser-identity-card">
+@@ -530,7 +530,7 @@
+ <footer class="site-footer">
+   <div class="container footer-inner">
+     <div class="footer-brand">
+-      <a href="/" class="logo">âš¡ EONAPP<span>.ch</span></a>
++      <a href="/" class="logo">⚡ EONAPP<span>.ch</span></a>
+       <p>AI-native platform for creators, builders &amp; operators.</p>
+     </div>
+     <nav class="footer-nav">
+@@ -549,11 +549,12 @@
+     </nav>
+   </div>
+   <div class="footer-bottom container">
+-    <p>Â© EONAPP.ch Â· AI-native platform for creators &amp; builders</p>
++    <p>© EONAPP.ch · AI-native platform for creators &amp; builders</p>
+   </div>
+ </footer>
+ <script type="module" src="/assets/js/main.js"></script>
+ <script type="module" src="/assets/js/eon-browser-page.js"></script>
++<script type="module" src="/assets/js/eon-workstation-page.js"></script>
+ <script type="module" src="/assets/js/eon-browser-agent.js"></script>
+ <script type="module" src="/assets/js/utils/eon-accounts-manager.js"></script>
+ <script type="module" src="/assets/js/utils/ai-model-discovery.js"></script>
+diff -ruN /mnt/data/eonapp_patch_original/package.json /mnt/data/eonapp_patch_work/package.json
+--- /mnt/data/eonapp_patch_original/package.json	1970-01-01 00:00:00.000000000 +0000
++++ /mnt/data/eonapp_patch_work/package.json	2026-06-08 21:01:08.706774106 +0000
+@@ -0,0 +1,153 @@
++{
++  "name": "eonapp",
++  "private": true,
++  "scripts": {
++    "build": "node scripts/sync-public-assets.mjs && vite build",
++    "dev": "vite serve",
++    "prepare": "node scripts/install-git-hooks.mjs",
++    "test:e2e": "playwright test --config=tests/e2e/playwright.config.ts",
++    "test:e2e:watch": "playwright test --config=tests/e2e/playwright.config.ts --headed --watch",
++    "test:e2e:ci": "playwright test --config=tests/e2e/playwright.config.ts --reporter=html 2>&1 | tee test-results.log && grep -q 'FAILED\\|ERRORS' test-results.log && exit 1 || exit 0",
++    "test:e2e:trading": "playwright test tests/e2e/signal-trading.spec.ts",
++    "test:e2e:safety": "playwright test tests/e2e/safety-orchestration.spec.ts",
++    "test:e2e:paper": "playwright test tests/e2e/paper-trading.spec.ts",
++    "test:integration": "playwright test tests/integration/",
++    "test:e2e:ui": "playwright test --headed",
++    "test:e2e:debug": "playwright test --debug",
++    "test:e2e:report": "playwright show-report",
++    "test:unit": "node --test tests/unit/*.test.js tests/unit/*.test.mjs",
++    "test": "node --test tests/unit/*.test.js tests/unit/*.test.mjs && npm run test:e2e",
++    "media:build-gameplay": "node scripts/build-social-video.mjs",
++    "media:build-social": "node scripts/build-social-video.mjs",
++    "audit:site": "node scripts/site-audit.mjs",
++    "deploy:arweave": "node scripts/deploy-arweave.mjs",
++    "deploy:ipfs-ipns": "node scripts/deploy-ipfs-ipns.mjs",
++    "deploy:record-release": "node scripts/record-hybrid-release.mjs",
++    "launch:check": "node scripts/site-audit.mjs",
++    "launch:evidence-audit": "node scripts/launch-evidence-audit.mjs",
++    "launch:signoff-prep": "node scripts/launch-signoff-prep.mjs",
++    "launch:rtl-capture": "playwright test e2e/rtl-visual-capture.spec.js --project=chromium",
++    "launch:readiness": "node scripts/launch-readiness.mjs",
++    "smoke:build": "node scripts/smoke-check-build.cjs",
++    "smoke:home": "node scripts/smoke-homepage.mjs",
++    "smoke:chat": "node scripts/smoke-chat-live.mjs",
++    "smoke:chat-i18n": "playwright test e2e/chat-multilingual-guide.spec.js --project=chromium --reporter=line",
++    "smoke:browser": "node scripts/smoke-browser-cockpit.mjs",
++    "smoke:creator": "node scripts/smoke-creator-export.mjs",
++    "smoke:rtl": "node scripts/smoke-rtl-visual.mjs",
++    "launch:page-gate": "node scripts/launch-page-invariants.mjs",
++    "launch:identity-gate": "node scripts/launch-identity-surface-gate.mjs",
++    "launch:games-identity-gate": "node scripts/launch-games-identity-gate.mjs",
++    "launch:lootbox-gate": "node scripts/launch-lootbox-integrity.mjs",
++    "security:secret-scan": "node scripts/secret-scan.mjs --mode=workspace",
++    "security:secret-scan:staged": "node scripts/secret-scan.mjs --mode=staged",
++    "security:secret-scan:ci": "node scripts/secret-scan.mjs --mode=ci",
++    "smoke:providers": "node scripts/provider-smoke-matrix.mjs",
++    "qa:voice-evidence": "node scripts/capture-voice-evidence.mjs",
++    "qa:mobile-a11y-pass": "node scripts/mobile-a11y-launch-pass.mjs",
++    "qa:live-ai-e2e": "node scripts/live-ai-e2e-matrix.mjs",
++    "lint": "eslint assets/js sw.js",
++    "lint:fix": "eslint assets/js sw.js --fix",
++    "lighthouse": "lhci autorun",
++    "launch:ops-plan": "node scripts/launch-ops-plan.mjs",
++    "launch:all-app-plan": "node scripts/print-all-app-plan.mjs",
++    "launch:ceo-plan": "node scripts/ceo-certification-plan.mjs",
++    "launch:quality-gate": "node scripts/app-surface-quality-gate.mjs",
++    "launch:codex-handoff": "node scripts/codex-handoff-certification.mjs",
++    "launch:ceo-certify": "npm run launch:ceo-plan && npm run launch:quality-gate && npm run launch:codex-handoff",
++    "qa:pwa-install": "node scripts/pwa-install-qa.mjs",
++    "i18n:coverage": "node scripts/i18n-coverage-scanner.mjs",
++    "i18n:screen-complete": "node scripts/i18n-screen-complete.mjs",
++    "qa:ai-live-super": "node scripts/ai-live-supertest.mjs",
++    "qa:ai-live-super:strict": "node scripts/ai-live-supertest.mjs --strict",
++    "qa:ai-live-super:local": "node scripts/ai-live-supertest.mjs --no-remote --local-model-limit 20",
++    "qa:ai-live-super:browser": "node scripts/ai-live-supertest.mjs --no-remote --no-local",
++    "qa:realm3d-hard-reset": "node scripts/realm3d-hard-reset-audit.mjs",
++    "qa:realm3d-metaverse": "node scripts/realm3d-metaverse-qa.mjs",
++    "qa:realm3d-polish": "node scripts/realm3d-polish-qa.mjs",
++    "qa:realm3d-screenshots": "node scripts/realm3d-screenshot-qa.mjs",
++    "qa:realm3d-final-polish": "node scripts/realm3d-final-polish-qa.mjs",
++    "ads:gateway-readiness": "node scripts/ad-gateway-readiness.mjs",
++    "qa:ad-sponsored-subscription": "node --test tests/unit/w56-ad-sponsored-subscription.test.mjs",
++    "qa:ad-final-gateway": "npm run ads:gateway-readiness && npm run ads:rewarded-postback-readiness && npm run ads:value-privacy-gate && npm run qa:monetag-rewarded-only && npm run qa:monetag-live-sdk && npm run qa:telegram-miniapp-readiness && npm run i18n:screen-complete",
++    "ads:rewarded-postback-readiness": "node scripts/ad-rewarded-postback-readiness.mjs",
++    "qa:ad-postback-functions": "node --test tests/unit/w57-monetag-rewarded-postback.test.mjs",
++    "qa:monetag-rewarded-only": "node --test tests/unit/w58-monetag-rewarded-only.test.mjs tests/unit/w47-ad-gateway-policy.test.mjs",
++    "qa:telegram-miniapp-readiness": "node scripts/telegram-miniapp-readiness.mjs",
++    "qa:telegram-miniapp": "npm run qa:telegram-miniapp-readiness && node --test tests/unit/w59-telegram-miniapp.test.mjs",
++    "qa:monetag-live-sdk": "node --test tests/unit/w60-monetag-live-sdk.test.mjs tests/unit/w58-monetag-rewarded-only.test.mjs",
++    "qa:telegram-channel-rewards": "node --test tests/unit/w61-telegram-channel-postback.test.mjs",
++    "telegram:growth-hooks": "node scripts/apply-telegram-growth-hooks.mjs",
++    "qa:telegram-growth": "node --test tests/unit/w62-telegram-growth.test.mjs",
++    "qa:final-telegram-rewards": "npm run qa:telegram-channel-rewards && npm run qa:telegram-growth && npm run qa:monetag-live-sdk && npm run ads:rewarded-postback-readiness && npm run i18n:screen-complete",
++    "qa:signed-share-links": "node scripts/signed-share-link-readiness.mjs && node --test tests/unit/w63-signed-share-link.test.mjs tests/unit/w64-share-attribution.test.mjs",
++    "qa:social-missions": "node scripts/social-mission-readiness.mjs && node --test tests/unit/w65-social-proof.test.mjs",
++    "qa:share-attribution-final": "node scripts/share-attribution-final-gate.mjs && node --test tests/unit/w66-share-performance.test.mjs tests/unit/w67-share-reward-economy.test.mjs",
++    "ads:value-privacy-gate": "node scripts/ad-reward-value-privacy-gate.mjs",
++    "qa:eoncity-mega-blueprint": "node --test tests/unit/w75-eoncity-mega-blueprint.test.mjs",
++    "qa:feature-unlock-economy": "node --test tests/unit/w71-feature-unlock-economy.test.mjs",
++    "qa:w71-w80-economy-eoncity": "npm run qa:feature-unlock-economy && npm run qa:eoncity-mega-blueprint && npm run ads:value-privacy-gate",
++    "qa:w72-feature-ui-workstation": "node --test tests/unit/w72-feature-ui-and-workstation.test.mjs",
++    "qa:w72-mega-session": "npm run qa:feature-unlock-economy && npm run qa:w72-feature-ui-workstation && npm run qa:eoncity-mega-blueprint && npm run ads:value-privacy-gate",
++    "qa:w74-unlock-app-coverage": "node --test tests/unit/w74-unlock-economy-app-coverage.test.mjs",
++    "qa:w74-mega-monetization": "npm run qa:feature-unlock-economy && npm run qa:w72-feature-ui-workstation && npm run qa:w74-unlock-app-coverage && npm run ads:value-privacy-gate",
++    "qa:w75-realm3d-gameplay-repair": "node --test tests/unit/w75-realm3d-gameplay-repair.test.mjs",
++    "qa:w76-workstation-screen-runtime": "node --test tests/unit/w76-workstation-screen-runtime.test.mjs",
++    "qa:w75-w76-realm3d-mega": "npm run qa:w75-realm3d-gameplay-repair && npm run qa:w76-workstation-screen-runtime && npm run qa:eoncity-mega-blueprint",
++    "qa:w77-w78-eoncity-art": "node --test tests/unit/w77-w78-eoncity-art-procedural-market.test.mjs",
++    "qa:w77-w78-mega": "npm run qa:w77-w78-eoncity-art && npm run qa:w75-w76-realm3d-mega && npm run qa:w74-mega-monetization",
++    "qa:w79-agent-npcs": "node --test tests/unit/w79-eoncity-agent-npcs.test.mjs",
++    "qa:w79-agent-metaverse": "npm run qa:w79-agent-npcs && npm run qa:w77-w78-mega",
++    "qa:w80-w81-inworld-market-live-panels": "node --test tests/unit/w80-w81-inworld-market-live-panels.test.mjs",
++    "qa:w80-w81-mega": "npm run qa:w80-w81-inworld-market-live-panels && node scripts/w80-w81-inworld-market-live-panels-gate.mjs && npm run qa:w79-agent-metaverse",
++    "qa:w82-visual-device": "node --test tests/unit/w82-w85-visual-agent-nft-lootbox.test.mjs",
++    "qa:w83-agent-polish": "node --test tests/unit/w82-w85-visual-agent-nft-lootbox.test.mjs",
++    "qa:w84-nft-lootbox-market": "node --test tests/unit/w82-w85-visual-agent-nft-lootbox.test.mjs",
++    "qa:w82-w85-mega": "npm run qa:w82-visual-device && node scripts/w82-w85-visual-agent-nft-lootbox-gate.mjs && npm run qa:w80-w81-mega",
++    "qa:w86-lootbox-ownership": "node --test tests/unit/w86-lootbox-ownership-economy.test.mjs",
++    "qa:w86-lootbox-final-gate": "npm run qa:w86-lootbox-ownership && node scripts/w86-lootbox-ownership-gate.mjs && npm run qa:w82-w85-mega",
++    "qa:w87-w90-final-market-lootbox-i18n": "node --test tests/unit/w87-w90-final-market-lootbox-i18n.test.mjs",
++    "qa:w87-w90-final-gate": "npm run qa:w87-w90-final-market-lootbox-i18n && node scripts/w87-w90-final-market-lootbox-i18n-gate.mjs && npm run qa:w86-lootbox-final-gate",
++    "qa:w91-realm3d-final-polish": "node scripts/realm3d-final-polish-gate.mjs",
++    "qa:w92-final-aaa-handoff": "node --test tests/unit/w92-final-aaa-handoff.test.mjs",
++    "qa:w92-final-gate": "npm run qa:w92-final-aaa-handoff && node scripts/w92-final-aaa-handoff-gate.mjs && npm run qa:w91-realm3d-final-polish && npm run qa:w87-w90-final-gate",
++    "qa:w93-flagship-wow": "node --test tests/unit/w93-flagship-wow-market.test.mjs",
++    "qa:w93-final-wow-gate": "npm run qa:w93-flagship-wow && node scripts/w93-final-flagship-wow-gate.mjs && npm run qa:w92-final-gate",
++    "qa:w95-final-codex-handoff": "node scripts/w95-final-codex-handoff-gate.mjs",
++    "qa:w96-ai-workstation": "node scripts/w96-ai-workstation-gate.mjs"
++  },
++  "devDependencies": {
++    "@eslint/js": "^9.39.4",
++    "@lhci/cli": "^0.14.0",
++    "@playwright/test": "^1.59.1",
++    "buffer": "^6.0.3",
++    "crypto-browserify": "^3.12.1",
++    "eslint": "^9.39.4",
++    "events": "^3.3.0",
++    "os-browserify": "^0.3.0",
++    "path-browserify": "^1.0.1",
++    "playwright-lighthouse": "^4.0.0",
++    "process": "^0.11.10",
++    "serve": "^14.2.6",
++    "stream-browserify": "^3.0.0",
++    "util": "^0.12.5",
++    "vite": "^7.1.12",
++    "vite-plugin-node-polyfills": "^0.26.0",
++    "wrangler": "^4.90.0"
++  },
++  "dependencies": {
++    "@ffmpeg/core": "^0.12.10",
++    "@ffmpeg/ffmpeg": "^0.12.15",
++    "@ffmpeg/util": "^0.12.2",
++    "@irys/web-upload": "^0.0.15",
++    "@irys/web-upload-ethereum": "^0.0.16",
++    "@irys/web-upload-ethereum-ethers-v6": "^0.0.16",
++    "@noble/hashes": "^2.2.0",
++    "@noble/post-quantum": "^0.6.1",
++    "dompurify": "^3.4.2",
++    "dotenv": "^17.4.2",
++    "ethers": "^6.16.0",
++    "three": "^0.184.0",
++    "typescript": "^6.0.3"
++  }
++}
+diff -ruN /mnt/data/eonapp_patch_original/scripts/w96-ai-workstation-gate.mjs /mnt/data/eonapp_patch_work/scripts/w96-ai-workstation-gate.mjs
+--- /mnt/data/eonapp_patch_original/scripts/w96-ai-workstation-gate.mjs	1970-01-01 00:00:00.000000000 +0000
++++ /mnt/data/eonapp_patch_work/scripts/w96-ai-workstation-gate.mjs	2026-06-08 21:01:06.889208312 +0000
+@@ -0,0 +1,49 @@
++import fs from 'node:fs';
++import childProcess from 'node:child_process';
++
++function read(path) { return fs.readFileSync(path, 'utf8'); }
++function assert(name, ok, detail = '') {
++  checks.push({ name, ok: Boolean(ok), detail });
++}
++function nodeCheck(path) {
++  try {
++    childProcess.execFileSync(process.execPath, ['--check', path], { stdio: 'pipe' });
++    return true;
++  } catch (error) {
++    return false;
++  }
++}
++
++const checks = [];
++const browserHtml = read('eon-browser.html');
++const workstationJs = read('assets/js/eon-workstation-page.js');
++const browserCss = read('assets/css/eon-browser.css');
++const codeMakerHtml = read('code-maker.html');
++const codeMakerJs = read('assets/js/code-maker-page.js');
++const codeMakerCss = read('assets/css/code-maker.css');
++
++assert('browser html loads workstation module', browserHtml.includes('/assets/js/eon-workstation-page.js'));
++assert('browser title reframed as EON Workstation', /<title>EON Workstation \| EONAPP\.ch<\/title>/.test(browserHtml));
++assert('browser footer mojibake removed', !/[Â]|âš¡/.test(browserHtml));
++assert('workstation exposes public controller', workstationJs.includes('window.EONWorkstation'));
++assert('workstation has code maker app route', workstationJs.includes("url: '/code-maker.html'"));
++assert('workstation has external handoff mode', workstationJs.includes('showExternalHandoff') && workstationJs.includes('Open external tab'));
++assert('workstation has source reader mode', workstationJs.includes('fetchReadableIntoSource'));
++assert('workstation has home stage', workstationJs.includes('renderWorkstationHome'));
++assert('workstation js syntax clean', nodeCheck('assets/js/eon-workstation-page.js'));
++assert('code maker fallback editor implemented', codeMakerJs.includes('initFallbackEditor') && codeMakerJs.includes('cm-fallback-editor'));
++assert('code maker fallback timeout implemented', codeMakerJs.includes('Monaco CDN timed out or was blocked'));
++assert('code maker js syntax clean', nodeCheck('assets/js/code-maker-page.js'));
++assert('code maker html mojibake removed', !/[Â]|âš¡/.test(codeMakerHtml));
++assert('workstation responsive css added', browserCss.includes('.ew-command-deck') && browserCss.includes('@media (max-width: 1180px)'));
++assert('fallback editor css added', codeMakerCss.includes('.cm-fallback-editor'));
++
++const failed = checks.filter((item) => !item.ok);
++const report = {
++  schema: 'eon.w96.ai-workstation-gate.v1',
++  ok: failed.length === 0,
++  checks,
++  failed: failed.map((item) => item.name)
++};
++console.log(JSON.stringify(report, null, 2));
++if (failed.length) process.exit(1);

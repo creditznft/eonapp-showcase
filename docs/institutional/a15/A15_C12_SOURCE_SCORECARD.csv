@@ -1,0 +1,13 @@
+category,source_ready,source_score,acceptance_score,target_acceptance,external_evidence_required
+architecture-boundary,true,10,,9.5,true
+canonical-work-handoffs,true,10,,9.5,true
+verified-outcome-progression,true,10,,9.5,true
+city-data-survival,true,10,,9.5,true
+capabilities-sharing-capture,true,10,,9.5,true
+command-hub-living-nexus,true,10,,9.5,true
+signal-frontier-source-summit,true,10,,9.5,true
+my-frontier-source,true,10,,9.5,true
+storm-package-governance,true,10,,9.5,true
+accessibility-device-matrix,true,10,,9.5,true
+performance-resilience-source,true,10,,9.5,true
+release-operations-source,true,10,,9.5,true

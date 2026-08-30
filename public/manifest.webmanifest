@@ -1,0 +1,103 @@
+{
+  "id": "/",
+  "name": "EONAPP.ch",
+  "short_name": "EONAPP",
+  "description": "A chat-first AI workspace with local-first privacy, device-aware Local AI guidance, projects, Vault, Preview Studio, Research Lab, and EON City.",
+  "scope": "/",
+  "start_url": "/?source=pwa",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0b1020",
+  "theme_color": "#6366f1",
+  "categories": [
+    "productivity",
+    "utilities",
+    "business"
+  ],
+  "prefer_related_applications": false,
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/img/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/img/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/img/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/assets/img/og/default.svg",
+      "sizes": "1200x630",
+      "type": "image/svg+xml",
+      "label": "EONAPP Chat-first workspace overview"
+    },
+    {
+      "src": "/assets/img/og/default.svg",
+      "sizes": "750x1334",
+      "type": "image/svg+xml",
+      "label": "Mobile EONAPP Chat experience"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "New Chat",
+      "short_name": "Chat",
+      "url": "/?new=1",
+      "description": "Start a conversation with EONBOT"
+    },
+    {
+      "name": "Workspace",
+      "short_name": "Work",
+      "url": "/workspace",
+      "description": "Open the simple EONAPP workspace"
+    },
+    {
+      "name": "Vault",
+      "short_name": "Vault",
+      "url": "/vault",
+      "description": "Open secure local account records and backups"
+    },
+    {
+      "name": "EON City",
+      "short_name": "City",
+      "url": "/eoncity",
+      "description": "Open the original EON Noir City workspace"
+    },
+    {
+      "name": "Local AI setup",
+      "short_name": "Local AI",
+      "url": "/local-ai",
+      "description": "Check this device and review approved local AI profiles"
+    }
+  ],
+  "share_target": {
+    "action": "/workspace",
+    "method": "POST",
+    "enctype": "application/x-www-form-urlencoded",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+  "related_applications": []
+}

@@ -1,0 +1,19 @@
+{
+  "schema": "eonapp.rt92.release-authority.v1",
+  "createdAt": "2026-08-17T04:24:00Z",
+  "purpose": "Trigger and record exact post-merge push certification before RT92 Production promotion.",
+  "mergedSourceCommit": "433bc73f5aaa39a9a01709c595da37d668f53963",
+  "certifiedPrHead": "68428e65f88dc1348b4e7dc1fde5beb9f9e96ff6",
+  "certifiedTree": "34930bc486a20822cbfdd884fa48917ef45c22fa",
+  "certifiedPullRequest": 54,
+  "certifiedCiRun": 31993892339,
+  "releaseWorkflow": ".github/workflows/rt92-production-release.yml",
+  "policy": {
+    "ordinaryDisplayGuests": true,
+    "ordinaryDisplaySignedInFree": true,
+    "ordinaryDisplayPaid": false,
+    "rewardedSponsorEonkeys": "safe-off-until-server-verifier",
+    "vexrail": "signed-in-profitability-privacy-guarded",
+    "dodoWebhookAuthority": "signed-webhook-verification"
+  }
+}

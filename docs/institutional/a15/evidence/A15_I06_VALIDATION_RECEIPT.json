@@ -1,0 +1,76 @@
+{
+  "schema": "eonapp.a15.i06.validation-receipt.v1",
+  "generatedAt": "2026-08-04T22:13:28+05:30",
+  "wave": "I06",
+  "baselineCommit": "b3c696eb660817b7a9e862d2627c1cc4589b9736",
+  "title": "Unified Library, Storage Quotas and No-Eviction Capacity",
+  "decision": "source-wave-ready-to-commit",
+  "verification": {
+    "institutionalGate": {
+      "passed": true,
+      "command": "npm run qa:a15-i06-capacity",
+      "tests": 12
+    },
+    "w766ToW802DependencyFreeRegression": {
+      "passed": true,
+      "testFiles": 203,
+      "testsPassed": 770,
+      "testsFailed": 0,
+      "excluded": [
+        "tests/unit/w766ir2-built-artifact-gate.test.mjs"
+      ],
+      "excludedReason": "Imports postcss, unavailable because the exact locked npm install remains externally blocked."
+    },
+    "w766ir2SourceCertification": {
+      "passed": true,
+      "criteriaPassed": 10,
+      "criteriaTotal": 10,
+      "browserCertified": false,
+      "authenticatedOfflineCertified": false
+    },
+    "secretScan": {
+      "passed": true,
+      "textFilesScanned": 5140
+    },
+    "diffCheck": {
+      "passed": true
+    }
+  },
+  "invariants": [
+    "No durable Project, Library, Forge, Creator or W631 record is silently evicted at a capacity boundary.",
+    "Capacity distinguishes active, archived and total records.",
+    "The 161st active ordinary Project and 501st active Library item fail without changing any prior stored byte.",
+    "The 25th active Forge project and 13th Forge revision fail without slicing history.",
+    "Creator asset writes update Project and Library indexes transactionally and restore media on failure.",
+    "Unified Library metadata does not copy content bodies, credentials or raw media.",
+    "Every blocked capacity response offers real archive, export, delete or upgrade choices.",
+    "Core and City retain contract-only boundaries."
+  ],
+  "externalBlockers": [
+    "Private npm registry returns 404 for locked ws@7.5.11.",
+    "Installed npm is 10.9.2 while the repository requires 11.12.1.",
+    "Production build and built-artifact validation remain blocked by unavailable exact dependencies.",
+    "Authenticated browser, Preview and Production certification remain pending."
+  ],
+  "workingTreeAtReceipt": [
+    " M assets/js/create/creator-job-lifecycle.js",
+    " M assets/js/create/creator-library-store.js",
+    " M assets/js/eon-workspace-pages.js",
+    " M assets/js/forge/eon-forge-quick-build.js",
+    " M assets/js/projects/eon-project-registry-bootstrap.js",
+    " M assets/js/projects/eon-projects-page.js",
+    " M assets/js/utils/eon-workspace-store.js",
+    " M assets/js/workspace/eon-project-operating-system.js",
+    " M config/generated/a15-system-disposition-registry.json",
+    " M docs/institutional/a15/evidence/A15_I01_SYSTEM_DISPOSITION_RECEIPT.json",
+    " M docs/institutional/a15/evidence/A15_I03_MINIMAL_CORE_SHELL_RECEIPT.json",
+    " M docs/institutional/a15/evidence/A15_I04_CANONICAL_DESTINATION_HANDOFF_RECEIPT.json",
+    " M docs/institutional/a15/evidence/A15_I05_UNIVERSAL_PROJECT_REGISTRY_RECEIPT.json",
+    " M package.json",
+    "?? assets/js/storage/",
+    "?? docs/institutional/a15/evidence/A15_I06_NO_EVICTION_CAPACITY_RECEIPT.json",
+    "?? scripts/a15-i06-no-eviction-capacity-gate.mjs",
+    "?? tests/unit/a15-i06-no-eviction-capacity.test.mjs"
+  ],
+  "receiptDigest": "sha256:07bc9c8c6ad4f6f89e8b61653c50f19cd01f57001273b292b18daf1aa6a7a54e"
+}

@@ -1,0 +1,479 @@
+/* W660B1 — static/reduced-motion EON Pulse. No continuous animation or WebGL. */
+
+.eon-nexus-pulse {
+  position: fixed;
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(5.75rem, calc(env(safe-area-inset-bottom) + 5.25rem));
+  z-index: 320;
+  display: grid;
+  justify-items: end;
+  gap: .65rem;
+  max-width: min(22rem, calc(100vw - 2rem));
+  color: #e6edf8;
+  font: inherit;
+}
+
+body[data-page-type='chat'] .eon-nexus-pulse {
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(5.75rem, calc(env(safe-area-inset-bottom) + 5.25rem));
+}
+
+.eon-nexus-pulse__toggle {
+  position: relative;
+  width: auto;
+  min-width: 4.15rem;
+  min-height: 4.15rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .58rem;
+  border: 1px solid rgba(103, 232, 249, .45);
+  border-radius: 999px;
+  padding: .42rem .82rem .42rem .42rem;
+  color: #cffafe;
+  background:
+    radial-gradient(circle at 42% 36%, rgba(103, 232, 249, .22), transparent 35%),
+    radial-gradient(circle, rgba(13, 22, 39, .98) 0 53%, rgba(8, 13, 24, .98) 54% 100%);
+  box-shadow: 0 0 0 4px rgba(15, 23, 42, .72), 0 12px 36px rgba(0, 0, 0, .38);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+
+.eon-nexus-pulse__toggle-label {
+  display: inline-block;
+  max-width: 9rem;
+  color: #e6fbff;
+  font-size: .72rem;
+  font-weight: 850;
+  letter-spacing: .055em;
+  line-height: 1.15;
+  text-align: left;
+  text-transform: uppercase;
+  text-shadow: 0 0 .9rem rgba(103, 232, 249, .28);
+}
+
+.eon-nexus-pulse__toggle:focus-visible {
+  outline: 3px solid #f8c761;
+  outline-offset: 4px;
+}
+
+.eon-nexus-pulse__orb {
+  position: relative;
+  width: 2.75rem;
+  height: 2.75rem;
+  display: grid;
+  place-items: center;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(103, 232, 249, .24), rgba(15, 23, 42, .86) 64%);
+}
+
+.eon-nexus-pulse__orb::before,
+.eon-nexus-pulse__orb::after {
+  content: '';
+  position: absolute;
+  inset: .27rem;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  opacity: .55;
+}
+
+.eon-nexus-pulse__orb::after {
+  inset: -.28rem .2rem;
+  border-style: dashed;
+  opacity: .5;
+}
+
+.eon-nexus-pulse__core {
+  width: .72rem;
+  height: .72rem;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 1rem currentColor;
+}
+
+.eon-nexus-pulse[data-eonbot-state='waiting-approval'] .eon-nexus-pulse__toggle {
+  color: #fdba74;
+  border-color: rgba(251, 146, 60, .7);
+}
+
+.eon-nexus-pulse[data-eonbot-state='complete'] .eon-nexus-pulse__toggle {
+  color: #f8c761;
+  border-color: rgba(248, 199, 97, .75);
+}
+
+.eon-nexus-pulse[data-eonbot-state='error'],
+.eon-nexus-pulse[data-eonbot-state='offline'] {
+  color: #fecaca;
+}
+
+.eon-nexus-pulse[data-eonbot-state='error'] .eon-nexus-pulse__toggle,
+.eon-nexus-pulse[data-eonbot-state='offline'] .eon-nexus-pulse__toggle {
+  color: #fb923c;
+  border-style: dashed;
+  border-color: rgba(251, 146, 60, .8);
+}
+
+.eon-nexus-pulse[data-private-route='true'] .eon-nexus-pulse__orb {
+  box-shadow: 0 0 0 4px rgba(34, 211, 238, .12), inset 0 0 1rem rgba(34, 211, 238, .14);
+}
+
+.eon-nexus-pulse__badge {
+  position: absolute;
+  top: -.28rem;
+  right: -.28rem;
+  min-width: 1.35rem;
+  min-height: 1.35rem;
+  display: grid;
+  place-items: center;
+  border: 2px solid #090d1a;
+  border-radius: 999px;
+  padding: 0 .22rem;
+  background: #fb923c;
+  color: #111827;
+  font-size: .7rem;
+  font-weight: 800;
+}
+
+.eon-nexus-pulse__panel {
+  width: min(22rem, calc(100vw - 2rem));
+  border: 1px solid rgba(148, 163, 184, .25);
+  border-radius: 1rem;
+  padding: .9rem;
+  background: rgba(9, 13, 26, .98);
+  box-shadow: 0 20px 56px rgba(0, 0, 0, .46);
+}
+
+.eon-nexus-pulse__panel[hidden] {
+  display: none;
+}
+
+.eon-nexus-pulse__heading {
+  display: flex;
+  justify-content: space-between;
+  gap: .75rem;
+  align-items: flex-start;
+}
+
+.eon-nexus-pulse__kicker {
+  margin: 0 0 .18rem;
+  color: #67e8f9;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.eon-nexus-pulse__heading h2 {
+  margin: 0;
+  color: #f8fafc;
+  font-size: 1rem;
+}
+
+.eon-nexus-pulse__close {
+  min-width: 2rem;
+  min-height: 2rem;
+  border: 1px solid rgba(148, 163, 184, .25);
+  border-radius: .65rem;
+  color: #cbd5e1;
+  background: transparent;
+  cursor: pointer;
+}
+
+.eon-nexus-pulse__stage,
+.eon-nexus-pulse__route,
+.eon-nexus-pulse__summary {
+  margin: .62rem 0 0;
+}
+
+.eon-nexus-pulse__stage {
+  color: #f8fafc;
+  font-weight: 700;
+}
+
+.eon-nexus-pulse__route,
+.eon-nexus-pulse__summary {
+  color: #aebbd0;
+  font-size: .84rem;
+  line-height: 1.45;
+}
+
+.eon-nexus-pulse__actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .5rem;
+  margin-top: .85rem;
+}
+
+.eon-nexus-pulse__action {
+  min-height: 2.65rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(103, 232, 249, .3);
+  border-radius: .75rem;
+  padding: .5rem .7rem;
+  color: #e6edf8;
+  background: rgba(15, 23, 42, .88);
+  text-decoration: none;
+  font: inherit;
+  font-size: .82rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.eon-nexus-pulse__action:hover,
+.eon-nexus-pulse__action:focus-visible {
+  border-color: rgba(103, 232, 249, .75);
+  background: rgba(30, 41, 59, .96);
+}
+
+.eon-nexus-pulse__action[data-action='review'] {
+  border-color: rgba(251, 146, 60, .58);
+  color: #fed7aa;
+}
+
+.eon-nexus-pulse__action[hidden],
+.eon-nexus-pulse__badge[hidden] {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  .eon-nexus-pulse,
+  body[data-page-type='chat'] .eon-nexus-pulse {
+    right: max(.75rem, env(safe-area-inset-right));
+    bottom: max(5.25rem, calc(env(safe-area-inset-bottom) + 4.75rem));
+  }
+
+  .eon-nexus-pulse__toggle {
+    min-width: 3.65rem;
+    min-height: 3.65rem;
+    margin-inline-end: 0;
+    padding: .36rem .66rem .36rem .36rem;
+  }
+
+  .eon-nexus-pulse__toggle-label {
+    max-width: 7rem;
+    font-size: .64rem;
+  }
+
+  .eon-nexus-pulse__panel {
+    max-height: min(28rem, calc(100dvh - 11rem));
+    overflow: auto;
+  }
+}
+
+
+/* W660B2 — CSS-only state motion. No Canvas, WebGL or JavaScript frame loop. */
+.eon-nexus-pulse {
+  --eon-nexus-ready-duration: 6.4s;
+  --eon-nexus-active-duration: 1.9s;
+  --eon-nexus-slow-duration: 2.8s;
+}
+
+.eon-nexus-pulse[data-motion-profile='full'] {
+  --eon-nexus-ready-duration: 4.6s;
+  --eon-nexus-active-duration: 1.25s;
+  --eon-nexus-slow-duration: 2s;
+}
+
+.eon-nexus-pulse[data-motion-profile='low-power'] {
+  --eon-nexus-ready-duration: 9s;
+  --eon-nexus-active-duration: 3.2s;
+  --eon-nexus-slow-duration: 4.8s;
+}
+
+.eon-nexus-pulse[data-motion-active='true'] .eon-nexus-pulse__orb,
+.eon-nexus-pulse[data-motion-active='true'] .eon-nexus-pulse__core,
+.eon-nexus-pulse[data-motion-active='true'] .eon-nexus-pulse__orb::before,
+.eon-nexus-pulse[data-motion-active='true'] .eon-nexus-pulse__orb::after {
+  will-change: transform, opacity, box-shadow;
+}
+
+.eon-nexus-pulse[data-motion-active='true'][data-eonbot-state='ready'] .eon-nexus-pulse__core {
+  animation: eon-nexus-ready-breathe var(--eon-nexus-ready-duration) ease-in-out infinite;
+}
+
+.eon-nexus-pulse[data-motion-active='true'][data-eonbot-state='listening'] .eon-nexus-pulse__orb::before {
+  animation: eon-nexus-listening-ripple var(--eon-nexus-active-duration) ease-out infinite;
+}
+
+.eon-nexus-pulse[data-motion-active='true'][data-eonbot-state='listening'] .eon-nexus-pulse__core {
+  animation: eon-nexus-speaking-pulse var(--eon-nexus-active-duration) ease-in-out infinite alternate;
+}
+
+.eon-nexus-pulse[data-motion-active='true'][data-eonbot-state='processing'] .eon-nexus-pulse__orb::after {
+  animation: eon-nexus-processing-orbit var(--eon-nexus-active-duration) linear infinite;
+}
+
+.eon-nexus-pulse[data-motion-active='true'][data-eonbot-state='processing'] .eon-nexus-pulse__core {
+  animation: eon-nexus-processing-core var(--eon-nexus-slow-duration) ease-in-out infinite;
+}
+
+.eon-nexus-pulse[data-motion-active='true'][data-eonbot-state='speaking'] .eon-nexus-pulse__core {
+  animation: eon-nexus-speaking-pulse var(--eon-nexus-active-duration) ease-in-out infinite alternate;
+}
+
+.eon-nexus-pulse[data-motion-active='true'][data-eonbot-state='waiting-approval'] .eon-nexus-pulse__toggle {
+  animation: eon-nexus-approval-ring var(--eon-nexus-slow-duration) ease-in-out infinite;
+}
+
+.eon-nexus-pulse[data-motion-active='true'][data-eonbot-state='complete'] .eon-nexus-pulse__core {
+  animation: eon-nexus-complete-once 1.1s ease-out 1;
+}
+
+.eon-nexus-pulse[data-motion-active='true'][data-eonbot-state='error'] .eon-nexus-pulse__toggle {
+  animation: eon-nexus-error-once .45s ease-in-out 2;
+}
+
+.eon-nexus-pulse[data-motion-active='false'] *,
+.eon-nexus-pulse[data-motion-active='false'] *::before,
+.eon-nexus-pulse[data-motion-active='false'] *::after {
+  animation-play-state: paused !important;
+}
+
+@keyframes eon-nexus-ready-breathe {
+  0%, 100% { transform: scale(.88); opacity: .72; box-shadow: 0 0 .65rem currentColor; }
+  50% { transform: scale(1.08); opacity: 1; box-shadow: 0 0 1.3rem currentColor; }
+}
+
+@keyframes eon-nexus-listening-ripple {
+  0% { transform: scale(.78); opacity: .78; }
+  80%, 100% { transform: scale(1.38); opacity: 0; }
+}
+
+@keyframes eon-nexus-processing-orbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes eon-nexus-processing-core {
+  0%, 100% { transform: scale(.82); opacity: .64; }
+  50% { transform: scale(1.12); opacity: 1; }
+}
+
+@keyframes eon-nexus-speaking-pulse {
+  from { transform: scale(.72); opacity: .7; }
+  to { transform: scale(1.18); opacity: 1; }
+}
+
+@keyframes eon-nexus-approval-ring {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(15, 23, 42, .72), 0 12px 36px rgba(0, 0, 0, .38); }
+  50% { box-shadow: 0 0 0 7px rgba(251, 146, 60, .18), 0 0 1.6rem rgba(251, 146, 60, .3), 0 12px 36px rgba(0, 0, 0, .38); }
+}
+
+@keyframes eon-nexus-complete-once {
+  0% { transform: scale(.72); opacity: .58; }
+  55% { transform: scale(1.42); opacity: 1; box-shadow: 0 0 1.8rem currentColor; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes eon-nexus-error-once {
+  0%, 100% { transform: translateX(0); }
+  35% { transform: translateX(-.18rem); }
+  70% { transform: translateX(.18rem); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .eon-nexus-pulse *,
+  .eon-nexus-pulse *::before,
+  .eon-nexus-pulse *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* W660H — page-specific Jarvis-style Nexus identity and explicit full-screen
+   gesture affordance. Swipe the orb upward or double-click it for full screen. */
+.eon-nexus-pulse[data-eon-nexus-label] .eon-nexus-pulse__toggle {
+  touch-action: none;
+}
+.eon-nexus-pulse[data-eon-nexus-label] .eon-nexus-pulse__toggle::after {
+  content: '↟';
+  position: absolute;
+  right: -.18rem;
+  bottom: -.15rem;
+  display: grid;
+  place-items: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 1px solid rgba(103, 232, 249, .38);
+  border-radius: 50%;
+  color: #cffafe;
+  background: #0b1220;
+  font-size: .7rem;
+  box-shadow: 0 .25rem .8rem rgba(0,0,0,.32);
+}
+
+/* W660I — the orb remains a clearly visible application control above the composer and shell chrome. */
+.eon-nexus-pulse[data-eon-nexus-surface='page-specific'] { isolation: isolate; }
+body.eon-nexus-live-open .eon-nexus-pulse { opacity: 0; pointer-events: none; }
+.eon-nexus-pulse__action[data-action='full-screen'] {
+  border-color: rgba(248, 199, 97, .48);
+  color: #fde68a;
+}
+@media (max-width: 720px) {
+  .eon-nexus-pulse[data-eon-nexus-surface='page-specific']::after {
+    max-width: 8rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+/* W660N — restrained placement for support, settings and secure-status routes. */
+.eon-nexus-pulse[data-eon-nexus-presentation='restrained'] .eon-nexus-pulse__toggle {
+  min-width: 3.25rem;
+  min-height: 3.25rem;
+  gap: .42rem;
+  padding: .32rem .62rem .32rem .32rem;
+  border-color: rgba(148, 163, 184, .28);
+  background: rgba(9, 13, 26, .88);
+}
+.eon-nexus-pulse[data-eon-nexus-presentation='restrained'] .eon-nexus-pulse__toggle-label {
+  position: static;
+  width: auto;
+  height: auto;
+  max-width: 6.5rem;
+  overflow: hidden;
+  clip-path: none;
+  color: #dbeafe;
+  font-size: .62rem;
+  white-space: normal;
+}
+.eon-nexus-pulse[data-eon-nexus-presentation='restrained'] .eon-nexus-pulse__orb {
+  width: 2.25rem;
+  height: 2.25rem;
+}
+.eon-nexus-pulse[data-eon-nexus-presentation='restrained'] .eon-nexus-pulse__panel {
+  width: min(20rem, calc(100vw - 2rem));
+}
+.eon-nexus-pulse[data-eon-nexus-live-allowed='false'] .eon-nexus-pulse__action[data-action='expand'],
+.eon-nexus-pulse[data-eon-nexus-live-allowed='false'] .eon-nexus-pulse__action[data-action='full-screen'] {
+  display: none;
+}
+
+/* W668 — same flagship light/shape across Pulse, Expanded Nexus and City. */
+.eon-nexus-pulse {
+  --eon-nexus-accent: #22d3ee;
+  --eon-nexus-secondary: #8b5cf6;
+  --eon-nexus-energy: .38;
+  --eon-nexus-pulse-ms: 3200ms;
+}
+.eon-nexus-pulse__toggle {
+  color: var(--eon-nexus-accent);
+  border-color: color-mix(in srgb, var(--eon-nexus-accent) 58%, transparent);
+  background:
+    radial-gradient(circle at 42% 36%, color-mix(in srgb, var(--eon-nexus-accent) 24%, transparent), transparent 35%),
+    radial-gradient(circle, rgba(13, 22, 39, .98) 0 53%, rgba(8, 13, 24, .98) 54% 100%);
+  box-shadow: 0 0 0 4px rgba(15, 23, 42, .72), 0 12px 36px rgba(0, 0, 0, .38), 0 0 2.1rem color-mix(in srgb, var(--eon-nexus-accent) 16%, transparent);
+}
+.eon-nexus-pulse__toggle-label { color: color-mix(in srgb, var(--eon-nexus-accent) 44%, #fff); }
+.eon-nexus-pulse__orb::after { border-color: var(--eon-nexus-secondary); }
+.eon-nexus-pulse[data-eon-nexus-shape='decision-gate'] .eon-nexus-pulse__orb { border-radius: 31%; transform: rotate(45deg); }
+.eon-nexus-pulse[data-eon-nexus-shape='decision-gate'] .eon-nexus-pulse__core { transform: rotate(-45deg); }
+.eon-nexus-pulse[data-eon-nexus-shape='resolved-star'] .eon-nexus-pulse__core { clip-path: polygon(50% 0,61% 34%,98% 36%,68% 57%,78% 94%,50% 72%,22% 94%,32% 57%,2% 36%,39% 34%); border-radius: 0; }
+.eon-nexus-pulse[data-eon-nexus-shape='fractured-signal'] .eon-nexus-pulse__orb::after { transform: rotate(18deg) skewX(-12deg); }
+.eon-nexus-pulse[data-eon-nexus-shape='dormant-core'] { filter: saturate(.35); opacity: .82; }

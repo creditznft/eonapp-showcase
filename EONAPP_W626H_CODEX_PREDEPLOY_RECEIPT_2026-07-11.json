@@ -1,0 +1,274 @@
+{
+  "schema": "eonapp.codex-predeploy-receipt.w626h-source-batch.2026-07-11.v1",
+  "wave": "W626H-source-batch",
+  "ok": true,
+  "startedAt": "2026-07-11T08:37:49.951Z",
+  "finishedAt": "2026-07-11T08:40:32.928Z",
+  "sourceFingerprint": {
+    "algorithm": "sha256",
+    "digest": "1055f85b607bfc9b4bcefed5825ae189533959609a0ce7624fa497471c8aec0a",
+    "fileCount": 3607
+  },
+  "resumedStepCount": 37,
+  "stepCount": 42,
+  "steps": [
+    {
+      "script": "test:unit",
+      "args": [],
+      "status": 0,
+      "durationMs": 14883
+    },
+    {
+      "script": "qa:w621-live-dodo-cloudflare-rollout",
+      "args": [],
+      "status": 0,
+      "durationMs": 463
+    },
+    {
+      "script": "qa:w623c-commercial-truth",
+      "args": [],
+      "status": 0,
+      "durationMs": 291
+    },
+    {
+      "script": "qa:w623d-production-reachability",
+      "args": [],
+      "status": 0,
+      "durationMs": 697
+    },
+    {
+      "script": "qa:w623e-information-architecture",
+      "args": [],
+      "status": 0,
+      "durationMs": 540
+    },
+    {
+      "script": "qa:w623h-minimal-referral-ledger",
+      "args": [],
+      "status": 0,
+      "durationMs": 583
+    },
+    {
+      "script": "qa:w623i-referral-scale",
+      "args": [],
+      "status": 0,
+      "durationMs": 507
+    },
+    {
+      "script": "qa:w624a-city-art-bible",
+      "args": [],
+      "status": 0,
+      "durationMs": 444
+    },
+    {
+      "script": "qa:w624b-city-runtime",
+      "args": [],
+      "status": 0,
+      "durationMs": 449
+    },
+    {
+      "script": "qa:w624c-command-district",
+      "args": [],
+      "status": 0,
+      "durationMs": 465
+    },
+    {
+      "script": "qa:w624d-wayfinder-camera",
+      "args": [],
+      "status": 0,
+      "durationMs": 448
+    },
+    {
+      "script": "qa:w624e-eonbot-orbit",
+      "args": [],
+      "status": 0,
+      "durationMs": 457
+    },
+    {
+      "script": "qa:w624f-command-district-npcs",
+      "args": [],
+      "status": 0,
+      "durationMs": 510
+    },
+    {
+      "script": "qa:w624g-productive-rpg-loop",
+      "args": [],
+      "status": 0,
+      "durationMs": 486
+    },
+    {
+      "script": "qa:w624h-truthful-command-center",
+      "args": [],
+      "status": 0,
+      "durationMs": 509
+    },
+    {
+      "script": "qa:w624i-genuine-agent-theatre",
+      "args": [],
+      "status": 0,
+      "durationMs": 500
+    },
+    {
+      "script": "qa:w624j-sharing-center",
+      "args": [],
+      "status": 0,
+      "durationMs": 460
+    },
+    {
+      "script": "qa:w624k-accessibility-device",
+      "args": [],
+      "status": 0,
+      "durationMs": 429
+    },
+    {
+      "script": "qa:w624l-flagship-certification",
+      "args": [],
+      "status": 0,
+      "durationMs": 427
+    },
+    {
+      "script": "qa:w625a-real-local-image-tooling",
+      "args": [],
+      "status": 0,
+      "durationMs": 448
+    },
+    {
+      "script": "qa:w625b-local-image-workflow-registry",
+      "args": [],
+      "status": 0,
+      "durationMs": 494
+    },
+    {
+      "script": "qa:w625c-image-creation-foundation",
+      "args": [],
+      "status": 0,
+      "durationMs": 461
+    },
+    {
+      "script": "qa:w625d-local-video-capability",
+      "args": [],
+      "status": 0,
+      "durationMs": 515
+    },
+    {
+      "script": "qa:w625e-real-local-video-contract",
+      "args": [],
+      "status": 0,
+      "durationMs": 457
+    },
+    {
+      "script": "qa:w625f-local-video-product-workflow",
+      "args": [],
+      "status": 0,
+      "durationMs": 441
+    },
+    {
+      "script": "qa:w625g-local-video-efficiency-governor",
+      "args": [],
+      "status": 0,
+      "durationMs": 427
+    },
+    {
+      "script": "qa:w625h-local-creator-certification",
+      "args": [],
+      "status": 0,
+      "durationMs": 434
+    },
+    {
+      "script": "qa:w626a-direct-job-threat-model",
+      "args": [],
+      "status": 0,
+      "durationMs": 426
+    },
+    {
+      "script": "qa:w626b-creator-companion",
+      "args": [],
+      "status": 0,
+      "durationMs": 442
+    },
+    {
+      "script": "qa:w626c-external-image-adapters",
+      "args": [],
+      "status": 0,
+      "durationMs": 465
+    },
+    {
+      "script": "qa:w626d-external-video-adapters",
+      "args": [],
+      "status": 0,
+      "durationMs": 444
+    },
+    {
+      "script": "qa:w626e-unified-direct-job-fabric",
+      "args": [],
+      "status": 0,
+      "durationMs": 457
+    },
+    {
+      "script": "qa:w626f-mobile-secure-path",
+      "args": [],
+      "status": 0,
+      "durationMs": 496
+    },
+    {
+      "script": "qa:w626g-spending-outage-moderation",
+      "args": [],
+      "status": 0,
+      "durationMs": 442
+    },
+    {
+      "script": "qa:w626h-byok-privacy-certification",
+      "args": [],
+      "status": 0,
+      "durationMs": 434
+    },
+    {
+      "script": "qa:w624d-current-contract-alignment",
+      "args": [],
+      "status": 0,
+      "durationMs": 555
+    },
+    {
+      "script": "qa:w624d-test-archive",
+      "args": [],
+      "status": 0,
+      "durationMs": 495
+    },
+    {
+      "script": "lint",
+      "args": [
+        "--",
+        "--max-warnings=0"
+      ],
+      "status": 0,
+      "durationMs": 7680
+    },
+    {
+      "script": "security:secret-scan",
+      "args": [
+        "--",
+        "--allow-no-history"
+      ],
+      "status": 0,
+      "durationMs": 881
+    },
+    {
+      "script": "build",
+      "args": [],
+      "status": 0,
+      "durationMs": 13749
+    },
+    {
+      "script": "smoke:build",
+      "args": [],
+      "status": 0,
+      "durationMs": 295
+    },
+    {
+      "script": "qa:w623f-certification-v2",
+      "args": [],
+      "status": 0,
+      "durationMs": 566
+    }
+  ]
+}

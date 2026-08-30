@@ -1,0 +1,24 @@
+{
+  "schema": "eonapp.w476.api-surface-gate.v1",
+  "wave": "W476-A6",
+  "ok": true,
+  "sourceOnly": true,
+  "productionApproved": false,
+  "functionCount": 12,
+  "negativeCaseCount": 23,
+  "sources": [
+    "functions/api/account/delete-request.js",
+    "functions/api/actions/execute.js",
+    "functions/api/actions/prepare.js",
+    "functions/api/actions/status.js",
+    "functions/api/auth/google/callback.js",
+    "functions/api/auth/google/start.js",
+    "functions/api/auth/logout.js",
+    "functions/api/auth/session.js",
+    "functions/api/connectors/status.js",
+    "functions/api/deployments/status.js",
+    "functions/api/offline/capability.js",
+    "functions/csp-report.js"
+  ],
+  "issues": []
+}

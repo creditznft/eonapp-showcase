@@ -1,0 +1,10 @@
+{
+  "ok": true,
+  "sourceReady": true,
+  "sourceCriteriaPassed": 10,
+  "sourceCriteriaTotal": 10,
+  "browserCertified": false,
+  "authenticatedOfflineCertified": false,
+  "report": "reports/w766ir2/W766IR2_FINAL_CERTIFICATION_GATE.json",
+  "decision": "Source is ready for a built Preview. Rendered Chrome/Edge, mobile and offline hard-reload evidence remain pending."
+}

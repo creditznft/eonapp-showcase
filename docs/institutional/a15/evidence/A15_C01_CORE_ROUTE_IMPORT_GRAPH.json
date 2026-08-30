@@ -1,0 +1,410 @@
+{
+  "schema": "eonapp.a15.core-city-boundary-baseline.v1",
+  "routes": [
+    {
+      "id": "chat",
+      "html": "index.html",
+      "entries": [
+        "assets/js/chat-page-deferred.js",
+        "assets/js/chat-page.js",
+        "assets/js/eon-app-shell.js",
+        "assets/js/eonbot-home.js",
+        "assets/js/localStorage-shim.js"
+      ],
+      "moduleCount": 158,
+      "cityModuleCount": 14,
+      "cityModules": [
+        "assets/js/city/city-landmark-registry.js",
+        "assets/js/city/city-mode-transition.js",
+        "assets/js/city/city-world-state.js",
+        "assets/js/city/eon-city-productive-rpg-loop.js",
+        "assets/js/city/w659g/eon-city-w659g-creator-capture.js",
+        "assets/js/city/w659g/eon-city-w659g-membership-console.js",
+        "assets/js/city/w659g/eon-city-w659g-progression-ledger.js",
+        "assets/js/city/w731/eon-city-w731-command-hub-contract.js",
+        "assets/js/city/w737/eon-city-w737-missions.js",
+        "assets/js/city/w747/eon-city-w747-spatial-foundation.js",
+        "assets/js/city/w749/eon-city-w749-living-nexus.js",
+        "assets/js/city/w750/eon-city-w750-command-centre.js",
+        "assets/js/city/w751/eon-city-w751-productive-stations.js",
+        "assets/js/city/w752/eon-city-w752-missions-progression.js"
+      ],
+      "unresolved": []
+    },
+    {
+      "id": "create",
+      "html": "create.html",
+      "entries": [
+        "assets/js/create/eon-create-hub.js",
+        "assets/js/eon-app-shell.js",
+        "assets/js/localStorage-shim.js"
+      ],
+      "moduleCount": 123,
+      "cityModuleCount": 13,
+      "cityModules": [
+        "assets/js/city/city-landmark-registry.js",
+        "assets/js/city/city-world-state.js",
+        "assets/js/city/eon-city-productive-rpg-loop.js",
+        "assets/js/city/w659g/eon-city-w659g-creator-capture.js",
+        "assets/js/city/w659g/eon-city-w659g-membership-console.js",
+        "assets/js/city/w659g/eon-city-w659g-progression-ledger.js",
+        "assets/js/city/w731/eon-city-w731-command-hub-contract.js",
+        "assets/js/city/w737/eon-city-w737-missions.js",
+        "assets/js/city/w747/eon-city-w747-spatial-foundation.js",
+        "assets/js/city/w749/eon-city-w749-living-nexus.js",
+        "assets/js/city/w750/eon-city-w750-command-centre.js",
+        "assets/js/city/w751/eon-city-w751-productive-stations.js",
+        "assets/js/city/w752/eon-city-w752-missions-progression.js"
+      ],
+      "unresolved": []
+    },
+    {
+      "id": "projects",
+      "html": "projects.html",
+      "entries": [
+        "assets/js/eon-app-shell.js",
+        "assets/js/localStorage-shim.js",
+        "assets/js/projects/eon-projects-page.js"
+      ],
+      "moduleCount": 121,
+      "cityModuleCount": 15,
+      "cityModules": [
+        "assets/js/city/city-landmark-registry.js",
+        "assets/js/city/city-mode-transition.js",
+        "assets/js/city/city-work-mission.js",
+        "assets/js/city/city-world-state.js",
+        "assets/js/city/eon-city-productive-rpg-loop.js",
+        "assets/js/city/w659g/eon-city-w659g-creator-capture.js",
+        "assets/js/city/w659g/eon-city-w659g-membership-console.js",
+        "assets/js/city/w659g/eon-city-w659g-progression-ledger.js",
+        "assets/js/city/w731/eon-city-w731-command-hub-contract.js",
+        "assets/js/city/w737/eon-city-w737-missions.js",
+        "assets/js/city/w747/eon-city-w747-spatial-foundation.js",
+        "assets/js/city/w749/eon-city-w749-living-nexus.js",
+        "assets/js/city/w750/eon-city-w750-command-centre.js",
+        "assets/js/city/w751/eon-city-w751-productive-stations.js",
+        "assets/js/city/w752/eon-city-w752-missions-progression.js"
+      ],
+      "unresolved": []
+    },
+    {
+      "id": "library",
+      "html": "library.html",
+      "entries": [
+        "assets/js/create/creator-library-page.js",
+        "assets/js/eon-app-shell.js",
+        "assets/js/eon-workspace-pages.js",
+        "assets/js/localStorage-shim.js"
+      ],
+      "moduleCount": 167,
+      "cityModuleCount": 15,
+      "cityModules": [
+        "assets/js/city/city-landmark-registry.js",
+        "assets/js/city/city-mode-transition.js",
+        "assets/js/city/city-work-mission.js",
+        "assets/js/city/city-world-state.js",
+        "assets/js/city/eon-city-productive-rpg-loop.js",
+        "assets/js/city/w659g/eon-city-w659g-creator-capture.js",
+        "assets/js/city/w659g/eon-city-w659g-membership-console.js",
+        "assets/js/city/w659g/eon-city-w659g-progression-ledger.js",
+        "assets/js/city/w731/eon-city-w731-command-hub-contract.js",
+        "assets/js/city/w737/eon-city-w737-missions.js",
+        "assets/js/city/w747/eon-city-w747-spatial-foundation.js",
+        "assets/js/city/w749/eon-city-w749-living-nexus.js",
+        "assets/js/city/w750/eon-city-w750-command-centre.js",
+        "assets/js/city/w751/eon-city-w751-productive-stations.js",
+        "assets/js/city/w752/eon-city-w752-missions-progression.js"
+      ],
+      "unresolved": []
+    },
+    {
+      "id": "workspace",
+      "html": "workspace.html",
+      "entries": [
+        "assets/js/eon-app-shell.js",
+        "assets/js/eon-workspace-pages.js",
+        "assets/js/localStorage-shim.js",
+        "assets/js/workspace/eon-project-operating-system.js"
+      ],
+      "moduleCount": 164,
+      "cityModuleCount": 15,
+      "cityModules": [
+        "assets/js/city/city-landmark-registry.js",
+        "assets/js/city/city-mode-transition.js",
+        "assets/js/city/city-work-mission.js",
+        "assets/js/city/city-world-state.js",
+        "assets/js/city/eon-city-productive-rpg-loop.js",
+        "assets/js/city/w659g/eon-city-w659g-creator-capture.js",
+        "assets/js/city/w659g/eon-city-w659g-membership-console.js",
+        "assets/js/city/w659g/eon-city-w659g-progression-ledger.js",
+        "assets/js/city/w731/eon-city-w731-command-hub-contract.js",
+        "assets/js/city/w737/eon-city-w737-missions.js",
+        "assets/js/city/w747/eon-city-w747-spatial-foundation.js",
+        "assets/js/city/w749/eon-city-w749-living-nexus.js",
+        "assets/js/city/w750/eon-city-w750-command-centre.js",
+        "assets/js/city/w751/eon-city-w751-productive-stations.js",
+        "assets/js/city/w752/eon-city-w752-missions-progression.js"
+      ],
+      "unresolved": []
+    },
+    {
+      "id": "forge",
+      "html": "forge.html",
+      "entries": [
+        "assets/js/eon-app-shell.js",
+        "assets/js/forge/eon-forge-quick-build.js",
+        "assets/js/localStorage-shim.js",
+        "assets/js/workspace/eon-project-operating-system.js"
+      ],
+      "moduleCount": 120,
+      "cityModuleCount": 13,
+      "cityModules": [
+        "assets/js/city/city-landmark-registry.js",
+        "assets/js/city/city-world-state.js",
+        "assets/js/city/eon-city-productive-rpg-loop.js",
+        "assets/js/city/w659g/eon-city-w659g-creator-capture.js",
+        "assets/js/city/w659g/eon-city-w659g-membership-console.js",
+        "assets/js/city/w659g/eon-city-w659g-progression-ledger.js",
+        "assets/js/city/w731/eon-city-w731-command-hub-contract.js",
+        "assets/js/city/w737/eon-city-w737-missions.js",
+        "assets/js/city/w747/eon-city-w747-spatial-foundation.js",
+        "assets/js/city/w749/eon-city-w749-living-nexus.js",
+        "assets/js/city/w750/eon-city-w750-command-centre.js",
+        "assets/js/city/w751/eon-city-w751-productive-stations.js",
+        "assets/js/city/w752/eon-city-w752-missions-progression.js"
+      ],
+      "unresolved": []
+    },
+    {
+      "id": "insights",
+      "html": "trade.html",
+      "entries": [
+        "assets/js/eon-app-shell.js",
+        "assets/js/localStorage-shim.js",
+        "assets/js/trade/eon-trade-page.js"
+      ],
+      "moduleCount": 124,
+      "cityModuleCount": 13,
+      "cityModules": [
+        "assets/js/city/city-landmark-registry.js",
+        "assets/js/city/city-world-state.js",
+        "assets/js/city/eon-city-productive-rpg-loop.js",
+        "assets/js/city/w659g/eon-city-w659g-creator-capture.js",
+        "assets/js/city/w659g/eon-city-w659g-membership-console.js",
+        "assets/js/city/w659g/eon-city-w659g-progression-ledger.js",
+        "assets/js/city/w731/eon-city-w731-command-hub-contract.js",
+        "assets/js/city/w737/eon-city-w737-missions.js",
+        "assets/js/city/w747/eon-city-w747-spatial-foundation.js",
+        "assets/js/city/w749/eon-city-w749-living-nexus.js",
+        "assets/js/city/w750/eon-city-w750-command-centre.js",
+        "assets/js/city/w751/eon-city-w751-productive-stations.js",
+        "assets/js/city/w752/eon-city-w752-missions-progression.js"
+      ],
+      "unresolved": []
+    },
+    {
+      "id": "automations",
+      "html": "automations.html",
+      "entries": [
+        "assets/js/eon-app-shell.js",
+        "assets/js/eon-automations-page.js",
+        "assets/js/localStorage-shim.js",
+        "assets/js/workspace/eon-project-operating-system.js"
+      ],
+      "moduleCount": 127,
+      "cityModuleCount": 14,
+      "cityModules": [
+        "assets/js/city/city-landmark-registry.js",
+        "assets/js/city/city-mode-transition.js",
+        "assets/js/city/city-world-state.js",
+        "assets/js/city/eon-city-productive-rpg-loop.js",
+        "assets/js/city/w659g/eon-city-w659g-creator-capture.js",
+        "assets/js/city/w659g/eon-city-w659g-membership-console.js",
+        "assets/js/city/w659g/eon-city-w659g-progression-ledger.js",
+        "assets/js/city/w731/eon-city-w731-command-hub-contract.js",
+        "assets/js/city/w737/eon-city-w737-missions.js",
+        "assets/js/city/w747/eon-city-w747-spatial-foundation.js",
+        "assets/js/city/w749/eon-city-w749-living-nexus.js",
+        "assets/js/city/w750/eon-city-w750-command-centre.js",
+        "assets/js/city/w751/eon-city-w751-productive-stations.js",
+        "assets/js/city/w752/eon-city-w752-missions-progression.js"
+      ],
+      "unresolved": []
+    },
+    {
+      "id": "profile",
+      "html": "profile.html",
+      "entries": [
+        "assets/js/account/eon-account-vault-custody.js",
+        "assets/js/eon-app-shell.js",
+        "assets/js/localStorage-shim.js",
+        "assets/js/profile-page.js"
+      ],
+      "moduleCount": 127,
+      "cityModuleCount": 13,
+      "cityModules": [
+        "assets/js/city/city-landmark-registry.js",
+        "assets/js/city/city-world-state.js",
+        "assets/js/city/eon-city-productive-rpg-loop.js",
+        "assets/js/city/w659g/eon-city-w659g-creator-capture.js",
+        "assets/js/city/w659g/eon-city-w659g-membership-console.js",
+        "assets/js/city/w659g/eon-city-w659g-progression-ledger.js",
+        "assets/js/city/w731/eon-city-w731-command-hub-contract.js",
+        "assets/js/city/w737/eon-city-w737-missions.js",
+        "assets/js/city/w747/eon-city-w747-spatial-foundation.js",
+        "assets/js/city/w749/eon-city-w749-living-nexus.js",
+        "assets/js/city/w750/eon-city-w750-command-centre.js",
+        "assets/js/city/w751/eon-city-w751-productive-stations.js",
+        "assets/js/city/w752/eon-city-w752-missions-progression.js"
+      ],
+      "unresolved": []
+    },
+    {
+      "id": "vault",
+      "html": "vault.html",
+      "entries": [
+        "assets/js/account/eon-account-vault-custody.js",
+        "assets/js/eon-app-shell.js",
+        "assets/js/localStorage-shim.js",
+        "assets/js/vault/eon-vault-page.js"
+      ],
+      "moduleCount": 138,
+      "cityModuleCount": 17,
+      "cityModules": [
+        "assets/js/city/city-landmark-registry.js",
+        "assets/js/city/city-world-state.js",
+        "assets/js/city/eon-city-eonbot-companion.js",
+        "assets/js/city/eon-city-exploration-pose.js",
+        "assets/js/city/eon-city-productive-rpg-loop.js",
+        "assets/js/city/eon-city-resume-travel.js",
+        "assets/js/city/eon-city-vault-reveals.js",
+        "assets/js/city/w659g/eon-city-w659g-creator-capture.js",
+        "assets/js/city/w659g/eon-city-w659g-membership-console.js",
+        "assets/js/city/w659g/eon-city-w659g-progression-ledger.js",
+        "assets/js/city/w731/eon-city-w731-command-hub-contract.js",
+        "assets/js/city/w737/eon-city-w737-missions.js",
+        "assets/js/city/w747/eon-city-w747-spatial-foundation.js",
+        "assets/js/city/w749/eon-city-w749-living-nexus.js",
+        "assets/js/city/w750/eon-city-w750-command-centre.js",
+        "assets/js/city/w751/eon-city-w751-productive-stations.js",
+        "assets/js/city/w752/eon-city-w752-missions-progression.js"
+      ],
+      "unresolved": []
+    },
+    {
+      "id": "capsule",
+      "html": "capsule.html",
+      "entries": [
+        "assets/js/eon-app-shell.js",
+        "assets/js/local-first/eon-workspace-capsule-page.js"
+      ],
+      "moduleCount": 130,
+      "cityModuleCount": 17,
+      "cityModules": [
+        "assets/js/city/city-landmark-registry.js",
+        "assets/js/city/city-world-state.js",
+        "assets/js/city/eon-city-eonbot-companion.js",
+        "assets/js/city/eon-city-exploration-pose.js",
+        "assets/js/city/eon-city-productive-rpg-loop.js",
+        "assets/js/city/eon-city-resume-travel.js",
+        "assets/js/city/eon-city-vault-reveals.js",
+        "assets/js/city/w659g/eon-city-w659g-creator-capture.js",
+        "assets/js/city/w659g/eon-city-w659g-membership-console.js",
+        "assets/js/city/w659g/eon-city-w659g-progression-ledger.js",
+        "assets/js/city/w731/eon-city-w731-command-hub-contract.js",
+        "assets/js/city/w737/eon-city-w737-missions.js",
+        "assets/js/city/w747/eon-city-w747-spatial-foundation.js",
+        "assets/js/city/w749/eon-city-w749-living-nexus.js",
+        "assets/js/city/w750/eon-city-w750-command-centre.js",
+        "assets/js/city/w751/eon-city-w751-productive-stations.js",
+        "assets/js/city/w752/eon-city-w752-missions-progression.js"
+      ],
+      "unresolved": []
+    },
+    {
+      "id": "local-ai",
+      "html": "local-ai.html",
+      "entries": [
+        "assets/js/eon-app-shell.js",
+        "assets/js/local-ai/local-ai-page.js",
+        "assets/js/localStorage-shim.js"
+      ],
+      "moduleCount": 135,
+      "cityModuleCount": 15,
+      "cityModules": [
+        "assets/js/city/city-landmark-registry.js",
+        "assets/js/city/city-mode-transition.js",
+        "assets/js/city/city-work-mission.js",
+        "assets/js/city/city-world-state.js",
+        "assets/js/city/eon-city-productive-rpg-loop.js",
+        "assets/js/city/w659g/eon-city-w659g-creator-capture.js",
+        "assets/js/city/w659g/eon-city-w659g-membership-console.js",
+        "assets/js/city/w659g/eon-city-w659g-progression-ledger.js",
+        "assets/js/city/w731/eon-city-w731-command-hub-contract.js",
+        "assets/js/city/w737/eon-city-w737-missions.js",
+        "assets/js/city/w747/eon-city-w747-spatial-foundation.js",
+        "assets/js/city/w749/eon-city-w749-living-nexus.js",
+        "assets/js/city/w750/eon-city-w750-command-centre.js",
+        "assets/js/city/w751/eon-city-w751-productive-stations.js",
+        "assets/js/city/w752/eon-city-w752-missions-progression.js"
+      ],
+      "unresolved": []
+    },
+    {
+      "id": "realm-studio",
+      "html": "realm-studio.html",
+      "entries": [
+        "assets/js/eon-app-shell.js",
+        "assets/js/localStorage-shim.js",
+        "assets/js/realm-studio-page.js"
+      ],
+      "moduleCount": 124,
+      "cityModuleCount": 14,
+      "cityModules": [
+        "assets/js/city/city-landmark-registry.js",
+        "assets/js/city/city-mode-transition.js",
+        "assets/js/city/city-world-state.js",
+        "assets/js/city/eon-city-productive-rpg-loop.js",
+        "assets/js/city/w659g/eon-city-w659g-creator-capture.js",
+        "assets/js/city/w659g/eon-city-w659g-membership-console.js",
+        "assets/js/city/w659g/eon-city-w659g-progression-ledger.js",
+        "assets/js/city/w731/eon-city-w731-command-hub-contract.js",
+        "assets/js/city/w737/eon-city-w737-missions.js",
+        "assets/js/city/w747/eon-city-w747-spatial-foundation.js",
+        "assets/js/city/w749/eon-city-w749-living-nexus.js",
+        "assets/js/city/w750/eon-city-w750-command-centre.js",
+        "assets/js/city/w751/eon-city-w751-productive-stations.js",
+        "assets/js/city/w752/eon-city-w752-missions-progression.js"
+      ],
+      "unresolved": []
+    }
+  ],
+  "routeCount": 13,
+  "coupledRouteCount": 13,
+  "distinctCityModuleCount": 19,
+  "distinctCityModules": [
+    "assets/js/city/city-landmark-registry.js",
+    "assets/js/city/city-mode-transition.js",
+    "assets/js/city/city-work-mission.js",
+    "assets/js/city/city-world-state.js",
+    "assets/js/city/eon-city-eonbot-companion.js",
+    "assets/js/city/eon-city-exploration-pose.js",
+    "assets/js/city/eon-city-productive-rpg-loop.js",
+    "assets/js/city/eon-city-resume-travel.js",
+    "assets/js/city/eon-city-vault-reveals.js",
+    "assets/js/city/w659g/eon-city-w659g-creator-capture.js",
+    "assets/js/city/w659g/eon-city-w659g-membership-console.js",
+    "assets/js/city/w659g/eon-city-w659g-progression-ledger.js",
+    "assets/js/city/w731/eon-city-w731-command-hub-contract.js",
+    "assets/js/city/w737/eon-city-w737-missions.js",
+    "assets/js/city/w747/eon-city-w747-spatial-foundation.js",
+    "assets/js/city/w749/eon-city-w749-living-nexus.js",
+    "assets/js/city/w750/eon-city-w750-command-centre.js",
+    "assets/js/city/w751/eon-city-w751-productive-stations.js",
+    "assets/js/city/w752/eon-city-w752-missions-progression.js"
+  ],
+  "target": {
+    "coupledRouteCount": 0,
+    "distinctCityModuleCount": 0
+  }
+}

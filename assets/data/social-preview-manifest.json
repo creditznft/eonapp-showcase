@@ -1,0 +1,260 @@
+{
+  "schema": "eonapp.social-preview.w661d.v1",
+  "version": "social-v1",
+  "baseUrl": "https://eonapp.ch",
+  "activeRouteCount": 28,
+  "routes": {
+    "index": {
+      "file": "index.html",
+      "path": "/",
+      "title": "EONAPP — Ask. Make. Enter.",
+      "description": "Start with EONBOT, build real projects, create assets and enter the Living Nexus.",
+      "family": "home",
+      "wideImage": "/assets/media/social/eonapp-home-1200x630-social-v1.png?v=social-v1",
+      "squareImage": "/assets/media/social/eonapp-home-1080x1080-social-v1.png?v=social-v1"
+    },
+    "chat": {
+      "file": "chat.html",
+      "path": "/chat",
+      "title": "EONBOT Chat — EONAPP",
+      "description": "One continuous EONBOT conversation for planning, creating and continuing real work.",
+      "family": "home",
+      "wideImage": "/assets/media/social/eonapp-home-1200x630-social-v1.png?v=social-v1",
+      "squareImage": "/assets/media/social/eonapp-home-1080x1080-social-v1.png?v=social-v1"
+    },
+    "eoncity": {
+      "file": "eoncity.html",
+      "path": "/eoncity",
+      "title": "EONCITY: The Living Nexus — EONAPP",
+      "description": "Explore a connected productive Core, streamed Expanse, six curated Realms and My Realm.",
+      "family": "city",
+      "wideImage": "/assets/media/social/eonapp-city-1200x630-social-v1.png?v=social-v1",
+      "squareImage": "/assets/media/social/eonapp-city-1080x1080-social-v1.png?v=social-v1"
+    },
+    "projects": {
+      "file": "projects.html",
+      "path": "/projects",
+      "title": "Projects — EONAPP",
+      "description": "Continue real projects, milestones and reviewed next actions with EONBOT continuity.",
+      "family": "nexus",
+      "wideImage": "/assets/media/social/eonapp-nexus-1200x630-social-v1.png?v=social-v1",
+      "squareImage": "/assets/media/social/eonapp-nexus-1080x1080-social-v1.png?v=social-v1"
+    },
+    "workspace": {
+      "file": "workspace.html",
+      "path": "/workspace",
+      "title": "Workspace — EONAPP",
+      "description": "Review tasks, approvals, results and project continuity in one controlled workspace.",
+      "family": "nexus",
+      "wideImage": "/assets/media/social/eonapp-nexus-1200x630-social-v1.png?v=social-v1",
+      "squareImage": "/assets/media/social/eonapp-nexus-1080x1080-social-v1.png?v=social-v1"
+    },
+    "forge": {
+      "file": "forge.html",
+      "path": "/forge",
+      "title": "EON Forge — EONAPP",
+      "description": "Build, review, validate, preview and export real browser projects with AI assistance.",
+      "family": "forge",
+      "wideImage": "/assets/media/social/eonapp-forge-1200x630-social-v1.png?v=social-v1",
+      "squareImage": "/assets/media/social/eonapp-forge-1080x1080-social-v1.png?v=social-v1"
+    },
+    "local-ai": {
+      "file": "local-ai.html",
+      "path": "/local-ai",
+      "title": "Local AI — EONAPP",
+      "description": "Connect private local runtimes and clearly choose local or hosted AI routes.",
+      "family": "ai",
+      "wideImage": "/assets/media/social/eonapp-ai-1200x630-social-v1.png?v=social-v1",
+      "squareImage": "/assets/media/social/eonapp-ai-1080x1080-social-v1.png?v=social-v1"
+    },
+    "library": {
+      "file": "library.html",
+      "path": "/library",
+      "title": "Library — EONAPP",
+      "description": "Organise privacy-safe project assets and verified results without exposing private content.",
+      "family": "forge",
+      "wideImage": "/assets/media/social/eonapp-forge-1200x630-social-v1.png?v=social-v1",
+      "squareImage": "/assets/media/social/eonapp-forge-1080x1080-social-v1.png?v=social-v1"
+    },
+    "create": {
+      "file": "create.html",
+      "path": "/create",
+      "title": "Create — EONAPP",
+      "description": "Create visual and media work through explicit, review-first EONAPP tools.",
+      "family": "forge",
+      "wideImage": "/assets/media/social/eonapp-forge-1200x630-social-v1.png?v=social-v1",
+      "squareImage": "/assets/media/social/eonapp-forge-1080x1080-social-v1.png?v=social-v1"
+    },
+    "automations": {
+      "file": "automations.html",
+      "path": "/automations",
+      "title": "Automations — EONAPP",
+      "description": "Review scheduled work and automation state without hidden or automatic execution.",
+      "family": "nexus",
+      "wideImage": "/assets/media/social/eonapp-nexus-1200x630-social-v1.png?v=social-v1",
+      "squareImage": "/assets/media/social/eonapp-nexus-1080x1080-social-v1.png?v=social-v1"
+    },
+    "apps": {
+      "file": "apps.html",
+      "path": "/apps",
+      "title": "Apps — EONAPP",
+      "description": "Open the right EONAPP capability while preserving the same project and EONBOT context.",
+      "family": "nexus",
+      "wideImage": "/assets/media/social/eonapp-nexus-1200x630-social-v1.png?v=social-v1",
+      "squareImage": "/assets/media/social/eonapp-nexus-1080x1080-social-v1.png?v=social-v1"
+    },
+    "market": {
+      "file": "market.html",
+      "path": "/preview-studio",
+      "title": "Preview Studio — EONAPP",
+      "description": "Prepare and review public-safe creative previews without automatic publishing or trading.",
+      "family": "forge",
+      "wideImage": "/assets/media/social/eonapp-forge-1200x630-social-v1.png?v=social-v1",
+      "squareImage": "/assets/media/social/eonapp-forge-1080x1080-social-v1.png?v=social-v1"
+    },
+    "vault": {
+      "file": "vault.html",
+      "path": "/vault",
+      "title": "Vault — EONAPP",
+      "description": "Review secure-state and recovery readiness without exposing private keys or contents.",
+      "family": "trust",
+      "wideImage": "/assets/media/social/eonapp-trust-1200x630-social-v1.png?v=social-v1",
+      "squareImage": "/assets/media/social/eonapp-trust-1080x1080-social-v1.png?v=social-v1"
+    },
+    "capsule": {
+      "file": "capsule.html",
+      "path": "/capsule",
+      "title": "Capsule — EONAPP",
+      "description": "Create and restore encrypted backups through explicit, review-first controls.",
+      "family": "trust",
+      "wideImage": "/assets/media/social/eonapp-trust-1200x630-social-v1.png?v=social-v1",
+      "squareImage": "/assets/media/social/eonapp-trust-1080x1080-social-v1.png?v=social-v1"
+    },
+    "profile": {
+      "file": "profile.html",
+      "path": "/profile",
+      "title": "Account & AI Setup — EONAPP",
+      "description": "Manage account readiness, providers and private settings with clear control.",
+      "family": "trust",
+      "wideImage": "/assets/media/social/eonapp-trust-1200x630-social-v1.png?v=social-v1",
+      "squareImage": "/assets/media/social/eonapp-trust-1080x1080-social-v1.png?v=social-v1"
+    },
+    "settings": {
+      "file": "settings.html",
+      "path": "/settings",
+      "title": "Settings — EONAPP",
+      "description": "Configure EONAPP behaviour, accessibility and privacy without hidden changes.",
+      "family": "trust",
+      "wideImage": "/assets/media/social/eonapp-trust-1200x630-social-v1.png?v=social-v1",
+      "squareImage": "/assets/media/social/eonapp-trust-1080x1080-social-v1.png?v=social-v1"
+    },
+    "billing": {
+      "file": "billing.html",
+      "path": "/billing",
+      "title": "Plans & Billing — EONAPP",
+      "description": "Compare EONAPP plans with hosted checkout, clear trials and server-verified access.",
+      "family": "trust",
+      "wideImage": "/assets/media/social/eonapp-trust-1200x630-social-v1.png?v=social-v1",
+      "squareImage": "/assets/media/social/eonapp-trust-1080x1080-social-v1.png?v=social-v1"
+    },
+    "support": {
+      "file": "support.html",
+      "path": "/support",
+      "title": "Support — EONAPP",
+      "description": "Get contextual help and return to EONBOT without exposing private credentials.",
+      "family": "trust",
+      "wideImage": "/assets/media/social/eonapp-trust-1200x630-social-v1.png?v=social-v1",
+      "squareImage": "/assets/media/social/eonapp-trust-1080x1080-social-v1.png?v=social-v1"
+    },
+    "help": {
+      "file": "help.html",
+      "path": "/help",
+      "title": "Help — EONAPP",
+      "description": "Find clear guidance for EONBOT, projects, local AI, EONCITY and secure recovery.",
+      "family": "home",
+      "wideImage": "/assets/media/social/eonapp-home-1200x630-social-v1.png?v=social-v1",
+      "squareImage": "/assets/media/social/eonapp-home-1080x1080-social-v1.png?v=social-v1"
+    },
+    "install": {
+      "file": "install.html",
+      "path": "/install",
+      "title": "Install EONAPP",
+      "description": "Install the private-first EONAPP web experience when your browser supports it.",
+      "family": "home",
+      "wideImage": "/assets/media/social/eonapp-home-1200x630-social-v1.png?v=social-v1",
+      "squareImage": "/assets/media/social/eonapp-home-1080x1080-social-v1.png?v=social-v1"
+    },
+    "privacy": {
+      "file": "privacy.html",
+      "path": "/privacy",
+      "title": "Privacy — EONAPP",
+      "description": "Understand EONAPP privacy, local-first storage and review-first product boundaries.",
+      "family": "trust",
+      "wideImage": "/assets/media/social/eonapp-trust-1200x630-social-v1.png?v=social-v1",
+      "squareImage": "/assets/media/social/eonapp-trust-1080x1080-social-v1.png?v=social-v1"
+    },
+    "terms": {
+      "file": "terms.html",
+      "path": "/terms",
+      "title": "Terms — EONAPP",
+      "description": "Read the current terms and product boundaries for EONAPP services.",
+      "family": "trust",
+      "wideImage": "/assets/media/social/eonapp-trust-1200x630-social-v1.png?v=social-v1",
+      "squareImage": "/assets/media/social/eonapp-trust-1080x1080-social-v1.png?v=social-v1"
+    },
+    "about": {
+      "file": "about.html",
+      "path": "/about",
+      "title": "About EONAPP",
+      "description": "A private-first AI workspace connected to the productive Living Nexus.",
+      "family": "home",
+      "wideImage": "/assets/media/social/eonapp-home-1200x630-social-v1.png?v=social-v1",
+      "squareImage": "/assets/media/social/eonapp-home-1080x1080-social-v1.png?v=social-v1"
+    },
+    "referral": {
+      "file": "referral.html",
+      "path": "/referral",
+      "title": "Invite to EONAPP",
+      "description": "Share a reviewed EONAPP invite without exposing private work or account data.",
+      "family": "trust",
+      "wideImage": "/assets/media/social/eonapp-trust-1200x630-social-v1.png?v=social-v1",
+      "squareImage": "/assets/media/social/eonapp-trust-1080x1080-social-v1.png?v=social-v1"
+    },
+    "eon-keys": {
+      "file": "eon-keys.html",
+      "path": "/eon-keys",
+      "title": "EONKEYS — EONAPP",
+      "description": "Review secure unlock state and utility without financial or resale promises.",
+      "family": "trust",
+      "wideImage": "/assets/media/social/eonapp-trust-1200x630-social-v1.png?v=social-v1",
+      "squareImage": "/assets/media/social/eonapp-trust-1080x1080-social-v1.png?v=social-v1"
+    },
+    "realm-studio": {
+      "file": "realm-studio.html",
+      "path": "/realm-studio",
+      "title": "Realm Studio — EONAPP",
+      "description": "Create and review personal Realm experiences connected to verified EONAPP work.",
+      "family": "nexus",
+      "wideImage": "/assets/media/social/eonapp-nexus-1200x630-social-v1.png?v=social-v1",
+      "squareImage": "/assets/media/social/eonapp-nexus-1080x1080-social-v1.png?v=social-v1"
+    },
+    "realm-profile": {
+      "file": "realm-profile.html",
+      "path": "/realm-studio",
+      "title": "My Realm Profile — EONAPP",
+      "description": "Review public-safe Realm identity and verified transformation history.",
+      "family": "nexus",
+      "wideImage": "/assets/media/social/eonapp-nexus-1200x630-social-v1.png?v=social-v1",
+      "squareImage": "/assets/media/social/eonapp-nexus-1080x1080-social-v1.png?v=social-v1"
+    },
+    "telegram": {
+      "file": "telegram.html",
+      "path": "/telegram",
+      "title": "EONAPP on Telegram",
+      "description": "Open the official EONAPP Telegram connection and return to the same product context.",
+      "family": "home",
+      "wideImage": "/assets/media/social/eonapp-home-1200x630-social-v1.png?v=social-v1",
+      "squareImage": "/assets/media/social/eonapp-home-1080x1080-social-v1.png?v=social-v1"
+    }
+  }
+}

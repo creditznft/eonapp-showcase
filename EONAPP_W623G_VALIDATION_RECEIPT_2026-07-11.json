@@ -1,0 +1,71 @@
+{
+  "schema": "eonapp.w623g.validation-receipt.2026-07-11.v1",
+  "generatedAt": "2026-07-11T00:00:00+05:30",
+  "wave": "W623G",
+  "status": "source-complete-proof-pending",
+  "releaseState": "limited-preview-no-go-public-launch",
+  "sourceRevision": "758f6b8c1a050f9526cb60f5e11fa40b25e59431",
+  "architecture": {
+    "primaryNavigation": [
+      "EONBOT",
+      "Create",
+      "Projects",
+      "Library",
+      "EON City"
+    ],
+    "universalShareCoveredPages": 31,
+    "viralReadinessScore": 7.2,
+    "viralLaunchClaimAllowed": false,
+    "referralRewardProgramActive": false,
+    "paidReferralAdsRecommended": false,
+    "eonKeyGrantActive": false,
+    "eonappCloudSpeechProxy": false,
+    "localSpeechCompanionActive": false
+  },
+  "validation": {
+    "w623gGate": "22/22",
+    "w623gUnit": "6/6",
+    "w623cCommercialTruth": "64/64",
+    "w623dReachability": "5/5",
+    "w623eInformationArchitecture": "5/5",
+    "w623fCertificationV2": "24/24",
+    "focusedMultilingualVoice": "9/9",
+    "targetedEslint": "zero-errors-zero-warnings",
+    "secretScan": {
+      "filesScanned": 3367,
+      "potentialSecrets": 0
+    },
+    "productionBuild": {
+      "ok": true,
+      "distFiles": 451,
+      "minifiedFiles": 289,
+      "savedPercent": 41.18,
+      "distributionSha256": "a351fde95e8c43e025caa1219e6127db292754f2669b46a4a079ddc64ee6cbdb"
+    },
+    "reachability": {
+      "reachableFiles": 343,
+      "importEdges": 583,
+      "quarantinedReachable": 0
+    }
+  },
+  "proofPending": [
+    "deployed parity",
+    "desktop/mobile Share screenshots",
+    "real native image share",
+    "real native video share",
+    "real generated PNG handoff",
+    "11-language real-device recognition and spoken replies",
+    "Arabic RTL and CJK IME",
+    "airplane-mode local STT/TTS companion",
+    "W629 server referral/EONKEY lifecycle"
+  ],
+  "environmentLimitations": [
+    "Managed Chromium blocked localhost with ERR_BLOCKED_BY_ADMINISTRATOR",
+    "Playwright Chromium download unavailable because external DNS was unavailable"
+  ],
+  "historicalExcluded": [
+    "W618B retired Studio/Apps navigation contract",
+    "W133 obsolete schema/tools.html fixture",
+    "W243 obsolete navigation-order fixture"
+  ]
+}

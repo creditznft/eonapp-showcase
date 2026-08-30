@@ -1,0 +1,25 @@
+Case ID,Category,Scenario,Environment,Evidence,Severity
+INT-01,Entry & Discoverability,"Authenticated entry offers Command Hub, Open World and valid resume choices without a second public route",Headed Chrome/Edge/mobile landscape,"Video, trace, DOM/accessibility snapshot, console/network log",Blocking
+INT-02,Entry & Discoverability,Open World — Signal Frontier is a primary City Menu card and persistent Command Hub launcher,Headed Chrome/Edge/mobile landscape,"Video, screenshots, interaction trace",Blocking
+INT-03,Entry & Discoverability,Expanse review Enter/Cancel is explicit and Cancel changes no world or mission state,Headed browsers,"Before/after state digest, video, trace",Blocking
+INT-04,Runtime Integrity,"Command Hub and Signal Frontier use one Babylon Engine, one Scene and one render loop",Instrumented headed browser,"Runtime identity receipt, heap/listener report",Blocking
+INT-05,Runtime Integrity,Return from Signal Frontier restores exact Hub player/camera/workspace snapshot,Headed browsers,"Before/after snapshot digest, video",Blocking
+INT-06,Isolation,All Core routes work when City modules/assets/access endpoint are unavailable,Chrome/Edge/Firefox/WebKit,"Network fault trace, screenshots, console log",Blocking
+INT-07,Handoff & Outcome,City Create handoff returns one verified Project outcome and duplicate-protected progression,Headed browser,Handoff/outcome/progression receipts,Blocking
+INT-08,Handoff & Outcome,City Forge handoff requires review-before-Apply and returns only verified result,Headed browser,Forge review/apply/result receipts,Blocking
+INT-09,Handoff & Outcome,Projects/Library continuation returns to the exact City mission context,Headed browser,Project/artifact/handoff/return receipts,Blocking
+INT-10,Handoff & Outcome,"Local AI outcome exposes no key, prompt, output or provider credential to City state",Owner local runtime,Redacted outcome and storage inspection,Blocking
+INT-11,Handoff & Outcome,Automation mission accepts only simulation/review outcome and performs no external execution,Headed browser,Workflow state receipt and network negative proof,Blocking
+INT-12,Handoff & Outcome,"Share/Creator Capture outcome is reviewed, local-first and duplicate protected",Headed browser/device share,Capture/share/progression receipts,Blocking
+INT-13,Data Survival,"Command Hub, Signal Frontier, My Frontier and Storm state export and restore exactly",Owner device + clean browser profile,"Inventory, archive digest, restore receipt",Blocking
+INT-14,Data Survival,Clear local data removes all declared City/Expanse state and verifies zero undeclared residue,Owner device,Deletion inventory and post-delete scan,Blocking
+INT-15,Data Survival,Legacy W731/W737/W751/W766 state migrates with counts/digests and rollback,Synthetic legacy fixtures + headed browser,Migration and rollback receipts,Blocking
+INT-16,Capability,"City access, features and limits use the canonical signed capability service",Billing test mode + headed browser,Capability snapshot and UI behavior proof,Blocking
+INT-17,Capability,EONKEY unlock affects only approved feature/cosmetic state and never cash/discount/credit,Signed EONKEY fixtures,Grant/consume/revoke receipts,Blocking
+INT-18,Capability,Plan downgrade/revocation updates City safely without deleting progress or fabricating access,Billing test mode,Webhook/capability/data continuity receipts,Blocking
+INT-19,Performance,Core initial bundles contain no City implementation or Babylon/Expanse asset preload,Production build + network trace,Build manifest and route waterfall,Blocking
+INT-20,Performance,Signal Frontier and Storm assets load only after explicit reviewed entry/activation,Production build + headed browser,Network trace and runtime identity receipt,Blocking
+INT-21,Privacy & Security,"City telemetry and diagnostics contain no prompts, outputs, keys or private Project content",Preview with observability enabled,Redacted logs/traces and secret scan,Blocking
+INT-22,Offline & PWA,"Optional City/Signal packs install, update, repair and uninstall without evicting protected data",Installed PWA + offline profiles,Pack manifest/digest/update/repair receipts,Blocking
+INT-23,Accessibility & Devices,"Entry, menus, missions, map, stations and return pass keyboard, touch, NVDA, zoom and landscape checks",Owner desktop + mobile landscape,"Video, axe/manual results, screen-reader notes",Blocking
+INT-24,Endurance,Four-hour Core+City endurance and at least twenty Hub↔Expanse transitions remain bounded,Owner device + production candidate,Heap/listener/timer/GPU/performance reports,Blocking

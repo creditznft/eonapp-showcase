@@ -1,0 +1,54 @@
+name: W662 Ledger and Controls
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'config/w662-implementation-exposure-ledger.json'
+      - 'docs/W662_IMPLEMENTATION_EXPOSURE_AUDIT_2026-07-23.md'
+      - 'docs/W662B_CAMERA_RELATIVE_CONTROLS_RECEIPT_2026-07-23.md'
+      - 'scripts/w662-implementation-exposure-ledger-gate.mjs'
+      - 'scripts/w662-apply-camera-relative-core-patch.mjs'
+      - 'scripts/w662b-finalize-implementation-ledger.mjs'
+      - 'tests/unit/w662-implementation-exposure-ledger.test.mjs'
+      - 'assets/js/city/eon-city-camera-relative-movement.js'
+      - 'assets/js/city/eon-city-play-core.js'
+      - 'tests/unit/w662-camera-relative-movement.test.mjs'
+      - '.github/workflows/w662-ledger-and-controls.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: w662-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ledger-and-controls:
+    name: Validate W662 ledger, controls and W661E invariants
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out exact PR source
+        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+      - name: Use Node 22
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22'
+      - name: Run ledger gate
+        run: node scripts/w662-implementation-exposure-ledger-gate.mjs
+      - name: Run ledger unit tests
+        run: node --test tests/unit/w662-implementation-exposure-ledger.test.mjs
+      - name: Verify governed core patch is present and idempotent
+        run: node scripts/w662-apply-camera-relative-core-patch.mjs --check
+      - name: Run camera-relative cardinal and integration tests
+        run: node --test tests/unit/w662-camera-relative-movement.test.mjs
+      - name: Preserve all W661E short-tap and release guarantees
+        run: >-
+          node --test
+          tests/unit/w661e-frame-aware-browser-proof.test.mjs
+          tests/unit/w661e-frame-safe-pulse.test.mjs
+          tests/unit/w661e-pointer-completion-click-suppression.test.mjs
+          tests/unit/w661e-pointer-event-timestamp-release.test.mjs

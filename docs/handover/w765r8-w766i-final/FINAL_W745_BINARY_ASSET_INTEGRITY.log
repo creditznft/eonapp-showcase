@@ -1,0 +1,22 @@
+{
+  "schema": "eonapp.w745.launch-asset-binary-integrity.v1",
+  "ok": true,
+  "entriesChecked": 45,
+  "variantsChecked": 90,
+  "bytesChecked": 90182476,
+  "pathfinderClips": [
+    "Idle_02",
+    "Idle_11",
+    "Walking",
+    "Running",
+    "Big_Wave_Hello",
+    "Hand_on_Hip_Gesture",
+    "Checkout_Gesture",
+    "Open_Door",
+    "Jump_with_Arms_Open",
+    "Victory_Cheer",
+    "Lower_Weapon_Look_Raise"
+  ],
+  "eonbotRuntimeDirected": true
+}
+W745 ASSET BINARY INTEGRITY PASS

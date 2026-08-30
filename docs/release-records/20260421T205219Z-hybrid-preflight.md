@@ -1,0 +1,21 @@
+# Hybrid Release Record
+
+- Created: 2026-04-21T20:52:19.850Z
+- Track: hybrid
+- Label: preflight
+- Git commit: 15dc88af11551340e52bededd75fea77f641d4bd
+- Notes: none
+
+## Artifact State
+
+- Arweave manifest present: false
+- IPFS/IPNS state present: false
+
+## Expected Verification
+
+- launch:readiness passed
+- launch:check passed
+- launch:page-gate passed
+- launch:lootbox-gate passed
+- chosen deployment track verified
+

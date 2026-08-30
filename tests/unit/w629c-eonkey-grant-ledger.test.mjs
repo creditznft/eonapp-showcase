@@ -1,0 +1,3 @@
+import test from 'node:test'; import assert from 'node:assert/strict';
+import { EON_KEY_GRANT_STATES, normalizeGrantTransition } from '../../assets/js/referrals/eon-referral-program-w629.js';
+test('W629C grant lifecycle is bounded and cannot revive terminal grants',()=>{assert.deepEqual(EON_KEY_GRANT_STATES,['pending','vested','available','consumed','revoked','expired']);assert.equal(normalizeGrantTransition({from:'pending',to:'vested'}).ok,true);assert.equal(normalizeGrantTransition({from:'vested',to:'consumed'}).ok,true);assert.equal(normalizeGrantTransition({from:'revoked',to:'vested'}).ok,false);});

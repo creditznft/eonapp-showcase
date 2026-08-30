@@ -1,0 +1,12 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const op = fs.readFileSync('assets/js/chat/eonbot-app-operator.js', 'utf8');
+const bot = fs.readFileSync('assets/js/chat/chatbot.js', 'utf8');
+assert.match(op, /EONBOT_OPERATOR_VERSION/);
+assert.match(op, /enable-sponsor-boost/);
+assert.match(op, /microphone-permission/);
+assert.match(op, /payment-proof/);
+assert.match(op, /sensitiveActionBlockedUntilConfirm/);
+assert.match(bot, /buildOperatorActionPlan/);
+assert.match(bot, /eonbot_app_operator/);
+console.log('W171 EONBOT app operator gate passed');

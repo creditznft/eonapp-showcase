@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <script src="/assets/js/eon-theme-bootstrap.js?release=w722-2026-07-27"></script>
+  <meta name="theme-color" content="#111411" />
+  <meta name="description" content="EONAPP Vault: one encrypted recovery file, clear device-first boundaries, advanced AI-key controls, and a separate visual Vault Reveals gallery." />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="stylesheet" href="/assets/css/base.css" />
+  <link rel="stylesheet" href="/assets/css/layout.css" />
+  <link rel="stylesheet" href="/assets/css/eon-app-shell.css" />
+  <link rel="stylesheet" href="/assets/css/eon-vault-v2.css" />
+  <link rel="stylesheet" href="/assets/css/eon-feature-locks.css" />
+  <script type="module" src="/assets/js/localStorage-shim.js"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"EONAPP Vault","url":"https://eonapp.ch/vault","description":"A local-profile recovery and security page that does not display secret values."}</script>
+  <meta property="og:site_name" content="EONAPP" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Vault — EONAPP" />
+  <meta property="og:description" content="Review secure-state and recovery readiness without exposing private keys or contents." />
+  <meta property="og:url" content="https://eonapp.ch/vault" />
+  <meta property="og:image" content="https://eonapp.ch/assets/media/social/eonapp-trust-1200x630-social-v1.png?v=social-v1" />
+  <meta property="og:image:secure_url" content="https://eonapp.ch/assets/media/social/eonapp-trust-1200x630-social-v1.png?v=social-v1" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Vault — EONAPP social preview" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Vault — EONAPP" />
+  <meta name="twitter:description" content="Review secure-state and recovery readiness without exposing private keys or contents." />
+  <meta name="twitter:image" content="https://eonapp.ch/assets/media/social/eonapp-trust-1200x630-social-v1.png?v=social-v1" />
+  <meta name="twitter:image:alt" content="Vault — EONAPP social preview" />
+  <meta name="eon:social-square" content="https://eonapp.ch/assets/media/social/eonapp-trust-1080x1080-social-v1.png?v=social-v1" />
+  <title>Vault · EONAPP</title>
+  <link rel="canonical" href="https://eonapp.ch/vault" />
+  <meta name="robots" content="noindex, nofollow" />
+</head>
+<body data-page-type="vault" data-eon-app-shell="1" data-eon-app-page="vault" data-vault-v2="1" data-eon-analytics="off">
+  <a href="#eon-vault-v2" class="skip-to-content">Skip to Vault</a>
+  <main id="eon-vault-v2" data-eon-vault-surface="home">
+    <section class="eon-vault-shell" aria-labelledby="vault-title">
+      <header class="eon-vault-hero">
+        <div>
+          <p class="eon-vault-kicker">Your secure local workspace</p>
+          <h1 id="vault-title">Vault</h1>
+          <p>One calm place for recovery, backup choices, and advanced AI-key settings. Start with one encrypted Capsule. Keep its passphrase separately.</p>
+        </div>
+        <div class="eon-vault-hero-actions">
+          <span class="eon-vault-badge">Local-first</span>
+          <a class="eon-vault-primary" href="/capsule">Create Capsule</a>
+        </div>
+      </header>
+
+      <div class="eon-vault-workspace">
+        <nav class="eon-vault-nav" aria-label="Vault sections" role="tablist">
+          <button type="button" role="tab" data-eon-vault-tab="overview" aria-selected="true">Overview</button>
+          <button type="button" role="tab" data-eon-vault-tab="recovery" aria-selected="false" tabindex="-1">Recovery</button>
+          <button type="button" role="tab" data-eon-vault-tab="backup" aria-selected="false" tabindex="-1">Backup</button>
+          <button type="button" role="tab" data-eon-vault-tab="ai-keys" aria-selected="false" tabindex="-1">AI keys</button>
+          <button type="button" role="tab" data-eon-vault-tab="reveals" aria-selected="false" tabindex="-1">Vault Reveals</button>
+          <button type="button" role="tab" data-eon-vault-tab="safety" aria-selected="false" tabindex="-1">Safety</button>
+        </nav>
+
+        <div class="eon-vault-panels">
+          <section id="vault-overview" class="eon-vault-panel" data-eon-vault-panel="overview" role="tabpanel" aria-labelledby="vault-title">
+            <article id="eon-vault-chat-return" class="eon-vault-card is-wide" data-eon-vault-card="chat-return" hidden aria-labelledby="eon-vault-chat-return-title">
+              <p class="eon-vault-kicker">EONBOT return</p>
+              <h2 id="eon-vault-chat-return-title">Finish the safe step, then return to chat</h2>
+              <p id="eon-vault-chat-return-copy">A reviewed EONBOT action may return you to the same local Chat thread. Vault remains the only place for provider keys and other sensitive settings.</p>
+              <div class="eon-vault-actions"><button id="eon-vault-return-chat" class="eon-vault-secondary" type="button">Return to EONBOT</button></div>
+            </article>
+
+            <article class="eon-vault-card eon-vault-overview-card" data-eon-vault-card="overview">
+              <p class="eon-vault-kicker">At a glance</p>
+              <h2>Simple by default</h2>
+              <p id="eon-vault-overview-status" class="eon-vault-overview-status" role="status" aria-live="polite">Checking the local workspace boundary…</p>
+              <div class="eon-vault-overview-list" aria-label="Vault overview">
+                <div><strong>One Capsule</strong><span>One compressed-when-useful encrypted file contains all supported local workspace records from this browser.</span></div>
+                <div><strong>Manual restore</strong><span>You inspect a no-values plan and approve only the changes you choose.</span></div>
+                <div><strong>Drive snapshots</strong><span>Google Drive uses a separate encrypted-snapshot permission and never reuses ordinary Google Login permission.</span></div>
+              </div>
+              <div class="eon-vault-actions">
+                <a class="eon-vault-primary" href="/capsule">Create encrypted Capsule</a>
+                <button class="eon-vault-secondary" type="button" data-eon-vault-open-tab="backup">Review backup choices</button>
+              </div>
+            </article>
+
+            <article class="eon-vault-card" data-eon-vault-card="overview-reveals">
+              <p class="eon-vault-kicker">Visual collection</p>
+              <h2>Vault Reveals</h2>
+              <p>Keep visual unlock cards separate from recovery, account data, payment, ownership, and security settings.</p>
+              <div class="eon-vault-actions"><button class="eon-vault-secondary" type="button" data-eon-vault-open-tab="reveals">View Vault Reveals</button></div>
+            </article>
+
+            <article class="eon-vault-card" data-eon-vault-card="overview-profile">
+              <p class="eon-vault-kicker">Account & preferences</p>
+              <h2>Settings stay understandable</h2>
+              <p>Profile, appearance, voice, device and privacy controls live together in Preferences. Account sign-in does not create a backup.</p>
+              <div class="eon-vault-actions"><a class="eon-vault-secondary" href="/profile">Open Profile & preferences</a></div>
+            </article>
+
+            <article class="eon-vault-card is-wide" data-eon-vault-card="premium-boundary">
+              <div id="eon-vault-premium-boundary"><p class="eon-vault-muted">Loading Vault premium boundary…</p></div>
+            </article>
+          </section>
+
+          <section id="vault-recovery" class="eon-vault-panel" data-eon-vault-panel="recovery" role="tabpanel" hidden>
+            <article id="eon-vault-backup" class="eon-vault-card is-wide" data-eon-vault-card="backup">
+              <p class="eon-vault-kicker">1 · Recovery</p>
+              <h2>Protect your work</h2>
+              <div id="eon-vault-continuity" class="eon-vault-continuity" role="status" aria-live="polite">Checking the local-first continuity boundary…</div>
+              <div class="eon-vault-actions">
+                <a class="eon-vault-primary" href="/capsule">Create or restore a Capsule</a>
+                <a class="eon-vault-secondary" href="/profile#eon-profile-recovery">Open recovery rehearsal</a>
+              </div>
+            </article>
+
+            <article class="eon-vault-card" data-eon-vault-card="device">
+              <p class="eon-vault-kicker">This device</p>
+              <h2>Device security</h2>
+              <p id="eon-vault-device-status" data-eon-vault-status="device">Checking device-bound storage…</p>
+              <span id="eon-vault-sync-status" class="eon-vault-state" data-eon-vault-status="sync">Checking local profile state…</span>
+              <span class="eon-vault-muted">An installed PWA does not share browser storage with another device. A reviewed encrypted Capsule is the current transfer path.</span>
+            </article>
+
+            <article class="eon-vault-card" data-eon-vault-card="recovery-truth">
+              <p class="eon-vault-kicker">Keep it safe</p>
+              <h2>What to keep separate</h2>
+              <p>Keep the Capsule and passphrase in separate places. A Capsule intentionally excludes API/provider keys, recovery secrets, wallets, OAuth sessions, raw media, model files and unknown storage.</p>
+              <span class="eon-vault-muted">A recovery rehearsal is guidance only. It never creates a backup, restores data or certifies a device.</span>
+            </article>
+          </section>
+
+          <section id="vault-backup" class="eon-vault-panel" data-eon-vault-panel="backup" role="tabpanel" hidden>
+            <article id="eon-vault-google-drive-card" class="eon-vault-card is-wide" data-eon-vault-card="google-drive">
+              <p class="eon-vault-kicker">2 · Cloud backup</p>
+              <div id="eon-vault-google-drive" class="eon-vault-google-drive" aria-live="polite">Checking Google Drive backup boundary…</div>
+            </article>
+
+            <article id="eon-vault-manual-storage-card" class="eon-vault-card is-wide" data-eon-vault-card="manual-storage">
+              <p class="eon-vault-kicker">Manual storage today</p>
+              <div id="eon-vault-manual-storage" aria-live="polite">Loading manual encrypted-storage options…</div>
+            </article>
+          </section>
+
+          <section id="vault-ai-keys" class="eon-vault-panel" data-eon-vault-panel="ai-keys" role="tabpanel" hidden>
+            <article class="eon-vault-card" data-eon-vault-card="providers">
+              <p class="eon-vault-kicker">Advanced · AI only</p>
+              <h2>AI provider keys</h2>
+              <p id="eon-vault-provider-status" data-eon-vault-status="providers">Checking encrypted provider status…</p>
+              <div id="eon-vault-providers" class="eon-vault-chip-list" aria-live="polite"></div>
+              <span class="eon-vault-muted">These are AI-provider settings, not Google Drive backup. Provider names may be shown; secret values are never read or displayed.</span>
+            </article>
+
+            <article class="eon-vault-card" data-eon-vault-card="boundary">
+              <p class="eon-vault-kicker">Advanced · Privacy</p>
+              <h2>Safe status</h2>
+              <p id="eon-vault-legacy-status" data-eon-vault-status="boundary">Checking for known legacy provider storage names…</p>
+              <div class="eon-vault-actions">
+                <button id="eon-vault-refresh" class="eon-vault-primary" data-eon-vault-action="refresh" type="button">Refresh safe status</button>
+                <button id="eon-vault-safe-summary" class="eon-vault-secondary" data-eon-vault-action="safe-summary" type="button">Download safe summary</button>
+              </div>
+              <span class="eon-vault-muted">The safe summary includes no raw keys, passwords, recovery material, or provider tokens.</span>
+            </article>
+
+            <article id="provider-check" class="eon-vault-card is-wide" data-eon-vault-card="provider-check" aria-labelledby="eon-vault-provider-check-title">
+              <p class="eon-vault-kicker">Advanced · AI only</p>
+              <h2 id="eon-vault-provider-check-title">Verify an AI provider key</h2>
+              <p>Optional bring-your-own-AI setup. A key is entered only in Vault, never in EONBOT. Verification is user initiated and sends the key directly to the provider you choose; EONAPP does not receive it.</p>
+              <span class="eon-vault-muted">Local profile only. Raw provider keys and recovery passphrases are never rendered in Vault status, exports, logs, or receipts.</span>
+              <form id="eon-vault-provider-form" class="eon-vault-form-grid" novalidate>
+                <label class="eon-vault-field" for="eon-vault-provider-select">AI provider
+                  <select id="eon-vault-provider-select" autocomplete="off"></select>
+                </label>
+                <label class="eon-vault-field" for="eon-vault-provider-key">Provider API key
+                  <input id="eon-vault-provider-key" type="password" autocomplete="off" spellcheck="false" inputmode="text" placeholder="Enter only to verify this AI provider" />
+                </label>
+                <label class="eon-vault-field eon-vault-check"><input id="eon-vault-provider-save" type="checkbox" /> Save a passphrase-encrypted recovery copy on this browser</label>
+                <label class="eon-vault-field" for="eon-vault-provider-passphrase">Recovery passphrase
+                  <input id="eon-vault-provider-passphrase" type="password" autocomplete="new-password" spellcheck="false" minlength="12" placeholder="Required only for save, restore, or migration" />
+                  <span class="eon-vault-muted">At least 12 characters. EONAPP never stores this passphrase; keep it separately.</span>
+                </label>
+                <div class="eon-vault-actions"><button id="eon-vault-provider-verify" class="eon-vault-primary" type="submit">Verify selected AI provider</button><button id="eon-vault-provider-refresh-models" class="eon-vault-secondary" type="button">Refresh available models</button><button id="eon-vault-provider-restore" class="eon-vault-secondary" type="button">Restore encrypted key to this session</button><button id="eon-vault-provider-clear" class="eon-vault-danger" type="button">Clear this AI provider key</button></div>
+              </form>
+              <p id="eon-vault-provider-check-status" class="eon-vault-status" data-eon-vault-status="provider-check" role="status" aria-live="polite">No hosted provider has been verified in this session.</p>
+              <span class="eon-vault-muted">Keys are session-only by default. A recovery copy is created only with your passphrase, which is never stored. Refresh available models is explicit and uses only the selected provider's current session key; it never downloads a local model or changes providers. Saving does not authorise EONBOT, and Google Drive backup never exports provider keys.</span>
+            </article>
+
+            <article class="eon-vault-card is-wide" data-eon-vault-card="migration" hidden>
+              <p class="eon-vault-kicker">Safety repair</p>
+              <h2>Legacy AI-key storage migration</h2>
+              <p id="eon-vault-migration-status" data-eon-vault-status="migration">Checking whether this browser has a known legacy provider-storage source…</p>
+              <span class="eon-vault-muted">Migration requires the recovery passphrase above and explicit confirmation. It encrypts known legacy AI-provider keys, verifies every write, then removes raw key fields. Provider names and counts may be shown; secret values are never displayed.</span>
+              <div class="eon-vault-actions"><button id="eon-vault-migrate" class="eon-vault-secondary" type="button">Secure legacy AI-key storage</button></div>
+            </article>
+          </section>
+
+          <section id="vault-reveals" class="eon-vault-panel" data-eon-vault-panel="reveals" role="tabpanel" hidden aria-label="Vault Reveals visual collection">
+            <article class="eon-vault-card is-wide" data-eon-vault-card="reveals">
+              <div id="eon-vault-reveals-root"><p class="eon-vault-muted">Loading Vault Reveals…</p></div>
+            </article>
+
+            <article class="eon-vault-card is-wide" data-eon-vault-card="reveals-premium-boundary">
+              <div id="eon-vault-reveals-premium-boundary"><p class="eon-vault-muted">Loading Vault reveal unlock boundary…</p></div>
+            </article>
+          </section>
+
+          <section id="vault-safety" class="eon-vault-panel" data-eon-vault-panel="safety" role="tabpanel" hidden>
+            <article class="eon-vault-card is-wide" data-eon-vault-card="help">
+              <p class="eon-vault-kicker">Plain-language help</p>
+              <h2>Need help?</h2>
+              <p>Ask EONBOT to explain local AI, encrypted storage, or recovery boundaries. EONBOT must never ask you to paste an API key, password, seed phrase, or exchange secret.</p>
+              <ul id="eon-vault-notices" class="eon-vault-notices" data-eon-vault-status="notices"></ul>
+              <div class="eon-vault-actions">
+                <button id="eon-vault-local-ai" class="eon-vault-secondary" type="button">Review local AI setup</button>
+                <button id="eon-vault-security-chat" class="eon-vault-secondary" type="button">Explain Vault safety</button>
+              </div>
+              <p id="eon-vault-action-status" class="eon-vault-status" data-eon-vault-status="actions" role="status" aria-live="polite"></p>
+            </article>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="/assets/js/eon-app-shell.js"></script>
+  <script type="module" src="/assets/js/vault/eon-vault-page.js"></script>
+  <script type="module">import { installW632CustodyPanel } from "/assets/js/account/eon-account-vault-custody.js"; const run = () => installW632CustodyPanel(); if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", run, { once: true }); else run();</script>
+</body>
+</html>

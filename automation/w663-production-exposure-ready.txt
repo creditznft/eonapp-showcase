@@ -1,0 +1,6 @@
+owner-authorized: true
+scope: restore missing Continue and Living Core production styles
+artifacts: zero
+production: rollback-protected
+attempt: 2
+predeploy-receipt: required

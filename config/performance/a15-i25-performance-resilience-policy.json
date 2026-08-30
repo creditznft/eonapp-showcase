@@ -1,0 +1,36 @@
+{
+  "schema": "eonapp.performance-resilience-policy.a15.i25.v1",
+  "wave": "I25",
+  "coreWebVitals": {
+    "percentile": 75,
+    "lcpMsMax": 2500,
+    "inpMsMax": 200,
+    "clsMax": 0.1,
+    "minimumSamplesPerRouteProfile": 20,
+    "releaseDigestRequired": true
+  },
+  "coreEndurance": {
+    "durationMinutesMin": 120,
+    "canonicalRouteCyclesMin": 50,
+    "maxHeapGrowthBytes": 20971520,
+    "maxHeapGrowthRatio": 0.1,
+    "resourceCounters": ["listeners", "timers", "observers", "workers", "sockets", "pendingRequests"]
+  },
+  "ownerLab": {
+    "explicitUserActionRequired": true,
+    "exactCommitTreeAndReleaseRequired": true,
+    "rawUserContentAllowed": false,
+    "credentialsAllowed": false,
+    "automaticCertification": false,
+    "automaticDeployment": false
+  },
+  "sourceClaims": {
+    "coreBundleCityFree": true,
+    "deterministicBudgetEvaluation": true,
+    "deterministicDisposalEvaluation": true,
+    "builtArtifactCertified": false,
+    "authenticatedBrowserCertified": false,
+    "physicalDeviceCertified": false,
+    "productionAuthorized": false
+  }
+}

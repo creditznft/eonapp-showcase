@@ -1,0 +1,24 @@
+/* W659L — automatic private-entry preflight and progressive 3D reveal. */
+.eon-city-client-loader-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.55rem;margin:.05rem 0}
+.eon-city-client-loader-facts>div{display:grid;gap:.24rem;min-width:0;padding:.72rem .78rem;border:1px solid rgba(140,226,255,.17);border-radius:.78rem;background:linear-gradient(145deg,rgba(5,24,48,.72),rgba(17,12,48,.62))}
+.eon-city-client-loader-facts dt{margin:0;color:#91f7ee;font:800 .64rem/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase}
+.eon-city-client-loader-facts dd{margin:0;color:#e8f4ff;font-size:.78rem;line-height:1.35;overflow-wrap:anywhere}
+.eon-city-client-loader-facts [data-state="ready"]{border-color:rgba(112,239,192,.3);box-shadow:inset 0 0 0 1px rgba(112,239,192,.05)}
+.eon-city-client-loader-facts [data-state="warning"]{border-color:rgba(255,208,125,.34)}
+.eon-city-client-loader-facts [data-state="error"]{border-color:rgba(255,147,164,.38)}
+.eon-city-reduced-loading-overlay{position:absolute;inset:0;z-index:7;display:grid;background:#050814;transition:opacity .26s ease,visibility .26s ease}
+.eon-city-reduced-loading-overlay[hidden]{display:none}
+.eon-city-reduced-loading-overlay .eon-city-client-loader{position:absolute;inset:0;min-height:100%;padding:clamp(1rem,3vw,2rem)}
+.eon-city-reduced-session[data-eon-city-reveal="ready"] .eon-city-reduced-loading-overlay{opacity:0;visibility:hidden;pointer-events:none}
+@media(max-width:640px){.eon-city-client-loader-facts{grid-template-columns:1fr}.eon-city-client-loader-facts>div{padding:.62rem .68rem}}
+@media(prefers-reduced-motion:reduce){.eon-city-reduced-loading-overlay{transition:none}}
+
+/* W736B — this dynamically loaded City sheet is the final interaction layer.
+   Keep the canvas below the visible Command Hub controls. */
+.eon-city-full-session{isolation:isolate}
+.eon-city-full-session>.eon-city-reduced-world{position:absolute;inset:0;z-index:0}
+.eon-city-full-session>.eon-city-reduced-hud,.eon-city-full-session>.eon-city-reduced-objective,.eon-city-full-session>.eon-city-reduced-district-actions,.eon-city-full-session>.eon-city-reduced-touch{position:absolute}
+.eon-city-full-session>.eon-city-reduced-hud{z-index:8}
+.eon-city-full-session>.eon-city-reduced-objective{z-index:7}
+.eon-city-full-session>.eon-city-reduced-district-actions{z-index:9;pointer-events:auto}
+.eon-city-full-session>.eon-city-reduced-touch{z-index:10;pointer-events:auto}

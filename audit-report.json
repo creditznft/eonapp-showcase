@@ -1,0 +1,1731 @@
+{
+    "date":  "2026-04-28 03:23",
+    "score":  639,
+    "maxScore":  639,
+    "percent":  100,
+    "grade":  "S+",
+    "issueCount":  0,
+    "critical":  0,
+    "major":  0,
+    "minor":  0,
+    "sections":  [
+                     "§1  Core Files",
+                     "§2  Games Inventory",
+                     "§3  Game Monetization Wiring",
+                     "§4  HTML Structural Accessibility",
+                     "§5  ARIA \u0026 Screen Reader",
+                     "§6  Keyboard \u0026 Focus",
+                     "§7  Mobile / Responsive",
+                     "§8  SEO \u0026 Meta",
+                     "§9  PWA \u0026 Service Worker",
+                     "§10 P2P \u0026 Decentralisation",
+                     "§11 Security Headers",
+                     "§12 CSS Design System",
+                     "§13 Game Performance",
+                     "§14 Referral \u0026 Viral",
+                     "§15 Notifications \u0026 UX",
+                     "§16 Subscription \u0026 Wallet",
+                     "§17 E2E Test Coverage",
+                     "§18 Code Quality"
+                 ],
+    "issues":  [
+
+               ],
+    "passes":  [
+                   {
+                       "label":  "File: index.html",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "File: games.html",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "File: vault.html",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "File: chat.html",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "File: tools.html",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "File: about.html",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "File: privacy.html",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "File: blog/index.html",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "File: 404.html",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "File: offline.html",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "File: manifest.webmanifest",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "File: sw.js",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "File: robots.txt",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "File: sitemap.xml",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "File: assets/js/main.js",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "File: assets/js/utils/wallet.js",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "File: assets/js/utils/pool-points.js",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "File: assets/js/utils/lootbox.js",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "File: assets/js/utils/subscription.js",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "File: assets/js/utils/notifications.js",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "File: assets/js/utils/secure-keystore.js",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "File: assets/js/utils/token-swap.js",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "File: assets/js/utils/p2p-discovery.js",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "File: assets/js/utils/p2p-multiplayer.js",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "File: assets/js/utils/p2p-nostr.js",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "File: assets/js/utils/device-detection.js",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "File: assets/js/utils/identity.js",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "File: assets/js/utils/game-monetization.js",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "File: assets/js/utils/ipfs-gateway.js",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "File: assets/js/utils/share.js",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "File: assets/js/utils/share-card.js",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "File: assets/js/utils/xp.js",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "File: assets/js/games/game-shell.js",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "File: assets/css/base.css",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "File: assets/css/layout.css",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "File: assets/css/components.css",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "File: _headers",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "File: _redirects",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "\u003e=12 games present",
+                       "points":  5,
+                       "detail":  "Found: 14"
+                   },
+                   {
+                       "label":  "Game index.html: alchemy-lab",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Game index.html: chrono-gladiators",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Game index.html: cyber-neon",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Game index.html: cyber-rogue",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Game index.html: dungeon-crawl-zero",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Game index.html: neon-conquest",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Game index.html: neon-dungeon",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Game index.html: neon-nexus",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Game index.html: neon-runner",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Game index.html: neon-siege",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Game index.html: neural-override",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Game index.html: realm-wars-lite",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Game index.html: void-raider",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Game index.html: void-storm",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[alchemy-lab] game-shell.js",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[alchemy-lab] EonPoolPoints",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[alchemy-lab] EonWallet",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[alchemy-lab] EonLootbox",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[alchemy-lab] No legacy window.EON",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[chrono-gladiators] game-shell.js",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[chrono-gladiators] EonPoolPoints",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[chrono-gladiators] EonWallet",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[chrono-gladiators] EonLootbox",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[chrono-gladiators] No legacy window.EON",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[cyber-neon] game-shell.js",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[cyber-neon] EonPoolPoints",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[cyber-neon] EonWallet",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[cyber-neon] EonLootbox",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[cyber-neon] No legacy window.EON",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[cyber-rogue] game-shell.js",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[cyber-rogue] EonPoolPoints",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[cyber-rogue] EonWallet",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[cyber-rogue] EonLootbox",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[cyber-rogue] No legacy window.EON",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[dungeon-crawl-zero] game-shell.js",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[dungeon-crawl-zero] EonPoolPoints",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[dungeon-crawl-zero] EonWallet",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[dungeon-crawl-zero] EonLootbox",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[dungeon-crawl-zero] No legacy window.EON",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neon-conquest] game-shell.js",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neon-conquest] EonPoolPoints",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neon-conquest] EonWallet",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neon-conquest] EonLootbox",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neon-conquest] No legacy window.EON",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neon-dungeon] game-shell.js",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neon-dungeon] EonPoolPoints",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neon-dungeon] EonWallet",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neon-dungeon] EonLootbox",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neon-dungeon] No legacy window.EON",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neon-nexus] game-shell.js",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neon-nexus] EonPoolPoints",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neon-nexus] EonWallet",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neon-nexus] EonLootbox",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neon-nexus] No legacy window.EON",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neon-runner] game-shell.js",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neon-runner] EonPoolPoints",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neon-runner] EonWallet",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neon-runner] EonLootbox",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neon-runner] No legacy window.EON",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neon-siege] game-shell.js",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neon-siege] EonPoolPoints",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neon-siege] EonWallet",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neon-siege] EonLootbox",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neon-siege] No legacy window.EON",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neural-override] game-shell.js",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neural-override] EonPoolPoints",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neural-override] EonWallet",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neural-override] EonLootbox",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neural-override] No legacy window.EON",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[realm-wars-lite] game-shell.js",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[realm-wars-lite] EonPoolPoints",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[realm-wars-lite] EonWallet",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[realm-wars-lite] EonLootbox",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[realm-wars-lite] No legacy window.EON",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[void-raider] game-shell.js",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[void-raider] EonPoolPoints",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[void-raider] EonWallet",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[void-raider] EonLootbox",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[void-raider] No legacy window.EON",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[void-storm] game-shell.js",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[void-storm] EonPoolPoints",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[void-storm] EonWallet",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[void-storm] EonLootbox",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[void-storm] No legacy window.EON",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "All HTML: lang=",
+                       "points":  5,
+                       "detail":  "Missing: "
+                   },
+                   {
+                       "label":  "All HTML: viewport",
+                       "points":  3,
+                       "detail":  "Missing: 0 files"
+                   },
+                   {
+                       "label":  "All HTML: skip-to-content",
+                       "points":  3,
+                       "detail":  "Missing in 0 files"
+                   },
+                   {
+                       "label":  "All HTML: \u003cmain\u003e landmark",
+                       "points":  3,
+                       "detail":  "Missing: 0 files"
+                   },
+                   {
+                       "label":  "No \u003cmain\u003e closed with \u003c/section\u003e",
+                       "points":  4,
+                       "detail":  "Broken in: "
+                   },
+                   {
+                       "label":  "Canvas elements have role (img|application)",
+                       "points":  4,
+                       "detail":  "0 files missing"
+                   },
+                   {
+                       "label":  "Nav elements have aria-label",
+                       "points":  3,
+                       "detail":  "0 files"
+                   },
+                   {
+                       "label":  "Theme toggle has aria-pressed",
+                       "points":  2,
+                       "detail":  "0 pages"
+                   },
+                   {
+                       "label":  "Nav has aria-current page wiring",
+                       "points":  3,
+                       "detail":  "Missing: index.html, games.html, vault.html, chat.html, tools.html"
+                   },
+                   {
+                       "label":  "Blurred stats have aria-hidden",
+                       "points":  2,
+                       "detail":  "0 files"
+                   },
+                   {
+                       "label":  "CSS :focus-visible rule",
+                       "points":  4,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "No outline:none on inputs without fallback",
+                       "points":  4,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Chat input focus indicator",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Skip-to-content in base.css",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Touch targets \u003e=44px declared",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Cards have :focus-visible state",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "prefers-reduced-motion respected",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "768px mobile breakpoint",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "1024px tablet breakpoint",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "pointer:coarse touch rules",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "prefers-color-scheme media query",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "grid minmax uses safe min",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "No fixed-width canvas \u003e800px in CSS",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[alchemy-lab] DPR scaling",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[chrono-gladiators] DPR scaling",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[cyber-neon] DPR scaling",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[cyber-rogue] canvas max-width:100%",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[cyber-rogue] DPR scaling",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[dungeon-crawl-zero] canvas max-width:100%",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[dungeon-crawl-zero] DPR scaling",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neon-conquest] DPR scaling",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neon-dungeon] DPR scaling",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neon-nexus] DPR scaling",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neon-runner] canvas max-width:100%",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neon-runner] DPR scaling",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neon-siege] DPR scaling",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neural-override] DPR scaling",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[realm-wars-lite] canvas max-width:100%",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[realm-wars-lite] DPR scaling",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[void-raider] DPR scaling",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[void-storm] canvas max-width:100%",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[void-storm] DPR scaling",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[cyber-neon] DPR capped Math.min",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[cyber-neon] webglcontextlost handler",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[cyber-neon] resize handler",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[cyber-neon] No-WebGL fallback",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neon-nexus] DPR capped Math.min",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neon-nexus] webglcontextlost handler",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neon-nexus] resize handler",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neon-nexus] No-WebGL fallback",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[cyber-neon] Touch controls present",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neon-siege] Touch controls present",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[void-raider] Touch controls present",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[void-storm] Touch controls present",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neon-dungeon] Touch controls present",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[chrono-gladiators] Touch controls present",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neon-nexus] Touch controls present",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neon-conquest] Touch controls present",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[realm-wars-lite] Touch controls present",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[index.html] og:title",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[index.html] og:description",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[index.html] og:image",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[index.html] twitter:card",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[index.html] canonical",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[index.html] JSON-LD",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[games.html] og:title",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[games.html] og:description",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[games.html] og:image",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[games.html] twitter:card",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[games.html] canonical",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[games.html] JSON-LD",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[vault.html] og:title",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[vault.html] og:description",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[vault.html] og:image",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[vault.html] twitter:card",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[vault.html] canonical",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[vault.html] JSON-LD",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[chat.html] og:title",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[chat.html] og:description",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[chat.html] og:image",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[chat.html] twitter:card",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[chat.html] canonical",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[chat.html] JSON-LD",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[tools.html] og:title",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[tools.html] og:description",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[tools.html] og:image",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[tools.html] twitter:card",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[tools.html] canonical",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[tools.html] JSON-LD",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[about.html] og:title",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[about.html] og:description",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[about.html] og:image",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[about.html] twitter:card",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[about.html] canonical",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[about.html] JSON-LD",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[blog/index.html] og:title",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[blog/index.html] og:description",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[blog/index.html] og:image",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[blog/index.html] twitter:card",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[blog/index.html] canonical",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[blog/index.html] JSON-LD",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "sitemap.xml exists",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "robots.txt exists",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "robots.txt Sitemap:",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "All game pages JSON-LD",
+                       "points":  3,
+                       "detail":  "Missing: "
+                   },
+                   {
+                       "label":  "Sitemap includes /games/",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Sitemap includes /blog/",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "sw.js exists",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "sw install handler",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "sw activate handler",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "sw fetch handler",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "sw precaches shell pages",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "sw offline fallback",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "sw stale-while-revalidate",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "sw skips /api/ caching",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "sw version string",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "manifest.webmanifest exists",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "manifest icons \u003e=2",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "manifest start_url",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "manifest standalone",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "manifest theme_color",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "manifest name+short_name",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "P2P uses GunDB",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "P2P localStorage fallback on relay fail",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "\u003e=2 GunDB relay peers",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "\u003e=4 Nostr relays",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Nostr key not plaintext in localStorage",
+                       "points":  4,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Token swap uses signed auth (not btoa checksum only)",
+                       "points":  4,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "SecureKeyStore AES-256-GCM",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "SecureKeyStore PBKDF2 \u003e=100k",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "SecureKeyStore non-extractable keys",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "IPFS 4+ gateway fallbacks",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "IPFS circuit breaker",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Identity uses crypto.getRandomValues",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "No Math.random() in identity.js",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Backend client feature-gated",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Wallet client-side only (no POST)",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Pool points has daily cap",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "No hardcoded API keys in utils",
+                       "points":  5,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "CSP header present",
+                       "points":  4,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "CSP frame-ancestors none",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "CSP no unsafe-eval",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "X-Frame-Options DENY",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "X-Content-Type-Options nosniff",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "HSTS 2-year min",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Referrer-Policy",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Permissions-Policy",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "geolocation blocked",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "No eval() in utils",
+                       "points":  4,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "innerHTML escaping present",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "SubtleCrypto (not CryptoJS)",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "PBKDF2 \u003e=600k iterations",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Swap double-spend prevention",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "CSS custom props --clr-*",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "CSS spacing --space-*",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "CSS light-mode [data-theme]",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "CSS font vars --font-sans",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "clamp() fluid typography",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Components use var(--clr-*)",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "No hardcoded hex in layout.css",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "prefers-color-scheme present",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Muted text not #94a3b8 (contrast)",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Border/text/surface vars semantic",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "device-detection detects WebGL",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "device-detection LOW/MEDIUM/HIGH",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "device-detection touch capability",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "device-detection RAM detection",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "games.html device tier badge",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[cyber-neon] Gates heavy features by device tier",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "[neon-nexus] Gates heavy features by device tier",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Canvas shadowBlur gated on quality",
+                       "points":  2,
+                       "detail":  "Unguarded: "
+                   },
+                   {
+                       "label":  "Particle systems use object pooling",
+                       "points":  2,
+                       "detail":  "GC risk: "
+                   },
+                   {
+                       "label":  "No alert() dialogs in games",
+                       "points":  2,
+                       "detail":  "alert() in: "
+                   },
+                   {
+                       "label":  "Referral ref= URL param",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Invite trail/chain (viral multi-hop)",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Referral dedup (no double credit)",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Invite links use single-use nonce",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Referral credit requires proof action (not just visit)",
+                       "points":  4,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Referral proof broadcast via Nostr",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "referral-par.js module exists",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Daily cap on referral awards",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Non-trivial reward (\u003e=100 pts)",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Vault page has invite/QR section",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "notifications.js exists",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "showToast() exported",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "pushNotification() exported",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "initNotifications() exported",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Notifications localStorage persistence",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "notifyLootboxDrop() present",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "main.js calls initNotifications()",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "subscription.js uses window.EonWallet",
+                       "points":  4,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Auto-renew uses .spend() not deductInternal",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "wallet.js has getBalance()",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "wallet.js has spend()",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "wallet.js has awardGameCoins()",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Lootbox has rarity tiers",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "main.js calls initSubscription()",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "\u003e=5 E2E spec files",
+                       "points":  3,
+                       "detail":  "Found: 17"
+                   },
+                   {
+                       "label":  "E2E tests: navigation",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "E2E tests: wallet operations",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "E2E tests: game loading",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "E2E tests: mobile viewport",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "E2E tests: accessibility (axe)",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "E2E tests: pool points",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "E2E tests: subscription flow",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "E2E tests: offline/SW",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "E2E tests: share/referral",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "playwright multi-browser",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "No console.log in utils (or gated by DEBUG)",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "Game reward calls wrapped in try/catch",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "No synchronous XHR",
+                       "points":  3,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "No deprecated document.write",
+                       "points":  2,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "ESLint config exists",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "TypeScript config exists",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "package.json has test script",
+                       "points":  1,
+                       "detail":  ""
+                   },
+                   {
+                       "label":  "package.json has build script",
+                       "points":  1,
+                       "detail":  ""
+                   }
+               ]
+}

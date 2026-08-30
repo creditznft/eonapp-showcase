@@ -1,0 +1,361 @@
+EONAPP.ch — model build workflow
+================================
+
+1. Purpose
+----------
+This document tells strong AI models exactly what to build for EONAPP.ch.
+
+The goal is not “more pages.”
+The goal is:
+- better tools
+- better games
+- better scripts
+- better monetization fit
+- better recirculation
+
+2. Model Tier Decision Matrix
+---------------------------
+Remote (Gemini 2.5 Flash / Pro)
+- Flagship concept design & Orchestration
+- Complex cross-module systems architecture
+- Monetization & Page strategy
+- High-level debugging (logic flows, race conditions)
+
+Local (Qwen2.5-Coder:7b / Deepseek-Coder:6.7b)
+- Unit logic implementation (pure functions)
+- Repetitive boilerplate production
+- Data definitions (e.g., game items, enemy waves)
+- Refactoring & Support content
+- Bulk keyword processing
+
+3. What to build next
+---------------------
+Highest-value tools
+1. Persona Mirror AI
+2. Red Flag Decoder
+3. Love Timeline Oracle
+4. FutureWorth Forecast
+5. Brain Age Blitz
+6. Subscription Leak Checker
+7. Emergency Fund Planner
+8. Creator Hook Optimizer
+9. Thumbnail Score Lab
+10. DCA Scenario Explorer
+
+Highest-value games
+1. Reaction Sprint
+2. Memory Chain
+3. One-Button Survival
+4. Daily Seed Puzzle
+5. Async Duel wrapper for the best game
+
+Highest-value scripts/systems
+1. Challenge engine v2
+2. Share card generator v2
+3. AdManager v2
+4. Vault migration/versioning
+5. Sitemap updater
+6. Broken-link auditor
+7. Internal-link recommender
+8. Campaign page generator
+
+4. Universal design rules for every generated asset
+---------------------------------------------------
+- static only
+- no backend
+- mobile-first
+- works at 360px width
+- fast on mid-tier Android
+- visible focus states
+- no forced ads before value
+- one clear primary CTA
+- clean fallback states
+- internal recirculation block
+- optional monetization, not hostage-taking
+
+5. Prompt template — flagship tool
+----------------------------------
+Build one flagship static tool for EONAPP.ch.
+
+Requirements:
+- no backend
+- instant useful result
+- challenge link support
+- share card export
+- local streak/profile integration
+- optional rewarded bonus panel after the free result
+- affiliate/sponsor slot matched to the tool’s intent
+- SEO-ready metadata and structured data
+- polished mobile + desktop layout
+
+Deliver:
+- full production HTML/CSS/JS
+- any shared JS module needed
+- tool definition object for the ToolEngine
+- QA checklist
+- 5 viral hooks
+- 5 article ideas that support this tool
+
+6. Prompt template — flagship game
+----------------------------------
+Build one high-quality browser game for EONAPP.ch.
+
+Requirements:
+- static only
+- 60 to 90 second session loop
+- deterministic scoring
+- touch + keyboard support
+- fail/win reward panel
+- challenge URL encoder
+- local save state
+- ad-safe layout
+- accessibility options
+
+Deliver:
+- production HTML/CSS/JS
+- balancing constants
+- replay hooks
+- monetization-safe reward flow
+- 5 short-form video hooks
+
+7. Prompt template — script/system module
+-----------------------------------------
+Build one standalone static-site system module for EONAPP.ch.
+
+Possible targets:
+- ad manager
+- challenge engine
+- share-card generator
+- vault migration helper
+- sitemap updater
+- internal-link recommender
+
+Requirements:
+- deterministic
+- framework-free
+- progressive enhancement
+- clean failure modes
+- documented integration snippet
+
+Deliver:
+- JS module
+- setup notes
+- API design
+- local test harness
+
+8. Prompt template — campaign/share page
+----------------------------------------
+Build one static campaign page for EONAPP.ch.
+
+Requirements:
+- hook hero
+- proof/result preview
+- challenge CTA
+- FAQ
+- trust block
+- one sponsor slot below value
+- mobile-first
+- no fake urgency
+
+Deliver:
+- HTML/CSS/JS
+- copy variants for cold, social, and return traffic
+
+9. Prompt template — blog cluster
+---------------------------------
+Create a static SEO cluster for one EONAPP.ch tool.
+
+Requirements:
+- 1 pillar page
+- 6 support articles
+- all pages link back to tool
+- one clear keyword lane per page
+- one main CTA back to the tool, game, or vault action
+- one proof/example block or decoded result
+- one FAQ block
+- mobile-first formatting, not essay walls
+- FAQ candidates
+- comparison blocks
+- internal anchor map
+
+Deliver:
+- titles
+- slugs
+- outlines
+- meta titles/descriptions
+- CTA blocks
+
+Best blog categories:
+- tool explainers and result decoders
+- comparison pages
+- finance/use-case guides
+- campaign / seasonal bridge pages
+- game-retention posts
+- operator docs for growth systems
+
+Quality bar for every article:
+- specific, non-generic title and intro
+- concrete examples or screenshots
+- visible CTA before the end of the page
+- useful subheads on mobile
+- no fake AI tone and no filler paragraphs
+
+10. Release checklist for every asset
+-------------------------------------
+- works without backend
+- works on mobile and desktop
+- core action visible above fold
+- no broken internal links
+- no fake locked result
+- no monetization before useful output
+- challenge/share flow works
+- vault/profile flow makes sense if used
+- copy is specific, not generic
+- performance is still acceptable after scripts load
+
+11. Build order for next serious wave
+------------------------------------
+Wave 1
+- Persona Mirror AI
+- Red Flag Decoder
+- FutureWorth Forecast
+- Challenge engine v2
+- Share card generator v2
+
+Wave 2
+- Brain Age Blitz
+- Reaction Sprint
+- Creator Hook Optimizer
+- Subscription Leak Checker
+- Campaign page template
+
+Wave 3
+- Love Timeline Oracle
+- Thumbnail Score Lab
+- DCA Scenario Explorer
+- Memory Chain
+- Daily Seed Puzzle
+
+Wave 4 (P2E + progression foundation)
+- Void Raider (Tier 3 Three.js flagship)
+- XP system (levels, progression, level-up events)
+- EON wallet (local coin ledger + tx history)
+- Lootbox system (rarity tiers + collectible inventory)
+- Vault dashboards for rewards, wallet, and collection controls
+
+Wave 4.5 (multiplayer Tier 1 — async challenge duels) ← ADD NOW, before Wave 5
+- Module: assets/js/utils/p2p-multiplayer.js
+- How it works:
+  - Player A completes a game → creates a challenge with a deterministic seed
+  - Challenge posted to GunDB: eonapp:challenges:v1:{gameId}
+  - Challenge URL encodes: gameId + seed + challengerScore + challengerUID
+  - Player B opens link, plays same seed, scores compared locally
+  - Fair: same seed = same obstacles on any device
+  - Winner earns EONL locally + ephemeral GunDB reputation mark
+- Wire into Reaction Sprint: challenge creation from win/fail screen
+- Wire into Word Blitz: same pattern
+- Add "Live Challenges" browse section to games.html
+- GunDB already loaded (from p2p-discovery.js) — no new CDN dependency
+- Source reference: P2PMultiplayerService_V5.ts room/challenge logic (eonpackage)
+  - Replace P2PStorageSystem signaling with GunDB
+  - Remove wallet signature requirements (use UID instead)
+  - Remove kubo-rpc-client (not browser-compatible)
+
+Wave 5 (EONLITE backend spine)
+- Cloudflare Worker for secure reward, referral, and billing APIs
+- D1 schema for entitlements, claims, epoch snapshots, abuse flags
+- KV for feature flags, limits, hot config, and campaign state
+- R2 for loot metadata, replay bundles, exports, and collectible assets
+- Signed referral links and anti-abuse logging
+
+Wave 6 (smart-contract LITE stack)
+- EONLiteRegistry
+- dynamic-supply EONL token
+- EONLiteEmissionController
+- EONLiteProofHub
+- EONLiteRewardsDistributor
+- EONLiteTreasuryVault
+- EONLiteEpochSettlement with public epoch trigger and bounded caller reward
+- EONLiteReferralLedger for anchored referral evidence + epoch referral accounting
+- EONLiteSecurityCouncil for threshold execution, admin rotation, and quantum policy rollback
+- EONLiteQuantumRegistry for wallet quantum commitments and user protection policy
+- EONLiteLoot
+- testnet claim flows before any mainnet launch
+
+Wave 7 (reward economy productization)
+- Vault claim center
+- epoch snapshots and merkle-claim publishing
+- lootbox export queue
+- premium battle pass / seasonal ladder logic
+- public treasury and emissions dashboard
+
+Wave 8 (AI + browser + creator LITE)
+- EONBOT AI hybrid chat shipped with guide / hybrid / AI-only modes
+- AI model repository LITE
+- BYO API keys + local runtime discovery
+- device-aware load governor with safe / balanced / performance budgets
+- guide fallback path when provider setup or inference fails
+- browser workspace LITE with saved sessions and action drafts
+- creator growth hub LITE
+- live-stream planning / replay / embed workflows
+
+Wave 9 (growth + game expansion)
+- second flagship Tier 3 game
+- daily challenge ladders and same-seed competitions
+- async multiplayer challenge links / ghost runs [NOW MOVED TO WAVE 4.5 — already built]
+- WebRTC 1v1 real-time mode (p2p-room.js — GunDB signaling, Google STUN)
+  - Best games: Reaction Sprint live countdown, Word Blitz head-to-head
+  - Module must handle: room creation, ICE candidate exchange via GunDB, WebRTC DataChannel
+  - Source reference: P2PMultiplayerService_V5.ts (eonpackage) — replace P2PStorageSystem with GunDB
+  - DO NOT use IPFS PubSub (requires kubo daemon, not browser-compatible)
+- tournament lite: GunDB open room browser + ephemeral leaderboard (no wallet multi-sig)
+- viral campaign engine
+- subscription ladder rollout ($1 / $5 / $15 / $50)
+
+12. Prompt template — multiplayer module
+-----------------------------------------
+Build one P2P multiplayer module for EONAPP.ch.
+
+Context:
+- GunDB is already CDN-loaded via p2p-discovery.js — reuse it
+- No npm, no Node.js, no backend required for GunDB
+- Do NOT use IPFS PubSub (requires kubo daemon)
+- Use Google STUN for WebRTC NAT traversal (free, reliable)
+- Trust anchor: deterministic game seeds (both players play same seed independently)
+
+Requirements:
+- GunDB namespace: eonapp:challenges:v1:{gameId}
+- Challenge payload: { gameId, challengerUid, seed, challengerScore, createdAt, expiresAt }
+- Challenge URL: encode challenge payload as URL-safe base64 querystring
+- Browse open challenges: filter by gameId, sort by recency
+- Accept challenge: play same seed, compare scores, determine winner locally
+- Earn EONL locally on challenge win
+- Rate limit: max 5 open challenges per UID
+- TTL: challenges expire after 48 hours
+
+Deliver:
+- assets/js/utils/p2p-multiplayer.js (ESM, no npm, GunDB via window.GUN)
+- Integration snippet for game win/fail panels
+- Integration snippet for games.html "Live Challenges" section
+- QA checklist
+ 
+12. Final rule
+--------------
+If a model creates something that is:
+- generic
+- bloated
+- backend-dependent
+- hard to monetize
+- hard to share
+- ugly on mobile
+
+reject it and rebuild.
+
+EONAPP.ch should feel:
+- fast
+- premium
+- weirdly useful
+- easy to share
+- safe enough to trust
+- monetized without feeling cheap
+

@@ -1,0 +1,185 @@
+# Final certification trigger for the cleaned Stage-4 repair tree.
+name: A15 Stage-4 Production Bundle Proof
+
+on:
+  push:
+    branches:
+      - codex/eoncity-stage4-repair
+
+permissions:
+  actions: write
+  contents: read
+  statuses: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+
+jobs:
+  certify-stage4-repair:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    concurrency:
+      group: eonapp-stage4-production-bundle-proof
+      cancel-in-progress: true
+    steps:
+      - name: Check out exact Stage-4 repair authority
+        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955
+        with:
+          fetch-depth: 0
+
+      - name: Use Node 22
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install exact dependencies
+        run: npm ci --include=dev --no-audit --no-fund --prefer-offline
+
+      - name: Run focused source and authenticated-entry gates
+        run: |
+          npm run qa:a15-c10-frontier-region-governance
+          node --test tests/unit/w649-eoncity-authenticated-entry.test.mjs tests/unit/w554c-eon-city-client-load.test.mjs tests/unit/w659f-eoncity-functional-integration.test.mjs
+          npm run lint
+
+      - name: Build the exact production distribution
+        env:
+          EONAPP_SOURCE_REVISION: ${{ github.sha }}
+        run: npm run build
+
+      - name: Install Chromium for the isolated production-bundle proof
+        run: npx playwright install --with-deps chromium
+
+      - name: Serve the built distribution
+        run: |
+          npm exec vite preview -- --host 127.0.0.1 --port 4173 > /tmp/eon-stage4-preview.log 2>&1 &
+          echo $! > /tmp/eon-stage4-preview.pid
+          for attempt in $(seq 1 60); do
+            if curl --fail --silent http://127.0.0.1:4173/eoncity >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/eon-stage4-preview.log
+          exit 1
+
+      - name: Require the real Command Hub from the production bundle
+        env:
+          EON_STAGE4_BASE_URL: http://127.0.0.1:4173
+        run: node scripts/a15-stage4-production-bundle-proof.mjs
+
+      - name: Print local server diagnostics on failure
+        if: failure()
+        run: cat /tmp/eon-stage4-preview.log || true
+
+      - name: Publish connector-readable Stage-4 proof status
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          STATE=success
+          DESCRIPTION='Production bundle reached PLAYABLE_3D_CORE'
+          STATE="$STATE" DESCRIPTION="$DESCRIPTION" TARGET_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+            node -e "const fs=require('fs'); fs.writeFileSync('/tmp/status.json', JSON.stringify({state:process.env.STATE,context:'eonapp/a15-stage4-production-bundle-proof',description:process.env.DESCRIPTION,target_url:process.env.TARGET_URL}))"
+          curl --fail --silent --show-error \
+            -X POST \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H 'Accept: application/vnd.github+json' \
+            -H 'X-GitHub-Api-Version: 2022-11-28' \
+            "${{ github.api_url }}/repos/${{ github.repository }}/statuses/${{ github.sha }}" \
+            --data-binary @/tmp/status.json
+
+      - name: Resolve all exact Stage-4 production authorities
+        id: authority
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          RELEASE_STATE=
+          RELEASE_TARGET=
+          PREDEPLOY_STATE=
+          PREVIEW_STATE=
+          for attempt in $(seq 1 120); do
+            gh api "repos/$REPO/commits/$GITHUB_SHA/status" > /tmp/stage4-status.json
+            RELEASE_STATE="$(jq -r '[.statuses[] | select(.context == "eonapp/a15-stage4-release-safety")][0].state // empty' /tmp/stage4-status.json)"
+            RELEASE_TARGET="$(jq -r '[.statuses[] | select(.context == "eonapp/a15-stage4-release-safety")][0].target_url // empty' /tmp/stage4-status.json)"
+            PREDEPLOY_STATE="$(jq -r '[.statuses[] | select(.context == "eonapp/predeploy-result/pass")][0].state // empty' /tmp/stage4-status.json)"
+            PREVIEW_STATE="$(jq -r '[.statuses[] | select(.context == "eonapp/a15-stage4-immutable-preview")][0].state // empty' /tmp/stage4-status.json)"
+            if [ "$RELEASE_STATE" = "success" ] && [ "$PREDEPLOY_STATE" = "success" ] && [ "$PREVIEW_STATE" = "success" ]; then
+              break
+            fi
+            if [ "$RELEASE_STATE" = "failure" ] || [ "$PREDEPLOY_STATE" = "failure" ] || [ "$PREVIEW_STATE" = "failure" ]; then
+              echo "Stage-4 authority failed: release=$RELEASE_STATE predeploy=$PREDEPLOY_STATE preview=$PREVIEW_STATE" >&2
+              exit 1
+            fi
+            sleep 15
+          done
+          test "$RELEASE_STATE" = "success"
+          test "$PREDEPLOY_STATE" = "success"
+          test "$PREVIEW_STATE" = "success"
+
+          RUN_ID="$(printf '%s' "$RELEASE_TARGET" | sed -nE 's#^.*/actions/runs/([0-9]+)(/.*)?$#\1#p')"
+          printf '%s' "$RUN_ID" | grep -Eq '^[0-9]{1,20}$'
+          RUN_STATUS=
+          RUN_CONCLUSION=
+          for attempt in $(seq 1 60); do
+            gh api "repos/$REPO/actions/runs/$RUN_ID" > /tmp/stage4-release-run.json
+            test "$(jq -r .head_sha /tmp/stage4-release-run.json)" = "$GITHUB_SHA"
+            test "$(jq -r .name /tmp/stage4-release-run.json)" = "A15 Stage-4 Release Safety"
+            RUN_STATUS="$(jq -r .status /tmp/stage4-release-run.json)"
+            RUN_CONCLUSION="$(jq -r '.conclusion // empty' /tmp/stage4-release-run.json)"
+            if [ "$RUN_STATUS" = "completed" ]; then
+              if [ "$RUN_CONCLUSION" = "success" ]; then
+                break
+              fi
+              echo "Release-safety run completed without success: $RUN_CONCLUSION" >&2
+              exit 1
+            fi
+            sleep 10
+          done
+          test "$RUN_STATUS" = "completed"
+          test "$RUN_CONCLUSION" = "success"
+
+          curl --fail --silent --show-error \
+            https://stage4-pr49-auth-core.eonapp-ch.pages.dev/release/candidate-provenance.json \
+            -o /tmp/stage4-certified-preview.json
+          DIGEST="$(jq -r .candidateDigest /tmp/stage4-certified-preview.json)"
+          COMMIT="$(jq -r .commitSha /tmp/stage4-certified-preview.json)"
+          printf '%s' "$DIGEST" | grep -Eq '^[a-f0-9]{64}$'
+          test "$COMMIT" = "$GITHUB_SHA"
+          echo "run_id=$RUN_ID" >> "$GITHUB_OUTPUT"
+          echo "digest=$DIGEST" >> "$GITHUB_OUTPUT"
+
+      - name: Dispatch protected storage-free production promotion
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          CERTIFICATION_RUN_ID: ${{ steps.authority.outputs.run_id }}
+          CERTIFIED_PREVIEW_DIGEST: ${{ steps.authority.outputs.digest }}
+        run: |
+          gh api \
+            "repos/$REPO/actions/workflows/deploy.yml/runs?head_sha=$GITHUB_SHA&event=workflow_dispatch&per_page=20" \
+            > /tmp/existing-production-runs.json
+          EXISTING_ID="$(jq -r --arg sha "$GITHUB_SHA" '
+            [.workflow_runs[] | select(.head_sha == $sha)]
+            | sort_by(.created_at)
+            | last
+            | .id // empty
+          ' /tmp/existing-production-runs.json)"
+          if [ -n "$EXISTING_ID" ]; then
+            echo "Production promotion already exists for $GITHUB_SHA: run $EXISTING_ID"
+            exit 0
+          fi
+
+          jq -n \
+            --arg ref "$GITHUB_REF_NAME" \
+            --arg run "$CERTIFICATION_RUN_ID" \
+            --arg digest "$CERTIFIED_PREVIEW_DIGEST" \
+            '{ref:$ref,inputs:{candidate_run_id:$run,authorization_run_id:$run,candidate_digest:$digest}}' \
+            > /tmp/production-dispatch.json
+          curl --fail --silent --show-error \
+            -X POST \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H 'Accept: application/vnd.github+json' \
+            -H 'X-GitHub-Api-Version: 2022-11-28' \
+            "${{ github.api_url }}/repos/${{ github.repository }}/actions/workflows/deploy.yml/dispatches" \
+            --data-binary @/tmp/production-dispatch.json
+          echo "Protected production promotion dispatched for $GITHUB_SHA."

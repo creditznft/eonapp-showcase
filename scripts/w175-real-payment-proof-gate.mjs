@@ -1,0 +1,10 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const proof = fs.readFileSync('assets/js/utils/real-payment-proof-plan.js', 'utf8');
+assert.match(proof, /nowpayments-low-value/);
+assert.match(proof, /evm-low-value/);
+assert.match(proof, /maxTestValueUsd/);
+assert.match(proof, /receiptMustPersistInVault:\s*true/);
+assert.match(proof, /supportRefundPathRequired:\s*true/);
+assert.match(proof, /neverExposeSecrets:\s*true/);
+console.log('W175 real payment proof gate passed');

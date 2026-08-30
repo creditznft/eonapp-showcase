@@ -1,0 +1,81 @@
+{
+  "schema": "eonapp.validation-receipt.w624g.2026-07-11.v1",
+  "wave": "W624G",
+  "status": "source-complete-browser-device-genuine-outcome-proof-pending",
+  "releaseState": "limited-preview-no-go-public-launch",
+  "canonicalRoute": "/eoncity",
+  "sourceFingerprint": {
+    "algorithm": "sha256",
+    "digest": "1d38fad4b05f12e067f28c658933bd0863ca7dc0cb680ea8ab40341be80a6c1c",
+    "fileCount": 3487
+  },
+  "productiveRpg": {
+    "missionFamilies": 6,
+    "states": 9,
+    "sourceGate": "31/31",
+    "focusedTests": "6/6",
+    "reviewFirst": true,
+    "boundedVerifiedReceiptsOnly": true,
+    "privateWorkStored": false,
+    "automaticNavigation": false,
+    "automaticExecution": false,
+    "financialOrEonkeyRewards": false
+  },
+  "maintainedSuite": {
+    "testFiles": 226,
+    "assertions": 832,
+    "currentPassed": 785,
+    "historicalSkipped": 47,
+    "failed": 0,
+    "serialChunks": 9,
+    "sourceFingerprintBoundResume": true
+  },
+  "validation": {
+    "currentAlignment": "17/17",
+    "archiveIntegrity": "10/10",
+    "eslint": {
+      "errors": 0,
+      "warnings": 0
+    },
+    "productionReachability": {
+      "reachableFiles": 353,
+      "importEdges": 617,
+      "quarantinedReachable": 0
+    },
+    "predeploySecretScan": {
+      "textFiles": 3552,
+      "potentialSecrets": 0
+    },
+    "finalLockFreeSecretScan": {
+      "textFiles": 3551,
+      "potentialSecrets": 0
+    },
+    "build": "passed",
+    "buildSmoke": "passed",
+    "postBuildCertification": "24/24",
+    "codexPredeploy": {
+      "status": "21/21",
+      "resumedStepCount": 6,
+      "receipt": "reports/w624d-codex-predeploy/receipt.json"
+    }
+  },
+  "distribution": {
+    "fileCount": 463,
+    "minifiedFiles": 293,
+    "savedPercent": 40.94,
+    "sha256": "185e143f16f84bdf50680d080864ec16bbd2e9fb130fbe9cd8410195547d3442"
+  },
+  "browserProof": {
+    "status": "BLOCKED",
+    "receipt": "reports/w624g-productive-rpg-loop/browser-proof/W624G_BROWSER_PROOF.json",
+    "screenshots": []
+  },
+  "pendingEvidence": [
+    "production-authenticated City mission loop",
+    "physical-device keyboard/touch/controller layout",
+    "genuine project/local-AI/BYOK/creator/automation/backup outcome lifecycle",
+    "owner visual approval",
+    "W624C runtime score threshold"
+  ],
+  "nextWave": "W624H"
+}

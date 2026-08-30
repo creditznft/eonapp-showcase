@@ -1,0 +1,83 @@
+{
+  "schema": "eonapp.w626h.validation-receipt.2026-07-11.v1",
+  "wave": "W626H-source-batch",
+  "generatedAt": "2026-07-11",
+  "status": "source-complete-real-provider-and-signed-companion-evidence-pending",
+  "releaseState": "limited-preview-no-go-public-launch",
+  "sourceCommit": "5a762c96d01fe5b96b0ec2716b3f3328748c27bb",
+  "sourceFingerprint": {
+    "algorithm": "sha256",
+    "digest": "1055f85b607bfc9b4bcefed5825ae189533959609a0ce7624fa497471c8aec0a",
+    "fileCount": 3607
+  },
+  "permanentCommand": [
+    "npm ci",
+    "npm run verify:codex-predeploy"
+  ],
+  "predeploy": {
+    "ok": true,
+    "stagesPassed": 42,
+    "stageCount": 42,
+    "resumedStepCount": 37
+  },
+  "maintainedSuite": {
+    "testFiles": 247,
+    "chunks": 9,
+    "totals": {
+      "tests": 924,
+      "passed": 877,
+      "failed": 0,
+      "skipped": 47,
+      "cancelled": 0,
+      "todo": 0
+    },
+    "archivedExactAssertions": 47,
+    "historicalArchiveCertifying": false
+  },
+  "focusedGates": {
+    "W626A": "8/8 + 3/3 unit cases",
+    "W626B": "8/8 + 2/2 unit cases",
+    "W626C": "8/8 + 2/2 unit cases",
+    "W626D": "8/8 + 1/1 unit case",
+    "W626E": "8/8 + 1/1 unit case",
+    "W626F": "8/8 + 1/1 unit case",
+    "W626G": "8/8 + 2/2 unit cases",
+    "W626H": "9/9 + 3/3 unit cases",
+    "currentContractAlignment": "17/17",
+    "historicalArchive": "10/10",
+    "W623FPostBuild": "24/24 + 6/6 unit cases"
+  },
+  "security": {
+    "secretScanTextFiles": 3698,
+    "potentialSecrets": 0,
+    "lintWarnings": 0,
+    "lintErrors": 0
+  },
+  "reachability": {
+    "htmlFiles": 33,
+    "browserScriptEntries": 129,
+    "cloudflareFunctionEntries": 20,
+    "totalEntries": 50,
+    "reachableFiles": 373,
+    "importEdges": 652,
+    "quarantinedReachable": 0
+  },
+  "build": {
+    "fileCount": 465,
+    "bytes": 11824507,
+    "distributionSha256": "5f9a8e90101255c3e89d7469dce50478e4465d4c3cef89fecda2ec2ad510d0f2",
+    "sourceRevision": "5a762c96d01fe5b96b0ec2716b3f3328748c27bb"
+  },
+  "truth": {
+    "cloudflareCreatorGenerationProxy": false,
+    "providerModelsEnabledByDefault": 0,
+    "creatorCompanionSigned": false,
+    "realFalImageProof": "pending",
+    "realReplicateImageProof": "pending",
+    "realFalVideoProof": "pending",
+    "realReplicateVideoProof": "pending",
+    "supportedMobileProof": "pending",
+    "publicAvailabilityClaimAllowed": false
+  },
+  "nextWave": "W627A-W627G-safe-source-batch-plus-W625-W626-owner-evidence"
+}

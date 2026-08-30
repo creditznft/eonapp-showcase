@@ -1,0 +1,78 @@
+{
+  "schema": "eonapp.validation-receipt.w624c.2026-07-11.v1",
+  "wave": "W624C",
+  "status": "source-complete-runtime-visual-proof-pending",
+  "releaseState": "limited-preview-no-go-public-launch",
+  "sourceBase": "W624B source revision 01a8c157dc21b1dabb741e306238065a0d566d23",
+  "commandDistrict": {
+    "schema": "eon.city.command-district-vertical-slice.w624c.v1",
+    "destinationCount": 6,
+    "pathCount": 7,
+    "collisionVolumeCount": 7,
+    "authoritativeSpawnCount": 1,
+    "unstuckPointCount": 6,
+    "firstTenSecondCueCount": 4,
+    "firstSixtySecondMilestoneCount": 5,
+    "expansionBeyondCommandDistrictAllowed": false
+  },
+  "validation": {
+    "w624cGate": "24/24",
+    "w624cTests": "6/6",
+    "w624bGate": "19/19",
+    "w624bTests": "5/5",
+    "w624aGate": "17/17",
+    "commercialTruth": "64/64",
+    "certificationV2": "24/24; 6/6",
+    "referralScale": "16/16; 4/4",
+    "productionReachability": {
+      "reachableFiles": 349,
+      "importEdges": 603,
+      "quarantinedReachable": 0
+    },
+    "targetedEslint": {
+      "errors": 0,
+      "warnings": 0
+    },
+    "secretScan": {
+      "textFiles": 3442,
+      "potentialSecrets": 0
+    },
+    "productionBuild": "passed",
+    "buildSmoke": "passed",
+    "historicalUnitBundle": {
+      "pass": 712,
+      "fail": 47,
+      "total": 759,
+      "releaseGate": false,
+      "note": "Legacy exact-copy, retired-route, historical-index and old commercial-boundary expectations conflict with later canonical architecture. They are preserved as debt and were not weakened or relabeled as a W624C pass."
+    }
+  },
+  "distribution": {
+    "fileCount": 462,
+    "minifiedFiles": 292,
+    "savedPercent": 41.04,
+    "sha256": "9c9bcbe15953a657bcf1186b0199c0b43880342b5515d0758f81ecd2b47330d7"
+  },
+  "browserEvidence": {
+    "status": "blocked-by-managed-environment",
+    "errorClass": "ERR_BLOCKED_BY_ADMINISTRATOR",
+    "loopbackHostsTried": [
+      "127.0.0.1",
+      "localhost"
+    ],
+    "independentChromiumDownload": "blocked-by-unavailable-outbound-dns",
+    "runtimeVisualScore": null,
+    "screenshotsCertified": false,
+    "productionAuthenticationCertified": false,
+    "physicalDeviceCertified": false,
+    "ownerVisualApproval": false,
+    "proofCommand": "npm run proof:w624c-command-district:browser"
+  },
+  "cloudflareReferralTrack": {
+    "status": "owner-reported-live-testing-activation-complete-lifecycle-proof-pending",
+    "deploymentId": "63ec539b-a552-451d-b99b-28aae3e561b5",
+    "rollout": "testing",
+    "citySourceOverwritten": false
+  },
+  "nextWave": "W624D"
+}

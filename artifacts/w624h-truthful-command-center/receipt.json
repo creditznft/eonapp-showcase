@@ -1,0 +1,173 @@
+{
+  "schema": "eonapp.w624h-truthful-command-center-contract.2026-07-11.v1",
+  "ok": true,
+  "checks": [
+    {
+      "id": "snapshot-valid",
+      "pass": true,
+      "detail": "truthful snapshot valid"
+    },
+    {
+      "id": "six-status-families",
+      "pass": true,
+      "detail": "projects, ai-runtime, jobs, billing, backup, outcomes"
+    },
+    {
+      "id": "required-family-order",
+      "pass": true,
+      "detail": "projects → AI → jobs → billing → backup → outcomes"
+    },
+    {
+      "id": "seven-honest-states",
+      "pass": true,
+      "detail": "loading, current, empty, stale, offline, unavailable, error"
+    },
+    {
+      "id": "traceability-on-every-card",
+      "pass": true,
+      "detail": "source, authority, observed time and freshness present"
+    },
+    {
+      "id": "read-only-boundary",
+      "pass": true,
+      "detail": "no private work, mutation or auto-navigation"
+    },
+    {
+      "id": "bounded-project-count",
+      "pass": true,
+      "detail": "project count retained; project name absent"
+    },
+    {
+      "id": "bounded-job-count",
+      "pass": true,
+      "detail": "job count/state retained; label and prompt absent"
+    },
+    {
+      "id": "bounded-ai-receipt",
+      "pass": true,
+      "detail": "verified receipt only"
+    },
+    {
+      "id": "bounded-backup-receipt",
+      "pass": true,
+      "detail": "backup receipt only"
+    },
+    {
+      "id": "billing-starts-loading",
+      "pass": true,
+      "detail": "explicit server refresh required"
+    },
+    {
+      "id": "billing-server-authoritative-empty",
+      "pass": true,
+      "detail": "server reports signed-out empty entitlement"
+    },
+    {
+      "id": "billing-server-authoritative-current",
+      "pass": true,
+      "detail": "Server entitlement: studio · active."
+    },
+    {
+      "id": "billing-private-identifiers-absent",
+      "pass": true,
+      "detail": "account/payment identifiers excluded"
+    },
+    {
+      "id": "billing-offline-truth",
+      "pass": true,
+      "detail": "offline is explicit and grants nothing"
+    },
+    {
+      "id": "billing-error-truth",
+      "pass": true,
+      "detail": "invalid server response is error"
+    },
+    {
+      "id": "review-requires-explicit-action",
+      "pass": true,
+      "detail": "review cannot be implicit"
+    },
+    {
+      "id": "explicit-review-selects-one-card",
+      "pass": true,
+      "detail": "projects"
+    },
+    {
+      "id": "refresh-requires-explicit-action",
+      "pass": true,
+      "detail": "explicit-refresh-required"
+    },
+    {
+      "id": "explicit-refresh-loads-server-status",
+      "pass": true,
+      "detail": "billing refreshed from server"
+    },
+    {
+      "id": "no-private-field-projection",
+      "pass": true,
+      "detail": "module never projects private-work fields"
+    },
+    {
+      "id": "only-one-network-read",
+      "pass": true,
+      "detail": "single same-origin billing read only"
+    },
+    {
+      "id": "no-state-or-commerce-mutation",
+      "pass": true,
+      "detail": "status module cannot mutate work or commerce"
+    },
+    {
+      "id": "station-binds-read-only-center",
+      "pass": true,
+      "detail": "City lifecycle owns Truthful Command Center"
+    },
+    {
+      "id": "visible-refresh-and-review-controls",
+      "pass": true,
+      "detail": "refresh and review controls visible"
+    },
+    {
+      "id": "route-is-second-action",
+      "pass": true,
+      "detail": "native route appears only in reviewed detail"
+    },
+    {
+      "id": "source-authority-freshness-visible",
+      "pass": true,
+      "detail": "traceability rendered on cards"
+    },
+    {
+      "id": "accessible-status-ui",
+      "pass": true,
+      "detail": "live regions, keyboard controls and reduced-motion CSS"
+    },
+    {
+      "id": "w624g-loop-preserved",
+      "pass": true,
+      "detail": "productive mission loop preserved"
+    },
+    {
+      "id": "w624f-npcs-preserved",
+      "pass": true,
+      "detail": "bounded NPCs preserved"
+    },
+    {
+      "id": "w624e-orbit-preserved",
+      "pass": true,
+      "detail": "Orbit preserved"
+    },
+    {
+      "id": "single-runtime-owner-preserved",
+      "pass": true,
+      "detail": "single W624B owner and retired compatibility routes preserved"
+    },
+    {
+      "id": "no-browser-or-owner-approval-claim",
+      "pass": true,
+      "detail": "runtime evidence remains pending"
+    }
+  ],
+  "passed": 33,
+  "total": 33
+}

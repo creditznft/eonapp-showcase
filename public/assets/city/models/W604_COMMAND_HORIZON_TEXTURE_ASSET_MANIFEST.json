@@ -1,0 +1,84 @@
+{
+  "schema": "eon.city.w604.command-horizon-texture-assets.v1",
+  "generatedAt": "2026-07-04T06:58:58.453Z",
+  "source": "scripts/build-w604-command-horizon-texture-assets.mjs",
+  "original": true,
+  "remoteNetwork": false,
+  "userData": false,
+  "embeddedPngTextures": true,
+  "ktx2Basis": false,
+  "assets": [
+    {
+      "id": "command-horizon-arrival-gate-textured",
+      "role": "Arrival Gate original PBR-textured environment kit",
+      "variants": {
+        "lod2": {
+          "fileName": "command-horizon-arrival-gate-lod2-textured.glb",
+          "bytes": 96408,
+          "sha256": "c47049bd6c5cf74de63bf1929cf17fe805e5ac4ec79a17d71725269b41c15dbc",
+          "embeddedTextureCount": 4
+        },
+        "lod1": {
+          "fileName": "command-horizon-arrival-gate-lod1-textured.glb",
+          "bytes": 98660,
+          "sha256": "ce28dd25ff364be3db14ef11359d1fe373e7fa27964441aa1cd3b12ac296cbc9",
+          "embeddedTextureCount": 4
+        },
+        "lod0": {
+          "fileName": "command-horizon-arrival-gate-lod0-textured.glb",
+          "bytes": 104480,
+          "sha256": "933923d55bf8385b0fb1cec02eff0e94b3702c53c4ac11bb97c9d0a9ee5a6078",
+          "embeddedTextureCount": 4
+        }
+      }
+    },
+    {
+      "id": "command-horizon-command-deck-textured",
+      "role": "Command Deck original PBR-textured environment kit",
+      "variants": {
+        "lod2": {
+          "fileName": "command-horizon-command-deck-lod2-textured.glb",
+          "bytes": 95924,
+          "sha256": "fb9b5619b234ad5bcff596573f67c825a239a3ec84c7af28d36702b70c978977",
+          "embeddedTextureCount": 4
+        },
+        "lod1": {
+          "fileName": "command-horizon-command-deck-lod1-textured.glb",
+          "bytes": 97368,
+          "sha256": "1a30064a786cdda90a39871c49c642cdfeed61e05439ac93c9b288dc151888f9",
+          "embeddedTextureCount": 4
+        },
+        "lod0": {
+          "fileName": "command-horizon-command-deck-lod0-textured.glb",
+          "bytes": 101620,
+          "sha256": "fa0257f66b082d680f9eb05626359d67a2ecaa39c383415da06f483111171c21",
+          "embeddedTextureCount": 4
+        }
+      }
+    },
+    {
+      "id": "command-horizon-wayfinding-textured",
+      "role": "Wayfinding original PBR-textured environment kit",
+      "variants": {
+        "lod2": {
+          "fileName": "command-horizon-wayfinding-lod2-textured.glb",
+          "bytes": 88760,
+          "sha256": "9685624eacedb2279ec53d8245c5be5a12cbc7fa33e18316ee602599398089ca",
+          "embeddedTextureCount": 4
+        },
+        "lod1": {
+          "fileName": "command-horizon-wayfinding-lod1-textured.glb",
+          "bytes": 90444,
+          "sha256": "87d340f83c6e784ca0a6fd689dcda49829196d6af889eddf1e3e7bf97366b59e",
+          "embeddedTextureCount": 4
+        },
+        "lod0": {
+          "fileName": "command-horizon-wayfinding-lod0-textured.glb",
+          "bytes": 94772,
+          "sha256": "133778699d533ac9e1a516c8cd6161f2ecbe9c024f299bef249214045246441a",
+          "embeddedTextureCount": 4
+        }
+      }
+    }
+  ]
+}

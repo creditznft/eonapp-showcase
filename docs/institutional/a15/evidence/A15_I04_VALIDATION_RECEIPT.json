@@ -1,0 +1,99 @@
+{
+  "schema": "eonapp.a15.i04.validation-receipt.v1",
+  "generatedAt": "2026-08-04T15:40:10.832537Z",
+  "wave": "I04",
+  "baselineCommit": "7c29529",
+  "status": "pass-source-and-dependency-free",
+  "scope": "Canonical Destinations, Handoffs and Continue",
+  "results": {
+    "canonicalDestinations": 17,
+    "handoffAuthorityTests": {
+      "passed": 5,
+      "failed": 0
+    },
+    "integrationTests": {
+      "passed": 4,
+      "failed": 0
+    },
+    "targetedCompatibilityTests": {
+      "passed": 19,
+      "failed": 0
+    },
+    "w766W802DependencyFreeRegression": {
+      "testFiles": 203,
+      "passed": 770,
+      "failed": 0
+    },
+    "w766ir2SourceCertification": {
+      "passed": true,
+      "criteriaPassed": 10,
+      "criteriaTotal": 10,
+      "browserCertified": false,
+      "authenticatedOfflineCertified": false
+    },
+    "a15AuthorityGates": {
+      "i01": true,
+      "i02": true,
+      "i03": true,
+      "c02": true,
+      "i04": true
+    },
+    "secretScan": {
+      "passed": true,
+      "textFilesScanned": 5125
+    },
+    "syntaxAndDiff": {
+      "passed": true
+    }
+  },
+  "journeys": {
+    "createToProjects": "versioned, expiring, receiver-bound, single-consume",
+    "creatorToForge": "redacted asset reference only; no prompt or media body",
+    "supportToEonbot": "session-only handoff; no legacy localStorage prefill",
+    "atlas": "canonical destination registry",
+    "continue": "canonical destination registry with stable IDs"
+  },
+  "invariants": {
+    "explicitUserActionRequired": true,
+    "automaticExecution": false,
+    "outcomeVerifiedByHandoff": false,
+    "silentHandoffEviction": false,
+    "coreImportsCityImplementation": false,
+    "cityImportsCoreImplementation": false,
+    "previewDeploymentPerformed": false,
+    "productionDeploymentPerformed": false
+  },
+  "externalBlockers": [
+    "Locked dependency install remains blocked by private registry 404 for ws@7.5.11.",
+    "Production build and built-artifact validation remain blocked by the locked install.",
+    "Authenticated Chrome, Edge and mobile-landscape evidence remains pending.",
+    "No Preview or Production deployment authority was used."
+  ],
+  "workingTreeEntriesAtReceipt": [
+    " M assets/js/create/creator-library-page.js",
+    " M assets/js/create/creator-project-integration.js",
+    " M assets/js/create/eon-create-catalog.js",
+    " M assets/js/create/eon-create-hub.js",
+    " M assets/js/eonbot-home.js",
+    " M assets/js/forge/eon-forge-quick-build.js",
+    " M assets/js/nexus/w705/eon-nexus-w705-atlas-entry.js",
+    " M assets/js/projects/eon-projects-page.js",
+    " M assets/js/retention/eon-continue-resolver.js",
+    " M assets/js/retention/eon-continue-surface.js",
+    " M assets/js/support-page.js",
+    " M assets/js/utils/support-tools-footer-proof.js",
+    " M config/generated/a15-system-disposition-registry.json",
+    " M docs/institutional/a15/evidence/A15_I01_SYSTEM_DISPOSITION_RECEIPT.json",
+    " M docs/institutional/a15/evidence/A15_I03_MINIMAL_CORE_SHELL_RECEIPT.json",
+    " M tests/unit/w627e-project-continuation.test.mjs",
+    " M tests/unit/w642-product-truth-retention.test.mjs",
+    " M tests/unit/w713-cross-route-product-coherence.test.mjs",
+    " M tests/unit/w766ir2-command-hub-authority.test.mjs",
+    "?? assets/js/contracts/navigation/",
+    "?? docs/institutional/a15/evidence/A15_I04_CANONICAL_DESTINATION_HANDOFF_RECEIPT.json",
+    "?? scripts/a15-i04-canonical-destination-handoff-gate.mjs",
+    "?? tests/unit/a15-i04-canonical-destinations-integration.test.mjs",
+    "?? tests/unit/a15-i04-destination-handoff-authority.test.mjs"
+  ],
+  "digest": "26942898b348a92f10a6b546ceb14b2610c912a6393eb87d57861fe0c7f1ead1"
+}

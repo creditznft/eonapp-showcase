@@ -1,0 +1,131 @@
+{
+  "schema": "eonapp.a15.i10.ai-request-executor-gate-receipt.v1",
+  "generatedAt": "2026-08-04T18:04:27.163Z",
+  "wave": "I10",
+  "status": "pass",
+  "authority": {
+    "foregroundOnly": true,
+    "userInitiationRequired": true,
+    "consentSourceRequired": true,
+    "exactProviderAndModel": true,
+    "maxAttempts": 1,
+    "hiddenRetryAllowed": false,
+    "providerFallbackAllowed": false,
+    "modelFallbackAllowed": false,
+    "cancellationOwnedByExecutor": true,
+    "settlementReceiptRedacted": true,
+    "legacyOrchestratorLoadedByActiveRoots": false
+  },
+  "activeRoots": [
+    {
+      "root": "assets/js/chat-page.js",
+      "moduleCount": 107,
+      "unresolved": [],
+      "forbidden": [],
+      "executorReachable": true
+    },
+    {
+      "root": "assets/js/utils/mission-engine.js",
+      "moduleCount": 24,
+      "unresolved": [],
+      "forbidden": [],
+      "executorReachable": true
+    },
+    {
+      "root": "assets/js/forge/forge-ai-controller.js",
+      "moduleCount": 23,
+      "unresolved": [],
+      "forbidden": [],
+      "executorReachable": true
+    },
+    {
+      "root": "assets/js/workbench-ai.js",
+      "moduleCount": 28,
+      "unresolved": [],
+      "forbidden": [],
+      "executorReachable": true
+    },
+    {
+      "root": "assets/js/eon-browser-page.js",
+      "moduleCount": 61,
+      "unresolved": [],
+      "forbidden": [],
+      "executorReachable": true
+    },
+    {
+      "root": "assets/js/code-maker-page.js",
+      "moduleCount": 40,
+      "unresolved": [],
+      "forbidden": [],
+      "executorReachable": true
+    }
+  ],
+  "forbiddenActiveModules": [
+    "assets/js/utils/agent-orchestrator.js",
+    "assets/js/utils/provider-orchestrator.js",
+    "assets/js/utils/request-orchestrator-bridge.js",
+    "assets/js/utils/eon-auto-router.js"
+  ],
+  "simulations": {
+    "successAttemptCount": 1,
+    "successReceipt": {
+      "schema": "eonapp.ai-request-receipt.a15.v1",
+      "requestId": "ai-00000000-0000-4000-8000-000000000010",
+      "state": "completed",
+      "origin": "a15-i10-gate",
+      "taskType": "gate",
+      "mode": "batch",
+      "providerId": "mistral",
+      "model": "mistral-small-latest",
+      "local": false,
+      "searchMode": false,
+      "attemptCount": 1,
+      "maxAttempts": 1,
+      "fallbackAttempted": false,
+      "providerChanged": false,
+      "modelChanged": false,
+      "userInitiated": true,
+      "consentSource": "institutional-source-gate",
+      "startedAt": 1000,
+      "completedAt": 1010,
+      "elapsedMs": 10,
+      "cancellationReason": "",
+      "errorCode": "",
+      "containsPrompt": false,
+      "containsReply": false,
+      "containsApiKey": false,
+      "containsEndpointCredential": false
+    },
+    "failureAttemptCount": 1,
+    "failureReceipt": {
+      "schema": "eonapp.ai-request-receipt.a15.v1",
+      "requestId": "ai-00000000-0000-4000-8000-000000000010",
+      "state": "failed",
+      "origin": "a15-i10-gate-failure",
+      "taskType": "gate",
+      "mode": "batch",
+      "providerId": "mistral",
+      "model": "mistral-small-latest",
+      "local": false,
+      "searchMode": false,
+      "attemptCount": 1,
+      "maxAttempts": 1,
+      "fallbackAttempted": false,
+      "providerChanged": false,
+      "modelChanged": false,
+      "userInitiated": true,
+      "consentSource": "institutional-source-gate",
+      "startedAt": 2000,
+      "completedAt": 1785866667163,
+      "elapsedMs": 1785866665163,
+      "cancellationReason": "",
+      "errorCode": "provider-503",
+      "containsPrompt": false,
+      "containsReply": false,
+      "containsApiKey": false,
+      "containsEndpointCredential": false
+    }
+  },
+  "errors": [],
+  "digest": "fc36853166062e15c018ace7d36661f7b05f5e2be7d450086ee436b5a30e1111"
+}

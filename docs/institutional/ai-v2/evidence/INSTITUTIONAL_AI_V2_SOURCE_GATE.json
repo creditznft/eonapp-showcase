@@ -1,0 +1,844 @@
+{
+  "schema": "eonapp.institutional-ai-v2.source-gate-report.v1",
+  "generatedAt": "2026-08-17T13:01:09.543Z",
+  "sourceOnly": true,
+  "externalRuntimeCertification": false,
+  "authority": {
+    "schema": "eonapp.institutional-ai-authority.v1",
+    "implementationAsOf": "2026-08-09",
+    "status": "source-integrated-certification-pending",
+    "principles": {
+      "modelIsReplaceableWorker": true,
+      "eonIntelligenceIsStableLayer": true,
+      "noSilentFineTuning": true,
+      "noSilentProviderHop": true,
+      "noSilentBillableFallback": true,
+      "noSilentModelDownload": true,
+      "explicitExternalAction": true
+    },
+    "systems": {
+      "knowledge": {
+        "version": "institutional-grounding-v2.0.0",
+        "schema": "eonapp.ai.knowledge-card.v2",
+        "cardCount": 18,
+        "sourceControlled": true,
+        "privateUserDataIncluded": false,
+        "automaticFineTuning": false,
+        "hybridRetrieval": true,
+        "authorityMetadata": true,
+        "staleTruthSupersession": true
+      },
+      "grounding": {
+        "marker": "EONAPP_GROUNDING_W606",
+        "contract": "eonapp.w606.ai-grounding-contract.v1",
+        "runtimeGrounding": true,
+        "automaticFineTuning": false,
+        "directLocalModelWebAccess": false,
+        "clientOnlyResearch": true,
+        "eonappServerProxy": false,
+        "cloudflareWorker": false,
+        "memoryConsentRequired": true,
+        "memoryOffRespectedAtGrounding": true,
+        "rawChatAutoMemory": false,
+        "mediaAdapterActive": false,
+        "localImageAdapterSourceIntegrated": true,
+        "localVideoAdapterSourceIntegrated": true,
+        "localVideoUniversallyCertified": false,
+        "musicFirstClassDirection": true,
+        "musicGenerativeAdapterCertified": false,
+        "institutionalKnowledgeRetrieval": true,
+        "capabilityTruthOverlay": true,
+        "capabilityTruthAccountStateIncluded": false,
+        "recentOutcomeContextIntentGated": true,
+        "recentOutcomeContextRedacted": true,
+        "recentOutcomeContextActionAuthority": false,
+        "projectScopedMemory": true
+      },
+      "memory": {
+        "schema": "eonapp.ai-memory-ledger.v2",
+        "providerAgnostic": true,
+        "sharedThroughGroundingBuilder": true,
+        "automaticRawChatCapture": false,
+        "explicitConsentRequired": true,
+        "cloudSync": false,
+        "fineTuning": false,
+        "secretLikeContentBlocked": true,
+        "projectScoping": true,
+        "expiry": true,
+        "confidence": true,
+        "userEditDelete": true,
+        "explicitLocalExport": true,
+        "semanticNearDeduplication": true,
+        "memoryStringsAreUntrustedData": true,
+        "memoryInstructionExecutionAllowed": false,
+        "memoryCanGrantActionAuthority": false
+      },
+      "memoryPolicy": {
+        "schema": "eonapp.ai-memory-policy.v1",
+        "defaultMode": "ask",
+        "modes": [
+          "off",
+          "ask",
+          "safe-auto"
+        ],
+        "rawChatAutoCapture": false,
+        "safeAutoStructuredSignalsOnly": true,
+        "explicitUserActionToChangePolicy": true,
+        "fineTuning": false,
+        "cloudSync": false
+      },
+      "structuredMemory": {
+        "schema": "eonapp.ai-structured-memory.v1",
+        "supportedSignals": [
+          "model-selection-policy",
+          "runtime-preference",
+          "chat-language",
+          "radio-genre",
+          "radio-vocals",
+          "radio-energy"
+        ],
+        "rawChatAccepted": false,
+        "arbitraryTextAccepted": false,
+        "safeAutoPolicyRequired": true,
+        "explicitControlChangeRequired": true,
+        "providerKeyStored": false,
+        "promptStored": false,
+        "responseStored": false,
+        "fineTuning": false
+      },
+      "routing": {
+        "schema": "eonapp.ai-routing-policy.v1",
+        "defaultQualityMode": "auto",
+        "silentCrossProviderFallback": false,
+        "silentBillableFallback": false,
+        "silentModelDownloads": false,
+        "silentRuntimeInstalls": false,
+        "modelAutoSelectionWithinApprovedEnvelope": true,
+        "providerChangeDisclosureRequired": true
+      },
+      "evaluation": {
+        "schema": "eonapp.ai-evaluation-ledger.v2",
+        "boundedLocalEvidence": true,
+        "promptStored": false,
+        "responseStored": false,
+        "errorTextStored": false,
+        "credentialStored": false,
+        "providerPayloadStored": false,
+        "backgroundBenchmarking": false,
+        "explicitForegroundTestRequiredForQuality": true,
+        "foregroundOperationalLearning": true,
+        "operationalQualityInference": false,
+        "explicitUserQualityFeedback": true,
+        "feedbackStoresMessageContent": false,
+        "userInitiatedRequestsOnly": true
+      },
+      "modelIntelligence": {
+        "schema": "eonapp.model-intelligence.v1",
+        "ranksDiscoveredCandidatesOnly": true,
+        "verifiedEnvelopeFinite": true,
+        "verifiedEnvelopeMaximum": 48,
+        "providerResponseOrderAuthoritative": false,
+        "policyTaskDiverseEnvelope": true,
+        "readsSecrets": false,
+        "downloadsModels": false,
+        "switchesProviders": false,
+        "supportsPolicies": [
+          "auto",
+          "private",
+          "best",
+          "fast",
+          "economy"
+        ],
+        "deviceAware": true,
+        "benchmarkAware": true,
+        "providerMetadataPreferredOverNameHeuristics": true,
+        "unknownCapabilitiesRemainUnknown": true
+      },
+      "music": {
+        "schema": "eonapp.creator.music-capability.v2",
+        "browserPatternEngine": true,
+        "generativeMusicAdapterArchitecture": true,
+        "aceStepLocalAdapterSourceIntegrated": true,
+        "aceStepExternalRuntimeProof": false,
+        "hostedDirectByokMusicSourceIntegrated": true,
+        "hostedDirectByokMusicProvider": "elevenlabs-music-v2",
+        "hostedDirectByokRealProviderProof": false,
+        "comfyUiMusicWorkflowCertified": false,
+        "generativeMusicCertified": false,
+        "autoDjPlanning": true,
+        "autoDjCrossfadePreview": true,
+        "autoDjBeatMatchingCertified": false,
+        "autoDjRenderCertified": false,
+        "personalRadioPlanning": true,
+        "personalRadioSessionPlayback": true,
+        "personalRadioContinuousOpenPagePlayback": true,
+        "personalRadioBackgroundStreaming": false,
+        "commercialStreamingCatalogue": false
+      },
+      "autoDjPreview": {
+        "schema": "eonapp.creator.auto-dj-preview.v1",
+        "browserCrossfadePreview": true,
+        "sessionOnly": true,
+        "userAuthorizedAudioOnly": true,
+        "eonGeneratedAudioAllowed": true,
+        "upload": false,
+        "persistentMediaStorage": false,
+        "tempoStretch": false,
+        "beatGridAnalysis": false,
+        "stemSeparation": false,
+        "renderedMixExport": false,
+        "directPublishing": false
+      },
+      "radioSession": {
+        "schema": "eonapp.creator.radio-session.v1",
+        "sessionOnly": true,
+        "userAuthorizedAudioOnly": true,
+        "eonGeneratedAudioAllowed": true,
+        "commercialCatalogueAccess": false,
+        "upload": false,
+        "backgroundStreaming": false,
+        "persistentMediaStorage": false,
+        "explicitAddAndClearActions": true
+      },
+      "notifications": {
+        "schema": "eonapp.notification-center.w434.v1",
+        "status": "activity-center-plus-opt-in-device-alerts-source-ready",
+        "inAppCenter": true,
+        "localBrowserStorage": true,
+        "browserPermissionPromptOnLoad": false,
+        "browserPermissionPromptedByModule": false,
+        "remotePushSubscription": "optional-when-server-vapid-configured",
+        "serverDelivery": "source-ready-subscription-path; sender-proof-required",
+        "deviceNotificationDelivery": true,
+        "crossDeviceDedupe": false,
+        "categoryPreferencesEnforced": true,
+        "quietHoursPreferenceOnly": false,
+        "clientDeviceQuietHoursEnforced": true,
+        "serverReturnReminderQuietHoursEnforced": true,
+        "returnReminderFreshScheduleCapPerUtcDay": 3,
+        "returnReminderExpiryHoursAfterDue": 24,
+        "itemScopedReturnReminder": true,
+        "oneActiveReturnReminderPerAccount": true,
+        "rewardsOrMarketingEvents": false,
+        "fabricatedAgentEvents": false,
+        "liveDeliveryProof": false
+      },
+      "create": {
+        "schema": "eonapp.create-continuity.a15.v1",
+        "websiteMode": "create-now",
+        "websiteOwner": "eon-forge",
+        "websiteReviewBeforeApply": true,
+        "websiteProjectContinuity": "universal-project-registry",
+        "imageDefault": "setup-required",
+        "videoDefault": "setup-required",
+        "musicMode": "create-now",
+        "musicVerifiedScope": "browser-sequencer-and-wav-export",
+        "musicGenerativeAudioCertified": false,
+        "automationLaunchMode": "plan-only",
+        "hiddenGenerationFallback": false,
+        "navigationStartsGeneration": false,
+        "navigationStartsDeployment": false,
+        "navigationStartsPublishing": false
+      },
+      "cityProgress": {
+        "schema": "eon.city-progress-receipt.a15.v1",
+        "consumesOnlyPolicyApprovedCoreOutcomes": true,
+        "claimReadsRevalidateAgainstCoreOutcome": true,
+        "forgedProgressReceiptsIgnored": true,
+        "oneReceiptPerCoreOutcome": true,
+        "privateContentStored": false,
+        "routeOpeningGrantsXp": false,
+        "cityReturnReceiptGrantsXp": false,
+        "localReviewGrantsXp": false,
+        "xpGranted": false,
+        "rewardGranted": false,
+        "completionClaimed": false,
+        "explicitMissionClaimRequired": true,
+        "silentEviction": false
+      }
+    },
+    "currentTruth": {
+      "institutionalKnowledgeFabric": true,
+      "firstTurnGrounding": true,
+      "projectScopedMemory": true,
+      "safeStructuredAutoMemory": true,
+      "rawChatAutoMemory": false,
+      "modelWeightFineTuning": false,
+      "routingInsideApprovedEnvelope": true,
+      "verifiedModelEnvelopePolicyDiverse": true,
+      "foregroundOperationalModelLearning": true,
+      "crossProviderFallbackWithoutConsent": false,
+      "localVideoSourceIntegrated": true,
+      "localVideoRealOutputCertified": false,
+      "musicFirstClassCreator": true,
+      "browserMusicSequencerCertifiedScope": true,
+      "generativeMusicSourceAdapterCertified": false,
+      "autoDjLocalCrossfadePreview": true,
+      "autoDjAudioRenderCertified": false,
+      "commercialMusicCatalogueIntegrated": false,
+      "personalRadioSessionSourceReady": true,
+      "cityConsumesRedactedCreatorReceipts": true,
+      "notificationDeviceDeliverySourceReady": true,
+      "backgroundPushLiveProof": false
+    },
+    "certification": {
+      "sourceGateRequired": true,
+      "browserProofRequired": true,
+      "realProviderOutputRequired": true,
+      "realLocalModelOutputRequired": true,
+      "realImageOutputRequired": true,
+      "realVideoOutputRequired": true,
+      "realGenerativeMusicOutputRequired": true,
+      "realClosedTabPushDeliveryRequired": true,
+      "ownerAcceptanceRequired": true,
+      "externalProofCompletedByThisModule": false
+    }
+  },
+  "summary": {
+    "checks": 108,
+    "passed": 108,
+    "failed": 0
+  },
+  "checks": [
+    {
+      "id": "authority-valid",
+      "pass": true,
+      "detail": "Institutional authority must validate without source-truth conflicts."
+    },
+    {
+      "id": "knowledge-depth",
+      "pass": true,
+      "detail": "Knowledge cards=18; hybrid/authority metadata required."
+    },
+    {
+      "id": "capability-truth-overlay",
+      "pass": true,
+      "detail": "EONBOT must add a turn-relevant reviewed capability overlay, and current Creator execution truth must be separated from historical Workspace draft truth."
+    },
+    {
+      "id": "hosted-media-grounding-truth",
+      "pass": true,
+      "detail": "EONBOT first-turn truth must describe reviewed hosted fal/Replicate Image/Video rails without upgrading source integration into live provider certification or authorizing reference-media upload."
+    },
+    {
+      "id": "referral-knowledge-server-authority",
+      "pass": true,
+      "detail": "EONBOT grounding must route referral/EONKEY questions to server-authoritative truth and never infer value from sharing."
+    },
+    {
+      "id": "referral-no-static-inactive-drift",
+      "pass": true,
+      "detail": "Static Chat grounding must not contradict a deployment whose /api/referrals rollout is active."
+    },
+    {
+      "id": "referral-capability-split",
+      "pass": true,
+      "detail": "Server EONKEY referral authority must be distinct from the historical blocked wallet/token/payout/commercial-referral rail."
+    },
+    {
+      "id": "referral-action-card-truth",
+      "pass": true,
+      "detail": "Referral/EONKEY questions must reach the server-authoritative status surface while payout/cash/crypto requests remain blocked."
+    },
+    {
+      "id": "memory-safe-learning",
+      "pass": true,
+      "detail": "Memory must be scoped/editable/exportable and must not imply fine-tuning/raw-chat capture."
+    },
+    {
+      "id": "memory-untrusted-data-boundary",
+      "pass": true,
+      "detail": "Saved memory may personalize grounding but must remain untrusted data that cannot grant action authority or override system/product truth."
+    },
+    {
+      "id": "research-untrusted-data-boundary",
+      "pass": true,
+      "detail": "Fetched or pasted research text must remain untrusted evidence data and cannot become instructions, tool permission or private-context authority."
+    },
+    {
+      "id": "memory-transparent-chat-control",
+      "pass": true,
+      "detail": "Chat must expose a simple Off / Ask / Safe Auto memory control plus a visible path to the full local memory manager."
+    },
+    {
+      "id": "memory-local-export-ui",
+      "pass": true,
+      "detail": "The full memory manager must support explicit local export without claiming credentials or raw Chat history are included."
+    },
+    {
+      "id": "memory-policy",
+      "pass": true,
+      "detail": "Safe-auto is allowed only for structured product signals."
+    },
+    {
+      "id": "safe-structured-auto-memory",
+      "pass": true,
+      "detail": "Safe Auto may learn only finite explicit model/runtime/language/radio controls; raw chat and free-text station prompts must never enter this bridge."
+    },
+    {
+      "id": "ai-transport-response-bounds",
+      "pass": true,
+      "detail": "Browser-direct AI batch and streaming responses must be byte/buffer/output bounded before parsing/rendering; provider error text must be redacted and bounded; no response persistence or hidden fallback."
+    },
+    {
+      "id": "ai-attempt-storm-guard-parity",
+      "pass": true,
+      "detail": "Batch and streaming Chat must enforce the same concurrency/rate guard and count the foreground attempt before transport, so failed requests cannot evade the local runaway/cost-storm limit."
+    },
+    {
+      "id": "routing-envelope",
+      "pass": true,
+      "detail": "Routing must fail closed around provider, cost and install boundaries."
+    },
+    {
+      "id": "evaluation-privacy",
+      "pass": true,
+      "detail": "Evaluation ledger may store bounded metrics, never prompt/response/error-text/credential/provider payloads."
+    },
+    {
+      "id": "foreground-operational-learning",
+      "pass": true,
+      "detail": "Real user-initiated AI requests may teach local reliability/latency evidence, but operational success must never be converted into answer-quality evidence or content capture."
+    },
+    {
+      "id": "explicit-model-quality-feedback",
+      "pass": true,
+      "detail": "Explicit thumbs feedback may teach task-scoped model quality, but it must reuse bounded provider/model/task/request metadata and never copy the prompt or reply into the learning ledger."
+    },
+    {
+      "id": "model-learning-user-reset",
+      "pass": true,
+      "detail": "Adaptive model performance learning must have a visible local reset that does not delete Chat, Memory, credentials or installed models."
+    },
+    {
+      "id": "verified-model-envelope-depth",
+      "pass": true,
+      "detail": "Provider verification must retain a finite policy/task-diverse model envelope rather than making the provider response first-12 order authoritative."
+    },
+    {
+      "id": "provider-model-manifest-truth",
+      "pass": true,
+      "detail": "Verified model intelligence may use source-reported context/capability metadata but must not invent pricing/capabilities or persist arbitrary provider prose."
+    },
+    {
+      "id": "lmstudio-rich-manifest-least-privilege",
+      "pass": true,
+      "detail": "LM Studio may use its native v1 model manifest for bounded capability metadata while inference remains on the reviewed OpenAI-compatible route."
+    },
+    {
+      "id": "local-model-lifecycle-explicit",
+      "pass": true,
+      "detail": "Local model lifecycle must be scan-explicit, freshness-aware and fail unknown; notices may recommend reviewed installed/install candidates but cannot download, install or select a Chat model automatically."
+    },
+    {
+      "id": "local-model-recommendation-converged",
+      "pass": true,
+      "detail": "Beginner private-chat guidance and reviewed catalogue must agree on the first model, arbitrary first scan results must not auto-fill, and active setup copy must not call current media adapters future work."
+    },
+    {
+      "id": "local-model-install-handoff-no-silent-download",
+      "pass": true,
+      "detail": "Local model upgrades may offer an explicit Ollama command or official runtime manager handoff, but EONAPP must not map tags across runtimes or start a download."
+    },
+    {
+      "id": "verified-context-window-governor",
+      "pass": true,
+      "detail": "Provider-reported context windows must cap output, user input, total history and grounding density; reported windows below the institutional minimum must fail closed instead of silently overflowing or switching models."
+    },
+    {
+      "id": "creator-top-three",
+      "pass": true,
+      "detail": "Creator must expose Image, Video and Music as the first three modes."
+    },
+    {
+      "id": "eonbot-creator-command-routing",
+      "pass": true,
+      "detail": "EONBOT Image/Video/Music intents must prepare canonical Creator routes behind an explicit user-tap boundary and never claim generation completion."
+    },
+    {
+      "id": "creator-intent-ephemeral-continuity",
+      "pass": true,
+      "detail": "Chat → Image/Video/Music prompt continuity must be user-tapped, WeakMap-associated before navigation, session-only, one-time, absent from URLs/receipts/telemetry, and never start generation."
+    },
+    {
+      "id": "chat-transient-review-share-state",
+      "pass": true,
+      "detail": "Share/remix intent and action-plan review state must survive the live turn via WeakMaps without becoming serialized conversation fields."
+    },
+    {
+      "id": "music-truth",
+      "pass": true,
+      "detail": "Music planning/pattern features must not overclaim generative render or commercial catalogue access."
+    },
+    {
+      "id": "acestep-source-truth",
+      "pass": true,
+      "detail": "ACE-Step may be source-integrated but must remain explicit, no-download/no-training/no-reference-audio and external-proof-pending."
+    },
+    {
+      "id": "hosted-music-direct-byok-source",
+      "pass": true,
+      "detail": "Hosted Music must be a reviewed prompt-only Direct BYOK rail with no upload/inpainting/auto-retry/fake-cancel/EONAPP proxy claim and real-provider proof still pending."
+    },
+    {
+      "id": "hosted-music-reviewed-model",
+      "pass": true,
+      "detail": "The hosted Music rail must use one finite reviewed Music v2 model id rather than arbitrary provider model selection."
+    },
+    {
+      "id": "hosted-music-companion-custody",
+      "pass": true,
+      "detail": "Hosted provider credentials must move only through a paired loopback request into the OS vault; generated binary stays bounded/expiring in companion memory and browser preflight must support the reviewed authenticated loopback contract."
+    },
+    {
+      "id": "companion-session-isolation",
+      "pass": true,
+      "detail": "Creator Companion pairing, job status/cancel and temporary outputs must be bound to the exact paired session, use the canonical origin allowlist, reject job-id collisions and retain no raw prompt in the job map."
+    },
+    {
+      "id": "companion-cost-storm-defense",
+      "pass": true,
+      "detail": "Creator Companion must enforce a local per-session outstanding-job ceiling and short submission-rate window even if UI controls are bypassed; provider-acknowledged cancellation must become terminal."
+    },
+    {
+      "id": "companion-provider-response-bounds",
+      "pass": true,
+      "detail": "Provider JSON/media reads must be stream-bounded and public failure messages must be fixed/sanitized rather than echoing raw upstream text."
+    },
+    {
+      "id": "companion-pairing-start-throttle",
+      "pass": true,
+      "detail": "Loopback pairing-code creation must be origin-allowlisted and locally throttled so an approved-origin page cannot flood the companion terminal with challenges."
+    },
+    {
+      "id": "local-bridge-comfy-view-path-defense",
+      "pass": true,
+      "detail": "ComfyUI view proxy must accept ordinary reviewed output names but reject traversal, nested filename paths and unreviewed output types before any loopback fetch."
+    },
+    {
+      "id": "hosted-music-ui-review-first",
+      "pass": true,
+      "detail": "Canonical EON Music must expose explicit provider-cost review, paired OS-vault credential setup and local output retrieval without automatic retry."
+    },
+    {
+      "id": "hosted-music-certification-required",
+      "pass": true,
+      "detail": "Direct BYOK launch certification must require real hosted-Music output, OS-vault custody and binary-memory-expiry evidence."
+    },
+    {
+      "id": "auto-dj-preview-truth",
+      "pass": true,
+      "detail": "Auto DJ may metadata-sequence and locally crossfade user-authorized/EON-generated audio, but it must not claim beat matching, time stretch, stems, upload or rendered mix export."
+    },
+    {
+      "id": "music-save-reopen-proof",
+      "pass": true,
+      "detail": "Browser, ACE-Step and hosted Music must earn progression only after explicit save + byte-for-byte reopened audio verification; proof must not store prompts, credentials or upload audio."
+    },
+    {
+      "id": "music-city-route-parity",
+      "pass": true,
+      "detail": "The shared Music/Radio engine must preserve truthful /eoncity receipt provenance when used inside City, without creating a City-only media fork."
+    },
+    {
+      "id": "music-dj-generated-track-flow",
+      "pass": true,
+      "detail": "EON-generated browser, local ACE-Step and hosted BYOK tracks must be able to enter the session-only Auto DJ preview without re-uploading to EONAPP."
+    },
+    {
+      "id": "radio-station-delete-control",
+      "pass": true,
+      "detail": "Persisted private EON Radio station profiles must have an explicit delete control on the canonical Music surface."
+    },
+    {
+      "id": "comfy-music-not-overclaimed",
+      "pass": true,
+      "detail": "Current local ComfyUI adapter must not claim music until a real audio workflow is implemented/certified."
+    },
+    {
+      "id": "acestep-registry-proof-boundary",
+      "pass": true,
+      "detail": "Creator registry must expose ACE-Step as source-integrated/proof-pending with optional credentials kept session-only."
+    },
+    {
+      "id": "music-canonical-surface",
+      "pass": true,
+      "detail": "Music must live on canonical Create, not resurrect the retired route."
+    },
+    {
+      "id": "acestep-explicit-ui",
+      "pass": true,
+      "detail": "Canonical Music must expose explicit ACE-Step scan/generate controls without model initialization or download actions."
+    },
+    {
+      "id": "acestep-city-create-csp",
+      "pass": true,
+      "detail": "ACE-Step loopback access must be available to both canonical Create and EONCITY through the least-privilege shared CSP."
+    },
+    {
+      "id": "companion-city-create-csp",
+      "pass": true,
+      "detail": "The paired Creator Companion must be reachable from both canonical Create and EONCITY, without adding a LAN wildcard or arbitrary loopback port."
+    },
+    {
+      "id": "acestep-bridge-surface",
+      "pass": true,
+      "detail": "Bridge must admit only reviewed ACE-Step generation/status/output paths and reject init/training/arbitrary local file reads."
+    },
+    {
+      "id": "retired-route-stays-retired",
+      "pass": true,
+      "detail": "Legacy /music-studio route must stay retired/redirected."
+    },
+    {
+      "id": "runtime-no-old-auto-router",
+      "pass": true,
+      "detail": "Canonical model request runtime must not import the compatibility auto-router."
+    },
+    {
+      "id": "runtime-model-policy-authoritative",
+      "pass": true,
+      "detail": "Canonical createAIReply must re-rank only the current verified same-provider candidate envelope for each request, honor explicit model pins, classify the current task ephemerally, and fail Private mode closed to device-local AI."
+    },
+    {
+      "id": "provider-verification-not-implicit-pin",
+      "pass": true,
+      "detail": "Provider verification may populate a verified candidate list but must not silently convert its winner into a permanent pin; only the explicit Model control may create a model pin."
+    },
+    {
+      "id": "explicit-dynamic-model-refresh",
+      "pass": true,
+      "detail": "Hosted model catalogues must be refreshable from the selected provider on explicit user action, reusing the current policy without downloading models or changing provider authority."
+    },
+    {
+      "id": "active-video-truth-current",
+      "pass": true,
+      "detail": "Active Local AI and master ledger must describe source-integrated video with external proof pending."
+    },
+    {
+      "id": "no-misleading-music-ai-label",
+      "pass": true,
+      "detail": "Deterministic browser pattern generation must not be labelled as model-generated audio."
+    },
+    {
+      "id": "hosted-image-video-reviewed-source-rails",
+      "pass": true,
+      "detail": "Hosted Image/Video may expose only explicitly reviewed prompt-first source rails, while their registry must continue to mark real user-owned provider proof pending."
+    },
+    {
+      "id": "hosted-media-companion-memory-boundary",
+      "pass": true,
+      "detail": "Hosted Image/Video must keep provider keys and provider output URLs behind the paired Companion, return only kind-checked binary media, and require a separate explicit budget-approved job."
+    },
+    {
+      "id": "hosted-media-reviewed-quality-controls",
+      "pass": true,
+      "detail": "Hosted media quality controls must be finite reviewed provider fields; image safety checking stays enabled and unknown values may not pass through as arbitrary provider input."
+    },
+    {
+      "id": "fal-hosted-media-no-hidden-retry-fallback",
+      "pass": true,
+      "detail": "The fal rail must disable documented provider-side retries/fallbacks, opt out of JSON payload retention, and request short generated-media retention so one approved paid job stays one reviewed model execution with bounded provider persistence."
+    },
+    {
+      "id": "hosted-image-video-city-receipt-parity",
+      "pass": true,
+      "detail": "Hosted Image/Video must emit source-specific redacted Core receipts only after explicit save + byte-matching reopen; hosted Video also requires reopened playback completion, and provider provenance must be pinned at generation."
+    },
+    {
+      "id": "hosted-image-video-lifecycle-proof",
+      "pass": true,
+      "detail": "Hosted media lifecycle must expose provider progress, acknowledge cancellation honestly, prove save/reopen locally, and keep reference uploads disabled."
+    },
+    {
+      "id": "image-video-city-surface-receipt-truth",
+      "pass": true,
+      "detail": "Shared Image/Video engines must preserve truthful /eoncity receipt provenance when run inside City and lock mutable provider/artifact controls during an in-flight hosted job."
+    },
+    {
+      "id": "canonical-create-local-image-video-execution",
+      "pass": true,
+      "detail": "Canonical /create must reuse the maintained ComfyUI Image and Video execution labs directly, keep the advanced lane explicit/collapsed, and load their maintained styles without auto-scanning or auto-generating."
+    },
+    {
+      "id": "radio-session-private",
+      "pass": true,
+      "detail": "EON Radio session must remain local/session-only without commercial catalogue access."
+    },
+    {
+      "id": "radio-open-page-continuous-playback",
+      "pass": true,
+      "detail": "EON Radio may continuously advance its private queue only after an explicit open-page playback action; it must not claim closed-tab/service-worker streaming or upload audio."
+    },
+    {
+      "id": "radio-preference-recall-safe",
+      "pass": true,
+      "detail": "EON Radio may reuse only finite consent-approved preference tags; station prompts/media cannot become personalization input or action permission."
+    },
+    {
+      "id": "radio-next-track-explicit-handoff",
+      "pass": true,
+      "detail": "EON Radio may plan and prefill the next original track, but it must never call a provider, start local compute, spend credits or generate continuously without a separate explicit Generate action."
+    },
+    {
+      "id": "creator-iteration-explicit-no-auto-compute",
+      "pass": true,
+      "detail": "Image/Video/Music results must support a session-only Prepare variation loop without reading source media, persisting prompts, granting budget authority or submitting compute; Video must not overclaim media extension."
+    },
+    {
+      "id": "recent-outcome-context-redacted-intent-gated",
+      "pass": true,
+      "detail": "EONBOT may receive recent verified local activity only on continuation/recent-result intent, through a fixed redacted projection that excludes receipts, provider sources, prompts/media/keys and sensitive access/provider-verification outcomes, and never grants action authority."
+    },
+    {
+      "id": "city-voice-consent-language-parity",
+      "pass": true,
+      "detail": "EONCITY Quick Voice Conversation must require the shared session-bounded reviewed consent on every automatic microphone turn; both maintained City chat surfaces must share the canonical voice-language preference and reply language, while work-surface Dictate remains editable-first and never auto-sends."
+    },
+    {
+      "id": "city-ai-parity",
+      "pass": true,
+      "detail": "EONCITY must reuse maintained Chat plus real local/hosted Image/Video and full Music execution modules instead of City-only or proposal-only AI forks; prepared creation prompts stay transient and user-tap gated."
+    },
+    {
+      "id": "city-creator-receipts",
+      "pass": true,
+      "detail": "City missions must consume redacted verified creator receipts for Image/Video/Music without private media content."
+    },
+    {
+      "id": "city-ten-missions-real-receipt-coverage",
+      "pass": true,
+      "detail": "All ten W752 missions must have a real native receipt path. Unclaimable: none. Command requires explicit wall review + record; Realm requires explicit form save; Plans requires explicit server-verified access review and checkout/payment must never create mission proof."
+    },
+    {
+      "id": "city-creator-mission-action-lanes",
+      "pass": true,
+      "detail": "Create Forge mission must expose explicit Image/Video/Music-Radio lanes that only switch the maintained in-City Creator and never create generation/provider/progression effects."
+    },
+    {
+      "id": "city-hosted-media-mission-parity",
+      "pass": true,
+      "detail": "Productive RPG creator mission must admit verified Local and reviewed Direct BYOK Image/Video saves while rejecting route-open/prompt/preview-only progress."
+    },
+    {
+      "id": "music-city-source-authority-parity",
+      "pass": true,
+      "detail": "Browser WAV, ACE-Step and hosted BYOK Music saves must each have an explicit Core native authority and be admitted by the same City creator-mission source policy."
+    },
+    {
+      "id": "city-progress-claim-revalidation",
+      "pass": true,
+      "detail": "City XP/progression reads must rejoin each receipt to a current policy-approved Core outcome and prune forged or orphaned progress instead of trusting browser-local progress state."
+    },
+    {
+      "id": "city-w752-claim-defense-in-depth",
+      "pass": true,
+      "detail": "W752 must revalidate the exact native receipt and station at XP claim time; only the separate bounded EONBOT orientation proof may bypass Core-outcome projection."
+    },
+    {
+      "id": "city-eonbot-in-city-action-parity",
+      "pass": true,
+      "detail": "Known EONBOT tool intents must stay inside maintained EONCITY stations, preserving explicit Image/Video/Music mode; unknown routes remain reviewed external handoffs and no route preparation executes providers automatically."
+    },
+    {
+      "id": "city-creator-lane-fallback-honest",
+      "pass": true,
+      "detail": "Create Forge mission lane buttons must prefer the maintained embedded mode switch and use the Work Surface open fallback only after an explicit user tap; opening a lane must never mint XP or start generation."
+    },
+    {
+      "id": "notifications-source-ready-proof-pending",
+      "pass": true,
+      "detail": "Device alerts may be source-ready but must keep live background delivery proof pending."
+    },
+    {
+      "id": "notification-category-preferences-enforced",
+      "pass": true,
+      "detail": "Activity category switches and client device quiet hours must affect delivery/storage behavior rather than remain cosmetic preferences."
+    },
+    {
+      "id": "notification-safe-reentry-routes",
+      "pass": true,
+      "detail": "Background service-alert clicks must accept only finite public same-origin EONAPP routes, with route/url compatibility but no arbitrary text/API navigation."
+    },
+    {
+      "id": "push-subscription-refresh-and-revoke",
+      "pass": true,
+      "detail": "Explicit device-alert enable/refresh must replace stale VAPID-key subscriptions, and disable must be able to revoke server state from the current browser endpoint even when the local receipt ID is missing."
+    },
+    {
+      "id": "push-abuse-bounds",
+      "pass": true,
+      "detail": "Web Push must enforce a server-authoritative 1-to-5 device cap and rate-limit explicit self-tests after failed as well as successful attempts."
+    },
+    {
+      "id": "retention-worker-overlap-lease",
+      "pass": true,
+      "detail": "Scheduled return reminders must atomically lease due rows to prevent overlapping duplicate sends while remaining bounded service alerts with no marketing/custom-message load."
+    },
+    {
+      "id": "retention-worker-queue-scale",
+      "pass": true,
+      "detail": "Retention delivery must use minute-level D1 leasing into Cloudflare Queues with bounded batches and a D1-safe 10-consumer ceiling instead of the former 50-per-15-minute direct cron fan-out."
+    },
+    {
+      "id": "retention-worker-cost-bounds",
+      "pass": true,
+      "detail": "Retention fan-out must cap per-invocation concurrency, avoid per-success D1 heartbeat writes, retire superseded broad indexes, and delete new terminal reminders immediately while retaining indexed bounded cleanup only for legacy terminal reminder/subscription rows."
+    },
+    {
+      "id": "city-fair-play-current-retention-truth",
+      "pass": true,
+      "detail": "City Fair Play must distinguish opt-in Web Push source readiness from automatic outbound delivery and keep live delivery proof false until Codex verifies a real device."
+    },
+    {
+      "id": "retention-worker-no-public-fetch",
+      "pass": true,
+      "detail": "Retention worker must be schedule-only with no public fetch surface."
+    },
+    {
+      "id": "retention-worker-disabled-by-default",
+      "pass": true,
+      "detail": "Retention push worker must remain deployment-disabled until live proof and secrets are configured."
+    },
+    {
+      "id": "retention-worker-disabled-is-inert",
+      "pass": true,
+      "detail": "Disabled or unconfigured retention worker must return before querying/updating D1 or attempting delivery."
+    },
+    {
+      "id": "retention-worker-preview-d1-isolated",
+      "pass": true,
+      "detail": "Retention worker must expose an explicit Preview D1 environment separate from Production so live push proof cannot require production data."
+    },
+    {
+      "id": "retention-item-scoped-one-active-reminder",
+      "pass": true,
+      "detail": "A real Activity item may offer one explicit route-scoped return reminder; the server must atomically replace any existing pending reminder and enforce one active reminder per account."
+    },
+    {
+      "id": "music-viral-share-parity",
+      "pass": true,
+      "detail": "Music/audio must be supported by the same explicit local Share Pack/native-share path as Image and Video."
+    },
+    {
+      "id": "creator-remix-media-parity",
+      "pass": true,
+      "detail": "Image/Video/Music/DJ/Radio remix starters must preserve their kind without creating tracking, referral or external-remix proof."
+    },
+    {
+      "id": "viral-remix-deep-link-no-server-state",
+      "pass": true,
+      "detail": "Remix Cards must offer a privacy-preserving recipient creation loop using public-safe URL-fragment data only; opening a shared link must not create server state, tracking, referral proof, memory, provider calls or automatic generation."
+    },
+    {
+      "id": "viral-remix-context-plus-link",
+      "pass": true,
+      "detail": "Remix sharing must offer one explicit copy containing useful public-safe context plus the canonical fragment-based EONAPP remix link without adding tracking or referral proof."
+    },
+    {
+      "id": "creator-outcome-return-loop",
+      "pass": true,
+      "detail": "Verified Creator outcomes must feed a fixed redacted local Activity Center return loop without history replay or automatic reminders."
+    }
+  ]
+}

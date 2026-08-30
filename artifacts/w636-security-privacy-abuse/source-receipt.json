@@ -1,0 +1,123 @@
+{
+  "schema": "eonapp.gate.w636.security-privacy-abuse.2026-07-11.v1",
+  "wave": "W636",
+  "ok": true,
+  "total": 21,
+  "passed": 21,
+  "checks": [
+    {
+      "id": "contract",
+      "pass": true,
+      "detail": "canonical W636 contract"
+    },
+    {
+      "id": "request-helper",
+      "pass": true,
+      "detail": "stream, media-type and strict UTF-8 bounds"
+    },
+    {
+      "id": "request-limits",
+      "pass": true,
+      "detail": "{\"accountMutation\":2048,\"billingMutation\":8192,\"referralMutation\":12288,\"cspReport\":12288,\"providerWebhook\":262144,\"supportCase\":20480}"
+    },
+    {
+      "id": "mutation-routes",
+      "pass": true,
+      "detail": "same-origin plus bounded JSON"
+    },
+    {
+      "id": "session-cookie",
+      "pass": true,
+      "detail": "host-only secure opaque session"
+    },
+    {
+      "id": "api-response-headers",
+      "pass": true,
+      "detail": "JSON APIs deny framing, cross-origin embedding and ambient device permissions"
+    },
+    {
+      "id": "checkout-url",
+      "pass": true,
+      "detail": "allowlisted Dodo checkout URL"
+    },
+    {
+      "id": "webhook-replay",
+      "pass": true,
+      "detail": "event id bound to payload hash"
+    },
+    {
+      "id": "webhook-body",
+      "pass": true,
+      "detail": "signed bounded JSON webhook"
+    },
+    {
+      "id": "public-identifiers",
+      "pass": true,
+      "detail": "account and provider session ids suppressed"
+    },
+    {
+      "id": "plaintext-provider-alias",
+      "pass": true,
+      "detail": "Alchemy reads encrypted vault only"
+    },
+    {
+      "id": "browser-admin-trust",
+      "pass": true,
+      "detail": "no persistent browser admin HMAC"
+    },
+    {
+      "id": "fixed-origins",
+      "pass": true,
+      "detail": "code-reviewed browser origin roots"
+    },
+    {
+      "id": "csp-telemetry",
+      "pass": true,
+      "detail": "bounded exact-media-type redacted CSP telemetry"
+    },
+    {
+      "id": "public-copy-truth",
+      "pass": true,
+      "detail": "privacy, support and Vault copy match actual custody and support boundaries"
+    },
+    {
+      "id": "legacy-key-store-truth",
+      "pass": true,
+      "detail": "legacy PBKDF2/AES store is migration-only and never advertised as post-quantum"
+    },
+    {
+      "id": "attachment-abuse",
+      "pass": true,
+      "detail": "bounded local-only file intake"
+    },
+    {
+      "id": "workflow-pins",
+      "pass": true,
+      "detail": "45 external uses; 0 mutable"
+    },
+    {
+      "id": "lockfile",
+      "pass": true,
+      "detail": "505 packages; 0 insecure; 0 missing integrity"
+    },
+    {
+      "id": "evidence-fence",
+      "pass": true,
+      "detail": "external production evidence pending"
+    },
+    {
+      "id": "files",
+      "pass": true,
+      "detail": "contract and maintained test set"
+    }
+  ],
+  "productionCertified": false,
+  "limitations": [
+    "independent penetration test",
+    "Cloudflare WAF and rate-limit evidence",
+    "real signed Dodo webhook replay and duplicate-conflict evidence",
+    "browser CSP delivery and redacted alert delivery evidence",
+    "real abuse and referral fraud review",
+    "owner review of production secrets and bindings"
+  ]
+}

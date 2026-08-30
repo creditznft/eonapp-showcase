@@ -1,0 +1,36 @@
+{
+  "schema": "eonapp.w281.ai-provider-lifecycle-source-readiness.v1",
+  "decision": "SOURCE_READY_EXTERNAL_EVIDENCE_PENDING",
+  "scope": "source-only",
+  "requiredExternalEvidence": [
+    {
+      "id": "official-provider-change-review",
+      "status": "pending-account-owner-review",
+      "owner": "provider owner",
+      "evidence": "Official provider change/terms/deprecation review before any provider URL, protocol, model-discovery or adapter change.",
+      "required": true,
+      "evidenceRefs": []
+    },
+    {
+      "id": "user-owned-nonproduction-verification",
+      "status": "pending-user-action",
+      "owner": "provider account owner",
+      "evidence": "User-initiated authenticated model-list verification in a non-production account after a reviewed source change.",
+      "required": true,
+      "evidenceRefs": []
+    },
+    {
+      "id": "rollback-disposition",
+      "status": "pending-release-owner",
+      "owner": "release owner",
+      "evidence": "Documented disable/revert decision with local AI and Guide Mode behavior preserved if a hosted provider change is rejected.",
+      "required": true,
+      "evidenceRefs": []
+    }
+  ],
+  "claimFence": [
+    "This board records source-only readiness and does not prove browser, device, provider, account, legal, privacy, security or production behavior.",
+    "No external evidence reference is collected in this source freeze.",
+    "This board cannot approve beta, launch, payment, trading, prediction-market or provider activation."
+  ]
+}

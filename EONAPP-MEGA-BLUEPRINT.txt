@@ -1,0 +1,1574 @@
+EONAPP.ch — final operating blueprint
+=====================================
+
+1. Core business model
+----------------------
+EONAPP.ch should be run as a static viral utility network, not as a generic “AI tools” directory.
+
+Winning formula:
+- fast tools that return instantly
+- challenge links that make users invite the next user
+- low-friction local account state through EON Vault
+- blog content that supports the tools, not the other way around
+- rewarded monetization after value delivery, not before
+
+Primary content pillars:
+- identity tools (rarity, personality, social reading, prediction)
+- money tools (crypto, savings, net-worth, cost comparison)
+- replay tools/games (brain tests, reaction tests, challenge games)
+
+Blog categories that fit:
+- tool explainers and result decoders
+- comparison pages and "best free" roundups
+- finance/use-case guides tied to a real tool
+- campaign / seasonal bridge pages
+- game-retention and daily-challenge posts
+- growth-ops/operator pages about vault, invite loops, and monetization
+
+Quality bar for every blog page:
+- one clear keyword lane
+- one main CTA back to a tool, game, or vault action
+- one proof block, worked example, or decoded result
+- one FAQ block
+- internal links that help recirculation
+- no generic AI filler
+
+2. Best monetization stack
+--------------------------
+Phase 1: low traffic / easy approval
+- Monetag rewarded smartlink on optional unlock buttons only
+- Adsterra native/banner on homepage, hubs, blog
+- BidVertiser fallback banner/native
+- affiliate blocks on finance/security/creator pages
+
+Phase 2: consistent traffic
+- keep Monetag for unlock/replay rewards only
+- add MGID-style native if approved later
+- use Propeller-style interstitials only on games/replays, never on first tool load
+
+Do not:
+- auto-open smartlinks
+- gate the first result
+- use push prompts on first visit
+- stack multiple aggressive formats together
+
+3. Ad architecture that fits this repo
+--------------------------------------
+Homepage:
+- hero first, ad second
+- native slot between trending tools and games
+- footer banner only
+
+Tool pages:
+- inline banner after form
+- rewarded unlock after result
+- affiliate card below unlocked section
+
+Games:
+- replay/retry rewarded slot
+- mid-session banner
+- no landing-page pop
+
+Blog:
+- native after intro
+- inline content block around mid-scroll
+- strong internal CTA back to tool
+
+The repo now contains:
+- assets/js/ads/config.js
+- assets/js/ads/AdManager.js
+
+Paste your actual zone codes / script snippets there and keep the localStorage caps.
+
+4. Viral systems that actually work without backend
+---------------------------------------------------
+Real no-backend systems:
+- challenge links with encoded challenge state
+- local streaks
+- local badges
+- result cards
+- invite attribution on the receiver’s device
+- encrypted local vault backup/restore
+
+Not honestly possible without shared storage:
+- trusted global referral trees
+- fraud-resistant paid referrals
+- real multi-user leaderboards
+
+Closest honest alternative:
+- challenge chain links
+- “beat my score” loops
+- invite badge on new device
+- local achievement packs unlocked after sharing intent
+
+Operator note on referrals:
+- a posted invite link still works if the referrer is offline because the referral payload lives in the URL
+- clicks are not written to a server ledger
+- the receiving device stores the invite context locally
+- the referrer gets local referral-return credit only when a downstream chain link comes back and is opened on the referrer device or restored there via vault import
+
+5. Static account model
+-----------------------
+EON Vault is the correct static-first identity layer.
+
+What it stores locally:
+- alias
+- avatar
+- badges
+- favorites
+- tool history
+- total runs / total shares
+
+What it does not pretend to do:
+- server sync
+- cross-device login without export/import
+- fraud-proof referrals
+
+Vault file:
+- export as .eonvault
+- optional AES-GCM passphrase encryption
+- restore on another device by importing the file
+
+6. P2P ideas: keep only the ones that fit
+-----------------------------------------
+Worth doing now:
+- challenge links
+- async score duels
+- local vault
+
+Maybe later:
+- WebRTC 1v1 mini-games using Cloudflare Durable Objects only as signaling
+- simple shared sessions if there is a clear game concept first
+
+Avoid for this site:
+- IPFS-heavy systems
+- fake decentralization for a casual consumer site
+- blockchain referral mechanics
+- relay-dependent global state unless it is absolutely necessary
+
+7. OpenClaw recommendation
+--------------------------
+Use the richer queue/orchestrator system as the real engine.
+
+Source of truth:
+- openclaw/orchestrator.py
+- openclaw/scheduler.py
+- openclaw/claw.bat
+
+Root claw.bat now delegates into the OpenClaw CLI.
+
+Important repo rule:
+- root site is live
+- site/ is legacy scaffold/reference only
+
+8. Immediate launch priorities
+------------------------------
+Priority 1
+- RareRank
+- Crypto Fate
+- tools.html
+- games.html
+- chat.html
+- vault.html
+- about/privacy/404
+- valid sitemap + valid Cloudflare headers
+
+Priority 2
+- Persona Mirror AI
+- Red Flag Decoder
+- Love Timeline Oracle
+- FutureWorth Forecast
+- first 3 blog posts
+
+Priority 3
+- first replayable game
+- game monetization layer
+- more affiliates
+- sponsor cards / partner picks
+
+9. Best tool concepts to build next
+-----------------------------------
+1. Persona Mirror AI
+2. Red Flag Decoder
+3. Love Timeline Oracle
+4. FutureWorth Forecast
+5. Brain Age Blitz
+6. Nation Twin Finder
+7. Lucky Day Oracle
+8. Fame Score Lab
+
+10. Repo realities already fixed
+--------------------------------
+This pass cleaned the most dangerous launch blockers:
+- missing live hub pages
+- malformed sitemap
+- broken root claw.bat path
+- invalid Cloudflare _headers format
+- missing vault/account system
+- broken tool page wiring
+- dead links to non-existent high-level pages
+- wrong import paths in tool definitions
+
+11. Private repo push target
+----------------------------
+GitHub remote:
+https://github.com/creditznft/EONAPP.git
+
+Recommended branch:
+- main
+
+12. Final rule set
+------------------
+If a new feature does not improve one of these, it should wait:
+- share rate
+- repeat visits
+- pages per session
+- rewarded action CTR
+- affiliate click-through
+
+Good features:
+- increase curiosity
+- create comparison
+- let the next user start fast
+- store progress locally
+- feel valuable before monetization appears
+
+Bad features:
+- interrupt value
+- overcomplicate the site
+- require fake backendless claims
+- hurt trust for a short-term RPM spike
+
+13. Final monetization + marketing decision section
+--------------------------------------------------
+This section is the final practical recommendation for the live static Cloudflare Pages version of EONAPP.ch.
+
+A. Best ad stack by phase
+-------------------------
+Rank the stack by long-term fit, not by short-term aggressiveness.
+
+Launch phase (0 to ~10k visits/day)
+1. Affiliate blocks on high-intent tools/blog posts should be the real primary monetization.
+2. Apply for Google AdSense early, but do not wait on it.
+3. Use Adsterra native/banner as the easiest low-friction fallback for homepage, tool hub, game hub, and blog pages.
+4. Use Monetag only for opt-in rewarded actions on entertainment pages, replay loops, and bonus unlocks.
+5. Keep only one display partner live at a time outside rewarded flows.
+
+Decision:
+- launch with affiliates + Adsterra for normal inventory
+- keep Monetag only behind optional unlock/replay buttons
+- treat AdSense approval as an upgrade, not a dependency
+
+10k/day phase
+1. Keep affiliates as the highest-margin layer on matched pages.
+2. Replace generic fallback display with AdSense if approved.
+3. If AdSense underperforms on game-heavy traffic, test NitroPay or Newor Media as the main display layer.
+4. Add MGID native only on blog/content pages if the feed quality is acceptable.
+5. Keep Monetag/CPA only for optional bonus actions, not for core page monetization.
+
+Decision:
+- best mixed stack is AdSense or NitroPay/Newor Media + affiliates + very limited rewarded inventory
+- do not run multiple aggressive display networks together
+
+100k/day phase
+1. Move from “network-first” to “yield-mix-first.”
+2. Primary stack should become direct sponsor cards + premium programmatic + affiliates.
+3. Best targets are NitroPay, Snigel, Raptive/Journey-style upgrades if the content mix qualifies, or a direct managed header-bidding partner.
+4. Run house ads that send traffic to the highest-EPC internal pages before selling every impression to a network.
+5. Keep rewarded CPA only on games and curiosity tools where the user expects optional extras.
+
+Decision:
+- at scale, direct deals + premium programmatic + affiliates beats squeezing more pop/native inventory out of cheap networks
+
+B. Easy-approval ad network comparison for static sites
+------------------------------------------------------
+Static site compatibility is good for all of these because they are just script tags and outbound links.
+The real issue is UX quality, not technical fit.
+
+1. Adsterra
+- approval ease: high
+- best formats: native, banner
+- best use here: homepage, hubs, blog, bottom-of-page placements
+- strengths: easy setup, broad geo fill, workable for static sites
+- weaknesses: quality varies, aggressive formats can damage trust fast
+- verdict: best easy-approval display starting point if used conservatively
+
+2. Monetag
+- approval ease: very high
+- best formats: smartlink, rewarded-style off-site unlock, in-page units
+- best use here: optional unlocks, replay rewards, “bonus analysis” actions
+- strengths: easy to get live, good for entertainment traffic
+- weaknesses: very easy to overuse, weak trust fit on utility/privacy pages
+- verdict: use only as an opt-in reward mechanic, not as site-wide monetization
+
+3. BidVertiser
+- approval ease: high
+- best formats: banner, native
+- best use here: fallback if Adsterra fill/quality is poor
+- strengths: simple, accessible, low setup friction
+- weaknesses: usually weaker RPMs
+- verdict: backup, not first choice
+
+4. Google AdSense
+- approval ease: medium to hard for newer mixed-content sites
+- best formats: responsive display, matched content style units
+- best use here: blog and hub pages, plus selective placements on clean tool pages
+- strengths: strongest trust signal, stable advertiser quality
+- weaknesses: slower approval, stricter policy risk, weaker fit for rewarded mechanics
+- verdict: still worth applying for because it improves brand safety and resale value
+
+5. MGID
+- approval ease: medium
+- best formats: native recommendation widgets
+- best use here: blog/article pages only
+- strengths: can monetize content discovery inventory better than generic banners
+- weaknesses: feed quality must be watched closely
+- verdict: only test after traffic is consistent and content quality is strong
+
+Ranked recommendation for this repo:
+1. Adsterra
+2. AdSense when approved
+3. Monetag for reward-only use
+4. BidVertiser as fallback
+5. MGID later for blog-native experiments
+
+C. CPA/rewarded network recommendations for unlock flows
+-------------------------------------------------------
+Reality check for a static site:
+- without a backend, you cannot reliably verify survey/app/email completion
+- so CPA should unlock bonus content, cosmetics, retries, exports, or “extra depth”
+- CPA should not be the only path to the first useful answer
+
+1. AdGate Media
+- best use: optional offerwall for extra spins, premium result expansion, or reward packs
+- strongest fit: games, quiz-style tools, mobile-heavy traffic
+- use when: the user already got value and wants more
+- do not use when: the page is finance, security, privacy, vault, or first-session utility traffic
+
+2. AdGem
+- best use: app-install and mobile reward flows
+- strongest fit: games/replay loops and entertainment tools
+- use when: mobile traffic is high and reward language is simple
+- do not use when: most traffic is desktop tool traffic or the offer mix gets too sweepstakes-heavy
+
+3. CPAlead
+- best use: hosted locker/offerwall tests for bonus-only content
+- strongest fit: casual freebie audiences and broad geo traffic
+- use when: you need easy onboarding and clear optional rewards
+- do not use when: the page needs premium trust or when users may think the core tool is being held hostage
+
+4. OGAds
+- best use: mobile utility/gaming offers with careful manual filtering
+- strongest fit: entertainment and younger mobile audiences
+- use when: you can curate countries/offers aggressively
+- do not use when: you cannot monitor lead quality or the page category is sensitive
+
+5. MyLead or AdWork Media
+- best use: secondary geo fill and backup reward inventory
+- strongest fit: testing secondary countries after a primary network is stable
+- use when: you need backup fill and can exclude weak lead-gen offers
+- do not use when: the only offers available are vague email submits or sweepstakes
+
+Best practical rule:
+- use CPA only for bonus unlocks on games, quizzes, personality tools, and “deeper result” pages
+- never use CPA on vault, privacy, security, account, or serious finance pages
+
+D. Affiliate categories with the strongest EPC for this concept
+---------------------------------------------------------------
+Ranked by likely EPC and fit, not just by commission rate.
+
+1. VPNs and privacy tools
+- strongest fit for vault/privacy/security articles
+- usually high EPC, recurring promos, easy native-card placement
+
+2. Password managers, backup, antivirus, identity protection
+- excellent trust fit with local-first vault positioning
+- works on security blog posts and vault-related upsell cards
+
+3. Crypto exchanges, wallets, tax/accounting tools
+- very strong EPC on crypto pages if compliance and geo restrictions are respected
+- only place these beside crypto calculators/oracles and explicit crypto content
+
+4. AI SaaS subscriptions
+- strong fit for chat, productivity, creator, and “AI tool comparison” content
+- good for sponsored comparison blocks and “best alternative” pages
+
+5. Hosting, domain, creator SaaS, site builders
+- good fit for creator/utility audiences and business-minded readers
+- better on blog pages than game pages
+
+6. Finance apps and investing products
+- high EPC but high compliance burden
+- only use on clear educational tools and add clear disclaimers
+
+Lowest priority:
+- low-ticket ecommerce
+- generic gadget affiliate cards
+- random marketplace widgets
+These usually dilute the brand and underperform compared with software/finance/security offers.
+
+E. Exact monetization placements by page type
+---------------------------------------------
+Homepage
+- no third-party ad above the hero
+- 1 native/display block after the first tool/game grid
+- 1 sponsor/partner strip above the footer
+- optional internal house-ad block for best-performing tools
+
+tools.html hub
+- 1 native block after 6 to 8 cards
+- 1 sponsor comparison module after category filters or first section break
+- no sticky takeover before the user clicks a tool
+
+Individual tool page
+- nothing before the input/form/result action
+- free core answer first
+- bonus unlock card immediately after the free result
+- 1 relevant affiliate card under the result
+- 1 display/native block near the lower content section only
+
+High-intent calculator tool
+- replace generic native with a comparison table or sponsor card
+- examples: VPN, password manager, exchange, AI subscription
+
+games.html hub
+- 1 native/display block after the first row of game cards
+- 1 sponsor block near the bottom
+- no pop or interstitial on first arrival
+
+Individual game page
+- no pre-roll interstitial on first load
+- small banner below the game frame/canvas
+- rewarded retry / extra life / bonus mode after failure or after session end
+- optional CPA wall only for extra lives, cosmetics, or tournament mode
+
+Blog index
+- 1 native unit after the first 4 posts
+- 1 sponsor row before footer
+
+Blog article
+- no ad before the intro earns trust
+- 1 inline unit after the intro or first major section
+- 1 mid-article native block
+- 1 relevant affiliate block at the end near the CTA back to a tool
+- keep it lighter on articles under ~1200 words
+
+chat.html
+- avoid cheap display clutter
+- use sponsor cards for AI tools, models, or productivity software
+- if any ad unit exists, keep it below the first meaningful interaction area
+
+vault.html, privacy.html, about.html
+- no third-party CPA
+- no aggressive display ads
+- use only internal cross-links or a very soft sponsor mention if necessary
+- vault pages should feel clean and trustworthy
+
+404 page
+- internal recirculation only
+- no third-party monetization needed
+
+F. Ethical multi-step unlock flows that feel premium
+---------------------------------------------------
+The pattern is: value first, premium second, friction optional, reward local.
+
+Flow 1: deeper result unlock
+1. show the full basic result instantly
+2. show a premium panel: “Unlock deeper breakdown”
+3. offer 3 clean choices:
+   - sponsor visit
+   - optional partner task
+   - save/share to unlock
+4. unlock extra charts/comparisons/export locally for 24h or 7 days
+
+Flow 2: game reward loop
+1. let the first play happen ad-light
+2. after a fail, offer:
+   - extra life
+   - bonus round
+   - cosmetic pack
+3. reward can come from sponsor click, ad view, or optional offerwall
+
+Flow 3: premium export bundle
+1. free user sees result normally
+2. export image/basic copy is free
+3. premium bundle includes themed export, extended text, or comparison card
+4. unlock by partner action or vault save streak
+
+Rules that keep it ethical:
+- always show the core result first
+- clearly label “optional partner task”
+- show estimated effort if using CPA
+- keep a visible “continue free” path
+- store unlock locally so the user does not repeat it every page
+- never fake a locked result that never existed
+
+G. Free and paid marketing channels with likely ROI
+--------------------------------------------------
+Free channels
+1. SEO around utility-intent queries
+- likely ROI: highest long-term
+- why: static sites can win on speed, focused intent, and internal linking
+- best use: calculator, checker, quiz, and “how to use” clusters
+
+2. On-site challenge/share loops
+- likely ROI: highest short-term if tools are naturally shareable
+- why: no media spend and best fit for games/personality/score tools
+- best use: “beat my score”, “compare with me”, “share your rank”
+
+3. Short-form video (TikTok, Reels, Shorts)
+- likely ROI: medium to high for games and curiosity tools
+- why: hooks are strong if results are visual
+- best use: reaction tests, rank tools, weird/fun outputs
+
+4. Reddit, Discord, niche communities
+- likely ROI: medium
+- why: can drive high-quality early users if posts are useful and non-spammy
+- best use: launch one useful tool into the exact matching community
+
+5. Pinterest
+- likely ROI: medium for visual quizzes, self-improvement, and quote/result cards
+- why: evergreen discovery is better than most people expect
+
+6. Product Hunt / Indie Hackers / maker communities
+- likely ROI: low to medium
+- why: good for spikes, weak for compounding unless the tool is very novel
+
+Paid channels
+1. Google Search Ads
+- likely ROI: best paid channel for high-intent utility pages
+- use only on keywords where tool + affiliate value beats CPC
+
+2. Meta ads
+- likely ROI: medium
+- best use: curiosity tools, personality pages, retargeting, sponsor-backed funnels
+
+3. TikTok ads
+- likely ROI: medium but volatile
+- best use: games and strong visual-result tools
+
+4. Reddit ads
+- likely ROI: medium to low
+- best use: niche utility or privacy/security pages with tight targeting
+
+5. Native ad buying
+- likely ROI: low for this brand
+- best use: mostly avoid unless a very specific article funnel already proves profitable
+
+Paid marketing rule:
+- do not scale paid acquisition until at least one page template proves durable earnings per visit
+- this site should earn organic and viral traffic before it tries to buy broad cold traffic
+
+H. OpenClaw + external AI marketing workflow
+--------------------------------------------
+Best rule:
+- use local models for 80 to 90 percent of ideation and production
+- use paid APIs only for speed on proven workflows
+
+Weekly workflow
+1. Run claw analytics and manually review top pages, CTR, RPM, and affiliate clicks.
+2. Run claw keywords "tool niche" to build fresh keyword clusters.
+3. Pick only keywords that map to a real tool, replay loop, or sponsor category.
+4. Run claw blog "keyword" for support content.
+5. Run claw build "Tool Name" "Category" "Description" for the matching utility page.
+6. Run claw check-links before publish.
+7. Use the social/viral agents to turn each page into short posts and result-card copy.
+8. Human-review titles, claims, affiliate comparisons, and anything finance/security-related.
+
+Best model split already supported in this repo
+- deepseek-coder: tool generation
+- llama3.1: SEO blog drafting
+- mistral: social copy
+- qwen2: keyword research
+- phi3: quality review
+
+Where optional paid APIs like Gemini Flash help
+- fast SERP-summary and keyword clustering
+- summarizing competitor patterns from large pasted inputs
+- generating many title/meta variants for A/B testing
+- speed when local hardware is busy
+
+Where paid APIs should not be the default
+- every blog post draft
+- sensitive finance/privacy claims
+- generic filler content at scale
+
+Practical operating model
+- local first for research, draft generation, and repurposing
+- paid API only after a page type already shows traffic or revenue potential
+- final publish always gets human review
+
+I. Top 12 profit features to prioritize
+--------------------------------------
+1. deeper-result premium panels on every top tool
+2. vault save/favorite/history loops that increase repeat visits
+3. challenge links and “compare with a friend” result cards
+4. sponsor comparison blocks matched to intent
+5. exported image/card downloads with optional premium versions
+6. rewarded game retries, extra lives, and streak boosts
+7. “best next tool” recommendation modules after every result
+8. blog-to-tool and tool-to-blog funnel blocks on every relevant page
+9. high-EPC security/privacy tool cluster around vault pages
+10. high-EPC crypto cluster around calculators/oracle pages
+11. AI sponsor cards around chat/productivity pages
+12. direct partner picks / featured sponsor slots sold manually once traffic is real
+
+J. Hard red lines
+-----------------
+These will damage SEO, retention, trust, or all three.
+
+- do not gate the first real result
+- do not auto-open smartlinks, popunders, or forced redirects
+- do not show push-notification prompts on first visit
+- do not put third-party ads inside vault/privacy trust surfaces
+- do not stack multiple aggressive monetization formats on one page
+- do not run survey/email-submit walls on security, finance, or serious utility pages
+- do not use fake countdowns, fake buttons, or “click allow to continue” patterns
+- do not publish thin AI filler articles just to chase AdSense inventory
+- do not create doorway pages or mass near-duplicate SEO pages
+- do not let ad scripts wreck Core Web Vitals on the core landing pages
+- do not recommend affiliates without clear relevance and disclosure
+- do not buy large amounts of cold traffic before one funnel proves profitable organically
+
+K. Final production playbook section (static-only, high-end AI model workflow)
+------------------------------------------------------------------------------
+This is the execution section for GPT-5.4 / Claude Sonnet quality output on EONAPP.ch.
+
+1) Best next tool categories by audience
+----------------------------------------
+Creators (high share + affiliate fit)
+- Hook/title generators with swipe variants and platform-specific lengths.
+- Thumbnail/headline score tools with “before vs after” preview cards.
+- Offer/pricing page analyzers that output clearer package structures.
+- Creator KPI mini calculators (RPM, conversion, sponsor rate benchmarks).
+
+Gamers (retention + replay loops)
+- Aim/reaction/reflex drills with challenge links and local streaks.
+- Build-order or loadout simulators for popular genres.
+- Skill rank predictors with “beat my setup” share links.
+- Session warm-up routines and anti-tilt decision checkers.
+
+Finance-curious users (high intent + EPC)
+- Personal net-worth, DCA, emergency fund, debt-payoff and fee calculators.
+- “Scenario compare” tools (rent vs buy, refinance vs hold, lease vs buy).
+- Crypto risk sizing + volatility budget tools (education-only disclaimers).
+- Subscription leak finders and spending category optimizers.
+
+Viral social traffic (visual results)
+- Personality archetype, red-flag decoder, “future self” prediction cards.
+- Friend comparison tools: “who wins” scorecards.
+- Short challenge tools with one-screen results and image exports.
+- Time-based trend tools (“your 2027 version”, “30-day glow-up simulator”).
+
+2) Best browser game types for retention + monetization
+-------------------------------------------------------
+Tier A (build first)
+- 60-second skill loops: reaction dodge, precision tap, memory chain.
+- Deterministic puzzle streak games: daily seed + infinite mode.
+- One-button survival with escalating speed and cosmetic unlocks.
+
+Tier B (after 3 winners)
+- Async duel games via encoded challenge states in URL.
+- Deck-lite strategy mini games with daily modifiers.
+- Collection-lite meta layer: badges, themes, milestone packs (local-only).
+
+Monetization rules
+- First session ad-light, zero forced interstitial.
+- Rewarded extras only after fail/win screen: extra life, reroll, bonus mode.
+- Optional offerwall only for cosmetics or tournament mode, never core play.
+
+3) Supporting scripts/systems to build next (static-first)
+-----------------------------------------------------------
+Ad manager v2
+- Per-template placement rules, frequency caps, geo/device toggles.
+- “Trust-safe mode” auto-off for vault/privacy/finance-sensitive templates.
+
+Vault/profile core
+- Local profile, runs, shares, badges, favorites, history.
+- Export/import .eonvault with optional passphrase encryption.
+
+Challenge engine
+- Signed challenge payload (score, mode, expires, checksum).
+- “Beat this run” links + anti-tamper heuristics client-side.
+
+Share card generator
+- Deterministic SVG/Canvas cards from result JSON.
+- Preset sizes: OpenGraph, story portrait, square feed.
+
+Leaderboard alternatives
+- Personal best timeline, friend-duel links, daily seed crown locally.
+- “Session ladder” and “streak league” local rankings.
+
+Analytics approximation (no backend)
+- Event queue in localStorage + optional export blob.
+- Session metrics: CTR proxy, replay rate, share rate, depth index.
+
+Sitemap/link tools
+- Static sitemap updater script, broken-link crawler, orphan-page detector.
+- Internal link recommender from tool/blog metadata.
+
+4) Prompt packs for high-end models (copy/paste instructions)
+-------------------------------------------------------------
+Prompt pack A: Viral tool builder
+"Build one static tool page for EONAPP.ch that delivers a result in under 8 seconds.
+Requirements: no backend, mobile-first, challenge link support, result card export, local streak counter, optional rewarded bonus panel after free result, affiliate slot mapped to intent, and schema-ready metadata.
+Output: full HTML/CSS/JS, JSON config block, QA checklist, and 5 social hooks.
+Constraints: no fake claims, no forced redirects, no lock before first useful result."
+
+Prompt pack B: High-quality browser game builder
+"Build one replayable browser game (static-only) with 60-90 second core loop, deterministic scoring, pause/resume, touch+keyboard controls, and local save state.
+Include: fail-screen rewarded options (extra life/bonus mode), challenge URL encoder, anti-cheat heuristics client-side, daily seed mode, and accessibility settings.
+Output: production-ready HTML/CSS/JS, balancing constants table, telemetry events map, and monetization-safe placement map."
+
+Prompt pack C: Blog cluster generator
+"Create a 1 pillar + 6 support article cluster tied to one EONAPP tool intent keyword.
+Each article must link back to the tool, include one comparison table, FAQ schema candidate blocks, and internal links to 3 relevant pages.
+Output: titles, slugs, outlines, meta titles/descriptions, CTA blocks, and anchor-link map.
+Constraints: useful first, no thin filler, no duplicate keyword stuffing."
+
+Prompt pack D: Landing/share page generator
+"Create a static landing/share page for one tool or game campaign.
+Include: hero with social proof pattern, one primary CTA, one demo/result preview, challenge invitation module, FAQ accordion, trust block, and lightweight ad/sponsor placement below value sections.
+Output: HTML/CSS/JS + copy variants for cold/social/return visitors."
+
+Prompt pack E: Script/system module builder
+"Build one standalone JS module for EONAPP static architecture.
+Module target: {ad manager | vault | challenge engine | share card | link auditor}.
+Deliver: API design, module code, integration snippet, failure modes, local test harness, and migration notes.
+Constraints: zero backend, deterministic behavior, progressive enhancement, no framework lock-in."
+
+5) Quality standards (release gate)
+-----------------------------------
+Layout/UI
+- Clear hierarchy in first viewport; one primary action per page.
+- Stable card/grid system; avoid layout shifts after ad/load events.
+
+Mobile
+- 360px minimum support; thumb-friendly controls; sticky CTA only when useful.
+- Input latency low on mid-tier Android; avoid oversized hero media.
+
+Desktop
+- Max content width and readable line length; keyboard shortcuts for tools/games.
+- Side panels collapse cleanly; no dead whitespace on ultrawide.
+
+Accessibility
+- Semantic landmarks, visible focus, keyboard completion for all core actions.
+- Color contrast AA minimum, alt text, reduced motion support.
+- No interaction locked behind hover-only behaviors.
+
+Performance
+- Target: LCP <=2.5s, CLS <=0.1, INP <=200ms on core templates.
+- Lazy-load non-critical scripts; defer ads until post-interaction zones.
+- Keep JS modular and page-specific; remove unused CSS.
+
+6) Recommended build order (next 30 assets/pages/features)
+-----------------------------------------------------------
+Wave 1: foundation (1-10)
+1. AdManager v2 rules engine
+2. Vault v2 schema + migration helper
+3. Challenge engine core
+4. Share card generator core
+5. Link auditor script
+6. Sitemap updater script
+7. Tool template v2 (fast result + bonus panel)
+8. Game template v2 (fail-loop rewards)
+9. Campaign landing template v1
+10. Blog template v2 with tool CTA module
+
+Wave 2: tools + games (11-20)
+11. Creator Hook Optimizer tool
+12. Thumbnail Score Lab tool
+13. Net Worth Snapshot tool
+14. Emergency Fund Planner tool
+15. DCA Scenario Explorer tool
+16. Reaction Sprint game
+17. Memory Chain game
+18. One-Button Survival game
+19. Daily Seed Puzzle game
+20. Async Duel wrapper for best-performing game
+
+Wave 3: growth + monetization (21-30)
+21. Personality share tool (high-viral format)
+22. Friend comparison tool (challenge-first)
+23. Crypto risk sizing tool (education-safe)
+24. Subscription leak checker tool
+25. Pillar blog page for creator stack
+26. Pillar blog page for finance calculators
+27. 6-post support cluster for creator pillar
+28. 6-post support cluster for finance pillar
+29. Campaign page for top tool
+30. Campaign page for top game
+
+7) Page architecture map (static-only templates)
+------------------------------------------------
+Homepage (index.html)
+- Hero -> trending tools -> featured games -> social proof -> sponsor strip -> footer recirculation.
+
+Tool page (tools/*.html)
+- Input module -> instant free result -> bonus unlock panel -> share card/challenge -> related tools -> light sponsor block.
+
+Game page (games/*.html)
+- Game canvas -> score/streak HUD -> fail/win reward panel -> challenge/share -> next game recommendation -> footer.
+
+Blog page (blog/*.html)
+- Value intro -> sections with examples -> inline comparison -> tool CTA block -> FAQ -> related posts -> footer CTA.
+
+Vault/profile (vault.html)
+- Profile summary -> badges/history/favorites -> export/import -> privacy notice -> internal recommendations only.
+
+Campaign/share page (campaign-*.html)
+- Hook hero -> proof/result preview -> challenge CTA -> FAQ/trust -> secondary CTA -> tracking-safe outbound links.
+
+Final static architecture rule
+- Every page must function fully without backend calls.
+- Shared state is localStorage + URL payloads + .eonvault export/import only.
+
+15. Final local-first systems decision layer
+--------------------------------------------
+This is the final decision on the account/profile/referral/p2p side after reviewing the static-site constraints and the more complex ideas from eonpackage.
+
+A. Keep and improve now
+- EON Vault stays as the core identity layer.
+- Alias + avatar + badges + streaks + favorites + history are the correct “account” for this site.
+- Challenge links remain the main viral loop because they are honest and cheap.
+- Invite attribution stays single-hop only.
+- Export/import via .eonvault remains the cross-device restore method.
+
+B. Add next to make the system feel premium
+1. Vault versioning and migrations
+- add explicit schema migration logic so future profile changes do not break old backups.
+
+2. QR handoff for vaults
+- let users export a QR or short handoff payload for mobile-to-desktop transfer.
+- this feels advanced without adding backend complexity.
+
+3. Challenge expiry
+- challenge payload should include a created timestamp and expire after 7 days.
+- this prevents dead, stale, or weird recycled links.
+
+4. Chain depth
+- challenge payload should include a simple depth counter.
+- show “you are challenger #4 in this chain” to create social proof.
+
+5. Async duel wrappers
+- every score-based tool/game should support “beat my score” links.
+- this looks multiplayer while staying fully static.
+
+C. Multi-step access ladder (premium but clean)
+Tier 1 — always free
+- instant result or first play
+
+Tier 2 — free bonus
+- save to vault
+- share card
+- compare mode
+
+Tier 3 — sponsor reward
+- optional rewarded sponsor visit for deeper analysis / export pack / bonus mode
+
+Tier 4 — optional CPA reward
+- only on games, curiosity quizzes, and cosmetic reward flows
+- never on vault, privacy, security, or serious finance pages
+
+Rule:
+- first useful value is always free
+- every extra step must feel optional, labeled, and fair
+
+D. What to reject even if it sounds exciting
+- fake backendless global leaderboards
+- blockchain wallet identity
+- IPFS-heavy systems
+- paid referral trees
+- survey walls on trust pages
+- “download-site style” deceptive lockers
+
+E. Only p2p layer worth considering later
+- Cloudflare Durable Objects used only for WebRTC signaling if a specific 1v1 game proves worth it.
+- no persistent multiplayer backend.
+- no shared global state unless there is clear proof of ROI.
+
+Final systems rule:
+- if a feature needs shared truth, anti-fraud, moderation, or real-time persistence, it is not phase 1 for EONAPP.ch.
+
+================================================================================
+SECTION 14 — GAME TECHNOLOGY DECISION & FUTURE-PROOF ROADMAP
+================================================================================
+
+RESEARCH FINDING (April 2026):
+Chrome is NOT dropping HTML5 Canvas or WebGL. This is a myth based on Chrome
+dropping NPAPI/Flash in 2015-2017. Modern browser game support is EXPANDING:
+• WebGPU stable in Chrome 113+ (April 2023) — GPU compute shaders in the browser
+• WebAssembly growing — Unity, Godot, Bevy all export to WASM
+• Canvas 2D API: zero deprecation risk — W3C Living Standard
+• WebGL 2: widely supported across Chrome, Firefox, Safari, Edge
+
+GAME TECHNOLOGY TIERS (use in order of complexity needed):
+
+TIER 1 — Pure HTML5 Canvas (current, zero dependencies)
+  Target: Casual/arcade games (<5min sessions)
+  Examples: Neon Dash, Tap Reactor, Memory Chain, Color Sprint
+  Stack: requestAnimationFrame + Canvas 2D API
+  Bundle: 0KB extra (inline JS)
+  Future risk: NONE
+
+TIER 2 — Phaser.js via CDN (medium games)
+  Target: Platformers, puzzle games, RPG-lite (5-20min sessions)
+  Stack: Phaser 3.x from cdn.jsdelivr.net (27KB gzip)
+  Deploy: Single HTML file, Cloudflare Pages serves it directly
+  Future risk: NONE (WebGL2 fallback to Canvas)
+
+TIER 3 — Three.js / Babylon.js (3D games)
+  Target: 3D shooters, exploration games, racing (20-60min sessions)
+  Stack: Three.js r150+ from CDN, or bundled via Parcel/Vite
+  Bundle: 150-300KB gzip
+  Deploy: /games/[game-name]/ directory with assets
+  Future risk: NONE (WebGL2 is permanent)
+
+TIER 4 — Godot 4 HTML5 / Unity WebGL (AAA quality)
+  Target: Full RPGs, adventure games, shooters (hours of gameplay)
+  Stack: Godot 4 exported to HTML5 WASM — 20-50MB initial load
+  Special requirement: Cross-Origin Isolation headers (required for SharedArrayBuffer)
+  Add to _headers file:
+    /games/[game-folder]/*.html
+      Cross-Origin-Opener-Policy: same-origin
+      Cross-Origin-Embedder-Policy: require-corp
+  Deploy: /games/[game-name]/ with index.html + .wasm + .pck files
+  CDN: Cloudflare Pages handles WASM with correct MIME types automatically
+  Future risk: NONE — WASM is a W3C standard, all browsers support it
+
+DECISION MATRIX:
+  Session <2 min:  Tier 1 (Canvas)
+  Session 2-10 min: Tier 2 (Phaser.js)
+  3D or visual fidelity needed: Tier 3 (Three.js)
+  Full RPG/shooter targeting high LTV users: Tier 4 (Godot WASM)
+
+NEXT GAMES PLANNED (in priority order):
+1. Void Raider — Tier 2/3 space shooter, Phaser.js, parallax starfield, waves, upgrades
+2. Dungeon Crawl Zero — Tier 2 roguelike, procedural rooms, Phaser.js, ASCII + sprite mix
+3. Mind Merge — Tier 1, advanced word/logic hybrid, 500+ puzzle database
+4. Neon RPG — Tier 3/4, Three.js isometric RPG, character stats, quest chains
+
+
+================================================================================
+SECTION 15 — SIMULATED-AI CHATBOT TOOL ARCHITECTURE
+================================================================================
+
+CORE CONCEPT:
+Tools disguised as niche AI assistants — no real AI, large static databases,
+conversation state machines, chat-bubble UX. Users feel they are getting
+personalized AI guidance. Completely static, zero API costs.
+
+ARCHITECTURE PATTERN:
+  1. Data file: /assets/js/tools/defs/[tool]-data.js
+     → window.[TOOL]_DATA = { entries: [...500+ items], ... }
+     → Each entry has: id, category, keywords, shortAnswer, longAnswer, advice
+  2. Page: /tools/[tool].html
+     → Custom chat UI (NOT ToolEngine — these need full custom UX)
+     → TarotOracle class pattern: state machine, typeMessage(), addMessage()
+     → Conversation flow: greeting → question(s) → "processing" → reveal
+     → Tabs: different interpretations (love/career/life or other context axes)
+  3. Share URL: ?r=BASE64(result_id+user_name)
+  4. Credit gate: free tier = 1 result, premium = deep dive + export
+  5. localStorage state: credits, history, session name
+
+SIMULATED-AI TOOLS PIPELINE:
+  LIVE:
+  ✅ Tarot Oracle — 78-card database, love/career/energy tabs, spread types, credits
+
+  PLANNED (in order):
+  • Personality Archetype AI — 12 Jungian archetypes, 200+ question paths, career+life
+  • Dream Interpreter — 400+ dream symbol database, multi-symbol readings, chat
+  • Numerology Oracle — full name/birthdate calculations, life path + expression number
+  • Business Idea AI — 300+ validated niche ideas with market size/difficulty scoring
+  • Astrology Rising Sign Chat — birth chart chatbot, 12 signs × 12 houses database
+  • Career Compatibility AI — 50 career paths × personality dimensions, chat flow
+  • Meme Personality Test — viral meme-based quiz, personality type result, share card
+  • Love Language Decoder — 5 languages × depth profiles, partner compatibility analysis
+
+VIRALNESS MECHANICS REQUIRED IN EVERY CHATBOT TOOL:
+  • Share URL encoding result (copy to clipboard + native share API)
+  • Result card for screenshots (use html2canvas or CSS-only card)
+  • Challenge link: "See if your reading matches [friend]'s"
+  • Streak system: daily return = bonus insight unlocked
+  • Social proof counter: "🔮 47,293 readings done today" (randomized in range, localStorage cached)
+
+
+================================================================================
+SECTION 16 — CREDIT & MONETIZATION FUNNEL V2
+================================================================================
+
+CREDIT SYSTEM (localStorage-only, no backend):
+  Storage key: eon:credits:v1 (JSON: { credits: N, history: [...], earned: N })
+  
+  EARN CREDITS:
+  • Sponsor visit (tab opens): +2 credits after 3s delay (honor system, no verification)
+  • Invite a friend (link copied): +1 credit (visual reward only, no tracking)
+  • Daily return visit: +0.5 credits (checks eon:last-visit date key)
+  • First-time tool completion: +1 credit per tool (eon:tool-credits:{id} flag)
+  • Challenge accepted (opened from share link): +1 credit
+  
+  SPEND CREDITS:
+  • Premium spread (Tarot 3-card): 2 credits
+  • Deep analysis tier: 2 credits
+  • Full export / PDF-style result card: 1 credit
+  • Game extra life / continue: 1 credit
+  • Unlock archive of past readings: 3 credits
+  
+  CREDIT DISPLAY: Persistent across all pages via site-header badge
+  → Shown in top-right of header: "✦ 4 Credits"
+  → Animate on earn (gold pulse)
+  → Update via custom event: document.dispatchEvent(new CustomEvent('credits-changed'))
+
+FUNNEL STEPS (multi-page monetization):
+  Step 1: Tool/Game grabs attention (free tier, always playable)
+  Step 2: Result teaser → "Want the full reading?" → credit gate
+  Step 3: Credit earn path A = sponsor page (real monetization touch)
+  Step 4: Credit earn path B = invite link (viral loop, zero cost)
+  Step 5: Unlocked premium result → share card → friends enter funnel at Step 1
+  Step 6: Returning user → daily credit drip → habit loop → ad exposure again
+
+SPONSOR PAGE ARCHITECTURE:
+  /vault.html — "Unlock Credits" page
+  → Shows 3-4 sponsor offer tiles
+  → Each tile: "Visit → Earn 2 Credits"
+  → Uses window.open() + sets eon:sponsor:{id}:ts timestamp
+  → After 3 seconds, auto-awards credits (honor system)
+  → Real monetization: affiliate links or display ads on that page
+
+REFERRAL SYSTEM:
+  → Share link format: /tools/[tool].html?ref=BASE64(userName)
+  → On arrival with ref param: auto-award +1 credit to referrer (localStorage referral log)
+  → Show banner: "You were invited by [name] — here's a bonus insight for you"
+  → Referrer credit stored in: eon:referral-credits (accumulated total)
+
+
+================================================================================
+SECTION 17 — UI/UX STANDARDS & KNOWN FIXES
+================================================================================
+
+LOGO VISIBILITY FIX (applied):
+  Old: color: var(--clr-text) = #e2e8f0, font-weight 700
+  New: color: #f1f5f9, font-weight 800
+  → Explicitly removes reliance on CSS variable that some game pages override
+
+NAV CONTRAST FIX (applied):
+  Old: color: var(--clr-text-muted) = #94a3b8
+  New: color: #b0bdd0
+  → WCAG AA compliant on all dark backgrounds (#0b1020, #0f0f0f, #050a18)
+
+SITE-HEADER FIX (applied):
+  Old: background: rgba(11,16,32,0.92) — semi-transparent at 92%
+  New: background: rgba(9,13,26,0.97) — near-opaque at 97%
+  → Prevents game page backgrounds from bleeding through header
+
+FOOTER REQUIREMENT:
+  All pages must have the standard footer block (already in base layout)
+  Any page missing footer: add standard block before </body>:
+    <footer class="site-footer"> ... </footer>
+
+MOBILE MENU:
+  Current: nav links wrap on narrow screens (acceptable)
+  Planned: hamburger menu for <640px viewport (implement in layout.css + layout.js)
+
+
+================================================================================
+SECTION 18 — EON LIGHT P2E STACK (IMPLEMENTED BASE LAYER)
+================================================================================
+
+GOAL:
+Build a lightweight play/use-to-earn system for EONAPP.ch that works on static
+hosting today, with a clean path to optional on-chain payout later.
+
+SEPARATE CURRENCIES (MANDATORY):
+1) Oracle Credits
+   Purpose: unlock premium outputs and deeper reports.
+   Storage: localStorage eon:credits:v1
+   Source: sponsor path, invite loops, daily bonuses.
+
+2) XP + Level
+   Purpose: progression and engagement rank (Lv1-Lv50), no spend.
+   Storage: localStorage eon:xp:v1
+   Source: game sessions, tool completions, blog reads, challenge wins.
+   Output: level-up events trigger lootbox drops.
+
+3) EON Coins (Light Wallet)
+   Purpose: utility reward points for game/tool/blog activity.
+   Storage: localStorage eon:wallet:v1
+   Source: score-based rewards + first-run bonuses + lootbox coin drops.
+   Output: redeemable later for in-app perks, memberships, drops, or future bridge.
+
+ANTI-ABUSE MODEL (STATIC SAFE):
+- Daily caps per reward source (game/tool/blog/referral/lootbox/challenge).
+- First-play and first-tool bonus flags.
+- One-time milestone flags for rare achievements.
+- Store recent tx/activity history for transparency in vault.
+- Keep all rewards deterministic and auditable in local state.
+
+CURRENT IMPLEMENTATION SHIPPED:
+- /assets/js/utils/credits.js  (premium unlock currency)
+- /assets/js/utils/xp.js       (levels, activities, progression UI badge)
+- /assets/js/utils/wallet.js   (EON coin ledger + tx history)
+- /assets/js/utils/lootbox.js  (rarity drops, item catalog, pending queue)
+- /vault.html + vault-page.js now expose wallet/xp/lootbox dashboards
+- Void Raider integrated with Credits + XP + Coin + Lootbox reward hooks
+- ToolEngine integrated with XP + Coin + probabilistic lootbox drops
+
+
+================================================================================
+SECTION 19 — LOOTBOX DESIGN, RARITY ECONOMY, AND NFT BRIDGE PATH
+================================================================================
+
+RARITY TIERS:
+- Common (60%)
+- Rare (25%)
+- Epic (12%)
+- Legendary (3%)
+
+ITEM TYPES:
+- Skins (game cosmetics)
+- Badges (profile prestige)
+- Themes (tool UI packs)
+- Coin drops (EON wallet boosts)
+- Boosts (credits/xp perks)
+- Artifacts (collectibles, future mint candidates)
+
+SYSTEM RULES:
+- Level-up always attempts a drop, with luck increasing by level.
+- Certain milestones grant deterministic items (achievement badges).
+- Pending drops appear as claimable lootboxes and are moved to collection.
+- Collection capped to prevent unbounded localStorage growth.
+
+NFT BRIDGE ROADMAP (PHASED):
+Phase A (current): local collectible ownership only (fast, no chain friction)
+Phase B: optional wallet connect + claim queue via Cloudflare Worker signed receipts
+Phase C: batch mint on Polygon for selected collectible classes
+
+MINT SAFETY MODEL:
+- Keep core gameplay rewards off-chain by default.
+- Treat minting as optional export, not required for progression.
+- Add abuse checks server-side only in Worker phase.
+- Do not promise token value or investment return in UI copy.
+
+COMPLIANCE NOTE:
+For any real-token payout or tradable NFT economy rollout, region-specific legal
+review is required before launch. Keep current language utility-first and
+entertainment-first until payout logic is finalized.
+
+20. EON LIGHT MASTER DECISION
+-----------------------------
+CEO DECISION:
+- Keep the public consumer brand as EONAPP.ch.
+- Use "EON Light" as the product architecture and rollout model.
+- Launch the light-chain asset as EON Light with ticker EONL.
+- Reserve the main EON ticker and heavier token system for the later eonpackage /
+  eon.hub rollout.
+- Treat the old eonpackage as the reference system, not the customer-facing product.
+
+WHY:
+- One public brand is clearer than running two overlapping consumer identities.
+- The current site is already proving a fast local-first reward loop.
+- The old package contains strong systems, but too many of them are oversized for a
+  first public rollout.
+
+CORE PILLARS FOR EON LIGHT:
+1. Play to earn
+2. Tool to earn
+3. Lootbox to collectible
+4. AI utility for normal users
+5. Viral growth for creators and campaigns
+6. Lightweight blockchain export, not blockchain friction on every click
+
+21. AUDIT VERDICT — WHAT TO COPY, WHAT TO CUT, WHAT TO DELAY
+------------------------------------------------------------
+COPY NOW (highest signal from old system):
+- Proof-based reward distribution pattern from EONRewardsDistributor + EONProofHub
+- Contract-only role model from EONToken
+- Address registry pattern from EONRegistry
+- Off-chain-first lootbox engine with optional NFT publish queue
+- Pool-share / epoch reward thinking, but simplified
+- Off-chain referral relationship tracking, signed share links, analytics
+- Model auto-discovery for Ollama / LM Studio / Jan / BYO cloud APIs
+- Browser workspace concepts: tabs, saved tasks, summaries, AI action drafts
+- Creator hub concepts: scheduling, publishing prep, payout overview, growth campaigns
+
+SIMPLIFY HARD:
+- Replace giant ERC721 universal NFT contract with a focused ERC1155 loot contract
+- Replace 8 subscription tiers with 5 tiers max
+- Replace full multiplayer stack with async challenge links and same-seed competitions
+- Replace autonomous AI orchestration with approval-gated workflows and presets
+- Replace full wallet platform with local ledger + wallet connect + claim/export flows
+- Replace giant metaverse concept with curated worlds / events / creator rooms only
+
+DELAY:
+- Full NFT marketplace settlement and in-protocol listings
+- NFT staking rewards
+- On-chain 3-level referral fee splitting on every paid event
+- Voice chat / relay-backed multiplayer / live rooms
+- Browser-native full autonomous web automation
+- User-owned land economy and metaverse land sales
+- RTMP ingest / transcoding / full live streaming backend
+
+DO NOT BUILD IN LIGHT V1:
+- Complex on-chain revenue routing on every micro-action
+- Fully automated AI agents that post, mint, trade, or publish without human approval
+- "Infinite metaverse" promises before retention and moderation are proven
+- Premium plans above $50/month
+
+22. TARGET PRODUCT SHAPE — EON LIGHT
+------------------------------------
+EON Light should be a lightweight entertainment + AI + creator platform with three
+connected loops:
+
+LOOP A — PLAY LOOP:
+- Browser games
+- Daily challenges
+- XP + local EON earnings
+- Lootbox drops
+- Optional on-chain claim/export later
+
+LOOP B — TOOL LOOP:
+- Utility tools
+- Simulated AI / guided AI tools
+- Decision tools, creator tools, business tools
+- Tool completion rewards
+- Shareable outputs that drive referrals
+
+LOOP C — CREATOR / GROWTH LOOP:
+- Referral links
+- Campaign pages
+- QR/share cards
+- Creator profile and stream planning
+- AI content generation helpers
+- Subscription upsell into higher limits and premium workflows
+
+PRODUCT RULE:
+All three loops must feed the same account progression:
+- Oracle Credits = premium unlock currency
+- XP = status / levels / retention
+- EON wallet = off-chain earned balance
+- Lootboxes = excitement / collectibles / future mint candidates
+
+23. LIGHT SMART CONTRACT SUITE
+------------------------------
+DEPLOY ON POLYGON. KEEP CONTRACTS SMALL, EXPLICIT, AND SEPARATED.
+
+CONTRACT 1 — EONLightRegistry
+- bytes32 => address registry
+- stores core contract addresses
+- stores approved service contracts
+- optional user count / config references
+- no business logic beyond discovery and governance-safe updates
+
+CONTRACT 2 — EONLightToken
+- ERC20 + Permit + AccessControl
+- uncapped supply with governance-controlled epoch emissions
+- minter role only for distributor / treasury vesting contracts
+- no direct public minting
+- per-epoch issuance is controlled downstream by reward distributor policy, not by a hard cap
+- pause / freeze controls via contract roles only
+- no EOA admin roles
+- emergency burnFrom is NOT included in v1; default to pause + freeze only
+
+CONTRACT 3 — EONLightProofHub
+- publish merkle roots by domain
+- validity windows
+- sequence numbers
+- invalidation support
+- only timelock-controlled publisher role
+- used for rewards, referral bonuses, creator campaigns, and future subscription perks
+
+CONTRACT 4 — EONLightEmissionController
+- calculates dynamic epoch issuance from verified activity
+- routes at least 75% of net new issuance to pool-share earners
+- keeps treasury at or below 15%
+- balances gaming / creator / AI pools by weighted point activity
+- stores planned emissions and points so downstream distributor configuration cannot drift
+
+CONTRACT 5 — EONLightRewardsDistributor
+- user claims EONL using merkle proof
+- per-domain sequence tracking
+- optional per-epoch mint caps
+- distributor must match the emission controller's planned points and emissions
+- distributor mints via EONLightToken minter role
+- this is the bridge from off-chain scoring to on-chain rewards
+
+CONTRACT 6 — EONLightTreasuryVault
+- dedicated contract vault for treasury, liquidity, or reserve custody
+- receives minted emissions only through approved settlement contracts
+- governed release path for future ops, liquidity seeding, grants, and migration programs
+- no hidden EOA treasury minting
+
+CONTRACT 7 — EONLightEpochSettlement
+- settles non-user epoch emissions from the controller plan exactly once per epoch
+- routes treasury / liquidity / reserve tranches into approved vault contracts
+- allows a public caller to trigger settlement for a bounded treasury-funded reward
+- removes weekly manual mint babysitting while keeping claims epoch-based
+
+CONTRACT 8 — EONLightReferralLedger
+- stores one-time referrer bindings and invite code ownership
+- lets any participant anchor referral evidence hashes on-chain by paying gas
+- publisher contract records epoch referral and campaign points without duplicate record ids
+- keeps referral overlays separate from the core pool-share claim path
+
+CONTRACT 9 — EONLightLoot
+- ERC1155, not ERC721
+- supports collections for skins, badges, artifacts, passes
+- legendary / mythic / curated drops only
+- batch mint friendly
+- metadata URI per item family
+- signed lootbox opening payloads for higher-quality off-chain item generation
+- purchasable with EON or configured payment tokens
+- no built-in marketplace
+- no staking in v1
+
+CONTRACT 10 — EONLightSecurityCouncil
+- threshold-based contract council for admin execution
+- supports standard config actions, quantum policy actions, and emergency member rotation
+- can replace compromised admins without redeploying the stack
+- can activate or roll back admin/user quantum policy using normal EVM signatures and stored policy hashes
+
+CONTRACT 11 — EONLightQuantumRegistry
+- stores wallet quantum public-key commitments and recovery hint hashes
+- lets governance recommend or require user-side quantum protection
+- gives app/backend flows a canonical on-chain read model while Dilithium verification stays off-chain in WASM/services
+
+CONTRACT 12 — EONLightAccessPass (Phase 2)
+- optional ERC1155 or soulbound pass for premium memberships / founder passes
+- not required for initial subscription billing
+- used only after billing flows and legal copy are stable
+
+SECURITY GOVERNANCE MODEL:
+- 10-admin contract council is the preferred production admin path
+- 6/10 + 48h timelock for normal config, treasury, root publishing, upgrades
+- 8/10 threshold for quantum policy changes and compromised-admin replacement
+- critical roles granted only to contracts (council, distributor, settlement, policy contracts)
+- Dilithium / post-quantum verification stays off-chain in app/backend/WASM, while on-chain contracts store the active policy state and rollback history
+- publish every admin action on-site in a transparency feed
+
+24. TOKENOMICS FOR EON LIGHT
+----------------------------
+TOKEN NAME:
+- EON Lite
+
+TOKEN SYMBOL:
+- EONL
+
+POSITIONING:
+- EONL is the lightweight EONAPP.ch network token
+- future mainnet ecosystem token EON launches later with the heavier eonpackage stack
+- EONL should remain swap-ready into EON through a governed bridge or migration contract once the main system is live
+
+TOKEN MODEL:
+- uncapped supply
+- emissions are epoch-based, dynamic, and governance-controlled
+- new issuance expands or contracts based on verified activity, total points, treasury posture, and abuse pressure
+- minting happens only through approved contracts such as the rewards distributor, epoch settlement, or future governed treasury programs
+- off-chain wallet earnings remain the fast UX layer
+- on-chain EONL claims happen by epoch, not instantly on every action
+- non-user emissions are settled once per epoch into explicit vault contracts
+
+DEFAULT LIGHT ISSUANCE ROUTING (OF NET NEW ISSUANCE):
+- 80% player / tool / creator pool-share rewards
+- 12% treasury + operations
+- 5% liquidity + market support
+- 3% reserve / contingency
+
+POOL REWARD MODEL:
+- reward share is split dynamically across gaming, creator, and AI domains
+- each pool earns from weighted point volume, not a fixed static budget
+- low activity = low issuance
+- high activity = higher issuance, with dynamic pool rebalancing by verified demand
+- first users cannot drain oversized emissions because minting is tied to total epoch points and active usage
+
+FUTURE OPTIONAL ROUTING (NOT V1 DEFAULT):
+- creator grant overlays
+- referral campaign overlays
+- swap-support treasury tranches for future EON migration
+- team and advisor allocations should come from separate governed treasury programs, not hidden inflation
+
+NON-NEGOTIABLE TOKEN RULES:
+- no "infinite rewards" messaging
+- no guaranteed ROI language
+- no passive yield promises in light v1
+- reward rates can be reduced by epoch if abuse or treasury pressure rises
+- publish minted supply, active epoch emissions, claim utilization, and treasury coverage on-site
+
+REWARD ACCOUNTING MODEL:
+- local actions create off-chain points first
+- points convert into epoch shares
+- epoch shares map to claimable EONL
+- claim amount is derived from user points / total epoch points, not arbitrarily assigned
+- emission controller computes the epoch reward budget before distributor configuration
+- merkle roots are published weekly or monthly
+- this reduces gas, blocks spam farming, and keeps the site fast
+
+25. LOOTBOX / NFT STRATEGY
+--------------------------
+THE OLD LOOTBOX SYSTEM IS WORTH COPYING, BUT NOT THE HEAVY NFT STACK.
+
+RARITY MODEL FOR LIGHT:
+- Common
+- Rare
+- Epic
+- Legendary
+- Mythic (reserved for export-grade items only)
+
+LIGHT LOOT RULES:
+- most drops stay off-chain
+- common and rare items never need on-chain minting
+- epic items are mintable only if part of curated drops or event sets
+- legendary and mythic items can enter the mint queue
+- all item generation must be deterministic and auditable server-side once Worker phase begins
+
+NFT EXPORT MODEL:
+Phase 1:
+- current local collectibles only
+
+Phase 2:
+- Worker-signed mint queue
+- abuse checks
+- daily / weekly mint caps
+
+Phase 3:
+- Polygon ERC1155 export for premium sets, event badges, rare skins, founder loot
+
+DO NOT DO:
+- full open marketplace before real user demand exists
+- lootboxes with direct paid gambling framing
+- automatic minting of every drop
+
+26. SUBSCRIPTION LADDER (FINAL LIGHT VERSION)
+---------------------------------------------
+LIGHT PRODUCT MUST STAY BELOW THE COMPLEXITY OF THE OLD 8-TIER SYSTEM.
+
+FINAL TIERS:
+- FREE = $0
+- STARTER = $1/month
+- BASIC = $5/month
+- PRO = $15/month
+- ELITE = $50/month
+
+TIER LOGIC:
+- FREE: ads, lower daily earning caps, basic tools/games, standard loot drops
+- STARTER: fewer ads, premium tool unlocks, better reward caps, early challenge access
+- BASIC: AI hub access, creator/growth hub access, better loot odds, larger storage/history
+- PRO: browser workspace, premium games/tools, faster claim windows, creator export features
+- ELITE: full light suite, premium analytics, team features, higher caps, priority support
+
+BILLING DECISION:
+- billing in cryoto  and wallet  auto deduction  subscrition payments come out of  wallet automatically
+- optional crypto checkout can be added later
+- on-chain subscription passes are Phase 2, not launch-critical
+
+27. AI / BROWSER / CREATOR STRATEGY
+-----------------------------------
+AI LIGHT:
+- copy model discovery and provider abstraction ideas directly
+- support BYO API keys
+- support local runtimes first (Ollama, LM Studio, Jan)
+- ship a public EONBOT AI surface with guide / hybrid / AI-only modes
+- add a browser-side load governor that adapts history, timeout, and token budgets to weaker devices
+- keep a deterministic guide fallback whenever setup is incomplete or inference fails
+- do NOT fund open-ended server inference by default
+- expose cost visibility and approval gates
+
+AI AGENT ORCHESTRATION:
+- keep only guided workflows
+- use presets like: research, summarize, content draft, campaign plan, browser task draft
+- every external or economic action requires manual approval
+- no silent background autopilot
+
+EON BROWSER LIGHT:
+- browser workspace for tabs, sessions, notes, summaries, prompts, action drafts
+- page analysis and assisted task planning are in scope
+- true full browser automation is NOT realistic inside a plain web app alone
+- if deep browser automation is wanted, ship a desktop app or extension later
+
+CREATOR / LIVE TOOLS LIGHT:
+- stream planner
+- title / hook / thumbnail / clip ideation
+- sponsor slot planner
+- campaign and referral tracking
+- link-in-bio and landing page tools
+- replay / embed management
+- no RTMP hosting, no transcoding, no full streaming infra in v1
+
+MULTIPLAYER DECISION:
+- start with async duels, same-seed runs, ghosts, and challenge links
+- delay relay servers, voice chat, and large live lobbies
+
+METAVERSE DECISION:
+- no land-sale economy in light launch
+- use curated worlds, events, and creator rooms only
+- revisit land NFTs only after strong retention, moderation, and treasury health exist
+
+28. HOSTING / INFRASTRUCTURE DECISION
+------------------------------------
+KEEP CLOUDFARE FOR THE LIGHT BUILD, BUT UPGRADE THE ARCHITECTURE.
+
+PHASE 1:
+- Cloudflare Pages for frontend
+- Cloudflare Worker for secure APIs, reward snapshots, referral signing, billing webhooks
+- D1 for user entitlements / claims / reward ledger snapshots
+- KV for hot config, rate limits, active campaigns
+- R2 for collectible metadata, assets, exports, replay bundles
+
+PHASE 2:
+- Polygon contracts for token / proofs / distributor / loot export
+- Worker publishes merkle roots and metadata
+
+MOVE OFF CLOUDFLARE ONLY WHEN ONE OF THESE BECOMES CORE:
+- full browser automation backend
+- persistent live multiplayer relays
+- full streaming ingest / transcoding
+- heavy always-on AI inference hosting
+
+29. BUILD ORDER — ACTIONABLE EXECUTION PLAN
+-------------------------------------------
+ORDER OF EXECUTION:
+
+STEP 1 — FOUNDATION BACKEND:
+- add Worker + D1 + KV + R2
+- add signed referrals
+- add secure reward snapshot pipeline
+- add entitlement sync for subscriptions
+
+STEP 2 — CONTRACT BETA:
+- deploy Registry
+- deploy dynamic-supply EONL token
+- deploy EmissionController
+- deploy ProofHub
+- deploy RewardsDistributor
+- deploy TreasuryVault contracts
+- deploy EpochSettlement
+- deploy ReferralLedger
+- deploy SecurityCouncil
+- deploy QuantumRegistry
+- deploy EONLightLoot
+- run testnet claim and loot export flows first
+
+STEP 3 — FRONTEND PRODUCTIZATION:
+- add claim center in Vault
+- add referral / campaign hub light
+- add creator workspace light
+- add AI model repository light
+- add browser workspace light
+
+STEP 4 — GAME ECONOMY EXPANSION:
+- add 1 more 3D flagship
+- add 2-3 high-retention shareable games
+- add same-seed daily tournaments
+- connect lootbox events and battle-pass style seasonal ladders
+
+STEP 5 — PREMIUM LAYER:
+- launch 5-tier subscription ladder
+- connect premium loot tables, AI limits, creator exports, browser workspace limits
+
+STEP 6 — ON-CHAIN EXPORT:
+- weekly or monthly EON claims
+- curated NFT export queue
+- public treasury / supply dashboard
+
+SUCCESS CONDITION:
+EON Light wins when the site feels fast and playful off-chain first, while blockchain
+acts as a claim/export layer that adds trust and status instead of slowing users down.

@@ -1,0 +1,68 @@
+{
+  "schema": "eonapp.a15.c11.device-performance-certification-gate.v1",
+  "wave": "C11",
+  "generatedAt": "2026-08-04T22:18:41.333Z",
+  "ok": true,
+  "passed": 10,
+  "total": 10,
+  "checks": [
+    {
+      "id": "source-contract-valid",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "id": "twenty-two-evidence-lanes",
+      "pass": true,
+      "detail": "22"
+    },
+    {
+      "id": "source-ready",
+      "pass": true,
+      "detail": "I22-I25 + C09-C10"
+    },
+    {
+      "id": "external-evidence-pending",
+      "pass": true,
+      "detail": "no fabricated proof"
+    },
+    {
+      "id": "protected-storage-source",
+      "pass": true,
+      "detail": "protected databases"
+    },
+    {
+      "id": "accessibility-source",
+      "pass": true,
+      "detail": "WCAG evidence lanes"
+    },
+    {
+      "id": "core-bundle-city-free",
+      "pass": true,
+      "detail": "I25 truth"
+    },
+    {
+      "id": "four-hour-endurance-required",
+      "pass": true,
+      "detail": "240 minutes"
+    },
+    {
+      "id": "ten-transition-minimum",
+      "pass": true,
+      "detail": "10 cycles"
+    },
+    {
+      "id": "no-automatic-certification",
+      "pass": true,
+      "detail": "manual only"
+    }
+  ],
+  "evidenceLaneCount": 22,
+  "sourceReady": true,
+  "externalEvidenceComplete": false,
+  "productionReady": false,
+  "limitations": [
+    "Authenticated physical-browser, assistive-technology, offline and four-hour endurance evidence remains pending.",
+    "This source gate cannot observe a rendered frame, memory timeline or device interaction."
+  ]
+}

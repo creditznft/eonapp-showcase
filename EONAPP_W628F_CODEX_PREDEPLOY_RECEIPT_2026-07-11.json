@@ -1,0 +1,352 @@
+{
+  "schema": "eonapp.codex-predeploy-receipt.w628f-source-batch.2026-07-11.v1",
+  "wave": "W628F-source-batch",
+  "ok": true,
+  "startedAt": "2026-07-11T10:03:26.131Z",
+  "finishedAt": "2026-07-11T10:06:07.044Z",
+  "sourceFingerprint": {
+    "algorithm": "sha256",
+    "digest": "7d2e23fac064638d3b146916b73444c44f245fb97483e38717153ba38eb3b6d1",
+    "fileCount": 3651
+  },
+  "resumedStepCount": 49,
+  "stepCount": 55,
+  "steps": [
+    {
+      "script": "test:unit",
+      "args": [],
+      "status": 0,
+      "durationMs": 8666
+    },
+    {
+      "script": "qa:w621-live-dodo-cloudflare-rollout",
+      "args": [],
+      "status": 0,
+      "durationMs": 484
+    },
+    {
+      "script": "qa:w623c-commercial-truth",
+      "args": [],
+      "status": 0,
+      "durationMs": 267
+    },
+    {
+      "script": "qa:w623d-production-reachability",
+      "args": [],
+      "status": 0,
+      "durationMs": 675
+    },
+    {
+      "script": "qa:w623e-information-architecture",
+      "args": [],
+      "status": 0,
+      "durationMs": 437
+    },
+    {
+      "script": "qa:w623h-minimal-referral-ledger",
+      "args": [],
+      "status": 0,
+      "durationMs": 708
+    },
+    {
+      "script": "qa:w623i-referral-scale",
+      "args": [],
+      "status": 0,
+      "durationMs": 556
+    },
+    {
+      "script": "qa:w624a-city-art-bible",
+      "args": [],
+      "status": 0,
+      "durationMs": 426
+    },
+    {
+      "script": "qa:w624b-city-runtime",
+      "args": [],
+      "status": 0,
+      "durationMs": 460
+    },
+    {
+      "script": "qa:w624c-command-district",
+      "args": [],
+      "status": 0,
+      "durationMs": 447
+    },
+    {
+      "script": "qa:w624d-wayfinder-camera",
+      "args": [],
+      "status": 0,
+      "durationMs": 437
+    },
+    {
+      "script": "qa:w624e-eonbot-orbit",
+      "args": [],
+      "status": 0,
+      "durationMs": 446
+    },
+    {
+      "script": "qa:w624f-command-district-npcs",
+      "args": [],
+      "status": 0,
+      "durationMs": 484
+    },
+    {
+      "script": "qa:w624g-productive-rpg-loop",
+      "args": [],
+      "status": 0,
+      "durationMs": 575
+    },
+    {
+      "script": "qa:w624h-truthful-command-center",
+      "args": [],
+      "status": 0,
+      "durationMs": 617
+    },
+    {
+      "script": "qa:w624i-genuine-agent-theatre",
+      "args": [],
+      "status": 0,
+      "durationMs": 930
+    },
+    {
+      "script": "qa:w624j-sharing-center",
+      "args": [],
+      "status": 0,
+      "durationMs": 606
+    },
+    {
+      "script": "qa:w624k-accessibility-device",
+      "args": [],
+      "status": 0,
+      "durationMs": 559
+    },
+    {
+      "script": "qa:w624l-flagship-certification",
+      "args": [],
+      "status": 0,
+      "durationMs": 551
+    },
+    {
+      "script": "qa:w625a-real-local-image-tooling",
+      "args": [],
+      "status": 0,
+      "durationMs": 577
+    },
+    {
+      "script": "qa:w625b-local-image-workflow-registry",
+      "args": [],
+      "status": 0,
+      "durationMs": 810
+    },
+    {
+      "script": "qa:w625c-image-creation-foundation",
+      "args": [],
+      "status": 0,
+      "durationMs": 629
+    },
+    {
+      "script": "qa:w625d-local-video-capability",
+      "args": [],
+      "status": 0,
+      "durationMs": 564
+    },
+    {
+      "script": "qa:w625e-real-local-video-contract",
+      "args": [],
+      "status": 0,
+      "durationMs": 537
+    },
+    {
+      "script": "qa:w625f-local-video-product-workflow",
+      "args": [],
+      "status": 0,
+      "durationMs": 449
+    },
+    {
+      "script": "qa:w625g-local-video-efficiency-governor",
+      "args": [],
+      "status": 0,
+      "durationMs": 448
+    },
+    {
+      "script": "qa:w625h-local-creator-certification",
+      "args": [],
+      "status": 0,
+      "durationMs": 653
+    },
+    {
+      "script": "qa:w626a-direct-job-threat-model",
+      "args": [],
+      "status": 0,
+      "durationMs": 455
+    },
+    {
+      "script": "qa:w626b-creator-companion",
+      "args": [],
+      "status": 0,
+      "durationMs": 430
+    },
+    {
+      "script": "qa:w626c-external-image-adapters",
+      "args": [],
+      "status": 0,
+      "durationMs": 427
+    },
+    {
+      "script": "qa:w626d-external-video-adapters",
+      "args": [],
+      "status": 0,
+      "durationMs": 436
+    },
+    {
+      "script": "qa:w626e-unified-direct-job-fabric",
+      "args": [],
+      "status": 0,
+      "durationMs": 634
+    },
+    {
+      "script": "qa:w626f-mobile-secure-path",
+      "args": [],
+      "status": 0,
+      "durationMs": 470
+    },
+    {
+      "script": "qa:w626g-spending-outage-moderation",
+      "args": [],
+      "status": 0,
+      "durationMs": 522
+    },
+    {
+      "script": "qa:w626h-byok-privacy-certification",
+      "args": [],
+      "status": 0,
+      "durationMs": 436
+    },
+    {
+      "script": "qa:w627a-one-create-experience",
+      "args": [],
+      "status": 0,
+      "durationMs": 461
+    },
+    {
+      "script": "qa:w627b-beginner-advanced-mode",
+      "args": [],
+      "status": 0,
+      "durationMs": 465
+    },
+    {
+      "script": "qa:w627c-unified-creator-lifecycle",
+      "args": [],
+      "status": 0,
+      "durationMs": 762
+    },
+    {
+      "script": "qa:w627d-creator-library",
+      "args": [],
+      "status": 0,
+      "durationMs": 469
+    },
+    {
+      "script": "qa:w627e-project-continuation",
+      "args": [],
+      "status": 0,
+      "durationMs": 437
+    },
+    {
+      "script": "qa:w627f-creator-data-survival",
+      "args": [],
+      "status": 0,
+      "durationMs": 431
+    },
+    {
+      "script": "qa:w627g-unified-creator-certification",
+      "args": [],
+      "status": 0,
+      "durationMs": 435
+    },
+    {
+      "script": "qa:w628a-real-dodo-checkout",
+      "args": [],
+      "status": 0,
+      "durationMs": 707
+    },
+    {
+      "script": "qa:w628b-provider-webhook-ledger",
+      "args": [],
+      "status": 0,
+      "durationMs": 515
+    },
+    {
+      "script": "qa:w628c-entitlement-activation",
+      "args": [],
+      "status": 0,
+      "durationMs": 483
+    },
+    {
+      "script": "qa:w628d-portal-cancellation",
+      "args": [],
+      "status": 0,
+      "durationMs": 456
+    },
+    {
+      "script": "qa:w628e-failure-reversal",
+      "args": [],
+      "status": 0,
+      "durationMs": 468
+    },
+    {
+      "script": "qa:w628f-billing-certification",
+      "args": [],
+      "status": 0,
+      "durationMs": 437
+    },
+    {
+      "script": "qa:w624d-current-contract-alignment",
+      "args": [],
+      "status": 0,
+      "durationMs": 868
+    },
+    {
+      "script": "qa:w624d-test-archive",
+      "args": [],
+      "status": 0,
+      "durationMs": 516
+    },
+    {
+      "script": "lint",
+      "args": [
+        "--",
+        "--max-warnings=0"
+      ],
+      "status": 0,
+      "durationMs": 8100
+    },
+    {
+      "script": "security:secret-scan",
+      "args": [
+        "--",
+        "--allow-no-history"
+      ],
+      "status": 0,
+      "durationMs": 834
+    },
+    {
+      "script": "build",
+      "args": [],
+      "status": 0,
+      "durationMs": 13863
+    },
+    {
+      "script": "smoke:build",
+      "args": [],
+      "status": 0,
+      "durationMs": 489
+    },
+    {
+      "script": "qa:w623f-certification-v2",
+      "args": [],
+      "status": 0,
+      "durationMs": 562
+    }
+  ]
+}

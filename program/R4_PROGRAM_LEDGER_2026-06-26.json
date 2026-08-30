@@ -1,0 +1,289 @@
+{
+  "schema": "eonapp.r4.program-ledger.v1",
+  "version": 1,
+  "programId": "R4",
+  "title": "EONAPP coherent product program",
+  "asOf": "2026-06-26",
+  "sourceTruth": "This ledger tracks source-ready work and explicit evidence gaps. It does not certify a Cloudflare deployment, browser/device result, OAuth consent flow, merchant approval, payment, subscription, user-data recovery, provider connection or paid entitlement.",
+  "productArchitecture": {
+    "primarySurfaces": [
+      "EONBOT",
+      "Workspace",
+      "Apps",
+      "EON City"
+    ],
+    "appsFlagshipCollection": "Insights & Forecasts",
+    "insightsRoute": "/trade",
+    "insightsDesks": [
+      "Market Intelligence",
+      "Business Intelligence",
+      "Forecast Studio"
+    ],
+    "navigationDecision": "Insights & Forecasts is an Apps collection with a direct compatibility route, not a new top-level flagship nav item."
+  },
+  "globalReleaseBlocks": [
+    "No external W276 update/rollback/restore evidence has been collected.",
+    "No combined Cloudflare Preview, browser, device or installed-PWA proof exists for the current W375 baseline.",
+    "No payment processor merchant account, test-mode checkout, webhook, entitlement, refund or support proof is active.",
+    "No licensed financial-data contract, attribution, freshness policy or regional policy is active.",
+    "No live provider integration or OAuth consent proof is active.",
+    "No provider has explicitly accepted in writing the current EONAPP catalogue, India payout route or EON Invite promotion; no merchant selection is final."
+  ],
+  "lanes": [
+    {
+      "id": "R4-00",
+      "title": "Restore W276 data-survival NO-GO board",
+      "area": "Release evidence integrity",
+      "status": "complete-source",
+      "sourceProofOnly": true,
+      "externalProofRequired": true,
+      "dependsOn": [],
+      "evidenceRefs": [
+        "release-evidence/W276_DATA_SURVIVAL_REAUDIT_2026-06-25/DATA_SURVIVAL_BOARD.json",
+        "release-evidence/W276_DATA_SURVIVAL_REAUDIT_2026-06-26/DATA_SURVIVAL_BOARD.json",
+        "scripts/w276-data-survival-reaudit-gate.mjs"
+      ],
+      "next": "Capture redacted Preview upgrade/downgrade, installed-PWA rollback, restore, cache/IndexedDB and recovery evidence."
+    },
+    {
+      "id": "R4-01",
+      "title": "Canonical program ledger",
+      "area": "Program governance",
+      "status": "complete-source",
+      "sourceProofOnly": true,
+      "externalProofRequired": false,
+      "dependsOn": [
+        "R4-00"
+      ],
+      "evidenceRefs": [
+        "program/R4_PROGRAM_LEDGER_2026-06-26.json",
+        "config/r4-program-ledger-contract.mjs",
+        "scripts/r4-program-ledger-gate.mjs"
+      ],
+      "next": "Every future source package must update this ledger and pass its validator before handover."
+    },
+    {
+      "id": "R4-02",
+      "title": "Navigation simplification",
+      "area": "Product architecture",
+      "status": "complete-source",
+      "sourceProofOnly": true,
+      "externalProofRequired": true,
+      "dependsOn": [
+        "R4-01"
+      ],
+      "evidenceRefs": [
+        "assets/js/eon-app-shell.js",
+        "assets/js/utils/site-shell.js",
+        "config/w376-apps-insights-contract.mjs",
+        "scripts/w376-apps-insights-gate.mjs"
+      ],
+      "next": "Collect Preview/browser/mobile evidence that Apps remains discoverable and /trade deep links highlight Apps without navigation regression."
+    },
+    {
+      "id": "A-00",
+      "title": "Blueprint catalogue and commercial architecture",
+      "area": "Apps",
+      "status": "complete-source",
+      "sourceProofOnly": true,
+      "externalProofRequired": false,
+      "dependsOn": [
+        "R4-01"
+      ],
+      "evidenceRefs": [
+        "docs/R4_APPS_BLUEPRINTS_COMMERCE_DECISION_2026-06-26.md"
+      ],
+      "next": "Build free official packs first; commercial tiers remain a future server-backed gate."
+    },
+    {
+      "id": "A-01",
+      "title": "Versioned official Blueprint Packs",
+      "area": "Apps",
+      "status": "complete-source",
+      "sourceProofOnly": true,
+      "externalProofRequired": true,
+      "dependsOn": [
+        "A-00",
+        "R4-02"
+      ],
+      "evidenceRefs": [
+        "assets/js/apps/eon-app-deck-catalog.js",
+        "config/w376-apps-insights-contract.mjs",
+        "scripts/w376-apps-insights-gate.mjs",
+        "config/w377-institutional-blueprint-workrooms-contract.mjs",
+        "scripts/w377-institutional-blueprint-workrooms-gate.mjs"
+      ],
+      "next": "Collect browser and mobile review evidence for the 32 versioned packs; keep paid-packs, provider actions and commerce inactive."
+    },
+    {
+      "id": "A-02",
+      "title": "Workflow collection expansion",
+      "area": "Automations",
+      "status": "complete-source",
+      "sourceProofOnly": true,
+      "externalProofRequired": true,
+      "dependsOn": [
+        "A-01"
+      ],
+      "evidenceRefs": [
+        "assets/js/utils/automation-workflow-engine.js",
+        "assets/js/eon-automations-page.js",
+        "scripts/w376-apps-insights-gate.mjs",
+        "config/w377-institutional-blueprint-workrooms-contract.mjs",
+        "scripts/w377-institutional-blueprint-workrooms-gate.mjs"
+      ],
+      "next": "Collect browser simulation proof for each official local template; do not activate providers or background execution."
+    },
+    {
+      "id": "A-03",
+      "title": "Blueprint to Project, Library and Workroom handoff",
+      "area": "Workspace",
+      "status": "complete-source",
+      "sourceProofOnly": true,
+      "externalProofRequired": true,
+      "dependsOn": [
+        "A-01",
+        "A-02"
+      ],
+      "evidenceRefs": [
+        "assets/js/apps/eon-blueprint-workroom-handoff.js",
+        "assets/js/apps/eon-app-deck-catalog.js",
+        "assets/js/eon-automations-page.js",
+        "config/w377-institutional-blueprint-workrooms-contract.mjs",
+        "scripts/w377-institutional-blueprint-workrooms-gate.mjs",
+        "docs/R4_W377_INSTITUTIONAL_BLUEPRINT_WORKROOMS_2026-06-26.md"
+      ],
+      "next": "Collect browser and mobile evidence that an explicit user tap creates one local Project, Library template and approval-first workflow, then verify the records survive an update/rollback restore."
+    },
+    {
+      "id": "I-01",
+      "title": "Insights & Forecasts Apps collection",
+      "area": "Apps / Research",
+      "status": "complete-source",
+      "sourceProofOnly": true,
+      "externalProofRequired": true,
+      "dependsOn": [
+        "R4-02"
+      ],
+      "evidenceRefs": [
+        "assets/js/apps/eon-app-deck-catalog.js",
+        "assets/js/apps/eon-app-deck-page.js",
+        "trade.html",
+        "assets/js/trade/eon-trade-page.js",
+        "scripts/w376-apps-insights-gate.mjs"
+      ],
+      "next": "Collect browser/mobile proof for all five desk deep links, then implement S-00 data provenance and migration hardening."
+    },
+    {
+      "id": "S-00",
+      "title": "Local data schema, provenance and migration",
+      "area": "Insights & Forecasts",
+      "status": "planned",
+      "sourceProofOnly": true,
+      "externalProofRequired": true,
+      "dependsOn": [
+        "I-01",
+        "R4-00"
+      ],
+      "evidenceRefs": [],
+      "next": "Harden manual/CSV imports, provenance, duplicate handling, export, migration and backup coverage."
+    },
+    {
+      "id": "S-01",
+      "title": "Beginner and professional research workflows",
+      "area": "Insights & Forecasts",
+      "status": "planned",
+      "sourceProofOnly": true,
+      "externalProofRequired": true,
+      "dependsOn": [
+        "S-00"
+      ],
+      "evidenceRefs": [],
+      "next": "Add guided research prompts and professional layouts without orders, price targets, personalised advice or live-data claims."
+    },
+    {
+      "id": "C-00",
+      "title": "City to Apps to Workspace return-loop proof",
+      "area": "EON City",
+      "status": "blocked-external",
+      "sourceProofOnly": false,
+      "externalProofRequired": true,
+      "dependsOn": [
+        "R4-00",
+        "R4-02",
+        "A-03",
+        "I-01"
+      ],
+      "evidenceRefs": [],
+      "next": "Collect redacted desktop and mobile evidence of one manual City \u2192 App/Workspace/Insights \u2192 City loop before expanding more districts."
+    },
+    {
+      "id": "M-00A",
+      "title": "Solo pricing and catalogue normalisation",
+      "area": "Commerce governance",
+      "status": "complete-source",
+      "sourceProofOnly": true,
+      "externalProofRequired": false,
+      "dependsOn": [
+        "A-01",
+        "A-02",
+        "A-03"
+      ],
+      "evidenceRefs": [
+        "docs/R4_COMM03_SOLO_PRICING_AND_CATALOGUE_DECISION_2026-06-26.md",
+        "config/r4-comm03-solo-pricing-contract.mjs",
+        "scripts/r4-comm03-solo-pricing-gate.mjs"
+      ],
+      "next": "Keep the catalogue internal. Do not show price/checkout until provider approval, test-mode lifecycle proof, W276 recovery proof and real browser/device review are complete."
+    },
+    {
+      "id": "M-00",
+      "title": "Merchant and entitlement architecture decision",
+      "area": "Commerce",
+      "status": "hold-governance",
+      "sourceProofOnly": true,
+      "externalProofRequired": true,
+      "dependsOn": [
+        "A-01",
+        "A-02",
+        "A-03",
+        "R4-00"
+      ],
+      "evidenceRefs": [
+        "docs/R4_APPS_BLUEPRINTS_COMMERCE_DECISION_2026-06-26.md",
+        "docs/W349_W350_MERCHANT_AND_BILLING_BOUNDARY.md",
+        "docs/R4_COMM02_GLOBAL_COMMERCE_EON_INVITE_AND_PRICING_DECISION_2026-06-26.md",
+        "config/r4-comm02-global-commerce-contract.mjs",
+        "scripts/r4-comm02-global-commerce-gate.mjs",
+        "docs/R4_COMM03_SOLO_PRICING_AND_CATALOGUE_DECISION_2026-06-26.md"
+      ],
+      "next": "Keep provider unselected. Obtain written acceptance for the narrow productivity-Pack catalogue, India/global payout path and EON Invite promotion; then prove a hosted test-mode one-time Pack, signed webhook, idempotent entitlement, refund/dispute reversal and licence revocation."
+    },
+    {
+      "id": "M-01",
+      "title": "Single one-time official Pack test-mode proof",
+      "area": "Commerce",
+      "status": "blocked-external",
+      "sourceProofOnly": false,
+      "externalProofRequired": true,
+      "dependsOn": [
+        "M-00"
+      ],
+      "evidenceRefs": [],
+      "next": "Run one processor test-mode collection, verified webhook, idempotent grant, refund reversal and support receipt flow. No production charge is allowed in this lane."
+    },
+    {
+      "id": "M-02",
+      "title": "Subscription pilot decision",
+      "area": "Commerce",
+      "status": "hold-governance",
+      "sourceProofOnly": false,
+      "externalProofRequired": true,
+      "dependsOn": [
+        "M-01"
+      ],
+      "evidenceRefs": [],
+      "next": "Do not introduce recurring billing until one-time Pack lifecycle proof, W276 recovery proof and repeat Pack-use evidence exist. The future solo ladder is Plus, Studio, Power and Max only; Team/Scale/Enterprise are out of the current roadmap."
+    }
+  ]
+}

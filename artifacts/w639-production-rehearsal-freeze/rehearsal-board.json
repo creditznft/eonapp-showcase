@@ -1,0 +1,143 @@
+{
+  "schema": "eonapp.whole-app-production-rehearsal-board.w639.v1",
+  "wave": "W639",
+  "generatedAt": "2026-08-29T21:35:31.338Z",
+  "sourceGateOk": true,
+  "productionVerdict": "not-run",
+  "productionRehearsalPassed": false,
+  "launchCandidateFrozen": false,
+  "freezeDigest": "3f46101692e86ae14cd91c3b19d91fa7f6cc417918045f44624c7864f23b09fa",
+  "evidenceIndexDigest": "c9ae7e74247e8e7d3965d3430eb8b4acd30afb49766d7c57a1e710902be48c2f",
+  "buildDigest": "f4767c50c8f5071a192e67a1aff21e773a2f4b94820a1187f45d752939ddfbf5",
+  "domains": [
+    {
+      "id": "routes",
+      "title": "Canonical routes and navigation",
+      "sourceReady": true,
+      "status": "not-run",
+      "externalEvidence": [
+        "Cloudflare edge redirects",
+        "fresh desktop/mobile route walkthrough"
+      ],
+      "evidenceLaneStatuses": {}
+    },
+    {
+      "id": "account",
+      "title": "Account identity and Vault separation",
+      "sourceReady": true,
+      "status": "not-run",
+      "externalEvidence": [
+        "real Google identity lifecycle",
+        "owner deletion/revocation review"
+      ],
+      "evidenceLaneStatuses": {}
+    },
+    {
+      "id": "projects",
+      "title": "Projects and continuation",
+      "sourceReady": true,
+      "status": "not-run",
+      "externalEvidence": [
+        "real browser create/save/reopen/continue walkthrough"
+      ],
+      "evidenceLaneStatuses": {}
+    },
+    {
+      "id": "forge",
+      "title": "Review-first Forge handoff",
+      "sourceReady": true,
+      "status": "not-run",
+      "externalEvidence": [
+        "real owner-reviewed handoff and return"
+      ],
+      "evidenceLaneStatuses": {}
+    },
+    {
+      "id": "automations",
+      "title": "Automation truth and execution state",
+      "sourceReady": true,
+      "status": "not-run",
+      "externalEvidence": [
+        "real scheduled execution and failure recovery"
+      ],
+      "evidenceLaneStatuses": {}
+    },
+    {
+      "id": "city",
+      "title": "EON City flagship",
+      "sourceReady": true,
+      "status": "not-run",
+      "externalEvidence": [
+        "authenticated production desktop/Android/iOS gameplay evidence"
+      ],
+      "evidenceLaneStatuses": {}
+    },
+    {
+      "id": "creator",
+      "title": "Local Creator, Direct BYOK and companion",
+      "sourceReady": true,
+      "status": "not-run",
+      "externalEvidence": [
+        "W638 local-creator PASS",
+        "W638 direct-provider PASS",
+        "W638 companion PASS"
+      ],
+      "evidenceLaneStatuses": {
+        "local-creator": "not-run",
+        "direct-provider": "not-run",
+        "companion": "not-run"
+      }
+    },
+    {
+      "id": "billing",
+      "title": "Dodo billing lifecycle",
+      "sourceReady": true,
+      "status": "not-run",
+      "externalEvidence": [
+        "W638 billing PASS"
+      ],
+      "evidenceLaneStatuses": {
+        "billing": "not-run"
+      }
+    },
+    {
+      "id": "referral",
+      "title": "Referral, EONKEY and Vault Reveal lifecycle",
+      "sourceReady": true,
+      "status": "not-run",
+      "externalEvidence": [
+        "W638 referral PASS"
+      ],
+      "evidenceLaneStatuses": {
+        "referral": "not-run"
+      }
+    },
+    {
+      "id": "backup-recovery",
+      "title": "Persistence, Capsule and Drive recovery",
+      "sourceReady": true,
+      "status": "not-run",
+      "externalEvidence": [
+        "real update/rollback/corruption/Drive/cross-device recovery evidence"
+      ],
+      "evidenceLaneStatuses": {}
+    },
+    {
+      "id": "incidents-rollback",
+      "title": "Kill switches, incidents and deployment rollback",
+      "sourceReady": true,
+      "status": "not-run",
+      "externalEvidence": [
+        "Cloudflare incident drill",
+        "feature kill-switch drill",
+        "deployment and migration rollback drill"
+      ],
+      "evidenceLaneStatuses": {}
+    }
+  ],
+  "boundaries": {
+    "localBuildCanCertifyProduction": false,
+    "emptyEvidenceCanFreezeLaunchCandidate": false,
+    "destructiveCustomerActionsAutomated": false
+  }
+}

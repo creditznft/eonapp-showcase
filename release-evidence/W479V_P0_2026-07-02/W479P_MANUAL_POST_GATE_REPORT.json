@@ -1,0 +1,83 @@
+{
+  "schema": "eonapp.w479p.universal-manual-post-gate.v1",
+  "status": "pass",
+  "checkCount": 11,
+  "truth": {
+    "schema": "eonapp.w479p.universal-manual-post.v1",
+    "universalManualFirst": true,
+    "directPublishingLive": false,
+    "oauthConnectionsLive": false,
+    "tokenCustodyLive": false,
+    "hostedMediaLive": false,
+    "mediaProxyLive": false,
+    "referralTransportLive": false,
+    "automaticPublicLinkLive": false,
+    "persistentSelectedFileLive": false,
+    "explicitUserGestureRequired": true,
+    "nativeShareOptional": true,
+    "copyAndDownloadFallback": true,
+    "postingReceiptLive": false
+  },
+  "checks": [
+    {
+      "id": "contract-valid",
+      "pass": true,
+      "detail": "W479-P0 contract has no internal violations"
+    },
+    {
+      "id": "universal-destination-set",
+      "pass": true,
+      "detail": "post kit exposes the approved universal destination catalogue"
+    },
+    {
+      "id": "app-agnostic-route",
+      "pass": true,
+      "detail": "a selected destination is a local label and Any app remains available"
+    },
+    {
+      "id": "explicit-native-click",
+      "pass": true,
+      "detail": "native sharing needs an explicit user click"
+    },
+    {
+      "id": "local-transient-file-only",
+      "pass": true,
+      "detail": "a selected image/video is only considered for the one explicit device-share attempt"
+    },
+    {
+      "id": "no-saved-media-or-credentials",
+      "pass": true,
+      "detail": "saved packs never contain media bodies, credentials or hidden persistence"
+    },
+    {
+      "id": "no-host-or-proxy-or-post",
+      "pass": true,
+      "detail": "no hosting, proxying, OAuth, direct posting, tracking or network transport is added"
+    },
+    {
+      "id": "manual-fallback-visible",
+      "pass": true,
+      "detail": "copy/download/manual-upload fallback is visible"
+    },
+    {
+      "id": "no-automatic-public-link",
+      "pass": true,
+      "detail": "the product does not create referral or public links automatically"
+    },
+    {
+      "id": "pack-text-boundary",
+      "pass": true,
+      "detail": "exported post kit stays metadata/text only and contains no remote-post state"
+    },
+    {
+      "id": "truth-aligned",
+      "pass": true,
+      "detail": "source truth does not mistake a share sheet for a post receipt"
+    }
+  ],
+  "limitations": [
+    "Static/source proof only.",
+    "A browser/device share sheet is not proof that a platform posted, accepted, viewed or distributed content.",
+    "Platform-specific direct publishing remains a separate W481 connector programme with official approval and real-account evidence."
+  ]
+}

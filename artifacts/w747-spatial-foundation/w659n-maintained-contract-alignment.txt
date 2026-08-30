@@ -1,0 +1,70 @@
+TAP version 13
+# Subtest: W659N P0 canonicalizes realm-relay to trade-dome before travel and receipts
+ok 1 - W659N P0 canonicalizes realm-relay to trade-dome before travel and receipts
+  ---
+  duration_ms: 5.239693
+  type: 'test'
+  ...
+# Subtest: W659N P0 uses one canonical NPC registry with exact assets, points, radii and pairings
+ok 2 - W659N P0 uses one canonical NPC registry with exact assets, points, radii and pairings
+  ---
+  duration_ms: 1.684042
+  type: 'test'
+  ...
+# Subtest: W659N P0 resolves operator actions only for the exact resident asset, paired object and radius
+ok 3 - W659N P0 resolves operator actions only for the exact resident asset, paired object and radius
+  ---
+  duration_ms: 0.880292
+  type: 'test'
+  ...
+# Subtest: W659N P0 repairs the four audited operator district mismatches
+ok 4 - W659N P0 repairs the four audited operator district mismatches
+  ---
+  duration_ms: 0.483597
+  type: 'test'
+  ...
+# Subtest: W731 launch graph excludes the superseded Productive City owner and district-only activation
+ok 5 - W731 launch graph excludes the superseded Productive City owner and district-only activation
+  ---
+  duration_ms: 5.140858
+  type: 'test'
+  ...
+# Subtest: current source contracts certify the complete compact Command Hub
+ok 6 - current source contracts certify the complete compact Command Hub
+  ---
+  duration_ms: 3.458056
+  type: 'test'
+  ...
+# Subtest: Creator Capture capability is explicit and reports no EONAPP upload
+ok 7 - Creator Capture capability is explicit and reports no EONAPP upload
+  ---
+  duration_ms: 1.760412
+  type: 'test'
+  ...
+# Subtest: Creator Capture controller does not request media before an explicit start
+ok 8 - Creator Capture controller does not request media before an explicit start
+  ---
+  duration_ms: 1.100791
+  type: 'test'
+  ...
+# Subtest: membership status and checkout fail closed and never grant a local tier
+ok 9 - membership status and checkout fail closed and never grant a local tier
+  ---
+  duration_ms: 1.962315
+  type: 'test'
+  ...
+# Subtest: browser proof script covers every Productive City public surface without claiming physical permissions
+ok 10 - browser proof script covers every Productive City public surface without claiming physical permissions
+  ---
+  duration_ms: 1.529433
+  type: 'test'
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 10
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 275.144249

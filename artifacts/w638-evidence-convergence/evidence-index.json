@@ -1,0 +1,612 @@
+{
+  "schema": "eonapp.production-evidence-index.w638.v1",
+  "wave": "W638",
+  "generatedAt": "2026-08-29T21:34:29.143Z",
+  "sourceGateOk": true,
+  "productionVerdict": "not-run",
+  "productionCertified": false,
+  "boardIssues": [],
+  "recordCount": 0,
+  "invalidRecordCount": 0,
+  "lanes": [
+    {
+      "id": "billing",
+      "title": "Dodo billing lifecycle",
+      "status": "not-run",
+      "total": 17,
+      "passed": 0,
+      "noGo": 0,
+      "notRun": 17,
+      "invalidRecords": 0,
+      "requirements": [
+        {
+          "id": "realCheckout",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "providerWebhook",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "d1Ledger",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "entitlementActivation",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "crossSessionRefresh",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "portal",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "cancellation",
+          "destructive": true,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "reactivation",
+          "destructive": true,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "failedPayment",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "refund",
+          "destructive": true,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "dispute",
+          "destructive": true,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "duplicateReplay",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "outOfOrder",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "forgedRejected",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "tierChange",
+          "destructive": true,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "receiptTaxLinks",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "rollbackSupport",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        }
+      ]
+    },
+    {
+      "id": "referral",
+      "title": "Distinct-account referral and EONKEY lifecycle",
+      "status": "not-run",
+      "total": 19,
+      "passed": 0,
+      "noGo": 0,
+      "notRun": 19,
+      "invalidRecords": 0,
+      "requirements": [
+        {
+          "id": "signedInviterIdentity",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "inviteAccepted",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "selfReferralRejected",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "tamperedLinkRejected",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "oneLevelOnly",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "browserGrantRejected",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "activationReceiptConsumedOnce",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "clickShareNoGrant",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "paidRetentionPending",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "paidRetentionVested",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "yearlyCapEnforced",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "duplicateEventIdempotent",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "refundReversal",
+          "destructive": true,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "disputeReversal",
+          "destructive": true,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "redeemedUnlockRevoked",
+          "destructive": true,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "raceConditionSafe",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "vaultRevealMigrated",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "privateFieldsRedacted",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "supportAuditReadable",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        }
+      ]
+    },
+    {
+      "id": "local-creator",
+      "title": "Local image and video execution",
+      "status": "not-run",
+      "total": 8,
+      "passed": 0,
+      "noGo": 0,
+      "notRun": 8,
+      "invalidRecords": 0,
+      "requirements": [
+        {
+          "id": "realImageSaveReopen",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "realVideoSaveReopen",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "ownerFourGbFallback",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "supportedReferenceDevice",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "cancellation",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "resourceBoundary",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "failureRecovery",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "libraryProjectContinuation",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        }
+      ]
+    },
+    {
+      "id": "direct-provider",
+      "title": "Direct BYOK provider execution",
+      "status": "not-run",
+      "total": 8,
+      "passed": 0,
+      "noGo": 0,
+      "notRun": 8,
+      "invalidRecords": 0,
+      "requirements": [
+        {
+          "id": "reviewedRegistry",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "realImageExecution",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "realVideoExecution",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "spendReview",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "outageHandling",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "moderationHandling",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "cancellation",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "savedResult",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        }
+      ]
+    },
+    {
+      "id": "companion",
+      "title": "Signed loopback companion",
+      "status": "not-run",
+      "total": 7,
+      "passed": 0,
+      "noGo": 0,
+      "notRun": 7,
+      "invalidRecords": 0,
+      "requirements": [
+        {
+          "id": "signedRelease",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "install",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "update",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "uninstall",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "diagnostic",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "loopbackAuthentication",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        },
+        {
+          "id": "credentialCustody",
+          "destructive": false,
+          "status": "not-run",
+          "acceptedRecordId": null,
+          "recordCount": 0,
+          "invalidRecordCount": 0,
+          "validationIssues": []
+        }
+      ]
+    }
+  ],
+  "artifacts": [],
+  "indexDigest": "c9ae7e74247e8e7d3965d3430eb8b4acd30afb49766d7c57a1e710902be48c2f",
+  "boundaries": {
+    "syntheticCanCertify": false,
+    "sourceCanCertify": false,
+    "secretsIncluded": false,
+    "fullCustomerIdentifiersIncluded": false
+  }
+}

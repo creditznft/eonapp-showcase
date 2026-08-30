@@ -1,0 +1,81 @@
+{
+  "schema": "eon.city.original-rig-assets.w602.v1",
+  "generatedAt": "source-controlled-deterministic",
+  "generator": "scripts/build-w602-city-rig-assets.mjs",
+  "provenance": {
+    "origin": "EONAPP original in-house work",
+    "licence": "EONAPP controlled original work",
+    "derivativeOfThirdParty": false,
+    "remoteNetwork": false,
+    "containsUserData": false,
+    "texturePolicy": "Textureless PBR/vertex geometry candidate. A future texture-bearing release must use KTX2/Basis Universal and a separate art review."
+  },
+  "assets": [
+    {
+      "file": "eon-navigator-lod0.glb",
+      "bytes": 48796,
+      "sha256": "ac7e8c3f3a62eaeddba8d1ec50c3e5493ebddf415169300326728264b5ca0f88",
+      "meshes": 16,
+      "nodes": 25,
+      "animations": 12,
+      "generator": "EONAPP W602 Original Navigator Rig Builder",
+      "assetId": "operator-hero",
+      "texturelessPbr": true
+    },
+    {
+      "file": "eon-navigator-lod1.glb",
+      "bytes": 45760,
+      "sha256": "259b04017e5fa87a2a47eec813a68e0d44727256b2272f60a41f69addd203b1e",
+      "meshes": 16,
+      "nodes": 25,
+      "animations": 12,
+      "generator": "EONAPP W602 Original Navigator Rig Builder",
+      "assetId": "operator-hero",
+      "texturelessPbr": true
+    },
+    {
+      "file": "eon-navigator-lod2.glb",
+      "bytes": 43864,
+      "sha256": "0f4427218199a46de42b4e62079d5cbcc26aa85281bbe061410126d2fd18582c",
+      "meshes": 16,
+      "nodes": 25,
+      "animations": 12,
+      "generator": "EONAPP W602 Original Navigator Rig Builder",
+      "assetId": "operator-hero",
+      "texturelessPbr": true
+    },
+    {
+      "file": "eonbot-companion-lod0.glb",
+      "bytes": 39468,
+      "sha256": "90d70cec515845920f0177aef1f7578bbaec70ad39908cf92a3e56cd4491cc35",
+      "meshes": 10,
+      "nodes": 18,
+      "animations": 14,
+      "generator": "EONAPP W602 Original EONBOT Rig Builder",
+      "assetId": "eonbot-companion",
+      "texturelessPbr": true
+    },
+    {
+      "file": "eonbot-companion-lod1.glb",
+      "bytes": 35736,
+      "sha256": "f3e1e973b484552a98fa112fc4d480b58bfb8b794f8cbac16484576a0d0cb556",
+      "meshes": 10,
+      "nodes": 18,
+      "animations": 14,
+      "generator": "EONAPP W602 Original EONBOT Rig Builder",
+      "assetId": "eonbot-companion",
+      "texturelessPbr": true
+    },
+    {
+      "file": "eonbot-companion-lod2.glb",
+      "bytes": 34300,
+      "sha256": "ce6a49d10cb013f0aea52370d1ec2053580565b43cc47649ca28a1891b928c64",
+      "meshes": 10,
+      "nodes": 18,
+      "animations": 14,
+      "generator": "EONAPP W602 Original EONBOT Rig Builder",
+      "assetId": "eonbot-companion",
+      "texturelessPbr": true
+    }
+  ]
+}

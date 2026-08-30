@@ -1,0 +1,24 @@
+{
+  "schema": "eonapp.a15.i22.service-worker-origin-storage-gate-receipt.v1",
+  "generatedAt": "2026-08-07T23:12:35.439Z",
+  "wave": "I22",
+  "status": "pass",
+  "canonicalSource": "service-worker/eonapp-service-worker.js",
+  "generatedOutputs": [
+    "sw.js",
+    "public/sw.js"
+  ],
+  "serviceWorkerSha256": "4b98103bc2d8108415d6993f32e76eeec8d31246df2cb3560e1685471649c9a2",
+  "generatedOutputsIdentical": true,
+  "activationDeletesReplaceableCachesOnly": true,
+  "durableOfflineCachesPreservedDuringActivation": true,
+  "protectedBrowserDatabasesTouchedByWorker": false,
+  "unknownCachesPreserved": true,
+  "explicitOfflinePackUninstallRequired": true,
+  "explicitUpdateAndReloadRequired": true,
+  "sourceInstallUpdateRollbackRepairCovered": true,
+  "installedBrowserCertified": false,
+  "productionBuildCertified": false,
+  "errors": [],
+  "digest": "1fa9b677589c98d85671ee9c5274c2997bef08e616196ad0d72d62ddfee25e62"
+}

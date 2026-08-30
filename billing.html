@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <script src="/assets/js/eon-theme-bootstrap.js?release=w722-2026-07-27"></script>
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com; font-src 'self' data:; manifest-src 'self'; media-src 'self' blob:; worker-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="/assets/css/base.css" />
+  <link rel="stylesheet" href="/assets/css/layout.css" />
+  <link rel="stylesheet" href="/assets/css/eon-app-shell.css" />
+  <link rel="stylesheet" href="/assets/css/components.css" />
+  <link rel="stylesheet" href="/assets/css/subscription.css" />
+  <link rel="stylesheet" href="/assets/css/eon-feature-locks.css" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <meta property="og:site_name" content="EONAPP" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Plans &amp; Billing — EONAPP" />
+  <meta property="og:description" content="Compare EONAPP plans with hosted checkout, clear trials and server-verified access." />
+  <meta property="og:url" content="https://eonapp.ch/billing" />
+  <meta property="og:image" content="https://eonapp.ch/assets/media/social/eonapp-trust-1200x630-social-v1.png?v=social-v1" />
+  <meta property="og:image:secure_url" content="https://eonapp.ch/assets/media/social/eonapp-trust-1200x630-social-v1.png?v=social-v1" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Plans &amp; Billing — EONAPP social preview" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Plans &amp; Billing — EONAPP" />
+  <meta name="twitter:description" content="Compare EONAPP plans with hosted checkout, clear trials and server-verified access." />
+  <meta name="twitter:image" content="https://eonapp.ch/assets/media/social/eonapp-trust-1200x630-social-v1.png?v=social-v1" />
+  <meta name="twitter:image:alt" content="Plans &amp; Billing — EONAPP social preview" />
+  <meta name="eon:social-square" content="https://eonapp.ch/assets/media/social/eonapp-trust-1080x1080-social-v1.png?v=social-v1" />
+  <title>Plans &amp; Billing — EONAPP.ch</title>
+  <meta name="description" content="EONAPP plans from $4.99/month through $199/month plus $1,299 Ultimate, with Dodo Payments hosted checkout, seven-day recurring-plan trials, server-verified lifecycle entitlements, and one-time perpetual software grants." />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Plans & Billing","url":"https://eonapp.ch/billing","description":"EONAPP recurring plans and Ultimate one-time software access with Dodo Payments hosted checkout and server-verified entitlements.","publisher":{"@type":"Organization","name":"EONAPP.ch","url":"https://eonapp.ch/"}}</script>
+  <style>
+    .billing-status-card{max-width:900px;margin:1rem auto 0;padding:1rem;border:1px solid var(--clr-border);border-radius:var(--radius-lg);background:var(--clr-surface)}
+    .billing-status-card[data-state="ready"]{border-color:rgba(16,185,129,.42)}.billing-status-card[data-state="blocked"]{border-color:rgba(245,158,11,.45)}.billing-status-card[data-state="error"]{border-color:rgba(248,113,113,.5)}
+    .billing-status-line{display:flex;gap:.65rem;align-items:flex-start}.billing-status-dot{width:.7rem;height:.7rem;margin-top:.35rem;border-radius:50%;background:#94a3b8;flex:none}.billing-status-card[data-state="ready"] .billing-status-dot{background:#34d399}.billing-status-card[data-state="blocked"] .billing-status-dot{background:#fbbf24}.billing-status-card[data-state="error"] .billing-status-dot{background:#f87171}
+    .billing-truth-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}.billing-truth-grid .policy-card{margin:0}.billing-inline-status{min-height:1.4rem;font-size:.86rem;color:var(--clr-text-muted)}
+    .billing-plan-trial{font-size:.78rem;color:#a7f3d0;font-weight:700}.billing-plan-current{font-size:.75rem;color:#a5b4fc}.billing-plan-error{font-size:.78rem;color:#fca5a5;min-height:1.1rem}
+    @media(max-width:760px){.billing-truth-grid{grid-template-columns:1fr}.sub-plans-grid{grid-template-columns:1fr}}
+  </style>
+  <link rel="canonical" href="https://eonapp.ch/billing" />
+  <meta name="robots" content="noindex, nofollow" />
+</head>
+<body data-w143-trust-copy-proof="true" data-page-type="billing" data-eon-app-shell="1" data-eon-app-page="billing" data-monetization="subscription" data-billing-provider="dodo" data-checkout-authority="server-only">
+<a href="#main" class="skip-to-content">Skip to main content</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="logo">⚡ EONAPP<span>.ch</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/">EONBOT</a>
+      <a href="/projects">Projects</a>
+      <a href="/local-ai">Local AI</a>
+      <a href="/eoncity">EON City</a>
+      <a href="/eon-keys">EONKEYS</a>
+    <a href="/status">Status</a></nav>
+    <span id="sub-badge" class="sub-badge" aria-label="Subscription tier"></span>
+  </div>
+</header>
+<main id="main">
+  <section class="sub-hero">
+    <div class="container sub-hero-inner">
+      <span class="badge">Plans &amp; billing</span>
+      <h1>Choose the EONAPP power you need.</h1>
+      <p class="sub-hero-sub">Plus, Studio, Power, Max, Pro and Ultra are monthly subscriptions with the same seven-day trial for an eligible new account. Ultimate is a $1,299 one-time perpetual software purchase. All checkout is hosted by Dodo Payments and access changes only after verified server lifecycle processing.</p>
+      <div id="eon-billing-runtime-status" class="billing-status-card" data-state="loading" role="status" aria-live="polite">
+        <div class="billing-status-line"><span class="billing-status-dot" aria-hidden="true"></span><div><strong>Checking secure billing status…</strong><div class="billing-inline-status">Checkout buttons remain unavailable until the server confirms the production billing configuration.</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub-plans-section" aria-labelledby="billing-plans-title">
+    <div class="container">
+      <div class="tool-header"><span class="badge">All paid products</span><h2 id="billing-plans-title">Six subscriptions + Ultimate</h2><p>The full purchasable catalogue is shown here: $4.99–$199 monthly subscriptions plus $1,299 Ultimate one-time software access. Taxes or local charges, when applicable, are shown by Dodo Payments before checkout confirmation.</p></div>
+      <div id="eon-billing-plans" class="sub-plans-grid" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="container policy-layout" aria-labelledby="billing-current-title">
+    <div class="billing-truth-grid">
+      <article class="policy-card">
+        <h2 id="billing-current-title">Your current access</h2>
+        <div id="eon-billing-account-status" aria-live="polite"><p>Checking sign-in and entitlement status…</p></div>
+      </article>
+      <article class="policy-card">
+        <h2>Manage subscription</h2>
+        <div id="eon-billing-management" aria-live="polite"><p>Checking provider management availability…</p></div>
+        <p id="eon-billing-action-status" class="billing-inline-status" role="status" aria-live="polite"></p>
+      </article>
+      <article class="policy-card">
+        <h2>EONKEYS are an alternative for selected features</h2>
+        <p>Verified referrals can earn non-transferable EONKEYS. Keys unlock only the individual feature, temporary limit, workflow, template or cosmetic named in the unlock menu.</p>
+        <p><strong>EONKEYS never create a free subscription tier, first-month discount, renewal credit, cash value, provider credit or unlimited AI generation.</strong></p>
+        <p><a class="btn btn-outline btn-sm" href="/eon-keys">Review EONKEYS unlocks</a></p>
+      </article>
+      <article class="policy-card">
+        <h2>AI image and video cost boundary</h2>
+        <p>EONAPP subscriptions and EONKEYS unlock EONAPP workflows and product capability. Image, video and other AI execution uses your local runtime or your own external provider/API key.</p>
+        <p>Prompts, provider keys, reference files and generated media do not pass through an EONAPP Cloudflare generation backend.</p>
+      </article>
+      <article class="policy-card">
+        <h2>Checkout, renewal and cancellation</h2>
+        <p>Checkout is created only by the same-origin server route after sign-in and opens on Dodo Payments. Access changes only after a signed server webhook updates the entitlement ledger.</p>
+        <p>Renewal, cancellation, expiry, refund and dispute events are handled server-side. Keep the Dodo receipt and use <a href="/help">Support</a> with redacted evidence when help is needed.</p>
+      </article>
+      <article id="refund-withdrawal-cancellation" class="policy-card">
+        <h2>Refund, withdrawal, cancellation and disputes</h2>
+        <p>Cancel future renewal through the verified Dodo customer portal. Trial eligibility is account-scoped and can be used only once.</p>
+        <p>For a duplicate charge, withdrawal request, refund request or dispute, create a private <a href="/help?caseCategory=billing#trust-support-case">billing case</a>. The case is reviewed against applicable law and Dodo evidence; it does not automatically change the charge or entitlement.</p>
+      </article>
+      <article class="policy-card">
+        <h2>Privacy and local work</h2>
+        <p>Google Login identifies the account used for billing entitlement. It does not automatically back up local Chat, projects, Vault data, City progress, provider keys, prompts or generated media.</p>
+        <p>Create an encrypted <a href="/capsule">Portable Workspace Capsule</a> for local work you cannot lose.</p>
+      </article>
+      <article class="policy-card">
+        <h2>Payment safety</h2>
+        <p>Never send card data, passwords, API keys, one-time codes, recovery phrases or funds through chat or support. Use only the hosted checkout opened from this page.</p>
+        <p>Crypto, direct wallet payment, NFT purchase, referral payout, ad reward and offerwall payment paths are not EONAPP subscription rails.</p>
+      </article>
+    </div>
+    <p><strong>Commercial truth updated:</strong> 5 August 2026</p>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand"><a href="/" class="logo">⚡ EONAPP<span>.ch</span></a><p>Local-first work, optional subscriptions, user-owned AI execution and server-verified access.</p></div>
+    <nav class="footer-nav" aria-label="Legal and site links"><a href="/terms">Terms</a><a href="/privacy">Privacy</a><a href="/help">Support</a><a href="/eon-keys">EONKEYS</a><a href="/billing">Plans &amp; billing</a></nav>
+  </div>
+</footer>
+<script type="module" src="/assets/js/commerce/billing-commercial-status.js"></script>
+<script type="module" src="/assets/js/eon-app-shell.js"></script>
+<script type="module">
+  // Billing remains usable before non-critical enhancement modules arrive.
+  // Deferring these keeps the secure checkout page within its initial transfer budget.
+  const loadBillingEnhancements = () => Promise.all([
+    import('/assets/js/utils/accessibility-autoload.js'),
+    import('/assets/js/legal-trust-copy-proof.js')
+  ]).catch(() => {});
+  if ('requestIdleCallback' in window) window.requestIdleCallback(loadBillingEnhancements, { timeout: 900 });
+  else window.setTimeout(loadBillingEnhancements, 240);
+</script>
+</body>
+</html>

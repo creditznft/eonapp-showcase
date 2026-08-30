@@ -1,0 +1,26 @@
+{
+  "schema": "eonapp.a15.i01.system-disposition-receipt.v1",
+  "status": "pass",
+  "trackedFileCount": 5661,
+  "activeRuntimeModuleCount": 554,
+  "inactiveMissingImportFileCount": 194,
+  "dispositionCounts": {
+    "archive-historical-evidence": 853,
+    "keep-active-runtime": 554,
+    "keep-current-backend": 39,
+    "keep-current-evidence": 83,
+    "keep-current-migration": 7,
+    "keep-current-release-tooling": 1077,
+    "keep-current-route": 25,
+    "keep-current-test": 1024,
+    "keep-emitted-compatibility": 5,
+    "keep-shipping-static": 539,
+    "keep-system-document": 2,
+    "quarantine-missing-import": 194,
+    "quarantine-retired-document": 2,
+    "review-before-quarantine": 1257
+  },
+  "registry": "config/generated/a15-system-disposition-registry.json",
+  "registryDigest": "86e27a6341936d77deff8495e388dec9483044c85e5ae258c865c8d318bfd983",
+  "errors": []
+}

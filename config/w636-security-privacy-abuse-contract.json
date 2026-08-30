@@ -1,0 +1,43 @@
+{
+  "schema": "eonapp.security-privacy-abuse.w636.v1",
+  "wave": "W636",
+  "sourceCertified": true,
+  "productionCertified": false,
+  "requestLimits": {
+    "accountMutation": 2048,
+    "billingMutation": 8192,
+    "referralMutation": 12288,
+    "cspReport": 12288,
+    "providerWebhook": 262144,
+    "supportCase": 20480
+  },
+  "controls": {
+    "boundedMutationBodies": true,
+    "jsonContentTypeRequired": true,
+    "sameOriginMutationRequired": true,
+    "providerWebhookSigned": true,
+    "providerWebhookReplayPayloadBound": true,
+    "checkoutUrlAllowlisted": true,
+    "browserAccountIdSuppressed": true,
+    "browserProviderSessionIdSuppressed": true,
+    "plaintextProviderAliasRetired": true,
+    "persistentBrowserAdminHmacRetired": true,
+    "fixedTrustedOrigins": true,
+    "cspTelemetryRedactedAndBounded": true,
+    "localAttachmentSecretFilter": true,
+    "immutableWorkflowActions": true,
+    "strictUtf8RequestBodies": true,
+    "hardenedApiResponseHeaders": true,
+    "lockfileRequired": true,
+    "legacyCryptoClaimsRetired": true,
+    "legacyProviderKeyExportRetired": true
+  },
+  "externalEvidenceRequired": [
+    "independent penetration test",
+    "Cloudflare WAF and rate-limit evidence",
+    "real signed Dodo webhook replay and duplicate-conflict evidence",
+    "browser CSP delivery and redacted alert delivery evidence",
+    "real abuse and referral fraud review",
+    "owner review of production secrets and bindings"
+  ]
+}

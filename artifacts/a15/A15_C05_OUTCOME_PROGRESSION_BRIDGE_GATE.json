@@ -1,0 +1,126 @@
+{
+  "schema": "eonapp.a15.c05.outcome-progression-bridge-gate.v1",
+  "wave": "C05",
+  "ok": false,
+  "passed": 20,
+  "total": 22,
+  "generatedAt": "2026-08-10T19:27:13.043Z",
+  "policyCount": 19,
+  "checks": [
+    {
+      "id": "twelve-native-outcome-policies",
+      "pass": false,
+      "detail": "19 policies"
+    },
+    {
+      "id": "six-productive-station-families",
+      "pass": false,
+      "detail": "create-forge,project-atlas,library-vault,local-ai-lab,automation-theatre,command-console,my-realm-portal,plans-access,share-capture"
+    },
+    {
+      "id": "native-proof-required",
+      "pass": true,
+      "detail": "neutral Core authority"
+    },
+    {
+      "id": "no-private-outcome-content",
+      "pass": true,
+      "detail": "redacted proof only"
+    },
+    {
+      "id": "no-navigation-outcome",
+      "pass": true,
+      "detail": "C04 receipts excluded"
+    },
+    {
+      "id": "no-outcome-reward",
+      "pass": true,
+      "detail": "Core cannot award City progress"
+    },
+    {
+      "id": "no-silent-outcome-eviction",
+      "pass": true,
+      "detail": "capacity blocks"
+    },
+    {
+      "id": "city-one-receipt-per-outcome",
+      "pass": true,
+      "detail": "idempotent bridge"
+    },
+    {
+      "id": "city-consumes-policy-approved-only",
+      "pass": true,
+      "detail": "validation required"
+    },
+    {
+      "id": "city-progress-no-xp",
+      "pass": true,
+      "detail": "verified-ready only"
+    },
+    {
+      "id": "explicit-claim-still-required",
+      "pass": true,
+      "detail": "W752 claim boundary"
+    },
+    {
+      "id": "review-open-return-not-progress",
+      "pass": true,
+      "detail": "navigation is not proof"
+    },
+    {
+      "id": "all-core-surfaces-use-neutral-authority",
+      "pass": true,
+      "detail": "assets/js/create/eon-create-hub.js,assets/js/forge/eon-forge-quick-build.js,assets/js/projects/eon-projects-page.js,assets/js/eon-workspace-pages.js,assets/js/local-ai/local-ai-page.js,assets/js/eon-automations-page.js,assets/js/local-first/eon-workspace-capsule-page.js,assets/js/vault/eon-vault-page.js"
+    },
+    {
+      "id": "no-core-surface-writes-city-rpg",
+      "pass": true,
+      "detail": "zero direct Core→City progress writes"
+    },
+    {
+      "id": "forge-apply-native-proof",
+      "pass": true,
+      "detail": "after saved Apply"
+    },
+    {
+      "id": "library-reuse-native-proof",
+      "pass": true,
+      "detail": "explicit reuse"
+    },
+    {
+      "id": "share-receipt-projects-neutral-outcome",
+      "pass": true,
+      "detail": "reviewed receipt only"
+    },
+    {
+      "id": "w751-progress-bridge-connected",
+      "pass": true,
+      "detail": "City projection connected"
+    },
+    {
+      "id": "w751-projection-valid",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "id": "w752-does-not-auto-claim",
+      "pass": true,
+      "detail": "separate explicit ledger write"
+    },
+    {
+      "id": "contracts-have-no-network",
+      "pass": true,
+      "detail": "local contracts only"
+    },
+    {
+      "id": "contracts-have-no-sensitive-fields",
+      "pass": true,
+      "detail": "no private payload schema"
+    }
+  ],
+  "limitations": [
+    "Source-only certification.",
+    "No authenticated browser mission playthrough evidence.",
+    "Core outcomes and City progress receipts grant no XP until W752 explicit claim."
+  ]
+}

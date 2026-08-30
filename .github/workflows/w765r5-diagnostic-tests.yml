@@ -1,0 +1,58 @@
+name: W765R5 Isolated Diagnostics
+
+on:
+  push:
+    branches:
+      - chatgpt/w765r5-command-workspace
+    paths:
+      - automation/w765r5-diagnostic-ready.txt
+
+permissions:
+  contents: read
+
+env:
+  OVERLAY_PATH: automation/w765r5-transfer/EONAPP_W765R5_GITHUB_OVERLAY_2026-08-01.tar.gz
+  OVERLAY_SHA256: e6018a5afe34ab91b43c15778048456ae378ee3dda67eb17c8cdbba3c6330636
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out isolated branch
+        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955
+        with:
+          ref: chatgpt/w765r5-command-workspace
+      - name: Use Node 22
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - name: Reconstruct exact overlay
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "$OVERLAY_SHA256  $OVERLAY_PATH" | sha256sum --check --strict
+          mapfile -t OVERLAY_FILES < <(tar -tzf "$OVERLAY_PATH")
+          tar -xzf "$OVERLAY_PATH" -C .
+          for path in "${OVERLAY_FILES[@]}"; do test -f "$path" && sed -i 's/\r$//' "$path" || true; done
+      - name: Install exact dependencies
+        run: npm ci --include=dev --no-audit --no-fund
+      - { name: Test W662 movement, id: t1, continue-on-error: true, run: "node --test tests/unit/w662-camera-relative-movement.test.mjs" }
+      - { name: Test W695 motion, id: t2, continue-on-error: true, run: "node --test tests/unit/w695-character-motion-truth.test.mjs" }
+      - { name: Test W745 polish, id: t3, continue-on-error: true, run: "node --test tests/unit/w745-final-city-polish-red-team.test.mjs" }
+      - { name: Test W750 walls, id: t4, continue-on-error: true, run: "node --test tests/unit/w750-command-centre-live-walls.test.mjs" }
+      - { name: Test W754 cast, id: t5, continue-on-error: true, run: "node --test tests/unit/w754-cast-eonbot-npc-schedules-transit.test.mjs" }
+      - { name: Test W765R4 repair, id: t6, continue-on-error: true, run: "node --test tests/unit/w765r4-live-city-repair.test.mjs" }
+      - { name: Test W765R5 workspace, id: t7, continue-on-error: true, run: "node --test tests/unit/w765r5-command-workspace.test.mjs" }
+      - { name: Test W275 PWA, id: t8, continue-on-error: true, run: "node --test tests/unit/w275-pwa-asset-policy.test.mjs" }
+      - { name: Test W476 service worker, id: t9, continue-on-error: true, run: "node --test tests/unit/w476-service-worker-contract.test.mjs" }
+      - { name: Test W635 cache safety, id: t10, continue-on-error: true, run: "node --test tests/unit/w635-performance-cache-update-safety.test.mjs" }
+      - { name: Test W757 reliability, id: t11, continue-on-error: true, run: "node --test tests/unit/w757-performance-loading-memory-disposal-cache.test.mjs" }
+      - name: Report diagnostic outcomes
+        shell: bash
+        run: |
+          printf '%s\n' "W662=${{ steps.t1.outcome }}" "W695=${{ steps.t2.outcome }}" "W745=${{ steps.t3.outcome }}" "W750=${{ steps.t4.outcome }}" "W754=${{ steps.t5.outcome }}" "W765R4=${{ steps.t6.outcome }}" "W765R5=${{ steps.t7.outcome }}" "W275=${{ steps.t8.outcome }}" "W476=${{ steps.t9.outcome }}" "W635=${{ steps.t10.outcome }}" "W757=${{ steps.t11.outcome }}"
+          for result in '${{ steps.t1.outcome }}' '${{ steps.t2.outcome }}' '${{ steps.t3.outcome }}' '${{ steps.t4.outcome }}' '${{ steps.t5.outcome }}' '${{ steps.t6.outcome }}' '${{ steps.t7.outcome }}' '${{ steps.t8.outcome }}' '${{ steps.t9.outcome }}' '${{ steps.t10.outcome }}' '${{ steps.t11.outcome }}'; do test "$result" = success; done
+      - name: Confirm no deployment occurred
+        if: always()
+        run: echo 'Diagnostic only; no build artifact and no Cloudflare deployment.'

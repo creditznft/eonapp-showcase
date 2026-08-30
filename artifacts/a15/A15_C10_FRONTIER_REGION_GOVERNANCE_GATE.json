@@ -1,0 +1,80 @@
+{
+  "schema": "eonapp.a15.c10.frontier-region-governance-gate.v1",
+  "wave": "C10",
+  "generatedAt": "2026-08-04T22:15:52.247Z",
+  "ok": true,
+  "passed": 12,
+  "total": 12,
+  "checks": [
+    {
+      "id": "source-contract-valid",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "id": "my-frontier-seven-authored-plots",
+      "pass": true,
+      "detail": "7"
+    },
+    {
+      "id": "my-frontier-six-resident-slots",
+      "pass": true,
+      "detail": "6"
+    },
+    {
+      "id": "my-frontier-no-raw-placement",
+      "pass": true,
+      "detail": "authored choices only"
+    },
+    {
+      "id": "my-frontier-non-financial",
+      "pass": true,
+      "detail": "no land economy"
+    },
+    {
+      "id": "storm-exact-package",
+      "pass": true,
+      "detail": "a5c13aa3ba94a0b60f0e2b7122f228f5534132b4985c3019e414cc85a9a96c4d"
+    },
+    {
+      "id": "storm-eight-external-gates",
+      "pass": true,
+      "detail": "8"
+    },
+    {
+      "id": "storm-thirty-five-owner-cases",
+      "pass": true,
+      "detail": "35"
+    },
+    {
+      "id": "storm-locked-by-default",
+      "pass": true,
+      "detail": "source-only state"
+    },
+    {
+      "id": "storm-presenter-requires-activation",
+      "pass": true,
+      "detail": "exact activated package"
+    },
+    {
+      "id": "runtime-owner-confirmation-required",
+      "pass": true,
+      "detail": "reviewed activation"
+    },
+    {
+      "id": "source-complete-not-certified",
+      "pass": true,
+      "detail": "external evidence remains mandatory"
+    }
+  ],
+  "stormPackageDigest": "a5c13aa3ba94a0b60f0e2b7122f228f5534132b4985c3019e414cc85a9a96c4d",
+  "myFrontierSourceReady": true,
+  "stormSourceProgrammeComplete": true,
+  "stormExternallyCertified": false,
+  "stormGatewayLocked": true,
+  "productionReady": false,
+  "limitations": [
+    "My Frontier rendered construction, resident, theme and reload evidence remains an owner-browser gate.",
+    "Storm Sector remains locked until exact external certification and all 35 owner cases bind to one build digest."
+  ]
+}

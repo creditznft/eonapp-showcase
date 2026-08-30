@@ -1,0 +1,47 @@
+{
+  "schema": "eonapp.a15.i19.activation-onboarding-continue-gate-receipt.v1",
+  "generatedAt": "2026-08-04T19:55:14.001Z",
+  "wave": "I19",
+  "status": "pass",
+  "authority": {
+    "guestFirst": true,
+    "signInRequiredForFirstUsefulResult": false,
+    "firstUsefulResultSources": [
+      "project",
+      "library",
+      "chat"
+    ],
+    "setupResumeSources": [
+      "onboarding",
+      "local-ai",
+      "creator-media",
+      "data-survival",
+      "provider"
+    ],
+    "canonicalContinueDestinations": true,
+    "automaticNavigation": false,
+    "marketingConsentFromIdentity": false,
+    "automaticOutboundDelivery": false,
+    "contentBodiesStoredInActivationState": false,
+    "remoteUpload": false
+  },
+  "sourceFiles": [
+    "assets/js/activation/eon-activation-service.js",
+    "assets/js/retention/eon-continue-resolver.js",
+    "assets/js/onboarding-page.js",
+    "assets/js/eon-app-shell.js",
+    "assets/js/account/eon-identity-onboarding.js",
+    "assets/js/notifications/eon-retention-consent.js",
+    "config/w642-product-truth-retention-contract.mjs"
+  ],
+  "claims": {
+    "realAccountActivationExercised": false,
+    "emailOrPushDelivered": false,
+    "marketingConsentCollected": false,
+    "authenticatedBrowserCertified": false,
+    "previewDeployed": false,
+    "productionDeployed": false
+  },
+  "errors": [],
+  "digest": "8439dafc344e444d4d9eabe2e66e60251e07913643be951a126b00542a5fcf4b"
+}

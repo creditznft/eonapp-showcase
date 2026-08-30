@@ -1,0 +1,23 @@
+{
+  "schema": "eon.release.institutional-certification.w444.v1",
+  "date": "2026-06-29",
+  "sourceBoard": "implemented",
+  "certified": false,
+  "deploymentApproved": false,
+  "commercialActivationApproved": false,
+  "status": "blocked-external-evidence-required",
+  "requiredExternalEvidence": [
+    "validLighthouseArtifacts",
+    "manualDesktopAndMobileCityProof",
+    "googleOAuthProductionMatrix",
+    "syncDeviceRecoveryMatrix",
+    "notificationDeliveryAndUnsubscribeProof",
+    "pwaInstallUpdateRollbackProof",
+    "actionGatewayExecutionPilotProof",
+    "connectorConsentAndRevokeProof",
+    "commercialPolicyDecisionRecord",
+    "securityAndAccessibilityReview",
+    "rollbackAndCEOApproval"
+  ],
+  "note": "This file intentionally records a source-level blocked status. It is not a release certificate."
+}

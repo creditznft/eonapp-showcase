@@ -1,0 +1,32 @@
+[
+  {
+    "schema": "eon.city.play.w249.local-proof.v1",
+    "createdAt": "2026-07-02T01:42:08.783Z",
+    "summary": {
+      "quality": "cinematic",
+      "engine": "Babylon WebGL",
+      "frameSamples": 174,
+      "averageFrameMs": 20.92,
+      "p95FrameMs": 55.83,
+      "p99FrameMs": 80,
+      "firstFrameMs": 161.19,
+      "sessionDurationMs": 4337.73,
+      "minFrameMs": 8.75,
+      "maxFrameMs": 80,
+      "fps": 64,
+      "activeMeshes": 540,
+      "activeLights": 7,
+      "remoteTelemetry": false,
+      "remoteAssets": false
+    },
+    "device": {
+      "webgl": true,
+      "recommendedQuality": "cinematic",
+      "lowTier": false,
+      "reducedMotion": false,
+      "saveData": false,
+      "cores": 12,
+      "memoryGb": 16
+    }
+  }
+]

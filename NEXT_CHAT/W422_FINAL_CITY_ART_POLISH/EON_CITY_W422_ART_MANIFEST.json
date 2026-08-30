@@ -1,0 +1,2627 @@
+{
+  "schema": "eon.city.w422.art-manifest.v1",
+  "generatedAt": "2026-06-28T14:31:20.298Z",
+  "originalVectorArt": true,
+  "finalBinaryArt": false,
+  "finalInstitutionalArtClaim": false,
+  "catalog": {
+    "total": 58,
+    "foundation": [
+      "wet-street",
+      "brushed-graphite",
+      "glass-grid",
+      "carbon-weave",
+      "neon-circuit",
+      "skyline-depth",
+      "eon-monogram",
+      "arrival-emblem",
+      "command-emblem",
+      "creator-emblem",
+      "forge-emblem",
+      "signal-emblem",
+      "automation-emblem",
+      "archive-emblem",
+      "eonbot-halo",
+      "wayfinding-cyan",
+      "wayfinding-violet",
+      "wayfinding-mint"
+    ],
+    "w422Extension": [
+      "prismatic-glass",
+      "amber-rail",
+      "bio-lattice",
+      "obsidian-ceramic",
+      "vapor-caustics",
+      "signal-mesh",
+      "archive-warmth",
+      "moon-grid",
+      "aurora-ribbon",
+      "aerial-traffic",
+      "rain-veil",
+      "signal-array",
+      "forge-plumes",
+      "garden-canopy",
+      "relay-emblem",
+      "observatory-emblem",
+      "expedition-ember",
+      "expedition-tide",
+      "expedition-aurora",
+      "expedition-echo",
+      "protocol-grid",
+      "safety-grid",
+      "transit-rune",
+      "portal-ring",
+      "kinetic-lane",
+      "biolume-leaf",
+      "archive-rune",
+      "signal-chevron",
+      "forge-stripe",
+      "creator-prism",
+      "command-circuit",
+      "arrival-star",
+      "neon-lantern",
+      "holo-kiosk",
+      "drone-silhouette",
+      "garden-pod",
+      "signal-kite",
+      "street-barrier",
+      "archive-orb",
+      "tram-silhouette"
+    ],
+    "categories": {
+      "material": 12,
+      "backdrop": 8,
+      "decal": 30,
+      "prop": 8
+    },
+    "assets": [
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "wet-street",
+        "file": "texture-wet-street.svg",
+        "role": "repeating wet-street surface treatment",
+        "category": "material",
+        "alpha": false,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "lite",
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "b114b87ec377ef1dfd65d82ad9a6299d18fa61169889635ef823d273b2578d78"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "brushed-graphite",
+        "file": "texture-brushed-graphite.svg",
+        "role": "brushed graphite facade and steel treatment",
+        "category": "material",
+        "alpha": false,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "ef3674d5f73b767bd324938676b1f6c6c6b279cba6eaa89bba0456429b8dbda2"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "glass-grid",
+        "file": "texture-glass-grid.svg",
+        "role": "night glass and window-grid treatment",
+        "category": "material",
+        "alpha": false,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "54597874733b0113ad16b1785261e37c82695d608d630814b06c4ba7825fc06d"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "carbon-weave",
+        "file": "texture-carbon-weave.svg",
+        "role": "command-deck panel and street-furniture treatment",
+        "category": "material",
+        "alpha": false,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "fb083a54fa6fe4c58bc99585cb16870752bd8bdf92fe57c0f3a5e0a6d33ad70f"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "neon-circuit",
+        "file": "texture-neon-circuit.svg",
+        "role": "local emissive console and route treatment",
+        "category": "material",
+        "alpha": false,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "4fe3a8bccbc8c41dbf73c9c707314ecd9b61cb34a8472c5318cfc94b2884cc4f"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "skyline-depth",
+        "file": "horizon-neon-skyline.svg",
+        "role": "wide local skyline depth backdrop",
+        "category": "backdrop",
+        "alpha": false,
+        "width": 2048,
+        "height": 768,
+        "qualities": [
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "0113fde0118a0fb62ba12518b861c675a5a734a289aa0b6a723f047469af6cd2"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "eon-monogram",
+        "file": "decal-eon-monogram.svg",
+        "role": "EON City identity decal",
+        "category": "decal",
+        "alpha": true,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "lite",
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "acdd017d47969e01102cd0ea65dc4467a6435d4b20dff633423530ea2f6d315d"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "arrival-emblem",
+        "file": "decal-arrival-emblem.svg",
+        "role": "Arrival Gate decal",
+        "category": "decal",
+        "alpha": true,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "lite",
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "d6c8e3341932d615f54cfe4f32b33460d946b3af249b41ea7fd2a2ef62b57a00"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "command-emblem",
+        "file": "decal-command-emblem.svg",
+        "role": "Command District decal",
+        "category": "decal",
+        "alpha": true,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "lite",
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "2eff40396f433ca4a357f4d65b713b63eefdb1b6f18fdd6c88a7db30830c413e"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "creator-emblem",
+        "file": "decal-creator-emblem.svg",
+        "role": "Creator Atrium decal",
+        "category": "decal",
+        "alpha": true,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "lite",
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "532f5bf5c1af3fcf0ce9c72fbfbc05ccff2c80441060c435e573ced20e37d622"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "forge-emblem",
+        "file": "decal-forge-emblem.svg",
+        "role": "Forge Bay decal",
+        "category": "decal",
+        "alpha": true,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "lite",
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "06b528e030c0f99903e1f7999fa2c6f20753110beea2490e5cd598a48810c934"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "signal-emblem",
+        "file": "decal-signal-emblem.svg",
+        "role": "Signal Tower decal",
+        "category": "decal",
+        "alpha": true,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "6cfb1745ad42660f20e733e7502c67a6035cf9f20c48278c0357457757347d4b"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "automation-emblem",
+        "file": "decal-automation-emblem.svg",
+        "role": "Automation Observatory decal",
+        "category": "decal",
+        "alpha": true,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "5d9651450906efe1ced9b1afbb68dd7fa63066eaae2a9ee1f646bf763e03d6b8"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "archive-emblem",
+        "file": "decal-archive-emblem.svg",
+        "role": "Archive Gardens decal",
+        "category": "decal",
+        "alpha": true,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "f9f00a90e8c0fb53af3886b2dd022e63ad82bb4e800daf423d606d0860210ca0"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "eonbot-halo",
+        "file": "decal-eonbot-halo.svg",
+        "role": "EONBOT companion halo decal",
+        "category": "decal",
+        "alpha": true,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "7795a7ed3a303c1de58ba7a98a2445dba0c98a80106a570de1fd2924fb2466cb"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "wayfinding-cyan",
+        "file": "decal-wayfinding-cyan.svg",
+        "role": "cyan route arrow decal",
+        "category": "decal",
+        "alpha": true,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "lite",
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "e3cf300d7c837e89936c25f6be43c7bb817467a54f7d91095c6346b08059cb55"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "wayfinding-violet",
+        "file": "decal-wayfinding-violet.svg",
+        "role": "violet route arrow decal",
+        "category": "decal",
+        "alpha": true,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "bdda0396f4dbe3479e05da14d3766d05161bbac6298a33299f87309301a5487d"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "wayfinding-mint",
+        "file": "decal-wayfinding-mint.svg",
+        "role": "mint route arrow decal",
+        "category": "decal",
+        "alpha": true,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "f3a6efccb975627de799079a8bc459a0f71fbf0b32f99d6c66280d96d64eb7ac"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "prismatic-glass",
+        "file": "texture-prismatic-glass.svg",
+        "role": "prismatic Creator Atrium glass treatment",
+        "category": "material",
+        "alpha": false,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "5e208586429dcbab0322615e277dd1b1aa1159938477e83c547590a2c642d3c7"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "amber-rail",
+        "file": "texture-amber-rail.svg",
+        "role": "industrial Forge Bay amber rail treatment",
+        "category": "material",
+        "alpha": false,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "e4bb70980d6eccf7ea57e910404744e69625cd1ec42a292450ac60649808ec35"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "bio-lattice",
+        "file": "texture-bio-lattice.svg",
+        "role": "bioluminescent Archive Gardens lattice treatment",
+        "category": "material",
+        "alpha": false,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "63807dc500baf71d1783bac5b7f245aff2b1681d00aed9e06ae7d6e08f4a36c3"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "obsidian-ceramic",
+        "file": "texture-obsidian-ceramic.svg",
+        "role": "quiet command and archive ceramic panel treatment",
+        "category": "material",
+        "alpha": false,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "00e0c5c602ac35abe710e6faa49957b8db240458f2a9855e7c1eacdc0eee6f9c"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "vapor-caustics",
+        "file": "texture-vapor-caustics.svg",
+        "role": "wet reflected-light surface treatment",
+        "category": "material",
+        "alpha": false,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "cinematic"
+        ],
+        "sha256": "c3343d56dda8a5139df348cecd95ae4d18149467fc79b809b9954406a695348f"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "signal-mesh",
+        "file": "texture-signal-mesh.svg",
+        "role": "violet Signal Tower field-mesh treatment",
+        "category": "material",
+        "alpha": false,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "3535fc40583572a6cb58baea2b663711a91729b038cf171607faa0184c0997e1"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "archive-warmth",
+        "file": "texture-archive-warmth.svg",
+        "role": "amber Archive Gardens archival-inlay treatment",
+        "category": "material",
+        "alpha": false,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "5e9c9ced28111e46035145d7d20577b043607bf5ff11031deaadbb78f6cce88c"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "moon-grid",
+        "file": "horizon-moon-grid.svg",
+        "role": "layered celestial moon-grid backdrop",
+        "category": "backdrop",
+        "alpha": true,
+        "width": 2048,
+        "height": 768,
+        "qualities": [
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "16d68149bf90d0f28a9f754c7cf7ffb319a64f2207080f8d35cd549906336dd2"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "aurora-ribbon",
+        "file": "horizon-aurora-ribbon.svg",
+        "role": "cyan-violet atmospheric ribbon backdrop",
+        "category": "backdrop",
+        "alpha": true,
+        "width": 2048,
+        "height": 768,
+        "qualities": [
+          "cinematic"
+        ],
+        "sha256": "70a630e6565028f7dda544837acce2cbb1ca9237c443e36b9e937ebeb89e3807"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "aerial-traffic",
+        "file": "horizon-aerial-traffic.svg",
+        "role": "distant local aerial traffic silhouette layer",
+        "category": "backdrop",
+        "alpha": true,
+        "width": 2048,
+        "height": 768,
+        "qualities": [
+          "cinematic"
+        ],
+        "sha256": "501455c6c9b99b6e2a5b43c4ad738bea8b330828712fe6ebb1c18362ca226cfa"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "rain-veil",
+        "file": "horizon-rain-veil.svg",
+        "role": "subtle local rain veil layer",
+        "category": "backdrop",
+        "alpha": true,
+        "width": 2048,
+        "height": 768,
+        "qualities": [
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "a819f127863d0a5d3c00dd304a932b745f1c737860daa0d83f005724cf5f63b8"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "signal-array",
+        "file": "horizon-signal-array.svg",
+        "role": "Signal Tower antenna-array silhouette backdrop",
+        "category": "backdrop",
+        "alpha": true,
+        "width": 2048,
+        "height": 768,
+        "qualities": [
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "d7f0e5fd415aac0871b6470608884bab77a2fe6c9cdab0b30b863d873ad8ac7a"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "forge-plumes",
+        "file": "horizon-forge-plumes.svg",
+        "role": "Forge Bay heat-plume silhouette backdrop",
+        "category": "backdrop",
+        "alpha": true,
+        "width": 2048,
+        "height": 768,
+        "qualities": [
+          "cinematic"
+        ],
+        "sha256": "dfbca8a27688d29c3e4e589c4a477ee89c229caf79b56e9464038cb6c6112ec6"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "garden-canopy",
+        "file": "horizon-garden-canopy.svg",
+        "role": "Archive Gardens biolume canopy backdrop",
+        "category": "backdrop",
+        "alpha": true,
+        "width": 2048,
+        "height": 768,
+        "qualities": [
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "5b880bf3ce1ad884f8de88d3f386f6c67329fd4c0553cbf3dd4c91c8e20e101b"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "relay-emblem",
+        "file": "decal-relay-emblem.svg",
+        "role": "Relay courtyard communication decal",
+        "category": "decal",
+        "alpha": true,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "2cdcd91590a96aa7aff58feb756f15aa4cac9056f7b749db0150eddd4021589e"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "observatory-emblem",
+        "file": "decal-observatory-emblem.svg",
+        "role": "Automation Observatory orbital decal",
+        "category": "decal",
+        "alpha": true,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "b94cc3a9f2dc9159d4a0731994f650c515aac4d6294e6788cd143bcf1a9735e6"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "expedition-ember",
+        "file": "decal-expedition-ember.svg",
+        "role": "Ember Signal Expedition threshold decal",
+        "category": "decal",
+        "alpha": true,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "cinematic"
+        ],
+        "sha256": "2f8a47fbba63ea537b87dfe76cf3edaf665ae963b76cd9252ced188dabb7509f"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "expedition-tide",
+        "file": "decal-expedition-tide.svg",
+        "role": "Tide Signal Expedition threshold decal",
+        "category": "decal",
+        "alpha": true,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "cinematic"
+        ],
+        "sha256": "9fb69919c31761aa3ae767516c982e7670f489795721e5468933c2277b7937f8"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "expedition-aurora",
+        "file": "decal-expedition-aurora.svg",
+        "role": "Aurora Signal Expedition threshold decal",
+        "category": "decal",
+        "alpha": true,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "cinematic"
+        ],
+        "sha256": "ec3aacdbdac7386c1486c0e6305248dfe89d027b55fac2c85a903b6941d0b4e7"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "expedition-echo",
+        "file": "decal-expedition-echo.svg",
+        "role": "Echo Signal Expedition threshold decal",
+        "category": "decal",
+        "alpha": true,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "cinematic"
+        ],
+        "sha256": "d1502c9dc72b2131fe15c4cd2e7e33fe778709468bb39ace1305e4c4a532bb7e"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "protocol-grid",
+        "file": "decal-protocol-grid.svg",
+        "role": "Command protocol-grid floor decal",
+        "category": "decal",
+        "alpha": true,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "fc1bfd39492b409379643d143990fa368532ab5af7e7c6bb4096561153af19af"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "safety-grid",
+        "file": "decal-safety-grid.svg",
+        "role": "visible movement-safe-zone floor decal",
+        "category": "decal",
+        "alpha": true,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "lite",
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "edaefe737eb0cd2b205201e002175a5567d7d28c7fed1c6ac6734f19568ef4af"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "transit-rune",
+        "file": "decal-transit-rune.svg",
+        "role": "City transit junction rune",
+        "category": "decal",
+        "alpha": true,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "668998e07578298cafa36b251a9cc959134ee88d6ea4c1a5715a4be6801785f1"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "portal-ring",
+        "file": "decal-portal-ring.svg",
+        "role": "Signal Expedition portal-ring decal",
+        "category": "decal",
+        "alpha": true,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "3071f463247e2aa9572532cfa12f43d41867b1b692f7c66be9df2f1b3566a01a"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "kinetic-lane",
+        "file": "decal-kinetic-lane.svg",
+        "role": "moving-route lane surface decal",
+        "category": "decal",
+        "alpha": true,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "a866636bba03954dcf37c098d44e828c65a1c7bed3b1a78b1838730e958078de"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "biolume-leaf",
+        "file": "decal-biolume-leaf.svg",
+        "role": "Archive Gardens biolume leaf decal",
+        "category": "decal",
+        "alpha": true,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "219fd6cee21a5064e30aec9cf789a56df1fcf6bad6ddfa5bb23eade03e2be481"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "archive-rune",
+        "file": "decal-archive-rune.svg",
+        "role": "Archive memory-rune decal",
+        "category": "decal",
+        "alpha": true,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "d0bd3a79cf10e89ef66c7452f7340ec5fd77d6df2e13172b823aa6947a22be5e"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "signal-chevron",
+        "file": "decal-signal-chevron.svg",
+        "role": "Signal Tower chevron route decal",
+        "category": "decal",
+        "alpha": true,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "772cd5422565c3b519d5ef6c4f2fe0db67be47732e7803ccc9ce8985372030b8"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "forge-stripe",
+        "file": "decal-forge-stripe.svg",
+        "role": "Forge Bay industrial stripe decal",
+        "category": "decal",
+        "alpha": true,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "96c0ff913f0f0584fd43e0d02647bfbf61e87f9202e9cc1d272c0a149a8b971f"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "creator-prism",
+        "file": "decal-creator-prism.svg",
+        "role": "Creator Atrium prism floor decal",
+        "category": "decal",
+        "alpha": true,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "acea51462a8e1fadbe7e1a62957ca6742c4372f411c3c2e66c8ec1e954c741ba"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "command-circuit",
+        "file": "decal-command-circuit.svg",
+        "role": "Command Circuit identity decal",
+        "category": "decal",
+        "alpha": true,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "7363be0598e57494577ed2a776aea63a02421bf6d96ab2ae3b1ab16229002231"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "arrival-star",
+        "file": "decal-arrival-star.svg",
+        "role": "Arrival Gate orientation star decal",
+        "category": "decal",
+        "alpha": true,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "lite",
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "ee54a62dc54edada276a9d4b3793ba4474fca56fd3c5675e8392278e3d6ae895"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "neon-lantern",
+        "file": "prop-neon-lantern.svg",
+        "role": "local neon lantern billboard prop",
+        "category": "prop",
+        "alpha": true,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "20b47e1501d490ee2fdf429a5b84a3fefee59f174a68b3c305f6d7c88068d6d3"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "holo-kiosk",
+        "file": "prop-holo-kiosk.svg",
+        "role": "local holographic kiosk billboard prop",
+        "category": "prop",
+        "alpha": true,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "3df4a750cc43391a267a5f702d6278fc1222f7a87a1a9b8374112ff93c664be0"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "drone-silhouette",
+        "file": "prop-drone-silhouette.svg",
+        "role": "distant autonomous drone silhouette prop",
+        "category": "prop",
+        "alpha": true,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "cinematic"
+        ],
+        "sha256": "cd2e1a83369cedea63041e11815abf20245ef29a2b37b1044c7a7e6ef9a864db"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "garden-pod",
+        "file": "prop-garden-pod.svg",
+        "role": "Archive Gardens biolume pod billboard prop",
+        "category": "prop",
+        "alpha": true,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "2cf7cc04035d7d12d6d80404a0d87fa709c145ef3bb4e54add441f58e0283fb4"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "signal-kite",
+        "file": "prop-signal-kite.svg",
+        "role": "Signal Tower kinetic marker billboard prop",
+        "category": "prop",
+        "alpha": true,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "cinematic"
+        ],
+        "sha256": "215cde78f11e17fc39c2cfd40bb0e52791d895c88e9058c9653087d7097d8abc"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "street-barrier",
+        "file": "prop-street-barrier.svg",
+        "role": "city route safety barrier billboard prop",
+        "category": "prop",
+        "alpha": true,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "lite",
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "ac246e9aa24c65a0bf5d61d6dc2ee7c6b133601c3df891e62636ab214f3b9dc5"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "archive-orb",
+        "file": "prop-archive-orb.svg",
+        "role": "quiet Archive Gardens memory orb billboard prop",
+        "category": "prop",
+        "alpha": true,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "balanced",
+          "cinematic"
+        ],
+        "sha256": "7f333e8dc92a7bb1981a3b6b343ed87c7d461d404360710d58b3cda719df39d1"
+      },
+      {
+        "status": "shipped-original-vector",
+        "origin": "EONAPP original in-house work",
+        "licence": "EONAPP controlled original work",
+        "sameOrigin": true,
+        "remoteNetwork": false,
+        "userData": false,
+        "finalBinaryArt": false,
+        "id": "tram-silhouette",
+        "file": "prop-tram-silhouette.svg",
+        "role": "distant local transit tram billboard prop",
+        "category": "prop",
+        "alpha": true,
+        "width": 1024,
+        "height": 1024,
+        "qualities": [
+          "cinematic"
+        ],
+        "sha256": "16b215ffc4b250e256f9d0e4cbf445ac464d7b82f6a63a295f39dbd06f0b4687"
+      }
+    ]
+  },
+  "qualityPlans": {
+    "lite": [
+      "wet-street",
+      "eon-monogram",
+      "arrival-emblem",
+      "command-emblem",
+      "creator-emblem",
+      "forge-emblem",
+      "wayfinding-cyan",
+      "safety-grid",
+      "arrival-star",
+      "street-barrier"
+    ],
+    "balanced": [
+      "wet-street",
+      "brushed-graphite",
+      "glass-grid",
+      "carbon-weave",
+      "neon-circuit",
+      "skyline-depth",
+      "eon-monogram",
+      "arrival-emblem",
+      "command-emblem",
+      "creator-emblem",
+      "forge-emblem",
+      "signal-emblem",
+      "automation-emblem",
+      "archive-emblem",
+      "eonbot-halo",
+      "wayfinding-cyan",
+      "wayfinding-violet",
+      "wayfinding-mint",
+      "prismatic-glass",
+      "amber-rail",
+      "bio-lattice",
+      "obsidian-ceramic",
+      "signal-mesh",
+      "archive-warmth",
+      "moon-grid",
+      "rain-veil",
+      "signal-array",
+      "garden-canopy",
+      "relay-emblem",
+      "observatory-emblem",
+      "protocol-grid",
+      "safety-grid",
+      "transit-rune",
+      "portal-ring",
+      "kinetic-lane",
+      "biolume-leaf",
+      "archive-rune",
+      "signal-chevron",
+      "forge-stripe",
+      "creator-prism",
+      "command-circuit",
+      "arrival-star",
+      "neon-lantern",
+      "holo-kiosk",
+      "garden-pod",
+      "street-barrier",
+      "archive-orb"
+    ],
+    "cinematic": [
+      "wet-street",
+      "brushed-graphite",
+      "glass-grid",
+      "carbon-weave",
+      "neon-circuit",
+      "skyline-depth",
+      "eon-monogram",
+      "arrival-emblem",
+      "command-emblem",
+      "creator-emblem",
+      "forge-emblem",
+      "signal-emblem",
+      "automation-emblem",
+      "archive-emblem",
+      "eonbot-halo",
+      "wayfinding-cyan",
+      "wayfinding-violet",
+      "wayfinding-mint",
+      "prismatic-glass",
+      "amber-rail",
+      "bio-lattice",
+      "obsidian-ceramic",
+      "vapor-caustics",
+      "signal-mesh",
+      "archive-warmth",
+      "moon-grid",
+      "aurora-ribbon",
+      "aerial-traffic",
+      "rain-veil",
+      "signal-array",
+      "forge-plumes",
+      "garden-canopy",
+      "relay-emblem",
+      "observatory-emblem",
+      "expedition-ember",
+      "expedition-tide",
+      "expedition-aurora",
+      "expedition-echo",
+      "protocol-grid",
+      "safety-grid",
+      "transit-rune",
+      "portal-ring",
+      "kinetic-lane",
+      "biolume-leaf",
+      "archive-rune",
+      "signal-chevron",
+      "forge-stripe",
+      "creator-prism",
+      "command-circuit",
+      "arrival-star",
+      "neon-lantern",
+      "holo-kiosk",
+      "drone-silhouette",
+      "garden-pod",
+      "signal-kite",
+      "street-barrier",
+      "archive-orb",
+      "tram-silhouette"
+    ]
+  },
+  "chapters": [
+    {
+      "localOnly": true,
+      "remoteNetwork": false,
+      "userData": false,
+      "finalBinaryArt": false,
+      "id": "arrival-command",
+      "title": "Arrival and Command",
+      "detail": "Wet orientation path, controlled protocol geometry and a moon-grid skyline establish the first readable City landmark.",
+      "landmarkIds": [
+        "command-centre"
+      ],
+      "artIds": [
+        "obsidian-ceramic",
+        "vapor-caustics",
+        "moon-grid",
+        "rain-veil",
+        "arrival-star",
+        "safety-grid",
+        "protocol-grid",
+        "command-circuit",
+        "neon-lantern",
+        "street-barrier"
+      ]
+    },
+    {
+      "localOnly": true,
+      "remoteNetwork": false,
+      "userData": false,
+      "finalBinaryArt": false,
+      "id": "creator-forge",
+      "title": "Creator and Forge",
+      "detail": "Prismatic glass, amber industrial rails and clear workshop marks distinguish imagination from build execution without copying a real product interface.",
+      "landmarkIds": [
+        "creator-atrium",
+        "forge-bay"
+      ],
+      "artIds": [
+        "prismatic-glass",
+        "amber-rail",
+        "forge-plumes",
+        "creator-prism",
+        "forge-stripe",
+        "kinetic-lane",
+        "transit-rune",
+        "holo-kiosk",
+        "tram-silhouette"
+      ]
+    },
+    {
+      "localOnly": true,
+      "remoteNetwork": false,
+      "userData": false,
+      "finalBinaryArt": false,
+      "id": "signal-automation",
+      "title": "Signal and Automation",
+      "detail": "Violet field mesh, aerial signals and bounded portals create a legible navigation identity for sharing preparation and automation review.",
+      "landmarkIds": [
+        "signal-tower",
+        "automation-observatory"
+      ],
+      "artIds": [
+        "signal-mesh",
+        "signal-array",
+        "aurora-ribbon",
+        "aerial-traffic",
+        "relay-emblem",
+        "observatory-emblem",
+        "signal-chevron",
+        "portal-ring",
+        "signal-kite",
+        "drone-silhouette"
+      ]
+    },
+    {
+      "localOnly": true,
+      "remoteNetwork": false,
+      "userData": false,
+      "finalBinaryArt": false,
+      "id": "archive-gardens",
+      "title": "Archive Gardens",
+      "detail": "Biolume lattice, warm archival inlays and quiet garden props create a softer, slower visual counterpoint to the command streets.",
+      "landmarkIds": [
+        "archive-gardens"
+      ],
+      "artIds": [
+        "bio-lattice",
+        "archive-warmth",
+        "garden-canopy",
+        "biolume-leaf",
+        "archive-rune",
+        "garden-pod",
+        "archive-orb"
+      ]
+    },
+    {
+      "localOnly": true,
+      "remoteNetwork": false,
+      "userData": false,
+      "finalBinaryArt": false,
+      "id": "signal-expeditions",
+      "title": "Signal Expeditions",
+      "detail": "Four finite visual thresholds give each optional local expedition a distinct authored symbol without becoming an unbounded open world.",
+      "landmarkIds": [
+        "signal-tower"
+      ],
+      "artIds": [
+        "expedition-ember",
+        "expedition-tide",
+        "expedition-aurora",
+        "expedition-echo"
+      ]
+    }
+  ],
+  "placements": [
+    {
+      "localOnly": true,
+      "remoteNetwork": false,
+      "userData": false,
+      "finalBinaryArt": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "id": "moon-grid-horizon",
+      "layer": "backdrop",
+      "artId": "moon-grid",
+      "position": {
+        "x": 1.8,
+        "y": 9.2,
+        "z": -15.5
+      },
+      "width": 33,
+      "height": 12.4,
+      "rotationY": 3.141592653589793,
+      "qualities": [
+        "balanced",
+        "cinematic"
+      ]
+    },
+    {
+      "localOnly": true,
+      "remoteNetwork": false,
+      "userData": false,
+      "finalBinaryArt": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "id": "signal-array-horizon",
+      "layer": "backdrop",
+      "artId": "signal-array",
+      "position": {
+        "x": -2.8,
+        "y": 8.6,
+        "z": -15.25
+      },
+      "width": 31,
+      "height": 11.6,
+      "rotationY": 3.141592653589793,
+      "qualities": [
+        "balanced",
+        "cinematic"
+      ]
+    },
+    {
+      "localOnly": true,
+      "remoteNetwork": false,
+      "userData": false,
+      "finalBinaryArt": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "id": "garden-canopy-horizon",
+      "layer": "backdrop",
+      "artId": "garden-canopy",
+      "position": {
+        "x": 2.5,
+        "y": 7.45,
+        "z": -14.96
+      },
+      "width": 30,
+      "height": 10.6,
+      "rotationY": 3.141592653589793,
+      "qualities": [
+        "balanced",
+        "cinematic"
+      ]
+    },
+    {
+      "localOnly": true,
+      "remoteNetwork": false,
+      "userData": false,
+      "finalBinaryArt": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "id": "rain-veil-horizon",
+      "layer": "backdrop",
+      "artId": "rain-veil",
+      "position": {
+        "x": 0,
+        "y": 7.8,
+        "z": -14.75
+      },
+      "width": 31,
+      "height": 10.9,
+      "rotationY": 3.141592653589793,
+      "qualities": [
+        "balanced",
+        "cinematic"
+      ]
+    },
+    {
+      "localOnly": true,
+      "remoteNetwork": false,
+      "userData": false,
+      "finalBinaryArt": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "id": "aurora-ribbon-horizon",
+      "layer": "backdrop",
+      "artId": "aurora-ribbon",
+      "position": {
+        "x": -1.4,
+        "y": 10.2,
+        "z": -15.7
+      },
+      "width": 34,
+      "height": 13.2,
+      "rotationY": 3.141592653589793,
+      "qualities": [
+        "cinematic"
+      ]
+    },
+    {
+      "localOnly": true,
+      "remoteNetwork": false,
+      "userData": false,
+      "finalBinaryArt": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "id": "aerial-traffic-horizon",
+      "layer": "backdrop",
+      "artId": "aerial-traffic",
+      "position": {
+        "x": 0.8,
+        "y": 8.4,
+        "z": -14.62
+      },
+      "width": 32,
+      "height": 11.4,
+      "rotationY": 3.141592653589793,
+      "qualities": [
+        "cinematic"
+      ]
+    },
+    {
+      "localOnly": true,
+      "remoteNetwork": false,
+      "userData": false,
+      "finalBinaryArt": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "id": "forge-plumes-horizon",
+      "layer": "backdrop",
+      "artId": "forge-plumes",
+      "position": {
+        "x": 3.7,
+        "y": 7.2,
+        "z": -14.53
+      },
+      "width": 30,
+      "height": 10.2,
+      "rotationY": 3.141592653589793,
+      "qualities": [
+        "cinematic"
+      ]
+    },
+    {
+      "localOnly": true,
+      "remoteNetwork": false,
+      "userData": false,
+      "finalBinaryArt": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "id": "arrival-star-floor",
+      "layer": "floor-decal",
+      "artId": "arrival-star",
+      "position": {
+        "x": 0,
+        "y": 0.069,
+        "z": 9.82
+      },
+      "width": 1.28,
+      "height": 1.28,
+      "rotationZ": 0,
+      "qualities": [
+        "lite",
+        "balanced",
+        "cinematic"
+      ]
+    },
+    {
+      "localOnly": true,
+      "remoteNetwork": false,
+      "userData": false,
+      "finalBinaryArt": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "id": "arrival-safety-floor",
+      "layer": "floor-decal",
+      "artId": "safety-grid",
+      "position": {
+        "x": 0,
+        "y": 0.07,
+        "z": 4.82
+      },
+      "width": 1.18,
+      "height": 1.18,
+      "rotationZ": 0,
+      "qualities": [
+        "lite",
+        "balanced",
+        "cinematic"
+      ]
+    },
+    {
+      "localOnly": true,
+      "remoteNetwork": false,
+      "userData": false,
+      "finalBinaryArt": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "id": "command-protocol-floor",
+      "layer": "floor-decal",
+      "artId": "protocol-grid",
+      "position": {
+        "x": 0,
+        "y": 0.114,
+        "z": -5.75
+      },
+      "width": 2.14,
+      "height": 2.14,
+      "rotationZ": 0.7853981633974483,
+      "qualities": [
+        "balanced",
+        "cinematic"
+      ]
+    },
+    {
+      "localOnly": true,
+      "remoteNetwork": false,
+      "userData": false,
+      "finalBinaryArt": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "id": "command-circuit-floor",
+      "layer": "floor-decal",
+      "artId": "command-circuit",
+      "position": {
+        "x": 0,
+        "y": 0.121,
+        "z": -7.62
+      },
+      "width": 1.56,
+      "height": 1.56,
+      "rotationZ": 0,
+      "qualities": [
+        "balanced",
+        "cinematic"
+      ]
+    },
+    {
+      "localOnly": true,
+      "remoteNetwork": false,
+      "userData": false,
+      "finalBinaryArt": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "id": "creator-prism-floor",
+      "layer": "floor-decal",
+      "artId": "creator-prism",
+      "position": {
+        "x": -8.4,
+        "y": 0.131,
+        "z": -1.92
+      },
+      "width": 1.28,
+      "height": 1.28,
+      "rotationZ": 0,
+      "qualities": [
+        "balanced",
+        "cinematic"
+      ]
+    },
+    {
+      "localOnly": true,
+      "remoteNetwork": false,
+      "userData": false,
+      "finalBinaryArt": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "id": "forge-stripe-floor",
+      "layer": "floor-decal",
+      "artId": "forge-stripe",
+      "position": {
+        "x": 8.2,
+        "y": 0.132,
+        "z": -0.84
+      },
+      "width": 1.42,
+      "height": 1.42,
+      "rotationZ": 1.5707963267948966,
+      "qualities": [
+        "balanced",
+        "cinematic"
+      ]
+    },
+    {
+      "localOnly": true,
+      "remoteNetwork": false,
+      "userData": false,
+      "finalBinaryArt": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "id": "signal-chevron-floor",
+      "layer": "floor-decal",
+      "artId": "signal-chevron",
+      "position": {
+        "x": -10.35,
+        "y": 0.129,
+        "z": -0.82
+      },
+      "width": 1.28,
+      "height": 1.28,
+      "rotationZ": 0,
+      "qualities": [
+        "balanced",
+        "cinematic"
+      ]
+    },
+    {
+      "localOnly": true,
+      "remoteNetwork": false,
+      "userData": false,
+      "finalBinaryArt": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "id": "observatory-orbit-floor",
+      "layer": "floor-decal",
+      "artId": "observatory-emblem",
+      "position": {
+        "x": 10.15,
+        "y": 0.129,
+        "z": -0.55
+      },
+      "width": 1.25,
+      "height": 1.25,
+      "rotationZ": 0,
+      "qualities": [
+        "balanced",
+        "cinematic"
+      ]
+    },
+    {
+      "localOnly": true,
+      "remoteNetwork": false,
+      "userData": false,
+      "finalBinaryArt": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "id": "archive-rune-floor",
+      "layer": "floor-decal",
+      "artId": "archive-rune",
+      "position": {
+        "x": 0.15,
+        "y": 0.128,
+        "z": 8.35
+      },
+      "width": 1.32,
+      "height": 1.32,
+      "rotationZ": 0,
+      "qualities": [
+        "balanced",
+        "cinematic"
+      ]
+    },
+    {
+      "localOnly": true,
+      "remoteNetwork": false,
+      "userData": false,
+      "finalBinaryArt": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "id": "archive-leaf-floor",
+      "layer": "floor-decal",
+      "artId": "biolume-leaf",
+      "position": {
+        "x": 2.08,
+        "y": 0.128,
+        "z": 9.18
+      },
+      "width": 1.18,
+      "height": 1.18,
+      "rotationZ": 0.72,
+      "qualities": [
+        "balanced",
+        "cinematic"
+      ]
+    },
+    {
+      "localOnly": true,
+      "remoteNetwork": false,
+      "userData": false,
+      "finalBinaryArt": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "id": "relay-emblem-floor",
+      "layer": "floor-decal",
+      "artId": "relay-emblem",
+      "position": {
+        "x": -7.2,
+        "y": 0.13,
+        "z": 4.72
+      },
+      "width": 1.28,
+      "height": 1.28,
+      "rotationZ": 0,
+      "qualities": [
+        "balanced",
+        "cinematic"
+      ]
+    },
+    {
+      "localOnly": true,
+      "remoteNetwork": false,
+      "userData": false,
+      "finalBinaryArt": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "id": "transit-rune-floor",
+      "layer": "floor-decal",
+      "artId": "transit-rune",
+      "position": {
+        "x": 0,
+        "y": 0.075,
+        "z": 1.95
+      },
+      "width": 1.12,
+      "height": 1.12,
+      "rotationZ": 0,
+      "qualities": [
+        "balanced",
+        "cinematic"
+      ]
+    },
+    {
+      "localOnly": true,
+      "remoteNetwork": false,
+      "userData": false,
+      "finalBinaryArt": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "id": "kinetic-lane-floor",
+      "layer": "floor-decal",
+      "artId": "kinetic-lane",
+      "position": {
+        "x": 5.36,
+        "y": 0.074,
+        "z": 1.82
+      },
+      "width": 1.36,
+      "height": 1.36,
+      "rotationZ": -1.5707963267948966,
+      "qualities": [
+        "balanced",
+        "cinematic"
+      ]
+    },
+    {
+      "localOnly": true,
+      "remoteNetwork": false,
+      "userData": false,
+      "finalBinaryArt": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "id": "portal-threshold-floor",
+      "layer": "floor-decal",
+      "artId": "portal-ring",
+      "position": {
+        "x": -10.35,
+        "y": 0.13,
+        "z": 3.78
+      },
+      "width": 1.64,
+      "height": 1.64,
+      "rotationZ": 0,
+      "qualities": [
+        "balanced",
+        "cinematic"
+      ]
+    },
+    {
+      "localOnly": true,
+      "remoteNetwork": false,
+      "userData": false,
+      "finalBinaryArt": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "id": "ember-threshold-floor",
+      "layer": "floor-decal",
+      "artId": "expedition-ember",
+      "position": {
+        "x": -11.55,
+        "y": 0.135,
+        "z": 3.02
+      },
+      "width": 0.78,
+      "height": 0.78,
+      "rotationZ": 0,
+      "qualities": [
+        "cinematic"
+      ]
+    },
+    {
+      "localOnly": true,
+      "remoteNetwork": false,
+      "userData": false,
+      "finalBinaryArt": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "id": "tide-threshold-floor",
+      "layer": "floor-decal",
+      "artId": "expedition-tide",
+      "position": {
+        "x": -9.2,
+        "y": 0.135,
+        "z": 3.02
+      },
+      "width": 0.78,
+      "height": 0.78,
+      "rotationZ": 0,
+      "qualities": [
+        "cinematic"
+      ]
+    },
+    {
+      "localOnly": true,
+      "remoteNetwork": false,
+      "userData": false,
+      "finalBinaryArt": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "id": "aurora-threshold-floor",
+      "layer": "floor-decal",
+      "artId": "expedition-aurora",
+      "position": {
+        "x": -11.55,
+        "y": 0.135,
+        "z": 5.12
+      },
+      "width": 0.78,
+      "height": 0.78,
+      "rotationZ": 0,
+      "qualities": [
+        "cinematic"
+      ]
+    },
+    {
+      "localOnly": true,
+      "remoteNetwork": false,
+      "userData": false,
+      "finalBinaryArt": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "id": "echo-threshold-floor",
+      "layer": "floor-decal",
+      "artId": "expedition-echo",
+      "position": {
+        "x": -9.2,
+        "y": 0.135,
+        "z": 5.12
+      },
+      "width": 0.78,
+      "height": 0.78,
+      "rotationZ": 0,
+      "qualities": [
+        "cinematic"
+      ]
+    },
+    {
+      "localOnly": true,
+      "remoteNetwork": false,
+      "userData": false,
+      "finalBinaryArt": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "id": "arrival-lantern-prop",
+      "layer": "prop",
+      "artId": "neon-lantern",
+      "position": {
+        "x": -2.25,
+        "y": 1.32,
+        "z": 8.3
+      },
+      "width": 0.96,
+      "height": 1.7,
+      "billboard": true,
+      "qualities": [
+        "balanced",
+        "cinematic"
+      ]
+    },
+    {
+      "localOnly": true,
+      "remoteNetwork": false,
+      "userData": false,
+      "finalBinaryArt": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "id": "command-kiosk-prop",
+      "layer": "prop",
+      "artId": "holo-kiosk",
+      "position": {
+        "x": 3.55,
+        "y": 1.02,
+        "z": -4.85
+      },
+      "width": 1.24,
+      "height": 1.38,
+      "billboard": true,
+      "qualities": [
+        "balanced",
+        "cinematic"
+      ]
+    },
+    {
+      "localOnly": true,
+      "remoteNetwork": false,
+      "userData": false,
+      "finalBinaryArt": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "id": "signal-kite-prop",
+      "layer": "prop",
+      "artId": "signal-kite",
+      "position": {
+        "x": -10.35,
+        "y": 5.8,
+        "z": 1.15
+      },
+      "width": 1.06,
+      "height": 1.56,
+      "billboard": true,
+      "qualities": [
+        "cinematic"
+      ]
+    },
+    {
+      "localOnly": true,
+      "remoteNetwork": false,
+      "userData": false,
+      "finalBinaryArt": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "id": "garden-pod-prop",
+      "layer": "prop",
+      "artId": "garden-pod",
+      "position": {
+        "x": 2.25,
+        "y": 1.34,
+        "z": 10.14
+      },
+      "width": 1.24,
+      "height": 1.48,
+      "billboard": true,
+      "qualities": [
+        "balanced",
+        "cinematic"
+      ]
+    },
+    {
+      "localOnly": true,
+      "remoteNetwork": false,
+      "userData": false,
+      "finalBinaryArt": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "id": "archive-orb-prop",
+      "layer": "prop",
+      "artId": "archive-orb",
+      "position": {
+        "x": -1.82,
+        "y": 1.22,
+        "z": 10.4
+      },
+      "width": 1.18,
+      "height": 1.18,
+      "billboard": true,
+      "qualities": [
+        "balanced",
+        "cinematic"
+      ]
+    },
+    {
+      "localOnly": true,
+      "remoteNetwork": false,
+      "userData": false,
+      "finalBinaryArt": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "id": "street-barrier-prop",
+      "layer": "prop",
+      "artId": "street-barrier",
+      "position": {
+        "x": 4.7,
+        "y": 0.68,
+        "z": 2.55
+      },
+      "width": 1.44,
+      "height": 0.76,
+      "billboard": true,
+      "qualities": [
+        "lite",
+        "balanced",
+        "cinematic"
+      ]
+    },
+    {
+      "localOnly": true,
+      "remoteNetwork": false,
+      "userData": false,
+      "finalBinaryArt": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "id": "drone-silhouette-prop",
+      "layer": "prop",
+      "artId": "drone-silhouette",
+      "position": {
+        "x": -4.8,
+        "y": 7.4,
+        "z": -6.2
+      },
+      "width": 1.3,
+      "height": 0.92,
+      "billboard": true,
+      "qualities": [
+        "cinematic"
+      ]
+    },
+    {
+      "localOnly": true,
+      "remoteNetwork": false,
+      "userData": false,
+      "finalBinaryArt": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "id": "tram-silhouette-prop",
+      "layer": "prop",
+      "artId": "tram-silhouette",
+      "position": {
+        "x": 7.1,
+        "y": 2.18,
+        "z": 5.8
+      },
+      "width": 1.72,
+      "height": 0.82,
+      "billboard": true,
+      "qualities": [
+        "cinematic"
+      ]
+    }
+  ],
+  "placementPlans": {
+    "lite": [
+      "arrival-star-floor",
+      "arrival-safety-floor",
+      "street-barrier-prop"
+    ],
+    "balanced": [
+      "moon-grid-horizon",
+      "signal-array-horizon",
+      "garden-canopy-horizon",
+      "rain-veil-horizon",
+      "arrival-star-floor",
+      "arrival-safety-floor",
+      "command-protocol-floor",
+      "command-circuit-floor",
+      "creator-prism-floor",
+      "forge-stripe-floor",
+      "signal-chevron-floor",
+      "observatory-orbit-floor",
+      "archive-rune-floor",
+      "archive-leaf-floor",
+      "relay-emblem-floor",
+      "transit-rune-floor",
+      "kinetic-lane-floor",
+      "portal-threshold-floor",
+      "arrival-lantern-prop",
+      "command-kiosk-prop",
+      "garden-pod-prop",
+      "archive-orb-prop",
+      "street-barrier-prop"
+    ],
+    "cinematic": [
+      "moon-grid-horizon",
+      "signal-array-horizon",
+      "garden-canopy-horizon",
+      "rain-veil-horizon",
+      "aurora-ribbon-horizon",
+      "aerial-traffic-horizon",
+      "forge-plumes-horizon",
+      "arrival-star-floor",
+      "arrival-safety-floor",
+      "command-protocol-floor",
+      "command-circuit-floor",
+      "creator-prism-floor",
+      "forge-stripe-floor",
+      "signal-chevron-floor",
+      "observatory-orbit-floor",
+      "archive-rune-floor",
+      "archive-leaf-floor",
+      "relay-emblem-floor",
+      "transit-rune-floor",
+      "kinetic-lane-floor",
+      "portal-threshold-floor",
+      "ember-threshold-floor",
+      "tide-threshold-floor",
+      "aurora-threshold-floor",
+      "echo-threshold-floor",
+      "arrival-lantern-prop",
+      "command-kiosk-prop",
+      "signal-kite-prop",
+      "garden-pod-prop",
+      "archive-orb-prop",
+      "street-barrier-prop",
+      "drone-silhouette-prop",
+      "tram-silhouette-prop"
+    ]
+  },
+  "reviewViews": [
+    {
+      "localOnly": true,
+      "opensRoute": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "finalVisualCertification": false,
+      "id": "arrival-gate",
+      "title": "Arrival Gate",
+      "detail": "Wet street, entry frame, local skyline and first-mission beacon.",
+      "accent": "cyan",
+      "operator": {
+        "x": 0,
+        "y": 0,
+        "z": 7.8,
+        "heading": 3.141592653589793
+      },
+      "target": {
+        "x": 0,
+        "y": 2.5,
+        "z": -3.8
+      },
+      "camera": {
+        "alpha": -0.7853981633974483,
+        "beta": 1.08,
+        "radius": 18.8
+      }
+    },
+    {
+      "localOnly": true,
+      "opensRoute": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "finalVisualCertification": false,
+      "id": "command-deck",
+      "title": "Command Deck",
+      "detail": "PBR command plaza, monogram and neon command sightline.",
+      "accent": "violet",
+      "operator": {
+        "x": 0,
+        "y": 0,
+        "z": -10.72,
+        "heading": 3.141592653589793
+      },
+      "target": {
+        "x": 0,
+        "y": 2.35,
+        "z": -8
+      },
+      "camera": {
+        "alpha": -1.5707963267948966,
+        "beta": 1,
+        "radius": 12.4
+      }
+    },
+    {
+      "localOnly": true,
+      "opensRoute": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "finalVisualCertification": false,
+      "id": "creator-atrium",
+      "title": "Creator Atrium",
+      "detail": "Glass, prism-color and local Creator/Forge wayfinding.",
+      "accent": "mint",
+      "operator": {
+        "x": -1.92,
+        "y": 0,
+        "z": -10.68,
+        "heading": 3.141592653589793
+      },
+      "target": {
+        "x": -2,
+        "y": 2.25,
+        "z": -7.55
+      },
+      "camera": {
+        "alpha": -1.43,
+        "beta": 1.02,
+        "radius": 12.7
+      }
+    },
+    {
+      "localOnly": true,
+      "opensRoute": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "finalVisualCertification": false,
+      "id": "forge-bay",
+      "title": "Forge Bay",
+      "detail": "Graphite, circuit inlay and workshop silhouette composition.",
+      "accent": "amber",
+      "operator": {
+        "x": -8.4,
+        "y": 0,
+        "z": -0.68,
+        "heading": 3.141592653589793
+      },
+      "target": {
+        "x": -7.35,
+        "y": 2.3,
+        "z": 1.2
+      },
+      "camera": {
+        "alpha": -1.21,
+        "beta": 1.04,
+        "radius": 14.4
+      }
+    },
+    {
+      "localOnly": true,
+      "opensRoute": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "finalVisualCertification": false,
+      "id": "signal-tower",
+      "title": "Signal Tower",
+      "detail": "Vertical signal landmark, skyline depth and violet route marks.",
+      "accent": "violet",
+      "operator": {
+        "x": -8.5,
+        "y": 0,
+        "z": 6.2,
+        "heading": 3.141592653589793
+      },
+      "target": {
+        "x": -7.2,
+        "y": 3.4,
+        "z": 6.4
+      },
+      "camera": {
+        "alpha": -1.68,
+        "beta": 1,
+        "radius": 14.2
+      }
+    },
+    {
+      "localOnly": true,
+      "opensRoute": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "finalVisualCertification": false,
+      "id": "archive-gardens",
+      "title": "Archive Gardens",
+      "detail": "Quiet archive light, mint wayfinding and amber contrast.",
+      "accent": "mint",
+      "operator": {
+        "x": 8.5,
+        "y": 0,
+        "z": -0.1,
+        "heading": 3.141592653589793
+      },
+      "target": {
+        "x": 7.5,
+        "y": 2.45,
+        "z": -2.8
+      },
+      "camera": {
+        "alpha": -1.05,
+        "beta": 1.03,
+        "radius": 13.6
+      }
+    },
+    {
+      "localOnly": true,
+      "opensRoute": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "finalVisualCertification": false,
+      "id": "automation-observatory",
+      "title": "Automation Observatory",
+      "detail": "Orbital mesh, local observatory glyph and mint industrial sightline.",
+      "accent": "mint",
+      "operator": {
+        "x": 10.15,
+        "y": 0,
+        "z": -0.25,
+        "heading": 3.141592653589793
+      },
+      "target": {
+        "x": 10.15,
+        "y": 2.7,
+        "z": 1.65
+      },
+      "camera": {
+        "alpha": -1.21,
+        "beta": 1,
+        "radius": 14.2
+      }
+    },
+    {
+      "localOnly": true,
+      "opensRoute": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "finalVisualCertification": false,
+      "id": "relay-courtyard",
+      "title": "Relay Courtyard",
+      "detail": "Amber relay emblem, bounded local kiosk and transit silhouette composition.",
+      "accent": "amber",
+      "operator": {
+        "x": -7.2,
+        "y": 0,
+        "z": 2.5,
+        "heading": 3.141592653589793
+      },
+      "target": {
+        "x": -7.2,
+        "y": 2.1,
+        "z": 5.05
+      },
+      "camera": {
+        "alpha": -1.58,
+        "beta": 1.05,
+        "radius": 13.2
+      }
+    },
+    {
+      "localOnly": true,
+      "opensRoute": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "finalVisualCertification": false,
+      "id": "expedition-threshold",
+      "title": "Signal Expedition Threshold",
+      "detail": "Four finite expedition marks and a portal ring; this is an art view, not a new world launch.",
+      "accent": "violet",
+      "operator": {
+        "x": -10.35,
+        "y": 0,
+        "z": 5.9,
+        "heading": 3.141592653589793
+      },
+      "target": {
+        "x": -10.35,
+        "y": 1.6,
+        "z": 3.68
+      },
+      "camera": {
+        "alpha": -1.61,
+        "beta": 1.02,
+        "radius": 12.8
+      }
+    },
+    {
+      "localOnly": true,
+      "opensRoute": false,
+      "capturesMedia": false,
+      "uploadsMedia": false,
+      "finalVisualCertification": false,
+      "id": "skyline-overlook",
+      "title": "Skyline Overlook",
+      "detail": "Layered local moon-grid, rain veil, City skyline and command route composition.",
+      "accent": "cyan",
+      "operator": {
+        "x": 0,
+        "y": 0,
+        "z": 3.9,
+        "heading": 3.141592653589793
+      },
+      "target": {
+        "x": 0,
+        "y": 5.4,
+        "z": -13.2
+      },
+      "camera": {
+        "alpha": -1.5707963267948966,
+        "beta": 0.93,
+        "radius": 22.2
+      }
+    }
+  ]
+}

@@ -1,0 +1,267 @@
+/* W659N — deferred Productive City presentation. */
+.eon-city-product-layer{position:absolute;inset:0;z-index:8;pointer-events:none;font:500 13px/1.45 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#eef8ff}
+.eon-city-product-layer button,.eon-city-product-layer a,.eon-city-product-layer input,.eon-city-product-layer textarea,.eon-city-product-layer select{pointer-events:auto;font:inherit}
+
+.eon-city-district-identity{--eon-city-district-accent:#69e7ff;--eon-city-district-warm:#f4b860;position:absolute;top:max(14px,env(safe-area-inset-top));left:50%;transform:translateX(-50%);display:grid;gap:2px;width:min(460px,calc(100vw - 164px));padding:10px 16px 11px;border:1px solid color-mix(in srgb,var(--eon-city-district-accent) 38%,transparent);border-top:2px solid var(--eon-city-district-accent);border-radius:0 0 16px 16px;background:linear-gradient(180deg,rgba(3,10,20,.94),rgba(4,11,22,.78));box-shadow:0 12px 42px rgba(0,0,0,.38),0 0 24px color-mix(in srgb,var(--eon-city-district-accent) 12%,transparent);text-align:center;backdrop-filter:blur(14px);pointer-events:none}
+.eon-city-district-identity>span{color:var(--eon-city-district-accent);font:850 9px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.18em}.eon-city-district-identity>strong{color:#f5fbff;font-size:clamp(15px,2vw,20px);letter-spacing:.025em;text-shadow:0 0 18px color-mix(in srgb,var(--eon-city-district-accent) 24%,transparent)}.eon-city-district-identity>small{overflow:hidden;color:#b9c9d8;font-size:11px;text-overflow:ellipsis;white-space:nowrap}.eon-city-district-identity::after{content:'';position:absolute;right:14%;bottom:-1px;left:14%;height:1px;background:linear-gradient(90deg,transparent,var(--eon-city-district-warm),transparent)}
+.eon-city-product-dock{position:absolute;left:50%;bottom:max(14px,env(safe-area-inset-bottom));transform:translateX(-50%);display:flex;align-items:center;gap:7px;padding:7px;border:1px solid rgba(105,231,255,.23);border-radius:18px;background:linear-gradient(145deg,rgba(4,11,25,.9),rgba(20,13,48,.88));box-shadow:0 16px 55px rgba(0,0,0,.48),inset 0 0 0 1px rgba(255,255,255,.035);backdrop-filter:blur(18px);pointer-events:auto}
+.eon-city-product-dock button{display:flex;flex:0 0 auto;align-items:center;gap:7px;min-height:40px;padding:8px 11px;border:1px solid rgba(255,255,255,.12);border-radius:12px;background:rgba(255,255,255,.045);color:#edf8ff;font-weight:780;white-space:nowrap;cursor:pointer}
+.eon-city-product-dock button:hover,.eon-city-product-dock button:focus-visible{border-color:#74efff;background:rgba(37,102,130,.36);outline:2px solid rgba(105,231,255,.65);outline-offset:2px}
+.eon-city-product-dock button span{color:#8cf4ff;font:850 12px ui-monospace,SFMono-Regular,Menlo,monospace}
+.eon-city-nearby-prompt{position:absolute;left:50%;bottom:78px;transform:translateX(-50%);display:grid;gap:2px;min-width:min(360px,calc(100vw - 28px));padding:10px 14px;border:1px solid rgba(255,188,104,.38);border-radius:14px;background:rgba(5,10,20,.9);box-shadow:0 14px 40px rgba(0,0,0,.42);text-align:center;backdrop-filter:blur(14px)}
+.eon-city-nearby-prompt[hidden]{display:none}.eon-city-nearby-prompt span{color:#ffc77d;font:800 10px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase}.eon-city-nearby-prompt strong{font-size:14px}.eon-city-nearby-prompt small{color:#aab9c8}
+.eon-city-product-panel{position:fixed;inset:0;z-index:2147482450;display:grid;place-items:center;padding:max(16px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) max(16px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));background:rgba(2,5,12,.82);backdrop-filter:blur(13px);pointer-events:auto}
+.eon-city-product-panel[hidden]{display:none}
+.eon-city-product-card{width:min(660px,calc(100vw - 28px));max-height:min(82vh,820px);overflow:auto;padding:18px;border:1px solid rgba(105,231,255,.27);border-radius:22px;background:radial-gradient(circle at 90% 0,rgba(106,91,255,.18),transparent 36%),linear-gradient(145deg,rgba(5,13,28,.985),rgba(11,10,30,.985));box-shadow:0 30px 100px rgba(0,0,0,.7),inset 0 0 0 1px rgba(255,255,255,.035)}
+.eon-city-product-card-wide{width:min(920px,calc(100vw - 28px))}.eon-city-product-card>header{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:12px}.eon-city-product-card h2{margin:.15rem 0 0;font-size:clamp(20px,3vw,30px)}
+.eon-city-product-card button,.eon-city-product-card a{border:1px solid rgba(255,255,255,.16);border-radius:11px;background:rgba(255,255,255,.055);color:#eff9ff;padding:9px 11px;text-decoration:none;cursor:pointer}.eon-city-product-card button:hover,.eon-city-product-card a:hover,.eon-city-product-card button:focus-visible,.eon-city-product-card a:focus-visible{border-color:#7bf0ff;background:rgba(55,121,154,.3);outline:2px solid rgba(105,231,255,.55);outline-offset:2px}
+.eon-city-product-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:14px}.eon-city-product-grid>button{display:grid;gap:5px;min-height:92px;text-align:left;padding:13px}.eon-city-product-grid strong{font-size:15px}.eon-city-product-grid span{color:#acbac9;font-size:12px}
+.eon-city-product-action-list,.eon-city-travel-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:12px 0}.eon-city-product-action-list>button,.eon-city-travel-grid>button{display:grid;gap:4px;text-align:left;padding:12px}.eon-city-product-action-list span,.eon-city-travel-grid span{color:#aab8c8;font-size:12px}.eon-city-nearby-summary{display:grid;gap:4px;padding:12px;border:1px solid rgba(255,188,104,.24);border-radius:13px;background:rgba(255,188,104,.055)}
+.eon-city-product-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.eon-city-travel-review{margin-top:12px;padding:13px;border:1px solid rgba(139,233,255,.28);border-radius:14px;background:rgba(105,231,255,.055)}
+.eon-city-agent-list{display:grid;gap:10px}.eon-city-agent-list article{padding:13px;border:1px solid rgba(255,255,255,.1);border-radius:14px;background:rgba(255,255,255,.035)}.eon-city-agent-list article header{display:flex;justify-content:space-between;gap:12px}.eon-city-agent-list article header span{color:#8bf0ff;text-transform:capitalize}.eon-city-agent-list article div{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.eon-city-product-empty{padding:20px;border:1px dashed rgba(255,255,255,.18);border-radius:14px;text-align:center;color:#b8c5d1}
+.eon-city-eonbot-quick{display:grid;gap:11px}.eon-city-eonbot-quick-head{display:flex;justify-content:space-between;gap:12px}.eon-city-eonbot-quick-head h2{font-size:19px}.eon-city-eonbot-thread{display:grid;gap:8px;max-height:250px;overflow:auto;padding:10px;border:1px solid rgba(255,255,255,.1);border-radius:13px;background:rgba(0,0,0,.18)}.eon-city-eonbot-thread article{padding:9px 10px;border-radius:11px;background:rgba(255,255,255,.045)}.eon-city-eonbot-thread article[data-role="user"]{background:rgba(105,231,255,.1)}.eon-city-eonbot-thread p{margin:.25rem 0}.eon-city-eonbot-composer-label{display:grid;gap:5px}.eon-city-eonbot-composer-label textarea{width:100%;box-sizing:border-box;border:1px solid rgba(255,255,255,.16);border-radius:12px;background:rgba(0,0,0,.22);color:#eef8ff;padding:10px}.eon-city-eonbot-quick-replies,.eon-city-eonbot-actions,.eon-city-eonbot-handoff{display:flex;gap:7px;flex-wrap:wrap}.eon-city-eonbot-actions label{display:flex;align-items:center;gap:6px}.eon-city-eonbot-actions select{border:1px solid rgba(255,255,255,.14);border-radius:8px;background:#0d1628;color:#eef8ff;padding:7px}.eon-city-eonbot-truth,.eon-city-eonbot-status{color:#abb9c8;font-size:12px}
+.eon-city-overlay-open .eon-city-product-dock,.eon-city-overlay-open .eon-city-nearby-prompt,.eon-city-overlay-open .eon-city-district-identity{opacity:.28;pointer-events:none}
+body[data-eon-city-theme="transit-pulse"] .eon-city-product-dock{box-shadow:0 0 34px rgba(105,231,255,.3),0 16px 55px rgba(0,0,0,.48)}
+@media(max-width:760px){.eon-city-district-identity{top:max(8px,env(safe-area-inset-top));width:min(330px,calc(100vw - 84px));padding:7px 10px 8px}.eon-city-district-identity>small{font-size:10px}.eon-city-product-dock{left:8px;right:8px;bottom:max(8px,env(safe-area-inset-bottom));transform:none;justify-content:center;overflow-x:auto}.eon-city-product-dock button{min-width:max-content}.eon-city-nearby-prompt{bottom:69px}.eon-city-product-grid,.eon-city-product-action-list,.eon-city-travel-grid{grid-template-columns:1fr}.eon-city-product-card{max-height:78vh;padding:14px}.eon-city-product-card>header{position:sticky;top:-14px;z-index:2;padding:10px 0;background:rgba(5,13,28,.96)}}
+@media(prefers-reduced-motion:reduce){.eon-city-product-layer *{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+@media(max-height:520px) and (orientation:landscape){.eon-city-district-identity{left:12px;top:max(8px,env(safe-area-inset-top));transform:none;width:min(270px,42vw);text-align:left}.eon-city-district-identity>small{display:none}.eon-city-nearby-prompt{bottom:66px}}
+
+/* W660K — world-visible panels, truthful district travel and arrival feedback. */
+@media(min-width:901px){
+  .eon-city-product-panel{place-items:center end;padding:22px 24px 22px max(88px,4vw);background:linear-gradient(90deg,rgba(2,5,12,.12),rgba(2,5,12,.42) 48%,rgba(2,5,12,.68));backdrop-filter:blur(4px)}
+  .eon-city-product-card{width:min(570px,46vw);max-height:min(86vh,840px);border-color:rgba(105,231,255,.34);background:radial-gradient(circle at 92% 0,rgba(106,91,255,.2),transparent 40%),linear-gradient(145deg,rgba(5,13,28,.95),rgba(11,10,30,.93));box-shadow:0 26px 90px rgba(0,0,0,.62),inset 0 0 0 1px rgba(255,255,255,.04)}
+  .eon-city-product-card-wide,.eon-city-product-card-travel{width:min(720px,58vw)}
+}
+.eon-city-product-card-travel [data-eon-w659n-travel-status]{display:block;margin:12px 0 0;padding:10px 12px;border-left:2px solid #70ebff;border-radius:6px;background:rgba(67,197,229,.07);color:#ccecf4}
+.eon-city-travel-transition{--eon-city-travel-accent:#69e7ff;--eon-city-travel-warm:#f4b860;position:absolute;inset:0;z-index:2147482460;display:grid;place-items:center;padding:24px;background:radial-gradient(circle at 50% 52%,color-mix(in srgb,var(--eon-city-travel-accent) 9%,transparent),transparent 34%),linear-gradient(180deg,rgba(1,5,13,.36),rgba(1,5,13,.7));pointer-events:auto}
+.eon-city-travel-transition[hidden]{display:none}.eon-city-travel-transition-card{display:grid;justify-items:center;gap:10px;width:min(520px,calc(100vw - 34px));padding:24px;border:1px solid color-mix(in srgb,var(--eon-city-travel-accent) 45%,transparent);border-radius:24px;background:linear-gradient(145deg,rgba(4,13,28,.94),rgba(13,11,35,.91));box-shadow:0 28px 100px rgba(0,0,0,.58),0 0 60px color-mix(in srgb,var(--eon-city-travel-accent) 13%,transparent);text-align:center;backdrop-filter:blur(12px)}
+.eon-city-travel-transition-card h2{margin:0;color:#f5fbff;font-size:clamp(24px,4vw,38px);letter-spacing:-.04em}.eon-city-travel-transition-card>p:not(.eon-play-kicker){max-width:410px;margin:0;color:#b9cad9}.eon-city-travel-transition-card>button{margin-top:2px;border:1px solid color-mix(in srgb,var(--eon-city-travel-accent) 56%,transparent);border-radius:11px;background:rgba(255,255,255,.06);color:#f4fbff;padding:9px 13px;font:inherit;font-weight:800;cursor:pointer}
+.eon-city-travel-orbit{position:relative;width:98px;height:98px;margin-bottom:2px;border:1px solid color-mix(in srgb,var(--eon-city-travel-accent) 34%,transparent);border-radius:50%;box-shadow:inset 0 0 28px color-mix(in srgb,var(--eon-city-travel-accent) 12%,transparent),0 0 28px color-mix(in srgb,var(--eon-city-travel-accent) 12%,transparent)}.eon-city-travel-orbit::before,.eon-city-travel-orbit::after,.eon-city-travel-orbit span{content:"";position:absolute;inset:12px;border:1px solid color-mix(in srgb,var(--eon-city-travel-accent) 56%,transparent);border-radius:50%;transform:rotateX(66deg);animation:eon-city-travel-orbit 2.2s linear infinite}.eon-city-travel-orbit::after{inset:24px;border-color:color-mix(in srgb,var(--eon-city-travel-warm) 60%,transparent);transform:rotateY(64deg);animation-duration:1.55s;animation-direction:reverse}.eon-city-travel-orbit span{inset:34px;border:0;background:var(--eon-city-travel-accent);box-shadow:0 0 20px var(--eon-city-travel-accent);animation:eon-city-travel-pulse 1.2s ease-in-out infinite}.eon-city-travel-orbit i{position:absolute;inset:45px;border-radius:50%;background:#fff;box-shadow:0 0 18px var(--eon-city-travel-warm)}
+.eon-city-travel-progress{--eon-city-travel-progress:12%;position:relative;width:100%;height:8px;overflow:hidden;border:1px solid rgba(255,255,255,.1);border-radius:999px;background:rgba(0,0,0,.3)}.eon-city-travel-progress span{display:block;width:var(--eon-city-travel-progress);height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--eon-city-travel-accent),var(--eon-city-travel-warm));box-shadow:0 0 18px color-mix(in srgb,var(--eon-city-travel-accent) 55%,transparent);transition:width .28s ease}
+.eon-city-travel-meta{display:flex;justify-content:space-between;gap:14px;width:100%;color:#8fa5b8;font-size:11px}.eon-city-travel-meta strong{color:#eaf8ff;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.eon-city-arrival-toast{position:absolute;z-index:34;top:max(78px,calc(env(safe-area-inset-top) + 64px));right:max(18px,env(safe-area-inset-right));display:grid;gap:2px;width:min(340px,calc(100vw - 36px));padding:12px 14px;border:1px solid rgba(105,231,255,.38);border-left:3px solid #69e7ff;border-radius:14px;background:linear-gradient(145deg,rgba(4,13,28,.92),rgba(13,11,35,.88));box-shadow:0 18px 54px rgba(0,0,0,.45);backdrop-filter:blur(14px);pointer-events:none}.eon-city-arrival-toast[hidden]{display:none}.eon-city-arrival-toast>span{color:#69e7ff;font:850 9px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.16em}.eon-city-arrival-toast>strong{font-size:16px}.eon-city-arrival-toast>small{color:#b7c7d6}.eon-city-arrival-toast[data-eon-w660k-arrival-state="degraded"]{border-left-color:#f4b860}.eon-city-arrival-toast[data-eon-w660k-arrival-state="degraded"]>span{color:#f4b860}
+@keyframes eon-city-travel-orbit{to{transform:rotate(360deg) rotateX(66deg)}}@keyframes eon-city-travel-pulse{50%{transform:scale(.55);opacity:.48}}
+@media(max-width:900px){.eon-city-product-panel{background:rgba(2,5,12,.68);backdrop-filter:blur(7px)}.eon-city-travel-transition{padding:14px}.eon-city-travel-transition-card{padding:19px}.eon-city-arrival-toast{top:max(64px,calc(env(safe-area-inset-top) + 52px));right:10px}}
+@media(prefers-reduced-motion:reduce){.eon-city-travel-orbit::before,.eon-city-travel-orbit::after,.eon-city-travel-orbit span,.eon-city-arrival-toast{animation:none!important}.eon-city-travel-progress span{transition:none}}
+
+/* W660M — readable living-world status without adding another HUD owner. */
+.eon-city-district-identity>[data-eon-w660m-living-status]{display:block;margin-top:6px;padding-top:6px;border-top:1px solid color-mix(in srgb,var(--eon-city-district-accent,#69e7ff) 22%,transparent);color:#a8d7df;font:700 9px/1.35 ui-monospace,SFMono-Regular,Menlo,monospace;font-style:normal;letter-spacing:.035em;text-transform:none}
+.eon-city-district-identity[data-eon-w660i-district-id="creator-atrium"]>[data-eon-w660m-living-status]{color:#ffd39a}
+@media(max-width:760px){.eon-city-district-identity>[data-eon-w660m-living-status]{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}}
+
+/* W660N — one shared EON NEXUS state rendered as a district-scale City control. */
+.eon-city-nexus-card{--eon-city-nexus-accent:#69e7ff;position:relative;overflow:hidden;border-color:color-mix(in srgb,var(--eon-city-nexus-accent) 42%,transparent);background:radial-gradient(circle at 82% 6%,color-mix(in srgb,var(--eon-city-nexus-accent) 16%,transparent),transparent 34%),linear-gradient(145deg,rgba(4,13,28,.985),rgba(12,8,31,.985))}.eon-city-nexus-card::before{content:"";position:absolute;inset:0 0 auto;height:2px;background:linear-gradient(90deg,transparent,var(--eon-city-nexus-accent),#f4b860,transparent);opacity:.9}.eon-city-nexus-overview{display:grid;grid-template-columns:minmax(170px,.72fr) minmax(0,1.55fr);gap:16px;align-items:stretch}.eon-city-nexus-hero{display:grid;align-content:center;justify-items:center;gap:10px;min-height:220px;padding:18px;border:1px solid color-mix(in srgb,var(--eon-city-nexus-accent) 26%,transparent);border-radius:18px;background:radial-gradient(circle,rgba(105,231,255,.12),rgba(2,8,20,.2) 58%,rgba(2,8,20,.42));text-align:center}.eon-city-nexus-hero strong{font-size:18px}.eon-city-nexus-hero small{max-width:210px;color:#aebfce}.eon-city-nexus-orb-mark{position:relative;width:112px;height:112px;border:1px solid color-mix(in srgb,var(--eon-city-nexus-accent) 48%,transparent);border-radius:50%;box-shadow:inset 0 0 30px color-mix(in srgb,var(--eon-city-nexus-accent) 18%,transparent),0 0 34px color-mix(in srgb,var(--eon-city-nexus-accent) 15%,transparent);animation:eon-city-nexus-orbit 8s linear infinite}.eon-city-nexus-orb-mark::before,.eon-city-nexus-orb-mark::after{content:"";position:absolute;inset:17px;border:1px solid var(--eon-city-nexus-accent);border-radius:50%;transform:rotateX(68deg);box-shadow:0 0 14px color-mix(in srgb,var(--eon-city-nexus-accent) 34%,transparent)}.eon-city-nexus-orb-mark::after{inset:29px;transform:rotateY(68deg);border-color:#f4b860}.eon-city-nexus-orb-core{position:absolute;inset:43px;border-radius:50%;background:#f7fdff;box-shadow:0 0 12px #fff,0 0 28px var(--eon-city-nexus-accent)}.eon-city-nexus-overview[data-eon-w660n-nexus-state="waiting-approval"]{--eon-city-nexus-accent:#ff8a4c}.eon-city-nexus-overview[data-eon-w660n-nexus-state="processing"]{--eon-city-nexus-accent:#f4b860}.eon-city-nexus-overview[data-eon-w660n-nexus-state="complete"]{--eon-city-nexus-accent:#f6d365}.eon-city-nexus-overview[data-eon-w660n-nexus-state="error"]{--eon-city-nexus-accent:#ff5d64}.eon-city-nexus-overview[data-eon-w660n-nexus-private="true"] .eon-city-nexus-orb-mark{outline:1px dashed rgba(111,239,255,.56);outline-offset:9px}.eon-city-nexus-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;align-content:start}.eon-city-nexus-metrics article{display:grid;gap:3px;min-height:78px;padding:12px;border:1px solid rgba(255,255,255,.1);border-radius:14px;background:rgba(255,255,255,.035)}.eon-city-nexus-metrics span{color:#91a7b9;font:760 9px/1.25 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.09em;text-transform:uppercase}.eon-city-nexus-metrics strong{overflow-wrap:anywhere;font-size:14px}.eon-city-nexus-metrics small{color:#aebdca}.eon-city-nexus-station{display:grid;gap:5px;margin-top:14px;padding:13px 14px;border:1px solid color-mix(in srgb,var(--eon-city-nexus-accent) 26%,transparent);border-radius:14px;background:color-mix(in srgb,var(--eon-city-nexus-accent) 7%,rgba(4,10,22,.7))}.eon-city-nexus-station[data-in-range="true"]{border-color:color-mix(in srgb,var(--eon-city-nexus-accent) 52%,transparent);box-shadow:inset 3px 0 0 var(--eon-city-nexus-accent)}.eon-city-nexus-station span{color:var(--eon-city-nexus-accent);font:830 10px/1.25 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase}.eon-city-nexus-boundary{margin:13px 0 0;padding:10px 12px;border-left:2px solid #f4b860;background:rgba(244,184,96,.055);color:#b9c8d5;font-size:12px}.eon-city-nexus-card .eon-city-product-action-list{margin-bottom:0}.eon-city-nexus-card .eon-city-product-action-list>button[data-eon-w660n-nexus-action]{position:relative;padding-left:14px}.eon-city-nexus-card .eon-city-product-action-list>button[data-eon-w660n-nexus-action]::before{content:"";position:absolute;top:13px;bottom:13px;left:5px;width:2px;border-radius:999px;background:var(--eon-city-nexus-accent);opacity:.72}@keyframes eon-city-nexus-orbit{to{transform:rotate(360deg)}}
+@media(max-width:680px){.eon-city-nexus-overview{grid-template-columns:1fr}.eon-city-nexus-hero{grid-template-columns:auto 1fr;justify-items:start;min-height:0;text-align:left}.eon-city-nexus-orb-mark{width:78px;height:78px}.eon-city-nexus-orb-mark::before{inset:12px}.eon-city-nexus-orb-mark::after{inset:21px}.eon-city-nexus-orb-core{inset:30px}.eon-city-nexus-metrics{grid-template-columns:1fr 1fr}}
+@media(max-width:440px){.eon-city-nexus-hero{grid-template-columns:1fr;justify-items:center;text-align:center}.eon-city-nexus-metrics{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.eon-city-nexus-orb-mark{animation:none!important}}
+
+/* W668 — City Nexus is the spatial form of the same flagship state. */
+.eon-city-nexus-overview {
+  --eon-city-nexus-accent: var(--eon-nexus-accent, #69e7ff);
+}
+.eon-city-nexus-overview .eon-city-nexus-orb-mark::after { border-color: var(--eon-nexus-secondary, #f4b860); }
+.eon-city-nexus-overview[data-eon-w660n-nexus-shape='decision-gate'] .eon-city-nexus-orb-mark { border-radius: 24%; }
+.eon-city-nexus-overview[data-eon-w660n-nexus-shape='resolved-star'] .eon-city-nexus-orb-core { clip-path: polygon(50% 0,61% 34%,98% 36%,68% 57%,78% 94%,50% 72%,22% 94%,32% 57%,2% 36%,39% 34%); border-radius: 0; inset: 39px; }
+.eon-city-nexus-overview[data-eon-w660n-nexus-shape='fractured-signal'] .eon-city-nexus-orb-mark::after { transform: rotate(22deg) skewX(-10deg); }
+.eon-city-nexus-overview[data-eon-w660n-nexus-shape='dormant-core'] { filter: saturate(.4); opacity: .84; }
+
+/* W671 — readable 2D-first City Atlas. It reviews explicit travel only. */
+.eon-city-atlas-map{
+  position:relative;
+  min-height:320px;
+  margin:14px 0 12px;
+  overflow:hidden;
+  border:1px solid rgba(105,231,255,.24);
+  border-radius:18px;
+  background:
+    radial-gradient(circle at 50% 50%,rgba(105,231,255,.1),transparent 32%),
+    linear-gradient(rgba(105,231,255,.045) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(105,231,255,.045) 1px,transparent 1px),
+    linear-gradient(145deg,rgba(3,12,27,.96),rgba(14,10,37,.94));
+  background-size:auto,28px 28px,28px 28px,auto;
+}
+.eon-city-atlas-links{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+}
+.eon-city-atlas-links line{
+  stroke:rgba(105,231,255,.28);
+  stroke-width:.55;
+  stroke-dasharray:2 1.4;
+}
+.eon-city-atlas-node{
+  position:absolute;
+  left:var(--atlas-x);
+  top:var(--atlas-y);
+  display:grid;
+  justify-items:center;
+  gap:4px;
+  width:92px;
+  min-height:54px;
+  padding:6px;
+  border:0;
+  background:transparent;
+  color:#eaf8ff;
+  font:inherit;
+  font-size:10px;
+  text-align:center;
+  transform:translate(-50%,-50%);
+  cursor:pointer;
+}
+.eon-city-atlas-node>span{
+  width:16px;
+  height:16px;
+  border:2px solid var(--atlas-accent);
+  border-radius:50%;
+  background:color-mix(in srgb,var(--atlas-accent) 24%,#07111d);
+  box-shadow:0 0 15px color-mix(in srgb,var(--atlas-accent) 58%,transparent);
+}
+.eon-city-atlas-node>strong{
+  overflow:hidden;
+  max-width:100%;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.eon-city-atlas-node[data-active="true"]>span{
+  width:23px;
+  height:23px;
+  border-color:var(--atlas-warm);
+  box-shadow:0 0 22px color-mix(in srgb,var(--atlas-warm) 70%,transparent);
+}
+.eon-city-atlas-node[data-active="true"]>strong{color:#fff3c7}
+.eon-city-atlas-node:hover,
+.eon-city-atlas-node:focus-visible{
+  outline:2px solid var(--atlas-accent);
+  outline-offset:2px;
+  border-radius:12px;
+  background:rgba(105,231,255,.08);
+}
+.eon-city-atlas-legend{
+  position:absolute;
+  right:12px;
+  bottom:10px;
+  left:12px;
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  padding:8px 10px;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:10px;
+  background:rgba(3,9,20,.8);
+  color:#9fb5c8;
+  font-size:10px;
+  pointer-events:none;
+}
+.eon-city-atlas-legend strong{color:#eaf8ff}
+@media (max-width:640px){
+  .eon-city-atlas-map{min-height:290px}
+  .eon-city-atlas-node{width:68px;font-size:9px}
+  .eon-city-atlas-legend{display:grid;gap:2px}
+}
+@media (prefers-reduced-motion:reduce){
+  .eon-city-atlas-node>span{box-shadow:none}
+}
+
+/* W679–W680: explicit companion docking and resident-to-destination handoff. */
+.eon-city-productivity-loop{
+  display:grid;
+  gap:7px;
+  margin-top:12px;
+  padding:13px;
+  border:1px solid rgba(117,247,207,.26);
+  border-radius:14px;
+  background:linear-gradient(145deg,rgba(117,247,207,.065),rgba(85,234,255,.035));
+}
+.eon-city-productivity-loop>span{
+  color:#75f7cf;
+  font:800 9px/1.25 ui-monospace,SFMono-Regular,Menlo,monospace;
+  letter-spacing:.1em;
+}
+.eon-city-productivity-loop>p,
+.eon-city-productivity-loop>ol{margin:0;color:#b8c8d5;font-size:12px;line-height:1.45}
+.eon-city-productivity-loop>ol{display:grid;gap:3px;padding-left:19px}
+.eon-city-productivity-loop>button{
+  justify-self:start;
+  margin-top:3px;
+  padding:9px 12px;
+  border:1px solid rgba(117,247,207,.34);
+  border-radius:10px;
+  background:rgba(117,247,207,.08);
+  color:#efffff;
+  font:inherit;
+  cursor:pointer;
+}
+.eon-city-productivity-loop>button:hover,
+.eon-city-productivity-loop>button:focus-visible{border-color:#75f7cf;outline:2px solid rgba(117,247,207,.2);outline-offset:2px}
+
+/* W686 — reviewed NEXUS work-object continuity in EONCITY. */
+.eon-city-nexus-work-object{
+  display:grid;
+  gap:4px;
+  margin-top:14px;
+  padding:13px 14px;
+  border:1px solid rgba(167,139,250,.36);
+  border-radius:6px 16px 6px 16px;
+  background:linear-gradient(145deg,rgba(91,63,164,.16),rgba(5,13,28,.82));
+  box-shadow:inset 3px 0 0 rgba(167,139,250,.58);
+}
+.eon-city-nexus-work-object[data-at-target-district="true"]{border-color:rgba(105,231,255,.48);box-shadow:inset 3px 0 0 #69e7ff,0 0 24px rgba(105,231,255,.08)}
+.eon-city-nexus-work-object[data-at-target-station="true"]{border-color:rgba(246,211,101,.62);box-shadow:inset 3px 0 0 #f6d365,0 0 28px rgba(246,211,101,.1)}
+.eon-city-nexus-work-object>span{color:#c4b5fd;font:830 9px/1.25 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.11em}
+.eon-city-nexus-work-object>strong{color:#f7f3ff;font-size:15px}
+.eon-city-nexus-work-object>p{margin:0;color:#b9c7d7;font-size:12px;text-transform:capitalize}
+.eon-city-nexus-work-object>small{color:#9fb2c4;font-size:11px;line-height:1.45}
+
+/* W711 — street-readable district purpose remains visible before any panel opens. */
+.eon-city-district-identity[data-eon-w711-form]>small{
+  color:color-mix(in srgb,var(--eon-city-district-accent) 72%,#eaf7ff);
+  font-weight:760;
+  letter-spacing:.035em;
+  text-transform:none;
+}
+.eon-city-district-identity[data-eon-w711-form]::before{
+  content:attr(data-eon-w711-accent);
+  position:absolute;
+  top:8px;
+  right:12px;
+  color:color-mix(in srgb,var(--eon-city-district-warm) 70%,#fff);
+  font:750 8px/1 ui-monospace,SFMono-Regular,Menlo,monospace;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  opacity:.72;
+}
+@media(max-width:760px){
+  .eon-city-district-identity[data-eon-w711-form]::before{display:none}
+  .eon-city-district-identity[data-eon-w711-form]>small{white-space:normal;line-height:1.3}
+}
+
+/* W719.14 · semantic physical-node copy lanes prevent distance and guidance
+   text from collapsing into one unspaced inline run. */
+.eon-city-nexus-station-identity,
+.eon-city-nexus-station-proximity {
+  display:grid;
+  gap:5px;
+  min-width:0;
+}
+.eon-city-nexus-station-identity p,
+.eon-city-nexus-station-proximity b,
+.eon-city-nexus-station-proximity small {
+  display:block;
+  margin:0;
+}
+.eon-city-nexus-station-proximity {
+  padding-top:9px;
+  border-top:1px solid color-mix(in srgb,var(--eon-city-nexus-accent) 18%,transparent);
+}
+.eon-city-nexus-station-proximity b {
+  color:#edfaff;
+  font-size:12px;
+}
+.eon-city-nexus-station-proximity small {
+  color:#aebdca;
+  line-height:1.45;
+}

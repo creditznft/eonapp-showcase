@@ -1,0 +1,16 @@
+Snapshot: EONAPP_CHATGPT_SOURCE_HANDOFF_57a35fcf1db9_2026-06-11.zip
+Commit: 57a35fcf1db94a3f73e6fc9c131d367962bb0521
+Branch: main
+Created: 2026-06-11 09:14:59 +05:30
+Purpose: Lean tracked-source handoff for ChatGPT/Codex install, Vite build, tests, and browser verification.
+Included: Exact tracked repository files at HEAD via git archive.
+Excluded: .git metadata, untracked local artifacts, caches, node_modules, local temp folders.
+SHA256: 445215B3D9D43E2098B4740A483E06F0F963F0F157740669A0E83F41F03EADAE
+Recent verified status:
+- lint --max-warnings=0: passed
+- build: passed
+- smoke:build: passed
+- qa:telegram-growth: passed
+- qa:telegram-miniapp: passed
+- chat/tools CSP inline-script cleanup: verified on local preview
+- telegram reward gateway: reward-first bot deep link verified

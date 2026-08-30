@@ -1,0 +1,112 @@
+{
+  "schema": "eonapp.a15.i11.validation-receipt.v1",
+  "generatedAt": "2026-08-04T23:55:05+05:30",
+  "wave": "I11",
+  "baselineCommit": "ef1615a7aedd8c7668896ee0d6c49e7a15ed6d42",
+  "title": "Provider Contracts, Search Truth, Attachments and Cost Provenance",
+  "decision": "source-wave-ready-to-commit",
+  "verification": {
+    "institutionalGate": {
+      "passed": true,
+      "command": "npm run qa:a15-i11-provider-truth",
+      "focusedTests": 26
+    },
+    "maintainedSourceSuite": {
+      "passed": true,
+      "maintainedFiles": 381,
+      "runnableFilesPassed": 372,
+      "dependencyBlockedFiles": 9,
+      "tests": 1491,
+      "testsPassed": 1444,
+      "testsSkipped": 47,
+      "testsFailed": 0,
+      "blockedPackage": "@babylonjs/core"
+    },
+    "w766ir2SourceCertification": {
+      "passed": true,
+      "criteriaPassed": 10,
+      "criteriaTotal": 10,
+      "browserCertified": false,
+      "authenticatedOfflineCertified": false
+    },
+    "repositoryAuthority": {
+      "passed": true,
+      "trackedFiles": 5492,
+      "activeModules": 530,
+      "quarantinedMissingImportFiles": 194,
+      "deterministicHtmlInputs": 31
+    },
+    "secretScan": {
+      "passed": true,
+      "textFilesScanned": 5169
+    },
+    "syntaxAndDiff": {
+      "passed": true
+    }
+  },
+  "authority": {
+    "providerExecutionSchema": "eonapp.provider-execution-contract.a15.v1",
+    "provenanceSchema": "eonapp.ai-provenance-receipt.a15.v1",
+    "ordinaryPerplexitySearchDisabled": true,
+    "explicitProviderSearchConsentRequired": true,
+    "hiddenRetryAllowed": false,
+    "crossProviderFallbackAllowed": false,
+    "providerCitationsPreserved": true,
+    "providerSearchResultsPreserved": true,
+    "attachmentCoverageReceiptRequired": true,
+    "providerUsageOnly": true,
+    "eonappEstimatedCostAllowed": false,
+    "persistedPromptOrReplyAllowed": false,
+    "persistedEndpointOrApiKeyAllowed": false
+  },
+  "invariants": [
+    "Ordinary Perplexity requests send disable_search=true and do not silently browse.",
+    "Provider web search can be enabled only by a labelled explicit search mode with a recorded consent source.",
+    "Provider-returned citations and search_results remain attached to the response provenance and visible to the user.",
+    "Every request still has one exact provider/model attempt with no hidden retry or provider/model fallback.",
+    "The provenance receipt records history and attachment inclusion or omission without storing attachment names or contents.",
+    "Token usage is reported only from provider response fields; absent usage remains explicitly unknown.",
+    "Cost is never estimated by EONAPP and is shown only when the provider returns an amount and currency.",
+    "Persisted chat metadata excludes endpoints, budgets, prompts, replies, API keys and attachment contents.",
+    "Client-captured research remains client-only context and is not represented as provider browsing.",
+    "Core and City remain connected by versioned contracts only."
+  ],
+  "sourceDigests": {
+    "assets/js/ai-kernel/eon-provider-execution-contract.js": "925ca3d34b3a00a20df7d26ebac2386385117e1a9d773043752719edb86e91ff",
+    "assets/js/ai-kernel/eon-ai-provenance-receipt.js": "2f738f286cc5b61d884da26d2190cf17dd7511c867f5a84c2db4842c561ac2b0",
+    "assets/js/chat/ai-runtime.js": "cb984f373ff0dfdcc35623bd8ca558cf19c663c5bc43324889de839a0743cbed",
+    "assets/js/chat/local-attachments.js": "978e5ecba8d781f6992e0d2937442f547b6391a6452a9e3d7364cafd766eba23",
+    "assets/js/chat-page.js": "ed8be5d78b223852045bb1750c1126f12fcaea9e66cc53642556f96de09581f4",
+    "assets/js/ai-kernel/eon-provider-protocol-contract.js": "90b8f0d118280fafe3ab022390de65558267e69bae3f25f4eb4172dafbf15fcd",
+    "assets/js/ai-kernel/eon-provider-adapter-registry.js": "ef0fbe081d5b056b9735f9219691b4f045588fafffffb5aea207213519973f73",
+    "assets/css/chat.css": "7320f2059a18705d43cb8b4079041777486ff57919c67ac51eef4d2726773158",
+    "scripts/a15-i11-provider-truth-provenance-gate.mjs": "64a92836455e79988f9607f9d4b390791d24a3841f94472e44abffd24a87861d",
+    "tests/unit/a15-i11-provider-truth-provenance.test.mjs": "91b76de33ba4c193044453a69a861a2fd36ef2287a18b7f81fb0f686a0a343c7",
+    "docs/institutional/a15/evidence/A15_I11_PROVIDER_TRUTH_PROVENANCE_GATE_RECEIPT.json": "85ba37a9558682dcb185431ac6dc1831708d88b0bd525c6c59486528df12f116"
+  },
+  "externalBlockers": [
+    "Private npm registry returns 404 for locked ws@7.5.11.",
+    "Installed npm is 10.9.2 while the repository requires 11.12.1.",
+    "Nine maintained City test files remain dependency-blocked by unavailable @babylonjs/core.",
+    "Production build and built-artifact validation remain blocked by unavailable exact dependencies.",
+    "Authenticated browser, Preview and Production certification remain pending."
+  ],
+  "workingTreeAtReceipt": [
+    "M assets/css/chat.css",
+    " M assets/js/ai-kernel/eon-provider-adapter-registry.js",
+    " M assets/js/ai-kernel/eon-provider-protocol-contract.js",
+    " M assets/js/chat-page.js",
+    " M assets/js/chat/ai-runtime.js",
+    " M assets/js/chat/local-attachments.js",
+    " M config/generated/a15-system-disposition-registry.json",
+    " M docs/institutional/a15/evidence/A15_I01_SYSTEM_DISPOSITION_RECEIPT.json",
+    " M package.json",
+    "?? assets/js/ai-kernel/eon-ai-provenance-receipt.js",
+    "?? assets/js/ai-kernel/eon-provider-execution-contract.js",
+    "?? docs/institutional/a15/evidence/A15_I11_PROVIDER_TRUTH_PROVENANCE_GATE_RECEIPT.json",
+    "?? docs/institutional/a15/evidence/A15_I11_VALIDATION_RECEIPT.json",
+    "?? scripts/a15-i11-provider-truth-provenance-gate.mjs",
+    "?? tests/unit/a15-i11-provider-truth-provenance.test.mjs"
+  ],
+  "receiptDigest": "sha256:7847ec5ad5d03b5d59d8e796110fe7ecf99f8515ae56d8a78a4cde215478dd74"
+}

@@ -1,0 +1,47 @@
+{
+  "schema": "eonapp.a15.i15.core-creator-capture-gate-receipt.v1",
+  "generatedAt": "2026-08-04T19:16:37.059Z",
+  "wave": "I15",
+  "status": "pass",
+  "authority": {
+    "owner": "core",
+    "localOnly": true,
+    "explicitPermissionRequired": true,
+    "automaticRecording": false,
+    "automaticUpload": false,
+    "automaticPublishing": false,
+    "microphoneDefault": "off",
+    "creatorLibrarySupported": true,
+    "cityRole": "adapter-only"
+  },
+  "simulation": {
+    "sha256": "61b3643eda66c56f9904225ef09dc1a5fc8f8275dbbee840c69308ed8bc3cb83",
+    "bytes": 18,
+    "contentType": "video/webm",
+    "libraryAssetId": "a15_i15_gate_asset",
+    "uploaded": false,
+    "posted": false
+  },
+  "inheritedDataSurvivalProof": {
+    "rawMediaBundle": "tests/unit/a15-i07-data-survival-authority.test.mjs",
+    "metadataRestore": "tests/unit/w627f-creator-data-survival.test.mjs",
+    "deletionAuthority": "assets/js/create/creator-library-store.js#deleteCreatorAsset"
+  },
+  "sourceFiles": [
+    "assets/js/contracts/creator/eon-creator-capture.js",
+    "assets/js/contracts/city/w659g/eon-city-w659g-creator-capture.js",
+    "assets/js/work-surface/adapters/eon-creator-capture-panel.js",
+    "assets/js/create/creator-library-store.js",
+    "assets/js/data-survival/eon-creator-media-bundle.js",
+    "tests/unit/a15-i15-core-creator-capture.test.mjs"
+  ],
+  "claims": {
+    "browserRecordingPhysicallyCertified": false,
+    "rawMediaUploaded": false,
+    "socialPostCompleted": false,
+    "previewDeployed": false,
+    "productionDeployed": false
+  },
+  "errors": [],
+  "digest": "987060df74b6225e991df9fa982d278f49cd0d28839404f01cb6b4cc42c518ef"
+}

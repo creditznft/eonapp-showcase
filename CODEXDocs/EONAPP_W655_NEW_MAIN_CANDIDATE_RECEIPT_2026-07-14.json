@@ -1,0 +1,75 @@
+{
+  "schema": "eonapp.w655.new-main-candidate-receipt.v1",
+  "generatedAt": "2026-07-14T14:27:34.494Z",
+  "mainSha": "c6af171ba4bb72af69fec7944a7c940787469323",
+  "pr15MergeAncestry": {
+    "pullRequest": 15,
+    "mergeCommit": "c6af171ba4bb72af69fec7944a7c940787469323",
+    "priorCiRun": 232,
+    "priorCiConclusion": "success"
+  },
+  "retiredOriginalCandidate": {
+    "rawDeployDirectoryDigest": "540159dd47b70e4ec97140bc097863ed870d32b86ebd2582281d41df76b1d1a2",
+    "status": "retired-non-deployable"
+  },
+  "reconciliationReference": {
+    "rawDeployDirectoryDigest": "cadaacbc63ec567e30efbc584e00ca10f171cc7bdfac4104a87bda01139ca7fe",
+    "status": "reference-only"
+  },
+  "newCandidate": {
+    "rawDistDigest": "0fe27c05bda1162a2e180a2848838b774fbc535a69af226380b2e2bcd9170240",
+    "candidateDigest": "f814b146e9f1d174e6cfda264b2a2b4d1617daab9b5068f516e17b3fec5f4ca4",
+    "distPayloadDigest": "6cd0c53549c2db68e802381423dd8d02c761bf65128ae90f787d58479907be28",
+    "candidateDeployDirectoryDigest": "9752097dd60c0a2f2831ffef9ba72a7f79cbfd934a373c524108a52dfb85ade9",
+    "fileCount": 563,
+    "candidateDeployFileCount": 565,
+    "largestFile": {
+      "path": "assets/city/w649/fallback/characters/eoncity_pathfinder_a_vanguard_6clips.f87948576117.glb",
+      "bytes": 2780808
+    }
+  },
+  "sourceFingerprint": "6f35d106e124f246f7435ecfa7a65cd059c2d0235f82084846b5cf5ee09863b9",
+  "buildProvenance": {
+    "sourceRevision": "c6af171ba4bb72af69fec7944a7c940787469323",
+    "distributionSha256": "96ab51255ea7c9e833742661f3a8a92573ffa3991a806378ec0a3898979ae75a",
+    "distributionFileCount": 561
+  },
+  "permanentPredeploy": {
+    "receiptDigest": "f6661be9be6aef5c7a93add433f37b9409953fe910632de5f8738a625bd5ad4b",
+    "status": "pass",
+    "maintainedTests": "1064/1111",
+    "explicitHistoricalSkips": 47,
+    "maintainedTestFiles": 295,
+    "chunks": "11/11",
+    "secretScan": "pass",
+    "dependencyAudit": "0 vulnerabilities"
+  },
+  "certification": {
+    "verifyCodexPredeploy": "pass",
+    "testUnitCurrent": "pass",
+    "executiveCertification": "pass",
+    "w624dArchive": "pass",
+    "w624bCityRuntime": "pass",
+    "w639ProductionRehearsal": "pass; production NOT-RUN; launch candidate NOT FROZEN",
+    "w649AssetAcceptance": "pass",
+    "w649Foundation": "pass",
+    "w650CacheUpdateSafety": "pass",
+    "w651CityVisualIntegration": "pass",
+    "siteAudit": "pass; 49 HTML files",
+    "pageGate": "pass; 0 blockers; 2 advisory warnings",
+    "identityGate": "pass; 0 blockers; 0 warnings",
+    "qualityGate": "pass; 0 blockers; 0 warnings",
+    "readiness": "pass",
+    "secretScan": "pass",
+    "npmAuditOmitDev": "pass; 0 vulnerabilities",
+    "candidateVerification": "pass; no issues",
+    "rawVsCandidateDist": "pass; 563/563 files byte-identical"
+  },
+  "envLocalRead": false,
+  "envLocalPackaged": false,
+  "previewDeployment": "authorized-for-preview-only",
+  "productionDeployment": "blocked",
+  "previewBranch": "w655-main-certification-20260714",
+  "postMergeRegenerationRequired": true,
+  "status": "candidate-identity-recorded-awaiting-receipt-merge"
+}

@@ -1,0 +1,65 @@
+{
+  "schema": "eonapp.a15.c02.validation-receipt.v1",
+  "wave": "C02",
+  "status": "pass-source-only",
+  "scope": "Two-way Core/EONCITY static implementation boundary and bounded projection contracts",
+  "results": {
+    "boundary": {
+      "coreRoutes": 13,
+      "coreRoutesReachingCityImplementation": 0,
+      "cityRuntimeModules": 199,
+      "cityImplementationModules": 192,
+      "allowedContractModules": 7,
+      "cityModulesReachingCoreImplementation": 0,
+      "directContractEdges": 8,
+      "unresolvedLocalImports": 0
+    },
+    "a15C02ContractTests": {
+      "passed": 4,
+      "failed": 0
+    },
+    "targetedCompatibilityAndFunctionalTests": {
+      "passed": 32,
+      "failed": 0,
+      "coverage": [
+        "truthful Command Center",
+        "Genuine Agent Theatre",
+        "Nexus event adapter",
+        "City workspace presenter",
+        "central Living Nexus",
+        "productive stations"
+      ]
+    },
+    "additionalModifiedCurrentTests": {
+      "passed": 31,
+      "failed": 0,
+      "dependencyBlockedFiles": 1
+    },
+    "w766ir2SourceCertification": {
+      "passed": true,
+      "criteriaPassed": 10,
+      "criteriaTotal": 10,
+      "browserCertified": false,
+      "authenticatedOfflineCertified": false
+    }
+  },
+  "dependencyBlockedFiles": [
+    "w660i-eoncity-visual-rescue.test.mjs requires unavailable @babylonjs/core because the exact locked install remains blocked"
+  ],
+  "contracts": [
+    "Project and Library storage identifiers",
+    "sanitized EONBOT job receipt projection",
+    "Nexus City event projection",
+    "work-surface invocation events",
+    "reviewed share handoff receipt",
+    "existing bounded City progression and world contracts"
+  ],
+  "architectureTruth": {
+    "coreImportsCityImplementation": false,
+    "cityImportsCoreImplementation": false,
+    "cityImportsVersionedContractsOnly": true,
+    "oneBabylonEngineSceneRenderLoopPreserved": true,
+    "providerOrExecutionAuthorityGrantedToCity": false,
+    "previewOrProductionCertified": false
+  }
+}

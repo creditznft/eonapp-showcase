@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "include": [
+    "/api/*",
+    "/csp-report",
+    "/city-private/*"
+  ],
+  "exclude": []
+}

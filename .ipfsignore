@@ -1,0 +1,34 @@
+# Static release only. Keep repo tooling, local state, and non-site sources out of the published IPFS tree.
+.git
+.github
+.vscode
+.playwright-mcp
+.ipns-config
+AUDIT
+docs
+node_modules
+platform-backend
+Smart Contracts
+test-results
+tests
+dist
+
+# Local tooling and development files
+package-lock.json
+package.json
+playwright.config.js
+eslint.config.mjs
+vite.config.mjs
+tsconfig.json
+tsconfig.phase2.json
+tsconfig.phase3.games.json
+tsconfig.strict.json
+analyze_*.py
+*.bat
+*.txt
+ts_errors*.txt
+ui-*.png
+
+# Workspace notes and non-site docs
+README.md
+AGENT_SYSTEM_LIVE_EDIT_NOTE.md

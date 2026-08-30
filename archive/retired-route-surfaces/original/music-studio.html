@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <link rel="manifest" href="/manifest.webmanifest">
+  <title>Music Studio | EONAPP.ch</title>
+  <meta name="description" content="Dedicated Music Studio entry page. Launch WorkBench Music Lab directly for sequencing and AI-assisted composition." />
+  <link rel="canonical" href="https://eonapp.ch/music-studio.html" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href="/assets/css/base.css" as="style" />
+  <link rel="preload" href="/assets/css/layout.css" as="style" />
+  <link rel="preload" href="/assets/css/components.css" as="style" />
+  <link rel="stylesheet" href="/assets/css/base.css" />
+  <link rel="stylesheet" href="/assets/css/layout.css" />
+  <link rel="stylesheet" href="/assets/css/components.css" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://www.googletagmanager.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: blob: https:; connect-src 'self' ws: wss: https:; font-src 'self' data: https://cdn.jsdelivr.net; manifest-src 'self'; media-src 'self' blob:; worker-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'" />
+<meta property="og:title" content="Music Studio | EONAPP.ch" />
+  <meta property="og:description" content="Dedicated Music Studio entry page. Launch WorkBench Music Lab directly for sequencing and AI-assisted composition." />
+  <meta property="og:url" content="https://eonapp.ch/music-studio.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://eonapp.ch/assets/img/og/default.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Music Studio | EONAPP.ch" />
+  <meta name="twitter:description" content="Dedicated Music Studio entry page. Launch WorkBench Music Lab directly for sequencing and AI-assisted composition." />
+    <script type="module" src="/assets/js/localStorage-shim.js"></script>
+</head>
+<body data-page-type="tool" data-tool-kind="music">
+<a href="#main" class="skip-to-content">Skip to main content</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="logo">⚡ EONAPP<span>.ch</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/eon-browser.html" data-i18n-key="nav.ai-cockpit">AI Cockpit</a>
+      <a href="/chat.html" data-i18n-key="nav.ai-chat">AI Chat</a>
+      <a href="/trade">Trade</a>
+      <a href="/vault">Vault</a>
+      <a href="/market">Market</a>
+      <a href="/realm">Realm</a>
+      <a href="/subscription">Plans</a>
+    </nav>
+
+    <span id="sub-badge" class="sub-badge" aria-label="Subscription tier"></span>
+  </div>
+</header>
+<main id="main">
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-badge" data-i18n-key="tool.badge" data-i18n-fallback="Dedicated Tool Entry">Dedicated Tool Entry</div>
+      <h1 data-i18n-key="tool.music.title" data-i18n-fallback="Music Studio">Music Studio</h1>
+      <p class="hero-sub" data-i18n-key="tool.music.sub" data-i18n-fallback="Open Music Lab directly in WorkBench for multi-track sequencing, presets, and quick AI-assisted music ideas.">Open Music Lab directly in WorkBench for multi-track sequencing, presets, and quick AI-assisted music ideas.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary btn-lg" href="/build?mode=build" data-i18n-key="tool.music.open" data-i18n-fallback="Open WorkBench + Music Lab →">Open WorkBench + Music Lab →</a>
+        <a class="btn btn-outline btn-lg" href="/workspace" data-i18n-key="tool.music.jump" data-i18n-fallback="Open Workspace">Open Workspace</a>
+      </div>
+      <div class="hero-cta" data-info-title="Music Production Workflow" data-info-body="Compose in Music Lab, refine copy in Creator Studio, then publish campaign bundles to Realm and Market listings.">
+        <button class="btn btn-outline btn-lg" type="button" data-tool-action="workbench" data-i18n-key="tool.music.launch" data-i18n-fallback="Launch End-to-End in WorkBench">Launch End-to-End in WorkBench</button>
+        <button class="btn btn-outline btn-lg" type="button" data-tool-action="creator" data-i18n-key="tool.music.creator" data-i18n-fallback="Send to Creator Studio">Send to Creator Studio</button>
+        <button class="btn btn-outline btn-lg" type="button" data-tool-action="chat" data-i18n-key="tool.music.chat" data-i18n-fallback="Ask EONBOT for Music Plan">Ask EONBOT for Music Plan</button>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="logo">⚡ EONAPP<span>.ch</span></a>
+      <p>AI-native platform for creators, builders &amp; operators.</p>
+    </div>
+    <nav class="footer-nav">
+      <a href="/trade">Trade</a>
+      <a href="/vault">Vault</a>
+      <a href="/market">Market</a>
+      <a href="/marketplace.html">NFT Exchange</a>
+      <a href="/get-free-ai-power.html">Free AI</a>
+      <a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+    </nav>
+  </div>
+  <div class="footer-bottom container">
+    <p>© EONAPP.ch · AI-native platform for creators &amp; builders</p>
+  </div>
+</footer>
+<script type="module" src="/assets/js/tool-page.js"></script>
+<script type="module" src="/assets/js/utils/accessibility-autoload.js"></script>
+
+<!-- -- Mobile PWA Bottom Nav ------------------------------ -->
+<nav class="eon-bottom-nav" aria-label="Quick navigation">
+  <a href="/build" class="eon-bottom-nav-item" aria-label="Build"><span class="eon-bnav-icon">⚡</span><span class="eon-bnav-label">Build</span></a>
+  <a href="/create" class="eon-bottom-nav-item" aria-label="Create"><span class="eon-bnav-icon">🎨</span><span class="eon-bnav-label">Create</span></a>
+  <a href="/trade" class="eon-bottom-nav-item" aria-label="Trade"><span class="eon-bnav-icon">📊</span><span class="eon-bnav-label">Trade</span></a>
+  <a href="/vault" class="eon-bottom-nav-item" aria-label="Vault"><span class="eon-bnav-icon">🏦</span><span class="eon-bnav-label">Vault</span></a>
+  <a href="/chat.html" class="eon-bottom-nav-item" aria-label="AI Chat"><span class="eon-bnav-icon">💬</span><span class="eon-bnav-label">AI Chat</span></a>
+</nav>
+</body>
+</html>
+
+

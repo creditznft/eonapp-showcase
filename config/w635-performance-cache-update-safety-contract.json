@@ -1,0 +1,64 @@
+{
+  "schema": "eonapp.w635.performance-cache-update-safety.2026-07-11.v1",
+  "wave": "W635",
+  "status": "source-and-build-certified-external-evidence-pending",
+  "releaseId": "w635-2026-07-11-performance-cache-update-safety",
+  "cache": {
+    "ownedPrefixes": [
+      "eonapp-shell-",
+      "eonapp-assets-",
+      "eonapp-pages-"
+    ],
+    "assetEntriesMax": 160,
+    "pageEntriesMax": 32,
+    "navigationTimeoutMs": 4500,
+    "currentReleaseCacheReadsOnly": true,
+    "redirectResponsesStored": false,
+    "privateOrNoStoreResponsesStored": false,
+    "queryBearingAssetsStored": false,
+    "unknownCachesDeleted": false,
+    "persistentContentAddressedCaches": [
+      "eonapp-city-assets-v1"
+    ],
+    "persistentCityAssetEntriesMax": 192,
+    "persistentContentAddressedCacheReadsOnly": true
+  },
+  "update": {
+    "registrationUpdateViaCache": "none",
+    "releaseIdentityHandshake": true,
+    "explicitActivationActionRequired": true,
+    "explicitReloadActionRequired": true,
+    "automaticActivation": false,
+    "automaticReload": false
+  },
+  "initialTransferGzipBudgets": {
+    "conversational": 50000,
+    "workbench": 75000,
+    "immersive": 60000,
+    "records": 45000,
+    "informational": 110000,
+    "compact": 30000
+  },
+  "requiredSourceChecks": [
+    "release-scoped-app-cache-names-plus-approved-content-addressed-cache",
+    "current-app-cache-only-reads-and-strict-content-addressed-city-cache-reads",
+    "redirect-and-cache-control-fence",
+    "sensitive-query-fence",
+    "critical-offline-precache",
+    "network-revalidated-navigation",
+    "central-registration-no-http-cache",
+    "explicit-update-and-reload",
+    "versioned-theme-bootstrap",
+    "deferred-shell-workflow-modules"
+  ],
+  "externalEvidenceRequired": [
+    "cloudflare-cache-header-observation",
+    "installed-desktop-update-and-reload",
+    "installed-android-update-and-reload",
+    "installed-ios-home-screen-update-observation",
+    "offline-and-slow-network-route-matrix",
+    "storage-pressure-cache-eviction-observation",
+    "real-device-lighthouse-and-city-frame-time-captures"
+  ],
+  "productionCertified": false
+}

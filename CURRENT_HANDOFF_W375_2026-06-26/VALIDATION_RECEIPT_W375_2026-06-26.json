@@ -1,0 +1,30 @@
+{
+  "schema": "eonapp.w375.market-intelligence-validation-receipt.v1",
+  "generatedAt": "2026-06-26T05:00:00Z",
+  "scope": "Source-ready W375 Market Intelligence handover",
+  "status": "PASS_WITH_EXTERNAL_EVIDENCE_PENDING",
+  "results": {
+    "node": "22.16.0",
+    "npm": "10.9.2",
+    "npmCi": "PASS",
+    "unitSuite": { "status": "PASS", "tests": 315, "failures": 0 },
+    "lint": { "status": "PASS", "errors": 0, "warnings": 0 },
+    "w375SafetyGate": { "status": "PASS", "checks": "37/37" },
+    "w359ToW374BSourceGates": "PASS",
+    "build": { "status": "PASS", "distFiles": 216 },
+    "w239PublicOutput": "PASS",
+    "w242ActiveSourceQuarantine": { "status": "PASS", "approvedHtml": 60, "reachableModules": 187 },
+    "smokeBuild": "PASS",
+    "siteAudit": { "status": "PASS", "htmlFiles": 42 },
+    "launchSourceGates": "PASS",
+    "secretScan": { "status": "PASS", "textFilesScanned": 2836 },
+    "productionDependencyAudit": { "status": "PASS", "vulnerabilities": 0 }
+  },
+  "notClaimed": [
+    "Cloudflare Preview or production deployment proof",
+    "Browser or real-device visual/accessibility evidence",
+    "Live OAuth configuration or end-to-end OAuth evidence",
+    "Licensed or realtime market-data availability",
+    "Legal/compliance approval for paid research or personalised advice"
+  ]
+}

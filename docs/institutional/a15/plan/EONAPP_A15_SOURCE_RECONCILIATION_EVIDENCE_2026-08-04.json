@@ -1,0 +1,67 @@
+{
+  "generatedAt": "2026-08-04T19:35:00+05:30",
+  "mode": "planning-only",
+  "w802b": {
+    "commit": "fdc92595ca6d8fb941f45afb598a4a282dc70e62",
+    "branch": "chatgpt/w767-expanse-companion-clarity",
+    "archiveSha256": "76ea76c72f55f75a0d371116a65b675abe35265b3438ac092bb42bc04e2542ec",
+    "archiveIntegrity": "passed",
+    "workingTree": "clean",
+    "dependencyFreeTests": {
+      "passed": 770,
+      "failed": 0,
+      "files": 203
+    },
+    "sourceCertification": {
+      "passed": 10,
+      "total": 10
+    },
+    "externalCertification": "blocked/incomplete"
+  },
+  "a14Snapshot": {
+    "commit": "a6cf226d39073701b3d3b04c1f8d4582aec495a3"
+  },
+  "delta": {
+    "changedFiles": 344,
+    "insertions": 38193,
+    "deletions": 516
+  },
+  "staticImportInspection": {
+    "primaryNonCityCoreRoutesInspected": 13,
+    "primaryNonCityCoreRoutesReachingCityImplementation": 13,
+    "distinctCityModulesReachedByCoreRoutes": 19,
+    "activeCityClosureModules": 249,
+    "activeCityClosureCityModules": 192,
+    "activeCityClosureNonCityModules": 57,
+    "directCityStorageAccessModules": 40,
+    "activeNamedCityStateKeys": [
+      "eon:city:command-hub:resume:w731:v1",
+      "eon:city:boot-trace:w737:v1",
+      "eon:city:missions:w737:v2",
+      "eon:city:productive-stations:w751:v1",
+      "eon:city:expanse:w766a:state:v1"
+    ]
+  },
+  "verifiedMenuState": {
+    "currentQuickOrder": [
+      "Living Nexus",
+      "Mission Board",
+      "Live Monitors",
+      "Share Command Center",
+      "Creator Capture",
+      "Plans & Access",
+      "Expanse Gate"
+    ],
+    "expanseCurrentPosition": 7,
+    "entryReviewRequired": true,
+    "oneEngineSceneRenderLoopPreserved": true
+  },
+  "programme": {
+    "coreWaves": 26,
+    "cityIntegrationWaves": 12,
+    "implementationWavesTotal": 38,
+    "certificationGates": 10,
+    "realWorldCases": 179,
+    "goNoGoGates": 42
+  }
+}

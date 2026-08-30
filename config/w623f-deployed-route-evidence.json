@@ -1,0 +1,38 @@
+{
+  "schema": "eonapp.w623f.deployed-route-evidence.v1",
+  "capturedAt": "2026-07-11T04:44:09+05:30",
+  "conclusion": "deployment-stale-no-go",
+  "deploymentChangedByThisWave": false,
+  "observationSource": "EONAPP_W623F_VALIDATION_RECEIPT_2026-07-11.json",
+  "sourceNewerThanDeployed": true,
+  "routes": [
+    {
+      "path": "/",
+      "reachable": true,
+      "observedFinalPath": "/",
+      "parity": false,
+      "mismatches": ["source-newer-than-deployed"]
+    },
+    {
+      "path": "/create",
+      "reachable": true,
+      "observedFinalPath": "/workspace",
+      "parity": false,
+      "mismatches": ["legacy-final-path", "source-newer-than-deployed"]
+    },
+    {
+      "path": "/profile",
+      "reachable": true,
+      "observedFinalPath": "/profile",
+      "parity": false,
+      "mismatches": ["source-newer-than-deployed"]
+    },
+    {
+      "path": "/eoncity",
+      "reachable": true,
+      "observedFinalPath": "/eoncity",
+      "parity": true,
+      "mismatches": []
+    }
+  ]
+}

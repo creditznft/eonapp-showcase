@@ -1,0 +1,24 @@
+{
+  // TEMPLATE ONLY — deliberately not deployable until EON_WORK_DB exists and
+  // the release owner replaces the placeholder after pilot approval.
+  "$schema": "../../../node_modules/wrangler/config-schema.json",
+  "name": "eonapp-durable-work-pilot",
+  "main": "src/index.js",
+  "compatibility_date": "2026-08-17",
+  "observability": { "enabled": true },
+  "vars": { "EON_DURABLE_WORK_ROLLOUT": "disabled" },
+  "workflows": [
+    {
+      "name": "eonapp-durable-work-pilot",
+      "binding": "EON_DURABLE_WORKFLOW",
+      "class_name": "EonDurableWorkWorkflow"
+    }
+  ],
+  "d1_databases": [
+    {
+      "binding": "EON_WORK_DB",
+      "database_name": "eonapp-durable-work-pilot",
+      "database_id": "REPLACE_WITH_APPROVED_EON_WORK_DB_ID"
+    }
+  ]
+}

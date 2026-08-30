@@ -1,0 +1,29 @@
+{
+  "schema": "eon.commercial-decision-gate.v1",
+  "version": 1,
+  "lifecycle": "decision-gate-only",
+  "active": false,
+  "activation": {
+    "officialCommerceActive": false,
+    "officialCatalogActive": false,
+    "checkoutActive": false,
+    "paymentProviderActive": false,
+    "referralAttributionActive": false,
+    "affiliateProgramActive": false,
+    "commissionActive": false,
+    "payoutActive": false,
+    "rewardCampaignActive": false,
+    "adIncentiveActive": false,
+    "tokenProgramActive": false,
+    "tokenTransferActive": false,
+    "userSellerMarketplaceActive": false,
+    "publicRealmStorefrontActive": false
+  },
+  "commercialPolicy": {
+    "currentAffiliateRatePercent": 0,
+    "currentReversalWindowDays": null,
+    "clickShareViewActivityAdRewardAllowed": false,
+    "clientSidePaymentProofAllowed": false
+  },
+  "activationBoundary": "A separate written approval plus verified server-side evidence is required before any commercial flow can activate."
+}

@@ -1,0 +1,73 @@
+{
+  "schema": "eonapp.validation-receipt.w624l.2026-07-11.v1",
+  "wave": "W624L",
+  "status": "source-complete-physical-device-visual-owner-certification-pending",
+  "releaseState": "limited-preview-no-go-public-launch",
+  "nextWave": "W625A",
+  "sourceFingerprint": {
+    "algorithm": "sha256",
+    "digest": "5565eb54e0cdabce177f90c761112359753c0375944147e5e94be3620cb221c8",
+    "fileCount": 3532
+  },
+  "combinedWaves": [
+    "W624J",
+    "W624K",
+    "W624L"
+  ],
+  "validation": {
+    "w624jGate": "26/26",
+    "w624jTests": "6/6",
+    "w624kGate": "35/35",
+    "w624kTests": "6/6",
+    "w624lGate": "39/39",
+    "w624lTests": "6/6",
+    "maintainedTestFiles": 231,
+    "assertionsTotal": 862,
+    "currentPasses": 815,
+    "archivedSkips": 47,
+    "failures": 0,
+    "codexPredeploy": "26/26",
+    "alignment": "17/17",
+    "archiveIntegrity": "10/10",
+    "reachability": {
+      "reachableFiles": 360,
+      "importEdges": 632,
+      "quarantinedReachable": 0
+    },
+    "eslint": {
+      "errors": 0,
+      "warnings": 0
+    },
+    "secretScan": {
+      "textFiles": 3609,
+      "potentialSecrets": 0
+    },
+    "build": "passed",
+    "buildSmoke": "passed",
+    "postBuildCertification": "24/24"
+  },
+  "distribution": {
+    "fileCount": 465,
+    "minifiedFiles": 295,
+    "savedPercent": 40.85,
+    "sha256": "f267241146a3d20cecb9c38595beccb45b558459ce39780e5ef0eb19ee88cbab"
+  },
+  "browserProof": {
+    "status": "BLOCKED",
+    "reason": "Playwright Chromium unavailable in managed environment"
+  },
+  "pendingEvidence": [
+    "native share completion",
+    "real collaboration delivery and acceptance",
+    "production-authenticated City browser proof",
+    "physical audio output",
+    "controller hardware",
+    "mobile safe-area and orientation",
+    "battery and thermal evidence",
+    "low mid high physical-device performance",
+    "sustained and recovery evidence",
+    "PWA evidence",
+    "W624A runtime visual comparison",
+    "owner flagship approval"
+  ]
+}

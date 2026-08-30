@@ -1,0 +1,36 @@
+{
+  "schema": "eonapp.w263.eonbot-capability-execution-source-readiness.v1",
+  "decision": "SOURCE_READY_EXTERNAL_EVIDENCE_PENDING",
+  "scope": "source-only",
+  "requiredExternalEvidence": [
+    {
+      "id": "approval-flow-device-review",
+      "status": "pending-independent-review",
+      "owner": "device reviewer",
+      "evidence": "Keyboard, touch and permission-denial walkthroughs for guarded Chat actions on real devices.",
+      "required": true,
+      "evidenceRefs": []
+    },
+    {
+      "id": "capability-truth-review",
+      "status": "pending-independent-review",
+      "owner": "product/security reviewer",
+      "evidence": "Independent review that capability copy, receipts and denial states do not overclaim completion or hidden tool access.",
+      "required": true,
+      "evidenceRefs": []
+    },
+    {
+      "id": "support-recovery-review",
+      "status": "pending-owner-assignment",
+      "owner": "support owner",
+      "evidence": "Observed support/recovery handling for expired, cancelled and blocked local proposals.",
+      "required": true,
+      "evidenceRefs": []
+    }
+  ],
+  "claimFence": [
+    "This board records source-only readiness and does not prove browser, device, provider, account, legal, privacy, security or production behavior.",
+    "No external evidence reference is collected in this source freeze.",
+    "This board cannot approve beta, launch, payment, trading, prediction-market or provider activation."
+  ]
+}

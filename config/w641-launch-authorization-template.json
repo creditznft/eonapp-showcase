@@ -1,0 +1,27 @@
+{
+  "schema": "eonapp.owner-launch-authorization.w641.v1",
+  "wave": "W646",
+  "ownerDecision": "no-go",
+  "ownerReviewed": false,
+  "issuedAt": null,
+  "expiresAt": null,
+  "candidateDigest": "",
+  "sourceFingerprint": "",
+  "commitSha": "",
+  "previewDeploymentId": "",
+  "previewUrl": "",
+  "evidenceIndexDigest": "",
+  "freezeDigest": "",
+  "rehearsalDigest": "",
+  "environmentProtectionDigest": "",
+  "rollbackDeploymentId": "",
+  "laneDecisions": {
+    "billing": { "decision": "not-run" },
+    "local-creator": { "decision": "not-run" },
+    "referral": { "decision": "not-run" },
+    "direct-provider": { "decision": "not-run" },
+    "companion": { "decision": "not-run" }
+  },
+  "redactionReviewed": false,
+  "notes": "Template only. A typed GO cannot replace genuine evidence or GitHub environment approval."
+}

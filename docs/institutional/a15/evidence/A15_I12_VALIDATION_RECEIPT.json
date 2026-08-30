@@ -1,0 +1,129 @@
+{
+  "schema": "eonapp.a15.i12.validation-receipt.v1",
+  "generatedAt": "2026-08-05T00:14:16+05:30",
+  "wave": "I12",
+  "baselineCommit": "849367f4e9f914f077dabd021aef52f3d417c1c3",
+  "title": "Local Connection Authority",
+  "decision": "source-wave-ready-to-commit",
+  "verification": {
+    "institutionalGate": {
+      "passed": true,
+      "command": "npm run qa:a15-i12-local-connection",
+      "focusedTests": 37
+    },
+    "maintainedSourceSuite": {
+      "passed": true,
+      "maintainedFiles": 381,
+      "runnableFilesPassed": 372,
+      "dependencyBlockedFiles": 9,
+      "tests": 1491,
+      "testsPassed": 1444,
+      "testsSkipped": 47,
+      "testsFailed": 0,
+      "blockedPackage": "@babylonjs/core"
+    },
+    "w766ir2SourceCertification": {
+      "passed": true,
+      "criteriaPassed": 10,
+      "criteriaTotal": 10,
+      "browserCertified": false,
+      "authenticatedOfflineCertified": false
+    },
+    "repositoryAuthority": {
+      "passed": true,
+      "trackedFiles": 5498,
+      "activeModules": 534,
+      "quarantinedMissingImportFiles": 194,
+      "deterministicHtmlInputs": 31
+    },
+    "secretScan": {
+      "passed": true,
+      "textFilesScanned": 5175
+    },
+    "syntaxAndDiff": {
+      "passed": true
+    }
+  },
+  "authority": {
+    "schema": "eonapp.local-connection-authority.a15.v1",
+    "runtimeIds": [
+      "ollama",
+      "lmstudio",
+      "jan"
+    ],
+    "credentialStorage": "sessionStorage-only",
+    "directBrowserAttempts": 1,
+    "bridgeFallback": "paired-loopback-only-after-direct-network-block",
+    "httpFailureBridgeRetryAllowed": false,
+    "cloudFallbackAllowed": false,
+    "lanAllowed": false,
+    "arbitraryLoopbackPortsAllowed": false,
+    "offlineLocalityClaimRequiresSuccessfulOfflineSelfTest": true,
+    "creatorCompanionCspRoutes": [
+      "/create",
+      "/create/",
+      "/create.html"
+    ],
+    "creatorCompanionEndpoint": "http://127.0.0.1:47826"
+  },
+  "invariants": [
+    "All active Ollama, LM Studio and Jan discovery, self-test, model-list and Chat requests use one Local Connection Authority.",
+    "Optional LM Studio and Jan runtime credentials are stored only for the browser session and are excluded from receipts, backup and Chat history.",
+    "Direct browser loopback is attempted once; a paired EON Local Bridge may recover only a browser network, CORS or Private Network Access block.",
+    "HTTP 401, 403 and other runtime responses are terminal and cannot trigger a second model request through the Bridge.",
+    "LAN addresses, arbitrary loopback ports and cloud-provider fallback remain blocked.",
+    "Offline-proven locality requires a successful exact runtime/model self-test while the browser reports offline.",
+    "Chat selection requires a matching successful self-test for the exact runtime, endpoint and model.",
+    "Local connection receipts are redacted and visible in Chat provenance without endpoint URLs, credentials, prompts or replies.",
+    "Local AI routes receive only the approved runtime and Bridge ports; Create receives only the Creator Companion endpoint.",
+    "Root and public Cloudflare header authorities are byte-identical.",
+    "Core and City remain connected by versioned contracts only."
+  ],
+  "sourceDigests": {
+    "_headers": "ad7e6bde13376219fab4a7b920d9c48260d3d45e47e5a1bf83e20840333352c1",
+    "public/_headers": "ad7e6bde13376219fab4a7b920d9c48260d3d45e47e5a1bf83e20840333352c1",
+    "assets/js/local-ai/eon-local-connection-authority.js": "61fdc11b58862da90b31cfa699a21c8d1ad150642de7dfdcf9d68c8b082f3b30",
+    "assets/js/local-ai/eon-local-bridge-client.js": "ceb293aa81f26f5557ce3082071397b6d26ba3bdec9e5946e3cdffbbda5561e6",
+    "assets/js/local-ai/local-runtime-status.js": "7d134dcd3508e398fb98bdf4453c05f6ba66d8e6489d5d4544a25dfd87b928cd",
+    "assets/js/local-ai/local-ai-page.js": "1b93f8f17739bf2fa06de186d3e346b7707b03be518deeb6d3fcaf1d66c61f12",
+    "assets/js/chat/ai-runtime.js": "bd596a044dfecdbfdf0f46a7bb77a06db3b5aae4a162f26c7690c514dedb8365",
+    "assets/js/chat-page.js": "735f97f83521dc5b2698bedde3a330df4e15a045f281b474992a7b6566032085",
+    "assets/js/direct-byok/companion-client.js": "e2a9ceb8b09d3273397fa651e990ca76d0d97b3f83740713852bb0d45cd459b1",
+    "config/local-ai-browser-contract.mjs": "d63528a672c9de459184a2e8e552039a5e6f80e5b6c2a01a250321651e7bcb65",
+    "config/eon-creator-companion-browser-contract.mjs": "d7834cf4bd0e9359933f6760eecd1abd253803c26e9768c0786104e39dcc68c2",
+    "scripts/sync-local-ai-csp.mjs": "4dc73c1411dff5403475c3e61259f1801c4b1fce5b2f8755e1b85adcf9d87bb3",
+    "scripts/a15-i12-local-connection-authority-gate.mjs": "3c307fcc606d6a933fe35f76476722d510959de2c0962e2b06509233b93ddf0b",
+    "tests/unit/a15-i12-local-connection-authority.test.mjs": "c92a716f2530e5060d514ff2d9358e70c8e2f46f8236b42ecbbc9e01443580f0",
+    "tests/unit/w476-local-ai-preference.test.mjs": "37d774227fca3ed97e0a5d9fbb2a7b009256761279261953889a061321a598d8",
+    "docs/institutional/a15/evidence/A15_I12_LOCAL_CONNECTION_GATE_RECEIPT.json": "2dde49fb7cb682a65b079d1a8eaba8dc9c1a5f39a05bb7fb662936c46468b1e0"
+  },
+  "externalBlockers": [
+    "Private npm registry returns 404 for locked ws@7.5.11.",
+    "Installed npm is 10.9.2 while the repository requires 11.12.1.",
+    "Nine maintained City test files remain dependency-blocked by unavailable @babylonjs/core.",
+    "Production build and built-artifact validation remain blocked by unavailable exact dependencies.",
+    "Authenticated browser Local AI, Bridge, Creator Companion, Preview and Production certification remain pending."
+  ],
+  "workingTreeAtReceipt": [
+    " M _headers",
+    " M assets/js/chat-page.js",
+    " M assets/js/chat/ai-runtime.js",
+    " M assets/js/direct-byok/companion-client.js",
+    " M assets/js/local-ai/eon-local-bridge-client.js",
+    " M assets/js/local-ai/local-ai-page.js",
+    " M assets/js/local-ai/local-runtime-status.js",
+    " M config/generated/a15-system-disposition-registry.json",
+    " M config/local-ai-browser-contract.mjs",
+    " M docs/institutional/a15/evidence/A15_I01_SYSTEM_DISPOSITION_RECEIPT.json",
+    " M package.json",
+    " M public/_headers",
+    " M scripts/sync-local-ai-csp.mjs",
+    " M tests/unit/w476-local-ai-preference.test.mjs",
+    "?? assets/js/local-ai/eon-local-connection-authority.js",
+    "?? config/eon-creator-companion-browser-contract.mjs",
+    "?? docs/institutional/a15/evidence/A15_I12_LOCAL_CONNECTION_GATE_RECEIPT.json",
+    "?? scripts/a15-i12-local-connection-authority-gate.mjs",
+    "?? tests/unit/a15-i12-local-connection-authority.test.mjs"
+  ],
+  "receiptDigest": "sha256:c62832565e87bf3fc0ebae7e49f406c52e1d1d823efd6e0dca1d58741207f971"
+}

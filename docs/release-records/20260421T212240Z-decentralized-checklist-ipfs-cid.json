@@ -1,0 +1,34 @@
+{
+  "createdAt": "2026-04-21T21:22:40.847Z",
+  "track": "decentralized-checklist",
+  "label": "ipfs-cid",
+  "notes": "IPFS add succeeded; IPNS delegated publish blocked because no delegated publishers are configured on this node.",
+  "gitCommit": "15dc88af11551340e52bededd75fea77f641d4bd",
+  "artifacts": {
+    "arweave": {
+      "present": false
+    },
+    "ipfsIpns": {
+      "present": true,
+      "deployedAt": "2026-04-21T21:22:10.475Z",
+      "siteRoot": "C:/Users/credi/WORKSPACE/EONAPP.CH/",
+      "publishRoot": "C:\\Users\\credi\\AppData\\Local\\Temp\\eonapp-ipfs-stage-qesj9u",
+      "configPath": ".ipns-config\\eonapp-ch-ipns-config.local.json",
+      "ipnsKeyName": "eonapp-ch-site-key",
+      "ipnsKeyId": "k2k4r8lu0s69o8w5xalwwnlcnr7pdyfvxeimp81rohru4zc5gxzmiktd",
+      "ipfsHash": "QmWJtpEU6n8eXQeSYHdEJCVKKVNP1wWq77KaW4ctTdPpkU",
+      "publishError": "C:\\Users\\credi\\AppData\\Local\\Programs\\IPFS Desktop\\resources\\app.asar.unpacked\\node_modules\\kubo\\kubo\\ipfs.exe name publish --key=eonapp-ch-site-key --allow-delegated /ipfs/QmWJtpEU6n8eXQeSYHdEJCVKKVNP1wWq77KaW4ctTdPpkU failed: Error: no delegated publishers configured: add Ipns.DelegatedPublishers or use --allow-offline for local-only publishing",
+      "publishMode": {
+        "allowOffline": false,
+        "allowDelegated": true
+      },
+      "gatewayUrls": [
+        "https://k2k4r8lu0s69o8w5xalwwnlcnr7pdyfvxeimp81rohru4zc5gxzmiktd.ipns.dweb.link",
+        "https://ipfs.io/ipns/k2k4r8lu0s69o8w5xalwwnlcnr7pdyfvxeimp81rohru4zc5gxzmiktd",
+        "https://gateway.pinata.cloud/ipns/k2k4r8lu0s69o8w5xalwwnlcnr7pdyfvxeimp81rohru4zc5gxzmiktd",
+        "https://cloudflare-ipfs.com/ipns/k2k4r8lu0s69o8w5xalwwnlcnr7pdyfvxeimp81rohru4zc5gxzmiktd"
+      ],
+      "status": "ipfs-added-ipns-failed"
+    }
+  }
+}

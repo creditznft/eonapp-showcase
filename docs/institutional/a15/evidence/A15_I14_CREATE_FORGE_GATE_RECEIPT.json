@@ -1,0 +1,53 @@
+{
+  "schema": "eonapp.a15.i14.create-forge-gate-receipt.v1",
+  "generatedAt": "2026-08-04T19:07:30.489Z",
+  "wave": "I14",
+  "status": "pass",
+  "authority": {
+    "schema": "eonapp.create-continuity.a15.v1",
+    "websiteMode": "create-now",
+    "websiteOwner": "eon-forge",
+    "websiteReviewBeforeApply": true,
+    "websiteProjectContinuity": "universal-project-registry",
+    "imageDefault": "setup-required",
+    "videoDefault": "setup-required",
+    "automationLaunchMode": "plan-only",
+    "hiddenGenerationFallback": false,
+    "navigationStartsGeneration": false,
+    "navigationStartsDeployment": false,
+    "navigationStartsPublishing": false
+  },
+  "modeStatus": {
+    "image": "Setup required",
+    "video": "Setup required",
+    "website": "Create now",
+    "project": "Create now",
+    "automation": "Plan only",
+    "guide": "Plan only"
+  },
+  "simulations": {
+    "websiteHandoff": {
+      "href": "/forge?handoff=handoff_a15_i14_gate",
+      "payloadDigest": "9918f3ecd1af69ac64098e8e0e94e04d11fc11cc7e5279d43241fc041dde092a",
+      "receiptId": "handoff_receipt_handoff_a15_i14_gate"
+    },
+    "project": {
+      "projectId": "forge-0bc2721c-8bf9-47c5-8b17-0fa6faf876ba",
+      "sourceCheckErrors": 0,
+      "saved": true,
+      "registryRecords": 1,
+      "continueDestination": "forge"
+    }
+  },
+  "sourceFiles": [
+    "assets/js/create/eon-create-continuity-authority.js",
+    "assets/js/create/eon-create-catalog.js",
+    "assets/js/create/eon-create-hub.js",
+    "assets/js/forge/eon-forge-quick-build.js",
+    "assets/js/forge/forge-ai-controller.js",
+    "assets/js/projects/eon-project-registry.js",
+    "tests/unit/a15-i14-create-forge-continuity.test.mjs"
+  ],
+  "errors": [],
+  "digest": "28c49b275d1ec93c40261c61b07ac5731b953a87e6b090ac04d27d8a96cf87c4"
+}

@@ -1,0 +1,22 @@
+{
+  "schema": "eonapp.codex.w655.execution-receipt.v1",
+  "generatedAt": "",
+  "sourceCommit": "",
+  "distDigest": "",
+  "previewUrl": "",
+  "deploymentId": "",
+  "previewCertified": false,
+  "realGoogleAuth": false,
+  "signedOutZeroHeavyRequests": false,
+  "keyboardTouchGamepadParity": false,
+  "allDistrictsReviewed": false,
+  "allActiveAssetsReviewed": false,
+  "consoleErrors": null,
+  "unhandledRejections": null,
+  "overallScore": 0,
+  "criticalDefects": null,
+  "highDefects": null,
+  "ownerProductionGo": false,
+  "productionDeployed": false,
+  "productionUrl": "https://eonapp.ch"
+}

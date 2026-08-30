@@ -1,0 +1,133 @@
+{
+  "schema": "eonapp.w624f-command-district-npc-contract.2026-07-11.v1",
+  "ok": true,
+  "checks": [
+    {
+      "id": "npc-plan-valid",
+      "pass": true,
+      "detail": "bounded local plan valid"
+    },
+    {
+      "id": "four-distinct-archetypes",
+      "pass": true,
+      "detail": "project-guide, creator-technician, automation-operator, archive-workspace-guide"
+    },
+    {
+      "id": "nine-bounded-states",
+      "pass": true,
+      "detail": "idle, navigate, work, talk, listen, point, wait, recover, unavailable"
+    },
+    {
+      "id": "real-role-route-mappings",
+      "pass": true,
+      "detail": "all guides map to canonical current routes"
+    },
+    {
+      "id": "automation-proof-gated",
+      "pass": true,
+      "detail": "automation operator is dormant and receipt-bound"
+    },
+    {
+      "id": "review-requires-second-action",
+      "pass": true,
+      "detail": "all guide interactions are review-first"
+    },
+    {
+      "id": "authored-paths-only",
+      "pass": true,
+      "detail": "project-branch, creator-branch, agent-branch, archive-branch"
+    },
+    {
+      "id": "spawn-and-unstuck-clear",
+      "pass": true,
+      "detail": "all path endpoints clear protected recovery areas"
+    },
+    {
+      "id": "collision-aware-endpoints",
+      "pass": true,
+      "detail": "authored endpoints avoid W624C collision volumes"
+    },
+    {
+      "id": "weak-device-lod",
+      "pass": true,
+      "detail": "lite retains two silhouettes; disabled retains productive navigation without NPCs"
+    },
+    {
+      "id": "controller-explicit-review",
+      "pass": true,
+      "detail": "talk/listen/point/work require visible user review"
+    },
+    {
+      "id": "work-state-never-executes",
+      "pass": true,
+      "detail": "work presentation resolves without executing work"
+    },
+    {
+      "id": "clean-disposal",
+      "pass": true,
+      "detail": "local state clears on disposal"
+    },
+    {
+      "id": "station-imports-bounded-controller",
+      "pass": true,
+      "detail": "station binds W624F system"
+    },
+    {
+      "id": "visible-guide-controls",
+      "pass": true,
+      "detail": "visible review, stay and LOD controls present"
+    },
+    {
+      "id": "renderer-uses-production-plan",
+      "pass": true,
+      "detail": "renderer creates and reports bounded NPCs"
+    },
+    {
+      "id": "renderer-performance-fallback",
+      "pass": true,
+      "detail": "performance protection can reduce optional guides"
+    },
+    {
+      "id": "caption-first-accessibility",
+      "pass": true,
+      "detail": "captions, keyboard buttons and reduced-motion CSS present"
+    },
+    {
+      "id": "no-hidden-auto-navigation",
+      "pass": true,
+      "detail": "NPC contract cannot navigate"
+    },
+    {
+      "id": "no-private-commercial-mutation",
+      "pass": true,
+      "detail": "NPC module is storage/network/commercial blind"
+    },
+    {
+      "id": "no-fake-operational-claims",
+      "pass": true,
+      "detail": "no invented work or commercial status"
+    },
+    {
+      "id": "w624e-orbit-preserved",
+      "pass": true,
+      "detail": "Orbit remains present and separate"
+    },
+    {
+      "id": "w624d-wayfinder-camera-preserved",
+      "pass": true,
+      "detail": "Wayfinder and camera remain present"
+    },
+    {
+      "id": "single-runtime-owner-preserved",
+      "pass": true,
+      "detail": "W624B owner and compatibility retirement preserved"
+    },
+    {
+      "id": "no-district-expansion-or-visual-claim",
+      "pass": true,
+      "detail": "NPC source does not certify runtime art or crowd performance"
+    }
+  ],
+  "passed": 25,
+  "total": 25
+}

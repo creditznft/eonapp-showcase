@@ -1,0 +1,97 @@
+{
+  "schema": "eonapp.a15.i14.validation-receipt.v1",
+  "generatedAt": "2026-08-05T00:37:30+05:30",
+  "wave": "I14",
+  "baselineCommit": "9df995a280263378a209c8f559e073797d0749f5",
+  "title": "Create, Forge and Project Continuity",
+  "decision": "source-wave-ready-to-commit",
+  "verification": {
+    "institutionalGate": {
+      "passed": true,
+      "command": "npm run qa:a15-i14-create-forge",
+      "focusedTests": 40
+    },
+    "maintainedSourceSuite": {
+      "passed": true,
+      "maintainedFiles": 381,
+      "runnableFilesPassed": 368,
+      "dependencyBlockedFiles": 13,
+      "tests": 1468,
+      "testsPassed": 1421,
+      "testsSkipped": 47,
+      "testsFailed": 0
+    },
+    "w766ir2SourceCertification": {
+      "passed": true,
+      "criteriaPassed": 10,
+      "criteriaTotal": 10,
+      "browserCertified": false,
+      "authenticatedOfflineCertified": false
+    },
+    "repositoryAuthority": {
+      "passed": true,
+      "trackedFiles": 5507,
+      "activeModules": 536,
+      "quarantinedMissingImportFiles": 194,
+      "deterministicHtmlInputs": 31
+    },
+    "secretScan": {
+      "passed": true,
+      "textFilesScanned": 5184
+    },
+    "syntaxAndDiff": {
+      "passed": true
+    }
+  },
+  "authority": {
+    "schema": "eonapp.create-continuity.a15.v1",
+    "websiteMode": "create-now",
+    "websiteOwner": "eon-forge",
+    "websiteReviewBeforeApply": true,
+    "websiteProjectContinuity": "universal-project-registry",
+    "imageDefault": "setup-required",
+    "videoDefault": "setup-required",
+    "automationLaunchMode": "plan-only",
+    "hiddenGenerationFallback": false,
+    "navigationStartsGeneration": false,
+    "navigationStartsDeployment": false,
+    "navigationStartsPublishing": false
+  },
+  "invariants": [
+    "Website mode is a real local Create-now path through EON Forge, source checks, save and Universal Project continuity.",
+    "Image and video remain Setup required until an exact runtime/output is certified; Guide never pretends generation occurred.",
+    "Automation remains Plan only until the canonical workflow state machine is complete.",
+    "Create route handoffs are signed, expiring, single-use, work-body-free and confer no execution authority.",
+    "Forge provider output remains a proposal until explicit Apply and does not bundle GitHub, hosting, backend or deployment.",
+    "Core and City remain connected by versioned contracts only."
+  ],
+  "sourceDigests": {
+    "assets/js/create/eon-create-continuity-authority.js": "c812998e4a179eaaa08ccdd73dde34b69dcc7729122325d311b16b95068e1ef1",
+    "assets/js/create/eon-create-catalog.js": "c2d2406462d81c228b4ec2957daeadbb3709cfbca2d743a7e9c9c6082afbfa74",
+    "assets/js/create/eon-create-hub.js": "8df4b850ba81a4f08f75f4a85b75f67959066e6fd36712c256a2f6c02e6f128b",
+    "assets/js/forge/eon-forge-quick-build.js": "86f00d2c43581aa8a8c1294e317baa9d844a1e1c1720f43150a3558680985c9d",
+    "assets/js/forge/forge-ai-controller.js": "29d879f27c32d484693b79db113876bce2dc42d17640fa6c612a1572621264e5",
+    "assets/js/projects/eon-project-registry.js": "4ca81773036d8027dbdc4ccfeac4c1def20ce75daeede7a70e1a573bcfff91d6",
+    "scripts/a15-i14-create-forge-continuity-gate.mjs": "cbeb7380d498e15078db09014c1f4c89b88174cac2f2d7dd1bfdff11c3782c0f",
+    "tests/unit/a15-i14-create-forge-continuity.test.mjs": "d0fd94de6f96a62bd90ccaf985e741eed0b278719d96750a9c326e2f90534320",
+    "docs/institutional/a15/evidence/A15_I14_CREATE_FORGE_GATE_RECEIPT.json": "ee6c9d8f5b1e96dd953fdfd605ea01398520cea71349df9fef2582744ea6392f"
+  },
+  "externalBlockers": [
+    "Private npm registry returns 404 for locked ws@7.5.11.",
+    "Installed npm is 10.9.2 while the repository requires 11.12.1.",
+    "Exact Babylon-dependent maintained tests remain deferred until locked dependencies are restored.",
+    "Real owner-machine image/video output, authenticated browser Forge evidence, Preview and Production certification remain pending."
+  ],
+  "workingTreeAtReceipt": [
+    " M assets/js/create/eon-create-catalog.js",
+    " M assets/js/create/eon-create-hub.js",
+    " M config/generated/a15-system-disposition-registry.json",
+    " M docs/institutional/a15/evidence/A15_I01_SYSTEM_DISPOSITION_RECEIPT.json",
+    " M package.json",
+    "?? assets/js/create/eon-create-continuity-authority.js",
+    "?? docs/institutional/a15/evidence/A15_I14_CREATE_FORGE_GATE_RECEIPT.json",
+    "?? scripts/a15-i14-create-forge-continuity-gate.mjs",
+    "?? tests/unit/a15-i14-create-forge-continuity.test.mjs"
+  ],
+  "receiptDigest": "sha256:2f5842c8ebf9b225ba4612a07f9054e7c693e2226caf2bf0976d772fca0cfd27"
+}

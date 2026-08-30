@@ -1,0 +1,63 @@
+{
+  "schema": "eonapp.r3-f2.retired-route-surfaces.v1",
+  "archivedAt": "2026-06-25T03:55:35.794Z",
+  "rationale": "Tier-3 redirect-only source documents are preserved for audit while Cloudflare redirects remain generated from the route contract.",
+  "entries": [
+    {
+      "originalPath": "automation-studio.html",
+      "archivePath": "archive/retired-route-surfaces/original/automation-studio.html",
+      "sha256": "0c27efb5fa53468be612c103c5ed9ea69b93b2d6f5382f4bfab25c121a9eca7b",
+      "bytes": 623,
+      "classification": "tier-3-retired-redirect-source"
+    },
+    {
+      "originalPath": "device-check.html",
+      "archivePath": "archive/retired-route-surfaces/original/device-check.html",
+      "sha256": "7b8bc019fea7e2d3d29cb57f523e27f40c613a5f58ad646ff27cf186d4e5cdbc",
+      "bytes": 1716,
+      "classification": "tier-3-retired-redirect-source"
+    },
+    {
+      "originalPath": "eon-browser.html",
+      "archivePath": "archive/retired-route-surfaces/original/eon-browser.html",
+      "sha256": "47bb5d2e4ca1073998dc755b621287c602dba360266c85f05218b1adfb9ec673",
+      "bytes": 43205,
+      "classification": "tier-3-retired-redirect-source"
+    },
+    {
+      "originalPath": "music-studio.html",
+      "archivePath": "archive/retired-route-surfaces/original/music-studio.html",
+      "sha256": "70b0a71391367bd6cd9aa51de8e8acf1ad333c13a2da5a495f0f18a90d7be059",
+      "bytes": 6593,
+      "classification": "tier-3-retired-redirect-source"
+    },
+    {
+      "originalPath": "signal.html",
+      "archivePath": "archive/retired-route-surfaces/original/signal.html",
+      "sha256": "f894b77a7ea76ba7a09b198e7d3e40592d46e130531bfeee359c6dbe15a52649",
+      "bytes": 1634,
+      "classification": "tier-3-retired-redirect-source"
+    },
+    {
+      "originalPath": "tools.html",
+      "archivePath": "archive/retired-route-surfaces/original/tools.html",
+      "sha256": "542884f61bee5bfaf9d9a01933c66d667b032f3b3b906b2f841d7bdeec65ebe0",
+      "bytes": 19053,
+      "classification": "tier-3-retired-redirect-source"
+    },
+    {
+      "originalPath": "trade-sandbox.html",
+      "archivePath": "archive/retired-route-surfaces/original/trade-sandbox.html",
+      "sha256": "6f564c3d953c398a41dbab98190ef04deafd70d7be164fda2d9708ae68c59a5b",
+      "bytes": 5168,
+      "classification": "tier-3-retired-redirect-source"
+    },
+    {
+      "originalPath": "video-editor.html",
+      "archivePath": "archive/retired-route-surfaces/original/video-editor.html",
+      "sha256": "2091e3fadfd863fc13885c4d7a932dfda24a07326535f336842b934530d98651",
+      "bytes": 6555,
+      "classification": "tier-3-retired-redirect-source"
+    }
+  ]
+}

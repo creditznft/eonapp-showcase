@@ -1,0 +1,488 @@
+{
+  "schema": "eonapp.w476.b.production-browser-proof-result.v1",
+  "wave": "W476-B",
+  "status": "not-pass-or-incomplete",
+  "ok": false,
+  "sourceOnly": false,
+  "networkOptIn": true,
+  "baseUrl": "http://127.0.0.1:8790",
+  "generatedAt": "2026-07-01T20:17:36.856Z",
+  "documents": [
+    {
+      "route": "/",
+      "finalPath": "/",
+      "redirects": [],
+      "status": 200,
+      "bodyByteLength": 9191,
+      "bodySha256": "0b4d8f3778df6d14ebd03f55cf1eb858e479d022c5aedae85d19e3d300a0a4a0",
+      "markerPresent": true,
+      "headers": {
+        "contentType": "text/html",
+        "cacheControlNoStore": false,
+        "csp": {
+          "headerPresent": true,
+          "reportToDirective": true,
+          "reportUriDirective": true,
+          "hasUpgradeInsecureRequests": false
+        },
+        "reportingEndpointsPresent": true,
+        "reportToHeaderPresent": true
+      },
+      "ok": true,
+      "issues": []
+    },
+    {
+      "route": "/chat",
+      "finalPath": "/",
+      "redirects": [
+        {
+          "fromPath": "/chat",
+          "toPath": "/",
+          "status": 301
+        }
+      ],
+      "status": 200,
+      "bodyByteLength": 9191,
+      "bodySha256": "0b4d8f3778df6d14ebd03f55cf1eb858e479d022c5aedae85d19e3d300a0a4a0",
+      "markerPresent": true,
+      "headers": {
+        "contentType": "text/html",
+        "cacheControlNoStore": false,
+        "csp": {
+          "headerPresent": true,
+          "reportToDirective": true,
+          "reportUriDirective": true,
+          "hasUpgradeInsecureRequests": false
+        },
+        "reportingEndpointsPresent": true,
+        "reportToHeaderPresent": true
+      },
+      "ok": true,
+      "issues": []
+    },
+    {
+      "route": "/profile",
+      "finalPath": "/profile",
+      "redirects": [],
+      "status": 200,
+      "bodyByteLength": 13630,
+      "bodySha256": "d64f8addf6bf269d97df82551257691eeb2e70e1650576ef7f25b7ce490b7ed9",
+      "markerPresent": true,
+      "headers": {
+        "contentType": "text/html",
+        "cacheControlNoStore": false,
+        "csp": {
+          "headerPresent": true,
+          "reportToDirective": true,
+          "reportUriDirective": true,
+          "hasUpgradeInsecureRequests": true
+        },
+        "reportingEndpointsPresent": true,
+        "reportToHeaderPresent": true
+      },
+      "ok": true,
+      "issues": []
+    },
+    {
+      "route": "/local-ai",
+      "finalPath": "/local-ai",
+      "redirects": [],
+      "status": 200,
+      "bodyByteLength": 2217,
+      "bodySha256": "e313d69f6e363b629a0329b84253d544d14c60f8bf9339cdc69b854e796903ed",
+      "markerPresent": true,
+      "headers": {
+        "contentType": "text/html",
+        "cacheControlNoStore": false,
+        "csp": {
+          "headerPresent": true,
+          "reportToDirective": true,
+          "reportUriDirective": true,
+          "hasUpgradeInsecureRequests": false
+        },
+        "reportingEndpointsPresent": true,
+        "reportToHeaderPresent": true
+      },
+      "ok": true,
+      "issues": []
+    },
+    {
+      "route": "/eoncity",
+      "finalPath": "/eoncity",
+      "redirects": [],
+      "status": 200,
+      "bodyByteLength": 1815,
+      "bodySha256": "0dd3ab3d384494e950a4106960239a2f03e7a8cd16dad63f07bdabfaf2455a6d",
+      "markerPresent": true,
+      "headers": {
+        "contentType": "text/html",
+        "cacheControlNoStore": false,
+        "csp": {
+          "headerPresent": true,
+          "reportToDirective": true,
+          "reportUriDirective": true,
+          "hasUpgradeInsecureRequests": true
+        },
+        "reportingEndpointsPresent": true,
+        "reportToHeaderPresent": true
+      },
+      "ok": true,
+      "issues": []
+    },
+    {
+      "route": "/insights",
+      "finalPath": "/insights/",
+      "redirects": [
+        {
+          "fromPath": "/insights",
+          "toPath": "/insights/",
+          "status": 308
+        }
+      ],
+      "status": 200,
+      "bodyByteLength": 12787,
+      "bodySha256": "d7f71b6656ec3779cff08851710fbe6bb7040a3a8fdd5971e7c58c8e77a82e84",
+      "markerPresent": true,
+      "headers": {
+        "contentType": "text/html",
+        "cacheControlNoStore": false,
+        "csp": {
+          "headerPresent": true,
+          "reportToDirective": true,
+          "reportUriDirective": true,
+          "hasUpgradeInsecureRequests": true
+        },
+        "reportingEndpointsPresent": true,
+        "reportToHeaderPresent": true
+      },
+      "ok": true,
+      "issues": []
+    }
+  ],
+  "cspCollector": {
+    "endpoint": "/csp-report",
+    "acceptedStatus": 204,
+    "foreignDocumentStatus": 400,
+    "optionsStatus": 204,
+    "sameOriginPreflight": true,
+    "cacheControlNoStore": true,
+    "ok": true,
+    "issues": [],
+    "note": "This proves endpoint transport and rejection behavior only. An authorised browser/log review is still required to prove automatic CSP delivery and redaction at the deployed logging destination."
+  },
+  "functionMatrix": {
+    "automatedCoverage": 16,
+    "totalFunctionRoutes": 18,
+    "safeRead": [
+      {
+        "id": "actions-status",
+        "route": "/api/actions/status",
+        "status": 200,
+        "shape": {
+          "validJsonObject": true,
+          "keys": [
+            "enabled",
+            "externalEffect",
+            "ok",
+            "reason",
+            "rollout"
+          ]
+        },
+        "safeFlags": {
+          "ok": true,
+          "enabled": false
+        },
+        "ok": true,
+        "issues": []
+      },
+      {
+        "id": "auth-session",
+        "route": "/api/auth/session",
+        "status": 200,
+        "shape": {
+          "validJsonObject": true,
+          "keys": [
+            "accountDataOnly",
+            "automaticCloudBackup",
+            "automaticCrossDeviceSync",
+            "available",
+            "dataCustodyNotice",
+            "googleServicesConnected",
+            "guestUseAvailable",
+            "identityOnlyScopes",
+            "rollout",
+            "schema",
+            "signedIn"
+          ]
+        },
+        "safeFlags": {
+          "available": false,
+          "signedIn": false,
+          "guestUseAvailable": true
+        },
+        "ok": true,
+        "issues": []
+      },
+      {
+        "id": "connectors-status",
+        "route": "/api/connectors/status",
+        "status": 200,
+        "shape": {
+          "validJsonObject": true,
+          "keys": [
+            "directPostCreated",
+            "enabled",
+            "oauthStarted",
+            "ok",
+            "rollout",
+            "tokenStored"
+          ]
+        },
+        "safeFlags": {
+          "ok": true,
+          "enabled": false,
+          "tokenStored": false,
+          "directPostCreated": false
+        },
+        "ok": true,
+        "issues": []
+      },
+      {
+        "id": "deployments-status",
+        "route": "/api/deployments/status",
+        "status": 200,
+        "shape": {
+          "validJsonObject": true,
+          "keys": [
+            "cloudflareConnected",
+            "deploymentCreated",
+            "enabled",
+            "githubConnected",
+            "ok",
+            "rollout"
+          ]
+        },
+        "safeFlags": {
+          "ok": true,
+          "enabled": false,
+          "githubConnected": false,
+          "cloudflareConnected": false,
+          "deploymentCreated": false
+        },
+        "ok": true,
+        "issues": []
+      },
+      {
+        "id": "relay-status",
+        "route": "/api/relay/status",
+        "status": 200,
+        "shape": {
+          "validJsonObject": true,
+          "keys": [
+            "enabled",
+            "grantsEnabled",
+            "guestUseAvailable",
+            "ok",
+            "reason",
+            "rollout",
+            "trackingEnabled"
+          ]
+        },
+        "safeFlags": {
+          "ok": true,
+          "enabled": false,
+          "guestUseAvailable": true,
+          "trackingEnabled": false,
+          "grantsEnabled": false
+        },
+        "ok": true,
+        "issues": []
+      },
+      {
+        "id": "sync-status",
+        "route": "/api/sync/status",
+        "status": 200,
+        "shape": {
+          "validJsonObject": true,
+          "keys": [
+            "apiKeySync",
+            "automaticDeletion",
+            "automaticMerge",
+            "automaticUpload",
+            "available",
+            "backgroundSync",
+            "exclusions",
+            "identityOnly",
+            "liveReleaseApproved",
+            "localModelSync",
+            "manualProofRequired",
+            "notice",
+            "ok",
+            "rawMediaSync",
+            "rollout",
+            "schema",
+            "secureVaultSync",
+            "signedIn",
+            "status",
+            "supportedTypes"
+          ]
+        },
+        "safeFlags": {
+          "ok": true,
+          "available": false,
+          "signedIn": false,
+          "automaticUpload": false,
+          "automaticMerge": false
+        },
+        "ok": true,
+        "issues": []
+      }
+    ],
+    "deniedGet": [
+      {
+        "id": "account-delete-request",
+        "route": "/api/account/delete-request",
+        "status": 404,
+        "ok": true,
+        "issues": []
+      },
+      {
+        "id": "actions-execute",
+        "route": "/api/actions/execute",
+        "status": 404,
+        "ok": true,
+        "issues": []
+      },
+      {
+        "id": "actions-prepare",
+        "route": "/api/actions/prepare",
+        "status": 404,
+        "ok": true,
+        "issues": []
+      },
+      {
+        "id": "auth-logout",
+        "route": "/api/auth/logout",
+        "status": 404,
+        "ok": true,
+        "issues": []
+      },
+      {
+        "id": "relay-attribution-capture",
+        "route": "/api/relay/attribution/capture",
+        "status": 404,
+        "ok": true,
+        "issues": []
+      },
+      {
+        "id": "relay-claim",
+        "route": "/api/relay/claim",
+        "status": 404,
+        "ok": true,
+        "issues": []
+      },
+      {
+        "id": "relay-invites-create",
+        "route": "/api/relay/invites/create",
+        "status": 404,
+        "ok": true,
+        "issues": []
+      },
+      {
+        "id": "sync-records-tombstone",
+        "route": "/api/sync/records/tombstone",
+        "status": 404,
+        "ok": true,
+        "issues": []
+      },
+      {
+        "id": "csp-report",
+        "route": "/csp-report",
+        "status": 404,
+        "ok": true,
+        "issues": []
+      }
+    ],
+    "anonymousSyncRead": {
+      "id": "sync-records",
+      "route": "/api/sync/records",
+      "status": 503,
+      "ok": true,
+      "issues": []
+    },
+    "manualOnly": [
+      {
+        "id": "google-oauth-callback",
+        "route": "/api/auth/google/callback",
+        "reason": "Not automatically requested because an OAuth start/callback may create a flow cookie or provider redirect."
+      },
+      {
+        "id": "google-oauth-start",
+        "route": "/api/auth/google/start",
+        "reason": "Not automatically requested because an OAuth start/callback may create a flow cookie or provider redirect."
+      }
+    ],
+    "ok": true,
+    "note": "The two OAuth endpoints and all allowed conditional mutation cases stay manual/preview-only so the runner cannot create accounts, start OAuth, write relay/sync data or call any provider."
+  },
+  "browser": {
+    "status": "not-run",
+    "ok": false,
+    "reason": "browser-not-requested"
+  },
+  "manualEvidenceStillRequired": [
+    {
+      "id": "local-ai-ollama",
+      "category": "local-runtime",
+      "required": "User-triggered Ollama scan, model discovery, self-test, one harmless local EONBOT response, failure/no-cloud-fallback proof."
+    },
+    {
+      "id": "local-ai-lm-studio",
+      "category": "local-runtime",
+      "required": "User-triggered LM Studio scan, model discovery, self-test, one harmless local EONBOT response, failure/no-cloud-fallback proof."
+    },
+    {
+      "id": "local-ai-jan",
+      "category": "local-runtime",
+      "required": "User-triggered Jan scan, model discovery, self-test, one harmless local EONBOT response, failure/no-cloud-fallback proof."
+    },
+    {
+      "id": "csp-browser-delivery-and-redaction",
+      "category": "csp",
+      "required": "A same-origin synthetic browser CSP violation reaches the deployed collector; an authorised operator verifies redacted-only logs without retaining raw payloads."
+    },
+    {
+      "id": "api-conditional-negative-matrix",
+      "category": "api",
+      "required": "Preview-only review of OAuth and conditional mutation routes against the full contract with no account deletion, relay creation, sync write or provider action."
+    },
+    {
+      "id": "ga-safe-bridge",
+      "category": "privacy",
+      "required": "Confirm the default-off analytics bridge makes no remote request without explicit user consent and preserves the local-only path."
+    },
+    {
+      "id": "update-rollback-data-survival",
+      "category": "pwa-data",
+      "required": "Real install/update/rollback drill proves local data, encrypted portable recovery and Service Worker behavior on a controlled device."
+    },
+    {
+      "id": "desktop-android-ios-browser-matrix",
+      "category": "device",
+      "required": "Desktop, Android and iOS evidence covers navigation, safe areas, touch, rotate, accessibility, locale/RTL, typed fallback and consented microphone behavior."
+    },
+    {
+      "id": "owner-evidence-review",
+      "category": "release",
+      "required": "A human owner reviews redacted evidence, unresolved origins and all NOT PASS results before later non-payment certification."
+    }
+  ],
+  "productionReleaseApproved": false,
+  "paymentActivationApproved": false,
+  "dodoActivationApproved": false,
+  "localImageVideoAdapterClaimed": false,
+  "issues": [
+    "browser-observation:not-run"
+  ],
+  "note": "A green automated observation only captures redacted technical evidence. It never proves a local runtime, browser CSP delivery/log redaction, device behavior, OAuth lifecycle, rollback survival or owner GO/NO-GO."
+}

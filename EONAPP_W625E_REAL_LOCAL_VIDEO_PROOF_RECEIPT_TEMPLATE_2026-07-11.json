@@ -1,0 +1,80 @@
+{
+  "schema": "eonapp.w625e.real-local-video-proof.v1",
+  "recordedAt": null,
+  "sourceRevisionOrZipSha256": null,
+  "sourceFingerprint": null,
+  "eonappOrigin": "http://127.0.0.1:5173",
+  "comfyEndpoint": null,
+  "referenceDevice": {
+    "gpuClass": null,
+    "usableVramBytes": null,
+    "systemRamBytes": null,
+    "freeStorageBytes": null,
+    "capabilityVerdict": "pending"
+  },
+  "ownerFourGbFallback": {
+    "capabilityVerdict": "pending",
+    "submissionBlocked": null,
+    "modelDownloadStarted": null,
+    "cloudFallbackObserved": null
+  },
+  "workflow": {
+    "family": "Wan2.2 TI2V 5B reviewed native lane",
+    "mode": "image-to-video",
+    "workflowVersionOrDigest": null,
+    "standardCoreNodesOnly": null,
+    "width": 512,
+    "height": 288,
+    "frames": 33,
+    "fps": 16,
+    "batch": 1,
+    "queueConcurrency": 1,
+    "seedRecorded": null
+  },
+  "job": {
+    "promptSubmitted": null,
+    "promptIdRecorded": null,
+    "realProgressObserved": null,
+    "historyCompleted": null,
+    "outputFetched": null,
+    "outputPreviewed": null,
+    "outputPlaybackCompleted": null,
+    "outputSaved": null,
+    "outputReopened": null,
+    "generatedAndReopenedDigestMatch": null
+  },
+  "output": {
+    "container": null,
+    "bytes": null,
+    "sha256": null,
+    "reopenedSha256": null,
+    "durationSeconds": null,
+    "width": null,
+    "height": null
+  },
+  "privacy": {
+    "cloudGenerationRequestsObserved": null,
+    "providerKeysUsed": null,
+    "rawPromptInRedactedEvidence": null,
+    "referenceImageUploadedExternally": null,
+    "lanOrPublicEndpointUsed": null
+  },
+  "negativeLanes": {
+    "runtimeStoppedAndRecovered": "pending",
+    "fourGbFallback": "pending",
+    "missingModelAndRecovered": "pending",
+    "invalidInputRejected": "pending",
+    "unapprovedEndpointRejected": "pending",
+    "corsDeniedAndRecovered": "pending",
+    "cancelledAndRetried": "pending",
+    "timeoutOrCrashRecovered": "pending",
+    "lowDiskProtected": "pending",
+    "refreshResumeTruth": "pending",
+    "previewDecodeRecovery": "pending"
+  },
+  "realVideoProofPass": false,
+  "verdict": "pending",
+  "openBlockers": [
+    "real-owner-reference-device-evidence-not-yet-recorded"
+  ]
+}

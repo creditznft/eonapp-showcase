@@ -1,0 +1,28 @@
+{
+  "package": "EONAPP_W280_B1_LOCAL_SUPPORT_EVIDENCE_PACK_SOURCE_FREEZE_2026-06-25",
+  "source_tree": "EONAPP_W286_B3_CITY_OUTCOME_RELAY_SOURCE_HARDENING_FREEZE_2026-06-25",
+  "entry": "FREEZE_W280_B1_LOCAL_SUPPORT_EVIDENCE_PACK_START_HERE.md",
+  "current_wave": "W280-B1 local support evidence pack; W286-B1/B2/B3 City work-visualisation retained; W255-W290 canonical plan preserved",
+  "baseline": "EONAPP_W286_B3_CITY_OUTCOME_RELAY_SOURCE_HARDENING_FREEZE_2026-06-25",
+  "verified_local_static": {
+    "unit_tests": "279/279 passed",
+    "lint": "passed (zero warnings)",
+    "production_build": "passed (194 generated files)",
+    "w280_b1_local_support_evidence_pack": "passed; manual preview/copy/download only, no persistence or transport",
+    "w260_release_board": "passed only by preserving NO-GO",
+    "referral_cloudflare_state": "passed as source-only inactive/fail-closed proof; no remote Cloudflare/D1 state claimed",
+    "tail_static_certification": "passed: API contract, referral state, smoke, site/readiness/PWA/static quality, secret scan, production dependency audit"
+  },
+  "evidence_status": {
+    "lighthouse": "environment blocked in this sandbox; W282 requires normal browser collection",
+    "w259_w266_device_evidence": "not collected",
+    "w276_external_restore": "not collected",
+    "cloudflare_account_state": "not collected; no change authorised",
+    "w267_independent_review": "not collected",
+    "w268_observed_drills_and_named_owners": "not collected",
+    "w260_release_board": "NO-GO"
+  },
+  "referral_status": "Inactive and fail-closed. Historical platform-backend/D1 templates are source history only, not proof of a live binding. W284 owns any future activation decision.",
+  "chain_status": "W258 remains blocked pending live RPC/runtime/roles/custody/manifest and toolchain-risk closure. Browser chain integration remains disabled.",
+  "external_proof": "Preview/live behavior, real device/PWA visual evidence, update/restore drill, Cloudflare owner inventory, independent red-team/security/legal/accessibility/support evidence and release-owner decision remain open. No launch or Preview claim."
+}

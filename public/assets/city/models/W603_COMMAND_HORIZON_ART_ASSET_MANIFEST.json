@@ -1,0 +1,74 @@
+{
+  "schema": "eon.city.w603.command-horizon-art-assets.v1",
+  "generatedAt": "2026-07-04T06:58:58.388Z",
+  "source": "scripts/build-w603-command-horizon-art-assets.mjs",
+  "original": true,
+  "remoteNetwork": false,
+  "userData": false,
+  "texturelessPbr": true,
+  "assets": [
+    {
+      "id": "command-horizon-arrival-gate",
+      "role": "Arrival Gate sculptural landmark",
+      "variants": {
+        "lod2": {
+          "fileName": "command-horizon-arrival-gate-lod2.glb",
+          "bytes": 17340,
+          "sha256": "e65650d3cc34ce11687741b53917c0c634eec3034b0246d2b11e861065d8c7d0"
+        },
+        "lod1": {
+          "fileName": "command-horizon-arrival-gate-lod1.glb",
+          "bytes": 19200,
+          "sha256": "f5214572b5d806c6d3d6f1b60f3fdb77782915e834d1660af37364a02fa49b27"
+        },
+        "lod0": {
+          "fileName": "command-horizon-arrival-gate-lod0.glb",
+          "bytes": 23964,
+          "sha256": "361b3ae93f974f0a09c24b707a11f80ca02b92e0dfe71535d30788a60264101e"
+        }
+      }
+    },
+    {
+      "id": "command-horizon-command-deck",
+      "role": "Command Deck exterior art kit",
+      "variants": {
+        "lod2": {
+          "fileName": "command-horizon-command-deck-lod2.glb",
+          "bytes": 17528,
+          "sha256": "0e071d4447949822c869cf97f8dad4b301dd6e117d9ab9bd09fc1ae4f8186b3b"
+        },
+        "lod1": {
+          "fileName": "command-horizon-command-deck-lod1.glb",
+          "bytes": 18776,
+          "sha256": "aabdade088eb54fe4a0701ecce7aa5df36bde2c8e383de474a58eece888e3bb4"
+        },
+        "lod0": {
+          "fileName": "command-horizon-command-deck-lod0.glb",
+          "bytes": 22268,
+          "sha256": "9737dc4ddf6fce8430756f700c118b404c0e29f753e96f0ab22cbc3b64c1e3d5"
+        }
+      }
+    },
+    {
+      "id": "command-horizon-wayfinding",
+      "role": "Wayfinding constellation and landmark signal kit",
+      "variants": {
+        "lod2": {
+          "fileName": "command-horizon-wayfinding-lod2.glb",
+          "bytes": 11736,
+          "sha256": "9a503a10afd4662b2c5f0829ebe818af923b6a01dd818f658c4ae8f06739cd93"
+        },
+        "lod1": {
+          "fileName": "command-horizon-wayfinding-lod1.glb",
+          "bytes": 13128,
+          "sha256": "2fe189b896747c8fe42707b948a16be9b08f3570d6a3757829ed4cf92cc8c904"
+        },
+        "lod0": {
+          "fileName": "command-horizon-wayfinding-lod0.glb",
+          "bytes": 16664,
+          "sha256": "27f669911a3d3947a70616f5327e8ac2fdbba477c3a2b4317c2e2802edb9cdcb"
+        }
+      }
+    }
+  ]
+}

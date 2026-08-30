@@ -1,0 +1,31 @@
+{
+  "cases": 480,
+  "neighborChecks": 23744,
+  "maxPopulationSeedAttempt": 3,
+  "maxDrawRatio": 0.863,
+  "maxTriangleRatio": 0.466,
+  "activeSectors": {
+    "lite": {
+      "min": 9,
+      "max": 9
+    },
+    "balanced": {
+      "min": 12,
+      "max": 17
+    },
+    "cinematic": {
+      "min": 25,
+      "max": 30
+    }
+  },
+  "regionFamiliesObserved": 20,
+  "gameplayPurposesObserved": 16,
+  "contractFamiliesObserved": [
+    "anomaly",
+    "archive",
+    "companion",
+    "navigation",
+    "survey",
+    "systems"
+  ]
+}

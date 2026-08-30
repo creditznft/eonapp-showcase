@@ -1,0 +1,62 @@
+/* W188 — simplified Automations surface. Complex provider plumbing remains hidden
+   until the user has a real workflow and asks to connect it. */
+.eon-automations-shell { display: grid; gap: 1rem; }
+.eon-automations-top { margin-bottom: .25rem; }
+.eon-automation-create, .eon-automation-panel, .eon-automation-status {
+  border: 1px solid rgba(148, 163, 184, .16);
+  border-radius: 1rem;
+  background: linear-gradient(150deg, rgba(30, 41, 59, .66), rgba(15, 23, 42, .8));
+  box-shadow: 0 14px 36px rgba(2, 6, 23, .12);
+}
+.eon-automation-create { padding: 1.1rem; }
+.eon-automation-create label { display:block; color:#f8fafc; font-weight:760; margin-bottom:.6rem; }
+.eon-automation-create textarea { width:100%; resize:vertical; min-height:6.4rem; padding:.85rem; border:1px solid rgba(129,140,248,.36); border-radius:.8rem; background:rgba(2,6,23,.34); color:#f8fafc; font:inherit; line-height:1.5; }
+.eon-automation-create textarea::placeholder { color:#7e90aa; }
+.eon-automation-create-actions { display:flex; flex-wrap:wrap; align-items:center; gap:.7rem; margin-top:.75rem; }
+.eon-automation-create-actions span { color:#9fb0c7; font-size:.8rem; }
+.eon-automation-template-row { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:.7rem; }
+.eon-automation-template { display:grid; min-height:6.8rem; gap:.35rem; padding:.8rem; border:1px solid rgba(129,140,248,.22); border-radius:.85rem; background:rgba(15,23,42,.58); color:#e8edff; text-align:left; cursor:pointer; font:inherit; }
+.eon-automation-template:hover, .eon-automation-template:focus-visible { border-color:rgba(165,180,252,.6); background:rgba(67,56,202,.16); }
+.eon-automation-template strong { font-size:.85rem; }
+.eon-automation-template span { color:#a9b8cb; font-size:.76rem; line-height:1.35; }
+.eon-automation-grid { display:grid; grid-template-columns:minmax(0,1.7fr) minmax(17rem,.8fr); gap:1rem; }
+.eon-automation-panel { padding:1rem; }
+.eon-automation-panel-head { display:flex; align-items:flex-start; justify-content:space-between; gap:.8rem; margin-bottom:.85rem; }
+.eon-automation-panel-head h2 { margin:0; color:#f8fafc; font-size:1rem; }
+.eon-automation-panel-head p { margin:.35rem 0 0; color:#9fb0c7; font-size:.78rem; line-height:1.4; }
+.eon-automation-ghost-link, .eon-automation-ghost { min-height:2.15rem; padding:.4rem .6rem; border:1px solid rgba(148,163,184,.22); border-radius:.62rem; background:transparent; color:#cbd5e1; font:inherit; font-size:.76rem; text-decoration:none; cursor:pointer; }
+.eon-automation-ghost:hover, .eon-automation-ghost:focus-visible, .eon-automation-ghost-link:hover { color:#fff; border-color:rgba(165,180,252,.6); }
+.eon-automation-flow-list { display:grid; gap:.7rem; }
+.eon-automation-flow { padding:.85rem; border:1px solid rgba(148,163,184,.14); border-radius:.82rem; background:rgba(2,6,23,.25); }
+.eon-automation-flow-head { display:flex; align-items:flex-start; justify-content:space-between; gap:.7rem; }
+.eon-automation-flow h3 { margin:.16rem 0 0; color:#f8fafc; font-size:.94rem; }
+.eon-automation-eyebrow { margin:0; color:#a5b4fc; font-size:.67rem; font-weight:760; letter-spacing:.06em; text-transform:uppercase; }
+.eon-automation-flow p { margin:.55rem 0 0; color:#a9b8cb; font-size:.8rem; line-height:1.45; }
+.eon-automation-state { flex:0 0 auto; padding:.26rem .45rem; border:1px solid rgba(148,163,184,.2); border-radius:999px; color:#cbd5e1; font-size:.66rem; font-weight:740; }
+.eon-automation-state.is-ready { border-color:rgba(110,231,183,.35); color:#bbf7d0; }
+.eon-automation-flow-meta, .eon-automation-flow-actions { display:flex; flex-wrap:wrap; gap:.45rem; margin-top:.65rem; }
+.eon-automation-flow-meta span { padding:.22rem .38rem; border-radius:.45rem; background:rgba(148,163,184,.09); color:#9fb0c7; font-size:.7rem; }
+.eon-automation-flow-actions { align-items:center; }
+.eon-automation-note { color:#8fa1ba !important; font-size:.72rem !important; }
+.eon-automation-approval-list { display:grid; gap:.65rem; margin:0; padding:0; list-style:none; }
+.eon-automation-approval { display:grid; gap:.55rem; padding:.7rem; border:1px solid rgba(245,158,11,.22); border-radius:.75rem; background:rgba(120,53,15,.1); }
+.eon-automation-approval strong { display:block; color:#fef3c7; font-size:.8rem; }
+.eon-automation-approval span { display:block; margin-top:.25rem; color:#cbd5e1; font-size:.73rem; line-height:1.35; }
+.eon-automation-approval-actions { display:flex; flex-wrap:wrap; gap:.4rem; }
+.eon-automation-approval-actions button { min-height:2rem; padding:.32rem .52rem; border:1px solid rgba(148,163,184,.25); border-radius:.55rem; background:rgba(15,23,42,.5); color:#e2e8f0; font:inherit; font-size:.72rem; cursor:pointer; }
+.eon-automation-approval-actions button:first-child { border-color:rgba(110,231,183,.34); color:#bbf7d0; }
+.eon-automation-status { display:flex; flex-wrap:wrap; gap:.55rem; padding:.78rem .9rem; color:#a9b8cb; font-size:.8rem; }
+.eon-automation-status strong { color:#e8edff; }
+@media (max-width: 920px) { .eon-automation-template-row, .eon-automation-grid { grid-template-columns:1fr; } }
+@media (max-width: 600px) { .eon-automation-create-actions { align-items:flex-start; flex-direction:column; } .eon-automation-panel-head { display:grid; } }
+/* W362 — App Deck Blueprint handoff + canonical action taxonomy. */
+.eon-automation-blueprint-handoff, .eon-automation-action-taxonomy { display:grid; gap:1rem; padding:1rem; border:1px solid rgba(126, 235, 220, .26); border-radius:1rem; background:linear-gradient(135deg, rgba(10, 73, 75, .34), rgba(23, 28, 64, .64)); }
+.eon-automation-blueprint-handoff { grid-template-columns:minmax(0,1fr) auto; align-items:start; }
+.eon-automation-blueprint-handoff h2, .eon-automation-action-taxonomy h2 { margin:.2rem 0 0; color:#f8fafc; font-size:1.05rem; }
+.eon-automation-blueprint-handoff p:not(.eon-automation-eyebrow), .eon-automation-action-taxonomy p:not(.eon-automation-eyebrow) { margin:.42rem 0 0; color:#afc0d7; font-size:.82rem; line-height:1.45; }
+.eon-automation-action-taxonomy { grid-template-columns:minmax(0,1fr) minmax(21rem,.86fr); align-items:start; border-color:rgba(165, 180, 252, .24); background:linear-gradient(135deg, rgba(54, 36, 118, .36), rgba(12, 31, 58, .7)); }
+.eon-automation-action-taxonomy-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.48rem; }
+.eon-automation-action-taxonomy-grid article { min-height:3.2rem; padding:.55rem .62rem; border:1px solid rgba(168, 182, 255, .18); border-radius:.68rem; background:rgba(11, 20, 55, .46); }
+.eon-automation-action-taxonomy-grid strong { display:block; color:#edf0ff; font-size:.8rem; }
+.eon-automation-action-taxonomy-grid span { display:block; margin-top:.18rem; color:#a8b7d4; font-size:.67rem; text-transform:capitalize; }
+@media (max-width: 920px) { .eon-automation-blueprint-handoff, .eon-automation-action-taxonomy { grid-template-columns:1fr; } }

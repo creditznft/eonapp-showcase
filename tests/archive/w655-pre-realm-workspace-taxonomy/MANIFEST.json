@@ -1,0 +1,17 @@
+{
+  "schema": "eonapp.city-realm-workspace-taxonomy-test-archive.w655.2026-07-14.v1",
+  "classification": "non-certifying-historical-exact-copy",
+  "certifying": false,
+  "releaseGate": false,
+  "reason": "W655 keeps the persisted W649 runtime IDs but makes Realm Studio and Local AI the primary product roles at the western and eastern destination districts. The old test required Market to remain the first Trade Dome action.",
+  "supersededBy": [
+    "tests/unit/w649-eoncity-district-runtime.test.mjs",
+    "tests/unit/w655-eoncity-executive-certification.test.mjs"
+  ],
+  "files": [
+    {
+      "path": "tests/archive/w655-pre-realm-workspace-taxonomy/w649-eoncity-district-runtime.test.mjs",
+      "sha256": "78240d2f5d8416286d931137d6072daaa5398328a638929c8e43547e69c27321"
+    }
+  ]
+}

@@ -1,0 +1,292 @@
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: credentialless
+  Cross-Origin-Resource-Policy: same-origin
+  Origin-Agent-Cluster: ?1
+  X-DNS-Prefetch-Control: off
+  Permissions-Policy: camera=(self), microphone=(self), display-capture=(self), geolocation=(), payment=(), usb=(), serial=(), bluetooth=(), clipboard-read=(), interest-cohort=()
+  X-Permitted-Cross-Domain-Policies: none
+  Content-Security-Policy: default-src 'self'; script-src 'self' blob: https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://telegram.org https://www.googletagmanager.com https://pagead2.googlesyndication.com https://challenges.cloudflare.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: blob: https:; connect-src 'self' https: wss:; font-src 'self' data: https://cdn.jsdelivr.net; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob:; frame-src 'self' https: blob:; frame-ancestors 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests; report-to csp-endpoint; report-uri /csp-report
+  Reporting-Endpoints: csp-endpoint="/csp-report"
+  Report-To: {"group":"csp-endpoint","max_age":10886400,"endpoints":[{"url":"https://eonapp.ch/csp-report"}]}
+  NEL: {"report_to":"csp-endpoint","max_age":2592000}
+
+# W476_LOCAL_AI_CSP_START
+# W476-A5 canonical Local AI browser-to-loopback policy. This overrides the
+# global CSP only on the EONBOT and Local AI routes. It intentionally omits
+# upgrade-insecure-requests because approved local runtimes use HTTP loopback.
+# It does not allow LAN/RFC1918 hosts or arbitrary loopback ports.
+
+/
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://telegram.org https://www.googletagmanager.com https://challenges.cloudflare.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: blob: https:; connect-src 'self' https: wss: http://127.0.0.1:11434 http://127.0.0.1:1234 http://127.0.0.1:1337 http://127.0.0.1:17565 http://127.0.0.1:6767 http://127.0.0.1:8000 http://127.0.0.1:8001 http://127.0.0.1:8188 http://127.0.0.1:8189 http://localhost:11434 http://localhost:1234 http://localhost:1337 http://localhost:17565 http://localhost:6767 http://localhost:8000 http://localhost:8001 http://localhost:8188 http://localhost:8189; font-src 'self' data: https://cdn.jsdelivr.net; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob:; frame-src 'self' https: blob:; frame-ancestors 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; report-to csp-endpoint; report-uri /csp-report
+
+/index.html
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://telegram.org https://www.googletagmanager.com https://challenges.cloudflare.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: blob: https:; connect-src 'self' https: wss: http://127.0.0.1:11434 http://127.0.0.1:1234 http://127.0.0.1:1337 http://127.0.0.1:17565 http://127.0.0.1:6767 http://127.0.0.1:8000 http://127.0.0.1:8001 http://127.0.0.1:8188 http://127.0.0.1:8189 http://localhost:11434 http://localhost:1234 http://localhost:1337 http://localhost:17565 http://localhost:6767 http://localhost:8000 http://localhost:8001 http://localhost:8188 http://localhost:8189; font-src 'self' data: https://cdn.jsdelivr.net; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob:; frame-src 'self' https: blob:; frame-ancestors 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; report-to csp-endpoint; report-uri /csp-report
+
+/chat
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://telegram.org https://www.googletagmanager.com https://challenges.cloudflare.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: blob: https:; connect-src 'self' https: wss: http://127.0.0.1:11434 http://127.0.0.1:1234 http://127.0.0.1:1337 http://127.0.0.1:17565 http://127.0.0.1:6767 http://127.0.0.1:8000 http://127.0.0.1:8001 http://127.0.0.1:8188 http://127.0.0.1:8189 http://localhost:11434 http://localhost:1234 http://localhost:1337 http://localhost:17565 http://localhost:6767 http://localhost:8000 http://localhost:8001 http://localhost:8188 http://localhost:8189; font-src 'self' data: https://cdn.jsdelivr.net; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob:; frame-src 'self' https: blob:; frame-ancestors 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; report-to csp-endpoint; report-uri /csp-report
+
+/chat/
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://telegram.org https://www.googletagmanager.com https://challenges.cloudflare.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: blob: https:; connect-src 'self' https: wss: http://127.0.0.1:11434 http://127.0.0.1:1234 http://127.0.0.1:1337 http://127.0.0.1:17565 http://127.0.0.1:6767 http://127.0.0.1:8000 http://127.0.0.1:8001 http://127.0.0.1:8188 http://127.0.0.1:8189 http://localhost:11434 http://localhost:1234 http://localhost:1337 http://localhost:17565 http://localhost:6767 http://localhost:8000 http://localhost:8001 http://localhost:8188 http://localhost:8189; font-src 'self' data: https://cdn.jsdelivr.net; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob:; frame-src 'self' https: blob:; frame-ancestors 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; report-to csp-endpoint; report-uri /csp-report
+
+/chat.html
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://telegram.org https://www.googletagmanager.com https://challenges.cloudflare.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: blob: https:; connect-src 'self' https: wss: http://127.0.0.1:11434 http://127.0.0.1:1234 http://127.0.0.1:1337 http://127.0.0.1:17565 http://127.0.0.1:6767 http://127.0.0.1:8000 http://127.0.0.1:8001 http://127.0.0.1:8188 http://127.0.0.1:8189 http://localhost:11434 http://localhost:1234 http://localhost:1337 http://localhost:17565 http://localhost:6767 http://localhost:8000 http://localhost:8001 http://localhost:8188 http://localhost:8189; font-src 'self' data: https://cdn.jsdelivr.net; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob:; frame-src 'self' https: blob:; frame-ancestors 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; report-to csp-endpoint; report-uri /csp-report
+
+/local-ai
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://telegram.org https://www.googletagmanager.com https://challenges.cloudflare.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: blob: https:; connect-src 'self' https: wss: http://127.0.0.1:11434 http://127.0.0.1:1234 http://127.0.0.1:1337 http://127.0.0.1:17565 http://127.0.0.1:6767 http://127.0.0.1:8000 http://127.0.0.1:8001 http://127.0.0.1:8188 http://127.0.0.1:8189 http://localhost:11434 http://localhost:1234 http://localhost:1337 http://localhost:17565 http://localhost:6767 http://localhost:8000 http://localhost:8001 http://localhost:8188 http://localhost:8189; font-src 'self' data: https://cdn.jsdelivr.net; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob:; frame-src 'self' https: blob:; frame-ancestors 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; report-to csp-endpoint; report-uri /csp-report
+
+/local-ai/
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://telegram.org https://www.googletagmanager.com https://challenges.cloudflare.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: blob: https:; connect-src 'self' https: wss: http://127.0.0.1:11434 http://127.0.0.1:1234 http://127.0.0.1:1337 http://127.0.0.1:17565 http://127.0.0.1:6767 http://127.0.0.1:8000 http://127.0.0.1:8001 http://127.0.0.1:8188 http://127.0.0.1:8189 http://localhost:11434 http://localhost:1234 http://localhost:1337 http://localhost:17565 http://localhost:6767 http://localhost:8000 http://localhost:8001 http://localhost:8188 http://localhost:8189; font-src 'self' data: https://cdn.jsdelivr.net; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob:; frame-src 'self' https: blob:; frame-ancestors 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; report-to csp-endpoint; report-uri /csp-report
+
+/local-ai.html
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://telegram.org https://www.googletagmanager.com https://challenges.cloudflare.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: blob: https:; connect-src 'self' https: wss: http://127.0.0.1:11434 http://127.0.0.1:1234 http://127.0.0.1:1337 http://127.0.0.1:17565 http://127.0.0.1:6767 http://127.0.0.1:8000 http://127.0.0.1:8001 http://127.0.0.1:8188 http://127.0.0.1:8189 http://localhost:11434 http://localhost:1234 http://localhost:1337 http://localhost:17565 http://localhost:6767 http://localhost:8000 http://localhost:8001 http://localhost:8188 http://localhost:8189; font-src 'self' data: https://cdn.jsdelivr.net; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob:; frame-src 'self' https: blob:; frame-ancestors 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; report-to csp-endpoint; report-uri /csp-report
+# W476_LOCAL_AI_CSP_END
+
+# RT92_LOCAL_LITE_WORKER_CSP_START
+# Dedicated least-privilege policy for the reviewed browser-local worker.
+/assets/js/local-ai/browser-local-lite-worker.js
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'none'; script-src 'self' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net; connect-src 'self' https:; worker-src 'self' blob:; object-src 'none'; base-uri 'none'; report-to csp-endpoint; report-uri /csp-report
+# RT92_LOCAL_LITE_WORKER_CSP_END
+
+
+
+# A15_I12_CREATOR_COMPANION_CSP_START
+# Institutional AI V2 action-surface policy. Create and EONCITY may reach only
+# the finite Local AI loopback allowlist plus the signed 127.0.0.1 Creator Companion.
+# No LAN/RFC1918 wildcard, arbitrary port or public loopback proxy is allowed.
+
+/create
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://telegram.org https://www.googletagmanager.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: blob: https:; connect-src 'self' https: wss: http://127.0.0.1:11434 http://127.0.0.1:1234 http://127.0.0.1:1337 http://127.0.0.1:17565 http://127.0.0.1:47826 http://127.0.0.1:6767 http://127.0.0.1:8000 http://127.0.0.1:8001 http://127.0.0.1:8188 http://127.0.0.1:8189 http://localhost:11434 http://localhost:1234 http://localhost:1337 http://localhost:17565 http://localhost:6767 http://localhost:8000 http://localhost:8001 http://localhost:8188 http://localhost:8189; font-src 'self' data: https://cdn.jsdelivr.net; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob:; frame-src 'self' https: blob:; frame-ancestors 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; report-to csp-endpoint; report-uri /csp-report
+
+/create/
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://telegram.org https://www.googletagmanager.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: blob: https:; connect-src 'self' https: wss: http://127.0.0.1:11434 http://127.0.0.1:1234 http://127.0.0.1:1337 http://127.0.0.1:17565 http://127.0.0.1:47826 http://127.0.0.1:6767 http://127.0.0.1:8000 http://127.0.0.1:8001 http://127.0.0.1:8188 http://127.0.0.1:8189 http://localhost:11434 http://localhost:1234 http://localhost:1337 http://localhost:17565 http://localhost:6767 http://localhost:8000 http://localhost:8001 http://localhost:8188 http://localhost:8189; font-src 'self' data: https://cdn.jsdelivr.net; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob:; frame-src 'self' https: blob:; frame-ancestors 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; report-to csp-endpoint; report-uri /csp-report
+
+/create.html
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://telegram.org https://www.googletagmanager.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: blob: https:; connect-src 'self' https: wss: http://127.0.0.1:11434 http://127.0.0.1:1234 http://127.0.0.1:1337 http://127.0.0.1:17565 http://127.0.0.1:47826 http://127.0.0.1:6767 http://127.0.0.1:8000 http://127.0.0.1:8001 http://127.0.0.1:8188 http://127.0.0.1:8189 http://localhost:11434 http://localhost:1234 http://localhost:1337 http://localhost:17565 http://localhost:6767 http://localhost:8000 http://localhost:8001 http://localhost:8188 http://localhost:8189; font-src 'self' data: https://cdn.jsdelivr.net; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob:; frame-src 'self' https: blob:; frame-ancestors 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; report-to csp-endpoint; report-uri /csp-report
+
+/eoncity
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://telegram.org https://www.googletagmanager.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: blob: https:; connect-src 'self' https: wss: http://127.0.0.1:11434 http://127.0.0.1:1234 http://127.0.0.1:1337 http://127.0.0.1:17565 http://127.0.0.1:47826 http://127.0.0.1:6767 http://127.0.0.1:8000 http://127.0.0.1:8001 http://127.0.0.1:8188 http://127.0.0.1:8189 http://localhost:11434 http://localhost:1234 http://localhost:1337 http://localhost:17565 http://localhost:6767 http://localhost:8000 http://localhost:8001 http://localhost:8188 http://localhost:8189; font-src 'self' data: https://cdn.jsdelivr.net; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob:; frame-src 'self' https: blob:; frame-ancestors 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; report-to csp-endpoint; report-uri /csp-report
+
+/eoncity.html
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://telegram.org https://www.googletagmanager.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: blob: https:; connect-src 'self' https: wss: http://127.0.0.1:11434 http://127.0.0.1:1234 http://127.0.0.1:1337 http://127.0.0.1:17565 http://127.0.0.1:47826 http://127.0.0.1:6767 http://127.0.0.1:8000 http://127.0.0.1:8001 http://127.0.0.1:8188 http://127.0.0.1:8189 http://localhost:11434 http://localhost:1234 http://localhost:1337 http://localhost:17565 http://localhost:6767 http://localhost:8000 http://localhost:8001 http://localhost:8188 http://localhost:8189; font-src 'self' data: https://cdn.jsdelivr.net; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob:; frame-src 'self' https: blob:; frame-ancestors 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; report-to csp-endpoint; report-uri /csp-report
+# A15_I12_CREATOR_COMPANION_CSP_END
+
+# RT92_SPONSOR_TERMINAL_CSP_START
+# Voluntary Sponsor Terminal only. Fluid Player and ExoClick VAST/media authority
+# are isolated to /rewards; chat, City gameplay, Vault and billing do not inherit it.
+
+/rewards
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' blob: https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://telegram.org https://www.googletagmanager.com https://pagead2.googlesyndication.com https://challenges.cloudflare.com https://cdn.fluidplayer.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: blob: https:; connect-src 'self' https: wss:; font-src 'self' data: https://cdn.jsdelivr.net; manifest-src 'self'; media-src 'self' blob: https:; worker-src 'self' blob:; frame-src 'self' https: blob:; frame-ancestors 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests; report-to csp-endpoint; report-uri /csp-report
+
+/rewards/
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' blob: https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://telegram.org https://www.googletagmanager.com https://pagead2.googlesyndication.com https://challenges.cloudflare.com https://cdn.fluidplayer.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: blob: https:; connect-src 'self' https: wss:; font-src 'self' data: https://cdn.jsdelivr.net; manifest-src 'self'; media-src 'self' blob: https:; worker-src 'self' blob:; frame-src 'self' https: blob:; frame-ancestors 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests; report-to csp-endpoint; report-uri /csp-report
+
+/rewards.html
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' blob: https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://telegram.org https://www.googletagmanager.com https://pagead2.googlesyndication.com https://challenges.cloudflare.com https://cdn.fluidplayer.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: blob: https:; connect-src 'self' https: wss:; font-src 'self' data: https://cdn.jsdelivr.net; manifest-src 'self'; media-src 'self' blob: https:; worker-src 'self' blob:; frame-src 'self' https: blob:; frame-ancestors 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests; report-to csp-endpoint; report-uri /csp-report
+# RT92_SPONSOR_TERMINAL_CSP_END
+
+/assets/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+# W766IR2-F — formerly mutable core City models are rewritten at build time
+# into /assets/city/immutable/...<sha12>.* and persist across releases.
+/assets/city/immutable/*
+  ! Cache-Control
+  Cache-Control: public, max-age=31556952, immutable
+
+# W766IR2-D — content-hashed City binaries are immutable across shell releases.
+# New bytes must ship under a new hash-bearing URL; unchanged W649 and W659F
+# assets remain browser-local and do not create repeat Cloudflare transfers.
+/assets/city/w649/*
+  ! Cache-Control
+  Cache-Control: public, max-age=31556952, immutable
+
+/assets/city/w659f/*
+  ! Cache-Control
+  Cache-Control: public, max-age=31556952, immutable
+
+# W654 — the authenticated City shell must never point at stale runtime chunks.
+/eoncity
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/eoncity.html
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/*.html
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/tools/*
+  Cache-Control: public, max-age=300, stale-while-revalidate=3600
+
+/games/*
+  Cache-Control: public, max-age=300, stale-while-revalidate=3600
+
+/blog/*
+  Cache-Control: public, max-age=300, stale-while-revalidate=3600
+
+/sw.js
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/manifest.webmanifest
+  Cache-Control: no-cache, no-store, must-revalidate
+
+# W765R3 — release authorities and unversioned bootstraps must never resolve
+# to an older deployment at the browser, worker or edge cache layer.
+/release/*
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/build-provenance.json
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/assets/js/eon-theme-bootstrap.js
+  Cache-Control: no-cache, no-store, must-revalidate
+
+# -- Admin and operator pages: suppress crawling and iframing --
+/admin.html
+  X-Robots-Tag: noindex, nofollow, noarchive
+  Cache-Control: no-cache, no-store, must-revalidate
+
+# Telegram Mini App and inactive access-status routes may be embedded by Telegram Web.
+# The global site remains SAMEORIGIN/framed-by-self, but Telegram Web loads Mini Apps in its own WebView/iframe.
+/telegram
+  Cache-Control: no-cache, no-store, must-revalidate
+  X-Robots-Tag: noindex, nofollow, noarchive
+  ! X-Frame-Options
+  ! Cross-Origin-Opener-Policy
+  ! Cross-Origin-Embedder-Policy
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://telegram.org https://www.googletagmanager.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; connect-src 'self' https: wss:; font-src 'self' data:; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob:; frame-src 'self' https: blob:; frame-ancestors 'self' https://web.telegram.org https://webk.telegram.org https://webz.telegram.org https://*.telegram.org; object-src 'none'; base-uri 'self'; form-action 'self'
+
+/telegram/
+  Cache-Control: no-cache, no-store, must-revalidate
+  X-Robots-Tag: noindex, nofollow, noarchive
+  ! X-Frame-Options
+  ! Cross-Origin-Opener-Policy
+  ! Cross-Origin-Embedder-Policy
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://telegram.org https://www.googletagmanager.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; connect-src 'self' https: wss:; font-src 'self' data:; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob:; frame-src 'self' https: blob:; frame-ancestors 'self' https://web.telegram.org https://webk.telegram.org https://webz.telegram.org https://*.telegram.org; object-src 'none'; base-uri 'self'; form-action 'self'
+
+/telegram.html
+  Cache-Control: no-cache, no-store, must-revalidate
+  X-Robots-Tag: noindex, nofollow, noarchive
+  ! X-Frame-Options
+  ! Cross-Origin-Opener-Policy
+  ! Cross-Origin-Embedder-Policy
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://telegram.org https://www.googletagmanager.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; connect-src 'self' https: wss:; font-src 'self' data:; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob:; frame-src 'self' https: blob:; frame-ancestors 'self' https://web.telegram.org https://webk.telegram.org https://webz.telegram.org https://*.telegram.org; object-src 'none'; base-uri 'self'; form-action 'self'
+
+/reward-access.html
+  Cache-Control: no-cache, no-store, must-revalidate
+  X-Robots-Tag: noindex, nofollow, noarchive
+  ! X-Frame-Options
+  ! Cross-Origin-Opener-Policy
+  ! Cross-Origin-Embedder-Policy
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://telegram.org https://www.googletagmanager.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; connect-src 'self' https: wss:; font-src 'self' data:; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob:; frame-src 'self' https: blob:; frame-ancestors 'self' https://web.telegram.org https://webk.telegram.org https://webz.telegram.org https://*.telegram.org; object-src 'none'; base-uri 'self'; form-action 'self'
+
+/reward-access
+  Cache-Control: no-cache, no-store, must-revalidate
+  X-Robots-Tag: noindex, nofollow, noarchive
+  ! X-Frame-Options
+  ! Cross-Origin-Opener-Policy
+  ! Cross-Origin-Embedder-Policy
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://telegram.org https://www.googletagmanager.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; connect-src 'self' https: wss:; font-src 'self' data:; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob:; frame-src 'self' https: blob:; frame-ancestors 'self' https://web.telegram.org https://webk.telegram.org https://webz.telegram.org https://*.telegram.org; object-src 'none'; base-uri 'self'; form-action 'self'
+
+/reward-access/
+  Cache-Control: no-cache, no-store, must-revalidate
+  X-Robots-Tag: noindex, nofollow, noarchive
+  ! X-Frame-Options
+  ! Cross-Origin-Opener-Policy
+  ! Cross-Origin-Embedder-Policy
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://telegram.org https://www.googletagmanager.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; connect-src 'self' https: wss:; font-src 'self' data:; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob:; frame-src 'self' https: blob:; frame-ancestors 'self' https://web.telegram.org https://webk.telegram.org https://webz.telegram.org https://*.telegram.org; object-src 'none'; base-uri 'self'; form-action 'self'
+
+# Prevent stale clean-route marketplace HTML during launch proof.
+/market
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/market.html
+  Cache-Control: no-cache, no-store, must-revalidate
+
+# GPT-5.5 launch hardening: payment/supporting proof pages should never be CDN-stale.
+/subscription.html
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/billing.html
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/wallet-risk.html
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/campaign-admin.html
+  X-Robots-Tag: noindex, nofollow, noarchive
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/capsule
+  ! Cross-Origin-Opener-Policy
+  Cross-Origin-Opener-Policy: same-origin-allow-popups
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' blob: https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://telegram.org https://www.googletagmanager.com https://accounts.google.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: blob: https:; connect-src 'self' https://www.googleapis.com; font-src 'self' data: https://cdn.jsdelivr.net; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob:; frame-src 'self' https: blob:; frame-ancestors 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests; report-to csp-endpoint; report-uri /csp-report
+
+/capsule/
+  ! Cross-Origin-Opener-Policy
+  Cross-Origin-Opener-Policy: same-origin-allow-popups
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' blob: https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://telegram.org https://www.googletagmanager.com https://accounts.google.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: blob: https:; connect-src 'self' https://www.googleapis.com; font-src 'self' data: https://cdn.jsdelivr.net; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob:; frame-src 'self' https: blob:; frame-ancestors 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests; report-to csp-endpoint; report-uri /csp-report
+
+/capsule.html
+  ! Cross-Origin-Opener-Policy
+  Cross-Origin-Opener-Policy: same-origin-allow-popups
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' blob: https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://telegram.org https://www.googletagmanager.com https://accounts.google.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: blob: https:; connect-src 'self' https://www.googleapis.com; font-src 'self' data: https://cdn.jsdelivr.net; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob:; frame-src 'self' https: blob:; frame-ancestors 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests; report-to csp-endpoint; report-uri /csp-report
+
+# W612: deployment provenance must not be CDN-stale during authenticated City proof.
+/build-provenance.json
+  Cache-Control: no-cache, no-store, must-revalidate
+  X-Robots-Tag: noindex, nofollow, noarchive
+
+# RT96_GUIDES_ADSENSE_START
+# Editorial acquisition routes load the verified AdSense bootstrap. They do not
+# need cross-origin isolation; keeping COEP/COOP off here avoids interfering with
+# Google ad frames while app/local-AI routes retain their stricter runtime policy.
+/guides/*
+  ! Cross-Origin-Opener-Policy
+  ! Cross-Origin-Embedder-Policy
+
+/guides
+  ! Cross-Origin-Opener-Policy
+  ! Cross-Origin-Embedder-Policy
+# RT96_GUIDES_ADSENSE_END
+
+# RT97_1_INFOLINKS_GUIDE_CSP_START
+# Infolinks is limited to reviewed public guides; private/app routes do not inherit it.
+/guides
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' blob: 'sha256-xSyk5UnyUG1L2RSx0r5Tk5MB/mwsf3YikRnAhlykL7c=' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://telegram.org https://www.googletagmanager.com https://pagead2.googlesyndication.com https://challenges.cloudflare.com https://resources.infolinks.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: blob: https:; connect-src 'self' https: wss:; font-src 'self' data: https://cdn.jsdelivr.net; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob:; frame-src 'self' https: blob:; frame-ancestors 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests; report-to csp-endpoint; report-uri /csp-report
+
+/guides/*
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' blob: 'sha256-xSyk5UnyUG1L2RSx0r5Tk5MB/mwsf3YikRnAhlykL7c=' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://telegram.org https://www.googletagmanager.com https://pagead2.googlesyndication.com https://challenges.cloudflare.com https://resources.infolinks.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: blob: https:; connect-src 'self' https: wss:; font-src 'self' data: https://cdn.jsdelivr.net; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob:; frame-src 'self' https: blob:; frame-ancestors 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests; report-to csp-endpoint; report-uri /csp-report
+# RT97_1_INFOLINKS_GUIDE_CSP_END

@@ -1,0 +1,1111 @@
+{
+  "schema": "eonapp.a15.city-storage-inventory.v1",
+  "planningStaticModuleCount": 40,
+  "observedReferenceModuleCount": 41,
+  "directAccessModuleCount": 39,
+  "nonAccessReferenceModuleCount": 2,
+  "planningCountDiscrepancy": 1,
+  "rows": [
+    {
+      "file": "assets/js/city/city-prepared-action.js",
+      "references": [
+        "localStorage"
+      ],
+      "mechanisms": [
+        "localStorage"
+      ],
+      "directAccess": true,
+      "keys": [
+        "eon-city-mirror",
+        "eon.city.prepared-action.v1",
+        "eon:city:prepared-actions:v1"
+      ]
+    },
+    {
+      "file": "assets/js/city/city-preview-evidence.js",
+      "references": [
+        "localStorage"
+      ],
+      "mechanisms": [
+        "localStorage"
+      ],
+      "directAccess": true,
+      "keys": [
+        "eon-city-preview-${session.id}.json",
+        "eon.city.preview-evidence.w259.v1",
+        "eon:city:preview-evidence:w259:v1"
+      ]
+    },
+    {
+      "file": "assets/js/city/city-sensory-preferences.js",
+      "references": [
+        "localStorage"
+      ],
+      "mechanisms": [
+        "localStorage"
+      ],
+      "directAccess": true,
+      "keys": [
+        "eon.city.sensory-preferences.w273.v1",
+        "eon:city:sensory-preferences:v1"
+      ]
+    },
+    {
+      "file": "assets/js/city/city-work-mission.js",
+      "references": [
+        "localStorage"
+      ],
+      "mechanisms": [
+        "localStorage"
+      ],
+      "directAccess": true,
+      "keys": [
+        "eon.city.work-mission.v1",
+        "eon:city:work-missions:v1"
+      ]
+    },
+    {
+      "file": "assets/js/city/city-world-state.js",
+      "references": [
+        "localStorage"
+      ],
+      "mechanisms": [
+        "localStorage"
+      ],
+      "directAccess": true,
+      "keys": [
+        "eon-city",
+        "eon:city:state:v0",
+        "eon:city:world-state:v1",
+        "eon:operator-map:state:v1"
+      ]
+    },
+    {
+      "file": "assets/js/city/eon-city-3d-model.js",
+      "references": [
+        "localStorage"
+      ],
+      "mechanisms": [
+        "localStorage"
+      ],
+      "directAccess": true,
+      "keys": [
+        "eon.city.webgl-renderer.v2",
+        "eon:city:3d:preferences:v1"
+      ]
+    },
+    {
+      "file": "assets/js/city/eon-city-3d-proof.js",
+      "references": [
+        "localStorage"
+      ],
+      "mechanisms": [
+        "localStorage"
+      ],
+      "directAccess": true,
+      "keys": [
+        "eon.city.webgl-proof.v1",
+        "eon:city:3d:local-proof:v1"
+      ]
+    },
+    {
+      "file": "assets/js/city/eon-city-access-station.js",
+      "references": [
+        "localStorage"
+      ],
+      "mechanisms": [
+        "localStorage"
+      ],
+      "directAccess": true,
+      "keys": [
+        "eon-city-access-awaits",
+        "eon-city-access-awaits-title",
+        "eon-city-access-beacon",
+        "eon-city-access-enter-note",
+        "eon-city-access-hero-copy",
+        "eon-city-access-lead",
+        "eon-city-access-note",
+        "eon-city-access-rain",
+        "eon-city-access-skyline",
+        "eon-city-access-station",
+        "eon-city-access-title",
+        "eon-city-access-trust",
+        "eon-city-access-world",
+        "eon-city-access-world-label",
+        "eon-city-reduced-loading-overlay",
+        "eon-city-reduced-quality",
+        "eon-city-reduced-runtime-status",
+        "eon-play-kicker",
+        "eon-play-primary",
+        "eon-play-secondary",
+        "eon:city:quality-preference:v1",
+        "eonCityMove"
+      ]
+    },
+    {
+      "file": "assets/js/city/eon-city-accessibility-device-system.js",
+      "references": [
+        "localStorage"
+      ],
+      "mechanisms": [
+        "localStorage"
+      ],
+      "directAccess": true,
+      "keys": [
+        "eon-city-accessibility-actions",
+        "eon-city-accessibility-device-card",
+        "eon-city-accessibility-device-panel",
+        "eon-city-accessibility-title",
+        "eon-play-kicker",
+        "eon.city.accessibility-device.w624k.v1",
+        "eon:city:accessibility-device:w624k:v1"
+      ]
+    },
+    {
+      "file": "assets/js/city/eon-city-asset-cache-policy.js",
+      "references": [
+        "caches"
+      ],
+      "mechanisms": [
+        "CacheStorage"
+      ],
+      "directAccess": true,
+      "keys": [
+        "eon.city.asset-cache.w766ir2-d.v1",
+        "eonapp-city-assets-v1"
+      ]
+    },
+    {
+      "file": "assets/js/city/eon-city-boot-diagnostics.js",
+      "references": [
+        "sessionStorage"
+      ],
+      "mechanisms": [
+        "sessionStorage"
+      ],
+      "directAccess": true,
+      "keys": [
+        "eon.city.boot-diagnostics.w427.v1",
+        "eon:city:boot-diagnostics:v1"
+      ]
+    },
+    {
+      "file": "assets/js/city/eon-city-command-district.js",
+      "references": [
+        "localStorage"
+      ],
+      "mechanisms": [
+        "localStorage"
+      ],
+      "directAccess": true,
+      "keys": [
+        "EONBOT",
+        "eon.city.command-district.w366.v1",
+        "eon:city:command-district:v1",
+        "eonbot"
+      ]
+    },
+    {
+      "file": "assets/js/city/eon-city-eonbot-quick-work.js",
+      "references": [
+        "sessionStorage"
+      ],
+      "mechanisms": [
+        "sessionStorage"
+      ],
+      "directAccess": true,
+      "keys": [
+        "EONBOT",
+        "eon-city-eonbot-actions",
+        "eon-city-eonbot-composer-label",
+        "eon-city-eonbot-handoff",
+        "eon-city-eonbot-prepared-route",
+        "eon-city-eonbot-quick",
+        "eon-city-eonbot-quick-head",
+        "eon-city-eonbot-quick-replies",
+        "eon-city-eonbot-status",
+        "eon-city-eonbot-thread",
+        "eon-city-eonbot-truth",
+        "eon-play-eonbot-title",
+        "eon-play-kicker",
+        "eon-play-primary",
+        "eon.city.eonbot.quick-work.w659g.v2",
+        "eon:chat:pending-composer-prompt:v1",
+        "eonbot.real-reply",
+        "eoncity-quick",
+        "eoncity-quick-work"
+      ]
+    },
+    {
+      "file": "assets/js/city/eon-city-fairness-safety.js",
+      "references": [
+        "localStorage"
+      ],
+      "mechanisms": [],
+      "directAccess": false,
+      "keys": [
+        "eon-play-command-deck-card",
+        "eon-play-command-deck-grid",
+        "eon-play-command-deck-note",
+        "eon-play-fairness-title",
+        "eon-play-kicker",
+        "eon.city.fairness-safety.w565.v1",
+        "eonbotOutboundWithoutConsent"
+      ]
+    },
+    {
+      "file": "assets/js/city/eon-city-first-run.js",
+      "references": [
+        "localStorage"
+      ],
+      "mechanisms": [
+        "localStorage"
+      ],
+      "directAccess": true,
+      "keys": [
+        "eon.city.first-run.review.w592.v1",
+        "eon.city.first-run.w479.v1",
+        "eon:city:first-run:w479:v1"
+      ]
+    },
+    {
+      "file": "assets/js/city/eon-city-genuine-agent-theatre.js",
+      "references": [
+        "localStorage"
+      ],
+      "mechanisms": [
+        "localStorage"
+      ],
+      "directAccess": true,
+      "keys": [
+        "eon.city.agent-theatre-receipt.w624i.v1",
+        "eon.city.genuine-agent-theatre.w624i.v1",
+        "eon:city:genuine-agent-theatre",
+        "eon:city:genuine-agent-theatre:w624i:v1"
+      ]
+    },
+    {
+      "file": "assets/js/city/eon-city-lite-art-direction.js",
+      "references": [
+        "localStorage"
+      ],
+      "mechanisms": [
+        "localStorage"
+      ],
+      "directAccess": true,
+      "keys": [
+        "eon.city.lite-art-direction.v1",
+        "eon:city:lite:visual-preferences:v1"
+      ]
+    },
+    {
+      "file": "assets/js/city/eon-city-living-nexus-encounters.js",
+      "references": [
+        "localStorage"
+      ],
+      "mechanisms": [
+        "localStorage"
+      ],
+      "directAccess": true,
+      "keys": [
+        "eon-living-nexus-encounter",
+        "eon.city.living-nexus-encounters.w660s.v1",
+        "eon:city:living-nexus:encounters:w660s:v1",
+        "eoncity-living-nexus"
+      ]
+    },
+    {
+      "file": "assets/js/city/eon-city-living-nexus-hybrid.js",
+      "references": [
+        "localStorage"
+      ],
+      "mechanisms": [
+        "localStorage"
+      ],
+      "directAccess": true,
+      "keys": [
+        "eon-living-nexus",
+        "eon.city.expanse-streaming.w667.v1",
+        "eon.city.living-nexus-hybrid.w660p.v1",
+        "eon:city:living-nexus:w660p:v1",
+        "eoncity-living-nexus"
+      ]
+    },
+    {
+      "file": "assets/js/city/eon-city-living-nexus-panel.js",
+      "references": [
+        "sessionStorage"
+      ],
+      "mechanisms": [
+        "sessionStorage"
+      ],
+      "directAccess": true,
+      "keys": [
+        "eon-play-kicker",
+        "eon-play-living-nexus-actions",
+        "eon-play-living-nexus-advanced",
+        "eon-play-living-nexus-advanced-body",
+        "eon-play-living-nexus-atlas",
+        "eon-play-living-nexus-card",
+        "eon-play-living-nexus-cell-detail",
+        "eon-play-living-nexus-cells",
+        "eon-play-living-nexus-journey",
+        "eon-play-living-nexus-journey-copy",
+        "eon-play-living-nexus-panel",
+        "eon-play-living-nexus-portal",
+        "eon-play-living-nexus-primary-action",
+        "eon-play-living-nexus-quick-facts",
+        "eon-play-living-nexus-rare-shortcut",
+        "eon-play-living-nexus-realm-atlas",
+        "eon-play-living-nexus-realm-index",
+        "eon-play-living-nexus-review",
+        "eon-play-living-nexus-section-head",
+        "eon-play-living-nexus-title",
+        "eon-play-living-nexus-transformations",
+        "eon-play-living-nexus-window-actions",
+        "eon-play-living-nexus-world-systems",
+        "eon:city:living-nexus:product-menu-ready",
+        "eon:city:living-nexus:realm-atlas-result",
+        "eon:city:living-nexus:record-realm-discovery",
+        "eon:city:living-nexus:record-realm-visit",
+        "eon:city:living-nexus:sync-request",
+        "eon:city:living-nexus:sync-result"
+      ]
+    },
+    {
+      "file": "assets/js/city/eon-city-living-nexus-realms.js",
+      "references": [
+        "localStorage"
+      ],
+      "mechanisms": [
+        "localStorage"
+      ],
+      "directAccess": true,
+      "keys": [
+        "eon.city.living-nexus-realms.w660v.v1",
+        "eon.city.living-nexus-realms.w660x.premium.v1"
+      ]
+    },
+    {
+      "file": "assets/js/city/eon-city-membership-map.js",
+      "references": [
+        "localStorage"
+      ],
+      "mechanisms": [],
+      "directAccess": false,
+      "keys": [
+        "eon-free",
+        "eon-max",
+        "eon-play-command-deck-card",
+        "eon-play-command-deck-note",
+        "eon-play-kicker",
+        "eon-play-membership-tier",
+        "eon-play-membership-title",
+        "eon-plus",
+        "eon-power",
+        "eon-studio",
+        "eon.city.membership-map.w557.v1"
+      ]
+    },
+    {
+      "file": "assets/js/city/eon-city-performance-lab.js",
+      "references": [
+        "localStorage"
+      ],
+      "mechanisms": [
+        "localStorage"
+      ],
+      "directAccess": true,
+      "keys": [
+        "eon.city.performance-lab.w371.v1",
+        "eon:city:performance-lab:v1"
+      ]
+    },
+    {
+      "file": "assets/js/city/eon-city-play-lightweight.js",
+      "references": [
+        "sessionStorage"
+      ],
+      "mechanisms": [
+        "sessionStorage"
+      ],
+      "directAccess": true,
+      "keys": [
+        "eon-play-canvas",
+        "eon.city.lightweight-runtime.w659j.v1",
+        "eon:city:boot-trace:w659h:v1"
+      ]
+    },
+    {
+      "file": "assets/js/city/eon-city-productive-rpg-loop.js",
+      "references": [
+        "localStorage"
+      ],
+      "mechanisms": [
+        "localStorage"
+      ],
+      "directAccess": true,
+      "keys": [
+        "eon.city.productive-rpg-loop.w624g.v1",
+        "eon:city:productive-rpg:w624g:v1"
+      ]
+    },
+    {
+      "file": "assets/js/city/eon-city-project-district-manifest.js",
+      "references": [
+        "localStorage"
+      ],
+      "mechanisms": [
+        "localStorage"
+      ],
+      "directAccess": true,
+      "keys": [
+        "eon.city.project-district-manifest.w438.v1",
+        "eon:city:project-districts:v1"
+      ]
+    },
+    {
+      "file": "assets/js/city/eon-city-resume-travel.js",
+      "references": [
+        "localStorage"
+      ],
+      "mechanisms": [
+        "localStorage"
+      ],
+      "directAccess": true,
+      "keys": [
+        "eon-play-command-deck-card",
+        "eon-play-command-deck-note",
+        "eon-play-kicker",
+        "eon-play-resume-title",
+        "eon-play-travel-title",
+        "eon.city.resume-travel.w559.v1",
+        "eon:city:world-state:resume:v1"
+      ]
+    },
+    {
+      "file": "assets/js/city/eon-city-truthful-command-center.js",
+      "references": [
+        "localStorage"
+      ],
+      "mechanisms": [
+        "localStorage"
+      ],
+      "directAccess": true,
+      "keys": [
+        "eon.city.truthful-command-center.w624h.v1"
+      ]
+    },
+    {
+      "file": "assets/js/city/eon-city-validation-lab.js",
+      "references": [
+        "localStorage"
+      ],
+      "mechanisms": [
+        "localStorage"
+      ],
+      "directAccess": true,
+      "keys": [
+        "eon.city.validation-lab.w410.v1",
+        "eon:city:validation-lab:v1"
+      ]
+    },
+    {
+      "file": "assets/js/city/eon-city-vault-reveals.js",
+      "references": [
+        "localStorage"
+      ],
+      "mechanisms": [
+        "localStorage"
+      ],
+      "directAccess": true,
+      "keys": [
+        "eon-play-command-deck-card",
+        "eon-play-command-deck-grid",
+        "eon-play-command-deck-note",
+        "eon-play-cosmetic-review",
+        "eon-play-cosmetics-title",
+        "eon-play-kicker",
+        "eon.city.vault-reveals.w564.v1",
+        "eon:city:cosmetics:v1",
+        "eonbot-companion-style"
+      ]
+    },
+    {
+      "file": "assets/js/city/eon-signal-expeditions.js",
+      "references": [
+        "sessionStorage"
+      ],
+      "mechanisms": [
+        "sessionStorage"
+      ],
+      "directAccess": true,
+      "keys": [
+        "eon.city.signal-expeditions.w413.v1",
+        "eon:city:signal-expedition:v1"
+      ]
+    },
+    {
+      "file": "assets/js/city/w659g/eon-city-w659g-progression-ledger.js",
+      "references": [
+        "localStorage"
+      ],
+      "mechanisms": [
+        "localStorage"
+      ],
+      "directAccess": true,
+      "keys": [
+        "eon.city.w659g.progression.v1",
+        "eon:city:progression:w659g:v1",
+        "eon:city:verified-action",
+        "eonbot-skin",
+        "eonbot.real-reply"
+      ]
+    },
+    {
+      "file": "assets/js/city/w659g/eon-city-w659g-progression-ui.js",
+      "references": [
+        "localStorage"
+      ],
+      "mechanisms": [
+        "localStorage"
+      ],
+      "directAccess": true,
+      "keys": [
+        "eon-city-w659g-progression-style",
+        "eon-w659g-actions",
+        "eon-w659g-head",
+        "eon-w659g-list",
+        "eon-w659g-meter",
+        "eon-w659g-new",
+        "eon-w659g-panel",
+        "eon-w659g-progress",
+        "eon-w659g-reveal",
+        "eon-w659g-row",
+        "eon-w659g-stat",
+        "eon-w659g-stats",
+        "eon-w659g-status",
+        "eon-w659g-truth",
+        "eon.city.w659g.progression-ui.v1",
+        "eon:referral-qualified"
+      ]
+    },
+    {
+      "file": "assets/js/city/w659n/eon-city-w659n-product-layer.js",
+      "references": [
+        "sessionStorage"
+      ],
+      "mechanisms": [
+        "sessionStorage"
+      ],
+      "directAccess": true,
+      "keys": [
+        "EONBOT",
+        "eon-city-agent-list",
+        "eon-city-arrival-toast",
+        "eon-city-atlas-legend",
+        "eon-city-atlas-links",
+        "eon-city-atlas-map",
+        "eon-city-atlas-node",
+        "eon-city-district-identity",
+        "eon-city-nearby-prompt",
+        "eon-city-nearby-summary",
+        "eon-city-nexus-boundary",
+        "eon-city-nexus-hero",
+        "eon-city-nexus-metrics",
+        "eon-city-nexus-orb-core",
+        "eon-city-nexus-orb-mark",
+        "eon-city-nexus-overview",
+        "eon-city-nexus-station",
+        "eon-city-nexus-station-identity",
+        "eon-city-nexus-station-proximity",
+        "eon-city-nexus-work-object",
+        "eon-city-product-action-list",
+        "eon-city-product-actions",
+        "eon-city-product-card",
+        "eon-city-product-dock",
+        "eon-city-product-empty",
+        "eon-city-product-grid",
+        "eon-city-product-layer",
+        "eon-city-product-panel",
+        "eon-city-productivity-loop",
+        "eon-city-travel-grid",
+        "eon-city-travel-meta",
+        "eon-city-travel-orbit",
+        "eon-city-travel-progress",
+        "eon-city-travel-review",
+        "eon-city-travel-transition",
+        "eon-city-travel-transition-card",
+        "eon-play-eonbot-title",
+        "eon-play-kicker",
+        "eon-w659n-agent-title",
+        "eon-w659n-menu-title",
+        "eon-w659n-moon-key",
+        "eon-w659n-nearby-title",
+        "eon-w659n-neon-glow",
+        "eon-w659n-route-title",
+        "eon-w659n-travel-title",
+        "eon-w660n-nexus-title",
+        "eon.city.w659n.product-layer.v1",
+        "eon.city.w659n.world-polish-plan.v2",
+        "eon:city:district-context",
+        "eon:city:living-nexus:open-encounter",
+        "eonbot",
+        "eonbot-dock",
+        "eonbot-dock-out-of-range",
+        "eonbot-runtime-unavailable",
+        "eonbot.real-reply"
+      ]
+    },
+    {
+      "file": "assets/js/city/w660/eon-city-w660-nexus-hologram.js",
+      "references": [
+        "sessionStorage"
+      ],
+      "mechanisms": [
+        "sessionStorage"
+      ],
+      "directAccess": true,
+      "keys": [
+        "eon-city-w660-nexus-station",
+        "eon-city-w660-nexus-station-mesh",
+        "eon-city-w686-work-object",
+        "eon.city.w660.nexus-hologram.w660n.v2"
+      ]
+    },
+    {
+      "file": "assets/js/city/w731/eon-city-w731-command-hub-runtime.js",
+      "references": [
+        "localStorage",
+        "sessionStorage"
+      ],
+      "mechanisms": [
+        "localStorage",
+        "sessionStorage"
+      ],
+      "directAccess": true,
+      "keys": [
+        "EONBOT",
+        "eon-city-command-feedback",
+        "eon-city-command-hub",
+        "eon-city-command-labels",
+        "eon-city-command-menu",
+        "eon-city-command-menu-body",
+        "eon-city-command-menu-body-open",
+        "eon-city-command-menu-featured",
+        "eon-city-command-menu-grid",
+        "eon-city-command-menu-open",
+        "eon-city-command-menu-quick",
+        "eon-city-command-menu-title",
+        "eon-city-command-menu__actions",
+        "eon-city-command-missions",
+        "eon-city-command-prompt",
+        "eon-city-command-prompt-actions",
+        "eon-city-expanse-review-dialog",
+        "eon-city-expanse-review-open",
+        "eon-city-expanse-review-title",
+        "eon-city-transit-review-dialog",
+        "eon-city-transit-review-open",
+        "eon-city-transit-review-title",
+        "eon-expanse-signal-frontier",
+        "eon.city.babylon-runtime-identity.w766ir2-0.v1",
+        "eon.city.command-centre-runtime.w757.v1",
+        "eon.city.command-centre-runtime.w759.v1",
+        "eon.city.expanse.combined-asset-recovery.w770f.v1",
+        "eon.city.w759r1.presentation-diagnostics.v1",
+        "eon.expanse.my-frontier-upgrade-board.w769h.v1",
+        "eon:city:boot-trace:w737:v1",
+        "eonCityMenuOpen",
+        "eonCityMonitorsOpen",
+        "eonCityNexusOpen",
+        "eonCityShareOpen",
+        "eonbot",
+        "eonbot-dock",
+        "eonbot-nexus",
+        "eoncity-pathfinder-prime-11clips"
+      ]
+    },
+    {
+      "file": "assets/js/city/w737/eon-city-w737-missions.js",
+      "references": [
+        "localStorage"
+      ],
+      "mechanisms": [
+        "localStorage"
+      ],
+      "directAccess": true,
+      "keys": [
+        "eon.city.missions.w737.v2",
+        "eon:city:missions:w737:v2",
+        "eonbot-nexus"
+      ]
+    },
+    {
+      "file": "assets/js/city/w751/eon-city-w751-productive-stations.js",
+      "references": [
+        "localStorage"
+      ],
+      "mechanisms": [
+        "localStorage"
+      ],
+      "directAccess": true,
+      "keys": [
+        "eon.city.productive-stations.w751.v1",
+        "eon:city-w751-productive-stations-view-changed",
+        "eon:city:productive-stations:w751:v1",
+        "eonbot-nexus"
+      ]
+    },
+    {
+      "file": "assets/js/city/w752/eon-city-w752-missions-progression.js",
+      "references": [
+        "localStorage"
+      ],
+      "mechanisms": [
+        "localStorage"
+      ],
+      "directAccess": true,
+      "keys": [
+        "eon.city.missions-progression.w752.v1",
+        "eon:city-w752-missions-progression-view-changed",
+        "eonbot-nexus"
+      ]
+    },
+    {
+      "file": "assets/js/city/w756/eon-city-w756-onboarding-navigation-accessibility.js",
+      "references": [
+        "sessionStorage"
+      ],
+      "mechanisms": [
+        "sessionStorage"
+      ],
+      "directAccess": true,
+      "keys": [
+        "eon-city-w756-environment-controls",
+        "eon-city-w756-environment-title",
+        "eon-city-w756-map-launcher",
+        "eon-city-w756-onboarding",
+        "eon-city-w756-outside",
+        "eon-city-w756-outside-title",
+        "eon-city-w756-recovery-title",
+        "eon-city-w756-semantic-card",
+        "eon-city-w756-semantic-map",
+        "eon-city-w756-semantic-status",
+        "eon-city-w756-semantic-title",
+        "eon.city.onboarding-navigation-accessibility.w756.v1",
+        "eon:city:w756:onboarding-seen:v1",
+        "eonbot-guidance"
+      ]
+    },
+    {
+      "file": "assets/js/city/w766/eon-expanse-w766a-foundation.js",
+      "references": [
+        "localStorage"
+      ],
+      "mechanisms": [
+        "localStorage"
+      ],
+      "directAccess": true,
+      "keys": [
+        "EONAPP-SIGNAL-FRONTIER",
+        "eon.city.expanse.foundation.w766a.v1",
+        "eon:city:expanse:w766a:state:v1",
+        "eonbot-signal-a",
+        "eonbot-signal-b",
+        "eonbot-signal-c"
+      ]
+    }
+  ],
+  "namedKeys": [
+    "EONAPP-SIGNAL-FRONTIER",
+    "EONBOT",
+    "eon-city",
+    "eon-city-access-awaits",
+    "eon-city-access-awaits-title",
+    "eon-city-access-beacon",
+    "eon-city-access-enter-note",
+    "eon-city-access-hero-copy",
+    "eon-city-access-lead",
+    "eon-city-access-note",
+    "eon-city-access-rain",
+    "eon-city-access-skyline",
+    "eon-city-access-station",
+    "eon-city-access-title",
+    "eon-city-access-trust",
+    "eon-city-access-world",
+    "eon-city-access-world-label",
+    "eon-city-accessibility-actions",
+    "eon-city-accessibility-device-card",
+    "eon-city-accessibility-device-panel",
+    "eon-city-accessibility-title",
+    "eon-city-agent-list",
+    "eon-city-arrival-toast",
+    "eon-city-atlas-legend",
+    "eon-city-atlas-links",
+    "eon-city-atlas-map",
+    "eon-city-atlas-node",
+    "eon-city-command-feedback",
+    "eon-city-command-hub",
+    "eon-city-command-labels",
+    "eon-city-command-menu",
+    "eon-city-command-menu-body",
+    "eon-city-command-menu-body-open",
+    "eon-city-command-menu-featured",
+    "eon-city-command-menu-grid",
+    "eon-city-command-menu-open",
+    "eon-city-command-menu-quick",
+    "eon-city-command-menu-title",
+    "eon-city-command-menu__actions",
+    "eon-city-command-missions",
+    "eon-city-command-prompt",
+    "eon-city-command-prompt-actions",
+    "eon-city-district-identity",
+    "eon-city-eonbot-actions",
+    "eon-city-eonbot-composer-label",
+    "eon-city-eonbot-handoff",
+    "eon-city-eonbot-prepared-route",
+    "eon-city-eonbot-quick",
+    "eon-city-eonbot-quick-head",
+    "eon-city-eonbot-quick-replies",
+    "eon-city-eonbot-status",
+    "eon-city-eonbot-thread",
+    "eon-city-eonbot-truth",
+    "eon-city-expanse-review-dialog",
+    "eon-city-expanse-review-open",
+    "eon-city-expanse-review-title",
+    "eon-city-mirror",
+    "eon-city-nearby-prompt",
+    "eon-city-nearby-summary",
+    "eon-city-nexus-boundary",
+    "eon-city-nexus-hero",
+    "eon-city-nexus-metrics",
+    "eon-city-nexus-orb-core",
+    "eon-city-nexus-orb-mark",
+    "eon-city-nexus-overview",
+    "eon-city-nexus-station",
+    "eon-city-nexus-station-identity",
+    "eon-city-nexus-station-proximity",
+    "eon-city-nexus-work-object",
+    "eon-city-preview-${session.id}.json",
+    "eon-city-product-action-list",
+    "eon-city-product-actions",
+    "eon-city-product-card",
+    "eon-city-product-dock",
+    "eon-city-product-empty",
+    "eon-city-product-grid",
+    "eon-city-product-layer",
+    "eon-city-product-panel",
+    "eon-city-productivity-loop",
+    "eon-city-reduced-loading-overlay",
+    "eon-city-reduced-quality",
+    "eon-city-reduced-runtime-status",
+    "eon-city-transit-review-dialog",
+    "eon-city-transit-review-open",
+    "eon-city-transit-review-title",
+    "eon-city-travel-grid",
+    "eon-city-travel-meta",
+    "eon-city-travel-orbit",
+    "eon-city-travel-progress",
+    "eon-city-travel-review",
+    "eon-city-travel-transition",
+    "eon-city-travel-transition-card",
+    "eon-city-w659g-progression-style",
+    "eon-city-w660-nexus-station",
+    "eon-city-w660-nexus-station-mesh",
+    "eon-city-w686-work-object",
+    "eon-city-w756-environment-controls",
+    "eon-city-w756-environment-title",
+    "eon-city-w756-map-launcher",
+    "eon-city-w756-onboarding",
+    "eon-city-w756-outside",
+    "eon-city-w756-outside-title",
+    "eon-city-w756-recovery-title",
+    "eon-city-w756-semantic-card",
+    "eon-city-w756-semantic-map",
+    "eon-city-w756-semantic-status",
+    "eon-city-w756-semantic-title",
+    "eon-expanse-signal-frontier",
+    "eon-free",
+    "eon-living-nexus",
+    "eon-living-nexus-encounter",
+    "eon-max",
+    "eon-play-canvas",
+    "eon-play-command-deck-card",
+    "eon-play-command-deck-grid",
+    "eon-play-command-deck-note",
+    "eon-play-cosmetic-review",
+    "eon-play-cosmetics-title",
+    "eon-play-eonbot-title",
+    "eon-play-fairness-title",
+    "eon-play-kicker",
+    "eon-play-living-nexus-actions",
+    "eon-play-living-nexus-advanced",
+    "eon-play-living-nexus-advanced-body",
+    "eon-play-living-nexus-atlas",
+    "eon-play-living-nexus-card",
+    "eon-play-living-nexus-cell-detail",
+    "eon-play-living-nexus-cells",
+    "eon-play-living-nexus-journey",
+    "eon-play-living-nexus-journey-copy",
+    "eon-play-living-nexus-panel",
+    "eon-play-living-nexus-portal",
+    "eon-play-living-nexus-primary-action",
+    "eon-play-living-nexus-quick-facts",
+    "eon-play-living-nexus-rare-shortcut",
+    "eon-play-living-nexus-realm-atlas",
+    "eon-play-living-nexus-realm-index",
+    "eon-play-living-nexus-review",
+    "eon-play-living-nexus-section-head",
+    "eon-play-living-nexus-title",
+    "eon-play-living-nexus-transformations",
+    "eon-play-living-nexus-window-actions",
+    "eon-play-living-nexus-world-systems",
+    "eon-play-membership-tier",
+    "eon-play-membership-title",
+    "eon-play-primary",
+    "eon-play-resume-title",
+    "eon-play-secondary",
+    "eon-play-travel-title",
+    "eon-plus",
+    "eon-power",
+    "eon-studio",
+    "eon-w659g-actions",
+    "eon-w659g-head",
+    "eon-w659g-list",
+    "eon-w659g-meter",
+    "eon-w659g-new",
+    "eon-w659g-panel",
+    "eon-w659g-progress",
+    "eon-w659g-reveal",
+    "eon-w659g-row",
+    "eon-w659g-stat",
+    "eon-w659g-stats",
+    "eon-w659g-status",
+    "eon-w659g-truth",
+    "eon-w659n-agent-title",
+    "eon-w659n-menu-title",
+    "eon-w659n-moon-key",
+    "eon-w659n-nearby-title",
+    "eon-w659n-neon-glow",
+    "eon-w659n-route-title",
+    "eon-w659n-travel-title",
+    "eon-w660n-nexus-title",
+    "eon.city.accessibility-device.w624k.v1",
+    "eon.city.agent-theatre-receipt.w624i.v1",
+    "eon.city.asset-cache.w766ir2-d.v1",
+    "eon.city.babylon-runtime-identity.w766ir2-0.v1",
+    "eon.city.boot-diagnostics.w427.v1",
+    "eon.city.command-centre-runtime.w757.v1",
+    "eon.city.command-centre-runtime.w759.v1",
+    "eon.city.command-district.w366.v1",
+    "eon.city.eonbot.quick-work.w659g.v2",
+    "eon.city.expanse-streaming.w667.v1",
+    "eon.city.expanse.combined-asset-recovery.w770f.v1",
+    "eon.city.expanse.foundation.w766a.v1",
+    "eon.city.fairness-safety.w565.v1",
+    "eon.city.first-run.review.w592.v1",
+    "eon.city.first-run.w479.v1",
+    "eon.city.genuine-agent-theatre.w624i.v1",
+    "eon.city.lightweight-runtime.w659j.v1",
+    "eon.city.lite-art-direction.v1",
+    "eon.city.living-nexus-encounters.w660s.v1",
+    "eon.city.living-nexus-hybrid.w660p.v1",
+    "eon.city.living-nexus-realms.w660v.v1",
+    "eon.city.living-nexus-realms.w660x.premium.v1",
+    "eon.city.membership-map.w557.v1",
+    "eon.city.missions-progression.w752.v1",
+    "eon.city.missions.w737.v2",
+    "eon.city.onboarding-navigation-accessibility.w756.v1",
+    "eon.city.performance-lab.w371.v1",
+    "eon.city.prepared-action.v1",
+    "eon.city.preview-evidence.w259.v1",
+    "eon.city.productive-rpg-loop.w624g.v1",
+    "eon.city.productive-stations.w751.v1",
+    "eon.city.project-district-manifest.w438.v1",
+    "eon.city.resume-travel.w559.v1",
+    "eon.city.sensory-preferences.w273.v1",
+    "eon.city.signal-expeditions.w413.v1",
+    "eon.city.truthful-command-center.w624h.v1",
+    "eon.city.validation-lab.w410.v1",
+    "eon.city.vault-reveals.w564.v1",
+    "eon.city.w659g.progression-ui.v1",
+    "eon.city.w659g.progression.v1",
+    "eon.city.w659n.product-layer.v1",
+    "eon.city.w659n.world-polish-plan.v2",
+    "eon.city.w660.nexus-hologram.w660n.v2",
+    "eon.city.w759r1.presentation-diagnostics.v1",
+    "eon.city.webgl-proof.v1",
+    "eon.city.webgl-renderer.v2",
+    "eon.city.work-mission.v1",
+    "eon.expanse.my-frontier-upgrade-board.w769h.v1",
+    "eon:chat:pending-composer-prompt:v1",
+    "eon:city-w751-productive-stations-view-changed",
+    "eon:city-w752-missions-progression-view-changed",
+    "eon:city:3d:local-proof:v1",
+    "eon:city:3d:preferences:v1",
+    "eon:city:accessibility-device:w624k:v1",
+    "eon:city:boot-diagnostics:v1",
+    "eon:city:boot-trace:w659h:v1",
+    "eon:city:boot-trace:w737:v1",
+    "eon:city:command-district:v1",
+    "eon:city:cosmetics:v1",
+    "eon:city:district-context",
+    "eon:city:expanse:w766a:state:v1",
+    "eon:city:first-run:w479:v1",
+    "eon:city:genuine-agent-theatre",
+    "eon:city:genuine-agent-theatre:w624i:v1",
+    "eon:city:lite:visual-preferences:v1",
+    "eon:city:living-nexus:encounters:w660s:v1",
+    "eon:city:living-nexus:open-encounter",
+    "eon:city:living-nexus:product-menu-ready",
+    "eon:city:living-nexus:realm-atlas-result",
+    "eon:city:living-nexus:record-realm-discovery",
+    "eon:city:living-nexus:record-realm-visit",
+    "eon:city:living-nexus:sync-request",
+    "eon:city:living-nexus:sync-result",
+    "eon:city:living-nexus:w660p:v1",
+    "eon:city:missions:w737:v2",
+    "eon:city:performance-lab:v1",
+    "eon:city:prepared-actions:v1",
+    "eon:city:preview-evidence:w259:v1",
+    "eon:city:productive-rpg:w624g:v1",
+    "eon:city:productive-stations:w751:v1",
+    "eon:city:progression:w659g:v1",
+    "eon:city:project-districts:v1",
+    "eon:city:quality-preference:v1",
+    "eon:city:sensory-preferences:v1",
+    "eon:city:signal-expedition:v1",
+    "eon:city:state:v0",
+    "eon:city:validation-lab:v1",
+    "eon:city:verified-action",
+    "eon:city:w756:onboarding-seen:v1",
+    "eon:city:work-missions:v1",
+    "eon:city:world-state:resume:v1",
+    "eon:city:world-state:v1",
+    "eon:operator-map:state:v1",
+    "eon:referral-qualified",
+    "eonCityMenuOpen",
+    "eonCityMonitorsOpen",
+    "eonCityMove",
+    "eonCityNexusOpen",
+    "eonCityShareOpen",
+    "eonapp-city-assets-v1",
+    "eonbot",
+    "eonbot-companion-style",
+    "eonbot-dock",
+    "eonbot-dock-out-of-range",
+    "eonbot-guidance",
+    "eonbot-nexus",
+    "eonbot-runtime-unavailable",
+    "eonbot-signal-a",
+    "eonbot-signal-b",
+    "eonbot-signal-c",
+    "eonbot-skin",
+    "eonbot.real-reply",
+    "eonbotOutboundWithoutConsent",
+    "eoncity-living-nexus",
+    "eoncity-pathfinder-prime-11clips",
+    "eoncity-quick",
+    "eoncity-quick-work"
+  ]
+}

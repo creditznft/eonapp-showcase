@@ -1,0 +1,20 @@
+{
+  "schema": "eon.account-commerce-foundations.v1",
+  "version": 1,
+  "lifecycle": "design-only",
+  "active": false,
+  "featureFlags": {
+    "publicRealmPublishingActive": false,
+    "checkoutActive": false,
+    "userSellerMarketplaceActive": false,
+    "payoutActive": false,
+    "tokenSettlementActive": false
+  },
+  "boundary": {
+    "browserOnlyDesign": true,
+    "serverActivationRequired": true,
+    "automaticCloudBackup": false,
+    "automaticCrossDeviceSync": false,
+    "customerPaymentCollectionActive": false
+  }
+}

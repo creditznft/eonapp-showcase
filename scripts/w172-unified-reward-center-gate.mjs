@@ -1,0 +1,13 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const file = fs.readFileSync('assets/js/rewards/unified-reward-center.js', 'utf8');
+const page = fs.readFileSync('assets/js/reward-access-page.js', 'utf8');
+assert.match(file, /verified-rewarded-ad/);
+assert.match(file, /direct-link-sponsor-boost/);
+assert.match(file, /multitag-sponsor-boost/);
+assert.match(file, /directLinkCannotUnlockPaid:\s*true/);
+assert.match(file, /multiTagCannotUnlockPaid:\s*true/);
+assert.match(file, /paidReceiptVerified/);
+assert.match(page, /renderUnifiedRewardCenterPanel/);
+assert.match(page, /data-eon-unified-reward-center/);
+console.log('W172 unified Reward Center gate passed');

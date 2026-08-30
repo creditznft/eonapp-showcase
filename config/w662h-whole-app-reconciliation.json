@@ -1,0 +1,274 @@
+{
+  "schema": "eonapp.w662h.whole-app-reconciliation.2026-07-23.v1",
+  "authority": {
+    "video": "Recording 2026-07-23 014636.mp4",
+    "durationSeconds": 581.52,
+    "programme": "docs/W662_ORIGINAL_9_5_RECOVERY_PROGRAMME.md",
+    "localOnly": true,
+    "githubChangedByThisWave": false,
+    "productionChangedByThisWave": false
+  },
+  "statusModel": {
+    "source-remediated": "The visible source path and automated contract were repaired locally; authenticated owner-visible acceptance remains required.",
+    "human-proof-required": "The implementation exists, but the recording does not prove the accepted experience.",
+    "external-verification-required": "The result depends on a real browser, device, provider or authenticated production surface and cannot be self-certified locally."
+  },
+  "findings": [
+    {
+      "id": "live-nexus-command-field",
+      "priority": "P1",
+      "videoWindow": "00:00-00:40",
+      "status": "source-remediated",
+      "sourcePaths": [
+        "assets/js/nexus/eon-nexus-live.js",
+        "assets/css/eon-nexus-live.css"
+      ],
+      "testPaths": [
+        "tests/unit/w662d-live-nexus-recovery.test.mjs"
+      ],
+      "humanProofAccepted": false
+    },
+    {
+      "id": "ready-complete-state-truth",
+      "priority": "P0",
+      "videoWindow": "00:00-03:00",
+      "status": "source-remediated",
+      "sourcePaths": [
+        "assets/js/nexus/eon-nexus-live.js",
+        "assets/js/nexus/eon-nexus-continuity-contract.js"
+      ],
+      "testPaths": [
+        "tests/unit/w662d-live-nexus-recovery.test.mjs",
+        "tests/unit/w662c-nexus-continuity.test.mjs"
+      ],
+      "humanProofAccepted": false
+    },
+    {
+      "id": "pulse-chat-live-city-continuity",
+      "priority": "P0",
+      "videoWindow": "00:00-03:10",
+      "status": "source-remediated",
+      "sourcePaths": [
+        "assets/js/nexus/eon-nexus-app-shell.js",
+        "assets/js/nexus/eon-nexus-chat-pulse.js",
+        "assets/js/nexus/eon-nexus-continuity-contract.js",
+        "assets/js/eon-city-play-station.js"
+      ],
+      "testPaths": [
+        "tests/unit/w662c-nexus-continuity.test.mjs"
+      ],
+      "humanProofAccepted": false
+    },
+    {
+      "id": "forge-stage-path",
+      "priority": "P1",
+      "videoWindow": "01:50-02:20",
+      "status": "source-remediated",
+      "sourcePaths": [
+        "assets/js/forge/eon-forge-nexus-stage.js",
+        "assets/js/forge/eon-forge-quick-build.js",
+        "assets/css/eon-forge.css"
+      ],
+      "testPaths": [
+        "tests/unit/w662h-whole-app-reconciliation.test.mjs"
+      ],
+      "humanProofAccepted": false
+    },
+    {
+      "id": "city-primary-hud-hierarchy",
+      "priority": "P1",
+      "videoWindow": "03:10-09:41",
+      "status": "source-remediated",
+      "sourcePaths": [
+        "assets/js/eon-city-play-station.js",
+        "assets/css/eon-city-play.css"
+      ],
+      "testPaths": [
+        "tests/unit/w662h-whole-app-reconciliation.test.mjs"
+      ],
+      "humanProofAccepted": false
+    },
+    {
+      "id": "city-modal-focus-authority",
+      "priority": "P0",
+      "videoWindow": "03:50-06:50",
+      "status": "source-remediated",
+      "sourcePaths": [
+        "assets/js/city/eon-city-overlay-coordinator.js",
+        "assets/js/eon-city-play-station.js",
+        "assets/css/eon-city-play.css"
+      ],
+      "testPaths": [
+        "tests/unit/w662h-whole-app-reconciliation.test.mjs"
+      ],
+      "humanProofAccepted": false
+    },
+    {
+      "id": "camera-framing-and-occlusion",
+      "priority": "P1",
+      "videoWindow": "05:10-09:30",
+      "status": "human-proof-required",
+      "sourcePaths": [
+        "assets/js/city/eon-city-wayfinder-experience.js",
+        "assets/js/city/eon-city-play-babylon.js"
+      ],
+      "testPaths": [
+        "tests/unit/w624d-wayfinder-camera.test.mjs"
+      ],
+      "humanProofAccepted": false
+    },
+    {
+      "id": "camera-relative-input-parity",
+      "priority": "P0",
+      "videoWindow": "03:10-09:30",
+      "status": "source-remediated",
+      "sourcePaths": [
+        "assets/js/city/eon-city-camera-relative-movement.js",
+        "assets/js/city/eon-city-play-core.js"
+      ],
+      "testPaths": [
+        "tests/unit/w662-camera-relative-movement.test.mjs"
+      ],
+      "humanProofAccepted": false
+    },
+    {
+      "id": "physical-living-nexus-gateway",
+      "priority": "P0",
+      "videoWindow": "03:10-09:41",
+      "status": "source-remediated",
+      "sourcePaths": [
+        "assets/js/city/eon-city-connected-core.js",
+        "assets/js/city/eon-city-connected-core-babylon.js",
+        "assets/js/eon-city-play-station.js"
+      ],
+      "testPaths": [
+        "tests/unit/w662f-physical-living-nexus-gateway.test.mjs"
+      ],
+      "humanProofAccepted": false
+    },
+    {
+      "id": "living-nexus-technical-panel-demotion",
+      "priority": "P1",
+      "videoWindow": "05:20-09:30",
+      "status": "source-remediated",
+      "sourcePaths": [
+        "assets/js/eon-city-play-station.js",
+        "assets/css/eon-city-play.css"
+      ],
+      "testPaths": [
+        "tests/unit/w662f-physical-living-nexus-gateway.test.mjs"
+      ],
+      "humanProofAccepted": false
+    },
+    {
+      "id": "project-atlas-spatial-primary",
+      "priority": "P1",
+      "videoWindow": "00:00-03:00",
+      "status": "source-remediated",
+      "sourcePaths": [
+        "assets/js/nexus/eon-nexus-project-atlas.js",
+        "assets/css/eon-nexus-live.css"
+      ],
+      "testPaths": [
+        "tests/unit/w662e-project-atlas-spatial.test.mjs"
+      ],
+      "humanProofAccepted": false
+    },
+    {
+      "id": "cast-animation-fallback-truth",
+      "priority": "P1",
+      "videoWindow": "03:10-09:41",
+      "status": "source-remediated",
+      "sourcePaths": [
+        "assets/js/city/eon-city-cast-certification.js",
+        "config/w662g-cast-certification.json"
+      ],
+      "testPaths": [
+        "tests/unit/w662g-cast-certification.test.mjs",
+        "scripts/w662g-cast-certification-gate.mjs"
+      ],
+      "humanProofAccepted": false
+    },
+    {
+      "id": "audio-level-and-explicit-control",
+      "priority": "P1",
+      "videoWindow": "full recording",
+      "status": "source-remediated",
+      "sourcePaths": [
+        "assets/js/city/eon-city-adaptive-soundscape.js",
+        "assets/js/eon-city-play-station.js"
+      ],
+      "testPaths": [
+        "tests/unit/w662h-whole-app-reconciliation.test.mjs",
+        "tests/unit/w369-adaptive-soundscape.test.mjs"
+      ],
+      "humanProofAccepted": false
+    },
+    {
+      "id": "mobile-responsive-hud-and-nexus",
+      "priority": "P1",
+      "videoWindow": "not proven in desktop recording",
+      "status": "external-verification-required",
+      "sourcePaths": [
+        "assets/css/eon-city-play.css",
+        "assets/css/eon-nexus-live.css",
+        "assets/css/eon-app-shell.css"
+      ],
+      "testPaths": [
+        "tests/unit/w662h-whole-app-reconciliation.test.mjs"
+      ],
+      "humanProofAccepted": false
+    },
+    {
+      "id": "district-and-realm-visual-identity",
+      "priority": "P1",
+      "videoWindow": "03:10-09:41",
+      "status": "human-proof-required",
+      "sourcePaths": [
+        "assets/js/city/w649/eon-city-w649-district-manifest.js",
+        "assets/js/city/eon-city-living-nexus-realms.js"
+      ],
+      "testPaths": [
+        "tests/unit/w660v-curated-nexus-realms.test.mjs"
+      ],
+      "humanProofAccepted": false
+    },
+    {
+      "id": "functional-world-affordances",
+      "priority": "P1",
+      "videoWindow": "03:10-09:41",
+      "status": "human-proof-required",
+      "sourcePaths": [
+        "assets/js/city/eon-city-play-babylon.js",
+        "assets/js/city/eon-city-productive-rpg-loop.js"
+      ],
+      "testPaths": [
+        "tests/unit/w662g-cast-certification.test.mjs"
+      ],
+      "humanProofAccepted": false
+    },
+    {
+      "id": "provider-panel-consistency",
+      "priority": "P1",
+      "videoWindow": "whole-app route review",
+      "status": "source-remediated",
+      "sourcePaths": [
+        "vault.html",
+        "assets/css/eon-vault-v2.css",
+        "assets/js/vault/eon-vault-page.js"
+      ],
+      "testPaths": [
+        "tests/unit/w662h-whole-app-reconciliation.test.mjs",
+        "tests/unit/w244-provider-local-ai-truth.test.mjs"
+      ],
+      "humanProofAccepted": false
+    }
+  ],
+  "acceptance": {
+    "sourceGateComplete": true,
+    "authenticatedBrowserMatrixComplete": false,
+    "ownerAccepted": false,
+    "previewAuthorized": false,
+    "productionAuthorized": false
+  }
+}

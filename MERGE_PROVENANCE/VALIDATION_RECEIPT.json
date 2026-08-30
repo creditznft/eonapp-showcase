@@ -1,0 +1,110 @@
+{
+  "schema": "eonapp.w485.reconciled-validation-receipt.v2",
+  "date_ist": "2026-07-02",
+  "source_candidate": "W485 reconciled source",
+  "parents": {
+    "w484_freeze_sha256": "09f50d323791b43360111c65ddb41f49ad11267a5228a3d53c79cf3ae5cda4d9",
+    "codex_9048_delta_sha256": "7020cf6efe3b21b19a03b0f0eaa35f759f146940010b14a6e8018ae76e503120",
+    "codex_reported_main": "9048e3308c8a302be2460c5098a435381c2aa4d5"
+  },
+  "validation": {
+    "npm_ci": {
+      "status": "pass",
+      "node": "v22.16.0",
+      "npm": "10.9.2"
+    },
+    "targeted_gates": {
+      "status": "pass",
+      "gates": [
+        "w479r",
+        "w4795",
+        "w479m0",
+        "w481",
+        "w482",
+        "w483",
+        "w484",
+        "w486"
+      ],
+      "note": "W486 evidence-freshness gate preserves historical reports but prevents them from controlling current release state."
+    },
+    "unit_suite": {
+      "status": "pass",
+      "tests": 550,
+      "passed": 550,
+      "failed": 0,
+      "execution": "seven serial deterministic chunks across 163 current product test files"
+    },
+    "lint": {
+      "status": "pass",
+      "warnings": 0
+    },
+    "release_verify": {
+      "status": "pass",
+      "scope": "source verification only"
+    },
+    "build": {
+      "status": "pass",
+      "dist_files": 286,
+      "vite_benign_handle_terminated": true,
+      "note": "Final post-W486 build-production report completed successfully; minifier saved 41.49%."
+    },
+    "smoke": {
+      "status": "pass"
+    },
+    "site_audit": {
+      "status": "pass",
+      "html_files": 43,
+      "tools": 3,
+      "games": 1
+    },
+    "launch_readiness": {
+      "status": "pass",
+      "blockers": 0,
+      "warnings": 0
+    },
+    "secret_scan": {
+      "status": "pass",
+      "files_scanned": 2949,
+      "skipped_generated_binary_large": 9
+    },
+    "npm_audit_full": {
+      "status": "pass",
+      "vulnerabilities": 0
+    },
+    "npm_audit_production": {
+      "status": "pass",
+      "vulnerabilities": 0
+    },
+    "final_matrix": {
+      "status": "pass",
+      "commands": [
+        "qa:w486-evidence-freshness",
+        "lint -- --max-warnings=0",
+        "release:verify",
+        "build",
+        "smoke:build",
+        "audit:site",
+        "launch:readiness",
+        "security:secret-scan",
+        "npm audit",
+        "npm audit --omit=dev"
+      ],
+      "note": "The 550/550 current unit-suite run and targeted gates were completed in separate deterministic chunks before this final matrix."
+    }
+  },
+  "external_status": {
+    "city_live_certification": "FIX REQUIRED \u2014 historical production evidence is preserved; W485 code is not deployed yet",
+    "physical_device_proof": "NOT PROVEN",
+    "payment": "INACTIVE",
+    "direct_social_posting": "INACTIVE",
+    "local_image_video_generation": "INACTIVE",
+    "automatic_sync": "INACTIVE",
+    "iot_robotics": "INACTIVE",
+    "referral_rewards": "INACTIVE"
+  },
+  "historical_artifact_notice": {
+    "w235": "old false artifact superseded by 2/2 current test result",
+    "w238": "old false artifact superseded by 2/2 current test result"
+  },
+  "final_status": "SOURCE_VALIDATED__EXTERNAL_REBASE_DEPLOY_CITY_AND_DEVICE_PROOF_REQUIRED"
+}

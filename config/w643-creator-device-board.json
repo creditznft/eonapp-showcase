@@ -1,0 +1,11 @@
+{
+  "schema": "eonapp.creator-device-board.w643.v1",
+  "wave": "W643",
+  "candidateDigest": "not-run",
+  "ownerImage": { "status": "not-run", "receipt": null },
+  "ownerFourGbVideoFallback": { "status": "not-run", "receipt": null },
+  "supportedReferenceVideo": { "status": "not-run", "receipt": null },
+  "publicVideoGate": { "status": "closed", "copyTruthful": true, "ownerReviewed": false },
+  "ownerReviewed": false,
+  "productionVerdict": "not-run"
+}

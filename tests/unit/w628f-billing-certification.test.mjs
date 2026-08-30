@@ -1,0 +1,2 @@
+import test from 'node:test'; import assert from 'node:assert/strict'; import { buildBillingCertificationBoard, redactBillingEvidence } from '../../assets/js/billing/eon-billing-lifecycle.js';
+test('W628F source integration alone cannot certify real billing', () => { const board = buildBillingCertificationBoard({}); assert.equal(board.pass, false); assert.equal(board.passedCount, 0); assert.equal(redactBillingEvidence({ rows: [{ rawPayload: 'private' }] }).containsRawPayload, false); });

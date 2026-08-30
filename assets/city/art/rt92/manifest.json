@@ -1,0 +1,32 @@
+{
+  "schema": "eon.city.rt92.vector-art.v1",
+  "generated": true,
+  "fileCount": 24,
+  "totalBytes": 52275,
+  "files": [
+    "command-nexus.svg",
+    "command-theatre.svg",
+    "construction.svg",
+    "frontier-central.svg",
+    "frontier-creator.svg",
+    "frontier-knowledge.svg",
+    "frontier-personal.svg",
+    "frontier-signal.svg",
+    "frontier-systems.svg",
+    "frontier-transit.svg",
+    "signal-archive.svg",
+    "signal-beacon.svg",
+    "signal-gateway.svg",
+    "signal-transit.svg",
+    "signal-vault.svg",
+    "storm-gate.svg",
+    "storm-shelter.svg",
+    "storm-spire.svg",
+    "storm-stabilizer.svg",
+    "vault-reveal.svg",
+    "world-command-hub.svg",
+    "world-my-frontier.svg",
+    "world-signal-frontier.svg",
+    "world-storm-sector.svg"
+  ]
+}

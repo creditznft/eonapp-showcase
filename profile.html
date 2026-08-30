@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <script src="/assets/js/eon-theme-bootstrap.js?release=w722-2026-07-27"></script>
+  <meta name="theme-color" content="#111411" />
+  <meta property="og:site_name" content="EONAPP" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Account &amp; AI Setup — EONAPP" />
+  <meta property="og:description" content="Manage account readiness, providers and private settings with clear control." />
+  <meta property="og:url" content="https://eonapp.ch/profile" />
+  <meta property="og:image" content="https://eonapp.ch/assets/media/social/eonapp-trust-1200x630-social-v1.png?v=social-v1" />
+  <meta property="og:image:secure_url" content="https://eonapp.ch/assets/media/social/eonapp-trust-1200x630-social-v1.png?v=social-v1" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Account &amp; AI Setup — EONAPP social preview" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Account &amp; AI Setup — EONAPP" />
+  <meta name="twitter:description" content="Manage account readiness, providers and private settings with clear control." />
+  <meta name="twitter:image" content="https://eonapp.ch/assets/media/social/eonapp-trust-1200x630-social-v1.png?v=social-v1" />
+  <meta name="twitter:image:alt" content="Account &amp; AI Setup — EONAPP social preview" />
+  <meta name="eon:social-square" content="https://eonapp.ch/assets/media/social/eonapp-trust-1080x1080-social-v1.png?v=social-v1" />
+  <title>Profile & Preferences · EONAPP</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="stylesheet" href="/assets/css/base.css" />
+  <link rel="stylesheet" href="/assets/css/layout.css" />
+  <link rel="stylesheet" href="/assets/css/eon-app-shell.css" />
+  <link rel="stylesheet" href="/assets/css/eon-hubs.css" />
+  <link rel="stylesheet" href="/assets/css/eon-device-check.css" />
+  <script type="module" src="/assets/js/localStorage-shim.js"></script>
+  <link rel="stylesheet" href="/assets/css/eon-sponsored-slots.css" />
+  <link rel="canonical" href="https://eonapp.ch/profile" />
+  <meta name="robots" content="noindex, nofollow" />
+</head>
+<body data-page-type="profile" data-eon-app-shell="1" data-eon-app-page="profile" data-eon-preferences="1">
+  <a href="#profile-general" class="skip-to-content">Skip to preferences</a>
+  <main id="main" class="eon-preferences-main">
+    <header class="eon-preferences-hero">
+      <div>
+        <p class="eon-hub-kicker">Your browser, your choices</p>
+        <h1 class="eon-hub-title">Profile & preferences</h1>
+        <p class="eon-hub-subtitle">A calm place for your local profile, app choices, recovery guidance and privacy controls. Sign-in is optional; backup is always a separate, explicit choice.</p>
+      </div>
+      <div class="eon-preferences-hero-actions"><a class="eon-hub-primary" href="/vault">Open Vault</a><a class="eon-preferences-text-link" href="/capsule">Create Capsule</a></div>
+    </header>
+
+    <div class="eon-preferences-layout">
+      <aside class="eon-preferences-nav" aria-label="Preference sections">
+        <p class="eon-preferences-nav-title">Preferences</p>
+        <button type="button" data-preference-target="profile-general">General</button>
+        <button type="button" data-preference-target="profile-account-backup">Account &amp; backup</button>
+        <button type="button" data-preference-target="profile-voice-language">Voice &amp; language</button>
+        <button type="button" data-preference-target="profile-device-app">Device &amp; app</button>
+        <button type="button" data-preference-target="profile-privacy">Privacy</button>
+        <button type="button" data-preference-target="profile-sharing">Sharing</button>
+        <div class="eon-preferences-nav-note"><strong>Vault stays separate</strong><span>Recovery, backup and advanced provider keys belong in Vault—not in chat or ordinary profile fields.</span><a href="/vault">Open Vault</a></div>
+      </aside>
+
+      <div class="eon-preferences-content">
+        <section id="profile-general" class="eon-preferences-section" data-preference-section="profile-general" data-preference-active="true" aria-labelledby="profile-general-title">
+          <header class="eon-preferences-section-head">
+            <button
+              type="button"
+              class="eon-preferences-section-toggle"
+              data-preference-toggle="profile-general"
+              aria-controls="profile-general-panel"
+              aria-expanded="true">
+              <span class="eon-preferences-section-toggle-copy"><span class="eon-hub-kicker">General</span><span id="profile-general-title" class="eon-preferences-section-title">Your local profile</span><span class="eon-preferences-section-summary">Small choices that make EONAPP feel like yours, saved only in this browser profile.</span></span>
+              <span class="eon-preferences-section-chevron" aria-hidden="true"></span>
+            </button>
+          </header>
+          <div id="profile-general-panel" class="eon-preferences-section-panel">
+            <div class="eon-preferences-card-grid">
+            <article id="eon-profile-identity" class="eon-hub-card eon-profile-identity-card">
+              <p class="eon-hub-kicker">Local profile</p>
+              <div class="eon-profile-identity-row"><div id="eon-profile-avatar" class="eon-profile-avatar" aria-live="polite"></div><div><h2 id="eon-profile-alias">Loading profile…</h2><p id="eon-profile-identity-note">Creating a local profile…</p></div></div>
+              <label class="eon-profile-field" for="eon-profile-alias-input">Display name<input id="eon-profile-alias-input" type="text" maxlength="24" autocomplete="nickname" /></label>
+              <div class="eon-profile-actions"><button type="button" class="eon-hub-primary" id="eon-profile-save">Save name</button><button type="button" class="eon-record-button" id="eon-profile-remix-avatar">Generate new avatar</button></div>
+              <p id="eon-profile-status" class="eon-profile-status" role="status" aria-live="polite"></p>
+            </article>
+
+            <article id="appearance" class="eon-hub-card">
+              <p class="eon-hub-kicker">Appearance</p><h2>Theme</h2><p>Choose a dark appearance for this browser profile. Graphite is the default and balanced choice; Obsidian is crisp and minimal; Ember is warm and focused.</p>
+              <div id="eon-profile-theme-options" class="eon-theme-options" role="group" aria-label="Choose theme"><button type="button" data-eon-theme-choice="graphite">Graphite</button><button type="button" data-eon-theme-choice="obsidian">Obsidian</button><button type="button" data-eon-theme-choice="ember">Ember</button></div>
+              <p id="eon-profile-theme-status" class="eon-profile-status" aria-live="polite"></p>
+            </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="profile-account-backup" class="eon-preferences-section" data-preference-section="profile-account-backup" data-preference-active="false" aria-labelledby="profile-account-backup-title">
+          <header class="eon-preferences-section-head">
+            <button
+              type="button"
+              class="eon-preferences-section-toggle"
+              data-preference-toggle="profile-account-backup"
+              aria-controls="profile-account-backup-panel"
+              aria-expanded="false">
+              <span class="eon-preferences-section-toggle-copy"><span class="eon-hub-kicker">Account &amp; recovery</span><span id="profile-account-backup-title" class="eon-preferences-section-title">Keep identity and backup separate</span><span class="eon-preferences-section-summary">Google Login can identify an account. It cannot silently take Drive permission or copy browser-local work.</span></span>
+              <span class="eon-preferences-section-chevron" aria-hidden="true"></span>
+            </button>
+          </header>
+          <div id="profile-account-backup-panel" class="eon-preferences-section-panel" hidden>
+            <div class="eon-preferences-card-grid">
+            <article id="eon-profile-account-foundation" class="eon-hub-card eon-profile-data-custody-card eon-preferences-card-full" data-account-mode="guest-first-optional-google-identity">
+              <p class="eon-hub-kicker">Account access & local data</p>
+              <h2>Guest-first. Your work stays on this device.</h2>
+              <p id="eon-profile-account-foundation-status">Checking account and local-data boundary…</p>
+              <p id="eon-profile-account-foundation-detail" class="eon-profile-status">Checking local-data custody…</p>
+              <div class="eon-data-custody-grid" aria-label="Data custody summary"><div><strong>Google Login</strong><span>Optional account access only. It does not grant Drive access or back up this device.</span></div><div><strong>Stored on this device</strong><span>Chat, Vault, projects, Realm setup, City progress and provider settings stay local by default.</span></div><div><strong>Google Drive backup</strong><span>First approved cloud-backup lane. It uses a separate explicit encrypted-snapshot permission from the Capsule page.</span></div></div>
+              <p id="eon-profile-account-backup-warning" class="eon-data-custody-warning">Signing in does not copy local work to EONAPP or Google. One encrypted Capsule is the live all-at-once file for eligible workspace records. Treat it as your encrypted portable backup; there is no automatic cross-device sync.</p>
+              <p id="eon-profile-google-auth-mode" class="eon-profile-status">Guest mode is active. No Google account is required.</p>
+              <div class="eon-device-actions"><a class="eon-hub-primary" href="/capsule">Create or restore one Capsule</a><a href="/vault#vault-backup">Open encrypted Drive backup</a><a href="#eon-profile-recovery">Review recovery status</a><button type="button" id="eon-profile-google-login" class="eon-record-button" disabled>Continue with Google</button><button type="button" id="eon-profile-google-logout" class="eon-record-button" hidden>Sign out</button><button type="button" id="eon-profile-delete-account" class="eon-record-button" hidden>Delete cloud account</button></div>
+              <p id="eon-profile-google-auth-status" class="eon-profile-status" role="status" aria-live="polite">Google Login is optional. Your current work stays on this device.</p>
+              <p id="eon-profile-drive-backup-status" class="eon-profile-status">Checking Google Drive backup boundary…</p>
+              <p id="eon-profile-continuity-status" class="eon-profile-status">Checking data-continuity status…</p>
+              <details class="eon-preferences-disclosure">
+                <summary>Learn why backup stays separate</summary>
+                <div class="eon-preferences-disclosure-body">
+                  <p>Manual encrypted Capsule restore is the live transfer path; automatic multi-device sync is not active.</p>
+                  <p>Google Login uses identity-only scopes. It does not grant Gmail, Drive, Calendar, Contacts or YouTube access. Google Drive backup will use a separate explicit consent only when that feature is enabled.</p>
+                </div>
+              </details>
+            </article>
+
+            <article id="eon-profile-recovery" class="eon-hub-card eon-preferences-card-wide"><p class="eon-hub-kicker">Data care · manual only</p><h2>Recovery rehearsal</h2><p>Prepare a redacted local checklist before a future update or recovery drill. It never reads Vault values, makes a backup, restores data, applies an update, or certifies this device.</p><div class="eon-device-actions"><button type="button" id="eon-profile-recovery-rehearse" class="eon-record-button">Prepare redacted rehearsal</button><button type="button" id="eon-profile-recovery-clear" class="eon-record-button" disabled>Clear rehearsal history</button><a href="/capsule">Open Portable Workspace Capsule</a></div><p id="eon-profile-recovery-status" class="eon-profile-status" role="status" aria-live="polite"></p><div id="eon-profile-recovery-steps" aria-live="polite"></div></article>
+
+            <article id="capsule" class="eon-hub-card"><p class="eon-hub-kicker">One encrypted file</p><h2>Portable Workspace Capsule</h2><p>Create one encrypted file for every eligible local workspace record in this browser. It intentionally excludes provider keys, recovery secrets, wallets, payments, OAuth sessions, raw media, model files and unknown storage.</p><a href="/capsule">Open Portable Workspace Capsule</a></article>
+            </div>
+          </div>
+        </section>
+
+        <section id="profile-voice-language" class="eon-preferences-section" data-preference-section="profile-voice-language" data-preference-active="false" aria-labelledby="profile-voice-language-title">
+          <header class="eon-preferences-section-head">
+            <button
+              type="button"
+              class="eon-preferences-section-toggle"
+              data-preference-toggle="profile-voice-language"
+              aria-controls="profile-voice-language-panel"
+              aria-expanded="false">
+              <span class="eon-preferences-section-toggle-copy"><span class="eon-hub-kicker">Voice &amp; language</span><span id="profile-voice-language-title" class="eon-preferences-section-title">How EONBOT responds</span><span class="eon-preferences-section-summary">Language and voice preferences stay quietly in this browser profile. Chat follows them automatically; microphone input always needs a separate tap.</span></span>
+              <span class="eon-preferences-section-chevron" aria-hidden="true"></span>
+            </button>
+          </header>
+          <div id="profile-voice-language-panel" class="eon-preferences-section-panel" hidden>
+            <div class="eon-preferences-card-grid">
+            <article id="language" class="eon-hub-card"><p class="eon-hub-kicker">Language</p><h2>App language</h2><p id="eon-profile-language">Checking language…</p><a href="#language">Language preferences stay on this profile.</a></article>
+            <article id="eon-profile-eonbot-preferences" class="eon-hub-card eon-preferences-card-wide"><p class="eon-hub-kicker">EONBOT accessibility</p><h2>Language, voice &amp; greeting</h2><p id="eon-profile-eonbot-preferences-status">Checking EONBOT preferences…</p><label class="eon-profile-field" for="eon-profile-eonbot-language">Reply language<select id="eon-profile-eonbot-language"></select></label><label class="eon-profile-field" for="eon-profile-speech-language">Speech recognition language<select id="eon-profile-speech-language"></select></label><label class="eon-profile-toggle"><input type="checkbox" id="eon-profile-eonbot-voice-toggle" /><span>Allow spoken replies on this browser</span></label><label class="eon-profile-toggle"><input type="checkbox" id="eon-profile-eonbot-greeting-toggle" /><span>Allow EONBOT to use this local display name in a greeting</span></label><div class="eon-device-actions"><button type="button" id="eon-profile-eonbot-clear-preferences" class="eon-record-button">Reset EONBOT options</button><a href="/?voice=1">Open voice controls</a></div><p id="eon-profile-voice-reach-status" class="eon-profile-status" role="status" aria-live="polite">Checking the best no-key voice path on this device…</p><p class="eon-profile-status">Language controls stay out of the main chat header. Auto follows your app and chat language. Microphone input never starts here and still needs a separate chat tap and browser permission. When browser speech is missing, editable typing, operating-system dictation and device Read Aloud remain the honest fallbacks.</p></article>
+            <article id="eon-profile-notifications" class="eon-hub-card"><p class="eon-hub-kicker">EONBOT reminders</p><h2>In-app only</h2><p id="eon-profile-reminder-status">Checking reminder preference…</p><label class="eon-profile-toggle"><input type="checkbox" id="eon-profile-reminder-toggle" /><span>Allow optional in-app EONBOT reminders</span></label><p class="eon-profile-status">Off by default. Browser notifications and background push are not active.</p></article>
+            </div>
+          </div>
+        </section>
+
+        <section id="profile-device-app" class="eon-preferences-section" data-preference-section="profile-device-app" data-preference-active="false" aria-labelledby="profile-device-app-title">
+          <header class="eon-preferences-section-head">
+            <button
+              type="button"
+              class="eon-preferences-section-toggle"
+              data-preference-toggle="profile-device-app"
+              aria-controls="profile-device-app-panel"
+              aria-expanded="false">
+              <span class="eon-preferences-section-toggle-copy"><span class="eon-hub-kicker">Device &amp; app</span><span id="profile-device-app-title" class="eon-preferences-section-title">Use EONAPP your way</span><span class="eon-preferences-section-summary">Local AI and installation remain device-specific. Installing EONAPP does not make browser storage shared between devices.</span></span>
+              <span class="eon-preferences-section-chevron" aria-hidden="true"></span>
+            </button>
+          </header>
+          <div id="profile-device-app-panel" class="eon-preferences-section-panel" hidden>
+            <div class="eon-preferences-card-grid">
+            <article id="eon-profile-device-card" class="eon-hub-card"><p class="eon-hub-kicker">Device</p><h2>Local AI</h2><p id="eon-profile-device">Checking device…</p><div class="eon-device-actions"><button type="button" id="eon-profile-local-ai" class="eon-hub-primary">Make Local AI ready</button><a href="/local-ai#eonbot-local-ai-setup">Open Local AI status</a></div></article>
+            <article id="eon-profile-install" class="eon-hub-card"><p class="eon-hub-kicker">App & updates</p><h2>Install and update</h2><p id="eon-profile-pwa">Checking app status…</p><div class="eon-device-actions"><button type="button" id="eon-profile-install-button" class="eon-hub-primary">Install EONAPP</button><button type="button" id="eon-profile-update-button" class="eon-record-button">Check update</button></div><p id="eon-profile-pwa-status" class="eon-profile-status" role="status" aria-live="polite"></p></article>
+            </div>
+          </div>
+        </section>
+
+        <section id="profile-privacy" class="eon-preferences-section" data-preference-section="profile-privacy" data-preference-active="false" aria-labelledby="profile-privacy-title">
+          <header class="eon-preferences-section-head">
+            <button
+              type="button"
+              class="eon-preferences-section-toggle"
+              data-preference-toggle="profile-privacy"
+              aria-controls="profile-privacy-panel"
+              aria-expanded="false">
+              <span class="eon-preferences-section-toggle-copy"><span class="eon-hub-kicker">Privacy</span><span id="profile-privacy-title" class="eon-preferences-section-title">You choose what stays available</span><span class="eon-preferences-section-summary">Diagnostics and aggregate measurement are off until you choose them. Vault content, chat content and credentials remain outside measurement.</span></span>
+              <span class="eon-preferences-section-chevron" aria-hidden="true"></span>
+            </button>
+          </header>
+          <div id="profile-privacy-panel" class="eon-preferences-section-panel" hidden>
+            <div class="eon-preferences-card-grid">
+            <article id="eon-profile-measurement" class="eon-hub-card"><p class="eon-hub-kicker">Local diagnostics</p><h2>On this device only</h2><p id="eon-profile-measurement-status">Checking local diagnostics preference…</p><label class="eon-profile-toggle"><input type="checkbox" id="eon-profile-measurement-toggle" /><span>Keep redacted local diagnostics on this device</span></label><div class="eon-device-actions"><button type="button" id="eon-profile-clear-measurement" class="eon-record-button">Clear local diagnostics</button><a href="/privacy">Read privacy notes</a></div><p class="eon-profile-status">Off by default. These diagnostics stay in this browser profile and are separate from aggregate site measurement.</p></article>
+            <article id="eon-profile-aggregate-analytics" class="eon-hub-card"><p class="eon-hub-kicker">Aggregate site measurement</p><h2>Production routes only</h2><p id="eon-profile-aggregate-analytics-status">Checking aggregate measurement preference…</p><label class="eon-profile-toggle"><input type="checkbox" id="eon-profile-aggregate-analytics-toggle" /><span>Allow minimal Google Analytics route measurement on this browser</span></label><div class="eon-device-actions"><a href="/privacy#aggregate-measurement">Read what is measured</a></div><p class="eon-profile-status">Off until you choose it. When enabled on the production site, EONAPP sends only approved logical route IDs—not chats, files, Vault contents, credentials, identity, OAuth information, signed links, local model names or raw URLs.</p></article>
+            </div>
+          </div>
+        </section>
+
+        <section id="profile-sharing" class="eon-preferences-section" data-preference-section="profile-sharing" data-preference-active="false" aria-labelledby="profile-sharing-title">
+          <header class="eon-preferences-section-head">
+            <button
+              type="button"
+              class="eon-preferences-section-toggle"
+              data-preference-toggle="profile-sharing"
+              aria-controls="profile-sharing-panel"
+              aria-expanded="false">
+              <span class="eon-preferences-section-toggle-copy"><span class="eon-hub-kicker">Sharing</span><span id="profile-sharing-title" class="eon-preferences-section-title">Share only what you choose</span><span class="eon-preferences-section-summary">Signed EONAPP links are created locally. They do not publish private work or activate rewards, payouts or tracking.</span></span>
+              <span class="eon-preferences-section-chevron" aria-hidden="true"></span>
+            </button>
+          </header>
+          <div id="profile-sharing-panel" class="eon-preferences-section-panel" hidden>
+            <div class="eon-preferences-card-grid">
+            <article id="eon-profile-share-center" class="eon-hub-card eon-preferences-card-wide"><p class="eon-hub-kicker">EON Share</p><h2>Share a simple invite</h2><p>Create a signed EONAPP, EON City, or portable Realm identity link. Nothing here publishes private work, creates a public store, tracks clicks, or activates rewards, payouts, or scheduling.</p><div class="eon-device-actions"><button type="button" id="eon-profile-open-share-center" class="eon-hub-primary">Open EON Share</button><a href="/realm-studio">Prepare My Realm</a></div><p id="eon-profile-share-status" class="eon-profile-status" role="status" aria-live="polite"></p></article>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+  <script type="module" src="/assets/js/eon-app-shell.js"></script>
+  <script type="module" src="/assets/js/profile-page.js"></script>
+  <script type="module">import { installW632CustodyPanel } from "/assets/js/account/eon-account-vault-custody.js"; const run = () => installW632CustodyPanel(); if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", run, { once: true }); else run();</script>
+  <script type="module" src="/assets/js/monetization/eon-monetization-preferences.js"></script>
+</body>
+</html>

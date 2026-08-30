@@ -1,0 +1,58 @@
+{
+  "schema": "eonapp.institutional-authority.w701.v1",
+  "wave": "W701",
+  "generatedAt": "2026-07-25T12:00:00.000Z",
+  "programme": "W701-W719 institutional-grade completion",
+  "acceptedPlan": "EONAPP_W701_W719_INSTITUTIONAL_GRADE_COMPLETION_MASTER_PLAN_2026-07-25.md",
+  "localBranch": "local/w701-w703-institutional-foundation",
+  "sourceAuthority": {
+    "verifiedW700SourceCommit": "81abf9d99b43aa8a08508f6d3a7bab660a8991ab",
+    "verifiedW700SourceTree": "c07ad6ba78b486a89d5381640bc12b195ddf2c3a",
+    "verifiedW700SourceFileCount": 4653,
+    "verifiedW700AggregateSha256": "4b353f3e0da8adf128bb288c95a64959ef004bf6dd1f41148442280c432966a7",
+    "liveW700ReleaseCommit": "afc74c0de5517b4e96891d6d8d6e9f529ef952a3",
+    "liveCandidateDigest": "c1a2c100726ff85adc0a7ae3cfd060cd81b8b50f861cd9139d68d922dba5055c",
+    "liveDomain": "eonapp.ch",
+    "liveProvider": "Cloudflare Pages",
+    "releaseDeltaCommits": [
+      "196b8286bad2f26e8baad25dfde2e7f3a6154f10",
+      "cea4b3fec38807c6b21652030830c8e0cf255811",
+      "539318b165b985e2ffef7b298c4beb3c646df416",
+      "439db4a8a9a20550970e19ef06d1fa0b13c01e42",
+      "3c9647678455df12fdaba3d52e408cf3b9c208a1",
+      "4551e2d014ade2994a6e8539e2ff661fdb8d307d",
+      "afc74c0de5517b4e96891d6d8d6e9f529ef952a3"
+    ],
+    "localReleaseDeltaApplied": false,
+    "candidateFreezeBlockedUntilLiveDeltaReconciled": true,
+    "reconciliationNote": "The verified W700 source tree is local. The narrow W700.4-W700.9 live repair chain is recorded and must be applied or proven equivalent before any frozen candidate."
+  },
+  "lockedScope": {
+    "included": [
+      "institutional defect and evidence ledger",
+      "canonical shared foreground work state",
+      "reviewed foreground action gateway",
+      "EON City player and camera world safety",
+      "restored-pose and transition sanitation",
+      "underside occlusion",
+      "maintained local tests and gates"
+    ],
+    "excludedUntilLaterWave": [
+      "Core metropolis expansion",
+      "Expanse redesign",
+      "Babylon-first NEXUS renderer",
+      "Projects and Atlas visual redesign",
+      "Cloudflare Preview",
+      "production deployment"
+    ]
+  },
+  "releaseBoundaries": {
+    "githubActionsAllowed": false,
+    "cloudflareMutationAllowed": false,
+    "productionMutationAllowed": false,
+    "providerExecutionAllowed": false,
+    "paymentMutationAllowed": false,
+    "automaticApprovalAllowed": false,
+    "localCertificationRequired": true
+  }
+}

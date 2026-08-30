@@ -1,0 +1,81 @@
+{
+  "schema": "eonapp.a15.i07.validation-receipt.v1",
+  "generatedAt": "2026-08-04T22:28:09+05:30",
+  "wave": "I07",
+  "baselineCommit": "4293004c3862278eff62e0d27e26458b5cef595e",
+  "title": "Data Survival Centre, Backup, Restore, Migration and Deletion",
+  "decision": "source-wave-ready-to-commit",
+  "verification": {
+    "institutionalGate": {
+      "passed": true,
+      "command": "npm run qa:a15-i07-data-survival",
+      "tests": 20
+    },
+    "w766ToW802DependencyFreeRegression": {
+      "passed": true,
+      "testFiles": 203,
+      "testsPassed": 770,
+      "testsFailed": 0,
+      "excluded": [
+        "tests/unit/w766ir2-built-artifact-gate.test.mjs"
+      ],
+      "excludedReason": "Imports postcss, unavailable because the exact locked npm install remains externally blocked."
+    },
+    "w766ir2SourceCertification": {
+      "passed": true,
+      "criteriaPassed": 10,
+      "criteriaTotal": 10,
+      "browserCertified": false,
+      "authenticatedOfflineCertified": false
+    },
+    "secretScan": {
+      "passed": true,
+      "textFilesScanned": 5147
+    },
+    "syntaxAndDiff": {
+      "passed": true
+    }
+  },
+  "coverage": {
+    "oneInventory": true,
+    "workspaceCapsuleSeparate": true,
+    "creatorMediaBundleSeparate": true,
+    "encryptedSecretBundleSeparate": true,
+    "deviceIdentitySeparate": true,
+    "sessionStateSeparate": true,
+    "replaceableCachesSeparate": true,
+    "rawValuesIncludedInInventory": false,
+    "undeclaredPersistenceFailsClosed": true
+  },
+  "invariants": [
+    "A successful Workspace Capsule is never represented as complete device recovery.",
+    "Creator raw media exports are encrypted, digest verified, inspect-first and never uploaded automatically.",
+    "Media replacement requires a per-record explicit choice and exact typed confirmation.",
+    "Failed Creator media restore rolls back metadata indexes and prior raw bytes.",
+    "Clear local data requires backup acknowledgement and typed confirmation before any mutation.",
+    "Deletion verifies owned localStorage, sessionStorage, IndexedDB and Cache Storage with no declared residue.",
+    "Unrelated same-origin storage is preserved and provider-side deletion is never implied.",
+    "Creator metadata export preserves legacy records and blocks over-cap restore rather than slicing.",
+    "Core and City retain contract-only boundaries."
+  ],
+  "externalBlockers": [
+    "Private npm registry returns 404 for locked ws@7.5.11.",
+    "Installed npm is 10.9.2 while the repository requires 11.12.1.",
+    "Production build and built-artifact validation remain blocked by unavailable exact dependencies.",
+    "Authenticated browser, Preview and Production certification remain pending."
+  ],
+  "workingTreeAtReceipt": [
+    " M assets/js/create/creator-data-survival.js",
+    " M assets/js/local-first/eon-workspace-capsule-page.js",
+    " M capsule.html",
+    " M config/generated/a15-system-disposition-registry.json",
+    " M docs/institutional/a15/evidence/A15_I01_SYSTEM_DISPOSITION_RECEIPT.json",
+    " M docs/institutional/a15/evidence/A15_I03_MINIMAL_CORE_SHELL_RECEIPT.json",
+    " M package.json",
+    "?? assets/js/data-survival/",
+    "?? docs/institutional/a15/evidence/A15_I07_DATA_SURVIVAL_GATE_RECEIPT.json",
+    "?? scripts/a15-i07-data-survival-gate.mjs",
+    "?? tests/unit/a15-i07-data-survival-authority.test.mjs"
+  ],
+  "receiptDigest": "sha256:0d9c4c5d91cfd554717f19d217943991bdeb0024aad6bb95682149b4dbe55db6"
+}

@@ -1,0 +1,254 @@
+name: W663 Production Exposure Hotfix
+
+on:
+  push:
+    branches:
+      - hotfix/w663-production-exposure
+    paths:
+      - 'automation/w663-production-exposure-ready.txt'
+
+permissions:
+  contents: write
+  deployments: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+  W663_SOURCE_BRANCH: hotfix/w663-production-exposure
+  W663_PAGES_PROJECT: eonapp-ch
+  W663_PRODUCTION_URL: https://eonapp.ch
+
+concurrency:
+  group: cloudflare-pages-production
+  cancel-in-progress: false
+
+jobs:
+  deploy-production-hotfix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    environment:
+      name: production
+      url: https://eonapp.ch
+    steps:
+      - name: Check out exact W663 hotfix commit
+        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+          path: source
+
+      - name: Use Node 22
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22'
+
+      - name: Install locked dependencies
+        working-directory: source
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "${GITHUB_SHA}"
+          npm config set registry https://registry.npmjs.org/
+          npm config set fetch-retries 5
+          npm config set fetch-retry-mintimeout 20000
+          npm config set fetch-retry-maxtimeout 120000
+          npm config set fetch-timeout 300000
+          npm config set audit false
+          npm config set fund false
+          npm ci --include=dev --no-audit --no-fund --prefer-offline
+
+      - name: Build and certify W663 exposure repair
+        id: candidate
+        working-directory: source
+        shell: bash
+        run: |
+          set -euo pipefail
+          node scripts/w663-production-exposure-gate.mjs source
+          npm run verify:codex-predeploy
+          npm run release:candidate -- --commit "$GITHUB_SHA"
+          npm run release:candidate:verify -- artifacts/w641-release-candidate
+          node scripts/w663-production-exposure-gate.mjs dist
+          npm run smoke:build
+          npm run audit:site
+          CANDIDATE_DIGEST="$(jq -r .candidateDigest artifacts/w641-release-candidate/candidate-provenance.json)"
+          DIST_DIGEST="$(jq -r .distPayloadDigest artifacts/w641-release-candidate/candidate-provenance.json)"
+          test "$(jq -r .commitSha artifacts/w641-release-candidate/candidate-provenance.json)" = "$GITHUB_SHA"
+          printf '%s' "$CANDIDATE_DIGEST" | grep -Eq '^[a-f0-9]{64}$'
+          printf '%s' "$DIST_DIGEST" | grep -Eq '^[a-f0-9]{64}$'
+          DEPLOY_ROOT="$RUNNER_TEMP/eonapp-w663-production"
+          node scripts/w660l-stage-pages-deploy-root.mjs \
+            --candidate artifacts/w641-release-candidate \
+            --output "$DEPLOY_ROOT"
+          for asset in assets/css/eon-continue.css assets/css/eon-nexus-living-core.css; do
+            test -s "$DEPLOY_ROOT/$asset"
+          done
+          test -f "$DEPLOY_ROOT/functions/api/auth/session.js"
+          test -f "$DEPLOY_ROOT/functions/api/city/access.js"
+          echo "candidate_digest=$CANDIDATE_DIGEST" >> "$GITHUB_OUTPUT"
+          echo "dist_digest=$DIST_DIGEST" >> "$GITHUB_OUTPUT"
+          echo "deploy_root=$DEPLOY_ROOT" >> "$GITHUB_OUTPUT"
+
+      - name: Snapshot current production rollback target
+        id: before
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$CLOUDFLARE_API_TOKEN"
+          test -n "$CLOUDFLARE_ACCOUNT_ID"
+          curl --fail --silent --show-error \
+            -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/$W663_PAGES_PROJECT/deployments" \
+            > "$RUNNER_TEMP/production-before.json"
+          ROLLBACK_ID="$(jq -r '[.result[] | select(.environment == "production" and .latest_stage.status == "success")] | sort_by(.created_on) | last | .id // empty' "$RUNNER_TEMP/production-before.json")"
+          test -n "$ROLLBACK_ID"
+          echo "rollback_id=$ROLLBACK_ID" >> "$GITHUB_OUTPUT"
+          echo "started_at=$(date -u +%Y-%m-%dT%H:%M:%SZ)" >> "$GITHUB_OUTPUT"
+
+      - name: Deploy W663 hotfix to production
+        working-directory: source
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          DEPLOY_ROOT: ${{ steps.candidate.outputs.deploy_root }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          npx --yes wrangler@4 pages deploy "$DEPLOY_ROOT" \
+            --project-name="$W663_PAGES_PROJECT" \
+            --branch=main \
+            --commit-hash="$GITHUB_SHA" \
+            --commit-dirty=false
+
+      - name: Verify live CSS, routes and Functions or roll back
+        id: verify
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          EXPECTED_CANDIDATE_DIGEST: ${{ steps.candidate.outputs.candidate_digest }}
+          EXPECTED_DIST_DIGEST: ${{ steps.candidate.outputs.dist_digest }}
+          ROLLBACK_ID: ${{ steps.before.outputs.rollback_id }}
+          STARTED_AT: ${{ steps.before.outputs.started_at }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          retry_json() {
+            local url="$1" output="$2" status='000'
+            for attempt in $(seq 1 30); do
+              status="$(curl --silent --show-error --location --output "$output" --write-out '%{http_code}' --connect-timeout 15 --max-time 45 -H 'accept: application/json' -H 'cache-control: no-store' "$url" || true)"
+              if [ "$status" = '200' ] && jq -e . "$output" >/dev/null 2>&1; then return 0; fi
+              sleep 5
+            done
+            return 1
+          }
+
+          retry_css() {
+            local url="$1" selector="$2" output="$3" headers="$4" status='000'
+            for attempt in $(seq 1 30); do
+              status="$(curl --silent --show-error --location --output "$output" --dump-header "$headers" --write-out '%{http_code}' --connect-timeout 15 --max-time 45 -H 'cache-control: no-store' "$url" || true)"
+              if [ "$status" = '200' ] && grep -qi '^content-type:.*text/css' "$headers" && grep -Fq "$selector" "$output" && ! grep -qi '<!doctype html' "$output"; then return 0; fi
+              sleep 5
+            done
+            echo "CSS verification failed: $url status=$status" >&2
+            return 1
+          }
+
+          verify_live() {
+            retry_json "$W663_PRODUCTION_URL/release/candidate-provenance.json" "$RUNNER_TEMP/live-provenance.json"
+            test "$(jq -r .commitSha "$RUNNER_TEMP/live-provenance.json")" = "$GITHUB_SHA"
+            test "$(jq -r .candidateDigest "$RUNNER_TEMP/live-provenance.json")" = "$EXPECTED_CANDIDATE_DIGEST"
+            test "$(jq -r .distPayloadDigest "$RUNNER_TEMP/live-provenance.json")" = "$EXPECTED_DIST_DIGEST"
+
+            retry_css "$W663_PRODUCTION_URL/assets/css/eon-continue.css" '.eon-continue-card' "$RUNNER_TEMP/eon-continue.css" "$RUNNER_TEMP/eon-continue.headers"
+            retry_css "$W663_PRODUCTION_URL/assets/css/eon-nexus-living-core.css" '.eon-nexus-living-core' "$RUNNER_TEMP/eon-nexus-living-core.css" "$RUNNER_TEMP/eon-nexus-living-core.headers"
+
+            for route in / /chat /projects /eoncity; do
+              code="$(curl --silent --show-error --location --output /dev/null --write-out '%{http_code}' --connect-timeout 15 --max-time 45 "$W663_PRODUCTION_URL$route" || true)"
+              test "$code" = '200'
+            done
+
+            retry_json "$W663_PRODUCTION_URL/api/auth/session" "$RUNNER_TEMP/auth-session.json"
+            retry_json "$W663_PRODUCTION_URL/api/city/access" "$RUNNER_TEMP/city-access.json"
+            retry_json "$W663_PRODUCTION_URL/api/billing/status" "$RUNNER_TEMP/billing-status.json"
+            retry_json "$W663_PRODUCTION_URL/api/referrals" "$RUNNER_TEMP/referrals.json"
+            test "$(jq -r .available "$RUNNER_TEMP/auth-session.json")" = 'true'
+            test "$(jq -r .identityAvailable "$RUNNER_TEMP/city-access.json")" = 'true'
+            test "$(jq -r .ok "$RUNNER_TEMP/billing-status.json")" = 'true'
+            test "$(jq -r .ok "$RUNNER_TEMP/referrals.json")" = 'true'
+
+            OAUTH_HEADERS="$RUNNER_TEMP/oauth-headers.txt"
+            OAUTH_STATUS="$(curl --silent --show-error --output /dev/null --dump-header "$OAUTH_HEADERS" --write-out '%{http_code}' "$W663_PRODUCTION_URL/api/auth/google/start?returnTo=%2Feoncity" || true)"
+            test "$OAUTH_STATUS" = '302'
+            grep -qi 'redirect_uri=https%3A%2F%2Feonapp.ch%2Fapi%2Fauth%2Fgoogle%2Fcallback' "$OAUTH_HEADERS"
+
+            curl --fail --silent --show-error \
+              -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+              "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/$W663_PAGES_PROJECT/deployments" \
+              > "$RUNNER_TEMP/production-after.json"
+            NEW_DEPLOYMENT="$(jq -c --arg sha "$GITHUB_SHA" --arg started "$STARTED_AT" '[.result[] | select(.environment == "production" and .latest_stage.status == "success" and (.deployment_trigger.metadata.commit_hash // "") == $sha and .created_on >= $started)] | sort_by(.created_on) | last // null' "$RUNNER_TEMP/production-after.json")"
+            test "$NEW_DEPLOYMENT" != 'null'
+            echo "deployment_id=$(jq -r .id <<<"$NEW_DEPLOYMENT")" >> "$GITHUB_OUTPUT"
+            echo "deployment_url=$(jq -r .url <<<"$NEW_DEPLOYMENT")" >> "$GITHUB_OUTPUT"
+          }
+
+          set +e
+          verify_live
+          VERIFY_STATUS=$?
+          set -e
+          if [ "$VERIFY_STATUS" -ne 0 ]; then
+            echo "W663 production verification failed; rolling back to $ROLLBACK_ID" >&2
+            curl --fail --silent --show-error -X POST \
+              -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+              -H 'Content-Type: application/json' \
+              --data '{}' \
+              "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/$W663_PAGES_PROJECT/deployments/$ROLLBACK_ID/rollback" \
+              > "$RUNNER_TEMP/rollback-result.json"
+            sleep 10
+            exit "$VERIFY_STATUS"
+          fi
+
+      - name: Record zero-artifact W663 receipt
+        working-directory: source
+        env:
+          CANDIDATE_DIGEST: ${{ steps.candidate.outputs.candidate_digest }}
+          DIST_DIGEST: ${{ steps.candidate.outputs.dist_digest }}
+          ROLLBACK_ID: ${{ steps.before.outputs.rollback_id }}
+          DEPLOYMENT_ID: ${{ steps.verify.outputs.deployment_id }}
+          DEPLOYMENT_URL: ${{ steps.verify.outputs.deployment_url }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --input-type=module <<'EOF'
+          import fs from 'node:fs';
+          const receipt = {
+            schema: 'eonapp.w663.production-exposure-hotfix.v1',
+            ok: true,
+            generatedAt: new Date().toISOString(),
+            runId: Number(process.env.GITHUB_RUN_ID),
+            candidateSha: process.env.GITHUB_SHA,
+            candidateDigest: process.env.CANDIDATE_DIGEST,
+            distPayloadDigest: process.env.DIST_DIGEST,
+            productionUrl: process.env.W663_PRODUCTION_URL,
+            deploymentId: process.env.DEPLOYMENT_ID,
+            deploymentUrl: process.env.DEPLOYMENT_URL,
+            rollbackDeploymentId: process.env.ROLLBACK_ID,
+            repairedAssets: ['/assets/css/eon-continue.css', '/assets/css/eon-nexus-living-core.css'],
+            criticalRoutesVerified: ['/', '/chat', '/projects', '/eoncity'],
+            functionsVerified: ['/api/auth/session', '/api/city/access', '/api/billing/status', '/api/referrals'],
+            githubActionsArtifacts: 0,
+            mainGitBranchChanged: false,
+            pr42Changed: false,
+            ownerAuthorizedDirectProduction: true,
+            nexusFlagshipRecompositionStillRequired: true,
+            expanseHumanGameplayProofPending: true
+          };
+          fs.mkdirSync('automation', { recursive: true });
+          fs.writeFileSync('automation/w663-production-exposure-result.json', `${JSON.stringify(receipt, null, 2)}\n`);
+          EOF
+          git config user.name 'EONAPP W663 Production Operator'
+          git config user.email 'actions@users.noreply.github.com'
+          git add automation/w663-production-exposure-result.json
+          git commit -m 'W663 record production exposure hotfix receipt'
+          git push origin HEAD:hotfix/w663-production-exposure

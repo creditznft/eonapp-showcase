@@ -1,0 +1,26 @@
+{
+  "extends": "./tsconfig.checkjs.json",
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "strict": false,
+    "noImplicitAny": false,
+    "lib": ["ES2022", "DOM", "WebWorker"]
+  },
+  "include": [
+    "types/**/*.d.ts",
+    "assets/js/**/*.js",
+    "sw.js"
+  ],
+  "exclude": [
+    "node_modules",
+    "tests",
+    "**/test/**",
+    "**/__tests__/**",
+    "**/*.test.*",
+    "**/*.spec.*",
+    "e2e",
+    "archive",
+    "LEGACY_ARCHIVE_DEC20_2025"
+  ]
+}

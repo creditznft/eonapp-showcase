@@ -1,0 +1,668 @@
+[
+  {
+    "type": "log",
+    "text": "BJS - [07:08:47]: Babylon.js v9.7.0 - WebGL2 - Parallel shader compilation",
+    "location": {
+      "url": "https://eonapp.ch/assets/eon-city-play-babylon-CDKrXOva.js",
+      "lineNumber": 0,
+      "columnNumber": 12567
+    }
+  },
+  {
+    "type": "warning",
+    "text": "WebGL: INVALID_VALUE: texImage2D: bad image data",
+    "location": {
+      "url": "https://eonapp.ch/assets/eon-city-play-babylon-CDKrXOva.js",
+      "lineNumber": 25,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "WebGL: INVALID_VALUE: texImage2D: bad image data",
+    "location": {
+      "url": "https://eonapp.ch/assets/eon-city-play-babylon-CDKrXOva.js",
+      "lineNumber": 25,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "WebGL: INVALID_VALUE: texImage2D: bad image data",
+    "location": {
+      "url": "https://eonapp.ch/assets/eon-city-play-babylon-CDKrXOva.js",
+      "lineNumber": 25,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "WebGL: INVALID_VALUE: texImage2D: bad image data",
+    "location": {
+      "url": "https://eonapp.ch/assets/eon-city-play-babylon-CDKrXOva.js",
+      "lineNumber": 25,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "WebGL: INVALID_VALUE: texImage2D: bad image data",
+    "location": {
+      "url": "https://eonapp.ch/assets/eon-city-play-babylon-CDKrXOva.js",
+      "lineNumber": 25,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "WebGL: INVALID_VALUE: texImage2D: bad image data",
+    "location": {
+      "url": "https://eonapp.ch/assets/eon-city-play-babylon-CDKrXOva.js",
+      "lineNumber": 25,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "WebGL: INVALID_VALUE: texImage2D: bad image data",
+    "location": {
+      "url": "https://eonapp.ch/assets/eon-city-play-babylon-CDKrXOva.js",
+      "lineNumber": 25,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "WebGL: INVALID_VALUE: texImage2D: bad image data",
+    "location": {
+      "url": "https://eonapp.ch/assets/eon-city-play-babylon-CDKrXOva.js",
+      "lineNumber": 25,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "WebGL: INVALID_VALUE: texImage2D: bad image data",
+    "location": {
+      "url": "https://eonapp.ch/assets/eon-city-play-babylon-CDKrXOva.js",
+      "lineNumber": 25,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "WebGL: INVALID_VALUE: texImage2D: bad image data",
+    "location": {
+      "url": "https://eonapp.ch/assets/eon-city-play-babylon-CDKrXOva.js",
+      "lineNumber": 25,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "WebGL: INVALID_VALUE: texImage2D: bad image data",
+    "location": {
+      "url": "https://eonapp.ch/assets/eon-city-play-babylon-CDKrXOva.js",
+      "lineNumber": 25,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "WebGL: INVALID_VALUE: texImage2D: bad image data",
+    "location": {
+      "url": "https://eonapp.ch/assets/eon-city-play-babylon-CDKrXOva.js",
+      "lineNumber": 25,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "WebGL: INVALID_VALUE: texImage2D: bad image data",
+    "location": {
+      "url": "https://eonapp.ch/assets/eon-city-play-babylon-CDKrXOva.js",
+      "lineNumber": 25,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "WebGL: INVALID_VALUE: texImage2D: bad image data",
+    "location": {
+      "url": "https://eonapp.ch/assets/eon-city-play-babylon-CDKrXOva.js",
+      "lineNumber": 25,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "WebGL: INVALID_VALUE: texImage2D: bad image data",
+    "location": {
+      "url": "https://eonapp.ch/assets/eon-city-play-babylon-CDKrXOva.js",
+      "lineNumber": 25,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "WebGL: INVALID_VALUE: texImage2D: bad image data",
+    "location": {
+      "url": "https://eonapp.ch/assets/eon-city-play-babylon-CDKrXOva.js",
+      "lineNumber": 25,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "[.WebGL-0x409c0013fc00] GL_INVALID_OPERATION: glGenerateMipmap: Cannot generate mipmaps for a zero-size texture in a WebGL context.",
+    "location": {
+      "url": "https://eonapp.ch/eoncity",
+      "lineNumber": 0,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "[.WebGL-0x409c0013fc00] GL_INVALID_OPERATION: glGenerateMipmap: Cannot generate mipmaps for a zero-size texture in a WebGL context.",
+    "location": {
+      "url": "https://eonapp.ch/eoncity",
+      "lineNumber": 0,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "[.WebGL-0x409c0013fc00] GL_INVALID_OPERATION: glGenerateMipmap: Cannot generate mipmaps for a zero-size texture in a WebGL context.",
+    "location": {
+      "url": "https://eonapp.ch/eoncity",
+      "lineNumber": 0,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "[.WebGL-0x409c0013fc00] GL_INVALID_OPERATION: glGenerateMipmap: Cannot generate mipmaps for a zero-size texture in a WebGL context.",
+    "location": {
+      "url": "https://eonapp.ch/eoncity",
+      "lineNumber": 0,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "[.WebGL-0x409c0013fc00] GL_INVALID_OPERATION: glGenerateMipmap: Cannot generate mipmaps for a zero-size texture in a WebGL context.",
+    "location": {
+      "url": "https://eonapp.ch/eoncity",
+      "lineNumber": 0,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "[.WebGL-0x409c0013fc00] GL_INVALID_OPERATION: glGenerateMipmap: Cannot generate mipmaps for a zero-size texture in a WebGL context.",
+    "location": {
+      "url": "https://eonapp.ch/eoncity",
+      "lineNumber": 0,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "[.WebGL-0x409c0013fc00] GL_INVALID_OPERATION: glGenerateMipmap: Cannot generate mipmaps for a zero-size texture in a WebGL context.",
+    "location": {
+      "url": "https://eonapp.ch/eoncity",
+      "lineNumber": 0,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "[.WebGL-0x409c0013fc00] GL_INVALID_OPERATION: glGenerateMipmap: Cannot generate mipmaps for a zero-size texture in a WebGL context.",
+    "location": {
+      "url": "https://eonapp.ch/eoncity",
+      "lineNumber": 0,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "[.WebGL-0x409c0013fc00] GL_INVALID_OPERATION: glGenerateMipmap: Cannot generate mipmaps for a zero-size texture in a WebGL context.",
+    "location": {
+      "url": "https://eonapp.ch/eoncity",
+      "lineNumber": 0,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "[.WebGL-0x409c0013fc00] GL_INVALID_OPERATION: glGenerateMipmap: Cannot generate mipmaps for a zero-size texture in a WebGL context.",
+    "location": {
+      "url": "https://eonapp.ch/eoncity",
+      "lineNumber": 0,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "[.WebGL-0x409c0013fc00] GL_INVALID_OPERATION: glGenerateMipmap: Cannot generate mipmaps for a zero-size texture in a WebGL context.",
+    "location": {
+      "url": "https://eonapp.ch/eoncity",
+      "lineNumber": 0,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "[.WebGL-0x409c0013fc00] GL_INVALID_OPERATION: glGenerateMipmap: Cannot generate mipmaps for a zero-size texture in a WebGL context.",
+    "location": {
+      "url": "https://eonapp.ch/eoncity",
+      "lineNumber": 0,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "[.WebGL-0x409c0013fc00] GL_INVALID_OPERATION: glGenerateMipmap: Cannot generate mipmaps for a zero-size texture in a WebGL context.",
+    "location": {
+      "url": "https://eonapp.ch/eoncity",
+      "lineNumber": 0,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "[.WebGL-0x409c0013fc00] GL_INVALID_OPERATION: glGenerateMipmap: Cannot generate mipmaps for a zero-size texture in a WebGL context.",
+    "location": {
+      "url": "https://eonapp.ch/eoncity",
+      "lineNumber": 0,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "[.WebGL-0x409c0013fc00] GL_INVALID_OPERATION: glGenerateMipmap: Cannot generate mipmaps for a zero-size texture in a WebGL context.",
+    "location": {
+      "url": "https://eonapp.ch/eoncity",
+      "lineNumber": 0,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "[.WebGL-0x409c0013fc00] GL_INVALID_OPERATION: glGenerateMipmap: Cannot generate mipmaps for a zero-size texture in a WebGL context.",
+    "location": {
+      "url": "https://eonapp.ch/eoncity",
+      "lineNumber": 0,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "WebGL: INVALID_VALUE: texImage2D: bad image data",
+    "location": {
+      "url": "https://eonapp.ch/assets/eon-city-play-babylon-CDKrXOva.js",
+      "lineNumber": 25,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "WebGL: INVALID_VALUE: texImage2D: bad image data",
+    "location": {
+      "url": "https://eonapp.ch/assets/eon-city-play-babylon-CDKrXOva.js",
+      "lineNumber": 25,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "[.WebGL-0x409c0013fc00] GL_INVALID_OPERATION: glGenerateMipmap: Cannot generate mipmaps for a zero-size texture in a WebGL context.",
+    "location": {
+      "url": "https://eonapp.ch/eoncity",
+      "lineNumber": 0,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "[.WebGL-0x409c0013fc00] GL_INVALID_OPERATION: glGenerateMipmap: Cannot generate mipmaps for a zero-size texture in a WebGL context.",
+    "location": {
+      "url": "https://eonapp.ch/eoncity",
+      "lineNumber": 0,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "log",
+    "text": "BJS - [07:08:52]: Babylon.js v9.7.0 - WebGL2 - Parallel shader compilation",
+    "location": {
+      "url": "https://eonapp.ch/assets/eon-city-play-babylon-CDKrXOva.js",
+      "lineNumber": 0,
+      "columnNumber": 12567
+    }
+  },
+  {
+    "type": "warning",
+    "text": "WebGL: INVALID_VALUE: texImage2D: bad image data",
+    "location": {
+      "url": "https://eonapp.ch/assets/eon-city-play-babylon-CDKrXOva.js",
+      "lineNumber": 25,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "WebGL: INVALID_VALUE: texImage2D: bad image data",
+    "location": {
+      "url": "https://eonapp.ch/assets/eon-city-play-babylon-CDKrXOva.js",
+      "lineNumber": 25,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "WebGL: INVALID_VALUE: texImage2D: bad image data",
+    "location": {
+      "url": "https://eonapp.ch/assets/eon-city-play-babylon-CDKrXOva.js",
+      "lineNumber": 25,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "WebGL: INVALID_VALUE: texImage2D: bad image data",
+    "location": {
+      "url": "https://eonapp.ch/assets/eon-city-play-babylon-CDKrXOva.js",
+      "lineNumber": 25,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "WebGL: INVALID_VALUE: texImage2D: bad image data",
+    "location": {
+      "url": "https://eonapp.ch/assets/eon-city-play-babylon-CDKrXOva.js",
+      "lineNumber": 25,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "WebGL: INVALID_VALUE: texImage2D: bad image data",
+    "location": {
+      "url": "https://eonapp.ch/assets/eon-city-play-babylon-CDKrXOva.js",
+      "lineNumber": 25,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "WebGL: INVALID_VALUE: texImage2D: bad image data",
+    "location": {
+      "url": "https://eonapp.ch/assets/eon-city-play-babylon-CDKrXOva.js",
+      "lineNumber": 25,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "WebGL: INVALID_VALUE: texImage2D: bad image data",
+    "location": {
+      "url": "https://eonapp.ch/assets/eon-city-play-babylon-CDKrXOva.js",
+      "lineNumber": 25,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "WebGL: INVALID_VALUE: texImage2D: bad image data",
+    "location": {
+      "url": "https://eonapp.ch/assets/eon-city-play-babylon-CDKrXOva.js",
+      "lineNumber": 25,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "WebGL: INVALID_VALUE: texImage2D: bad image data",
+    "location": {
+      "url": "https://eonapp.ch/assets/eon-city-play-babylon-CDKrXOva.js",
+      "lineNumber": 25,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "WebGL: INVALID_VALUE: texImage2D: bad image data",
+    "location": {
+      "url": "https://eonapp.ch/assets/eon-city-play-babylon-CDKrXOva.js",
+      "lineNumber": 25,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "WebGL: INVALID_VALUE: texImage2D: bad image data",
+    "location": {
+      "url": "https://eonapp.ch/assets/eon-city-play-babylon-CDKrXOva.js",
+      "lineNumber": 25,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "WebGL: INVALID_VALUE: texImage2D: bad image data",
+    "location": {
+      "url": "https://eonapp.ch/assets/eon-city-play-babylon-CDKrXOva.js",
+      "lineNumber": 25,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "WebGL: INVALID_VALUE: texImage2D: bad image data",
+    "location": {
+      "url": "https://eonapp.ch/assets/eon-city-play-babylon-CDKrXOva.js",
+      "lineNumber": 25,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "WebGL: INVALID_VALUE: texImage2D: bad image data",
+    "location": {
+      "url": "https://eonapp.ch/assets/eon-city-play-babylon-CDKrXOva.js",
+      "lineNumber": 25,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "WebGL: INVALID_VALUE: texImage2D: bad image data",
+    "location": {
+      "url": "https://eonapp.ch/assets/eon-city-play-babylon-CDKrXOva.js",
+      "lineNumber": 25,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "[.WebGL-0x409c00143200] GL_INVALID_OPERATION: glGenerateMipmap: Cannot generate mipmaps for a zero-size texture in a WebGL context.",
+    "location": {
+      "url": "https://eonapp.ch/eoncity",
+      "lineNumber": 0,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "[.WebGL-0x409c00143200] GL_INVALID_OPERATION: glGenerateMipmap: Cannot generate mipmaps for a zero-size texture in a WebGL context.",
+    "location": {
+      "url": "https://eonapp.ch/eoncity",
+      "lineNumber": 0,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "[.WebGL-0x409c00143200] GL_INVALID_OPERATION: glGenerateMipmap: Cannot generate mipmaps for a zero-size texture in a WebGL context.",
+    "location": {
+      "url": "https://eonapp.ch/eoncity",
+      "lineNumber": 0,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "[.WebGL-0x409c00143200] GL_INVALID_OPERATION: glGenerateMipmap: Cannot generate mipmaps for a zero-size texture in a WebGL context.",
+    "location": {
+      "url": "https://eonapp.ch/eoncity",
+      "lineNumber": 0,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "[.WebGL-0x409c00143200] GL_INVALID_OPERATION: glGenerateMipmap: Cannot generate mipmaps for a zero-size texture in a WebGL context.",
+    "location": {
+      "url": "https://eonapp.ch/eoncity",
+      "lineNumber": 0,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "[.WebGL-0x409c00143200] GL_INVALID_OPERATION: glGenerateMipmap: Cannot generate mipmaps for a zero-size texture in a WebGL context.",
+    "location": {
+      "url": "https://eonapp.ch/eoncity",
+      "lineNumber": 0,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "[.WebGL-0x409c00143200] GL_INVALID_OPERATION: glGenerateMipmap: Cannot generate mipmaps for a zero-size texture in a WebGL context.",
+    "location": {
+      "url": "https://eonapp.ch/eoncity",
+      "lineNumber": 0,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "[.WebGL-0x409c00143200] GL_INVALID_OPERATION: glGenerateMipmap: Cannot generate mipmaps for a zero-size texture in a WebGL context.",
+    "location": {
+      "url": "https://eonapp.ch/eoncity",
+      "lineNumber": 0,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "[.WebGL-0x409c00143200] GL_INVALID_OPERATION: glGenerateMipmap: Cannot generate mipmaps for a zero-size texture in a WebGL context.",
+    "location": {
+      "url": "https://eonapp.ch/eoncity",
+      "lineNumber": 0,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "[.WebGL-0x409c00143200] GL_INVALID_OPERATION: glGenerateMipmap: Cannot generate mipmaps for a zero-size texture in a WebGL context.",
+    "location": {
+      "url": "https://eonapp.ch/eoncity",
+      "lineNumber": 0,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "[.WebGL-0x409c00143200] GL_INVALID_OPERATION: glGenerateMipmap: Cannot generate mipmaps for a zero-size texture in a WebGL context.",
+    "location": {
+      "url": "https://eonapp.ch/eoncity",
+      "lineNumber": 0,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "[.WebGL-0x409c00143200] GL_INVALID_OPERATION: glGenerateMipmap: Cannot generate mipmaps for a zero-size texture in a WebGL context.",
+    "location": {
+      "url": "https://eonapp.ch/eoncity",
+      "lineNumber": 0,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "WebGL: INVALID_VALUE: texImage2D: bad image data",
+    "location": {
+      "url": "https://eonapp.ch/assets/eon-city-play-babylon-CDKrXOva.js",
+      "lineNumber": 25,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "WebGL: INVALID_VALUE: texImage2D: bad image data",
+    "location": {
+      "url": "https://eonapp.ch/assets/eon-city-play-babylon-CDKrXOva.js",
+      "lineNumber": 25,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "[.WebGL-0x409c00143200] GL_INVALID_OPERATION: glGenerateMipmap: Cannot generate mipmaps for a zero-size texture in a WebGL context.",
+    "location": {
+      "url": "https://eonapp.ch/eoncity",
+      "lineNumber": 0,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "[.WebGL-0x409c00143200] GL_INVALID_OPERATION: glGenerateMipmap: Cannot generate mipmaps for a zero-size texture in a WebGL context.",
+    "location": {
+      "url": "https://eonapp.ch/eoncity",
+      "lineNumber": 0,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "[.WebGL-0x409c00143200] GL_INVALID_OPERATION: glGenerateMipmap: Cannot generate mipmaps for a zero-size texture in a WebGL context.",
+    "location": {
+      "url": "https://eonapp.ch/eoncity",
+      "lineNumber": 0,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "[.WebGL-0x409c00143200] GL_INVALID_OPERATION: glGenerateMipmap: Cannot generate mipmaps for a zero-size texture in a WebGL context.",
+    "location": {
+      "url": "https://eonapp.ch/eoncity",
+      "lineNumber": 0,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "[.WebGL-0x409c00143200] GL_INVALID_OPERATION: glGenerateMipmap: Cannot generate mipmaps for a zero-size texture in a WebGL context.",
+    "location": {
+      "url": "https://eonapp.ch/eoncity",
+      "lineNumber": 0,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "warning",
+    "text": "[.WebGL-0x409c00143200] GL_INVALID_OPERATION: glGenerateMipmap: Cannot generate mipmaps for a zero-size texture in a WebGL context.",
+    "location": {
+      "url": "https://eonapp.ch/eoncity",
+      "lineNumber": 0,
+      "columnNumber": 0
+    }
+  }
+]

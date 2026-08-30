@@ -1,0 +1,55 @@
+{
+  "schema": "eonapp.a15.i20.trust-support-incident-gate-receipt.v1",
+  "generatedAt": "2026-08-04T20:20:20.728Z",
+  "wave": "I20",
+  "status": "pass",
+  "authority": {
+    "realPrivateCaseIds": true,
+    "tokenStoredRaw": false,
+    "rawAttachmentsAccepted": false,
+    "supportCanChangeBillingOrEntitlements": false,
+    "operatorWorkflowImplemented": true,
+    "privacyRightsWorkflowImplemented": true,
+    "refundWithdrawalCancellationPolicyPublished": true,
+    "publicStatusImplemented": true,
+    "incidentOwnerWorkflowImplemented": true,
+    "requestTimeDdl": false,
+    "operatorIdentityDeploymentConfigRequired": true
+  },
+  "route": {
+    "status": "/status",
+    "support": "/help#trust-support-case"
+  },
+  "policyVersion": "2026-08-05",
+  "sourceFiles": [
+    "assets/js/trust/eon-trust-support-authority.js",
+    "assets/js/trust/eon-trust-support-ledger.js",
+    "functions/_shared/eon-trust-operations.js",
+    "functions/api/trust/config.js",
+    "functions/api/support/cases.js",
+    "functions/api/support/cases/[caseId].js",
+    "functions/api/trust/cases/[caseId].js",
+    "functions/api/status/current.js",
+    "functions/api/trust/incidents.js",
+    "functions/api/trust/incidents/[incidentId].js",
+    "migrations/trust/0001_trust_support_incident_authority.sql",
+    "status.html",
+    "help.html",
+    "legal.html",
+    "privacy.html",
+    "terms.html",
+    "billing.html",
+    "docs/operations/A15_I20_TRUST_SUPPORT_INCIDENT_RUNBOOK.md"
+  ],
+  "claims": {
+    "ownerLegalIdentityConfiguredInThisSourceRun": false,
+    "counselReviewCompleted": false,
+    "liveHumanCaseHandled": false,
+    "liveIncidentPublished": false,
+    "previewDeployed": false,
+    "productionDeployed": false,
+    "paidLaunchEligible": false
+  },
+  "errors": [],
+  "digest": "7c21033a55941740439746f343d57c52e2db1f44837b5359c3f49209ae1e07fa"
+}

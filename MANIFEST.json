@@ -1,0 +1,838 @@
+{
+  "schema": "eonapp.cumulative-code-delta-manifest.v1",
+  "name": "EONAPP W359\u2013W372 City cumulative code-only overlay",
+  "createdAtUtc": "2026-06-26T04:06:53Z",
+  "base": "EONAPP_W301_W358_CODEX_RETURN_SOURCE_HANDOFF_2026-06-26 source baseline",
+  "includes": "W359 through W372 cumulative changed source/config/tests/docs",
+  "excludes": [
+    ".env*",
+    "credentials",
+    "node_modules",
+    "dist",
+    "logs",
+    "screenshots",
+    "browser storage",
+    "HAR",
+    "audio",
+    "GLB/GLTF",
+    "textures",
+    "generated artifacts",
+    "user data"
+  ],
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 1712,
+      "sha256": "ca103fb51ab81d379572d7d74f496d10998b400ae8484a92064feeb4181cbf0a"
+    },
+    {
+      "path": "_redirects",
+      "bytes": 3621,
+      "sha256": "c640e03d5032d2a4ed8ed4c92f2c1e7159eafe725fa3547afd99415442b19dec"
+    },
+    {
+      "path": "apps.html",
+      "bytes": 1503,
+      "sha256": "e066821017ed30a7af9db7da1f6d8b5d0a83ea894010fd167ac5468837a8f565"
+    },
+    {
+      "path": "assets/city/README.md",
+      "bytes": 417,
+      "sha256": "63373ca7598ab3af3cc2dc48c8beb66a5d9f53370df1cf4a3eafcdfd6f866432"
+    },
+    {
+      "path": "assets/css/eon-app-deck.css",
+      "bytes": 7996,
+      "sha256": "c386b52c28f4988d3affd79995fd7f9c4cfdbdbd4cd850b55e2d59b472f13308"
+    },
+    {
+      "path": "assets/css/eon-automations.css",
+      "bytes": 6963,
+      "sha256": "d71fa5bceb66af1b62baa10813cdc59157f275fc4dda422e10b218770b5b7823"
+    },
+    {
+      "path": "assets/css/eon-city-3d-station.css",
+      "bytes": 13400,
+      "sha256": "64edf144ce5a8181e5a4fe69b3ef7da7317642f2434e5038940cd50a47ae1feb"
+    },
+    {
+      "path": "assets/css/eon-city-play.css",
+      "bytes": 34462,
+      "sha256": "578b97305badfb64b38a0fc8298ed9d85677ce6566438342fc522c458c9b9e67"
+    },
+    {
+      "path": "assets/css/eon-city-portal.css",
+      "bytes": 7164,
+      "sha256": "c9e425a4afe32cd4ed6bf799e6ffb6c432912d76d35e596749ed8f3b7f793930"
+    },
+    {
+      "path": "assets/css/eon-hubs.css",
+      "bytes": 7285,
+      "sha256": "581584f9834066de24fbdf33467236f874eb67497d8186174dbd26cbf3ca3649"
+    },
+    {
+      "path": "assets/css/eon-operator-map.css",
+      "bytes": 21038,
+      "sha256": "49ad5baf81d3d3fbd44d737357807a0e802d295c6f41004132c5e674707afe3c"
+    },
+    {
+      "path": "assets/css/realm-studio.css",
+      "bytes": 14754,
+      "sha256": "d44a86f780671c1aec901803dde626c734d41131ffff843526a401fff6ac4d5c"
+    },
+    {
+      "path": "assets/js/account/eon-account-foundation.js",
+      "bytes": 7570,
+      "sha256": "703280cf2d44cb30359dcd05548b2f2775b151893fbb75bc64af1956b59a4276"
+    },
+    {
+      "path": "assets/js/ai-kernel/eon-ai-kernel-bridge.js",
+      "bytes": 9194,
+      "sha256": "3e11708b617995b4b4539aa1da0e107b7b3a7f4c6db158ade2b2697f3b013811"
+    },
+    {
+      "path": "assets/js/ai-kernel/eon-city-event-bridge.js",
+      "bytes": 2134,
+      "sha256": "826a6fc974d30e6c8cd72f891e8baf6c2e315350beebd4c6109ac25e2eec1504"
+    },
+    {
+      "path": "assets/js/apps/eon-app-deck-catalog.js",
+      "bytes": 19632,
+      "sha256": "bec2d3d1f8fc4074b05205a1dee0bdc08bc43d4c5e97f6699afc071fb03021df"
+    },
+    {
+      "path": "assets/js/apps/eon-app-deck-page.js",
+      "bytes": 8821,
+      "sha256": "5c4f0e0b276f2ecb1fe1e098aad2ac4423e902783fdf226b8c25ef5f37913d79"
+    },
+    {
+      "path": "assets/js/automation/eon-action-taxonomy.js",
+      "bytes": 7498,
+      "sha256": "26381b89bec3758d8a6002b3119f254de00819144956df4a9a972a2285248bb4"
+    },
+    {
+      "path": "assets/js/capabilities/capability-truth-registry.js",
+      "bytes": 21365,
+      "sha256": "09cc279c47fcad2d22fcfefdd80d69411d4455ffae87098af78e4f77f4de5a05"
+    },
+    {
+      "path": "assets/js/chat/eonbot-action-receipts.js",
+      "bytes": 11498,
+      "sha256": "8e9669f431ecc596d29ef77d4b63bfce0b0ec1f3a00cd7131aca0747776df984"
+    },
+    {
+      "path": "assets/js/chat/eonbot-command-hub.js",
+      "bytes": 25364,
+      "sha256": "053da10869b782fd4c814a77c0c55028188609a36a95324fbf6135b71aadec3d"
+    },
+    {
+      "path": "assets/js/chat/eonbot-context-registry.js",
+      "bytes": 8340,
+      "sha256": "667639a00fbce5610fc918a9e80708c42f3ff4058d476631626193b76dbc5e65"
+    },
+    {
+      "path": "assets/js/chat-page.js",
+      "bytes": 115063,
+      "sha256": "9c5f84868071d7824229744cbfc2104c16644d5807d33b80ad42b3750b30fd0d"
+    },
+    {
+      "path": "assets/js/city/city-landmark-registry.js",
+      "bytes": 7623,
+      "sha256": "803f3eb3d4b5b633dba653860d42a30a7bab493996f9a47d00f23ddad4bb9e1e"
+    },
+    {
+      "path": "assets/js/city/city-mode-transition.js",
+      "bytes": 7609,
+      "sha256": "710928b6da55f00d2e215b0a224043ed8cfbec60383bf7dd19e5e42c5d451b6f"
+    },
+    {
+      "path": "assets/js/city/city-world-state.js",
+      "bytes": 20393,
+      "sha256": "7d52d715bddb3e7f2e4e60aa8b3e857e8e7b2aab151f4c4601d0f07a3aba0c3a"
+    },
+    {
+      "path": "assets/js/city/eon-city-3d-renderer.js",
+      "bytes": 51597,
+      "sha256": "bcded4b797be70845ba4d10090ca5a1355a9d680961c1ebb5dbd635bf3e90788"
+    },
+    {
+      "path": "assets/js/city/eon-city-adaptive-soundscape.js",
+      "bytes": 8392,
+      "sha256": "e305e47855863d9cfb7e180a10bcb7e2fdcecc79159640376c33154504ee4bfb"
+    },
+    {
+      "path": "assets/js/city/eon-city-agent-director.js",
+      "bytes": 7643,
+      "sha256": "fe154517a12c8112086e14544d4479eb3096d4bf8e3023354158575fb519a1ee"
+    },
+    {
+      "path": "assets/js/city/eon-city-asset-catalog.js",
+      "bytes": 15153,
+      "sha256": "e881839ec7186f07983d25c3bc485587957063b60a107a27202aca94d2450db5"
+    },
+    {
+      "path": "assets/js/city/eon-city-asset-runtime.js",
+      "bytes": 8255,
+      "sha256": "b6c7e854b6fcd760f4552f9ca066eb03049e1e02ba4ad37eeaf269918efe3851"
+    },
+    {
+      "path": "assets/js/city/eon-city-command-district.js",
+      "bytes": 14354,
+      "sha256": "cbf795e6297bf29dfaecfe1e5ef941a3a6bbf25d59a4abcee190993334f1e02c"
+    },
+    {
+      "path": "assets/js/city/eon-city-immersive-controls.js",
+      "bytes": 7974,
+      "sha256": "439e8bb256efd0d09ffa8dcb1d637dd23fc36c35784059bfce52dd201b1581ae"
+    },
+    {
+      "path": "assets/js/city/eon-city-lite-art-direction.js",
+      "bytes": 7026,
+      "sha256": "415f2b295b02740d8cc2a439d46dd70184e94236cf54f81c43a304cc73479920"
+    },
+    {
+      "path": "assets/js/city/eon-city-material-policy.js",
+      "bytes": 4647,
+      "sha256": "8ccbd461058a2b211a250cd7ef11768814c6b640f91614f9e86a02bdf27218a9"
+    },
+    {
+      "path": "assets/js/city/eon-city-performance-lab.js",
+      "bytes": 7477,
+      "sha256": "a928ddc1f02f37a7bb02bd0274cb35a8b4d9d075220a1278c39063a4f8034469"
+    },
+    {
+      "path": "assets/js/city/eon-city-play-babylon.js",
+      "bytes": 66085,
+      "sha256": "f54f497883041b91c09b91dfd937cf960ccc285de659d86ab21da27dc34f6c6b"
+    },
+    {
+      "path": "assets/js/city/eon-city-play-capability.js",
+      "bytes": 4300,
+      "sha256": "c7abf46d1f14ac74fdda4ab3d714eda61513f18f7787e710273d237a6aa93d83"
+    },
+    {
+      "path": "assets/js/city/eon-city-spatial-command-space.js",
+      "bytes": 8631,
+      "sha256": "136b5c533b6aa5870fe0f55d0ec371b47d5fbcae22fdf43fa9061920434d3f19"
+    },
+    {
+      "path": "assets/js/city/eon-city-visual-certification.js",
+      "bytes": 4940,
+      "sha256": "9066556511a256a11179ce21897dd4bc12be927e0c3ea964caa2ac3de8ed182d"
+    },
+    {
+      "path": "assets/js/city/eon-city-work-loop.js",
+      "bytes": 8124,
+      "sha256": "db2318f3595abf391437dbf6fa47397b5a608a5f24bce313a9fce1dece8deb01"
+    },
+    {
+      "path": "assets/js/device/eon-device-check.js",
+      "bytes": 8964,
+      "sha256": "20a2c4d7c68445ac6908efa314fec4cc2c94a85c25d722133f3ffa0ad3446c73"
+    },
+    {
+      "path": "assets/js/eon-app-shell.js",
+      "bytes": 19726,
+      "sha256": "77a3f627a0ff34c51aee7ae00114ef0e67d1b1ed294ae0ddc23d1bb4e69be766"
+    },
+    {
+      "path": "assets/js/eon-automations-page.js",
+      "bytes": 21027,
+      "sha256": "d896e64a5a158cc96fc3fcfb053058ee74474d81bdb3e8ffee68c018644abd85"
+    },
+    {
+      "path": "assets/js/eon-city-3d-station.js",
+      "bytes": 38137,
+      "sha256": "b869dab218df0b1f642fefc8b6e04b8431dd72bc53bc35bb10e7528f0623175a"
+    },
+    {
+      "path": "assets/js/eon-city-play-station.js",
+      "bytes": 60193,
+      "sha256": "f2dbe0e2d29ea9c829293139a7297572c518cdd6711e62953ca1cc3ac263d903"
+    },
+    {
+      "path": "assets/js/eon-city-portal.js",
+      "bytes": 13356,
+      "sha256": "dc391162c5a7a6abdb41dd2f4cb3709695cd350a3c6bd7fd5ee7e9aa1adf57d6"
+    },
+    {
+      "path": "assets/js/eon-operator-map.js",
+      "bytes": 75928,
+      "sha256": "5d629764dba808c2b7ca9ccb91bd2a5558589cebcdfdea27f752c79a255584a1"
+    },
+    {
+      "path": "assets/js/eon-workspace-pages.js",
+      "bytes": 62561,
+      "sha256": "f139e3ab4cc5661ba8e54cbd4b860a497a7975b7b7a6f6fba8170c0762874876"
+    },
+    {
+      "path": "assets/js/local-ai/local-ai-page.js",
+      "bytes": 19703,
+      "sha256": "0a629d8f4eee47fe51041d099a3d32ac9441806e0cecea70e0a606c7002981c6"
+    },
+    {
+      "path": "assets/js/local-first/local-first-boundary.js",
+      "bytes": 4033,
+      "sha256": "5dc72db71f51f27d37e44b54f146a9e2a9825bfbb5fe8d1b9c9cc0428f69830d"
+    },
+    {
+      "path": "assets/js/operator/agent-presence.js",
+      "bytes": 19607,
+      "sha256": "e1d6a7a2c9ffe072964430308e2d574ec3c0fbfd6451fb2aceeb39ef1065a8ff"
+    },
+    {
+      "path": "assets/js/profile-page.js",
+      "bytes": 16626,
+      "sha256": "3bbba6b0f57a3f3e329844abe63a10aec29d99c840b0558cc5c3468badbf563b"
+    },
+    {
+      "path": "assets/js/realm/eon-realm-visual-profile.js",
+      "bytes": 10341,
+      "sha256": "4db35861ceb936eb24264fc841504ca3e795f9f5032e073af4964f41a459587d"
+    },
+    {
+      "path": "assets/js/realm-studio-page.js",
+      "bytes": 24842,
+      "sha256": "7b88f32423035a4116c9730ee95682192ff53c63a8b40ce77e1a247a0891a8eb"
+    },
+    {
+      "path": "assets/js/utils/app-surface-quality-gates.js",
+      "bytes": 5340,
+      "sha256": "e15d67d2cfef437a065e7a35581eca1778338f84675c38e4f70bcbc4523ef509"
+    },
+    {
+      "path": "assets/js/utils/site-shell.js",
+      "bytes": 16126,
+      "sha256": "6c0ec9981d15816f24747da375331cb33971d25fabfb551c77e9264254693019"
+    },
+    {
+      "path": "config/product-evidence-registry.mjs",
+      "bytes": 14013,
+      "sha256": "fcf17a239e033c0a94fa2a93c69ae888f789cc85fc9a305955c72d42cfc0dcaf"
+    },
+    {
+      "path": "config/route-contract.mjs",
+      "bytes": 17286,
+      "sha256": "4d7d9ba8a6a1da0db686724d22f8a0c1f3c466e818620ac617173045c32fbff8"
+    },
+    {
+      "path": "config/sponsored-discovery-policy.mjs",
+      "bytes": 2072,
+      "sha256": "d8b569dbe0bc1ae19a71b7c355057d85313040bbd3275d0f41bef7b5159a95ba"
+    },
+    {
+      "path": "config/w306-local-first-boundary-contract.mjs",
+      "bytes": 1417,
+      "sha256": "378b7364b0d1b666c04454ea74164e50a420e44c5161ff453449103e849f9ae3"
+    },
+    {
+      "path": "config/w359-eon-city-agent-director-contract.mjs",
+      "bytes": 2225,
+      "sha256": "3358e1df3d319cc783ffe0b109d012fcc73ac6c215d8d5ff125ca2d48792e09a"
+    },
+    {
+      "path": "config/w360-eon-city-portal-route-contract.mjs",
+      "bytes": 4109,
+      "sha256": "cc122819f44e3449950a7d834aa0cab11b4491041064897afb839dfde92a3be0"
+    },
+    {
+      "path": "config/w361-cityworldstate-mode-transition-contract.mjs",
+      "bytes": 2343,
+      "sha256": "cb83d289c324b2803b2b42ce72e31afb1cd5d0e5e91896a3179fef2a206acb7f"
+    },
+    {
+      "path": "config/w362-app-deck-action-taxonomy-contract.mjs",
+      "bytes": 2099,
+      "sha256": "9b4d4d052b4ff8152956a3928dcdda65707ffc03a0b195d2d1e0b67f4baacd0f"
+    },
+    {
+      "path": "config/w363-city-lite-art-contract.mjs",
+      "bytes": 1681,
+      "sha256": "f47edd803c4b5e3cc9223f43d87fdac99741573506045f6ba707f56fd278ed94"
+    },
+    {
+      "path": "config/w364-babylon-immersive-controls-contract.mjs",
+      "bytes": 1522,
+      "sha256": "455c981b0bf24dc4194baab115a6500cac1b699313b6a3f7e3caf9f852d7e20c"
+    },
+    {
+      "path": "config/w364a-google-data-custody-contract.mjs",
+      "bytes": 1109,
+      "sha256": "0311e1f6d8cf387b48574e14520e0ea36bf070e6a8e1971a648e6ed7a1085eef"
+    },
+    {
+      "path": "config/w365-city-asset-foundation-contract.mjs",
+      "bytes": 1506,
+      "sha256": "88d8e28a18629039854ea7f7ab9cfe69427ee985adca32bd9c4ee6862225c532"
+    },
+    {
+      "path": "config/w366-neon-command-district-contract.mjs",
+      "bytes": 1777,
+      "sha256": "469d2cc84abc32502c5bc76d11b5b78aa1c71bf6065ec99fdb0d50ea0e011f8e"
+    },
+    {
+      "path": "config/w367-spatial-command-space-contract.mjs",
+      "bytes": 1933,
+      "sha256": "230f3bf5f55d85d1386e886574cf417813d02a751b12d4987c35f8c6de27f2b5"
+    },
+    {
+      "path": "config/w368-eonbot-city-work-loop-contract.mjs",
+      "bytes": 1468,
+      "sha256": "555a010aa90385918e6e23956de1e809db92acbd5260669848a752521895c110"
+    },
+    {
+      "path": "config/w369-adaptive-soundscape-contract.mjs",
+      "bytes": 1449,
+      "sha256": "6ddb202be425154e674aec2b2b344a4078a55572f2bfee9cd508499d611f522c"
+    },
+    {
+      "path": "config/w370-my-realm-visual-profile-contract.mjs",
+      "bytes": 1923,
+      "sha256": "cd6c7525c7b0aa70b21c819cb8fd648d6a6eb0644cafcd15418e12b56b5bfa3a"
+    },
+    {
+      "path": "config/w371-performance-lab-contract.mjs",
+      "bytes": 1355,
+      "sha256": "15ff156d6226251eab1c113c7d8a21467d35584870980eb12ea45c3c08283504"
+    },
+    {
+      "path": "config/w372-visual-certification-contract.mjs",
+      "bytes": 1358,
+      "sha256": "0c176dc38ad59947390db835b37f9c0c3caf9f99e06701f3281b456ab424fe85"
+    },
+    {
+      "path": "docs/EONAPP_UNIFIED_CITY_APPS_AUTOMATION_IDENTITY_COMMERCE_ROADMAP_2026-06-26.md",
+      "bytes": 4419,
+      "sha256": "c68c89266f866c78ef299a8866e1165c97ef8f6d7cb979dfb79ffb85ff1d595c"
+    },
+    {
+      "path": "docs/EON_CITY_APP_DECK_AUTOMATION_UNIFIED_MASTERPLAN_2026-06-26.md",
+      "bytes": 8593,
+      "sha256": "d2d2e851862351756afc195a9b0d419f1bd7380c4dc10df6286867e95af1aeda"
+    },
+    {
+      "path": "docs/EON_CITY_INSTITUTIONAL_GAME_DEV_MASTERPLAN.md",
+      "bytes": 15527,
+      "sha256": "73da7ce1d70961fe6d2c6d9ab5596c580110166762f3459516dd441fe187ccd3"
+    },
+    {
+      "path": "docs/EON_CITY_W364_W372_EXECUTION_LEDGER_2026-06-26.md",
+      "bytes": 15976,
+      "sha256": "fc31bd4aeeadf645d95f3d0f7e9af4762958c8e985b414d562d74120753082c6"
+    },
+    {
+      "path": "docs/GOOGLE_IDENTITY_CLOUDFLARE_SETUP_PLAN_2026-06-26.md",
+      "bytes": 7328,
+      "sha256": "d95f8c6989ef75170b86fb5ce5633ea924e48095bc60e2bf9025546ef4016714"
+    },
+    {
+      "path": "docs/W359_EON_CITY_MEGA_UPGRADE_PLAN_2026-06-26.md",
+      "bytes": 12174,
+      "sha256": "6515b5a17a617bf832909046e98f8a6ea6594663a7d66796e8022d6d4e950516"
+    },
+    {
+      "path": "docs/W360_EON_CITY_PORTAL_AND_PRODUCTION_TRUTH_RUNBOOK.md",
+      "bytes": 5168,
+      "sha256": "060a70dd9b5a2b3f2bb983609e132878b1a1e951e804d05926106cac5fd3cda7"
+    },
+    {
+      "path": "docs/W361_CITYWORLDSTATE_ROUTE_TRUTH_AND_AUTOMATION_AUDIT.md",
+      "bytes": 3812,
+      "sha256": "c0f9d60323b19d5d7ed0e82f306b9665ef91c58de30ca49fc50b7a611d74beba"
+    },
+    {
+      "path": "docs/W362_APP_DECK_ACTION_TAXONOMY_IMPLEMENTATION_STATUS_2026-06-26.md",
+      "bytes": 1469,
+      "sha256": "0ecd0ff6e136f0bd592a0482dda397e07d12f1e386b81ae30545e6e708cb80cb"
+    },
+    {
+      "path": "docs/W363_CITY_LITE_ART_IMPLEMENTATION_2026-06-26.md",
+      "bytes": 1766,
+      "sha256": "ae0abd648c05f9d78d799f18196eba91baed32c2a2983a126c22690b1d959ff2"
+    },
+    {
+      "path": "docs/W364A_OPTIONAL_GOOGLE_IDENTITY_LOCAL_DATA_CUSTODY_2026-06-26.md",
+      "bytes": 3336,
+      "sha256": "771499b79b8e21ab4248b5e22150f10d8d75abab7ee2f602c3375ea1a5118290"
+    },
+    {
+      "path": "docs/W364_BABYLON_IMMERSIVE_CONTROLS_IMPLEMENTATION_2026-06-26.md",
+      "bytes": 2595,
+      "sha256": "450587d99225d38f0bd571ac009c5bac5f3157dd82a3689fcca01e7b6bee278e"
+    },
+    {
+      "path": "docs/W365_CITY_ASSET_FOUNDATION_2026-06-26.md",
+      "bytes": 2788,
+      "sha256": "6e6b2a2f16205504ec4ab8c4d24a2be2775639218130668f1c1cc5255a9b5536"
+    },
+    {
+      "path": "docs/W366_NEON_COMMAND_DISTRICT_VERTICAL_SLICE_2026-06-26.md",
+      "bytes": 3262,
+      "sha256": "040b8593c930dfe91ef0c1c31553d3575c56c68a9b4d82f1e4dc7a2fc4406796"
+    },
+    {
+      "path": "docs/W367_THREE_SPATIAL_COMMAND_SPACE_IMPLEMENTATION_2026-06-26.md",
+      "bytes": 2178,
+      "sha256": "1ad8f7ef30d2935fb46efa0debac3639ae7732920ab6eda2da833364fab40ebe"
+    },
+    {
+      "path": "docs/W368_EONBOT_CITY_WORK_LOOP_IMPLEMENTATION_2026-06-26.md",
+      "bytes": 1522,
+      "sha256": "28ad6a230496d59429709f1c4726783319d0f5ff85d718e13d62f99342ff5695"
+    },
+    {
+      "path": "docs/W369_ADAPTIVE_SOUNDSCAPE_IMPLEMENTATION_2026-06-26.md",
+      "bytes": 1451,
+      "sha256": "7a8b1f6b589b584873eec878afdcf853be9a49a4f74e14304e737ab14abfb374"
+    },
+    {
+      "path": "docs/W370_MY_REALM_VISUAL_PROFILE_IMPLEMENTATION_2026-06-26.md",
+      "bytes": 1239,
+      "sha256": "6100b5ba95c49997e6194e6fa7c981f2284f9493f467e9c93750491bb97d3135"
+    },
+    {
+      "path": "docs/W371_CITY_PERFORMANCE_LAB_IMPLEMENTATION_2026-06-26.md",
+      "bytes": 1134,
+      "sha256": "8789d618e057436998e5562a0d17fdae6aa96c621f38f20af17584dcef78175a"
+    },
+    {
+      "path": "docs/W372_VISUAL_CERTIFICATION_READINESS_2026-06-26.md",
+      "bytes": 1333,
+      "sha256": "2481d5b0184f337c04fcff617ecd0a10045d34719a1abe76cdb6c09c391dbe60"
+    },
+    {
+      "path": "eoncity-3d.html",
+      "bytes": 3212,
+      "sha256": "2cef7011c3fbf17d61ea35b770f186db717cc01fc469e6c0abff665fb8f31eca"
+    },
+    {
+      "path": "eoncity-lite.html",
+      "bytes": 1659,
+      "sha256": "fe4f08aee9a46310fd900df3b66a8e25ea1df128adcfb17fb74fd027616671c3"
+    },
+    {
+      "path": "eoncity-play.html",
+      "bytes": 1564,
+      "sha256": "57fbe040d94bd98847b7785f5d6febc6018bd551cbfa055beccb01caac15ef01"
+    },
+    {
+      "path": "eoncity.html",
+      "bytes": 1350,
+      "sha256": "7ffa24a8e40e8c939896cf110869572720806d21c77cd2e31b1c173c923196e9"
+    },
+    {
+      "path": "package.json",
+      "bytes": 38063,
+      "sha256": "a86596d30730bd8683f01b7e6b8d821d51422632fe4d8897a628302d68e72c60"
+    },
+    {
+      "path": "profile.html",
+      "bytes": 11161,
+      "sha256": "ca0b93070624f9942055e87581355ac9a964381bfd78d35df1b1d5a0949456a4"
+    },
+    {
+      "path": "public/_redirects",
+      "bytes": 3621,
+      "sha256": "c640e03d5032d2a4ed8ed4c92f2c1e7159eafe725fa3547afd99415442b19dec"
+    },
+    {
+      "path": "realm-studio.html",
+      "bytes": 13625,
+      "sha256": "8bee145751747978d2eabc3f9669f73c316ad35e0a09b2ef5ef0a0fda23ae01b"
+    },
+    {
+      "path": "scripts/app-surface-quality-gate.mjs",
+      "bytes": 3881,
+      "sha256": "0c4fe1aa8e60916bded914ca40b35f457c95c4ef8a69da8cf051c30a66bdb273"
+    },
+    {
+      "path": "scripts/launch-readiness.mjs",
+      "bytes": 4579,
+      "sha256": "ed6d5dd760ea710d55afbbe1b05b5712592775d01567f2b7996e457df3b9775d"
+    },
+    {
+      "path": "scripts/run-current-unit-suite.mjs",
+      "bytes": 6036,
+      "sha256": "78d50e9df042b0719439d61039df519910410d8fdb4762406427e4fc662c29c4"
+    },
+    {
+      "path": "scripts/smoke-check-build.cjs",
+      "bytes": 2294,
+      "sha256": "9a50c0d233cdd64defc7f19d9142e929d58325c8b496f05187e3d7f9661764ca"
+    },
+    {
+      "path": "scripts/w249-babylon-play-proof-spike-gate.mjs",
+      "bytes": 8329,
+      "sha256": "0cf90b58352438938b109b34b74fbe9d49733cb8a0052c01ad54427e2ed9b521"
+    },
+    {
+      "path": "scripts/w253-city-input-orientation-accessibility-gate.mjs",
+      "bytes": 3444,
+      "sha256": "e750be7b81267afe1164af5528a0cc6432fdbbaea15c64d322f9209a6a360b57"
+    },
+    {
+      "path": "scripts/w254-city-performance-governor-gate.mjs",
+      "bytes": 2896,
+      "sha256": "89b311ff8361fca287e9ce6eae2f45f17bcaeeb458330f43165ddb8cb486b81f"
+    },
+    {
+      "path": "scripts/w306-local-first-boundary-gate.mjs",
+      "bytes": 5916,
+      "sha256": "0536c84bc2e679564c8b7338de707d6daf649ae8fa2c44366795856e9c1e3f83"
+    },
+    {
+      "path": "scripts/w359-eon-city-agent-director-gate.mjs",
+      "bytes": 5009,
+      "sha256": "f9e791715103bbdf97de90240e0bd5e1c708594840eb451e8bd2abd31e014bd0"
+    },
+    {
+      "path": "scripts/w360-eon-city-portal-route-gate.mjs",
+      "bytes": 6498,
+      "sha256": "746e733e4e063373d5aa74ab00007bd74c0d496f1db04d0b020688ae65a09df1"
+    },
+    {
+      "path": "scripts/w360-production-route-probe.mjs",
+      "bytes": 4219,
+      "sha256": "51e49aca0a90efcb38687a30de2b33c96605bc99464559d0c35b202d80904e96"
+    },
+    {
+      "path": "scripts/w361-city-mode-transition-gate.mjs",
+      "bytes": 6261,
+      "sha256": "8127d71022179537238f67fd381024521ec06c50d52a6ee1c48101dbbe8f9fa2"
+    },
+    {
+      "path": "scripts/w361-production-core-route-probe.mjs",
+      "bytes": 4759,
+      "sha256": "f31c2ff0dbb930bdea977103de312df275e192e9a6df48d20a2f9bcad9d68549"
+    },
+    {
+      "path": "scripts/w362-app-deck-action-taxonomy-gate.mjs",
+      "bytes": 6016,
+      "sha256": "b5aaaf136f33502485c3dd4a25f6232a97382f37d6ebd8ad53990460f92b2405"
+    },
+    {
+      "path": "scripts/w363-city-lite-art-gate.mjs",
+      "bytes": 5827,
+      "sha256": "df63491caf84e565757f9f599611e6effa94b23490f2dacb0e8e1b3a864adc2a"
+    },
+    {
+      "path": "scripts/w364-babylon-immersive-controls-gate.mjs",
+      "bytes": 4502,
+      "sha256": "f14d23b82885607cd491d7983c973ba158401e30c4d541e752e80ed566023b4c"
+    },
+    {
+      "path": "scripts/w364a-google-data-custody-gate.mjs",
+      "bytes": 3468,
+      "sha256": "09343e413cbb5bbf37fbf69d4ddab647a5ae29c9e8ed3f45c785e24bc8cd2b1a"
+    },
+    {
+      "path": "scripts/w365-city-asset-foundation-gate.mjs",
+      "bytes": 6516,
+      "sha256": "9362607759c74c723cf4228ce968fe7143983a160cad834dc2f69700b49ba684"
+    },
+    {
+      "path": "scripts/w366-neon-command-district-gate.mjs",
+      "bytes": 5070,
+      "sha256": "c192ec19d183dd6e6984e16df4e95dd72a4e6d2ba8baf7d237addb2c10fdb0fc"
+    },
+    {
+      "path": "scripts/w367-spatial-command-space-gate.mjs",
+      "bytes": 4971,
+      "sha256": "c009169dd148951e5f434a75632447fd0b27d652ab1885d705f63e1c9d017c10"
+    },
+    {
+      "path": "scripts/w368-eonbot-city-work-loop-gate.mjs",
+      "bytes": 3385,
+      "sha256": "dcbcc266c8f089de840041cd11944cdcd10b7b37a8a283a0297f786039e5e057"
+    },
+    {
+      "path": "scripts/w369-adaptive-soundscape-gate.mjs",
+      "bytes": 3732,
+      "sha256": "26f159bedc90ae8a03b254ba1eaa2f93a41afce681d22d2a5a3df581daaf3504"
+    },
+    {
+      "path": "scripts/w370-my-realm-visual-profile-gate.mjs",
+      "bytes": 3920,
+      "sha256": "d845e271b211fa74e539751a300d5875d31d183cec77aff31165559af7730dba"
+    },
+    {
+      "path": "scripts/w371-performance-lab-gate.mjs",
+      "bytes": 3512,
+      "sha256": "97ce436df3c80d39596c402b77a9577b63348fc90341970fe889872660891e53"
+    },
+    {
+      "path": "scripts/w372-visual-certification-readiness-gate.mjs",
+      "bytes": 3730,
+      "sha256": "69ffe3501db4317cca485085dc0139721f61376bae6e29a14c6fd2daeb87ab8a"
+    },
+    {
+      "path": "tests/unit/w180-w181-chat-first-shell.test.mjs",
+      "bytes": 2799,
+      "sha256": "ffbe9d72e80a7db75c972f996a0035fc7d7f3e8ee1c9ff49868ed914a3a5367f"
+    },
+    {
+      "path": "tests/unit/w197-w201-sync-city-device.test.mjs",
+      "bytes": 5854,
+      "sha256": "4015a00bb2fa643afcc8f9b25c7435ee86641e3ed8fe004d04bd820bebfada65"
+    },
+    {
+      "path": "tests/unit/w213-calm-city-trade.test.mjs",
+      "bytes": 3624,
+      "sha256": "eae908d45e10b02433466f13156c0434340563a1668248a075f25f57de5882f8"
+    },
+    {
+      "path": "tests/unit/w216-local-finalization.test.mjs",
+      "bytes": 6400,
+      "sha256": "c358d9a36222241034949653cd169882717e5a9a4d60903e82a22dc5621fa8c7"
+    },
+    {
+      "path": "tests/unit/w217-route-contract.test.mjs",
+      "bytes": 3508,
+      "sha256": "462f1cd8cdc2784f081c126ff83e884b3c1b76ff84a6ae27e300228ce7d0a11b"
+    },
+    {
+      "path": "tests/unit/w221-cityworldstate-2d-rpg.test.mjs",
+      "bytes": 5800,
+      "sha256": "d0e4227cae891720962bb85534e8244b9a337ffb32c20691bbfe24f54f9f99ad"
+    },
+    {
+      "path": "tests/unit/w224-cityworldstate-3d-parity.test.mjs",
+      "bytes": 6563,
+      "sha256": "194aafc5b1a407adc76290d4bcd8553352932a7b371601ba5831ad0138cbe4be"
+    },
+    {
+      "path": "tests/unit/w225-account-catalog-foundations.test.mjs",
+      "bytes": 7169,
+      "sha256": "458d8bd770a7f8e0a64c190c5a14e3ce2806db9ef19ca5b42e8a299dab6b97a3"
+    },
+    {
+      "path": "tests/unit/w230-eonbot-command-hub.test.mjs",
+      "bytes": 7098,
+      "sha256": "988737ce03a9cb31fa6655817e915c8097ea0279419185762d23815bfa86b019"
+    },
+    {
+      "path": "tests/unit/w231-eon-city-flagship.test.mjs",
+      "bytes": 4779,
+      "sha256": "7355818c308682687daeac225d56ced1e953c4135204654c02ac7888389fc5a1"
+    },
+    {
+      "path": "tests/unit/w232-my-realm-return-loop.test.mjs",
+      "bytes": 7737,
+      "sha256": "5b366e6de22fc97e31250fe2aee2540721afe5f6a23e524d16b875c892cbc181"
+    },
+    {
+      "path": "tests/unit/w243-chat-navigation-theme.test.mjs",
+      "bytes": 2351,
+      "sha256": "f4291283bc48ee81866ca461682ed075404255777b8c19e2765f428a01241690"
+    },
+    {
+      "path": "tests/unit/w248-city-mode-contract.test.mjs",
+      "bytes": 2434,
+      "sha256": "069ebc24d4961b7578cc182b51f2df63ccc2d99f697eb3e68c72421db4f05eeb"
+    },
+    {
+      "path": "tests/unit/w249-babylon-play-proof-spike.test.mjs",
+      "bytes": 4319,
+      "sha256": "05c86418ee11c5277d58482c30d4cb77595bd6d7c77f8b19175d5af5be6c78cf"
+    },
+    {
+      "path": "tests/unit/w253-city-input-orientation-accessibility.test.mjs",
+      "bytes": 2023,
+      "sha256": "59f8e55cb7b3f053281e5c14e85956f3aef8bd90f2e80af88514a98be065cb50"
+    },
+    {
+      "path": "tests/unit/w254-city-performance-governor.test.mjs",
+      "bytes": 1636,
+      "sha256": "0a112fbf190ae4767bb7e7d37eb430d38b1bc4695dd5d5f895b28ee5c82ec14b"
+    },
+    {
+      "path": "tests/unit/w306-local-first-boundary.test.mjs",
+      "bytes": 2484,
+      "sha256": "76f874f9655961d6b676e3dc21128eb11111792cef80f92fc86c2de39baa0fd4"
+    },
+    {
+      "path": "tests/unit/w359-eon-city-agent-director.test.mjs",
+      "bytes": 2959,
+      "sha256": "076aaa70780ef5b8843e579d8dbfc74b9d8e09f30bacdfc4958a421c4f7bc596"
+    },
+    {
+      "path": "tests/unit/w360-eon-city-portal-route.test.mjs",
+      "bytes": 1586,
+      "sha256": "debf9747aa5e62b2e097b6e0b0baf038c69ffac947fdf0f08a6263da8aa669a2"
+    },
+    {
+      "path": "tests/unit/w361-city-mode-transition.test.mjs",
+      "bytes": 3117,
+      "sha256": "232a4bf70560fb32161c31e181fe72c59e73d60ad719e7dc21a785731a377e04"
+    },
+    {
+      "path": "tests/unit/w362-app-deck-action-taxonomy.test.mjs",
+      "bytes": 3638,
+      "sha256": "f446558c3ab1b69151b2b4ae64e4ee781f6e787f5066529ad8c98c6390f2a837"
+    },
+    {
+      "path": "tests/unit/w363-city-lite-art.test.mjs",
+      "bytes": 2768,
+      "sha256": "a6d652dca1ae4f0dfa8a9ff0a0566278eb7565d6579dd71061bb726e5ab0991f"
+    },
+    {
+      "path": "tests/unit/w364-babylon-immersive-controls.test.mjs",
+      "bytes": 3454,
+      "sha256": "410754e90f9a676b2413683a0f51093426065a4b44333aae27e229f56ea595a4"
+    },
+    {
+      "path": "tests/unit/w364a-google-data-custody.test.mjs",
+      "bytes": 5168,
+      "sha256": "7d05a05a0d787b3df30457715387115ef55d91687468a03d7a901871092c309b"
+    },
+    {
+      "path": "tests/unit/w365-city-asset-foundation.test.mjs",
+      "bytes": 4457,
+      "sha256": "482904220c8099c8db79e84cf425453334eed5d8a87275f4df8e55c0b58c674d"
+    },
+    {
+      "path": "tests/unit/w366-neon-command-district.test.mjs",
+      "bytes": 3935,
+      "sha256": "263b535252f8ab3ed468a16fe5cf601824f20fb9bb9d5bfbbfc4c5626c03b076"
+    },
+    {
+      "path": "tests/unit/w367-spatial-command-space.test.mjs",
+      "bytes": 2836,
+      "sha256": "82be730f8561e936366060622787e9cab31772be07b5a4dde149d9e002c23665"
+    },
+    {
+      "path": "tests/unit/w368-eonbot-city-work-loop.test.mjs",
+      "bytes": 2453,
+      "sha256": "30ff486a168dad95cb6e45a9b787554cbc11c0f2a58f9de517f8db6580ba9fdd"
+    },
+    {
+      "path": "tests/unit/w369-adaptive-soundscape.test.mjs",
+      "bytes": 3122,
+      "sha256": "b0994340dca5684cfdfda387f4a87c45869e779d87fa3dc3f4fbac21d376d73c"
+    },
+    {
+      "path": "tests/unit/w370-my-realm-visual-profile.test.mjs",
+      "bytes": 2868,
+      "sha256": "f881455abc3be622cd619d5e8a02cb0156b474d9a527dda2531c35b7ee6b0090"
+    },
+    {
+      "path": "tests/unit/w371-performance-lab.test.mjs",
+      "bytes": 2355,
+      "sha256": "d7dbcd5b4c6f55430b25cac6f1b45e40bb3e070e2960bacecb5b63a747962637"
+    },
+    {
+      "path": "tests/unit/w372-visual-certification.test.mjs",
+      "bytes": 1651,
+      "sha256": "f32bf7065978ceba7990096018983167a6cc08226ba209584376c00398dbe41e"
+    }
+  ],
+  "verification": {
+    "focusedW364ThroughW372": "passed",
+    "sourceSyntax": "passed",
+    "siteAudit": "passed",
+    "launchReadiness": "passed-with-dist-warning",
+    "secretScan": "passed-0-findings",
+    "currentUnitSuite": "290/307 passed; 17 inherited blockers",
+    "w372Status": "pending-external-evidence"
+  }
+}

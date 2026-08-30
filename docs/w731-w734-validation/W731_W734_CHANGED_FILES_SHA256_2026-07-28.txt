@@ -1,0 +1,41 @@
+EONAPP W731-W734 changed-file SHA-256 manifest
+Generated: 2026-07-28 Asia/Kolkata
+Base: 789a77665905197d283ce184f3161a6946323241
+Note: this manifest intentionally excludes itself.
+
+Files: 34
+
+3abf25362ac3d1f9200a85b23db0f95ba8198c765b43b57043ef4e185aae1fc7      199884   M  assets/css/eon-city-play.css
+c232597a6f10e81f61723cee9377141589e47e0c6262ea2920f33562162f6f6f       31231   M  assets/js/city/eon-city-access-station.js
+3b06ecd41953d73c612e8d1782ce57889b4df8a9673890165761ebdadcc2b214        4116   M  assets/js/city/eon-city-entry-experience.js
+618a01827a93728da4f410b8fb78d5eefa316cb50cbbc3f2ecd458fd422791d9         425   M  assets/js/city/eon-city-play-core.js
+a32e4a958c73e47d1c251bb44d66fa571aa0f8de02cc6c47807a0287c2881cbd        2966   M  config/archive/w721-superseded-launch-tests.json
+785d1107066c2d8389e5e4f60b52ed47eded896854b7df7387440fa223f721e4       27178   M  config/w624d-current-unit-test-manifest.json
+e77a76e65df73373e3196d99f84fa3830288d9b1ea0600391f51340c9f706e0c       30625  ??  docs/EONAPP_W720_W736_APPROVED_AMENDED_PLAN_V3_2026-07-28.md
+45cb2d447073b4642983b98cdacc11f951794783b89272d79a26b7202b3c523c        3729  ??  docs/EONAPP_W731_W734_COMMAND_HUB_HANDOFF_2026-07-28.md
+9d2963fde1566fd4427e0796533f9017c458e599c1bc3f4b6c919791dd05d809        4105   M  eoncity.html
+a5aa8e02c98247cb64321d8fa63ca946e59caebd884063521dc0d4db2506a9b5      158333   M  package.json
+568d76f612660c0849316c0bb81cfc183146f50388f54c239ca790ed6478620a        9013   M  scripts/build-production.mjs
+fb29a091017331c362762eb2a6e67c65e8eb0f44fd45279107412323372b1be1       32366   M  scripts/run-current-unit-suite.mjs
+1959aef2ee51236da9145ab7a71a6c688b1ea5b9bac79801311c8814e9d1a17e        6553   M  scripts/w392-direct-eon-city-entry-gate.mjs
+af5cad12102890d36b16cd016921c7b9d23e2cee6267437ff7361e5ec901d729        6930   M  scripts/w695-character-motion-gate.mjs
+e7f8be41b0303ca473b876686645f36bc1a6dd1479837a871890cd401fc8a4a8        3206   M  scripts/w718-run-fast-maintained-suite.mjs
+f4f26f744d147967448b2030f24bc843de946014039d24a105b1b4e0544112a4        3501   M  scripts/w721-product-reset-gate.mjs
+edfbe48e1bbc187de26600f46ff417531a7b93cfba10acc3780b07cdc4af5237        1046  ??  scripts/w731-w734-command-hub-gate.mjs
+1c96ad8d9a18c6e92a54fd586832a0c3018acba76fadb2be2ef577e8156d7a7e        3989   M  tests/unit/w392-direct-eon-city-entry.test.mjs
+a56af6f569e7aa51e82b3e88f0cac32d396b3e9396a76da1e560c3a9202de89c        9572   M  tests/unit/w659f-eoncity-functional-integration.test.mjs
+a9f7ef872bdd37a908ee4a917540d749bf46adc7f207de2cef84b3541ba087cd       10274   M  tests/unit/w659g-productive-city.test.mjs
+fb101c5b48b62d3484ecbd4fc75d925aceb3c49e74fa9dba74d04b14c34236a0        4161   M  tests/unit/w659h-final-reaudit.test.mjs
+57190e4c54e61b21eb5ccc62ca69c975662d4c9d15611091201676402aec6005        5978   M  tests/unit/w659n-p0-correctness.test.mjs
+7f2b255bd926512b961f74396c060baacfef24fd7bfec2da946bc651fe06ad35        4573   M  tests/unit/w659n-productive-city-integration.test.mjs
+18c5d9b8f279bbc487ef603d9890b71c795b372826393ccced4f7def9720cb1b        5063   M  tests/unit/w662-camera-relative-movement.test.mjs
+d6273e393977ceb1caa7cf7d93c1a5cac7b70ec0801984a20fcea97da3dedd96        6382   M  tests/unit/w664-input-interaction-authority.test.mjs
+76a7e9be45644fe91853fa14a94fd0676a112f8732cc0d58612d50e423687efc        3460   M  tests/unit/w666b-complete-asset-function-registry.test.mjs
+6125e5839ffb7c1b1749de9cb4612892786924001c17e69007e873bc806b7185        4530   M  tests/unit/w688-creator-forge-belt-activation.test.mjs
+b24b909f7973653ac2a1333c1547c2c837abc6d44c15386f8582df77ae553ab3        1861   M  tests/unit/w703-eoncity-world-safety-integration.test.mjs
+8aa148454f04cdf7decff94a3b9354455139963dcb806072dcd792cf81b0af9f        2244   M  tests/unit/w719-13-input-camera-authority.test.mjs
+9385c7efdc579d11157e1ebbc89900c21f760d33727445c5db2a81bb7c175815        4040   M  tests/unit/w724-quick-command-surface.test.mjs
+4d019e53d9d867cddd4598e5df5a55c86af4d5ec6a53686b8cba23120cadddae        2015  ??  tests/unit/w731-city-runtime-consolidation.test.mjs
+f4ffdafd2f77ab369fa4bc5c0a605c720cdcea2db0d64d3c837741ab2fee85e2        2222  ??  tests/unit/w732-command-atrium.test.mjs
+6b64740190dc2281656c1e8dea0421e74f5e92801a1ac05e63d658cccdc067dd        2217  ??  tests/unit/w733-functional-stations.test.mjs
+6b8fcf579dd71297146d90a930cfe8975f037cfd26b10f8dc10ff419dd6e0e7f        2389  ??  tests/unit/w734-city-characters-polish.test.mjs

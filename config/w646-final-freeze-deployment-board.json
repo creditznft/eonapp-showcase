@@ -1,0 +1,13 @@
+{
+  "schema": "eonapp.final-freeze-deployment-board.w646.v1",
+  "wave": "W646",
+  "sourceImplementation": "complete",
+  "permanentPredeploy": "not-run-on-final-source",
+  "candidateFrozen": false,
+  "previewDeployed": false,
+  "productionEvidencePassed": false,
+  "ownerGoIssued": false,
+  "productionDeployed": false,
+  "liveProductionCertified": false,
+  "publicDecision": "no-go"
+}

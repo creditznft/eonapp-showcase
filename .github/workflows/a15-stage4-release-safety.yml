@@ -1,0 +1,322 @@
+name: A15 Stage-4 Release Safety
+
+on:
+  push:
+    branches:
+      - codex/eoncity-stage4-repair
+
+permissions:
+  contents: read
+  deployments: write
+  statuses: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+
+jobs:
+  certify-release-safety:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    concurrency:
+      group: eonapp-stage4-release-safety
+      cancel-in-progress: true
+    steps:
+      - name: Check out exact repair authority
+        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955
+        with:
+          fetch-depth: 0
+      - name: Use Node 22
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - name: Install exact dependencies
+        run: npm ci --include=dev --no-audit --no-fund --prefer-offline
+      - name: Verify OAuth and identity source authority
+        run: |
+          npm run qa:w373-w374-identity-google-oauth
+          npm run qa:w530-security-oauth
+          npm run qa:a15-i21-cloudflare-d1
+      - name: Verify integrated A15 City freeze
+        run: npm run qa:a15-c12-integration-freeze
+      - name: Run maintained unit suite
+        run: npm run test:unit:current
+      - name: Enforce lint and secret safety
+        run: |
+          npm run lint -- --max-warnings=0
+          npm run security:secret-scan -- --allow-no-history
+      - name: Build exact production distribution
+        env:
+          EONAPP_SOURCE_REVISION: ${{ github.sha }}
+        run: npm run build
+      - name: Verify emitted distribution and launch readiness
+        run: |
+          npm run qa:w759-production-asset-graph
+          npm run qa:w660-city-emitted-candidate
+          npm run qa:w655-pages-routing
+          npm run smoke:build
+          npm run launch:readiness
+      - name: Publish connector-readable release-safety status
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          if [ "$JOB_STATUS" = "success" ]; then
+            STATE=success
+            DESCRIPTION='A15 Stage-4 release safety passed'
+          else
+            STATE=failure
+            DESCRIPTION='A15 Stage-4 release safety failed'
+          fi
+          STATE="$STATE" DESCRIPTION="$DESCRIPTION" TARGET_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+            node -e "const fs=require('fs'); fs.writeFileSync('/tmp/status.json', JSON.stringify({state:process.env.STATE,context:'eonapp/a15-stage4-release-safety',description:process.env.DESCRIPTION,target_url:process.env.TARGET_URL}))"
+          curl --fail --silent --show-error \
+            -X POST \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H 'Accept: application/vnd.github+json' \
+            -H 'X-GitHub-Api-Version: 2022-11-28' \
+            "${{ github.api_url }}/repos/${{ github.repository }}/statuses/${{ github.sha }}" \
+            --data-binary @/tmp/status.json
+
+  immutable-preview:
+    needs: certify-release-safety
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    environment:
+      name: preview
+    concurrency:
+      group: eonapp-stage4-pr49-auth-core-preview
+      cancel-in-progress: true
+    env:
+      PREVIEW_BRANCH: stage4-pr49-auth-core
+    steps:
+      - name: Prohibit production branch
+        run: |
+          test "$PREVIEW_BRANCH" != "main"
+          test "$PREVIEW_BRANCH" != "production"
+          printf '%s' "$PREVIEW_BRANCH" | grep -Eq '^[A-Za-z0-9._-]{1,60}$'
+      - name: Check out exact certified source
+        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+      - name: Use Node 22
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - name: Install exact dependencies
+        run: npm ci --include=dev --no-audit --no-fund --prefer-offline
+      - name: Run permanent predeploy certification
+        env:
+          EONAPP_SOURCE_REVISION: ${{ github.sha }}
+        run: npm run verify:codex-predeploy
+      - name: Build and verify immutable candidate in runner workspace
+        id: candidate
+        run: |
+          npm run release:candidate -- --commit "$GITHUB_SHA"
+          npm run release:candidate:verify -- artifacts/w641-release-candidate
+          ROOT="$(realpath artifacts/w641-release-candidate)"
+          DIGEST="$(jq -r .candidateDigest "$ROOT/candidate-provenance.json")"
+          COMMIT="$(jq -r .commitSha "$ROOT/candidate-provenance.json")"
+          printf '%s' "$DIGEST" | grep -Eq '^[a-f0-9]{64}$'
+          test "$COMMIT" = "$GITHUB_SHA"
+          node scripts/w641-verify-release-candidate.mjs "$ROOT" "$DIGEST"
+          echo "root=$ROOT" >> "$GITHUB_OUTPUT"
+          echo "digest=$DIGEST" >> "$GITHUB_OUTPUT"
+      - name: Validate Cloudflare Preview credentials
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          test -n "$CLOUDFLARE_API_TOKEN"
+          test -n "$CLOUDFLARE_ACCOUNT_ID"
+      - name: Deploy exact candidate to non-production Preview
+        id: deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CANDIDATE_ROOT: ${{ steps.candidate.outputs.root }}
+        run: |
+          mkdir -p reports/a15-stage4-immutable-preview
+          curl --fail --silent --show-error \
+            -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/eonapp-ch/deployments" \
+            > reports/a15-stage4-immutable-preview/deployments-before.json
+          jq -r '.result[].id' reports/a15-stage4-immutable-preview/deployments-before.json | sort -u > /tmp/deployment-ids-before.txt
+          DEPLOY_ROOT="$RUNNER_TEMP/eonapp-stage4-pages-preview"
+          node scripts/w660l-stage-pages-deploy-root.mjs \
+            --candidate "$CANDIDATE_ROOT" \
+            --output "$DEPLOY_ROOT"
+          test -f "$DEPLOY_ROOT/_routes.json"
+          test -f "$DEPLOY_ROOT/functions/api/auth/session.js"
+          test -f "$DEPLOY_ROOT/functions/api/city/access.js"
+          test -f "$DEPLOY_ROOT/functions/api/billing/status.js"
+          test -f "$DEPLOY_ROOT/functions/api/referrals.js"
+          echo "deployment_started_at=$(date -u +%Y-%m-%dT%H:%M:%SZ)" >> "$GITHUB_OUTPUT"
+          cd "$DEPLOY_ROOT"
+          set -o pipefail
+          npx --yes wrangler@4 pages deploy . \
+            --project-name=eonapp-ch \
+            --branch="$PREVIEW_BRANCH" \
+            | tee "$GITHUB_WORKSPACE/reports/a15-stage4-immutable-preview/preview-deploy.log"
+      - name: Resolve exact Cloudflare Preview and verify provenance
+        id: deployment
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CANDIDATE_ROOT: ${{ steps.candidate.outputs.root }}
+          EXPECTED_CANDIDATE_DIGEST: ${{ steps.candidate.outputs.digest }}
+          DEPLOYMENT_STARTED_AT: ${{ steps.deploy.outputs.deployment_started_at }}
+        run: |
+          DEPLOYMENT=null
+          for attempt in $(seq 1 30); do
+            curl --fail --silent --show-error \
+              -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+              "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/eonapp-ch/deployments" \
+              > reports/a15-stage4-immutable-preview/deployments-after.json
+            NEW_DEPLOYMENTS="$(jq -c --arg branch "$PREVIEW_BRANCH" --arg started "$DEPLOYMENT_STARTED_AT" --rawfile before /tmp/deployment-ids-before.txt '
+              ($before | split("\n")) as $beforeIds
+              | [.result[]
+                  | select(.environment == "preview")
+                  | select(.deployment_trigger.metadata.branch == $branch)
+                  | select(.created_on >= $started)
+                  | select(.id as $id | (($beforeIds | index($id)) | not))]
+            ' reports/a15-stage4-immutable-preview/deployments-after.json)"
+            COUNT="$(jq 'length' <<<"$NEW_DEPLOYMENTS")"
+            if [ "$COUNT" -eq 1 ]; then
+              DEPLOYMENT="$(jq -c '.[0]' <<<"$NEW_DEPLOYMENTS")"
+              break
+            fi
+            if [ "$COUNT" -gt 1 ]; then
+              echo "Ambiguous new Preview deployments" >&2
+              jq '.' <<<"$NEW_DEPLOYMENTS" >&2
+              exit 1
+            fi
+            sleep 10
+          done
+          test "$DEPLOYMENT" != "null"
+          ID="$(jq -r .id <<<"$DEPLOYMENT")"
+          URL="$(jq -r .url <<<"$DEPLOYMENT")"
+          ALIAS_URL="$(jq -r '.aliases[0] // empty' <<<"$DEPLOYMENT")"
+          test -n "$ID"
+          test -n "$URL"
+          test -n "$ALIAS_URL"
+          test "$(jq -r .environment <<<"$DEPLOYMENT")" = "preview"
+          test "$(jq -r .deployment_trigger.metadata.branch <<<"$DEPLOYMENT")" = "$PREVIEW_BRANCH"
+          test "$(jq -r .latest_stage.status <<<"$DEPLOYMENT")" = "success"
+          for BASE in "$URL" "$ALIAS_URL"; do
+            OK=false
+            for attempt in $(seq 1 30); do
+              if curl --fail --silent --show-error "$BASE/release/candidate-provenance.json" -o /tmp/served-provenance.json; then
+                if [ "$(jq -r .candidateDigest /tmp/served-provenance.json)" = "$EXPECTED_CANDIDATE_DIGEST" ] \
+                  && [ "$(jq -r .commitSha /tmp/served-provenance.json)" = "$GITHUB_SHA" ] \
+                  && [ "$(jq -r .distPayloadDigest /tmp/served-provenance.json)" = "$(jq -r .distPayloadDigest "$CANDIDATE_ROOT/candidate-provenance.json")" ]; then
+                  OK=true
+                  break
+                fi
+              fi
+              sleep 10
+            done
+            test "$OK" = true
+          done
+          jq -n \
+            --arg schema eonapp.a15.stage4.immutable-preview.v1 \
+            --arg deploymentId "$ID" \
+            --arg deploymentUrl "$URL" \
+            --arg aliasUrl "$ALIAS_URL" \
+            --arg previewBranch "$PREVIEW_BRANCH" \
+            --arg commitSha "$GITHUB_SHA" \
+            --arg candidateDigest "$EXPECTED_CANDIDATE_DIGEST" \
+            '{schema:$schema,ok:true,deploymentId:$deploymentId,deploymentUrl:$deploymentUrl,aliasUrl:$aliasUrl,previewBranch:$previewBranch,commitSha:$commitSha,candidateDigest:$candidateDigest}' \
+            > reports/a15-stage4-immutable-preview/deployment-receipt.json
+          echo "url=$URL" >> "$GITHUB_OUTPUT"
+          echo "alias_url=$ALIAS_URL" >> "$GITHUB_OUTPUT"
+          echo "id=$ID" >> "$GITHUB_OUTPUT"
+      - name: Verify deployed Pages Functions API parity
+        env:
+          DEPLOYMENT_URL: ${{ steps.deployment.outputs.url }}
+          ALIAS_URL: ${{ steps.deployment.outputs.alias_url }}
+        run: |
+          cat > /tmp/check-stage4-preview-api.mjs <<'NODE'
+          import fs from 'node:fs';
+          const bases = [
+            { label: 'deployment', url: process.env.DEPLOYMENT_URL },
+            { label: 'alias', url: process.env.ALIAS_URL }
+          ];
+          const definitions = [
+            ['/api/auth/session', 'eonapp.identity-only.v1'],
+            ['/api/city/access', 'eon.city.access.w649b.v1'],
+            ['/api/billing/status', 'eonapp.billing.dodo-lifecycle.w628.v1'],
+            ['/api/referrals', 'eonapp.referrals.scalable-minimal-ledger.w623i.v2']
+          ];
+          const failures = [];
+          const results = [];
+          for (const base of bases) {
+            for (const [route, schema] of definitions) {
+              try {
+                const response = await fetch(`${base.url}${route}`, { headers: { accept: 'application/json', 'cache-control': 'no-store' } });
+                const text = await response.text();
+                let body = null;
+                try { body = JSON.parse(text); } catch {}
+                results.push({ base: base.label, route, status: response.status, contentType: response.headers.get('content-type') || '', schema: body?.schema || null });
+                if (response.status !== 200) failures.push(`${base.label}:${route}:status:${response.status}`);
+                if (!response.headers.get('content-type')?.toLowerCase().includes('application/json')) failures.push(`${base.label}:${route}:not-json`);
+                if (body?.schema !== schema) failures.push(`${base.label}:${route}:schema:${body?.schema || 'missing'}`);
+              } catch (error) {
+                failures.push(`${base.label}:${route}:request:${error?.message || error}`);
+              }
+            }
+          }
+          fs.writeFileSync('reports/a15-stage4-immutable-preview/api-surface-receipt.json', JSON.stringify({ schema: 'eonapp.a15.stage4.preview-api.v1', ok: failures.length === 0, results, failures }, null, 2));
+          if (failures.length) {
+            console.error(failures.join('\n'));
+            process.exit(1);
+          }
+          NODE
+          STATUS=1
+          for attempt in $(seq 1 60); do
+            if node /tmp/check-stage4-preview-api.mjs; then
+              STATUS=0
+              break
+            fi
+            sleep 10
+          done
+          exit "$STATUS"
+      - name: Install Chromium for authenticated live Preview proof
+        run: npx playwright install --with-deps chromium
+      - name: Require real Command Hub from immutable deployment URL
+        env:
+          EON_STAGE4_BASE_URL: ${{ steps.deployment.outputs.url }}
+          EON_STAGE4_OUTPUT_DIR: artifacts/stage4-immutable-preview/deployment
+        run: node scripts/a15-stage4-production-bundle-proof.mjs
+      - name: Require real Command Hub from Preview alias
+        env:
+          EON_STAGE4_BASE_URL: ${{ steps.deployment.outputs.alias_url }}
+          EON_STAGE4_OUTPUT_DIR: artifacts/stage4-immutable-preview/alias
+        run: node scripts/a15-stage4-production-bundle-proof.mjs
+      - name: Publish connector-readable immutable Preview status
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          if [ "$JOB_STATUS" = "success" ]; then
+            STATE=success
+            DESCRIPTION='Immutable Cloudflare Preview reached PLAYABLE_3D_CORE'
+          else
+            STATE=failure
+            DESCRIPTION='Immutable Stage-4 Preview certification failed'
+          fi
+          STATE="$STATE" DESCRIPTION="$DESCRIPTION" TARGET_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+            node -e "const fs=require('fs'); fs.writeFileSync('/tmp/status.json', JSON.stringify({state:process.env.STATE,context:'eonapp/a15-stage4-immutable-preview',description:process.env.DESCRIPTION,target_url:process.env.TARGET_URL}))"
+          curl --fail --silent --show-error \
+            -X POST \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H 'Accept: application/vnd.github+json' \
+            -H 'X-GitHub-Api-Version: 2022-11-28' \
+            "${{ github.api_url }}/repos/${{ github.repository }}/statuses/${{ github.sha }}" \
+            --data-binary @/tmp/status.json

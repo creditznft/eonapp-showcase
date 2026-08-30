@@ -1,0 +1,378 @@
+{
+  "schema": "eonapp.w476.b.production-browser-proof-result.v1",
+  "wave": "W476-B",
+  "status": "not-pass-or-incomplete",
+  "ok": false,
+  "sourceOnly": false,
+  "networkOptIn": true,
+  "baseUrl": "https://eonapp.ch",
+  "generatedAt": "2026-07-02T19:41:50.434Z",
+  "documents": [
+    {
+      "route": "/",
+      "finalPath": null,
+      "redirects": [],
+      "status": null,
+      "bodyByteLength": 0,
+      "bodySha256": null,
+      "markerPresent": false,
+      "headers": null,
+      "ok": false,
+      "issues": [
+        "network-TypeError"
+      ]
+    },
+    {
+      "route": "/chat",
+      "finalPath": null,
+      "redirects": [],
+      "status": null,
+      "bodyByteLength": 0,
+      "bodySha256": null,
+      "markerPresent": false,
+      "headers": null,
+      "ok": false,
+      "issues": [
+        "network-TypeError"
+      ]
+    },
+    {
+      "route": "/profile",
+      "finalPath": null,
+      "redirects": [],
+      "status": null,
+      "bodyByteLength": 0,
+      "bodySha256": null,
+      "markerPresent": false,
+      "headers": null,
+      "ok": false,
+      "issues": [
+        "network-TypeError"
+      ]
+    },
+    {
+      "route": "/local-ai",
+      "finalPath": null,
+      "redirects": [],
+      "status": null,
+      "bodyByteLength": 0,
+      "bodySha256": null,
+      "markerPresent": false,
+      "headers": null,
+      "ok": false,
+      "issues": [
+        "network-TypeError"
+      ]
+    },
+    {
+      "route": "/eoncity",
+      "finalPath": null,
+      "redirects": [],
+      "status": null,
+      "bodyByteLength": 0,
+      "bodySha256": null,
+      "markerPresent": false,
+      "headers": null,
+      "ok": false,
+      "issues": [
+        "network-TypeError"
+      ]
+    },
+    {
+      "route": "/insights",
+      "finalPath": null,
+      "redirects": [],
+      "status": null,
+      "bodyByteLength": 0,
+      "bodySha256": null,
+      "markerPresent": false,
+      "headers": null,
+      "ok": false,
+      "issues": [
+        "network-TypeError"
+      ]
+    }
+  ],
+  "cspCollector": {
+    "endpoint": "/csp-report",
+    "acceptedStatus": null,
+    "foreignDocumentStatus": null,
+    "optionsStatus": null,
+    "sameOriginPreflight": false,
+    "cacheControlNoStore": false,
+    "ok": false,
+    "issues": [
+      "network-TypeError"
+    ]
+  },
+  "functionMatrix": {
+    "automatedCoverage": 16,
+    "totalFunctionRoutes": 18,
+    "safeRead": [
+      {
+        "id": "actions-status",
+        "route": "/api/actions/status",
+        "status": null,
+        "shape": {
+          "validJsonObject": false,
+          "keys": []
+        },
+        "safeFlags": {},
+        "ok": false,
+        "issues": [
+          "network-TypeError"
+        ]
+      },
+      {
+        "id": "auth-session",
+        "route": "/api/auth/session",
+        "status": null,
+        "shape": {
+          "validJsonObject": false,
+          "keys": []
+        },
+        "safeFlags": {},
+        "ok": false,
+        "issues": [
+          "network-TypeError"
+        ]
+      },
+      {
+        "id": "connectors-status",
+        "route": "/api/connectors/status",
+        "status": null,
+        "shape": {
+          "validJsonObject": false,
+          "keys": []
+        },
+        "safeFlags": {},
+        "ok": false,
+        "issues": [
+          "network-TypeError"
+        ]
+      },
+      {
+        "id": "deployments-status",
+        "route": "/api/deployments/status",
+        "status": null,
+        "shape": {
+          "validJsonObject": false,
+          "keys": []
+        },
+        "safeFlags": {},
+        "ok": false,
+        "issues": [
+          "network-TypeError"
+        ]
+      },
+      {
+        "id": "relay-status",
+        "route": "/api/relay/status",
+        "status": null,
+        "shape": {
+          "validJsonObject": false,
+          "keys": []
+        },
+        "safeFlags": {},
+        "ok": false,
+        "issues": [
+          "network-TypeError"
+        ]
+      },
+      {
+        "id": "sync-status",
+        "route": "/api/sync/status",
+        "status": null,
+        "shape": {
+          "validJsonObject": false,
+          "keys": []
+        },
+        "safeFlags": {},
+        "ok": false,
+        "issues": [
+          "network-TypeError"
+        ]
+      }
+    ],
+    "deniedGet": [
+      {
+        "id": "account-delete-request",
+        "route": "/api/account/delete-request",
+        "status": null,
+        "ok": false,
+        "issues": [
+          "network-TypeError"
+        ]
+      },
+      {
+        "id": "actions-execute",
+        "route": "/api/actions/execute",
+        "status": null,
+        "ok": false,
+        "issues": [
+          "network-TypeError"
+        ]
+      },
+      {
+        "id": "actions-prepare",
+        "route": "/api/actions/prepare",
+        "status": null,
+        "ok": false,
+        "issues": [
+          "network-TypeError"
+        ]
+      },
+      {
+        "id": "auth-logout",
+        "route": "/api/auth/logout",
+        "status": null,
+        "ok": false,
+        "issues": [
+          "network-TypeError"
+        ]
+      },
+      {
+        "id": "relay-attribution-capture",
+        "route": "/api/relay/attribution/capture",
+        "status": null,
+        "ok": false,
+        "issues": [
+          "network-TypeError"
+        ]
+      },
+      {
+        "id": "relay-claim",
+        "route": "/api/relay/claim",
+        "status": null,
+        "ok": false,
+        "issues": [
+          "network-TypeError"
+        ]
+      },
+      {
+        "id": "relay-invites-create",
+        "route": "/api/relay/invites/create",
+        "status": null,
+        "ok": false,
+        "issues": [
+          "network-TypeError"
+        ]
+      },
+      {
+        "id": "sync-records-tombstone",
+        "route": "/api/sync/records/tombstone",
+        "status": null,
+        "ok": false,
+        "issues": [
+          "network-TypeError"
+        ]
+      },
+      {
+        "id": "csp-report",
+        "route": "/csp-report",
+        "status": null,
+        "ok": false,
+        "issues": [
+          "network-TypeError"
+        ]
+      }
+    ],
+    "anonymousSyncRead": {
+      "id": "sync-records",
+      "route": "/api/sync/records",
+      "status": null,
+      "ok": false,
+      "issues": [
+        "network-TypeError"
+      ]
+    },
+    "manualOnly": [
+      {
+        "id": "google-oauth-callback",
+        "route": "/api/auth/google/callback",
+        "reason": "Not automatically requested because an OAuth start/callback may create a flow cookie or provider redirect."
+      },
+      {
+        "id": "google-oauth-start",
+        "route": "/api/auth/google/start",
+        "reason": "Not automatically requested because an OAuth start/callback may create a flow cookie or provider redirect."
+      }
+    ],
+    "ok": false,
+    "note": "The two OAuth endpoints and all allowed conditional mutation cases stay manual/preview-only so the runner cannot create accounts, start OAuth, write relay/sync data or call any provider."
+  },
+  "browser": {
+    "status": "not-run-or-failed",
+    "routes": [],
+    "externalOrigins": [],
+    "unknownOrigins": [],
+    "browserStoragePersisted": false,
+    "screenshotsPersisted": false,
+    "consoleMessagesPersisted": false,
+    "ok": false,
+    "errorClass": "Error"
+  },
+  "manualEvidenceStillRequired": [
+    {
+      "id": "local-ai-ollama",
+      "category": "local-runtime",
+      "required": "User-triggered Ollama scan, model discovery, self-test, one harmless local EONBOT response, failure/no-cloud-fallback proof."
+    },
+    {
+      "id": "local-ai-lm-studio",
+      "category": "local-runtime",
+      "required": "User-triggered LM Studio scan, model discovery, self-test, one harmless local EONBOT response, failure/no-cloud-fallback proof."
+    },
+    {
+      "id": "local-ai-jan",
+      "category": "local-runtime",
+      "required": "User-triggered Jan scan, model discovery, self-test, one harmless local EONBOT response, failure/no-cloud-fallback proof."
+    },
+    {
+      "id": "csp-browser-delivery-and-redaction",
+      "category": "csp",
+      "required": "A same-origin synthetic browser CSP violation reaches the deployed collector; an authorised operator verifies redacted-only logs without retaining raw payloads."
+    },
+    {
+      "id": "api-conditional-negative-matrix",
+      "category": "api",
+      "required": "Preview-only review of OAuth and conditional mutation routes against the full contract with no account deletion, relay creation, sync write or provider action."
+    },
+    {
+      "id": "ga-safe-bridge",
+      "category": "privacy",
+      "required": "Confirm the default-off analytics bridge makes no remote request without explicit user consent and preserves the local-only path."
+    },
+    {
+      "id": "update-rollback-data-survival",
+      "category": "pwa-data",
+      "required": "Real install/update/rollback drill proves local data, encrypted portable recovery and Service Worker behavior on a controlled device."
+    },
+    {
+      "id": "desktop-android-ios-browser-matrix",
+      "category": "device",
+      "required": "Desktop, Android and iOS evidence covers navigation, safe areas, touch, rotate, accessibility, locale/RTL, typed fallback and consented microphone behavior."
+    },
+    {
+      "id": "owner-evidence-review",
+      "category": "release",
+      "required": "A human owner reviews redacted evidence, unresolved origins and all NOT PASS results before later non-payment certification."
+    }
+  ],
+  "productionReleaseApproved": false,
+  "paymentActivationApproved": false,
+  "dodoActivationApproved": false,
+  "localImageVideoAdapterClaimed": false,
+  "issues": [
+    "document:/:network-TypeError",
+    "document:/chat:network-TypeError",
+    "document:/profile:network-TypeError",
+    "document:/local-ai:network-TypeError",
+    "document:/eoncity:network-TypeError",
+    "document:/insights:network-TypeError",
+    "csp:network-TypeError",
+    "function-matrix:not-pass",
+    "browser-observation:not-pass"
+  ],
+  "note": "A green automated observation only captures redacted technical evidence. It never proves a local runtime, browser CSP delivery/log redaction, device behavior, OAuth lifecycle, rollback survival or owner GO/NO-GO."
+}

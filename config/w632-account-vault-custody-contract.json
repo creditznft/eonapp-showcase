@@ -1,0 +1,20 @@
+{
+  "schema": "eonapp.w632.account-vault-custody.contract.2026-07-11.v1",
+  "wave": "W632",
+  "sourceComplete": true,
+  "publicCertification": "NO-GO",
+  "domains": ["account", "localWork", "providerCredentials", "generatedMedia", "receipts"],
+  "approvedSecretCustody": ["os-keychain", "secure-companion", "encrypted-local-vault"],
+  "boundaries": {
+    "identityIsBackup": false,
+    "automaticCrossDeviceSync": false,
+    "genericLocalStorageForSecrets": false,
+    "providerSecretReadableByUi": false,
+    "providerSecretExportable": false,
+    "restoreRequiresPreview": true,
+    "restoreRequiresConflictReview": true,
+    "automaticRestore": false,
+    "logoutDeletesLocalWork": false
+  },
+  "retireActiveWalletLanguage": true
+}

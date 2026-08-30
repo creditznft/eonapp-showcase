@@ -1,0 +1,30 @@
+{
+  "schema": "eonapp.w478.experience-identity-device.v1",
+  "scope": "source-readiness-plus-external-evidence-plan",
+  "releaseDecision": "NO_GO_PENDING_EXTERNAL_EVIDENCE",
+  "sourceLanes": [
+    "accessibility-i18n",
+    "voice-permission",
+    "identity-account",
+    "google-oauth-optional",
+    "device-proof-kit",
+    "update-recovery",
+    "legacy-transport-quarantine"
+  ],
+  "requiredExternalEvidence": [
+    "desktop-keyboard-screenreader",
+    "locale-rtl-human-review",
+    "voice-microphone-device-review",
+    "identity-preview-proof",
+    "android-ios-pwa-matrix",
+    "pwa-update-rollback-recovery",
+    "legacy-transport-quarantine-review"
+  ],
+  "claimFence": [
+    "A source pass is not an accessibility certification.",
+    "No locale is called human-reviewed without a qualified review.",
+    "Voice and microphone access remain opt-in and must be proven on a real device.",
+    "Google OAuth remains optional and is not called live without the reviewed preview flow.",
+    "No PWA, device, update, rollback, or retired transport/control safety claim is made without captured evidence."
+  ]
+}

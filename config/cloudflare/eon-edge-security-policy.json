@@ -1,0 +1,66 @@
+{
+  "schema": "eonapp.a15.i23.cloudflare-edge-security-policy.v1",
+  "status": "desired-state-source-only",
+  "provider": "cloudflare-rulesets-api",
+  "zoneIdCommitted": false,
+  "accountIdCommitted": false,
+  "rulesetIdsCommitted": false,
+  "dashboardMayOverrideSource": false,
+  "phases": {
+    "managedWaf": "http_request_firewall_managed",
+    "customFirewall": "http_request_firewall_custom",
+    "rateLimiting": "http_ratelimit"
+  },
+  "managedWaf": {
+    "required": true,
+    "action": "execute",
+    "rulesetId": "REPLACE_WITH_VERIFIED_CLOUDFLARE_MANAGED_RULESET_ID",
+    "logging": true
+  },
+  "customRules": [
+    {
+      "ref": "eonapp-block-non-https-production",
+      "action": "block",
+      "expression": "(http.host eq \"eonapp.ch\" and not ssl)",
+      "enabled": true,
+      "logging": true
+    },
+    {
+      "ref": "eonapp-block-unexpected-api-methods",
+      "action": "block",
+      "expression": "(starts_with(http.request.uri.path, \"/api/\") and not http.request.method in {\"GET\" \"POST\" \"OPTIONS\"})",
+      "enabled": true,
+      "logging": true
+    }
+  ],
+  "rateLimitingRules": [
+    {
+      "ref": "eonapp-auth-mutations-per-ip",
+      "action": "block",
+      "expression": "(starts_with(http.request.uri.path, \"/api/auth/\") and http.request.method eq \"POST\")",
+      "ratelimit": { "characteristics": ["cf.colo.id", "ip.src"], "period": 60, "requests_per_period": 20, "mitigation_timeout": 60, "requests_to_origin": true },
+      "logging": true
+    },
+    {
+      "ref": "eonapp-billing-commands-per-ip",
+      "action": "block",
+      "expression": "(starts_with(http.request.uri.path, \"/api/billing/\") and http.request.method eq \"POST\" and not starts_with(http.request.uri.path, \"/api/billing/webhooks/\"))",
+      "ratelimit": { "characteristics": ["cf.colo.id", "ip.src"], "period": 60, "requests_per_period": 10, "mitigation_timeout": 120, "requests_to_origin": true },
+      "logging": true
+    },
+    {
+      "ref": "eonapp-support-case-create-per-ip",
+      "action": "block",
+      "expression": "(http.request.uri.path eq \"/api/trust/support-cases\" and http.request.method eq \"POST\")",
+      "ratelimit": { "characteristics": ["cf.colo.id", "ip.src"], "period": 300, "requests_per_period": 10, "mitigation_timeout": 300, "requests_to_origin": true },
+      "logging": true
+    }
+  ],
+  "apply": {
+    "singleRulesetUpdatePerPhase": true,
+    "requiresVerifiedZoneAndAccount": true,
+    "requiresPreviewEvidence": true,
+    "requiresExplicitProductionAuthorization": true,
+    "applied": false
+  }
+}

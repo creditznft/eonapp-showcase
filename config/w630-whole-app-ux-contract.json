@@ -1,0 +1,26 @@
+{
+  "schema": "eonapp.w630.whole-app-ux.contract.2026-07-11.v1",
+  "wave": "W630",
+  "sourceComplete": true,
+  "publicCertification": "NO-GO",
+  "requirements": [
+    "root-chat-calm-default",
+    "one-shell-one-mobile-navigation",
+    "searchable-navigation-only-command-palette",
+    "local-attachments-until-explicit-send",
+    "voice-never-auto-starts",
+    "runtime-truth-no-hidden-cloud-fallback",
+    "active-project-context-preserved-on-allowlisted-routes",
+    "context-help",
+    "non-pushy-locked-feature-prompts",
+    "muted-by-default-captions-first"
+  ],
+  "realEvidencePending": [
+    "desktop-visual-usability",
+    "android-navigation-usability",
+    "iphone-ipad-navigation-usability",
+    "voice-behaviour",
+    "browser-compatibility",
+    "production-route-continuity"
+  ]
+}

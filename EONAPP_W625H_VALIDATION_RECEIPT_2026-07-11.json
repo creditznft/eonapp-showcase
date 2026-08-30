@@ -1,0 +1,211 @@
+{
+  "schema": "eonapp.validation-receipt.w625d-w625h-source-batch.2026-07-11.v1",
+  "generatedAt": "2026-07-11T07:51:31.532863Z",
+  "wave": "W625D-W625H-source-batch",
+  "ok": true,
+  "authority": {
+    "parentSourceArchive": "EONAPP_W625C_FULL_SOURCE_SNAPSHOT_2026-07-11.zip",
+    "parentSourceArchiveSha256": "9b27b94b3737bf9a27d880bcb2ccbc00e2c476389787a5ad958a460929125d09",
+    "parentCommit": "d00e5dc9fa00b9391ee2ce2df0aa550141ea125f",
+    "sourceCommit": "8485c0a20d6dde62c834176f4f95e6a0f47380b2",
+    "sourceFingerprint": {
+      "algorithm": "sha256",
+      "digest": "67d4fe76a72ccb5280e75a617eaa369f5a354e1fd98fd362d848c5893eca69e9",
+      "fileCount": 3566
+    }
+  },
+  "waveStatus": {
+    "W625D": {
+      "status": "source-complete-device-proof-pending",
+      "sourceComplete": true,
+      "referenceMinimums": {
+        "usableVramGiB": 8,
+        "systemRamGiB": 16,
+        "recommendedSystemRamGiB": 32,
+        "freeStorageGiB": 35
+      },
+      "ownerApprox4GiBRtx3050EligibleForReferenceVideoProof": false,
+      "submissionBlockedBeforePromptWhenUnsafe": true
+    },
+    "W625E": {
+      "status": "source-tooling-ready-real-owner-runtime-proof-pending",
+      "sourceComplete": true,
+      "realOwnerRuntimeProofPassed": false,
+      "realVideoProofClaimed": false,
+      "mandatoryRecipe": {
+        "lane": "image-to-video",
+        "width": 512,
+        "height": 288,
+        "frames": 33,
+        "fps": 16,
+        "batch": 1,
+        "queueConcurrency": 1
+      },
+      "requiredPositivePath": [
+        "capability-pass",
+        "reviewed-workflow",
+        "submit",
+        "progress",
+        "fetch",
+        "preview",
+        "save",
+        "reopen",
+        "sha256-match"
+      ],
+      "requiredNegativeLaneCount": 11
+    },
+    "W625F": {
+      "status": "source-complete-reviewed-workflow-owner-proof-pending",
+      "sourceComplete": true,
+      "unreviewedWorkflowSubmissionBlocked": true,
+      "automaticInstall": false,
+      "cloudFallback": false
+    },
+    "W625G": {
+      "status": "source-complete-owner-device-observation-pending",
+      "sourceComplete": true,
+      "efficiencyGovernorActive": true,
+      "queueConcurrency": 1,
+      "audioInterpolationUpscaleCustomNodesEnabled": false
+    },
+    "W625H": {
+      "status": "certification-tooling-complete-real-evidence-pending",
+      "sourceComplete": true,
+      "realCertificationAwarded": false,
+      "sourceOnlyMayCertify": false
+    }
+  },
+  "focusedGates": {
+    "w625dSourceGate": {
+      "passed": 8,
+      "total": 8
+    },
+    "w625dUnitAssertions": {
+      "passed": 8,
+      "total": 8
+    },
+    "w625eSourceGate": {
+      "passed": 10,
+      "total": 10
+    },
+    "w625eUnitAssertions": {
+      "passed": 8,
+      "total": 8
+    },
+    "w625fSourceGate": {
+      "passed": 8,
+      "total": 8
+    },
+    "w625fUnitAssertions": {
+      "passed": 6,
+      "total": 6
+    },
+    "w625gSourceGate": {
+      "passed": 8,
+      "total": 8
+    },
+    "w625gUnitAssertions": {
+      "passed": 6,
+      "total": 6
+    },
+    "w625hSourceGate": {
+      "passed": 9,
+      "total": 9
+    },
+    "w625hUnitAssertions": {
+      "passed": 5,
+      "total": 5
+    },
+    "w625aRegressionGate": {
+      "passed": 8,
+      "total": 8
+    },
+    "w625aRegressionUnitAssertions": {
+      "passed": 6,
+      "total": 6
+    },
+    "currentContractAlignment": {
+      "passed": 17,
+      "total": 17
+    },
+    "historicalArchiveGate": {
+      "passed": 10,
+      "total": 10
+    }
+  },
+  "maintainedTests": {
+    "testFileCount": 239,
+    "assertions": 909,
+    "currentPassed": 862,
+    "historicalExplicitSkips": 47,
+    "failed": 0,
+    "evidenceDependentDiagnosticFilesExcluded": 12,
+    "archiveCertifiesRelease": false
+  },
+  "permanentPredeploy": {
+    "command": [
+      "npm ci",
+      "npm run verify:codex-predeploy"
+    ],
+    "stepCount": 34,
+    "passedStepCount": 34,
+    "failedStepCount": 0,
+    "resumedStepCount": 31,
+    "sourceFingerprinted": true,
+    "lockProtected": true,
+    "resumable": true,
+    "competingDeploymentCommandCreated": false
+  },
+  "security": {
+    "secretScanTextFiles": 3652,
+    "secretScanSkippedGeneratedBinaryOrLargeFiles": 75,
+    "potentialSecretFindings": 0
+  },
+  "reachability": {
+    "htmlFiles": 33,
+    "browserScriptEntries": 129,
+    "cloudflareFunctionEntries": 20,
+    "reachableFiles": 368,
+    "importEdges": 647,
+    "quarantinedReachable": 0
+  },
+  "build": {
+    "sourceRevision": "8485c0a20d6dde62c834176f4f95e6a0f47380b2",
+    "distributionSha256": "47b77b69af0f25ac86f906002116929a8121cbb3819bd055af0ca5b629e5aef2",
+    "distributionFileCount": 465,
+    "distributionBytes": 11813220,
+    "minifiedFileCount": 295,
+    "minificationBeforeBytes": 10711699,
+    "minificationAfterBytes": 6346983,
+    "minificationSavedBytes": 4364716,
+    "minificationSavedPercent": 40.75,
+    "smokeRequiredFiles": 24,
+    "privacy": {
+      "containsUserData": false,
+      "containsSecrets": false,
+      "purpose": "deploy-candidate-parity-only"
+    }
+  },
+  "releaseTruth": {
+    "publicLaunchCertification": "limited-preview-no-go-public-launch",
+    "reason": "Production remains older than the certified source; real W625A image proof and real W625E/W625H video evidence remain pending.",
+    "deploymentChangedByThisWave": false
+  },
+  "invariantsPreserved": [
+    "one protected /eoncity renderer",
+    "W624B runtime owner and eleven-state lifecycle",
+    "Productive Nocturne art direction",
+    "review-first Sharing Center, Command Center and Agent Theatre",
+    "privacy and commercial-truth boundaries",
+    "muted-by-default captions-first accessibility",
+    "evidence-gated performance and flagship certification",
+    "current invariants mandatory",
+    "superseded exact-copy tests only in explicit non-certifying archive",
+    "approved loopback hosts and ports only",
+    "no LAN or public ComfyUI endpoint",
+    "no hidden cloud fallback",
+    "no automatic model, runtime, workflow or custom-node installation",
+    "no unsafe local-video submission before capability and workflow review pass",
+    "source-only video work cannot award real evidence or certification"
+  ]
+}

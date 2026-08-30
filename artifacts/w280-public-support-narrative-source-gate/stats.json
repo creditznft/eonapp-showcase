@@ -1,0 +1,46 @@
+{
+  "schema": "eonapp.w280.public-support-narrative-source-gate.v2",
+  "wave": "W280-A0",
+  "ok": false,
+  "score": 0,
+  "scope": "source-only",
+  "topicIds": [
+    "signed-sharing",
+    "local-ai",
+    "vault-recovery",
+    "market-previews",
+    "city-realm",
+    "bug-security"
+  ],
+  "topicCards": [
+    "signed-sharing",
+    "local-ai",
+    "vault-recovery",
+    "market-previews",
+    "city-realm",
+    "bug-security"
+  ],
+  "topicButtons": [
+    "signed-sharing",
+    "local-ai",
+    "vault-recovery",
+    "market-previews",
+    "city-realm",
+    "bug-security"
+  ],
+  "checks": {
+    "boundaryCard": true,
+    "explicitCurrentBoundary": false,
+    "recoveryLinks": true,
+    "publicProofAndNoSecrets": true,
+    "noStaleCommercialSupportCopy": true,
+    "noSupportSlaClaim": true,
+    "exactCanonicalTopics": true,
+    "chatPrefillUsesCanonicalTopics": true,
+    "boundedCommercialSupport": true,
+    "noGoPreserved": true,
+    "packageScript": true
+  },
+  "claimFence": "Source copy and route wiring do not prove a staffed support operation, response SLA, legal readiness, or public launch.",
+  "releaseDependency": "W260 remains NO-GO"
+}

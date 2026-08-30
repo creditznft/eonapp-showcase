@@ -1,0 +1,163 @@
+{
+  "schema": "eonapp.gate.w637.persistence-migration-recovery.2026-07-11.v1",
+  "wave": "W637",
+  "ok": true,
+  "total": 18,
+  "passed": 18,
+  "checks": [
+    {
+      "id": "contract",
+      "pass": true,
+      "detail": "canonical W637 contract"
+    },
+    {
+      "id": "indexeddb-inventory",
+      "pass": true,
+      "detail": "5 known browser databases"
+    },
+    {
+      "id": "local-vault-version",
+      "pass": true,
+      "detail": "versioned idempotent local-vault stores"
+    },
+    {
+      "id": "atomic-idb-restore",
+      "pass": true,
+      "detail": "single add-only IndexedDB transaction"
+    },
+    {
+      "id": "restore-preview",
+      "pass": true,
+      "detail": "reviewed digest-bound preview before write"
+    },
+    {
+      "id": "conflict-no-write",
+      "pass": true,
+      "detail": "all conflicts resolved before mutation"
+    },
+    {
+      "id": "post-write-verification",
+      "pass": true,
+      "detail": "every imported envelope reread and verified"
+    },
+    {
+      "id": "post-write-failure-truth",
+      "pass": true,
+      "detail": "committed bytes are never mislabeled as an aborted restore"
+    },
+    {
+      "id": "integrity-truth",
+      "pass": true,
+      "detail": "SHA digest is not misrepresented as authenticity"
+    },
+    {
+      "id": "capsule-staging",
+      "pass": true,
+      "detail": "stage drift and exact confirmation fences"
+    },
+    {
+      "id": "capsule-journal",
+      "pass": true,
+      "detail": "encrypted rollback journal and receipt"
+    },
+    {
+      "id": "capsule-versioning",
+      "pass": true,
+      "detail": "known versions only"
+    },
+    {
+      "id": "portable-scope",
+      "pass": true,
+      "detail": "owned allowlist only; secrets and foreign keys preserved"
+    },
+    {
+      "id": "creator-media-boundary",
+      "pass": true,
+      "detail": "raw media explicit and nonportable"
+    },
+    {
+      "id": "drive-consent",
+      "pass": true,
+      "detail": "Drive is explicit snapshot, never background sync"
+    },
+    {
+      "id": "drive-scope",
+      "pass": true,
+      "detail": "separate narrow consent"
+    },
+    {
+      "id": "production-fence",
+      "pass": true,
+      "detail": "real device/Drive/recovery evidence pending"
+    },
+    {
+      "id": "files",
+      "pass": true,
+      "detail": "contract and maintained test set"
+    }
+  ],
+  "productionCertified": false,
+  "inventory": [
+    {
+      "database": "eonapp-local-vault-v1",
+      "version": 2,
+      "stores": [
+        "encrypted-records",
+        "vault-metadata"
+      ],
+      "owner": "encrypted local vault",
+      "portable": "encrypted-envelope backup only",
+      "deleteMode": "explicit local action"
+    },
+    {
+      "database": "eonapp-creator-media-v1",
+      "version": 1,
+      "stores": [
+        "media"
+      ],
+      "owner": "explicitly saved Creator media",
+      "portable": "excluded from generic Capsule",
+      "deleteMode": "explicit asset deletion"
+    },
+    {
+      "database": "eon-share-identity",
+      "version": 1,
+      "stores": [
+        "keys"
+      ],
+      "owner": "local signing identity",
+      "portable": "excluded",
+      "deleteMode": "local identity lifecycle"
+    },
+    {
+      "database": "eon-offline-db",
+      "version": 2,
+      "stores": [
+        "kv",
+        "queue",
+        "offline-cache"
+      ],
+      "owner": "TTL local cache and review-first queue",
+      "portable": "excluded unless separately allowlisted",
+      "deleteMode": "expiry or explicit local action"
+    },
+    {
+      "database": "eonapp-quantum-safe",
+      "version": 1,
+      "stores": [
+        "eon:quantum:v1"
+      ],
+      "owner": "encrypted provider-key compatibility store",
+      "portable": "excluded",
+      "deleteMode": "credential lifecycle"
+    }
+  ],
+  "limitations": [
+    "real browser update and rollback data-survival rehearsal",
+    "real corrupted IndexedDB and quota-pressure recovery evidence",
+    "real interrupted Capsule restore and recovery evidence",
+    "real Google Drive consent upload list download inspect restore and revoke evidence",
+    "real cross-device recovery with separate browser profiles",
+    "owner verification that deletion and revocation remove only intended records"
+  ]
+}

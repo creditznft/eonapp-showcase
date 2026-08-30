@@ -1,0 +1,112 @@
+{
+  "schema": "eon.direct-byok.reviewed-model-registry.w626d.2026-07-11.v1",
+  "status": "reviewed-source-rails-enabled-real-user-owned-provider-proof-pending",
+  "models": [
+    {
+      "id": "fal-image-proof",
+      "providerId": "fal",
+      "remoteId": "fal-ai/flux/schnell",
+      "mediaKind": "image",
+      "inputModes": [
+        "text"
+      ],
+      "outputContentTypes": [
+        "image/png",
+        "image/jpeg",
+        "image/webp"
+      ],
+      "enabled": true,
+      "reviewedAt": "2026-08-09",
+      "reviewedBy": "institutional-ai-v2-official-api-contract",
+      "registryDigest": "official-api-contract-reviewed-real-provider-proof-pending",
+      "costEstimate": {
+        "available": false,
+        "reason": "provider-account-cost-varies-confirm-in-provider-account-before-job"
+      }
+    },
+    {
+      "id": "fal-video-proof",
+      "providerId": "fal",
+      "remoteId": "bytedance/seedance-2.0/text-to-video",
+      "mediaKind": "video",
+      "inputModes": [
+        "text"
+      ],
+      "outputContentTypes": [
+        "video/mp4",
+        "video/webm"
+      ],
+      "enabled": true,
+      "reviewedAt": "2026-08-09",
+      "reviewedBy": "institutional-ai-v2-official-api-contract",
+      "registryDigest": "official-api-contract-reviewed-real-provider-proof-pending",
+      "costEstimate": {
+        "available": false,
+        "reason": "provider-account-cost-varies-confirm-in-provider-account-before-job"
+      }
+    },
+    {
+      "id": "replicate-image-proof",
+      "providerId": "replicate",
+      "remoteId": "black-forest-labs/flux-schnell",
+      "mediaKind": "image",
+      "inputModes": [
+        "text"
+      ],
+      "outputContentTypes": [
+        "image/png",
+        "image/jpeg",
+        "image/webp"
+      ],
+      "enabled": true,
+      "reviewedAt": "2026-08-09",
+      "reviewedBy": "institutional-ai-v2-official-api-contract",
+      "registryDigest": "official-api-contract-reviewed-real-provider-proof-pending",
+      "costEstimate": {
+        "available": false,
+        "reason": "provider-account-cost-varies-confirm-in-provider-account-before-job"
+      }
+    },
+    {
+      "id": "replicate-video-proof",
+      "providerId": "replicate",
+      "remoteId": "bytedance/seedance-2.0",
+      "mediaKind": "video",
+      "inputModes": [
+        "text"
+      ],
+      "outputContentTypes": [
+        "video/mp4",
+        "video/webm"
+      ],
+      "enabled": true,
+      "reviewedAt": "2026-08-15",
+      "reviewedBy": "rt92-precert-official-replicate-seedance-2.0-contract",
+      "registryDigest": "official-seedance-2.0-api-contract-reviewed-real-provider-proof-pending",
+      "costEstimate": {
+        "available": false,
+        "reason": "provider-account-cost-varies-confirm-in-provider-account-before-job"
+      }
+    },
+    {
+      "id": "elevenlabs-music-v2",
+      "providerId": "elevenlabs",
+      "remoteId": "music_v2",
+      "mediaKind": "music",
+      "inputModes": [
+        "text"
+      ],
+      "outputContentTypes": [
+        "audio/mpeg"
+      ],
+      "enabled": true,
+      "reviewedAt": "2026-08-09",
+      "reviewedBy": "institutional-ai-v2-official-api-contract",
+      "registryDigest": "source-contract-real-provider-proof-pending",
+      "costEstimate": {
+        "available": false,
+        "reason": "provider-account-cost-varies-confirm-in-provider-account-before-job"
+      }
+    }
+  ]
+}

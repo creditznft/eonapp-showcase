@@ -1,0 +1,458 @@
+{
+  "runTag": "2026-07-10T17-06-13-595Z",
+  "envFile": "C:\\Users\\credi\\WORKSPACE\\EONAPP.CH\\.env.local",
+  "baseUrl": "https://eonapp.ch",
+  "ollamaBaseUrl": "http://127.0.0.1:11434",
+  "strict": false,
+  "results": [
+    {
+      "area": "remote",
+      "name": "openai",
+      "status": "SKIP",
+      "detail": "EON_OPENAI_API_KEY not set",
+      "at": "2026-07-10T17:06:13.599Z"
+    },
+    {
+      "area": "remote-discovery",
+      "name": "groq",
+      "status": "PASS",
+      "detail": "17 model(s); selected qwen/qwen3.6-27b",
+      "model": "qwen/qwen3.6-27b",
+      "envKey": "EON_GROQ_API_KEY",
+      "at": "2026-07-10T17:06:13.982Z"
+    },
+    {
+      "area": "remote-chat",
+      "name": "groq",
+      "status": "PASS",
+      "detail": "HTTP 200; model qwen/qwen3.6-27b; output: <think> Here's a thinking process: 1. **Analyze User Input:** - User says: \"Reply with exactly: EON LIVE OK\"",
+      "model": "qwen/qwen3.6-27b",
+      "envKey": "EON_GROQ_API_KEY",
+      "at": "2026-07-10T17:06:14.132Z"
+    },
+    {
+      "area": "remote-discovery",
+      "name": "cerebras",
+      "status": "PASS",
+      "detail": "3 model(s); selected zai-glm-4.7",
+      "model": "zai-glm-4.7",
+      "envKey": "EON_CEREBRAS_API_KEY",
+      "at": "2026-07-10T17:06:14.438Z"
+    },
+    {
+      "area": "remote-chat",
+      "name": "cerebras",
+      "status": "PASS",
+      "detail": "HTTP 200; model zai-glm-4.7; output: {\"id\":\"chatcmpl-a7f01e45-4057-4e6d-ae13-4e536d6f8b27\",\"choices\":[{\"finish_reason\":\"length\",\"index\":0,\"message\":{\"reasoning\":\"The user wants me to reply with a specific string: \\\"EO…",
+      "model": "zai-glm-4.7",
+      "envKey": "EON_CEREBRAS_API_KEY",
+      "at": "2026-07-10T17:06:14.980Z"
+    },
+    {
+      "area": "remote-discovery",
+      "name": "openrouter",
+      "status": "PASS",
+      "detail": "346 model(s); selected openai/gpt-5.6-luna-pro",
+      "model": "openai/gpt-5.6-luna-pro",
+      "envKey": "EON_OPENROUTER_API_KEY",
+      "at": "2026-07-10T17:06:15.205Z"
+    },
+    {
+      "area": "remote-chat",
+      "name": "openrouter",
+      "status": "WARN",
+      "detail": "Provider limit/billing response HTTP 402: {\"error\":{\"message\":\"Insufficient credits. This account never purchased credits. Make sure your key is on the correct account or org, and if so, purchase more at https://openrouter.ai/settings/credits\",\"code\":402}}",
+      "model": "openai/gpt-5.6-luna-pro",
+      "envKey": "EON_OPENROUTER_API_KEY",
+      "at": "2026-07-10T17:06:15.691Z"
+    },
+    {
+      "area": "remote-discovery",
+      "name": "mistral",
+      "status": "PASS",
+      "detail": "70 model(s); selected mistral-medium-2505",
+      "model": "mistral-medium-2505",
+      "envKey": "EON_MISTRAL_API_KEY",
+      "at": "2026-07-10T17:06:16.782Z"
+    },
+    {
+      "area": "remote-chat",
+      "name": "mistral",
+      "status": "PASS",
+      "detail": "HTTP 200; model mistral-medium-2505; output: EON LIVE OK",
+      "model": "mistral-medium-2505",
+      "envKey": "EON_MISTRAL_API_KEY",
+      "at": "2026-07-10T17:06:17.271Z"
+    },
+    {
+      "area": "remote-discovery",
+      "name": "deepseek",
+      "status": "WARN",
+      "detail": "Discovery HTTP 401; using fallback deepseek-v4-flash",
+      "envKey": "EON_DEEPSEEK_API_KEY",
+      "at": "2026-07-10T17:06:17.666Z"
+    },
+    {
+      "area": "remote-chat",
+      "name": "deepseek",
+      "status": "WARN",
+      "detail": "Provider auth rejected HTTP 401: {\"error\":{\"message\":\"Authentication Fails, Your api key: ****26b6 is invalid\",\"type\":\"authentication_error\",\"param\":null,\"code\":\"invalid_request_error\"}}",
+      "model": "deepseek-v4-flash",
+      "envKey": "EON_DEEPSEEK_API_KEY",
+      "at": "2026-07-10T17:06:17.887Z"
+    },
+    {
+      "area": "remote-discovery",
+      "name": "together",
+      "status": "PASS",
+      "detail": "271 model(s); selected zai-org/GLM-5.2",
+      "model": "zai-org/GLM-5.2",
+      "envKey": "EON_TOGETHER_API_KEY",
+      "at": "2026-07-10T17:06:19.250Z"
+    },
+    {
+      "area": "remote-chat",
+      "name": "together",
+      "status": "WARN",
+      "detail": "Provider limit/billing response HTTP 402: { \"id\": \"orak35Y-gBAtS-a1912887fe4afcad\", \"error\": { \"message\": \"Credit limit exceeded, please [add credits](https://api.together.ai/settings/billing). If you've already made a payment, please wait up to 5 minutes for ba…",
+      "model": "zai-org/GLM-5.2",
+      "envKey": "EON_TOGETHER_API_KEY",
+      "at": "2026-07-10T17:06:20.265Z"
+    },
+    {
+      "area": "remote-discovery",
+      "name": "fireworks",
+      "status": "PASS",
+      "detail": "7 model(s); selected accounts/fireworks/models/gpt-oss-120b",
+      "model": "accounts/fireworks/models/gpt-oss-120b",
+      "envKey": "EON_FIREWORKS_API_KEY",
+      "at": "2026-07-10T17:06:20.792Z"
+    },
+    {
+      "area": "remote-chat",
+      "name": "fireworks",
+      "status": "PASS",
+      "detail": "HTTP 200; model accounts/fireworks/models/gpt-oss-120b; output: {\"id\":\"chatcmpl-89971f1095d24427925e8ca733521477\",\"object\":\"chat.completion\",\"created\":1783703181,\"model\":\"accounts/fireworks/models/gpt-oss-120b\",\"choices\":[{\"index\":0,\"message\":{…",
+      "model": "accounts/fireworks/models/gpt-oss-120b",
+      "envKey": "EON_FIREWORKS_API_KEY",
+      "at": "2026-07-10T17:06:21.535Z"
+    },
+    {
+      "area": "remote-discovery",
+      "name": "nvidia",
+      "status": "PASS",
+      "detail": "121 model(s); selected abacusai/dracarys-llama-3.1-70b-instruct",
+      "model": "abacusai/dracarys-llama-3.1-70b-instruct",
+      "envKey": "EON_NVIDIA_API_KEY",
+      "at": "2026-07-10T17:06:21.639Z"
+    },
+    {
+      "area": "remote-chat",
+      "name": "nvidia",
+      "status": "PASS",
+      "detail": "HTTP 200; model abacusai/dracarys-llama-3.1-70b-instruct; output: EON LIVE OK",
+      "model": "abacusai/dracarys-llama-3.1-70b-instruct",
+      "envKey": "EON_NVIDIA_API_KEY",
+      "at": "2026-07-10T17:06:22.521Z"
+    },
+    {
+      "area": "remote-discovery",
+      "name": "sambanova",
+      "status": "PASS",
+      "detail": "6 model(s); selected DeepSeek-V3.1",
+      "model": "DeepSeek-V3.1",
+      "envKey": "EON_SAMBANOVA_API_KEY",
+      "at": "2026-07-10T17:06:22.997Z"
+    },
+    {
+      "area": "remote-chat",
+      "name": "sambanova",
+      "status": "PASS",
+      "detail": "HTTP 200; model DeepSeek-V3.1; output: EON LIVE OK",
+      "model": "DeepSeek-V3.1",
+      "envKey": "EON_SAMBANOVA_API_KEY",
+      "at": "2026-07-10T17:06:23.943Z"
+    },
+    {
+      "area": "remote-chat",
+      "name": "huggingface-router",
+      "status": "PASS",
+      "detail": "HTTP 200; model Qwen/Qwen2.5-Coder-7B-Instruct; output: EON LIVE OK",
+      "model": "Qwen/Qwen2.5-Coder-7B-Instruct",
+      "envKey": "EON_HUGGINGFACE_API_KEY",
+      "at": "2026-07-10T17:06:24.805Z"
+    },
+    {
+      "area": "remote",
+      "name": "xai",
+      "status": "SKIP",
+      "detail": "EON_XAI_API_KEY not set",
+      "at": "2026-07-10T17:06:24.805Z"
+    },
+    {
+      "area": "remote",
+      "name": "qwen-dashscope",
+      "status": "SKIP",
+      "detail": "EON_QWEN_API_KEY not set",
+      "at": "2026-07-10T17:06:24.805Z"
+    },
+    {
+      "area": "remote-discovery",
+      "name": "gemini",
+      "status": "PASS",
+      "detail": "39 generateContent model(s); selected gemini-2.5-flash",
+      "model": "gemini-2.5-flash",
+      "envKey": "GEMINI_API_KEY",
+      "at": "2026-07-10T17:06:25.133Z"
+    },
+    {
+      "area": "remote-chat",
+      "name": "gemini",
+      "status": "WARN",
+      "detail": "HTTP 200; model gemini-2.5-flash; output: E",
+      "model": "gemini-2.5-flash",
+      "envKey": "GEMINI_API_KEY",
+      "at": "2026-07-10T17:06:26.392Z"
+    },
+    {
+      "area": "remote",
+      "name": "anthropic",
+      "status": "SKIP",
+      "detail": "EON_ANTHROPIC_API_KEY not set",
+      "at": "2026-07-10T17:06:26.393Z"
+    },
+    {
+      "area": "local-discovery",
+      "name": "ollama",
+      "status": "PASS",
+      "detail": "10 model(s) visible at http://127.0.0.1:11434: phi4-mini:gpu, qwen3:4b-gpu, qwen2.5-coder:7b-gpu, qwen2.5-coder:3b-gpu, phi4-mini:latest, qwen3:4b, phi3:mini, qwen2.5:3b",
+      "at": "2026-07-10T17:06:26.424Z"
+    },
+    {
+      "area": "local-chat",
+      "name": "ollama:phi4-mini:gpu",
+      "status": "PASS",
+      "detail": "HTTP 200; output: EON LIVE OK",
+      "model": "phi4-mini:gpu",
+      "at": "2026-07-10T17:06:26.979Z"
+    },
+    {
+      "area": "local-chat",
+      "name": "ollama:qwen3:4b-gpu",
+      "status": "PASS",
+      "detail": "HTTP 200; output: {\"model\":\"qwen3:4b-gpu\",\"created_at\":\"2026-07-10T17:06:32.9882628Z\",\"message\":{\"role\":\"assistant\",\"content\":\"\",\"thinking\":\"We are to output exactly: \\\"EON LIVE OK\\\"\\n The instructi…",
+      "model": "qwen3:4b-gpu",
+      "at": "2026-07-10T17:06:32.988Z"
+    },
+    {
+      "area": "local-discovery",
+      "name": "lmstudio",
+      "status": "SKIP",
+      "detail": "lmstudio not reachable at http://127.0.0.1:1234: fetch failed",
+      "at": "2026-07-10T17:06:32.991Z"
+    },
+    {
+      "area": "local-discovery",
+      "name": "jan",
+      "status": "SKIP",
+      "detail": "jan not reachable at http://127.0.0.1:1337: fetch failed",
+      "at": "2026-07-10T17:06:32.993Z"
+    },
+    {
+      "area": "browser-page",
+      "name": "/onboarding.html",
+      "status": "PASS",
+      "detail": "HTTP 200 https://eonapp.ch/onboarding.html",
+      "at": "2026-07-10T17:06:45.910Z"
+    },
+    {
+      "area": "browser-local-ui",
+      "name": "/onboarding.html",
+      "status": "WARN",
+      "detail": "Local AI/Ollama UI copy not obvious on this page",
+      "at": "2026-07-10T17:06:46.943Z"
+    },
+    {
+      "area": "browser-local-detect",
+      "name": "/onboarding.html",
+      "status": "WARN",
+      "detail": "Detect action clicked; no local model name found in page text",
+      "visibleModel": "",
+      "at": "2026-07-10T17:06:55.468Z"
+    },
+    {
+      "area": "browser-csp-localhost",
+      "name": "/onboarding.html",
+      "status": "FAIL",
+      "detail": "Browser page could not fetch local Ollama: Failed to fetch",
+      "at": "2026-07-10T17:06:55.476Z"
+    },
+    {
+      "area": "browser-console",
+      "name": "/onboarding.html",
+      "status": "FAIL",
+      "detail": "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496' violates the following Content Security Policy directive: \"script-src 'self' blob: https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://telegram.org https://www.googletagmanager.com\". Note th…",
+      "at": "2026-07-10T17:06:55.476Z"
+    },
+    {
+      "area": "browser-page",
+      "name": "/chat.html",
+      "status": "PASS",
+      "detail": "HTTP 200 https://eonapp.ch/chat.html",
+      "at": "2026-07-10T17:06:58.286Z"
+    },
+    {
+      "area": "browser-local-ui",
+      "name": "/chat.html",
+      "status": "WARN",
+      "detail": "Local AI/Ollama UI copy not obvious on this page",
+      "at": "2026-07-10T17:06:59.316Z"
+    },
+    {
+      "area": "browser-local-detect",
+      "name": "/chat.html",
+      "status": "WARN",
+      "detail": "Detect action clicked; no local model name found in page text",
+      "visibleModel": "",
+      "at": "2026-07-10T17:07:07.836Z"
+    },
+    {
+      "area": "browser-csp-localhost",
+      "name": "/chat.html",
+      "status": "FAIL",
+      "detail": "Browser page could not fetch local Ollama: Failed to fetch",
+      "at": "2026-07-10T17:07:07.842Z"
+    },
+    {
+      "area": "browser-console",
+      "name": "/chat.html",
+      "status": "FAIL",
+      "detail": "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496' violates the following Content Security Policy directive: \"script-src 'self' blob: https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://telegram.org https://www.googletagmanager.com\". Note th…",
+      "at": "2026-07-10T17:07:07.842Z"
+    },
+    {
+      "area": "browser-page",
+      "name": "/vault.html",
+      "status": "PASS",
+      "detail": "HTTP 200 https://eonapp.ch/vault.html",
+      "at": "2026-07-10T17:07:12.259Z"
+    },
+    {
+      "area": "browser-local-detect",
+      "name": "/vault.html",
+      "status": "WARN",
+      "detail": "Detect action clicked; no local model name found in page text",
+      "visibleModel": "",
+      "at": "2026-07-10T17:07:21.803Z"
+    },
+    {
+      "area": "browser-csp-localhost",
+      "name": "/vault.html",
+      "status": "FAIL",
+      "detail": "Browser page could not fetch local Ollama: Failed to fetch",
+      "at": "2026-07-10T17:07:21.808Z"
+    },
+    {
+      "area": "browser-console",
+      "name": "/vault.html",
+      "status": "FAIL",
+      "detail": "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496' violates the following Content Security Policy directive: \"script-src 'self' blob: https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://telegram.org https://www.googletagmanager.com\". Note th…",
+      "at": "2026-07-10T17:07:21.808Z"
+    },
+    {
+      "area": "browser-page",
+      "name": "/realm.html",
+      "status": "PASS",
+      "detail": "HTTP 200 https://eonapp.ch/realm.html",
+      "at": "2026-07-10T17:07:25.679Z"
+    },
+    {
+      "area": "browser-local-detect",
+      "name": "/realm.html",
+      "status": "WARN",
+      "detail": "Detect action clicked; no local model name found in page text",
+      "visibleModel": "",
+      "at": "2026-07-10T17:07:35.228Z"
+    },
+    {
+      "area": "browser-csp-localhost",
+      "name": "/realm.html",
+      "status": "FAIL",
+      "detail": "Browser page could not fetch local Ollama: Failed to fetch",
+      "at": "2026-07-10T17:07:35.232Z"
+    },
+    {
+      "area": "browser-console",
+      "name": "/realm.html",
+      "status": "FAIL",
+      "detail": "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496' violates the following Content Security Policy directive: \"script-src 'self' blob: https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://telegram.org https://www.googletagmanager.com\". Note th…",
+      "at": "2026-07-10T17:07:35.232Z"
+    },
+    {
+      "area": "browser-page",
+      "name": "/trade.html",
+      "status": "PASS",
+      "detail": "HTTP 200 https://eonapp.ch/trade.html",
+      "at": "2026-07-10T17:07:38.350Z"
+    },
+    {
+      "area": "browser-local-detect",
+      "name": "/trade.html",
+      "status": "WARN",
+      "detail": "Detect action clicked; no local model name found in page text",
+      "visibleModel": "",
+      "at": "2026-07-10T17:07:47.905Z"
+    },
+    {
+      "area": "browser-csp-localhost",
+      "name": "/trade.html",
+      "status": "FAIL",
+      "detail": "Browser page could not fetch local Ollama: Failed to fetch",
+      "at": "2026-07-10T17:07:47.908Z"
+    },
+    {
+      "area": "browser-console",
+      "name": "/trade.html",
+      "status": "FAIL",
+      "detail": "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496' violates the following Content Security Policy directive: \"script-src 'self' blob: https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://telegram.org https://www.googletagmanager.com\". Note th…",
+      "at": "2026-07-10T17:07:47.908Z"
+    },
+    {
+      "area": "browser-page",
+      "name": "/hustle.html",
+      "status": "FAIL",
+      "detail": "HTTP 404 https://eonapp.ch/hustle.html",
+      "at": "2026-07-10T17:07:51.198Z"
+    },
+    {
+      "area": "browser-local-detect",
+      "name": "/hustle.html",
+      "status": "WARN",
+      "detail": "Detect action clicked; no local model name found in page text",
+      "visibleModel": "",
+      "at": "2026-07-10T17:08:00.739Z"
+    },
+    {
+      "area": "browser-csp-localhost",
+      "name": "/hustle.html",
+      "status": "FAIL",
+      "detail": "Browser page could not fetch local Ollama: Failed to fetch",
+      "at": "2026-07-10T17:08:00.743Z"
+    },
+    {
+      "area": "browser-console",
+      "name": "/hustle.html",
+      "status": "FAIL",
+      "detail": "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496' violates the following Content Security Policy directive: \"script-src 'self' blob: https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://telegram.org https://www.googletagmanager.com\". Note th…",
+      "at": "2026-07-10T17:08:00.743Z"
+    }
+  ],
+  "screenshots": [
+    "C:\\Users\\credi\\WORKSPACE\\EONAPP_W621_LIVE_ROLLOUT_20260710\\docs\\qa\\live-ai-supertest\\2026-07-10T17-06-13-595Z\\onboarding-html.png",
+    "C:\\Users\\credi\\WORKSPACE\\EONAPP_W621_LIVE_ROLLOUT_20260710\\docs\\qa\\live-ai-supertest\\2026-07-10T17-06-13-595Z\\chat-html.png",
+    "C:\\Users\\credi\\WORKSPACE\\EONAPP_W621_LIVE_ROLLOUT_20260710\\docs\\qa\\live-ai-supertest\\2026-07-10T17-06-13-595Z\\vault-html.png",
+    "C:\\Users\\credi\\WORKSPACE\\EONAPP_W621_LIVE_ROLLOUT_20260710\\docs\\qa\\live-ai-supertest\\2026-07-10T17-06-13-595Z\\realm-html.png",
+    "C:\\Users\\credi\\WORKSPACE\\EONAPP_W621_LIVE_ROLLOUT_20260710\\docs\\qa\\live-ai-supertest\\2026-07-10T17-06-13-595Z\\trade-html.png",
+    "C:\\Users\\credi\\WORKSPACE\\EONAPP_W621_LIVE_ROLLOUT_20260710\\docs\\qa\\live-ai-supertest\\2026-07-10T17-06-13-595Z\\hustle-html.png"
+  ]
+}

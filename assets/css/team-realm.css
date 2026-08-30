@@ -1,0 +1,250 @@
+/* ── Team Realm page styles ── */
+    .tr-hero {
+      background:
+        radial-gradient(circle at 10% 20%, rgba(168,85,247,.28), transparent 42%),
+        radial-gradient(circle at 85% 15%, rgba(99,102,241,.22), transparent 38%),
+        radial-gradient(circle at 50% 85%, rgba(16,185,129,.1), transparent 50%),
+        linear-gradient(135deg, #06030f 0%, #0b1020 60%, #0d1225 100%);
+      border-bottom: 1px solid rgba(168,85,247,.25);
+      padding: 3.5rem 0 2.5rem;
+      text-align: center;
+    }
+
+    .tr-hero-avatar {
+      font-size: 3.5rem;
+      line-height: 1;
+      margin-bottom: .75rem;
+      display: block;
+      filter: drop-shadow(0 0 24px rgba(168,85,247,.5));
+    }
+
+    .tr-hero h1 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 900;
+      margin: 0 0 .5rem;
+      background: linear-gradient(135deg, #c084fc 0%, #818cf8 50%, #34d399 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .tr-hero-sub {
+      color: var(--clr-text-muted);
+      font-size: 1rem;
+      max-width: 600px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.65;
+    }
+
+    .tr-hero-cta {
+      display: flex;
+      gap: .65rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    /* Revenue split bar */
+    .tr-split-bar {
+      display: flex;
+      border-radius: .75rem;
+      overflow: hidden;
+      height: .6rem;
+      gap: 2px;
+      margin: .75rem 0 .4rem;
+    }
+
+    .tr-split-segment {
+      flex: 1;
+      border-radius: 2px;
+    }
+
+    .tr-split-treasury   { background: #6366f1; flex: 4; }
+    .tr-split-pool       { background: #a855f7; flex: 3; }
+    .tr-split-dev        { background: #10b981; flex: 2; }
+    .tr-split-community  { background: #f59e0b; flex: 1; }
+
+    .tr-split-legend {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-size: .75rem;
+      color: var(--clr-text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .tr-split-dot {
+      width: .55rem;
+      height: .55rem;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: .3rem;
+      vertical-align: middle;
+    }
+
+    /* Section headers */
+    .tr-section { padding: 2.5rem 0; }
+    .tr-section-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin: 0 0 .35rem;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+
+    .tr-section-sub {
+      color: var(--clr-text-muted);
+      font-size: .9rem;
+      margin: 0 0 1.25rem;
+    }
+
+    /* NFT / product grid */
+    .tr-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.1rem;
+    }
+
+    .tr-card {
+      border: 1px solid rgba(168,85,247,.3);
+      border-radius: 1rem;
+      background: linear-gradient(135deg, rgba(15,8,30,.95), rgba(12,20,40,.95));
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: .55rem;
+      transition: transform .15s, box-shadow .15s, border-color .15s;
+    }
+
+    .tr-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(168,85,247,.65);
+      box-shadow: 0 0 24px rgba(168,85,247,.14), 0 6px 20px rgba(0,0,0,.4);
+    }
+
+    .tr-card-icon {
+      font-size: 2.2rem;
+      line-height: 1;
+    }
+
+    .tr-card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--clr-text);
+    }
+
+    .tr-card-desc {
+      font-size: .85rem;
+      color: var(--clr-text-muted);
+      line-height: 1.55;
+      flex: 1;
+    }
+
+    .tr-card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: .5rem;
+      flex-wrap: wrap;
+      padding-top: .55rem;
+      border-top: 1px solid rgba(148,163,184,.12);
+    }
+
+    .tr-card-price {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #c084fc;
+    }
+
+    .tr-rarity-badge {
+      font-size: .68rem;
+      font-weight: 700;
+      padding: .18rem .5rem;
+      border-radius: 2rem;
+      letter-spacing: .03em;
+    }
+
+    .tr-rarity-0 { background: rgba(156,163,175,.15); color: #9ca3af; border: 1px solid rgba(156,163,175,.25); }
+    .tr-rarity-1 { background: rgba(34,211,238,.1);   color: #22d3ee; border: 1px solid rgba(34,211,238,.3); }
+    .tr-rarity-2 { background: rgba(168,85,247,.12);  color: #a855f7; border: 1px solid rgba(168,85,247,.3); }
+    .tr-rarity-3 { background: rgba(245,158,11,.12);  color: #f59e0b; border: 1px solid rgba(245,158,11,.3); }
+    .tr-rarity-4 { background: rgba(239,68,68,.12);   color: #ef4444; border: 1px solid rgba(239,68,68,.3); }
+    .tr-rarity-5 { background: rgba(20,184,166,.14);  color: #14b8a6; border: 1px solid rgba(20,184,166,.34); }
+    .tr-rarity-6 { background: rgba(34,211,238,.14);  color: #22d3ee; border: 1px solid rgba(34,211,238,.38); }
+    .tr-rarity-7 { background: rgba(253,224,71,.14);  color: #fde047; border: 1px solid rgba(253,224,71,.38); }
+
+    .tr-supply-tag {
+      font-size: .7rem;
+      color: var(--clr-text-muted);
+      letter-spacing: .02em;
+    }
+
+    .tr-limited-tag {
+      font-size: .7rem;
+      color: #c084fc;
+      font-weight: 700;
+      letter-spacing: .02em;
+    }
+
+    /* Products */
+    .tr-product-split {
+      font-size: .73rem;
+      color: var(--clr-text-muted);
+      font-style: italic;
+    }
+
+    /* Genesis verified banner */
+    .tr-verified-banner {
+      background: linear-gradient(135deg, rgba(168,85,247,.12), rgba(99,102,241,.1));
+      border: 1px solid rgba(168,85,247,.3);
+      border-radius: 1rem;
+      padding: 1rem 1.25rem;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: flex-start;
+      gap: .75rem;
+      flex-wrap: wrap;
+    }
+
+    .tr-verified-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      margin-top: .1rem;
+    }
+
+    .tr-verified-text {
+      flex: 1;
+    }
+
+    .tr-verified-text strong {
+      color: #c084fc;
+      font-size: .95rem;
+    }
+
+    .tr-verified-text p {
+      color: var(--clr-text-muted);
+      font-size: .83rem;
+      margin: .25rem 0 0;
+    }
+
+    /* Purchase stub status */
+    .tr-purchase-status {
+      font-size: .8rem;
+      min-height: 1em;
+      text-align: center;
+      color: #86efac;
+      margin-top: .25rem;
+    }
+
+    .tr-section-compact { padding-top: 2rem; padding-bottom: 1.5rem; }
+    .tr-split-dot-treasury { background: #6366f1; }
+    .tr-split-dot-pool { background: #a855f7; }
+    .tr-split-dot-dev { background: #10b981; }
+    .tr-split-dot-community { background: #f59e0b; }
+    .tr-cta-section { text-align: center; }
+    .tr-cta-actions { display: flex; gap: .65rem; flex-wrap: wrap; justify-content: center; margin-top: 1rem; }
+
+    @media (max-width: 560px) {
+      .tr-grid { grid-template-columns: 1fr 1fr; }
+      .tr-card { padding: .9rem; }
+    }

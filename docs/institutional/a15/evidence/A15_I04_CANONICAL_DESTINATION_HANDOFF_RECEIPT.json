@@ -1,0 +1,66 @@
+{
+  "schema": "eonapp.a15.i04.canonical-destination-handoff-receipt.v1",
+  "wave": "I04",
+  "status": "pass",
+  "destinationAuthority": {
+    "schema": "eonapp.destination-registry.a15.v1",
+    "destinationCount": 18,
+    "ids": [
+      "home",
+      "create",
+      "projects",
+      "library",
+      "workspace",
+      "forge",
+      "vault",
+      "capsule",
+      "automations",
+      "local-ai",
+      "help",
+      "status",
+      "profile",
+      "settings",
+      "billing",
+      "eon-keys",
+      "realm-studio",
+      "eoncity"
+    ]
+  },
+  "handoffAuthority": {
+    "schema": "eonapp.handoff.a15.v1",
+    "explicitUserActionRequired": true,
+    "expiring": true,
+    "singleConsume": true,
+    "receiverBound": true,
+    "digestVerified": true,
+    "sessionOnly": true,
+    "noSilentEviction": true,
+    "outcomeVerifiedByHandoff": false,
+    "activeAfterConsumption": 0
+  },
+  "integratedJourneys": {
+    "createToProjects": true,
+    "creatorToForge": true,
+    "supportToEonbot": true,
+    "atlasCentralized": true,
+    "continueCentralized": true
+  },
+  "boundaries": {
+    "coreCoupledRouteCount": 0,
+    "cityCoreImplementationModuleCount": 0
+  },
+  "sourceDigests": {
+    "create": "6ed7c360c99ca06dc9746ad7ec5b6c969f9e12af85e9fcfa4fbbae0c1a86d48d",
+    "projects": "0096cd1a444a0b11a0255ec643d0222b17748a41be34773d74285d917f1d4998",
+    "creator": "1cfd67337ba7efb6f9c5eacfc45d888d1f92dad904530c7402507b0e83b593f1",
+    "forge": "1e7d51022c6f31be9bdd134cbb3a7b30c26304e4560df2af343bc0140b0f2d44",
+    "support": "47599b65574c82b7e0ba3a2291a45f792b517504d5276f6523a9128750e19872",
+    "home": "58ba7233d6ad927291a4a5adbccd868f97fe1d235c0182eeafc31f42075cd89b",
+    "continueResolver": "43e653a923f90c1605fb6158bfb9de906b976c761296641d36f11e1d29200160",
+    "continueSurface": "2a80fd4b49cf83b50c09a50c82c5688f59a434e81b8f9639a21d9cd640b89a1c",
+    "atlas": "dd543782071a4b71c033c0494d271aba89211f36aba6016e09527138837c3bcc",
+    "catalogue": "75d9fe594eb3775e044dfd030cdf31d97b5efd1c67e9b3f0b77125cfaac9a7c3"
+  },
+  "errors": [],
+  "digest": "38da513c15785329237cfd575eca1045b4b57bfa4af2297126060f9ca21709b5"
+}

@@ -1,0 +1,42 @@
+{
+  "schema": "eon.city.owner-recording-matrix.w700.v1",
+  "status": "pending-owner-browser-evidence",
+  "supersedes": "config/w693-owner-recording-matrix.json",
+  "deviceAuthority": {
+    "desktop": "Owner Windows 11 laptop, Ryzen 7, 16 GB RAM, RTX 3050 laptop GPU",
+    "mobile": "Real mobile browser, landscape and portrait",
+    "browser": "Current Chromium-family browser with authenticated EONAPP session"
+  },
+  "rules": {
+    "noSyntheticScreenshots": true,
+    "noHeadlessOnlyApproval": true,
+    "noVisualScoreWithoutRecordings": true,
+    "noProductionReleaseWithoutOwnerApproval": true,
+    "privateDataMustNotBeVisible": true,
+    "exactFrozenCandidateOnly": true,
+    "zeroCriticalDefects": true
+  },
+  "recordings": [
+    {"id":"desktop-entry","title":"Authenticated desktop entry","status":"pending","requiredProof":["identity-gated entry","first playable frame","no stuck loader","correct quality badge"]},
+    {"id":"desktop-character-axis","title":"Pathfinder asset-axis and locomotion truth","status":"pending","requiredProof":["primary GLB faces movement","fallback GLB faces movement","WASD and diagonals","camera-relative turns","blocked movement returns idle","idle/walk/run hysteresis"]},
+    {"id":"desktop-core-walk","title":"Core walking and physical district boundaries","status":"pending","requiredProof":["canonical movement direction","authored corridor crossing","boundary dwell diagnostics","no nearest-centre switch","no rapid accidental switching"]},
+    {"id":"desktop-hud","title":"Structured HUD, More sheet and target arbitration","status":"pending","requiredProof":["48px controls","two-line status","one More sheet","Creator Capture reachable","one nearby target","focus returns after close"]},
+    {"id":"desktop-capsule","title":"Capsule ride and Skip ride","status":"pending","requiredProof":["separate review","Board Capsule","visible bounded journey","Skip ride accessibility","mode receipt"]},
+    {"id":"desktop-district-belts","title":"Nine visually distinct productive District Belts","status":"pending","requiredProof":["nine unique silhouettes","Sanctums dominate","functional secondary buildings","distinct streets and lighting","no generic ring dominance"]},
+    {"id":"desktop-expanse","title":"Expanse gateway, macro-region and return","status":"pending","requiredProof":["visible skyline","physical gateway confirmation","coherent macro-region","population and discoveries","safe return"]},
+    {"id":"desktop-expanse-diversity","title":"Expanse regional diversity and continuity","status":"pending","requiredProof":["seven-plus architecture families","near-mid-far depth","road hierarchy","distinct discovery shapes","no adjacent repetition","no visible hard border"]},
+    {"id":"desktop-nexus","title":"Pulse to Morphic Field to Atlas","status":"pending","requiredProof":["truthful Pulse state","three persistent actions","contextual advanced controls","object manipulation","Atlas selected-object continuity"]},
+    {"id":"desktop-gesture-voice","title":"Optional gesture and bounded voice controls","status":"pending","requiredProof":["off/available/active/unavailable states","no automatic camera","Stop Camera visible","normal control equivalents","bounded voice examples","false-trigger protection"]},
+    {"id":"desktop-handoff","title":"NEXUS object to City holographic object","status":"pending","requiredProof":["explicit handoff","privacy-safe receipt","correct district station","same object visible","no automatic work"]},
+    {"id":"desktop-signature-flow","title":"Complete EONAPP signature journey","status":"pending","requiredProof":["Pulse","Nexus open","work object selected","Atlas reviewed","City handoff reviewed","same physical object","specialist reviewed","native action confirmed","verified receipt","My Realm reflection","explicit Core return"]},
+    {"id":"desktop-realms","title":"All six Realms and safe return","status":"pending","requiredProof":["Archive Noir","Living Bio-City","Golden Sovereign Realm","Oceanic Light","Path of Time","EONBOT Temple","separate entry and return"]},
+    {"id":"desktop-my-realm","title":"Verified My Realm transformation","status":"pending","requiredProof":["truthful empty state","verified transformation appears","correct reflection zone","native route remains reviewed"]},
+    {"id":"desktop-focus-explore","title":"Focus and Explore parity","status":"pending","requiredProof":["Focus direct work","Explore discovery","fast travel in Focus","direct actions in Explore","no essential exploration lock"]},
+    {"id":"desktop-long-session","title":"Long-session memory and performance","status":"pending","requiredProof":["extended travel","Realm cycles","stable renderer","no growing duplicate meshes","frame governor behavior"]},
+    {"id":"mobile-landscape","title":"Mobile landscape controls and panels","status":"pending","requiredProof":["48px targets","movement controls","bottom sheet","safe-area padding","no overlap"]},
+    {"id":"mobile-portrait","title":"Portrait recovery layout","status":"pending","requiredProof":["readable HUD","usable controls","scrollable panels","no clipped actions"]},
+    {"id":"keyboard-screenreader","title":"Keyboard and screen-reader route","status":"pending","requiredProof":["visible focus","logical order","ARIA status","all critical actions reachable"]},
+    {"id":"reduced-motion","title":"Reduced-motion complete workflow","status":"pending","requiredProof":["no essential animation dependency","static wayfinding","Realm and transit actions usable"]},
+    {"id":"recovery-fallback","title":"WebGL recovery and restart path","status":"pending","requiredProof":["safe 2D recovery","clear reason","Restart 3D","no data loss"]}
+  ]
+}

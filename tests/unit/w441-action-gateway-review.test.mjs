@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict'; import test from 'node:test';
+import { createEonActionGatewayReviewPilot, getEonActionGatewayReviewPilotTruth } from '../../assets/js/action-gateway/eon-action-gateway-review-pilot.js'; import { inspectW441ActionGatewayReview } from '../../scripts/w441-action-gateway-review-gate.mjs';
+function memoryStorage() { const data = new Map(); return { getItem: (key) => data.has(key) ? data.get(key) : null, setItem: (key, value) => data.set(key, String(value)), removeItem: (key) => data.delete(key), get length() { return data.size; }, key: (index) => [...data.keys()][index] || null }; }
+const NOW = Date.parse('2026-06-29T12:00:00.000Z'); const HASH = 'sha256:action_review_payload_abcdefghijklmnopqrstuvwxyz123456';
+test('W441 creates a local action review proposal only with explicit scope approval', () => {
+  const pilot = createEonActionGatewayReviewPilot({ storage: memoryStorage(), now: () => NOW }); const input = { actionTypeId: 'connector-post', safeLabel: 'Review a post', scopeLabel: 'One approved export', payloadDigest: HASH };
+  assert.equal(pilot.createProposal(input).error, 'explicit-user-action-and-scope-approval-required'); const proposal = pilot.createProposal(input, { explicitUserAction: true, explicitScopeApproval: true }); assert.equal(proposal.ok, true); assert.equal(proposal.proposal.state, 'review-ready'); assert.equal(proposal.proposal.externalEffectCreated, false);
+});
+test('W441 holds explicit final approval but blocks any external execution request', () => {
+  const pilot = createEonActionGatewayReviewPilot({ storage: memoryStorage(), now: () => NOW }); const created = pilot.createProposal({ actionTypeId: 'github-repository-create', safeLabel: 'Review a repository', scopeLabel: 'One local plan', payloadDigest: HASH }, { explicitUserAction: true, explicitScopeApproval: true });
+  assert.equal(pilot.holdApprovedProposal(created.proposal.proposalId, { explicitUserAction: true }).error, 'explicit-final-approval-required'); const held = pilot.holdApprovedProposal(created.proposal.proposalId, { explicitUserAction: true, explicitFinalApproval: true }); assert.equal(held.ok, true); assert.equal(held.proposal.state, 'approval-held'); assert.equal(pilot.requestExternalExecution(created.proposal.proposalId, { explicitUserAction: true }).error, 'external-execution-not-released');
+});
+test('W441 gate and truth keep Action Gateway external effects disabled', () => { const gate = inspectW441ActionGatewayReview(); const truth = getEonActionGatewayReviewPilotTruth(); assert.equal(gate.status, 'pass'); assert.ok(gate.checkCount >= 8); assert.equal(truth.externalExecution, false); assert.equal(truth.credentialRead, false); });

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#111411" />
+  <meta name="robots" content="noindex,nofollow" />
+  <meta property="og:site_name" content="EONAPP" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="My Realm Profile — EONAPP" />
+  <meta property="og:description" content="Review public-safe Realm identity and verified transformation history." />
+  <meta property="og:url" content="https://eonapp.ch/realm-studio" />
+  <meta property="og:image" content="https://eonapp.ch/assets/media/social/eonapp-nexus-1200x630-social-v1.png?v=social-v1" />
+  <meta property="og:image:secure_url" content="https://eonapp.ch/assets/media/social/eonapp-nexus-1200x630-social-v1.png?v=social-v1" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="My Realm Profile — EONAPP social preview" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="My Realm Profile — EONAPP" />
+  <meta name="twitter:description" content="Review public-safe Realm identity and verified transformation history." />
+  <meta name="twitter:image" content="https://eonapp.ch/assets/media/social/eonapp-nexus-1200x630-social-v1.png?v=social-v1" />
+  <meta name="twitter:image:alt" content="My Realm Profile — EONAPP social preview" />
+  <meta name="eon:social-square" content="https://eonapp.ch/assets/media/social/eonapp-nexus-1080x1080-social-v1.png?v=social-v1" />
+  <title>Verified Realm · EONAPP</title>
+  <link rel="canonical" href="https://eonapp.ch/realm-studio" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="stylesheet" href="/assets/css/base.css" />
+  <style>
+    :root { color-scheme: dark; }
+    body { min-height: 100vh; margin: 0; background: radial-gradient(circle at 18% 12%, #1e3a8a 0, #0f172a 38%, #020617 100%); color: #e2e8f0; font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+    .skip { position:absolute; left:-999px; top:0; } .skip:focus { left:1rem; top:1rem; z-index:3; background:#fff; color:#111827; padding:.6rem .8rem; border-radius:.5rem; }
+    main { width:min(860px, calc(100% - 2rem)); margin:0 auto; padding:clamp(2rem,7vw,6rem) 0; }
+    .card { padding:clamp(1.2rem,4vw,2.4rem); border-radius:1.4rem; border:1px solid rgba(147,197,253,.32); background:linear-gradient(145deg, rgba(15,23,42,.95), rgba(30,41,59,.76)); box-shadow:0 24px 84px rgba(0,0,0,.38); }
+    .eyebrow { margin:0 0 .45rem; color:#93c5fd; text-transform:uppercase; letter-spacing:.13em; font-size:.75rem; font-weight:800; }
+    h1 { margin:.1rem 0 .75rem; font-size:clamp(1.75rem,6vw,3.25rem); line-height:1.04; }
+    .copy { max-width:68ch; color:#cbd5e1; line-height:1.65; }
+    .identity { display:grid; grid-template-columns:1fr auto; gap:1rem; align-items:center; margin:1.4rem 0; padding:1.1rem; border-radius:1rem; border:1px solid rgba(148,163,184,.22); background:rgba(2,6,23,.46); }
+    .identity strong { display:block; font-size:1.05rem; color:#f8fafc; }
+    .identity span { color:#a8b7cc; font-size:.9rem; word-break:break-word; }
+    .sig { max-width:13rem; padding:.55rem .7rem; border-radius:.65rem; background:rgba(37,99,235,.14); color:#bfdbfe; font-size:.78rem; text-align:right; word-break:break-word; }
+    .facts { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.7rem; margin:1.2rem 0; }
+    .facts article { padding:.8rem; border-radius:.8rem; background:rgba(15,23,42,.6); border:1px solid rgba(148,163,184,.16); }
+    .facts b { display:block; color:#f8fafc; font-size:.78rem; text-transform:uppercase; letter-spacing:.08em; }
+    .facts span { display:block; margin-top:.3rem; color:#b7c4d6; font-size:.88rem; word-break:break-word; }
+    .actions { display:flex; flex-wrap:wrap; gap:.7rem; margin-top:1.35rem; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; min-height:2.6rem; padding:.65rem .95rem; border-radius:.75rem; border:1px solid rgba(148,163,184,.34); text-decoration:none; color:#e2e8f0; background:rgba(15,23,42,.72); font-weight:750; cursor:pointer; font:inherit; }
+    .btn.primary { background:#2563eb; border-color:#60a5fa; color:#fff; } .btn:hover { transform:translateY(-1px); }
+    .notice { margin-top:1rem; color:#94a3b8; font-size:.84rem; line-height:1.55; }
+    [hidden] { display:none !important; }
+    @media(max-width:640px){ .identity { grid-template-columns:1fr; } .sig { max-width:none; text-align:left; } .facts { grid-template-columns:1fr; } }
+  </style>
+  <script type="module" src="/assets/js/localStorage-shim.js"></script>
+</head>
+<body data-page-type="realm-profile" data-w212-realm-profile="true">
+  <a class="skip skip-to-content" href="#main">Skip to content</a>
+  <main id="main">
+    <section class="card" aria-live="polite">
+      <p class="eyebrow">Portable verified Realm identity</p>
+      <h1 id="realm-profile-title">Open a signed Realm link</h1>
+      <p id="realm-profile-copy" class="copy">This page only renders a Realm identity that was verified locally from a self-contained eon3 link. It does not query a Cloudflare Realm registry.</p>
+      <div id="realm-profile-identity" class="identity" hidden></div>
+      <div id="realm-profile-facts" class="facts" hidden></div>
+      <div class="actions">
+        <a id="realm-profile-city" class="btn primary" href="/eoncity">Open EON City</a>
+        <a class="btn" href="/">Open EONAPP</a>
+      </div>
+      <p id="realm-profile-notice" class="notice">A signed Realm link is a public identifier, not a wallet key, password, recovery phrase, reward proof, or payment instruction.</p>
+    </section>
+  </main>
+  <script type="module" src="/assets/js/utils/accessibility-autoload.js"></script>
+  <script type="module" src="/assets/js/realm-profile-page.js"></script>
+</body>
+</html>

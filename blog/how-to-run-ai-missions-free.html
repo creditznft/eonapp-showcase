@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="robots" content="index, follow" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>How to Run AI Missions for Free — EONAPP.ch</title>
+  <meta name="description" content="Step-by-step: connect Groq + Gemini free API keys, pick a mission mode, and run your first AI task in under 4 minutes with EON WorkBench." />
+  <link rel="canonical" href="https://eonapp.ch/blog/how-to-run-ai-missions-free.html" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://www.googletagmanager.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: blob: https:; connect-src 'self' ws: wss: https:; font-src 'self' data: https://cdn.jsdelivr.net; manifest-src 'self'; media-src 'self' blob:; worker-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'" />
+  <meta property="og:title" content="How to Run AI Missions for Free with EON WorkBench" />
+  <meta property="og:description" content="Step-by-step: connect Groq + Gemini free API keys, pick a mission mode, and run your first AI task in under 4 minutes." />
+  <meta property="og:image" content="https://eonapp.ch/assets/img/og/default.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/favicon.ico" />
+  <link rel="preload" href="/assets/css/base.css" as="style" />
+  <link rel="preload" href="/assets/css/layout.css" as="style" />
+  <link rel="preload" href="/assets/css/components.css" as="style" />
+  <link rel="stylesheet" href="/assets/css/base.css" />
+  <link rel="stylesheet" href="/assets/css/layout.css" />
+  <link rel="stylesheet" href="/assets/css/components.css" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"How to Run AI Missions for Free with EON WorkBench","datePublished":"2026-05-01","publisher":{"@type":"Organization","name":"EONAPP.ch","url":"https://eonapp.ch/"},"description":"Step-by-step walkthrough to connect free AI providers and run your first mission."}</script>
+    <link rel="stylesheet" href="/assets/css/blog-how-to-run-ai-missions-free.css" />
+
+  <script type="module" src="/assets/js/localStorage-shim.js"></script>
+</head>
+<body data-page-type="blog-post">
+<a href="#main" class="skip-to-content">Skip to main content</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="logo">⚡ EONAPP<span>.ch</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/workspace" data-i18n-key="nav.workspace">Workspace</a>
+      <a href="/chat.html" data-i18n-key="nav.ai-chat">AI Chat</a>
+      <a href="/trade">Trade</a>
+      <a href="/vault">Vault</a>
+      <a href="/market">Market</a>
+      <a href="/realm">Realm</a>
+      <a href="/billing">Billing status</a>
+    </nav>
+    <span id="sub-badge" class="sub-badge" aria-label="Subscription tier"></span>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <span class="badge" data-i18n-key="blog.article.missions.badge" data-i18n-fallback="AI Productivity">AI Productivity</span>
+      <h1 data-i18n-key="blog.article.missions.title" data-i18n-fallback="How to Run AI Missions for Free">How to Run AI Missions for Free</h1>
+      <p data-i18n-key="blog.article.missions.lead" data-i18n-fallback="Connect two free API keys and you have access to some of the fastest AI models on Earth — no subscription required.">Connect two free API keys and you have access to some of the fastest AI models on Earth — no subscription required.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container blog-article">
+      <div class="blog-meta">
+        <span data-i18n-key="blog.article.missions.meta.read" data-i18n-fallback="5 min read">5 min read</span>
+        <span>·</span>
+        <span data-i18n-key="blog.article.missions.meta.guide" data-i18n-fallback="EON WorkBench guide">EON WorkBench guide</span>
+        <span>·</span>
+        <a href="/blog/" data-i18n-key="blog.article.back" data-i18n-fallback="← Back to blog">← Back to blog</a>
+      </div>
+
+      <p data-i18n-key="blog.article.missions.p1" data-i18n-fallback="EON WorkBench is a browser-based AI mission runner. You write a goal, pick a mode, and it executes using whichever AI provider you've connected. The catch most people miss: the best providers are free, and setup takes under 4 minutes.">EON WorkBench is a browser-based AI mission runner. You write a goal, pick a mode, and it executes using whichever AI provider you've connected. The catch most people miss: <strong>the best providers are free</strong>, and setup takes under 4 minutes.</p>
+
+      <h2 data-i18n-key="blog.article.missions.h2.setup" data-i18n-fallback="What you need before you start">What you need before you start</h2>
+      <ul>
+        <li data-i18n-key="blog.article.missions.li1" data-i18n-fallback="A Groq account (free) — console.groq.com">A Groq account (free) — <a href="https://console.groq.com" rel="noopener noreferrer" target="_blank">console.groq.com</a></li>
+        <li data-i18n-key="blog.article.missions.li2" data-i18n-fallback="A Google account for Gemini API (free) — aistudio.google.com">A Google account for Gemini API (free) — <a href="https://aistudio.google.com/app/apikey" rel="noopener noreferrer" target="_blank">aistudio.google.com</a></li>
+      </ul>
+      <p data-i18n-key="blog.article.missions.p2" data-i18n-fallback="Both give you API keys with generous free tiers. Groq runs Llama and Mixtral at extremely fast inference speeds. Gemini Flash is Google's fastest model and is free up to 1,500 requests/day.">Both give you API keys with generous free tiers. Groq runs Llama and Mixtral at extremely fast inference speeds. Gemini Flash is Google's fastest model and is free up to 1,500 requests/day.</p>
+
+      <h2 data-i18n-key="blog.article.missions.h2.steps" data-i18n-fallback="Step-by-step setup">Step-by-step setup</h2>
+
+      <div class="step-box">
+        <strong data-i18n-key="blog.article.missions.step1.title" data-i18n-fallback="Step 1 — Get your Groq key">Step 1 — Get your Groq key</strong>
+        <p data-i18n-key="blog.article.missions.step1.body" data-i18n-fallback="Go to console.groq.com → API Keys → Create API Key. Copy it to your clipboard.">Go to <code>console.groq.com</code> → API Keys → Create API Key. Copy it to your clipboard.</p>
+      </div>
+
+      <div class="step-box">
+        <strong data-i18n-key="blog.article.missions.step2.title" data-i18n-fallback="Step 2 — Get your Gemini key">Step 2 — Get your Gemini key</strong>
+        <p data-i18n-key="blog.article.missions.step2.body" data-i18n-fallback="Go to aistudio.google.com/app/apikey → Create API key → select any project. Copy it.">Go to <code>aistudio.google.com/app/apikey</code> → Create API key → select any project. Copy it.</p>
+      </div>
+
+      <div class="step-box">
+        <strong data-i18n-key="blog.article.missions.step3.title" data-i18n-fallback="Step 3 — Paste both into WorkBench">Step 3 — Paste both into WorkBench</strong>
+        <p data-i18n-key="blog.article.missions.step3.body" data-i18n-fallback="Open Get Free AI Power and paste your keys into the Groq and Gemini fields. Hit Save Keys. That's it.">Open <a href="/get-free-ai-power.html">Get Free AI Power</a> and paste your keys into the Groq and Gemini fields. Hit <strong>Save Keys</strong>. That's it.</p>
+      </div>
+
+      <div class="step-box">
+        <strong data-i18n-key="blog.article.missions.step4.title" data-i18n-fallback="Step 4 — Run your first mission">Step 4 — Run your first mission</strong>
+        <p data-i18n-key="blog.article.missions.step4.body" data-i18n-fallback="Go to Build. Pick a mode (Ask, Build, Create, Operate, Trade, or Realm) and type your goal. WorkBench auto-selects the best available provider for that mode.">Go to <a href="/build">Build</a>. Pick a mode (Ask, Build, Create, Operate, Trade, or Realm) and type your goal. WorkBench auto-selects the best available provider for that mode.</p>
+      </div>
+
+      <div class="tip">
+        💡 <strong data-i18n-key="blog.article.missions.tip.label" data-i18n-fallback="Tip:">Tip:</strong> <span data-i18n-key="blog.article.missions.tip.body" data-i18n-fallback="For long-form writing or structured output, Gemini Flash tends to produce better formatting. For raw speed (brainstorming, rewrites), Groq + Llama 3 is hard to beat.">For long-form writing or structured output, Gemini Flash tends to produce better formatting. For raw speed (brainstorming, rewrites), Groq + Llama 3 is hard to beat.</span>
+      </div>
+
+      <h2 data-i18n-key="blog.article.missions.h2.modes" data-i18n-fallback="The 6 mission modes explained">The 6 mission modes explained</h2>
+      <ul>
+        <li data-i18n-key="blog.article.missions.mode1" data-i18n-fallback="Ask — Research, Q&A, explain concepts"><strong>Ask</strong> — Research, Q&A, explain concepts</li>
+        <li data-i18n-key="blog.article.missions.mode2" data-i18n-fallback="Build — Code generation, architecture planning"><strong>Build</strong> — Code generation, architecture planning</li>
+        <li data-i18n-key="blog.article.missions.mode3" data-i18n-fallback="Create — Content writing, hooks, copy"><strong>Create</strong> — Content writing, hooks, copy</li>
+        <li data-i18n-key="blog.article.missions.mode4" data-i18n-fallback="Operate — SOPs, checklists, system design"><strong>Operate</strong> — SOPs, checklists, system design</li>
+        <li data-i18n-key="blog.article.missions.mode5" data-i18n-fallback="Trade — Market research, investment thesis generation"><strong>Trade</strong> — Market research, investment thesis generation</li>
+        <li data-i18n-key="blog.article.missions.mode6" data-i18n-fallback="Realm — Community strategy, realm management"><strong>Realm</strong> — Community strategy, realm management</li>
+      </ul>
+
+      <h2 data-i18n-key="blog.article.missions.h2.pool" data-i18n-fallback="Earning Pool Points while you work">Earning Pool Points while you work</h2>
+      <p data-i18n-key="blog.article.missions.p3" data-i18n-fallback="Every mission you complete earns Pool Points. Pool Points determine your share of the EonLite mint pool — the more you use the platform, the larger your allocation when EonLite is distributed. You can track your points in the Vault.">Every mission you complete earns Pool Points. Pool Points determine your share of the EonLite mint pool — the more you use the platform, the larger your allocation when EonLite is distributed. You can track your points in the <a href="/vault">Vault</a>.</p>
+
+      <h2 data-i18n-key="blog.article.missions.h2.local" data-i18n-fallback="Want even faster AI? Add local models">Want even faster AI? Add local models</h2>
+      <p data-i18n-key="blog.article.missions.p4" data-i18n-fallback="If you have a decent computer (16GB+ RAM), you can run AI models locally using Ollama. WorkBench auto-discovers local models at startup — no configuration needed.">If you have a decent computer (16GB+ RAM), you can run AI models locally using <a href="/blog/how-to-set-up-local-ai-ollama.html">Ollama</a>. WorkBench auto-discovers local models at startup — no configuration needed.</p>
+
+      <div class="blog-cta-bar">
+        <a href="/get-free-ai-power.html" class="btn btn-primary" data-i18n-key="blog.article.missions.cta1" data-i18n-fallback="Set up free providers →">Set up free providers →</a>
+        <a href="/build" class="btn btn-outline" data-i18n-key="blog.article.missions.cta2" data-i18n-fallback="Launch WorkBench →">Launch WorkBench →</a>
+        <a href="/blog/" class="btn btn-outline" data-i18n-key="blog.article.more" data-i18n-fallback="More guides">More guides</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="logo">⚡ EONAPP<span>.ch</span></a>
+      <p>AI-native platform for creators, builders &amp; operators.</p>
+    </div>
+    <nav class="footer-nav">
+      <a href="/trade">Trade</a>
+      <a href="/vault">Vault</a>
+      <a href="/market">Market</a>
+      <a href="/marketplace.html">NFT Exchange</a>
+      <a href="/get-free-ai-power.html">Free AI</a>
+      <a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+    </nav>
+  </div>
+</footer>
+
+<script type="module" src="/assets/js/content-lite.js"></script>
+
+<!-- -- Mobile PWA Bottom Nav ------------------------------ -->
+<nav class="eon-bottom-nav" aria-label="Quick navigation">
+  <a href="/build" class="eon-bottom-nav-item" aria-label="Build"><span class="eon-bnav-icon">⚡</span><span class="eon-bnav-label">Build</span></a>
+  <a href="/create" class="eon-bottom-nav-item" aria-label="Create"><span class="eon-bnav-icon">🎨</span><span class="eon-bnav-label">Create</span></a>
+  <a href="/trade" class="eon-bottom-nav-item" aria-label="Trade"><span class="eon-bnav-icon">📊</span><span class="eon-bnav-label">Trade</span></a>
+  <a href="/vault" class="eon-bottom-nav-item" aria-label="Vault"><span class="eon-bnav-icon">🏦</span><span class="eon-bnav-label">Vault</span></a>
+  <a href="/chat.html" class="eon-bottom-nav-item" aria-label="AI Chat"><span class="eon-bnav-icon">💬</span><span class="eon-bnav-label">AI Chat</span></a>
+</nav>
+</body>
+</html>
+

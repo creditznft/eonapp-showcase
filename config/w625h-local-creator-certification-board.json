@@ -1,0 +1,37 @@
+{
+  "schema": "eonapp.local-creator-certification-board.w625h.2026-07-11.v1",
+  "wave": "W625H",
+  "certifying": false,
+  "verdict": "no-go-real-evidence-pending",
+  "sourceIntegrationAloneCanPass": false,
+  "supportedProfilesOnly": true,
+  "publicAllDeviceClaimAllowed": false,
+  "requiredEvidence": {
+    "w625aRealImageProof": "pending",
+    "w625eRealVideoProof": "pending",
+    "ownerFourGbFallback": "pending",
+    "supportedReferenceDevice": "pending",
+    "allElevenVideoRecoveryLanes": "pending"
+  },
+  "benchmarks": {
+    "quality": "pending",
+    "latency": "pending",
+    "memory": "pending",
+    "failureRecovery": "pending",
+    "privacy": "pending",
+    "outputIntegrity": "pending",
+    "updateCompatibility": "pending"
+  },
+  "fixedInputs": {
+    "image": "fixed-safe-image-prompt-v1",
+    "video": "fixed-safe-i2v-input-and-motion-brief-v1"
+  },
+  "openBlockers": [
+    "real-local-image-proof-pending",
+    "real-local-video-proof-pending",
+    "video-recovery-matrix-incomplete",
+    "fixed-benchmark-board-incomplete",
+    "supported-reference-device-evidence-pending",
+    "owner-four-gb-fallback-evidence-pending"
+  ]
+}

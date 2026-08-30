@@ -1,0 +1,214 @@
+/* KPI Dashboard — extracted from inline styles */
+
+body[data-page-type="kpi-dashboard"] {
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+  color: #e0e0e0;
+}
+
+.kpi-dash .page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.kpi-dash .page-title {
+  font-size: 28px;
+  background: linear-gradient(135deg, #4f46e5, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.kpi-dash .header-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.kpi-dash .metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.kpi-dash .card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 20px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s;
+}
+
+.kpi-dash .card:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(6, 182, 212, 0.5);
+}
+
+.kpi-dash .card-title {
+  font-size: 13px;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.kpi-dash .card-value {
+  font-size: 32px;
+  font-weight: bold;
+  color: #06b6d4;
+  margin-bottom: 8px;
+}
+
+.kpi-dash .card-subtext {
+  font-size: 13px;
+  color: #666;
+}
+
+.kpi-dash .metric-trend {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-left: 8px;
+  margin-top: 8px;
+}
+
+.kpi-dash .trend-up { background: rgba(34, 197, 94, 0.2); color: #22c55e; }
+.kpi-dash .trend-down { background: rgba(239, 68, 68, 0.2); color: #ef4444; }
+
+.kpi-dash .chart-section {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 30px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.kpi-dash .chart-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #e0e0e0;
+}
+
+.kpi-dash .chart-placeholder {
+  width: 100%;
+  height: 250px;
+  background: rgba(0,0,0,0.3);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-size: 14px;
+}
+
+.kpi-dash .funnel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.kpi-dash .funnel-step {
+  background: rgba(255,255,255,0.05);
+  border-left: 3px solid #06b6d4;
+  padding: 12px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.kpi-dash .funnel-label { font-size: 13px; }
+.kpi-dash .funnel-value { font-weight: bold; color: #06b6d4; }
+
+.kpi-dash .admin-section {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 30px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.kpi-dash .admin-section.hidden { display: none; }
+
+.kpi-dash .admin-output {
+  margin-top: 15px;
+  padding: 10px;
+  background: rgba(0,0,0,0.2);
+  border-radius: 6px;
+  display: none;
+  font-family: monospace;
+  font-size: 12px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.kpi-dash .admin-output.visible { display: block; }
+
+.kpi-dash .admin-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #fbbf24;
+}
+
+.kpi-dash .admin-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.kpi-dash .admin-btn {
+  padding: 12px;
+  background: rgba(251, 191, 36, 0.1);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  color: #fbbf24;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.3s;
+}
+
+.kpi-dash .admin-btn:hover {
+  background: rgba(251, 191, 36, 0.2);
+  border-color: #fbbf24;
+}
+
+.kpi-dash .stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.kpi-dash .stat-item {
+  padding: 10px;
+  background: rgba(0,0,0,0.2);
+  border-radius: 6px;
+  text-align: center;
+}
+
+.kpi-dash .stat-label { font-size: 11px; color: #999; text-transform: uppercase; }
+.kpi-dash .stat-value { font-size: 18px; font-weight: bold; color: #06b6d4; margin-top: 4px; }
+
+.kpi-dash .health-indicator {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.kpi-dash .health-ok { background: #22c55e; }
+.kpi-dash .health-warn { background: #f97316; }
+.kpi-dash .health-error { background: #ef4444; }

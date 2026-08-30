@@ -1,0 +1,43 @@
+{
+  "schema": "eonapp.w444.institutional-certification-gate.v1",
+  "wave": "W444",
+  "status": "pass",
+  "sourceOnly": true,
+  "checkCount": 6,
+  "checks": [
+    {
+      "id": "required-files",
+      "pass": true,
+      "detail": "release board, contract and test exist"
+    },
+    {
+      "id": "contract-valid",
+      "pass": true,
+      "detail": "contract forbids a source-only certificate"
+    },
+    {
+      "id": "explicit-external-evidence-matrix",
+      "pass": true,
+      "detail": "board names the missing browser/device/account/release evidence"
+    },
+    {
+      "id": "source-truth-composed",
+      "pass": true,
+      "detail": "board composes wave truth rather than implying success"
+    },
+    {
+      "id": "default-blocked",
+      "pass": true,
+      "detail": "no source build can mark release certified"
+    },
+    {
+      "id": "truth-boundary",
+      "pass": true,
+      "detail": "W444 retains human and external evidence gates"
+    }
+  ],
+  "certificationStatus": "blocked-external-evidence-required",
+  "limitations": [
+    "This gate validates the certification board’s fail-closed behavior. It is not Lighthouse, device, OAuth, Sync, notification, security, rollback, or CEO release evidence."
+  ]
+}

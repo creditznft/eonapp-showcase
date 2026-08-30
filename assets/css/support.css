@@ -1,0 +1,65 @@
+.support-layout {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 1rem;
+}
+.support-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, .85fr);
+  gap: 1rem;
+  align-items: stretch;
+}
+.support-hero-card,
+.support-state-card,
+.support-topic-card,
+.support-proof-card {
+  border: 1px solid rgba(148, 163, 184, .2);
+  border-radius: 1.25rem;
+  background: linear-gradient(180deg, rgba(15, 23, 42, .92), rgba(15, 23, 42, .72));
+  box-shadow: 0 20px 70px rgba(2, 6, 23, .28);
+}
+.support-hero-card,
+.support-state-card { padding: 1.25rem; }
+.support-eyebrow { color: var(--clr-accent); text-transform: uppercase; letter-spacing: .12em; font-size: .78rem; font-weight: 800; }
+.support-hero h1 { font-size: clamp(2.15rem, 5vw, 4.2rem); line-height: .95; margin: .4rem 0 .75rem; }
+.support-lede { color: var(--clr-text-muted); max-width: 72ch; }
+.support-actions { display: flex; flex-wrap: wrap; gap: .65rem; margin-top: 1rem; }
+.support-state-list { display: grid; gap: .55rem; margin: 1rem 0 0; padding: 0; list-style: none; }
+.support-state-list li { display: grid; grid-template-columns: auto 1fr; gap: .55rem; color: var(--clr-text-muted); }
+.support-state-list strong { color: var(--clr-text); }
+.support-topic-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .9rem; margin-top: 1rem; }
+.support-topic-card { padding: 1rem; display: grid; gap: .65rem; }
+.support-topic-card h2 { margin: 0; font-size: 1.05rem; }
+.support-topic-card p { margin: 0; color: var(--clr-text-muted); }
+.support-topic-card ul { margin: 0; padding-left: 1.1rem; color: var(--clr-text-muted); font-size: .9rem; }
+.support-topic-badge { justify-self: start; border: 1px solid rgba(94, 234, 212, .28); color: #99f6e4; background: rgba(20, 184, 166, .12); border-radius: 999px; padding: .22rem .55rem; font-size: .76rem; font-weight: 800; }
+.support-proof-card { margin-top: 1rem; padding: 1rem; }
+.support-proof-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .65rem; }
+.support-proof-grid div { border: 1px solid rgba(148, 163, 184, .18); border-radius: .9rem; padding: .75rem; background: rgba(2, 6, 23, .28); }
+.support-proof-grid strong { display: block; color: var(--clr-text); }
+.support-proof-grid span { color: var(--clr-text-muted); font-size: .84rem; }
+@media (max-width: 920px) {
+  .support-hero,
+  .support-topic-grid { grid-template-columns: 1fr; }
+  .support-proof-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  .support-layout { padding-inline: 1rem; }
+  .support-actions .btn { width: 100%; justify-content: center; }
+  .support-proof-grid { grid-template-columns: 1fr; }
+}
+.support-evidence-card > p { color: var(--clr-text-muted); max-width: 82ch; }
+.support-evidence-form { display: grid; gap: .85rem; margin-top: 1rem; }
+.support-evidence-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .7rem; }
+.support-evidence-grid-wide { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.support-evidence-form label { display: grid; gap: .38rem; color: var(--clr-text-muted); font-size: .9rem; }
+.support-evidence-form input,
+.support-evidence-form select,
+.support-evidence-form textarea { width: 100%; border: 1px solid rgba(148, 163, 184, .28); border-radius: .7rem; background: rgba(2, 6, 23, .45); color: var(--clr-text); padding: .65rem .72rem; font: inherit; }
+.support-evidence-form input[readonly] { color: var(--clr-text-muted); cursor: default; }
+.support-evidence-form textarea { resize: vertical; min-height: 5.25rem; }
+.support-evidence-check { grid-template-columns: auto 1fr; align-items: start; }
+.support-evidence-check input { width: 1rem; height: 1rem; margin-top: .15rem; }
+.support-evidence-status { display: block; color: var(--clr-text-muted); font-size: .88rem; }
+.support-evidence-preview { margin: 0; max-height: 22rem; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; border: 1px solid rgba(148, 163, 184, .18); border-radius: .8rem; padding: .8rem; background: rgba(2, 6, 23, .42); color: var(--clr-text-muted); font-size: .78rem; }
+@media (max-width: 920px) { .support-evidence-grid, .support-evidence-grid-wide { grid-template-columns: 1fr; } }

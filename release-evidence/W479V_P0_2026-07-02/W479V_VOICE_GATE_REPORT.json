@@ -1,0 +1,77 @@
+{
+  "schema": "eonapp.w479v.eonbot-voice-gate-report.v1",
+  "sourceStatus": "pass",
+  "checkCount": 10,
+  "truth": {
+    "guideModeVoiceControlsHidden": true,
+    "activeAiRequired": true,
+    "dictateCreatesEditableTextFirst": true,
+    "dictateAutoSend": false,
+    "useVoiceExplicitUserAction": true,
+    "useVoiceStopsImmediately": true,
+    "browserSpeechLabelled": true,
+    "audioPersistence": false,
+    "backgroundListening": false,
+    "silentCloudAiFallback": false,
+    "localOfflineVoiceClaim": false,
+    "deviceProofRequired": true
+  },
+  "checks": [
+    {
+      "id": "required-files",
+      "pass": true,
+      "detail": "gateway, contract, gate and unit test are present"
+    },
+    {
+      "id": "guide-controls-hidden",
+      "pass": true,
+      "detail": "Guide Mode cannot expose microphone actions"
+    },
+    {
+      "id": "active-route-required",
+      "pass": true,
+      "detail": "only an active Local or Connected route may expose ready voice controls"
+    },
+    {
+      "id": "dictate-editable-first",
+      "pass": true,
+      "detail": "Dictate places final text into the composer and does not auto-send"
+    },
+    {
+      "id": "voice-explicit-start-stop",
+      "pass": true,
+      "detail": "Use Voice has explicit start and immediate stop behavior"
+    },
+    {
+      "id": "no-guide-mic",
+      "pass": true,
+      "detail": "Chat rendering hides controls when the gateway is not active"
+    },
+    {
+      "id": "no-audio-persistence",
+      "pass": true,
+      "detail": "Chat does not persist audio"
+    },
+    {
+      "id": "no-silent-network-claim",
+      "pass": true,
+      "detail": "browser assistance and no silent AI fallback are explicit"
+    },
+    {
+      "id": "tooltips-present",
+      "pass": true,
+      "detail": "Dictate and Use Voice tooltips are explicit"
+    },
+    {
+      "id": "surfaces-marked",
+      "pass": true,
+      "detail": "both canonical chat surfaces expose a voice route status node"
+    }
+  ],
+  "limitations": [
+    "Source-level proof only.",
+    "No browser/device microphone, transcript accuracy, output audio, provider voice, local STT/TTS adapter, or production CSP evidence is proven by this gate.",
+    "Browser speech remains an explicit beta convenience route until the W476-B/W478 device matrix is complete."
+  ],
+  "errors": []
+}

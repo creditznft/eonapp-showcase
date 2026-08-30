@@ -1,0 +1,22 @@
+action,path,purpose
+modify,config/w554-eon-city-access-project-portals-contract.mjs,Remove public-preview semantics; authenticated-only/signed-out states
+modify,functions/api/city/access.js,Return revised access-state schema without private data
+modify,assets/js/city/eon-city-access-station.js,Premium static login gate; no heavy import for guests
+modify,assets/css/eon-city-play.css,Signed-out portal and responsive controls
+modify,assets/js/city/eon-city-runtime-asset-manifest.js,Register W649 manifest bridge/cache version
+modify,assets/js/city/eon-city-asset-catalog.js,Approved W649 provenance and budgets
+modify,assets/js/city/eon-city-asset-runtime.js,"AssetContainer loading, capability fallback and disposal"
+modify,assets/js/city/eon-city-runtime-owner.js,W649 staged boot ownership
+modify,assets/js/city/eon-city-command-district-npc-system.js,Bind role-based character manifest
+modify,assets/js/city/eon-city-eonbot-companion.js,Load Orbit model; preserve procedural controller
+modify,assets/js/city/eon-city-quality-governor.js,W649 tier/LOD/device policy
+modify,assets/js/city/eon-city-cell-streamer.js,District asset residency and disposal
+create,assets/js/city/w649/eon-city-w649-character-manifest.js,"Character paths, clips, roles and fallbacks"
+create,assets/js/city/w649/eon-city-w649-world-manifest.js,Props and landmarks
+create,assets/js/city/w649/eon-city-w649-animation-manifest.js,Canonical animation aliases and state rules
+create,assets/js/city/w649/eon-city-w649-district-manifest.js,District placement and load tiers
+create,assets/js/city/w649/eon-city-w649-capability-resolver.js,Meshopt/WebP primary versus quantized fallback
+create,tests/unit/w649-eoncity-authenticated-entry.test.mjs,No guest heavy boot and revised states
+create,tests/unit/w649-eoncity-asset-manifests.test.mjs,Schema/hash/path tests
+create,tests/unit/w649-eoncity-character-animation.test.mjs,Clip and state-machine tests
+create,tests/e2e/w649-eoncity-integrated-cast.spec.ts,Headed signed-in desktop/mobile proof

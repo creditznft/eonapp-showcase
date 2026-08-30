@@ -1,0 +1,23 @@
+Environment attempted: Node v22.16.0, npm 10.9.2.
+Required project environment: Node 22 and npm 11.
+Configured registry:
+https://packages.applied-caas-gateway1.internal.api.openai.org/artifactory/api/npm/npm-public
+
+The exact lockfile requires ws@7.5.11. The configured registry returns HTTP 404 for that package/version.
+
+Observed command:
+npm view ws@7.5.11 version --json
+
+Observed result:
+npm ERR! code E404
+npm ERR! 404 Not Found
+npm ERR! 'ws@7.5.11' is not in this registry.
+
+Consequences in this container:
+- npm ci could not complete.
+- Full ESLint could not run.
+- Production build could not run.
+- Dependency-backed W649 Babylon asset acceptance could not run.
+- Playwright/authenticated browser certification could not run.
+
+This is an environment/package-registry blocker, not a passing build claim and not a proven source-code failure. Codex must restore the exact Node 22/npm 11 environment with a registry that contains the lockfile packages before Preview deployment.

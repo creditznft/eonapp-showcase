@@ -1,0 +1,241 @@
+{
+  "runTag": "2026-07-10T17-14-05-894Z",
+  "envFile": "C:\\Users\\credi\\WORKSPACE\\EONAPP.CH\\.env.local",
+  "baseUrl": "http://127.0.0.1:4173",
+  "ollamaBaseUrl": "http://127.0.0.1:11434",
+  "strict": false,
+  "results": [
+    {
+      "area": "remote",
+      "name": "matrix",
+      "status": "SKIP",
+      "detail": "--no-remote set",
+      "at": "2026-07-10T17:14:05.897Z"
+    },
+    {
+      "area": "local-discovery",
+      "name": "ollama",
+      "status": "PASS",
+      "detail": "10 model(s) visible at http://127.0.0.1:11434: phi4-mini:gpu, qwen3:4b-gpu, qwen2.5-coder:7b-gpu, qwen2.5-coder:3b-gpu, phi4-mini:latest, qwen3:4b, phi3:mini, qwen2.5:3b",
+      "at": "2026-07-10T17:14:05.932Z"
+    },
+    {
+      "area": "local-chat",
+      "name": "ollama:phi4-mini:gpu",
+      "status": "PASS",
+      "detail": "HTTP 200; output: EON LIVE OK",
+      "model": "phi4-mini:gpu",
+      "at": "2026-07-10T17:14:11.737Z"
+    },
+    {
+      "area": "local-chat",
+      "name": "ollama:qwen3:4b-gpu",
+      "status": "PASS",
+      "detail": "HTTP 200; output: {\"model\":\"qwen3:4b-gpu\",\"created_at\":\"2026-07-10T17:14:17.6084783Z\",\"message\":{\"role\":\"assistant\",\"content\":\"\",\"thinking\":\"We are to output exactly: \\\"EON LIVE OK\\\"\\n The instructi…",
+      "model": "qwen3:4b-gpu",
+      "at": "2026-07-10T17:14:17.609Z"
+    },
+    {
+      "area": "local-discovery",
+      "name": "lmstudio",
+      "status": "SKIP",
+      "detail": "lmstudio not reachable at http://127.0.0.1:1234: fetch failed",
+      "at": "2026-07-10T17:14:17.613Z"
+    },
+    {
+      "area": "local-discovery",
+      "name": "jan",
+      "status": "SKIP",
+      "detail": "jan not reachable at http://127.0.0.1:1337: fetch failed",
+      "at": "2026-07-10T17:14:17.614Z"
+    },
+    {
+      "area": "browser-page",
+      "name": "/onboarding.html",
+      "status": "PASS",
+      "detail": "HTTP 200 http://127.0.0.1:4173/onboarding.html",
+      "at": "2026-07-10T17:14:23.406Z"
+    },
+    {
+      "area": "browser-local-ui",
+      "name": "/onboarding.html",
+      "status": "WARN",
+      "detail": "Local AI/Ollama UI copy not obvious on this page",
+      "at": "2026-07-10T17:14:24.449Z"
+    },
+    {
+      "area": "browser-local-detect",
+      "name": "/onboarding.html",
+      "status": "WARN",
+      "detail": "Detect action clicked; no local model name found in page text",
+      "visibleModel": "",
+      "at": "2026-07-10T17:14:32.978Z"
+    },
+    {
+      "area": "browser-csp-localhost",
+      "name": "/onboarding.html",
+      "status": "PASS",
+      "detail": "Browser page can fetch http://127.0.0.1:11434/api/tags (10 model(s))",
+      "at": "2026-07-10T17:14:33.003Z"
+    },
+    {
+      "area": "browser-console",
+      "name": "/onboarding.html",
+      "status": "PASS",
+      "detail": "No CSP console violations captured",
+      "at": "2026-07-10T17:14:33.003Z"
+    },
+    {
+      "area": "browser-page",
+      "name": "/chat.html",
+      "status": "PASS",
+      "detail": "HTTP 200 http://127.0.0.1:4173/chat.html",
+      "at": "2026-07-10T17:14:35.059Z"
+    },
+    {
+      "area": "browser-local-ui",
+      "name": "/chat.html",
+      "status": "WARN",
+      "detail": "Local AI/Ollama UI copy not obvious on this page",
+      "at": "2026-07-10T17:14:36.089Z"
+    },
+    {
+      "area": "browser-local-detect",
+      "name": "/chat.html",
+      "status": "WARN",
+      "detail": "Detect action clicked; no local model name found in page text",
+      "visibleModel": "",
+      "at": "2026-07-10T17:14:44.623Z"
+    },
+    {
+      "area": "browser-csp-localhost",
+      "name": "/chat.html",
+      "status": "PASS",
+      "detail": "Browser page can fetch http://127.0.0.1:11434/api/tags (10 model(s))",
+      "at": "2026-07-10T17:14:44.634Z"
+    },
+    {
+      "area": "browser-console",
+      "name": "/chat.html",
+      "status": "PASS",
+      "detail": "No CSP console violations captured",
+      "at": "2026-07-10T17:14:44.634Z"
+    },
+    {
+      "area": "browser-page",
+      "name": "/vault.html",
+      "status": "PASS",
+      "detail": "HTTP 200 http://127.0.0.1:4173/vault.html",
+      "at": "2026-07-10T17:14:46.298Z"
+    },
+    {
+      "area": "browser-local-detect",
+      "name": "/vault.html",
+      "status": "WARN",
+      "detail": "Detect action clicked; no local model name found in page text",
+      "visibleModel": "",
+      "at": "2026-07-10T17:14:55.848Z"
+    },
+    {
+      "area": "browser-csp-localhost",
+      "name": "/vault.html",
+      "status": "PASS",
+      "detail": "Browser page can fetch http://127.0.0.1:11434/api/tags (10 model(s))",
+      "at": "2026-07-10T17:14:55.858Z"
+    },
+    {
+      "area": "browser-console",
+      "name": "/vault.html",
+      "status": "PASS",
+      "detail": "No CSP console violations captured",
+      "at": "2026-07-10T17:14:55.858Z"
+    },
+    {
+      "area": "browser-page",
+      "name": "/realm.html",
+      "status": "PASS",
+      "detail": "HTTP 200 http://127.0.0.1:4173/realm.html",
+      "at": "2026-07-10T17:14:57.533Z"
+    },
+    {
+      "area": "browser-local-detect",
+      "name": "/realm.html",
+      "status": "WARN",
+      "detail": "Detect action clicked; no local model name found in page text",
+      "visibleModel": "",
+      "at": "2026-07-10T17:15:07.078Z"
+    },
+    {
+      "area": "browser-csp-localhost",
+      "name": "/realm.html",
+      "status": "PASS",
+      "detail": "Browser page can fetch http://127.0.0.1:11434/api/tags (10 model(s))",
+      "at": "2026-07-10T17:15:07.093Z"
+    },
+    {
+      "area": "browser-console",
+      "name": "/realm.html",
+      "status": "PASS",
+      "detail": "No CSP console violations captured",
+      "at": "2026-07-10T17:15:07.093Z"
+    },
+    {
+      "area": "browser-page",
+      "name": "/trade.html",
+      "status": "PASS",
+      "detail": "HTTP 200 http://127.0.0.1:4173/trade.html",
+      "at": "2026-07-10T17:15:09.074Z"
+    },
+    {
+      "area": "browser-local-detect",
+      "name": "/trade.html",
+      "status": "WARN",
+      "detail": "Detect action clicked; no local model name found in page text",
+      "visibleModel": "",
+      "at": "2026-07-10T17:15:18.635Z"
+    },
+    {
+      "area": "browser-csp-localhost",
+      "name": "/trade.html",
+      "status": "PASS",
+      "detail": "Browser page can fetch http://127.0.0.1:11434/api/tags (10 model(s))",
+      "at": "2026-07-10T17:15:18.650Z"
+    },
+    {
+      "area": "browser-console",
+      "name": "/trade.html",
+      "status": "PASS",
+      "detail": "No CSP console violations captured",
+      "at": "2026-07-10T17:15:18.650Z"
+    },
+    {
+      "area": "browser-page",
+      "name": "/hustle.html",
+      "status": "PASS",
+      "detail": "HTTP 200 http://127.0.0.1:4173/hustle.html",
+      "at": "2026-07-10T17:15:20.229Z"
+    },
+    {
+      "area": "browser-csp-localhost",
+      "name": "/hustle.html",
+      "status": "FAIL",
+      "detail": "Browser page could not fetch local Ollama: Failed to fetch",
+      "at": "2026-07-10T17:15:21.264Z"
+    },
+    {
+      "area": "browser-console",
+      "name": "/hustle.html",
+      "status": "FAIL",
+      "detail": "Connecting to 'http://127.0.0.1:11434/api/tags' violates the following Content Security Policy directive: \"connect-src 'self'\". The action has been blocked. | Fetch API cannot load http://127.0.0.1:11434/api/tags. Refused to connect because it violates the document's Content Security Policy.",
+      "at": "2026-07-10T17:15:21.264Z"
+    }
+  ],
+  "screenshots": [
+    "C:\\Users\\credi\\WORKSPACE\\EONAPP_W621_LIVE_ROLLOUT_20260710\\docs\\qa\\live-ai-supertest\\2026-07-10T17-14-05-894Z\\onboarding-html.png",
+    "C:\\Users\\credi\\WORKSPACE\\EONAPP_W621_LIVE_ROLLOUT_20260710\\docs\\qa\\live-ai-supertest\\2026-07-10T17-14-05-894Z\\chat-html.png",
+    "C:\\Users\\credi\\WORKSPACE\\EONAPP_W621_LIVE_ROLLOUT_20260710\\docs\\qa\\live-ai-supertest\\2026-07-10T17-14-05-894Z\\vault-html.png",
+    "C:\\Users\\credi\\WORKSPACE\\EONAPP_W621_LIVE_ROLLOUT_20260710\\docs\\qa\\live-ai-supertest\\2026-07-10T17-14-05-894Z\\realm-html.png",
+    "C:\\Users\\credi\\WORKSPACE\\EONAPP_W621_LIVE_ROLLOUT_20260710\\docs\\qa\\live-ai-supertest\\2026-07-10T17-14-05-894Z\\trade-html.png",
+    "C:\\Users\\credi\\WORKSPACE\\EONAPP_W621_LIVE_ROLLOUT_20260710\\docs\\qa\\live-ai-supertest\\2026-07-10T17-14-05-894Z\\hustle-html.png"
+  ]
+}

@@ -1,0 +1,18 @@
+<svg height="1024" width="1024" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="EON City original vector art"><defs>
+  <linearGradient id="night" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#030712"/><stop offset=".48" stop-color="#071728"/><stop offset="1" stop-color="#0c2140"/></linearGradient>
+  <linearGradient id="cyan" x1="0" x2="1"><stop stop-color="#5eead4"/><stop offset=".45" stop-color="#67e8f9"/><stop offset="1" stop-color="#38bdf8"/></linearGradient>
+  <linearGradient id="violet" x1="0" x2="1"><stop stop-color="#c084fc"/><stop offset=".45" stop-color="#8b5cf6"/><stop offset="1" stop-color="#6366f1"/></linearGradient>
+  <linearGradient id="mint" x1="0" x2="1"><stop stop-color="#bbf7d0"/><stop offset=".5" stop-color="#34d399"/><stop offset="1" stop-color="#2dd4bf"/></linearGradient>
+  <linearGradient id="glass" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#d6f5ff" stop-opacity=".7"/><stop offset=".2" stop-color="#3b82f6" stop-opacity=".28"/><stop offset=".55" stop-color="#091426" stop-opacity=".2"/><stop offset="1" stop-color="#7dd3fc" stop-opacity=".46"/></linearGradient>
+  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="18"/></filter>
+  <filter id="noise"><feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 .14"/></feComponentTransfer></filter>
+</defs>
+<rect width="1024" height="1024" fill="#07111e"/>
+<rect width="1024" height="1024" fill="url(#glass)" opacity=".36"/>
+<g opacity=".32" stroke="#9bb7c9" stroke-width="1">
+<path d="M-600 1024L420 0"/><path d="M-536 1024L484 0"/><path d="M-472 1024L548 0"/><path d="M-408 1024L612 0"/><path d="M-344 1024L676 0"/><path d="M-280 1024L740 0"/><path d="M-216 1024L804 0"/><path d="M-152 1024L868 0"/><path d="M-88 1024L932 0"/><path d="M-24 1024L996 0"/><path d="M40 1024L1060 0"/><path d="M104 1024L1124 0"/><path d="M168 1024L1188 0"/><path d="M232 1024L1252 0"/><path d="M296 1024L1316 0"/><path d="M360 1024L1380 0"/><path d="M424 1024L1444 0"/><path d="M488 1024L1508 0"/><path d="M552 1024L1572 0"/><path d="M616 1024L1636 0"/><path d="M680 1024L1700 0"/><path d="M744 1024L1764 0"/><path d="M808 1024L1828 0"/><path d="M872 1024L1892 0"/><path d="M936 1024L1956 0"/><path d="M1000 1024L2020 0"/><path d="M1064 1024L2084 0"/><path d="M1128 1024L2148 0"/></g>
+<path d="M0 300H1024M0 760H1024" stroke="#1b405c" stroke-width="4" opacity=".48"/>
+<rect width="1024" height="1024" filter="url(#noise)" opacity=".44"/>
+<rect x="14" y="14" width="996" height="996" fill="none" stroke="#24445e" stroke-width="4" opacity=".5"/>
+</svg>

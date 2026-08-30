@@ -1,0 +1,33 @@
+.trust-hero{padding:3.5rem 0 2.5rem;background:radial-gradient(circle at top,#1f2937 0%,#0f172a 55%,#020617 100%)}
+.trust-hero-inner{max-width:900px}
+.trust-badge{display:inline-flex;align-items:center;gap:.35rem;padding:.4rem .8rem;border:1px solid rgba(99,102,241,.35);border-radius:999px;background:rgba(99,102,241,.12);color:#c7d2fe;font-size:.78rem;font-weight:700}
+.trust-sub{max-width:880px;color:#cbd5e1}
+.trust-hero-actions{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem}
+.trust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.trust-card,.trust-panel{background:#0f172a;border:1px solid rgba(148,163,184,.18);border-radius:20px;box-shadow:0 20px 50px rgba(2,6,23,.25)}
+.trust-card{padding:1rem 1rem 1.1rem}
+.trust-card h2{margin:0 0 .6rem;font-size:1rem}
+.trust-card ul,.trust-architecture-grid ul,.trust-explainer ul{margin:.2rem 0 0 1rem;padding:0;color:#cbd5e1;line-height:1.5}
+.trust-panel{padding:1.1rem}
+.trust-panel-header{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:.8rem}
+.trust-panel-kicker{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:#93c5fd}
+.trust-panel-header h2{margin:.2rem 0 0}
+.trust-select{min-width:240px;background:#020617;color:#e2e8f0;border:1px solid rgba(148,163,184,.25);border-radius:12px;padding:.65rem .8rem}
+.trust-module-summary{color:#cbd5e1;margin:.15rem 0 .7rem}
+.trust-tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:.9rem}
+.trust-tag{padding:.3rem .55rem;border-radius:999px;background:rgba(56,189,248,.12);border:1px solid rgba(56,189,248,.28);font-size:.72rem;color:#bae6fd}
+.trust-two-col,.trust-architecture-grid{display:grid;grid-template-columns:1.05fr 1.2fr;gap:1rem}
+.trust-architecture-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.trust-code-shell{background:#020617;border:1px solid rgba(148,163,184,.15);border-radius:16px;overflow:hidden}
+.trust-code-meta{display:flex;justify-content:space-between;align-items:center;gap:.75rem;padding:.7rem .9rem;border-bottom:1px solid rgba(148,163,184,.12);font-size:.78rem;color:#93c5fd}
+.trust-code-block{margin:0;padding:1rem;max-height:540px;overflow:auto;font-size:.8rem;line-height:1.55;color:#e2e8f0}
+@media (max-width: 960px){.trust-two-col{grid-template-columns:1fr}.trust-code-block{max-height:380px}}
+
+/* W108 trust center polish */
+.trust-hero h1 { max-width: 940px; font-size: clamp(2.25rem, 5vw, 4.6rem); line-height: .98; margin-bottom: 1rem; }
+.trust-promise-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+.trust-promise-card { padding: 1.1rem; border: 1px solid rgba(45, 212, 191, .18); border-radius: 20px; background: linear-gradient(135deg, rgba(20, 184, 166, .1), rgba(15, 23, 42, .78)); box-shadow: 0 20px 50px rgba(2, 6, 23, .22); }
+.trust-promise-card span { display: inline-flex; padding: .25rem .55rem; border-radius: 999px; color: #99f6e4; background: rgba(20, 184, 166, .12); border: 1px solid rgba(45, 212, 191, .24); font-size: .72rem; font-weight: 900; }
+.trust-promise-card h2 { margin: .7rem 0 .45rem; color: #f8fafc; font-size: 1.05rem; }
+.trust-promise-card p { margin: 0; color: #cbd5e1; line-height: 1.6; font-size: .92rem; }
+.trust-card li + li, .trust-architecture-grid li + li, .trust-explainer li + li { margin-top: .35rem; }

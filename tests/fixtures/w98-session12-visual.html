@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>EON City presentation proof</title>
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/realm3d.css">
+  <style>
+    body { margin: 0; }
+    .fixture-site-header { position: fixed; inset: 0 0 auto; z-index: 90; min-height: 70px; display:flex; align-items:center; padding:0 1rem; background:rgba(2,6,23,.9); color:#fff; }
+    .fixture-city { position:absolute; inset:0; overflow:hidden; background:
+      radial-gradient(circle at 52% 35%, rgba(34,211,238,.17), transparent 28%),
+      linear-gradient(180deg, #071326 0%, #0d2544 46%, #06111f 47%, #020617 100%); }
+    .fixture-city::before { content:""; position:absolute; left:4%; right:4%; bottom:0; height:58%; opacity:.85; background:
+      linear-gradient(90deg, transparent 0 3%, rgba(34,211,238,.32) 3% 3.4%, transparent 3.4% 11%, rgba(168,85,247,.28) 11% 11.4%, transparent 11.4%),
+      repeating-linear-gradient(90deg, #0b1f38 0 46px, #102b49 46px 73px, #071527 73px 98px);
+      clip-path:polygon(0 100%,0 52%,6% 52%,6% 15%,11% 15%,11% 43%,18% 43%,18% 4%,24% 4%,24% 57%,31% 57%,31% 25%,37% 25%,37% 48%,44% 48%,44% 0,51% 0,51% 38%,58% 38%,58% 18%,64% 18%,64% 54%,71% 54%,71% 9%,78% 9%,78% 46%,84% 46%,84% 27%,90% 27%,90% 59%,100% 59%,100% 100%); }
+    .fixture-city::after { content:""; position:absolute; left:0; right:0; bottom:0; height:31%; background:
+      linear-gradient(90deg, transparent 48.8%, rgba(34,211,238,.4) 49%, rgba(34,211,238,.4) 51%, transparent 51.2%),
+      linear-gradient(180deg, rgba(15,23,42,.2), rgba(2,6,23,.95)); transform:perspective(420px) rotateX(58deg); transform-origin:bottom; }
+    .realm3d-canvas-host { position:relative; }
+    .realm3d-canvas-host > .fixture-city { pointer-events:none; }
+  </style>
+</head>
+<body class="realm3d-flagship-mode">
+  <header class="site-header fixture-site-header"><strong>⚡ EONAPP.ch</strong></header>
+  <main id="main"><div id="fixture-root" data-eon-city-3d-root data-quality="standard"></div></main>
+  <script type="module">
+    import { buildRealm3dShellHtml } from '/assets/js/realm3d/engine/EngineBoot.js';
+    import { MobileControls } from '/assets/js/realm3d/engine/MobileControls.js';
+    import { Session8MissionRuntime, Session8MissionUi } from '/assets/js/realm3d/engine/EonCitySession8MissionRuntime.js';
+    import {
+      Session12PresentationRuntime,
+      auditSession12PublicCopy,
+      resolveSession12ViewportProfile,
+      scoreSession12Presentation
+    } from '/assets/js/realm3d/engine/EonCitySession12PresentationRuntime.js';
+
+    const params = new URLSearchParams(location.search);
+    const scenario = params.get('scenario') || 'desktop-intro';
+    const root = document.querySelector('#fixture-root');
+    const isMobile = scenario.includes('landscape') || scenario.includes('portrait') || scenario.includes('basic');
+    const isPortrait = scenario.includes('portrait') || scenario.includes('basic');
+    const isBasic = scenario.includes('basic');
+    const intro = scenario.includes('intro');
+    const diagnostic = scenario.includes('diagnostic');
+
+    root.innerHTML = buildRealm3dShellHtml({ webgl: true, mobile: isMobile, tier: isBasic ? 'low' : 'standard' }, isBasic ? 'low' : 'standard');
+    root.dataset.quality = isBasic ? 'low' : 'standard';
+    root.dataset.portraitMode = isPortrait ? 'true' : 'false';
+    root.classList.toggle('realm3d-basic-device', isBasic);
+    const host = root.querySelector('.realm3d-canvas-host');
+    host.insertAdjacentHTML('afterbegin', '<div class="fixture-city" aria-hidden="true"></div>');
+    root.querySelector('[data-realm3d-scene-stats]').textContent = '366 scene details · 26 animated · 8 interiors · 6 gestures';
+    root.querySelector('[data-realm3d-performance-health]').textContent = 'Adaptive · 8/8 districts · 42 calls';
+    root.querySelector('[data-realm3d-fps]').textContent = isBasic ? '52 FPS · Low' : '60 FPS · Standard';
+    root.querySelector('[data-realm3d-position]').textContent = 'x 0 · z 12';
+    root.querySelector('[data-realm3d-route]').textContent = 'Nearest: 🚀 Mission · 10 blocks away';
+
+    let missionUi = null;
+    let mobileControls = null;
+    if (!intro) {
+      document.body.classList.add('realm3d-world-booted');
+      root.classList.add('realm3d-intro-dismissed', 'realm3d-game-active');
+      const launch = root.querySelector('[data-realm3d-intro]');
+      launch.hidden = true;
+      launch.setAttribute('aria-hidden', 'true');
+      const map = root.querySelector('[data-realm3d-minimap]');
+      map.innerHTML = '<button style="left:50%;top:50%" title="Spawn Plaza">🚀</button><button style="left:72%;top:34%" title="AI Tower">🧠</button><button style="left:30%;top:68%" title="Vault Bank">🔐</button>';
+      const missions = new Session8MissionRuntime({ storage: localStorage });
+      missionUi = new Session8MissionUi({ root, runtime: missions }).mount();
+      if (isMobile) {
+        mobileControls = new MobileControls({
+          root: root.querySelector('.realm3d-shell'),
+          player: { setMobileMove() {}, setMobileLook() {} }
+        });
+      }
+    }
+
+    const presentation = new Session12PresentationRuntime({
+      root,
+      getState: () => ({ mobile: isMobile, touch: isMobile, basicDevice: isBasic, panelOpen: false, screenFocused: false, photoMode: false })
+    }).mount();
+    presentation.setHudMode(diagnostic ? 'diagnostic' : isBasic ? 'minimal' : 'guided', { announce: false });
+
+    function rect(element) {
+      if (!element) return null;
+      const value = element.getBoundingClientRect();
+      const style = getComputedStyle(element);
+      return { x: value.x, y: value.y, right: value.right, bottom: value.bottom, width: value.width, height: value.height, display: style.display, visibility: style.visibility, opacity: Number(style.opacity || 1) };
+    }
+    function visible(element) {
+      if (!element) return false;
+      const r = element.getBoundingClientRect();
+      const s = getComputedStyle(element);
+      return r.width > 0 && r.height > 0 && s.display !== 'none' && s.visibility !== 'hidden' && Number(s.opacity || 1) > .01;
+    }
+    function overlap(a, b) {
+      if (!a || !b) return false;
+      return a.x < b.right && a.right > b.x && a.y < b.bottom && a.bottom > b.y;
+    }
+
+    await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+    const viewport = resolveSession12ViewportProfile({ width: innerWidth, height: innerHeight, mobile: isMobile, touch: isMobile, basicDevice: isBasic });
+    const candidates = [...root.querySelectorAll('.realm3d-launch-actions .btn, .realm3d-primary-actions .btn, .realm3d-world-menu > summary, .realm3d-mobile-actions button, .realm3d-stick, a.realm3d-menu-link')].filter(visible);
+    const targetRects = candidates.map(rect);
+    const undersized = targetRects.filter((item) => item.width < viewport.minimumTargetPx || item.height < viewport.minimumTargetPx);
+    const dock = rect(root.querySelector('.realm3d-command-dock'));
+    const hud = rect(root.querySelector('.realm3d-game-hud'));
+    const mission = rect(root.querySelector('.realm3d-mission-hud'));
+    const controls = rect(root.querySelector('.realm3d-mobile-controls'));
+    const minimap = rect(root.querySelector('.realm3d-minimap'));
+    const primaryActions = [...root.querySelectorAll('.realm3d-primary-actions .btn')].filter(visible).map(rect);
+    const launchActions = [...root.querySelectorAll('.realm3d-launch-actions .btn')].filter(visible).map(rect);
+    const actionRects = [...root.querySelectorAll('.realm3d-mobile-actions button')].filter(visible).map(rect);
+    const move = rect(root.querySelector('.realm3d-stick-move'));
+    const look = rect(root.querySelector('.realm3d-stick-look'));
+    const overflowPx = Math.max(0, document.documentElement.scrollWidth - innerWidth);
+    const overlapCount = [
+      !intro && overlap(dock, mission),
+      !intro && overlap(mission, controls),
+      !intro && overlap(hud, controls),
+      !intro && overlap(hud, minimap)
+    ].filter(Boolean).length;
+    const copyAudit = auditSession12PublicCopy(root.innerText);
+    const score = scoreSession12Presentation({ viewport, copyAudit, targetCount: candidates.length, undersizedTargets: undersized.length, overlapCount, overflowPx });
+    window.__SESSION12_VISUAL_PROOF__ = {
+      ok: score.ok,
+      scenario,
+      viewport,
+      mode: root.dataset.hudMode,
+      publicCopyTruth: root.dataset.publicCopyTruth,
+      copyAudit,
+      score,
+      measurements: {
+        overflowPx,
+        overlapCount,
+        targetCount: candidates.length,
+        undersizedTargets: undersized.length,
+        dock, hud, mission, controls, minimap, primaryActions, launchActions, actionRects, move, look,
+        header: rect(document.querySelector('.site-header'))
+      },
+      telemetry: presentation.getTelemetry()
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <script src="/assets/js/eon-theme-bootstrap.js?release=w722-2026-07-27"></script>
+  <meta name="theme-color" content="#111411" />
+  <meta name="description" content="Quick settings for EONAPP: local appearance, notifications, install guidance, privacy links, and profile controls from the shell-safe settings surface." />
+  <meta property="og:site_name" content="EONAPP" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Settings — EONAPP" />
+  <meta property="og:description" content="Configure EONAPP behaviour, accessibility and privacy without hidden changes." />
+  <meta property="og:url" content="https://eonapp.ch/settings" />
+  <meta property="og:image" content="https://eonapp.ch/assets/media/social/eonapp-trust-1200x630-social-v1.png?v=social-v1" />
+  <meta property="og:image:secure_url" content="https://eonapp.ch/assets/media/social/eonapp-trust-1200x630-social-v1.png?v=social-v1" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Settings — EONAPP social preview" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Settings — EONAPP" />
+  <meta name="twitter:description" content="Configure EONAPP behaviour, accessibility and privacy without hidden changes." />
+  <meta name="twitter:image" content="https://eonapp.ch/assets/media/social/eonapp-trust-1200x630-social-v1.png?v=social-v1" />
+  <meta name="twitter:image:alt" content="Settings — EONAPP social preview" />
+  <meta name="eon:social-square" content="https://eonapp.ch/assets/media/social/eonapp-trust-1080x1080-social-v1.png?v=social-v1" />
+  <title>Settings · EONAPP</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="stylesheet" href="/assets/css/base.css" />
+  <link rel="stylesheet" href="/assets/css/layout.css" />
+  <link rel="stylesheet" href="/assets/css/eon-app-shell.css" />
+  <link rel="stylesheet" href="/assets/css/eon-hubs.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"EONAPP Settings","url":"https://eonapp.ch/settings","description":"Quick settings for EONAPP: local appearance, notifications, install guidance, privacy links, and profile controls from the shell-safe settings surface.","publisher":{"@type":"Organization","name":"EONAPP.ch","url":"https://eonapp.ch/"}}</script>
+  <script type="module" src="/assets/js/localStorage-shim.js"></script>
+  <link rel="canonical" href="https://eonapp.ch/settings" />
+  <meta name="robots" content="noindex, nofollow" />
+</head>
+<body data-page-type="settings" data-eon-app-shell="1" data-eon-app-page="settings">
+  <a href="#main" class="skip-to-content">Skip to main content</a>
+  <main id="main" class="eon-hub-main">
+    <header class="eon-hub-top">
+      <div>
+        <p class="eon-hub-kicker">Local shell controls</p>
+        <h1 class="eon-hub-title">Settings</h1>
+        <p class="eon-hub-subtitle">Settings stay local to this browser profile. Use the shell modal for appearance and notification choices, then return to Profile, Vault, or Local AI when you need deeper control.</p>
+      </div>
+      <div class="local-ai-hero-actions">
+        <button type="button" class="eon-hub-primary" data-eon-shell-open-settings>Open quick settings</button>
+        <a class="local-ai-secondary" href="/profile">Open full profile</a>
+      </div>
+    </header>
+
+    <section class="eon-hub-grid" aria-label="Settings actions">
+      <article class="eon-hub-card">
+        <p class="eon-hub-kicker">Appearance</p>
+        <h2>Theme and shell preferences</h2>
+        <p>Choose Graphite, Obsidian, or Ember for this browser profile. Theme changes stay local and do not alter billing, identity, City access, providers, or Vault records.</p>
+        <button type="button" class="eon-hub-primary" data-eon-shell-open-settings>Open appearance settings</button>
+      </article>
+
+      <article class="eon-hub-card">
+        <p class="eon-hub-kicker">Install & updates</p>
+        <h2>PWA and browser install guidance</h2>
+        <p>Installation depends on your browser. Use the safe install flow from this shell, or continue to the dedicated install page for a short explanation and fallback guidance.</p>
+        <div class="eon-device-actions">
+          <button type="button" class="eon-record-button" data-eon-shell-install>Install EONAPP</button>
+          <a href="/install">Open install help</a>
+        </div>
+      </article>
+
+      <article class="eon-hub-card">
+        <p class="eon-hub-kicker">Privacy & identity</p>
+        <h2>Keep account, backup, and providers separate</h2>
+        <p>Google Login is identity only. Vault, Capsule, Local AI, and backup guidance stay on their own surfaces so settings never imply a hidden sync or provider activation.</p>
+        <div class="eon-device-actions">
+          <a href="/profile">Profile & preferences</a>
+          <a href="/vault">Vault & recovery</a>
+          <a href="/privacy">Privacy notes</a>
+        </div>
+      </article>
+    </section>
+  </main>
+  <script type="module" src="/assets/js/eon-app-shell.js"></script>
+  <script type="module" src="/assets/js/utils/accessibility-autoload.js"></script>
+  <script type="module">import { installW632CustodyPanel } from "/assets/js/account/eon-account-vault-custody.js"; const run = () => installW632CustodyPanel(); if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", run, { once: true }); else run();</script>
+</body>
+</html>

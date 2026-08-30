@@ -1,0 +1,130 @@
+{
+  "schema": "eonapp.a15.i09.validation-receipt.v1",
+  "generatedAt": "2026-08-04T23:18:24+05:30",
+  "wave": "I09",
+  "baselineCommit": "991833c1671be6ca7be76a13be1791805a2e704e",
+  "title": "Capability and Entitlement Service",
+  "decision": "source-wave-ready-to-commit",
+  "verification": {
+    "institutionalGate": {
+      "passed": true,
+      "command": "npm run qa:a15-i09-capabilities",
+      "tests": 12
+    },
+    "commercialCompatibility": {
+      "passed": true,
+      "tests": 17
+    },
+    "projectRegistryCompatibility": {
+      "passed": true,
+      "tests": 8
+    },
+    "noEvictionCompatibility": {
+      "passed": true,
+      "tests": 12
+    },
+    "maintainedSourceSuite": {
+      "passed": true,
+      "maintainedFiles": 381,
+      "runnableFilesPassed": 372,
+      "dependencyBlockedFiles": 9,
+      "tests": 1491,
+      "testsPassed": 1444,
+      "testsSkipped": 47,
+      "testsFailed": 0,
+      "blockedPackage": "@babylonjs/core"
+    },
+    "w766ir2SourceCertification": {
+      "passed": true,
+      "criteriaPassed": 10,
+      "criteriaTotal": 10,
+      "browserCertified": false,
+      "authenticatedOfflineCertified": false
+    },
+    "repositoryAuthority": {
+      "passed": true,
+      "trackedFiles": 5481,
+      "activeModules": 529,
+      "quarantinedMissingImportFiles": 194,
+      "deterministicHtmlInputs": 31
+    },
+    "secretScan": {
+      "passed": true,
+      "textFilesScanned": 5158
+    },
+    "syntaxAndDiff": {
+      "passed": true
+    }
+  },
+  "authority": {
+    "paidTierSource": "verified server billing lifecycle only",
+    "eonKeySource": "active non-expired non-revoked server ledger rows only",
+    "browserPaidClaimAccepted": false,
+    "localStorageEntitlementAccepted": false,
+    "signedServerReceipt": true,
+    "browserCryptographicVerification": false,
+    "browserTrustBoundary": "same-origin no-store response with fail-closed Free fallback",
+    "wholeTierGrantByEonKey": false,
+    "oneGlobalProjectLimit": true,
+    "serverReadFailureGrantsCapability": false
+  },
+  "effectiveLimitsVerified": {
+    "freeProjectSlots": 3,
+    "plusProjectSlots": 12,
+    "studioProjectSlots": 35,
+    "powerProjectSlots": 90,
+    "maxProjectSlots": 250,
+    "builderKeyFreeProjectSlots": 6
+  },
+  "invariants": [
+    "Before a valid server response arrives, Core behavior uses the maintained Free capability snapshot.",
+    "Editable browser storage cannot claim a paid plan or EONKEY unlock.",
+    "The server combines verified Dodo lifecycle state with active EONKEY ledger rows.",
+    "EONKEYS alter named limits or feature groups and never create a subscription tier.",
+    "Ordinary, Forge and W631 Projects share one universal active Project limit.",
+    "Capacity rejection preserves every prior stored byte and retains explicit archive, export, delete and upgrade choices.",
+    "The capability response is no-store and signed server-side; the browser does not falsely claim HMAC verification.",
+    "Missing signing authority or ledger-read failure returns 503 and requires the local Free fallback.",
+    "Core and City retain contract-only boundaries; the capability service is not loaded by the EONCITY shell in I09."
+  ],
+  "sourceDigests": {
+    "assets/js/capabilities/eon-capability-service.js": "f18208c6a0ef5d4ab1de76838c7c84c2f395c2bb58d93a97d715226c970ca3c0",
+    "functions/api/capabilities/status.js": "8fe1e443f60377f38bf38a6283d48159dddb915d4e0750b157ead8944acae3b9",
+    "assets/js/storage/eon-capacity-authority.js": "a410a48a13cc2b40f6a27787107b2e2a042886083542db2b304f22c24b22db83",
+    "assets/js/projects/eon-project-registry.js": "4ca81773036d8027dbdc4ccfeac4c1def20ce75daeede7a70e1a573bcfff91d6",
+    "assets/js/referrals/eon-feature-unlock-resolver.js": "1308af5ce364e23638675aef92bfe6b25b7d85a569c7cb3a86806ccd960d7e97",
+    "assets/js/referrals/eon-referral-server-runtime.js": "ade5c6c49df75a70abb680cc97bd3332251c279fe48204fb9f5456ea4110baad",
+    "assets/js/eon-app-shell.js": "3e81b68d68ee1eb3070ccfaad43d2ef531dd43f3099199dd1f4ca9ddebe82b41",
+    "scripts/a15-i09-capability-service-gate.mjs": "9c2805019709aa1355384eb3ee8121c3b0fb2277cacad970022d7e329ffd8cbe",
+    "tests/unit/a15-i09-capability-service.test.mjs": "da74456c553b32038ae14cccb86bc2c9df8aa57ac6b4b4dac8675b0db7744f58"
+  },
+  "externalBlockers": [
+    "Private npm registry returns 404 for locked ws@7.5.11.",
+    "Installed npm is 10.9.2 while the repository requires 11.12.1.",
+    "Nine maintained City test files remain dependency-blocked by unavailable @babylonjs/core.",
+    "Production build and built-artifact validation remain blocked by unavailable exact dependencies.",
+    "Authenticated browser, Preview and Production certification remain pending."
+  ],
+  "workingTreeAtReceipt": [
+    " M assets/js/eon-app-shell.js",
+    " M assets/js/projects/eon-project-registry.js",
+    " M assets/js/referrals/eon-feature-unlock-resolver.js",
+    " M assets/js/referrals/eon-keys-page.js",
+    " M assets/js/referrals/eon-locked-feature-surface.js",
+    " M assets/js/referrals/eon-referral-server-runtime.js",
+    " M assets/js/storage/eon-capacity-authority.js",
+    " M config/generated/a15-system-disposition-registry.json",
+    " M docs/institutional/a15/evidence/A15_I01_SYSTEM_DISPOSITION_RECEIPT.json",
+    " M docs/institutional/a15/evidence/A15_I05_UNIVERSAL_PROJECT_REGISTRY_RECEIPT.json",
+    " M docs/institutional/a15/evidence/A15_I06_NO_EVICTION_CAPACITY_RECEIPT.json",
+    " M package.json",
+    " M tests/unit/a15-i06-no-eviction-capacity.test.mjs",
+    " M tests/unit/w616c-locked-feature-resolver.test.mjs",
+    "?? assets/js/capabilities/eon-capability-service.js",
+    "?? docs/institutional/a15/evidence/A15_I09_CAPABILITY_SERVICE_GATE_RECEIPT.json",
+    "?? functions/api/capabilities/",
+    "?? scripts/a15-i09-capability-service-gate.mjs",
+    "?? tests/unit/a15-i09-capability-service.test.mjs"
+  ],
+  "receiptDigest": "sha256:0bef6ab28edeceff35c5e34077b168fa15ae2973449a455c34d722ffa986c797"
+}

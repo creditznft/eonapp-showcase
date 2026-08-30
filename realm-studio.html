@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <script src="/assets/js/eon-theme-bootstrap.js?release=w722-2026-07-27"></script>
+  <meta name="theme-color" content="#111411" />
+  <meta name="description" content="Create a private My Realm district linked to your local EON City state, with optional portable identity sharing and a free local Relic Passport. No public storefront, sale, payout, or financial rewards are active." />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="stylesheet" href="/assets/css/base.css" />
+  <link rel="stylesheet" href="/assets/css/layout.css" />
+  <link rel="stylesheet" href="/assets/css/eon-app-shell.css" />
+  <link rel="stylesheet" href="/assets/css/eon-hubs.css" />
+  <link rel="stylesheet" href="/assets/css/realm-studio.css" />
+  <script type="module" src="/assets/js/localStorage-shim.js"></script>
+  <meta property="og:site_name" content="EONAPP" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Realm Studio — EONAPP" />
+  <meta property="og:description" content="Create and review personal Realm experiences connected to verified EONAPP work." />
+  <meta property="og:url" content="https://eonapp.ch/realm-studio" />
+  <meta property="og:image" content="https://eonapp.ch/assets/media/social/eonapp-nexus-1200x630-social-v1.png?v=social-v1" />
+  <meta property="og:image:secure_url" content="https://eonapp.ch/assets/media/social/eonapp-nexus-1200x630-social-v1.png?v=social-v1" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Realm Studio — EONAPP social preview" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Realm Studio — EONAPP" />
+  <meta name="twitter:description" content="Create and review personal Realm experiences connected to verified EONAPP work." />
+  <meta name="twitter:image" content="https://eonapp.ch/assets/media/social/eonapp-nexus-1200x630-social-v1.png?v=social-v1" />
+  <meta name="twitter:image:alt" content="Realm Studio — EONAPP social preview" />
+  <meta name="eon:social-square" content="https://eonapp.ch/assets/media/social/eonapp-nexus-1080x1080-social-v1.png?v=social-v1" />
+  <title>My Realm · EONAPP</title>
+  <link rel="canonical" href="https://eonapp.ch/realm-studio" />
+  <meta name="robots" content="noindex, nofollow" />
+</head>
+<body data-page-type="realm-studio" data-eon-app-shell="1" data-eon-app-page="realm-studio" data-monetization="disabled" data-w215-monetization-disabled="true">
+  <a href="#main" class="skip-to-content">Skip to My Realm</a>
+  <main id="main" class="eon-hub-main realm-studio-main">
+    <header class="eon-hub-top realm-studio-top">
+      <div>
+        <p class="eon-hub-kicker">My Realm · private City district · portable identity share</p>
+        <h1 class="eon-hub-title">My Realm</h1>
+        <p class="eon-hub-subtitle">Choose a finished personal room, pin the tools you use most and prepare a safe read-only Realm Card. My Realm stays private and local unless you explicitly create a reviewed share link.</p>
+      </div>
+      <div class="realm-studio-top-actions">
+        <a class="eon-operator-secondary" id="realm-studio-return-city" href="/eoncity?target=realm&amp;return=realm">Enter My Realm in City</a>
+        <a class="eon-operator-secondary" href="/preview-studio">Create local preview</a>
+        <a class="eon-operator-secondary" href="/profile?returnTo=%2Frealm-studio#eon-profile-account-foundation">Account &amp; backup</a>
+        <a class="eon-hub-primary" href="/?new=1">Ask EONBOT</a>
+      </div>
+    </header>
+
+    <section class="realm-studio-account-notice" aria-labelledby="realm-studio-account-title"><div><p class="realm-studio-kicker">Account &amp; data custody</p><h2 id="realm-studio-account-title">My Realm stays local by default</h2><p>Use My Realm without an account. Optional Google Login is for minimal account access and future verified purchases, not for uploading or recovering your local Realm, City progress, Chat, Vault, projects or provider settings.</p></div><div class="realm-studio-account-actions"><a class="eon-hub-primary" href="/profile?returnTo=%2Frealm-studio#eon-profile-account-foundation">Review Account &amp; backup</a><a class="eon-operator-secondary" href="/capsule">Create encrypted Capsule</a></div></section>
+
+    <section class="realm-studio-shell" aria-labelledby="realm-studio-form-title">
+      <article class="realm-studio-card realm-studio-form-card">
+        <p class="realm-studio-kicker">District identity</p>
+        <h2 id="realm-studio-form-title">Define your local Realm</h2>
+        <p class="realm-studio-copy">The label and handle become public metadata only inside a signed identity link. Do not put personal contact details, wallet information, recovery phrases, API keys, passwords, payment requests, or private project details here.</p>
+        <form id="realm-studio-form" novalidate>
+          <label>Realm label
+            <input id="realm-studio-label" name="label" maxlength="48" autocomplete="off" required />
+          </label>
+          <label>Public handle
+            <input id="realm-studio-handle" name="handle" maxlength="48" inputmode="text" pattern="[a-z0-9-]+" autocomplete="off" required />
+            <small>Lowercase letters, digits and hyphens. This is a descriptive local identity, not a globally reserved account name.</small>
+          </label>
+          <label>Visual theme
+            <select id="realm-studio-theme" name="theme">
+              <option value="graphite">Graphite</option>
+              <option value="obsidian">Obsidian</option>
+              <option value="ember">Ember</option>
+            </select>
+          </label>
+          <label>Room layout
+            <select id="realm-studio-layout" name="layout">
+              <option value="command-loft">Command Loft</option>
+              <option value="creator-studio">Creator Studio</option>
+              <option value="archive-retreat">Archive Retreat</option>
+            </select>
+            <small>Choose one complete fixed layout. Free building and unfinished open plots are not part of launch.</small>
+          </label>
+          <label>Private district landmark
+            <select id="realm-studio-landmark" name="landmark">
+              <option value="observatory">Signal Observatory</option>
+              <option value="garden">Circuit Garden</option>
+              <option value="gallery">Quiet Gallery</option>
+              <option value="workshop">Build Workshop</option>
+              <option value="sanctum">Aurora Sanctum</option>
+            </select>
+            <small>A local visual landmark for the 2D City. It is not a public property, collectible, or value item.</small>
+          </label>
+          <label>City arrival district
+            <select id="realm-studio-entry" name="entryDistrict">
+              <option value="realm">My Realm Studio</option>
+              <option value="command">Command Centre</option>
+              <option value="workspace">AI Cockpit</option>
+              <option value="market">Preview Gallery</option>
+              <option value="library">Library Archive</option>
+              <option value="trade">Research Lab</option>
+              <option value="vault">Vault Safehouse</option>
+            </select>
+            <small>This only personalises your local City return point. It does not publish a public map.</small>
+          </label>
+          <fieldset class="realm-studio-shortcuts">
+            <legend>Pin up to four shortcuts</legend>
+            <label><input type="checkbox" data-realm-shortcut value="eonbot" /> EONBOT</label>
+            <label><input type="checkbox" data-realm-shortcut value="create" /> Create</label>
+            <label><input type="checkbox" data-realm-shortcut value="projects" /> Projects</label>
+            <label><input type="checkbox" data-realm-shortcut value="library" /> Library</label>
+            <label><input type="checkbox" data-realm-shortcut value="capture" /> Creator Capture</label>
+            <label><input type="checkbox" data-realm-shortcut value="share" /> Share</label>
+            <label><input type="checkbox" data-realm-shortcut value="automations" /> Automations</label>
+            <label><input type="checkbox" data-realm-shortcut value="local-ai" /> Local AI</label>
+          </fieldset>
+          <div class="realm-studio-featured-grid">
+            <label>Featured item type
+              <select id="realm-studio-featured-type"><option value="">None</option><option value="project">Project</option><option value="library">Library item</option><option value="creation">Creation</option></select>
+            </label>
+            <label>Featured item title
+              <input id="realm-studio-featured-title" maxlength="80" autocomplete="off" placeholder="Optional public-safe title" />
+            </label>
+            <label>Local item ID
+              <input id="realm-studio-featured-id" maxlength="96" autocomplete="off" placeholder="Optional local reference" />
+            </label>
+          </div>
+          <div class="realm-studio-actions">
+            <button class="eon-hub-primary" type="submit">Save My Realm locally</button>
+            <button class="eon-operator-secondary" type="button" id="realm-studio-reset">Reset draft</button>
+          </div>
+          <p id="realm-studio-status" class="realm-studio-status" role="status">Loading your local Realm…</p>
+        </form>
+      </article>
+
+      <article class="realm-studio-card realm-studio-preview-card" aria-live="polite">
+        <p class="realm-studio-kicker">Your City district</p>
+        <div id="realm-studio-preview" class="realm-studio-preview"></div>
+        <div id="realm-share-card" class="realm-share-card" aria-label="Read-only Realm Card preview"></div>
+        <div class="realm-studio-facts">
+          <div><span>Stable Realm ID</span><code id="realm-studio-id">—</code></div>
+          <div><span>City connection</span><strong id="realm-studio-city-status">Loading…</strong></div>
+          <div><span>Public publishing</span><strong>Not active</strong></div>
+        </div>
+      </article>
+    </section>
+
+    <details class="realm-studio-advanced">
+      <summary>Advanced local Realm controls</summary>
+    <section class="realm-studio-visual-card" aria-labelledby="realm-studio-visual-title">
+      <div>
+        <p class="realm-studio-kicker">Visual profile · local only</p>
+        <h2 id="realm-studio-visual-title">Shape the atmosphere of My Realm</h2>
+        <p>Choose a companion shell, atmosphere and project-display style for this device. These are visual preferences only. They do not publish a Realm, reserve a username globally, create a wallet, unlock a marketplace, store work in Cloudflare, or run background AI.</p>
+      </div>
+      <div class="realm-studio-visual-controls">
+        <label>Companion shell
+          <select id="realm-studio-visual-companion">
+            <option value="eonbot-orbit">EONBOT Orbit</option><option value="survey-drone">Survey Drone</option><option value="archive-lantern">Archive Lantern</option><option value="quiet-orb">Quiet Orb</option>
+          </select>
+        </label>
+        <label>Atmosphere
+          <select id="realm-studio-visual-atmosphere">
+            <option value="clear-night">Clear Night</option><option value="soft-rain">Soft Rain</option><option value="aurora-current">Aurora Current</option><option value="quiet-interior">Quiet Interior</option>
+          </select>
+        </label>
+        <label>Project display
+          <select id="realm-studio-visual-display">
+            <option value="minimal">Minimal</option><option value="command">Command</option><option value="gallery">Gallery</option>
+          </select>
+        </label>
+        <div class="realm-studio-visual-actions"><button class="eon-hub-primary" type="button" id="realm-studio-visual-save">Save visual profile locally</button><button class="eon-operator-secondary" type="button" id="realm-studio-visual-export">Download encrypted visual backup</button><button class="eon-operator-secondary" type="button" id="realm-studio-visual-import">Restore encrypted visual backup</button></div>
+        <input id="realm-studio-visual-file" type="file" accept="application/json" hidden />
+        <p id="realm-studio-visual-status" class="realm-studio-visual-status" role="status">Loading local visual profile…</p>
+        <p class="realm-studio-visual-disclosure">Google Login does not back this up. Keep the encrypted file and its passphrase yourself. The export contains visual choices only—not Chat, Vault, files, keys, billing, or account data.</p>
+      </div>
+    </section>
+
+    <section class="realm-studio-return-card" aria-labelledby="realm-studio-return-title">
+      <div>
+        <p class="realm-studio-kicker">Return loop</p>
+        <h2 id="realm-studio-return-title">A personal place to return to</h2>
+        <p>Use this private route to return to the Realm district in EON City. A return is saved only on this device after the City opens; it never creates a follower count, referral event, benefit claim, or public visitor record.</p>
+      </div>
+      <div class="realm-studio-return-actions">
+        <div id="realm-studio-return-summary" class="realm-studio-return-summary" aria-live="polite">Loading local return history…</div>
+        <a class="eon-hub-primary" id="realm-studio-return-city-inline" href="/eoncity?target=realm&amp;return=realm">Return to My Realm</a>
+      </div>
+    </section>
+
+    <section class="realm-studio-showcase-card" aria-labelledby="realm-studio-showcase-title">
+      <div>
+        <p class="realm-studio-kicker">Private showcase</p>
+        <h2 id="realm-studio-showcase-title">Choose saved local Relic previews</h2>
+        <p>Pick up to four locally generated Relic previews for your personal City moodboard. These references remain on this device and are not published, sold, transferred, minted, or assigned financial value by a signed Realm link.</p>
+      </div>
+      <div id="realm-studio-showcase" class="realm-studio-showcase" aria-live="polite"></div>
+    </section>
+
+    <section class="realm-studio-safety-card" aria-labelledby="realm-studio-safety-title">
+      <div>
+        <p class="realm-studio-kicker">Public-safety boundary</p>
+        <h2 id="realm-studio-safety-title">Portable identity, not a public marketplace</h2>
+        <p id="realm-studio-safety-copy">Reviewing local Realm metadata…</p>
+        <p id="realm-studio-publication-status" class="realm-studio-publication-status" aria-live="polite">Checking public-publication boundary…</p>
+      </div>
+      <div id="realm-studio-safety" class="realm-studio-safety" aria-live="polite"></div>
+    </section>
+    </details>
+
+    <section class="realm-studio-share-card" aria-labelledby="realm-studio-share-title">
+      <div>
+        <p class="realm-studio-kicker">Share</p>
+        <h2 id="realm-studio-share-title">Issue a fresh signed Realm identity link</h2>
+        <p>Each share creates a fresh 128-bit cryptographic share ID while keeping your Realm ID stable. It verifies locally and needs no D1/KV short-link resolver. It shares identity only; local City state and showcase selections stay private.</p>
+      </div>
+      <div class="realm-studio-share-controls">
+        <button class="eon-hub-primary" type="button" id="realm-studio-issue">Create signed Realm link</button>
+        <button class="eon-operator-secondary" type="button" id="realm-studio-copy" disabled>Copy link</button>
+        <button class="eon-operator-secondary" type="button" id="realm-studio-native" disabled>System share</button>
+      </div>
+      <label class="realm-studio-url-label">Current signed link
+        <input id="realm-studio-url" readonly value="Create a signed identity link when ready." aria-describedby="realm-studio-share-note" />
+      </label>
+      <div class="realm-studio-share-proof">
+        <canvas id="realm-studio-qr" width="176" height="176" aria-label="Realm share QR code"></canvas>
+        <div><strong id="realm-studio-mission">No signed link issued yet</strong><p id="realm-studio-share-note">Link creation, copying, QR generation and opening do not create a payout, click log, referral conversion, public store, premium entitlement, or central issued-link record. A completed system share may add one cosmetic Signal Relic locally; a verified incoming Realm link may add one cosmetic Welcome Relic locally.</p></div>
+      </div>
+    </section>
+
+    <details class="realm-studio-advanced">
+      <summary>Local Share Relics</summary>
+    <section class="realm-studio-relic-passport-card" aria-labelledby="realm-studio-relic-passport-title">
+      <div>
+        <p class="realm-studio-kicker">Relic Passport</p>
+        <h2 id="realm-studio-relic-passport-title">Share the Realm. Keep a local signal.</h2>
+        <p>System sharing can add one Signal Relic to this browser profile. Opening a verified Realm identity link can add one Welcome Relic for the visitor. They are free, local visual collectibles for Realm style only: not NFTs, tokens, paid unlocks, premium access, referral conversions, proof that someone joined, sale items, wallets, or financial rewards.</p>
+      </div>
+      <div class="realm-studio-relic-passport-head">
+        <strong id="realm-studio-relic-count">0 local Relics</strong>
+        <button class="eon-operator-secondary" type="button" id="realm-studio-relic-clear">Clear local Relics</button>
+      </div>
+      <div id="realm-studio-relic-passport" class="realm-studio-relic-passport" aria-live="polite">Loading local Relics…</div>
+    </section>
+    </details>
+  </main>
+  <script type="module" src="/assets/js/eon-app-shell.js"></script>
+  <script type="module" src="/assets/js/realm-studio-page.js"></script>
+</body>
+</html>

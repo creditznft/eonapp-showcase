@@ -1,0 +1,24 @@
+{
+  "schema": "eonapp.a15.i24.locale-accessibility-device-gate-receipt.v1",
+  "generatedAt": "2026-08-05T00:59:28.028Z",
+  "wave": "I24",
+  "status": "pass",
+  "publishedInterfaceLanguages": [
+    "en"
+  ],
+  "chatGuideLanguageCount": 11,
+  "browserSpeechLanguageCount": 11,
+  "routeCount": 25,
+  "englishSourceComplete": true,
+  "minimumTargetPx": 48,
+  "sourceAccessibilityReady": true,
+  "browserEvidenceComplete": false,
+  "assistiveTechnologyEvidenceComplete": false,
+  "physicalDeviceEvidenceComplete": false,
+  "wcagConformanceCertified": false,
+  "automaticCertification": false,
+  "externalActionPerformed": false,
+  "configSha256": "e0b12d52125c58ab6c69785a55f850f94342e8bc43807bbaf3df73ef412b0b97",
+  "errors": [],
+  "digest": "cfe0067ca7d70add93850add7aa1d99be5e98c28581a94a323a875fcb0da7753"
+}

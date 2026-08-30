@@ -1,0 +1,151 @@
+{
+  "schema": "eonapp.validation-receipt.w625a-w625c-source-batch.2026-07-11.v1",
+  "generatedAt": "2026-07-11T07:11:24.685003Z",
+  "wave": "W625A-W625C-source-batch",
+  "ok": true,
+  "authority": {
+    "inputArchive": "EONAPP_W624L_FULL_SOURCE_SNAPSHOT_2026-07-11.zip",
+    "inputArchiveSha256": "9da1fb6dc641eb45e6890a28834fe5bc669d9571d77fad3c007d65ebe1798757",
+    "parentCommit": "c64a0bb771b22d098498dfe60c6ab7eee294a998",
+    "sourceCommit": "d00e5dc9fa00b9391ee2ce2df0aa550141ea125f",
+    "sourceFingerprint": {
+      "algorithm": "sha256",
+      "digest": "f89898d0e0c6345efac6cd2f757900eb9462fe930e410be26a00b638f1ca57a4",
+      "fileCount": 3544
+    }
+  },
+  "waveStatus": {
+    "W625A": {
+      "status": "source-tooling-ready-real-owner-runtime-proof-pending",
+      "sourceComplete": true,
+      "realOwnerRuntimeProofPassed": false,
+      "realImageProofClaimed": false,
+      "requiredPositivePath": [
+        "generate",
+        "fetch",
+        "preview",
+        "save",
+        "reopen",
+        "sha256-match"
+      ],
+      "requiredNegativeLanesPending": [
+        "runtime-stopped",
+        "no-checkpoint",
+        "blocked-loopback-or-cors",
+        "timeout",
+        "cancellation",
+        "restart-retry",
+        "reset-refresh"
+      ]
+    },
+    "W625B": {
+      "status": "source-complete-owner-checkpoint-validation-pending",
+      "sourceComplete": true,
+      "allowlistedWorkflowCount": 1,
+      "automaticInstall": false,
+      "cloudFallback": false
+    },
+    "W625C": {
+      "status": "foundation-source-complete-advanced-image-workflows-pending",
+      "foundationSourceComplete": true,
+      "advancedWorkflowsActivated": false,
+      "localVideoActivated": false
+    }
+  },
+  "focusedGates": {
+    "w625aSourceGate": {
+      "passed": 8,
+      "total": 8
+    },
+    "w625aUnitAssertions": {
+      "passed": 6,
+      "total": 6
+    },
+    "w625bSourceGate": {
+      "passed": 7,
+      "total": 7
+    },
+    "w625bUnitAssertions": {
+      "passed": 5,
+      "total": 5
+    },
+    "w625cSourceGate": {
+      "passed": 7,
+      "total": 7
+    },
+    "w625cUnitAssertions": {
+      "passed": 3,
+      "total": 3
+    },
+    "currentContractAlignment": {
+      "passed": 17,
+      "total": 17
+    },
+    "historicalArchiveGate": {
+      "passed": 10,
+      "total": 10
+    }
+  },
+  "maintainedTests": {
+    "testFileCount": 234,
+    "assertions": 876,
+    "currentPassed": 829,
+    "historicalExplicitSkips": 47,
+    "failed": 0,
+    "archiveCertifiesRelease": false
+  },
+  "permanentPredeploy": {
+    "command": [
+      "npm ci",
+      "npm run verify:codex-predeploy"
+    ],
+    "stepCount": 29,
+    "passedStepCount": 29,
+    "failedStepCount": 0,
+    "sourceFingerprinted": true,
+    "lockProtected": true,
+    "resumable": true,
+    "competingDeploymentCommandCreated": false
+  },
+  "security": {
+    "secretScanTextFiles": 3625,
+    "potentialSecretFindings": 0
+  },
+  "reachability": {
+    "reachableFiles": 362,
+    "importEdges": 635,
+    "quarantinedReachable": 0
+  },
+  "build": {
+    "sourceRevision": "d00e5dc9fa00b9391ee2ce2df0aa550141ea125f",
+    "distributionSha256": "78d1f93e897d6a04ed2442981979bae729aa94ff5c520638f80b17a7030f6339",
+    "distributionFileCount": 465,
+    "distributionBytes": 11761828,
+    "smokeRequiredFiles": 24,
+    "privacy": {
+      "containsUserData": false,
+      "containsSecrets": false,
+      "purpose": "deploy-candidate-parity-only"
+    }
+  },
+  "releaseTruth": {
+    "publicLaunchCertification": "limited-preview-no-go-public-launch",
+    "reason": "Production remains older than the certified source and real owner-runtime W625A evidence is pending.",
+    "deploymentChangedByThisWave": false
+  },
+  "invariantsPreserved": [
+    "one protected /eoncity renderer",
+    "W624B runtime owner and eleven-state lifecycle",
+    "Productive Nocturne art direction",
+    "review-first Sharing Center, Command Center and Agent Theatre",
+    "privacy and commercial-truth boundaries",
+    "muted-by-default captions-first accessibility",
+    "evidence-gated performance and flagship certification",
+    "current invariants mandatory",
+    "superseded exact-copy tests only in explicit non-certifying archive",
+    "approved loopback only",
+    "no hidden cloud fallback",
+    "no automatic runtime/model/custom-node installation",
+    "local video disabled"
+  ]
+}

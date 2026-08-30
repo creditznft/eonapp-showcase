@@ -1,0 +1,546 @@
+
+> qa:w217-route-contract
+> node scripts/verify-route-contract.mjs && node --test tests/unit/w217-route-contract.test.mjs tests/unit/w180-w181-chat-first-shell.test.mjs tests/unit/w199-public-route-retirement.test.mjs
+
+{
+  "schema": "eonapp.w217.route-contract-verification.v1",
+  "version": "eonapp.w723.hybrid-command-shell.v19",
+  "ok": true,
+  "routeCount": 168,
+  "errors": []
+}
+TAP version 13
+# Subtest: W380 ships a compact reusable app shell and intentional app destinations
+ok 1 - W380 ships a compact reusable app shell and intentional app destinations # SKIP
+  ---
+  duration_ms: 1.524805
+  type: 'test'
+  ...
+# Subtest: W380 makes root the PWA and public chat entry while preserving truthful setup boundaries
+ok 2 - W380 makes root the PWA and public chat entry while preserving truthful setup boundaries
+  ---
+  duration_ms: 1.372252
+  type: 'test'
+  ...
+# Subtest: W380 makes root the canonical chat document and keeps the generated redirects synchronized
+ok 3 - W380 makes root the canonical chat document and keeps the generated redirects synchronized # SKIP
+  ---
+  duration_ms: 0.082915
+  type: 'test'
+  ...
+# Subtest: W199 now delegates legacy retirement to the W217 route contract
+ok 4 - W199 now delegates legacy retirement to the W217 route contract # SKIP
+  ---
+  duration_ms: 1.509505
+  type: 'test'
+  ...
+# Subtest: W199 primary pages have one active shell and route users away from legacy Cockpit/store wording
+ok 5 - W199 primary pages have one active shell and route users away from legacy Cockpit/store wording
+  ---
+  duration_ms: 0.713802
+  type: 'test'
+  ...
+# Subtest: W380 defines one valid root-first route contract
+ok 6 - W380 defines one valid root-first route contract # SKIP
+  ---
+  duration_ms: 0.651121
+  type: 'test'
+  ...
+# Subtest: W423 keeps one public Babylon City while old map, tour and play URLs redirect
+ok 7 - W423 keeps one public Babylon City while old map, tour and play URLs redirect
+  ---
+  duration_ms: 0.634406
+  type: 'test'
+  ...
+# Subtest: W380 keeps legacy chat links compatible while the root owns the public chat
+ok 8 - W380 keeps legacy chat links compatible while the root owns the public chat
+  ---
+  duration_ms: 0.560345
+  type: 'test'
+  ...
+# Subtest: legacy aliases remain explicit and rewards stay outside primary routing
+ok 9 - legacy aliases remain explicit and rewards stay outside primary routing # SKIP
+  ---
+  duration_ms: 0.080764
+  type: 'test'
+  ...
+# Subtest: generated redirect files are identical, conflict-free, and match the contract
+ok 10 - generated redirect files are identical, conflict-free, and match the contract
+  ---
+  duration_ms: 0.523787
+  type: 'test'
+  ...
+# Subtest: development rewrites keep root on index.html and avoid retired source pages
+ok 11 - development rewrites keep root on index.html and avoid retired source pages
+  ---
+  duration_ms: 1.288953
+  type: 'test'
+  ...
+# Subtest: W448 exposes Research Lab at /insights and retires the legacy /trade entry
+ok 12 - W448 exposes Research Lab at /insights and retires the legacy /trade entry
+  ---
+  duration_ms: 0.274018
+  type: 'test'
+  ...
+1..12
+# tests 12
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 5
+# todo 0
+# duration_ms 62.483579
+
+> audit:site
+> node scripts/site-audit.mjs
+
+Site audit passed: 49 HTML files scanned, 3 tools, 1 games, sitemap + precache verified.
+
+> launch:page-gate
+> node scripts/launch-page-invariants.mjs
+
+EONAPP.CH Page Invariants Gate
+==============================
+Blockers: 0
+Warnings: 2
+
+Warnings:
+- [about.html] Trust surface references ad-network keywords; verify page intent remains trust-first.
+- [privacy.html] Trust surface references ad-network keywords; verify page intent remains trust-first.
+
+> launch:identity-gate
+> node scripts/launch-identity-surface-gate.mjs
+
+EONAPP.CH Identity Surface Gate
+===============================
+Blockers: 0
+Warnings: 0
+
+> launch:quality-gate
+> node scripts/app-surface-quality-gate.mjs
+
+Wrote CodexDocs/EONAPP_W216_APP_SURFACE_QUALITY_GATE_REPORT_2026-06-23.md
+App surface quality gate: PASS (0 blockers, 0 warnings)
+
+> qa:w231-active-surface-import-fence
+> node scripts/active-surface-import-fence.mjs && node --test tests/unit/w231-active-surface-import-fence.test.mjs
+
+[active-surface-import-fence] PASS: 306 reachable modules from 30 live/optional/local surfaces.
+[active-surface-import-fence] report: tmp/active-surface-import-fence.json
+TAP version 13
+# Subtest: W231 keeps live, optional, preview and local-only app routes outside the retired 3D and value-bearing legacy module families
+ok 1 - W231 keeps live, optional, preview and local-only app routes outside the retired 3D and value-bearing legacy module families
+  ---
+  duration_ms: 116.638262
+  type: 'test'
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 1
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 165.841044
+
+> qa:w633-every-route-audit
+> node scripts/w633-every-route-audit-gate.mjs && node --test tests/unit/w633-every-route-audit.test.mjs
+
+[W633] PASS route-graph: 36 public routes; 131 one-hop redirects
+[W633] PASS ten-requirements: 10/10
+[W633] PASS root-html-classified: 38 root documents; 0 undeclared
+[W633] PASS source-only-aliases-not-built: 5 source-only aliases
+[W633] PASS canonical-documents: 29 public documents; 0 canonical issues
+[W633] PASS clean-internal-links: 0 alias links
+[W633] PASS advanced-navigation: 6 destinations; 0 issues
+[W633] PASS active-import-fence: 306 reachable modules
+[W633] PASS retired-emission-fence: 0 retired emissions
+[W633] PASS generated-redirects: 4435 generated bytes
+[W633] PASS real-evidence-pending: 6 external evidence lanes
+[W633] PASS 11/11
+TAP version 13
+# Subtest: W633 validates the whole route graph and source-only alias inventory
+ok 1 - W633 validates the whole route graph and source-only alias inventory
+  ---
+  duration_ms: 3.703394
+  type: 'test'
+  ...
+# Subtest: W633 resolves every retained alias directly to a live route
+ok 2 - W633 resolves every retained alias directly to a live route
+  ---
+  duration_ms: 0.374315
+  type: 'test'
+  ...
+# Subtest: W633 keeps every advanced work destination canonical and public
+ok 3 - W633 keeps every advanced work destination canonical and public
+  ---
+  duration_ms: 0.623234
+  type: 'test'
+  ...
+# Subtest: W633 separates real page identity from its parent navigation context
+ok 4 - W633 separates real page identity from its parent navigation context
+  ---
+  duration_ms: 0.322807
+  type: 'test'
+  ...
+# Subtest: W633 standalone every-route audit passes without claiming production proof
+ok 5 - W633 standalone every-route audit passes without claiming production proof
+  ---
+  duration_ms: 220.711421
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 282.15297
+
+> qa:w634-responsive-accessibility-input
+> node scripts/w634-responsive-accessibility-input-gate.mjs && node --test tests/unit/w634-responsive-accessibility-input.test.mjs
+
+PASS contract — 14/14
+PASS public-documents — 29 documents; 0 issues
+PASS layout-owners — 6 owners
+PASS autoload-binding — shared bootstrap
+PASS safe-capability-bridge — no network, permissions, fullscreen, orientation lock, audio or polling
+PASS input-modes — five descriptive modes
+PASS form-error-announcement — native invalid/input bridge
+PASS touch-target-css — 44px coarse-pointer foundation
+PASS focus-contrast-css — visible focus and forced colors
+PASS reduced-motion-css — motion preference honored
+PASS zoom-wrap-css — narrow/zoom overflow foundation
+PASS short-landscape-shell — bounded mobile shell
+PASS physical-evidence-honest — source only; real devices pending
+
+W634 responsive/accessibility/input: 13/13
+TAP version 13
+# Subtest: W634 defines bounded layout, display and input vocabularies
+ok 1 - W634 defines bounded layout, display and input vocabularies
+  ---
+  duration_ms: 0.977853
+  type: 'test'
+  ...
+# Subtest: W634 derives responsive state without claiming physical certification
+ok 2 - W634 derives responsive state without claiming physical certification
+  ---
+  duration_ms: 0.332002
+  type: 'test'
+  ...
+# Subtest: W634 assigns every current public document to exactly one responsive owner
+ok 3 - W634 assigns every current public document to exactly one responsive owner
+  ---
+  duration_ms: 0.244881
+  type: 'test'
+  ...
+# Subtest: W634 keeps its capability bridge permissionless and local
+ok 4 - W634 keeps its capability bridge permissionless and local
+  ---
+  duration_ms: 0.392931
+  type: 'test'
+  ...
+# Subtest: W634 repairs static landmarks, duplicate ids, focus, targets and reduced motion
+ok 5 - W634 repairs static landmarks, duplicate ids, focus, targets and reduced motion
+  ---
+  duration_ms: 3.574198
+  type: 'test'
+  ...
+# Subtest: W634 contract remains explicit about real-device evidence
+ok 6 - W634 contract remains explicit about real-device evidence
+  ---
+  duration_ms: 3.43718
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 6
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 68.688339
+
+> qa:w635-performance-cache-update-safety
+> node scripts/w635-performance-cache-update-safety-gate.mjs && node --test tests/unit/w635-performance-cache-update-safety.test.mjs
+
+PASS contract — machine contract
+PASS worker-mirror — root/public byte-identical
+PASS release-scoped-caches — w650-2026-07-14-city-cache-loading-safety
+PASS approved-content-addressed-city-cache — one bounded release-independent cache for strict content-hashed W649 GLBs
+PASS current-cache-only-reads — release caches plus the strict approved content-addressed City namespace only
+PASS response-cache-fence — redirect/private/cross-origin/canonical fences
+PASS query-and-auth-fence — query variants and credentials not cached
+PASS critical-offline-precache — offline fallback required; warm routes optional
+PASS navigation-revalidation — bounded revalidation fetch
+PASS explicit-update-worker — no install-time activation
+PASS central-registration — one registration implementation
+PASS explicit-apply-and-reload — activation and reload are separate taps
+PASS versioned-bootstrap — 26 current documents
+PASS deferred-shell-modules — share/job/referral work is demand/page loaded
+PASS worker-http-cache-fence — edge/browser revalidation header
+PASS source-files — contract/test set
+PASS evidence-honesty — real browser/device/edge proof pending
+
+W635 source cache/update safety: 17/17
+TAP version 13
+# Subtest: W635 owns every current public document with a bounded initial-transfer budget
+ok 1 - W635 owns every current public document with a bounded initial-transfer budget
+  ---
+  duration_ms: 1.002662
+  type: 'test'
+  ...
+# Subtest: W635 central registration bypasses the HTTP cache and never auto-applies an update
+ok 2 - W635 central registration bypasses the HTTP cache and never auto-applies an update
+  ---
+  duration_ms: 0.881733
+  type: 'test'
+  ...
+# Subtest: W635 service worker reads only current app caches plus the approved content-hashed City cache and rejects unsafe responses
+ok 3 - W635 service worker reads only current app caches plus the approved content-hashed City cache and rejects unsafe responses
+  ---
+  duration_ms: 0.419704
+  type: 'test'
+  ...
+# Subtest: W635 requires separate explicit activation and reload actions
+ok 4 - W635 requires separate explicit activation and reload actions
+  ---
+  duration_ms: 0.35664
+  type: 'test'
+  ...
+# Subtest: W635 version-busts the one stable bootstrap and defers optional shell workloads
+ok 5 - W635 version-busts the one stable bootstrap and defers optional shell workloads
+  ---
+  duration_ms: 2.379738
+  type: 'test'
+  ...
+# Subtest: W635 source gate passes while production and physical evidence remain pending
+ok 6 - W635 source gate passes while production and physical evidence remain pending
+  ---
+  duration_ms: 76.31735
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 6
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 149.081477
+
+> qa:w636-security-privacy-abuse
+> node scripts/w636-security-privacy-abuse-gate.mjs && node --test tests/unit/w636-security-privacy-abuse.test.mjs
+
+PASS contract — canonical W636 contract
+PASS request-helper — stream, media-type and strict UTF-8 bounds
+PASS request-limits — {"accountMutation":2048,"billingMutation":8192,"referralMutation":12288,"cspReport":12288,"providerWebhook":262144}
+PASS mutation-routes — same-origin plus bounded JSON
+PASS session-cookie — host-only secure opaque session
+PASS api-response-headers — JSON APIs deny framing, cross-origin embedding and ambient device permissions
+PASS checkout-url — allowlisted Dodo checkout URL
+PASS webhook-replay — event id bound to payload hash
+PASS webhook-body — signed bounded JSON webhook
+PASS public-identifiers — account and provider session ids suppressed
+PASS plaintext-provider-alias — Alchemy reads encrypted vault only
+PASS browser-admin-trust — no persistent browser admin HMAC
+PASS fixed-origins — code-reviewed browser origin roots
+PASS csp-telemetry — bounded exact-media-type redacted CSP telemetry
+PASS public-copy-truth — privacy, support and Vault copy match actual custody and support boundaries
+PASS legacy-key-store-truth — legacy PBKDF2/AES store is migration-only and never advertised as post-quantum
+PASS attachment-abuse — bounded local-only file intake
+PASS workflow-pins — 21 external uses; 0 mutable
+PASS lockfile — 503 packages; 0 insecure; 0 missing integrity
+PASS evidence-fence — external production evidence pending
+PASS files — contract and maintained test set
+
+W636 security/privacy/abuse source gate: 21/21
+TAP version 13
+# Subtest: W636 canonical contract and source gate pass without claiming production certification
+ok 1 - W636 canonical contract and source gate pass without claiming production certification
+  ---
+  duration_ms: 5.075079
+  type: 'test'
+  ...
+# Subtest: W646 trusted dynamic UI uses the bundled DOMPurify dependency in fresh browser contexts
+ok 2 - W646 trusted dynamic UI uses the bundled DOMPurify dependency in fresh browser contexts
+  ---
+  duration_ms: 0.216628
+  type: 'test'
+  ...
+# Subtest: W636 bounded request parsing rejects unsupported, malformed and oversized bodies
+ok 3 - W636 bounded request parsing rejects unsupported, malformed and oversized bodies
+  ---
+  duration_ms: 21.960247
+  type: 'test'
+  ...
+# Subtest: W636 external checkout URL validation is HTTPS and Dodo-host bound
+ok 4 - W636 external checkout URL validation is HTTPS and Dodo-host bound
+  ---
+  duration_ms: 0.439775
+  type: 'test'
+  ...
+# Subtest: W636 checkout refuses an untrusted provider URL and suppresses provider session ids
+ok 5 - W636 checkout refuses an untrusted provider URL and suppresses provider session ids
+  ---
+  duration_ms: 3.106022
+  type: 'test'
+  ...
+# Subtest: W636 public billing status suppresses private account and provider identifiers
+ok 6 - W636 public billing status suppresses private account and provider identifiers
+  ---
+  duration_ms: 0.884392
+  type: 'test'
+  ...
+# Subtest: W636 duplicate webhook ids are cryptographically bound to the original payload
+ok 7 - W636 duplicate webhook ids are cryptographically bound to the original payload
+  ---
+  duration_ms: 8.250563
+  type: 'test'
+  ...
+# Subtest: W636 JSON API headers deny framing, cross-origin embedding and ambient device permissions
+ok 8 - W636 JSON API headers deny framing, cross-origin embedding and ambient device permissions
+  ---
+  duration_ms: 0.271057
+  type: 'test'
+  ...
+# Subtest: W636 retires the misleading legacy quantum-safe write/export surface
+ok 9 - W636 retires the misleading legacy quantum-safe write/export surface
+  ---
+  duration_ms: 0.779094
+  type: 'test'
+  ...
+1..9
+# tests 9
+# suites 0
+# pass 9
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 96.349626
+
+> qa:w717-security-certification-simplification
+> node scripts/w717-security-certification-simplification-gate.mjs && node --test tests/unit/w717-security-certification-simplification.test.mjs
+
+[W717] PASS contract-valid
+[W717] PASS security-headers
+[W717] PASS session-cookie-boundary
+[W717] PASS lockfile-and-secret-scan
+[W717] PASS current-unit-authority
+[W717] PASS historical-archive-explicit
+[W717] PASS seven-clear-lanes
+[W717] PASS source-command-current
+[W717] PASS security-command-current
+[W717] PASS architecture-and-incident-docs
+[W717] PASS truth-fence
+[W717] INFO 5 threat domains; 7 certification lanes; 378 maintained tests
+[W717] PASS 11/11
+TAP version 13
+# Subtest: W717 threat-models all five launch-sensitive domains without claiming external proof
+ok 1 - W717 threat-models all five launch-sensitive domains without claiming external proof
+  ---
+  duration_ms: 1.190476
+  type: 'test'
+  ...
+# Subtest: W717 reduces current certification to seven named lanes with dependency truth
+ok 2 - W717 reduces current certification to seven named lanes with dependency truth
+  ---
+  duration_ms: 0.412112
+  type: 'test'
+  ...
+# Subtest: W717 current unit manifest and non-certifying archive are explicit
+ok 3 - W717 current unit manifest and non-certifying archive are explicit
+  ---
+  duration_ms: 0.30474
+  type: 'test'
+  ...
+# Subtest: W717 source headers and opaque session cookies retain hardened boundaries
+ok 4 - W717 source headers and opaque session cookies retain hardened boundaries
+  ---
+  duration_ms: 0.313342
+  type: 'test'
+  ...
+# Subtest: W717 exposes concise source and security commands without hiding future proof
+ok 5 - W717 exposes concise source and security commands without hiding future proof
+  ---
+  duration_ms: 1.430949
+  type: 'test'
+  ...
+# Subtest: W717 truth is source-ready but refuses production, dependency or penetration claims
+ok 6 - W717 truth is source-ready but refuses production, dependency or penetration claims
+  ---
+  duration_ms: 0.145881
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 6
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 55.470772
+
+> qa:w718-independent-certification-source
+> node scripts/w718-independent-certification-gate.mjs && node --test tests/unit/w718-independent-certification.test.mjs
+
+[W718] PASS score-model
+[W718] PASS journey-matrix
+[W718] PASS exact-babylon-lane
+[W718] PASS babylon-closure-partitioned
+[W718] PASS exact-lockfile
+[W718] PASS bounded-infrastructure-receipt
+[W718] PASS pending-scorecard-honest
+[W718] PASS source-and-exact-commands
+[W718] PASS evidence-docs
+[W718] PASS truth-fence
+[W718] INFO 378 maintained files; 24 exact dependency files; owner score pending
+[W718] PASS SOURCE READINESS 10/10; independent certification NOT AWARDED
+TAP version 13
+# Subtest: W718 locks the twelve-pillar 9.5 score model and critical thresholds
+ok 1 - W718 locks the twelve-pillar 9.5 score model and critical thresholds
+  ---
+  duration_ms: 0.957549
+  type: 'test'
+  ...
+# Subtest: W718 awards acceptance only with evidence, 9.5 weighted, 9.0 minimum and owner approval
+ok 2 - W718 awards acceptance only with evidence, 9.5 weighted, 9.0 minimum and owner approval
+  ---
+  duration_ms: 0.376931
+  type: 'test'
+  ...
+# Subtest: W718 preserves the complete Babylon test closure across current certification and the W721 non-certifying archive
+ok 3 - W718 preserves the complete Babylon test closure across current certification and the W721 non-certifying archive
+  ---
+  duration_ms: 1.054392
+  type: 'test'
+  ...
+# Subtest: W718 records registry 503 as infrastructure without weakening exact dependencies
+ok 4 - W718 records registry 503 as infrastructure without weakening exact dependencies
+  ---
+  duration_ms: 0.204575
+  type: 'test'
+  ...
+# Subtest: W718 truth refuses to convert source readiness into browser or owner certification
+ok 5 - W718 truth refuses to convert source readiness into browser or owner certification
+  ---
+  duration_ms: 0.142422
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 53.570897

@@ -1,0 +1,34 @@
+{
+  "schema": "eonapp.w476.a6.npm-audit.v1",
+  "generatedAt": "2026-07-21T16:55:16.866733Z",
+  "full": {
+    "command": "npm audit --json",
+    "exitCode": 0,
+    "parsed": true,
+    "vulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0,
+      "total": 0
+    },
+    "error": null
+  },
+  "production": {
+    "command": "npm audit --omit=dev --json",
+    "exitCode": 0,
+    "parsed": true,
+    "vulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0,
+      "total": 0
+    },
+    "error": null
+  },
+  "sourceOnly": false,
+  "note": "This records the raw npm audit result for the checked package-lock. It is not browser, deployment, device or release approval evidence."
+}

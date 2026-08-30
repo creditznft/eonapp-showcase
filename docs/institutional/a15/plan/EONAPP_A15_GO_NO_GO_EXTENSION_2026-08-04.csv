@@ -1,0 +1,13 @@
+Gate,Mandatory City/Integration condition,Pass,Evidence ID,Owner sign-off
+C-G01,W802B commit and archive are the sole coding baseline; clean Git/history/checksum receipt exists,No,,
+C-G02,A14-to-W802B 344-file delta is dispositioned and ownership-frozen,No,,
+C-G03,All primary Core routes contain zero City implementation imports,No,,
+C-G04,"City consumes only canonical projection/handoff/outcome/capability authorities, not Core implementations",No,,
+C-G05,Open World — Signal Frontier is a primary discoverable destination with explicit review/cancel,No,,
+C-G06,One public /eoncity route and one Engine/Scene/render loop remain enforced,No,,
+C-G07,"Every station, discovery, terminal, label and menu action is valid or explicitly decorative",No,,
+C-G08,"City/Expanse data survival, migration and deletion are complete and verified",No,,
+C-G09,Creator Capture/Share are Core-owned and referral/progression receipts are duplicate protected,No,,
+C-G10,All W802A 35 owner playthrough cases and A15 24 integration cases pass,No,,
+C-G11,Storm Sector is certified to the exact candidate digest or remains hidden/locked,No,,
+C-G12,"All City categories are ≥9.0, overall ≥9.5, and the owner accepts the exact candidate",No,,

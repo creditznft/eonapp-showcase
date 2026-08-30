@@ -1,0 +1,68 @@
+/* W375 — Market Intelligence. Local research workspace, never an execution terminal. */
+body[data-market-intelligence="1"] #eon-market-intelligence { min-height: 100dvh; padding: clamp(1rem, 3vw, 2.4rem); background: radial-gradient(circle at 90% 0%, rgba(20, 184, 166, .13), transparent 32%), linear-gradient(155deg, #08111e, #101827 52%, #091421); }
+.mi-shell { width: min(1260px, 100%); margin: 0 auto; }
+.mi-hero { display: flex; align-items: end; justify-content: space-between; gap: 1.2rem; padding: clamp(1.2rem, 4vw, 2.6rem); border: 1px solid rgba(94, 234, 212, .22); border-radius: 1.35rem; background: linear-gradient(145deg, rgba(15, 48, 61, .92), rgba(15, 23, 42, .95)); box-shadow: 0 24px 60px rgba(2, 6, 23, .28); }
+.mi-kicker,.mi-eyebrow { margin: 0 0 .48rem; color: #7dd3fc; font-size: .71rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.mi-hero h1 { margin: 0; color: #f0fdfa; font-size: clamp(2.1rem, 4.2vw, 3.35rem); letter-spacing: -.055em; }
+.mi-hero p:not(.mi-kicker) { max-width: 48rem; margin: .8rem 0 0; color: #b7c9d9; line-height: 1.62; }
+.mi-hero-side { display: grid; gap: .9rem; justify-items: end; }
+.mi-badges,.mi-actions,.mi-mini-actions,.mi-mode-switch { display: flex; gap: .5rem; flex-wrap: wrap; }
+.mi-badges { justify-content: end; }
+.mi-badge,.mi-summary-chip { display: inline-flex; align-items: center; min-height: 1.9rem; padding: .27rem .58rem; border: 1px solid rgba(148, 163, 184, .25); border-radius: 999px; color: #dbeafe; background: rgba(2, 6, 23, .36); font-size: .72rem; font-weight: 760; white-space: nowrap; }
+.mi-badge.is-safe { color: #bbf7d0; border-color: rgba(74, 222, 128, .34); background: rgba(22, 163, 74, .11); }
+.mi-mode-switch { padding: .28rem; border: 1px solid rgba(148, 163, 184, .2); border-radius: .78rem; background: rgba(2, 6, 23, .34); }
+.mi-mode-switch button { min-height: 2rem; padding: .36rem .64rem; border: 0; border-radius: .55rem; color: #b9c7da; background: transparent; font: inherit; font-size: .76rem; font-weight: 800; cursor: pointer; }
+.mi-mode-switch button.is-selected { color: #ecfeff; background: rgba(20, 184, 166, .18); }
+.mi-disclaimer { margin: 1rem 0; padding: .9rem 1rem; border: 1px solid rgba(251, 191, 36, .22); border-radius: .9rem; color: #fef3c7; background: rgba(245, 158, 11, .08); font-size: .82rem; line-height: 1.55; }
+.mi-desk-nav { display: flex; gap: .5rem; flex-wrap: wrap; margin: 0 0 1rem; }
+.mi-desk-nav a { min-height: 2.15rem; display: inline-flex; align-items: center; padding: .42rem .68rem; border: 1px solid rgba(148, 163, 184, .2); border-radius: .68rem; color: #b9c7da; background: rgba(2, 6, 23, .28); font-size: .74rem; font-weight: 800; text-decoration: none; }
+.mi-desk-nav a[aria-current="page"] { border-color: rgba(94, 234, 212, .42); color: #eafffb; background: rgba(20, 184, 166, .14); }
+.mi-canvas-card,.mi-card { min-width: 0; padding: clamp(1rem, 2vw, 1.3rem); border: 1px solid rgba(148, 163, 184, .16); border-radius: 1rem; background: linear-gradient(150deg, rgba(19, 35, 53, .9), rgba(8, 17, 30, .93)); box-shadow: 0 15px 36px rgba(2, 6, 23, .2); }
+.mi-section-heading { display: flex; justify-content: space-between; align-items: start; gap: 1rem; }
+.mi-section-heading.compact { margin-bottom: .9rem; }
+.mi-section-heading h2 { margin: 0; color: #f8fafc; font-size: clamp(1rem, 2vw, 1.25rem); letter-spacing: -.025em; }
+.mi-canvas-grid { display: grid; grid-template-columns: minmax(238px, .36fr) minmax(0, 1fr); gap: 1rem; margin-top: 1rem; }
+.mi-data-panel { display: grid; align-content: start; gap: .72rem; padding: .9rem; border: 1px solid rgba(148, 163, 184, .13); border-radius: .85rem; background: rgba(2, 6, 23, .2); }
+.mi-data-panel h3,.mi-chart-panel h3 { margin: 0; color: #e2faff; font-size: .93rem; }
+.mi-divider { height: 1px; background: rgba(148, 163, 184, .16); }
+.mi-form,.mi-business-form { display: grid; gap: .7rem; }
+.mi-form-split { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .7rem; }
+.mi-field { display: grid; gap: .34rem; color: #c0d0df; font-size: .74rem; font-weight: 750; }
+.mi-field input,.mi-field select,.mi-field textarea { width: 100%; box-sizing: border-box; min-height: 2.5rem; padding: .55rem .65rem; border: 1px solid rgba(148, 163, 184, .25); border-radius: .7rem; color: #f8fafc; background: rgba(2, 6, 23, .42); font: inherit; font-size: .84rem; }
+.mi-field textarea { min-height: 4.8rem; resize: vertical; line-height: 1.45; }
+.mi-field input:focus,.mi-field select:focus,.mi-field textarea:focus,.mi-file-input:focus-visible { outline: 2px solid rgba(45, 212, 191, .55); outline-offset: 1px; }
+.mi-file-input { width: 100%; color: #cbd5e1; font-size: .75rem; }
+.mi-small-copy,.mi-inline-note { margin: 0; color: #aabbd0; font-size: .78rem; line-height: 1.5; }
+.mi-primary-button,.mi-secondary-button,.mi-quiet-button { min-height: 2.5rem; padding: .52rem .78rem; border-radius: .7rem; font: inherit; font-size: .8rem; font-weight: 800; cursor: pointer; text-decoration: none; }
+.mi-primary-button { border: 1px solid rgba(94, 234, 212, .6); color: #f0fdfa; background: linear-gradient(135deg, #0f766e, #0f9d93); }
+.mi-secondary-button { border: 1px solid rgba(125, 211, 252, .31); color: #e0f2fe; background: rgba(15, 36, 54, .72); }
+.mi-quiet-button { min-height: 2rem; padding: .32rem .55rem; border: 1px solid rgba(148, 163, 184, .2); color: #cbd5e1; background: rgba(2, 6, 23, .28); font-size: .71rem; }
+.mi-chart-panel { min-width: 0; padding: .9rem; border: 1px solid rgba(94, 234, 212, .13); border-radius: .9rem; background: rgba(2, 6, 23, .26); }
+.mi-chart-heading { display: flex; justify-content: space-between; gap: .8rem; margin-bottom: .8rem; }
+.mi-chart-heading p { margin: .28rem 0 0; color: #93a7c3; font-size: .75rem; }
+#mi-chart { display: block; width: 100%; height: 320px; border: 1px solid rgba(125, 211, 252, .14); border-radius: .8rem; background: #07111f; }
+.mi-chart-empty { margin: .65rem 0 0; color: #93a7c3; font-size: .76rem; }
+.mi-metrics,.mi-scenario-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .65rem; margin-top: .8rem; }
+.mi-metric { min-width: 0; padding: .68rem .72rem; border: 1px solid rgba(148, 163, 184, .13); border-radius: .72rem; background: rgba(8, 20, 35, .55); }
+.mi-metric span { display: block; color: #92a8c2; font-size: .68rem; }
+.mi-metric strong { display: block; overflow: hidden; margin-top: .24rem; color: #eefcff; font-size: .88rem; text-overflow: ellipsis; white-space: nowrap; }
+.mi-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 1rem; }
+.mi-card-wide { grid-column: 1 / -1; }
+.mi-record-list { display: grid; gap: .62rem; margin-top: .9rem; }
+.mi-record { display: grid; gap: .42rem; padding: .75rem; border: 1px solid rgba(148, 163, 184, .13); border-radius: .75rem; background: rgba(2, 6, 23, .24); }
+.mi-record-head { display: flex; justify-content: space-between; align-items: start; gap: .7rem; }
+.mi-record strong { color: #dffbf7; font-size: .82rem; }
+.mi-record-head span { color: #99c4cf; font-size: .67rem; font-weight: 800; text-align: right; text-transform: uppercase; }
+.mi-record p { margin: 0; color: #b7c8d9; font-size: .77rem; line-height: 1.48; white-space: pre-wrap; }
+.mi-record small { color: #8fa5bd; font-size: .7rem; line-height: 1.42; }
+.mi-empty { margin: .25rem 0 0; color: #8da2bb; font-size: .78rem; line-height: 1.5; }
+.mi-scenario-result { min-height: 6rem; }
+.mi-business-form { grid-template-columns: minmax(170px, .3fr) minmax(0, 1fr) auto; align-items: end; }
+.mi-field-grow { min-width: 0; }
+.mi-receipt-card { display: flex; align-items: center; justify-content: space-between; gap: 1rem; background: linear-gradient(145deg, rgba(7, 55, 56, .64), rgba(8, 17, 30, .92)); }
+.mi-status { min-height: 1.4rem; margin: 1rem .2rem 0; color: #b5c7d8; font-size: .78rem; line-height: 1.45; }
+.mi-status[data-tone="error"] { color: #fecaca; }
+.mi-status[data-tone="success"] { color: #bbf7d0; }
+#eon-market-intelligence[data-mode="guided"] .mi-pro-card { opacity: .94; }
+@media (max-width: 920px) { .mi-hero { align-items: start; flex-direction: column; } .mi-hero-side { justify-items: start; } .mi-badges { justify-content: start; } .mi-canvas-grid,.mi-grid { grid-template-columns: 1fr; } .mi-card-wide { grid-column: auto; } .mi-business-form { grid-template-columns: 1fr; } .mi-receipt-card { align-items: start; flex-direction: column; } }
+@media (max-width: 620px) { body[data-market-intelligence="1"] #eon-market-intelligence { padding: .82rem; } .mi-hero { padding: 1.1rem; } .mi-section-heading { align-items: stretch; flex-direction: column; } .mi-form-split,.mi-metrics,.mi-scenario-grid { grid-template-columns: 1fr; } #mi-chart { height: 260px; } .mi-actions { width: 100%; } .mi-actions button { flex: 1; } }

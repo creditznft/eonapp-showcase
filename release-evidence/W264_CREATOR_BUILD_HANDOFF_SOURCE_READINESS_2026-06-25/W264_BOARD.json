@@ -1,0 +1,36 @@
+{
+  "schema": "eonapp.w264.creator-build-handoff-source-readiness.v1",
+  "decision": "SOURCE_READY_EXTERNAL_EVIDENCE_PENDING",
+  "scope": "source-only",
+  "requiredExternalEvidence": [
+    {
+      "id": "export-download-device-review",
+      "status": "pending-independent-review",
+      "owner": "device reviewer",
+      "evidence": "Desktop and mobile download/open/save walkthrough for a local project handoff.",
+      "required": true,
+      "evidenceRefs": []
+    },
+    {
+      "id": "ownership-claim-review",
+      "status": "pending-content-owner",
+      "owner": "legal/content owner",
+      "evidence": "Human review that handoff/ownership language does not overclaim authorship, rights, delivery or publication.",
+      "required": true,
+      "evidenceRefs": []
+    },
+    {
+      "id": "backup-recovery-drill",
+      "status": "pending-observed-drill",
+      "owner": "rollback owner",
+      "evidence": "Controlled encrypted Vault backup/restore drill proving normal project records survive an update or recovery path.",
+      "required": true,
+      "evidenceRefs": []
+    }
+  ],
+  "claimFence": [
+    "This board records source-only readiness and does not prove browser, device, provider, account, legal, privacy, security or production behavior.",
+    "No external evidence reference is collected in this source freeze.",
+    "This board cannot approve beta, launch, payment, trading, prediction-market or provider activation."
+  ]
+}

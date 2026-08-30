@@ -1,0 +1,275 @@
+[
+  {
+    "area": "trust",
+    "file": "assets/js/utils/crypto-receipts.js",
+    "decision": "crypto receipts helper exists",
+    "present": false,
+    "notes": ""
+  },
+  {
+    "area": "trust",
+    "file": "assets/js/utils/crypto-receipts.js",
+    "decision": "consumeEnvelope exists",
+    "present": false,
+    "notes": ""
+  },
+  {
+    "area": "trust",
+    "file": "assets/js/utils/secure-keystore.js",
+    "decision": "keystore compatibility wrappers",
+    "present": false,
+    "notes": ""
+  },
+  {
+    "area": "trust",
+    "file": "assets/js/utils/profile.js",
+    "decision": "trusted device key support",
+    "present": false,
+    "notes": ""
+  },
+  {
+    "area": "trust",
+    "file": "assets/js/utils/trusted-time.js",
+    "decision": "trusted monotonic time helper exists",
+    "present": false,
+    "notes": ""
+  },
+  {
+    "area": "trust",
+    "file": "assets/js/utils/entitlements.js",
+    "decision": "trusted time integrated",
+    "present": false,
+    "notes": ""
+  },
+  {
+    "area": "trust",
+    "file": "assets/js/utils/subscription.js",
+    "decision": "trusted time integrated",
+    "present": false,
+    "notes": ""
+  },
+  {
+    "area": "trust",
+    "file": "assets/js/utils/profile.js",
+    "decision": "trusted time integrated",
+    "present": false,
+    "notes": ""
+  },
+  {
+    "area": "trust",
+    "file": "assets/js/utils/lootbox.js",
+    "decision": "profile-scoped exchange trust boundaries",
+    "present": false,
+    "notes": ""
+  },
+  {
+    "area": "trust",
+    "file": "tests/unit/lootbox.test.mjs",
+    "decision": "exchange-boundary tests added",
+    "present": false,
+    "notes": ""
+  },
+  {
+    "area": "pages",
+    "file": "assets/js/vault-page.js",
+    "decision": "safeHTML hardening present",
+    "present": false,
+    "notes": ""
+  },
+  {
+    "area": "pages",
+    "file": "assets/js/chat-page.js",
+    "decision": "safeHTML usage present",
+    "present": false,
+    "notes": ""
+  },
+  {
+    "area": "pages",
+    "file": "assets/js/subscription-page.js",
+    "decision": "safeHTML usage present",
+    "present": false,
+    "notes": ""
+  },
+  {
+    "area": "pages",
+    "file": "assets/js/eon-browser-page.js",
+    "decision": "safeHTML usage present",
+    "present": false,
+    "notes": ""
+  },
+  {
+    "area": "shell",
+    "file": "index.html",
+    "decision": "launch file restored",
+    "present": true,
+    "notes": ""
+  },
+  {
+    "area": "shell",
+    "file": "chat.html",
+    "decision": "launch file restored",
+    "present": true,
+    "notes": ""
+  },
+  {
+    "area": "shell",
+    "file": "vault.html",
+    "decision": "launch file restored",
+    "present": true,
+    "notes": ""
+  },
+  {
+    "area": "shell",
+    "file": "about.html",
+    "decision": "launch file restored",
+    "present": true,
+    "notes": ""
+  },
+  {
+    "area": "shell",
+    "file": "privacy.html",
+    "decision": "launch file restored",
+    "present": true,
+    "notes": ""
+  },
+  {
+    "area": "shell",
+    "file": "404.html",
+    "decision": "launch file restored",
+    "present": true,
+    "notes": ""
+  },
+  {
+    "area": "shell",
+    "file": "offline.html",
+    "decision": "launch file restored",
+    "present": true,
+    "notes": ""
+  },
+  {
+    "area": "shell",
+    "file": "archive.html",
+    "decision": "launch file restored",
+    "present": true,
+    "notes": ""
+  },
+  {
+    "area": "shell",
+    "file": "_headers",
+    "decision": "launch file restored",
+    "present": true,
+    "notes": ""
+  },
+  {
+    "area": "shell",
+    "file": "_redirects",
+    "decision": "launch file restored",
+    "present": true,
+    "notes": ""
+  },
+  {
+    "area": "shell",
+    "file": "robots.txt",
+    "decision": "launch file restored",
+    "present": true,
+    "notes": ""
+  },
+  {
+    "area": "shell",
+    "file": "sitemap.xml",
+    "decision": "launch file restored",
+    "present": true,
+    "notes": ""
+  },
+  {
+    "area": "shell",
+    "file": ".github/workflows/deploy.yml",
+    "decision": "launch file restored",
+    "present": true,
+    "notes": ""
+  },
+  {
+    "area": "i18n",
+    "file": "assets/js/utils/multi-language.js",
+    "decision": "selector locked to RC 11",
+    "present": true,
+    "notes": ""
+  },
+  {
+    "area": "i18n",
+    "file": "assets/css/layout.css",
+    "decision": "menu readability bump",
+    "present": true,
+    "notes": ""
+  },
+  {
+    "area": "i18n",
+    "file": "assets/css/chat.css",
+    "decision": "menu readability bump",
+    "present": true,
+    "notes": ""
+  },
+  {
+    "area": "i18n",
+    "file": "assets/css/subscription.css",
+    "decision": "menu readability bump",
+    "present": true,
+    "notes": ""
+  },
+  {
+    "area": "i18n",
+    "file": "assets/css/workbench.css",
+    "decision": "menu readability bump",
+    "present": true,
+    "notes": ""
+  },
+  {
+    "area": "i18n",
+    "file": "assets/js/utils/multi-language.js",
+    "decision": "RC core language copy added",
+    "present": true,
+    "notes": ""
+  },
+  {
+    "area": "i18n",
+    "file": "assets/js/utils/multi-language.js",
+    "decision": "extended core language copy added",
+    "present": true,
+    "notes": ""
+  },
+  {
+    "area": "i18n",
+    "file": "assets/js/utils/multi-language.js",
+    "decision": "creator shell language batch added",
+    "present": true,
+    "notes": ""
+  },
+  {
+    "area": "i18n",
+    "file": "assets/js/utils/multi-language.js",
+    "decision": "remaining creator runtime batch added",
+    "present": true,
+    "notes": ""
+  },
+  {
+    "area": "i18n",
+    "file": "I18N_RC_LANGUAGE_STRATEGY.md",
+    "decision": "language strategy doc exists",
+    "present": true,
+    "notes": ""
+  },
+  {
+    "area": "i18n",
+    "file": "SESSION_CHECKPOINT_LANGUAGES_01.md",
+    "decision": "language checkpoint 01 exists",
+    "present": true,
+    "notes": ""
+  },
+  {
+    "area": "i18n",
+    "file": "SESSION_CHECKPOINT_LANGUAGES_02.md",
+    "decision": "language checkpoint 02 exists",
+    "present": true,
+    "notes": ""
+  }
+]

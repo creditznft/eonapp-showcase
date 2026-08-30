@@ -1,0 +1,163 @@
+{
+  "schema": "eonapp.w624g-productive-rpg-contract.2026-07-11.v1",
+  "ok": true,
+  "checks": [
+    {
+      "id": "plan-valid",
+      "pass": true,
+      "detail": "six-family plan valid"
+    },
+    {
+      "id": "six-mission-families",
+      "pass": true,
+      "detail": "orientation, project, local-ai-byok, creator, automation, vault-recovery"
+    },
+    {
+      "id": "nine-honest-states",
+      "pass": true,
+      "detail": "empty, review, ready, active, unavailable, cancelled, failed, resumed, completed"
+    },
+    {
+      "id": "required-family-order",
+      "pass": true,
+      "detail": "orientation → project → AI → creator → automation → recovery"
+    },
+    {
+      "id": "canonical-outcome-routes",
+      "pass": true,
+      "detail": "all primary routes are current surfaces"
+    },
+    {
+      "id": "review-first-no-auto-navigation",
+      "pass": true,
+      "detail": "every mission requires visible review and explicit route choice"
+    },
+    {
+      "id": "privacy-boundaries-present",
+      "pass": true,
+      "detail": "all missions name required action and privacy boundary"
+    },
+    {
+      "id": "no-financial-or-eonkey-rewards",
+      "pass": true,
+      "detail": "no money, token, discount or EONKEY reward"
+    },
+    {
+      "id": "start-requires-review",
+      "pass": true,
+      "detail": "visible-review-required"
+    },
+    {
+      "id": "review-then-start",
+      "pass": true,
+      "detail": "active"
+    },
+    {
+      "id": "cancel-and-resume",
+      "pass": true,
+      "detail": "cancelled → resumed"
+    },
+    {
+      "id": "failed-state-honest",
+      "pass": true,
+      "detail": "outcome-not-proven"
+    },
+    {
+      "id": "invalid-receipt-cannot-complete",
+      "pass": true,
+      "detail": "verified-bounded-outcome-required"
+    },
+    {
+      "id": "orientation-local-receipt",
+      "pass": true,
+      "detail": "verified local orientation"
+    },
+    {
+      "id": "real-outcome-completion",
+      "pass": true,
+      "detail": "project-shell"
+    },
+    {
+      "id": "only-bounded-storage",
+      "pass": true,
+      "detail": "mission store contains no private-work fields"
+    },
+    {
+      "id": "no-network-or-commercial-execution",
+      "pass": true,
+      "detail": "mission module cannot call networks or mutate commerce"
+    },
+    {
+      "id": "projects-write-real-receipts",
+      "pass": true,
+      "detail": "create/open project actions write bounded receipts"
+    },
+    {
+      "id": "local-ai-writes-after-pass",
+      "pass": true,
+      "detail": "only a passed self-test records completion"
+    },
+    {
+      "id": "byok-writes-after-verification",
+      "pass": true,
+      "detail": "verified direct provider rail writes bounded receipt"
+    },
+    {
+      "id": "creator-saves-review-artifact",
+      "pass": true,
+      "detail": "image/video guide is a real local proposal artifact"
+    },
+    {
+      "id": "automation-writes-draft-receipt",
+      "pass": true,
+      "detail": "real local workflow drafts write receipts"
+    },
+    {
+      "id": "capsule-writes-backup-recovery-receipts",
+      "pass": true,
+      "detail": "real encrypted backup/restore actions write receipts"
+    },
+    {
+      "id": "station-binds-mission-loop",
+      "pass": true,
+      "detail": "City station owns and disposes mission UI"
+    },
+    {
+      "id": "visible-mission-controls",
+      "pass": true,
+      "detail": "review, refresh, cancel and stay controls are visible"
+    },
+    {
+      "id": "route-choice-is-second-action",
+      "pass": true,
+      "detail": "route links appear only after mission review"
+    },
+    {
+      "id": "accessible-reduced-motion-ui",
+      "pass": true,
+      "detail": "captions, keyboard buttons and reduced-motion CSS present"
+    },
+    {
+      "id": "w624f-npcs-preserved",
+      "pass": true,
+      "detail": "four-guide system remains separate"
+    },
+    {
+      "id": "w624e-orbit-preserved",
+      "pass": true,
+      "detail": "Orbit remains available"
+    },
+    {
+      "id": "single-runtime-owner-preserved",
+      "pass": true,
+      "detail": "W624B owner and compatibility retirement preserved"
+    },
+    {
+      "id": "no-visual-or-device-claim",
+      "pass": true,
+      "detail": "source does not certify runtime visuals or devices"
+    }
+  ],
+  "passed": 31,
+  "total": 31
+}

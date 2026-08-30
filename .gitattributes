@@ -1,0 +1,28 @@
+# W423 — shipped vector-art bytes must be reproducible across checkout platforms.
+assets/city/art/*.svg text eol=lf
+*.svg text eol=lf
+
+# W524.1 — Cloudflare redirect mirrors must remain portable across checkout platforms.
+_redirects text eol=lf
+public/_redirects text eol=lf
+
+# W524.2 — generated release contracts and source reports must stay LF-stable on Windows.
+_headers text eol=lf
+public/_headers text eol=lf
+robots.txt text eol=lf
+public/robots.txt text eol=lf
+sitemap.xml text eol=lf
+public/sitemap.xml text eol=lf
+artifacts/**/*.json text eol=lf
+release-evidence/**/*.json text eol=lf
+
+# W624D — archived exact-copy snapshots are checksummed in repository-normalized LF form.
+archive/**/*.mjs text eol=lf
+
+# W759R1 — source/public release mirrors are byte-stable across Windows and CI.
+sw.js text eol=lf
+public/sw.js text eol=lf
+assets/css/*.css text eol=lf
+public/assets/css/*.css text eol=lf
+manifest.webmanifest text eol=lf
+public/manifest.webmanifest text eol=lf

@@ -1,0 +1,64 @@
+{
+  "schema": "eonapp.validation-receipt.w628f.2026-07-11.v1",
+  "wave": "W628F-source-batch",
+  "ok": true,
+  "sourceRevision": "01078e2733d199c49079348bf04fd8ff1d0e055f",
+  "sourceFingerprint": {
+    "algorithm": "sha256",
+    "digest": "7d2e23fac064638d3b146916b73444c44f245fb97483e38717153ba38eb3b6d1",
+    "fileCount": 3651
+  },
+  "permanentCommand": [
+    "npm ci",
+    "npm run verify:codex-predeploy"
+  ],
+  "predeployStages": {
+    "passed": 55,
+    "total": 55
+  },
+  "maintainedSuite": {
+    "testFiles": 260,
+    "tests": 945,
+    "passed": 898,
+    "failed": 0,
+    "skipped": 47,
+    "cancelled": 0,
+    "todo": 0
+  },
+  "focusedGates": {
+    "W628A": "8/8",
+    "W628B": "9/9",
+    "W628C": "8/8",
+    "W628D": "9/9",
+    "W628E": "9/9",
+    "W628F": "10/10"
+  },
+  "secretScan": {
+    "textFiles": 3749,
+    "findings": 0
+  },
+  "reachability": {
+    "reachableFiles": 384,
+    "importEdges": 671,
+    "quarantinedReachable": 0
+  },
+  "build": {
+    "distFiles": 466,
+    "sourceRevision": "01078e2733d199c49079348bf04fd8ff1d0e055f",
+    "distributionSha256": "10af6bb718d503f27e0d2e2142f4cd70395ceff1323899ee993d80b46aae27ce"
+  },
+  "sourceDelta": {
+    "files": 34,
+    "insertions": 890,
+    "deletions": 641
+  },
+  "realEvidence": {
+    "customerCheckout": "pending",
+    "providerOriginWebhook": "pending",
+    "productionD1Lifecycle": "pending",
+    "portalCancellationReactivation": "pending",
+    "failureRefundDispute": "pending"
+  },
+  "publicBillingCertification": "no-go-real-dodo-lifecycle-evidence-pending",
+  "nextWave": "W629A-W629H"
+}

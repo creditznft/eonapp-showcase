@@ -1,0 +1,60 @@
+{
+  "collectedAt": "2026-07-02T01:41:07.652Z",
+  "clearance": {
+    "browserCacheCleared": true,
+    "originStorageCleared": true
+  },
+  "environment": {
+    "title": "EON City · EONAPP",
+    "href": "https://eonapp.ch/eoncity",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.4 Mobile/15E148 Safari/604.1",
+    "platform": "Win32",
+    "language": "en-US",
+    "languages": [
+      "en-US"
+    ],
+    "hardwareConcurrency": 12,
+    "deviceMemoryGb": 16,
+    "maxTouchPoints": 1,
+    "webdriver": true,
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "outerViewport": {
+      "width": 390,
+      "height": 844
+    },
+    "devicePixelRatio": 3,
+    "secureContext": true,
+    "screen": {
+      "width": 390,
+      "height": 844,
+      "availWidth": 390,
+      "availHeight": 844
+    },
+    "serviceWorker": [],
+    "gpu": {
+      "context": "webgl2",
+      "vendor": "Google Inc. (AMD)",
+      "renderer": "ANGLE (AMD, AMD Radeon 740M Graphics (0x00001901) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+    }
+  },
+  "surface": {
+    "companion": false,
+    "canvasVisible": false,
+    "moveControls": 0,
+    "bodyPreview": "Skip to EON City controls\n\nEON NOIR · PORTRAIT COMPANION\n\nYour City stays clear in portrait.\n\nLandscape Explore Mode is the full interactive City. Portrait keeps the current route, EONBOT and your workspace easy to reach without squeezing a desktop HUD over the screen.\n\nCity-safeLocal-firstcinematic profile\nExplore in landscape Ask EONBOT Open Workspace\n\nPrivate project districts appear only inside Landscape Explore Mode and use a City-safe local render plan. Project files, prompts, credentials and hidden IDs never become public City décor.\n\nRotate when you are ready to explore the full City.",
+    "url": "https://eonapp.ch/eoncity",
+    "title": "EON City · EONAPP"
+  },
+  "runtime": {
+    "summary": null,
+    "performanceObservation": null
+  },
+  "logs": {
+    "console": [],
+    "pageErrors": [],
+    "requestFailures": []
+  }
+}

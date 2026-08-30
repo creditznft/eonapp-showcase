@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+Disallow: /api/
+Disallow: /csp-report
+Disallow: /functions/
+Disallow: /scripts/
+Disallow: /.git/
+Disallow: /dist/
+Disallow: /test-results/
+Disallow: /playwright-report/
+
+Sitemap: https://eonapp.ch/sitemap.xml

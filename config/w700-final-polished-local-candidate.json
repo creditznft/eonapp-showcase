@@ -1,0 +1,41 @@
+{
+  "schema": "eonapp.final-polished-local-candidate.w700.v1",
+  "wave": "W700",
+  "status": "final-polished-local-source-candidate-browser-proof-pending",
+  "branch": "local/w671-n3-c3-rebuild",
+  "predecessorWave": "W694",
+  "baselineCommit": "9e6d5e2062a50b1c74ceb5c984fffa73724896a3",
+  "designAuthority": "N3 + C3 — EON NEXUS Morphic Command Field inside the EONCITY Living Hybrid Metropolis",
+  "completedScope": [
+    "W695 asset-specific Pathfinder heading calibration and post-collision locomotion truth",
+    "W696 physical district boundaries, complete Core bounds, structured HUD and 48px interaction ownership",
+    "W697 nine distinct District Belt visual grammars",
+    "W698 regional Expanse architecture, roads, depth, activity and discovery identity",
+    "W699 simplified three-action NEXUS command hierarchy with optional gesture and bounded voice truth",
+    "W700 explicit Pulse-to-Nexus-to-Atlas-to-City-to-My-Realm-to-Core signature journey"
+  ],
+  "sourceAuthority": {
+    "manifest": "config/w700-source-reconciliation-manifest.json",
+    "maintainedTestManifest": "config/w624d-current-unit-test-manifest.json",
+    "ownerRecordingMatrix": "config/w700-owner-recording-matrix.json",
+    "historicalBaseline": "config/w694-final-local-candidate.json",
+    "socialPreviewManifest": "assets/data/social-preview-manifest.json"
+  },
+  "evidence": {
+    "localSourceGates": "required",
+    "deterministicSignatureFlow": "required",
+    "glbBindPoseInspection": "complete",
+    "headedBrowser": "pending",
+    "ownerDevice": "pending",
+    "visualScore": "not-claimed",
+    "ninePointFiveScore": "not-claimed"
+  },
+  "releaseBoundaries": {
+    "githubUploadPerformed": false,
+    "actionsRunPerformed": false,
+    "previewPerformed": false,
+    "mergePerformed": false,
+    "deploymentPerformed": false,
+    "productionReleaseAllowed": false
+  }
+}

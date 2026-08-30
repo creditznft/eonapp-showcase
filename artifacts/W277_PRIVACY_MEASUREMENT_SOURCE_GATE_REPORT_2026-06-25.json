@@ -1,0 +1,15 @@
+{
+  "schema": "eonapp.w277.privacy-measurement-source-readiness.v1",
+  "ok": true,
+  "decision": "SOURCE_READY_EXTERNAL_PRIVACY_EVIDENCE_PENDING",
+  "sourceOnly": true,
+  "errors": [],
+  "externalEvidenceRequired": [
+    "independent-privacy-and-retention-review",
+    "browser-storage-clear-and-disable-observation",
+    "preview-live-third-party-tag-inventory",
+    "jurisdictional-user-rights-and-notice-review",
+    "support-and-incident-data-handling-review"
+  ],
+  "claimFence": "Source inspection cannot replace independent privacy, legal, browser-storage or live-tag evidence."
+}

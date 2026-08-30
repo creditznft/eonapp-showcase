@@ -1,0 +1,54 @@
+You are Codex acting as release engineer, QA lead, visual reviewer and deployment operator for EONAPP W655.
+
+AUTHORITATIVE INPUTS
+- Extract the provided W655 exact source ZIP.
+- Extract the provided W655 exact deployable-dist ZIP.
+- Read all files in the W655 Codex handover ZIP.
+- The provided dist is the first Preview candidate and must be deployed unchanged for baseline evidence.
+- Your machine already has the owner-controlled .env.local. Never copy, print, commit, attach, upload or package it. Redact secrets, cookies, tokens, session IDs and personal data from all evidence.
+
+MISSION
+Machine-certify and human-visually review all of EONAPP, with special depth on EONCITY as a gamified real-work control workspace. Use real headed Chrome, the owner’s already logged-in Google session, DevTools/Playwright, screenshots, short videos, HAR, console exports and performance traces. Missing evidence is a failure, not a pass.
+
+NONNEGOTIABLE PRODUCT TRUTH
+- Command Room is focused work/navigation.
+- Districts give spatial context to real EONAPP functions.
+- 3D Explore provides movement, discovery and atmosphere.
+- Agent Theater shows evidence-bound states only.
+- Living Dashboard supports progress/continuation.
+- Characters guide or represent functions; they do not fabricate completion.
+- Every terminal follows select -> review -> explicit open -> native EONAPP operation.
+- Realm Relay is the primary western destination and opens private Realm Studio.
+- Local AI Observatory is the primary eastern destination; Vault is separate and explicit.
+- Market/Collection is informational and non-transactional.
+
+EXECUTION ORDER
+1. Verify all outer and internal hashes. Record exact source and dist digests.
+2. Run npm ci and every W655/local/full certification command in the runbook.
+3. Run the guarded Preview deploy script. Deploy exact dist unchanged to a fresh Cloudflare Preview.
+4. Complete clean signed-out desktop/mobile proof with zero Babylon/GLB/Meshopt/audio/private requests.
+5. Complete real Google-authenticated entry using the existing logged-in Chrome profile.
+6. Test every Command Room work lane and systems lane with review-first behavior.
+7. Visit every district and test every real-work terminal end-to-end, returning to City each time.
+8. Test keyboard, touch joystick, D-pad, mouse/click-to-move and controller parity across four camera headings. Prove A/left is screen-left and D/right is screen-right; W/up is forward and S/down is back. Test camera cycle/reset, pause, map, interact-review and repeated restarts.
+9. Visually inspect all active characters, props, terminals, buildings, street lamps and district compositions. Capture scale, floor contact, material, deformation, animation and clipping evidence. Compare Pathfinder Prime and Pathfinder A.
+10. Prove one resident binary district, correct disposal, Lite crowd reduction and cache/update behavior for cold, warm, shell-only and one-model-change scenarios.
+11. Run desktop/mobile performance and resilience tests, including long session and WebGL context loss where supported.
+12. Run full EONAPP Preview regression, including EONBOT, Projects, Workspace, Forge, Library, Local AI, Vault, Realm, Automations, Settings/Help/Install and billing/referral read paths. Do not create real charges or destructive changes without explicit owner approval.
+13. Build CODEX_W655_EVIDENCE exactly as required and run the evidence validator. Fix evidence gaps; never reinterpret them as passes.
+14. Score all ten categories. Every category must be >=9.0, overall >=9.5, critical defects 0.
+15. Return the full evidence ZIP and recommendation. Keep production blocked unless all gates pass and the owner explicitly says GO.
+16. After owner GO, use the guarded production deploy command with a digest-matching owner receipt, then repeat production smoke on https://eonapp.ch and preserve rollback proof.
+
+REQUIRED OUTPUT
+- CODEX_W655_EXECUTION_RECEIPT.json
+- CODEX_W655_SCORECARD.md
+- route, district visual and control CSV matrices
+- cache/update, performance, console and network JSON receipts
+- screenshots, short videos, HAR, console logs and performance traces
+- defect register with severity, evidence path, owner and remediation
+- Preview URL/deployment ID and exact digest
+- production receipt only if owner GO occurred
+- one final ZIP for return to ChatGPT
+
+Do not silently patch before baseline evidence. If a defect is found, preserve failing evidence, patch source in a new commit, rebuild, re-run all affected gates, deploy a new Preview and clearly distinguish candidate digests.

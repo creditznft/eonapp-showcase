@@ -1,0 +1,68 @@
+{
+  "schema": "eonapp.a15.c03.validation-receipt.v1",
+  "generatedAt": "2026-08-04T15:19:55.949201Z",
+  "wave": "C03",
+  "baselineCommit": "e2226f0ddaca46cc55478b85f5d2d3fb93a88b99",
+  "status": "pass-source-and-dependency-free",
+  "checks": [
+    {
+      "id": "c03-open-world-gate",
+      "passed": true,
+      "detail": "Open World \u2014 Signal Frontier is flagship-first; one physical Expanse Gate; explicit review preserved."
+    },
+    {
+      "id": "i03-core-isolation",
+      "passed": true,
+      "detail": "13 Core routes; zero City implementation imports."
+    },
+    {
+      "id": "c02-two-way-boundary",
+      "passed": true,
+      "detail": "City reaches zero Core implementation modules; contracts only."
+    },
+    {
+      "id": "w766ir2-source-certification",
+      "passed": true,
+      "detail": "10/10 source criteria passed; browser certification remains external."
+    },
+    {
+      "id": "targeted-unit-tests",
+      "passed": true,
+      "detail": "21/21 tests passed."
+    },
+    {
+      "id": "syntax-and-diff",
+      "passed": true,
+      "detail": "Node syntax checks and git diff --check passed."
+    }
+  ],
+  "invariants": {
+    "automaticWorldEntry": false,
+    "secondHtmlRoute": false,
+    "secondEngineSceneRenderLoop": false,
+    "physicalGatewayRenamed": false,
+    "previewDeploymentPerformed": false,
+    "productionDeploymentPerformed": false
+  },
+  "externalBlockers": [
+    "Locked dependency install remains blocked by private registry 404 for ws@7.5.11.",
+    "Authenticated Chrome, Edge and mobile-landscape evidence remains pending.",
+    "No Preview or Production deployment authority was used."
+  ],
+  "workingTreeEntriesAtReceipt": [
+    " M assets/css/eon-city-play.css",
+    " M assets/js/city/w731/eon-city-w731-command-hub-runtime.js",
+    " M assets/js/city/w756/eon-city-w756-onboarding-navigation-accessibility.js",
+    " M assets/js/city/w760/eon-city-w760-w765-command-core-convergence.js",
+    " M config/generated/a15-system-disposition-registry.json",
+    " M docs/institutional/a15/evidence/A15_I01_SYSTEM_DISPOSITION_RECEIPT.json",
+    " M docs/institutional/a15/evidence/A15_I03_MINIMAL_CORE_SHELL_RECEIPT.json",
+    " M tests/unit/w760-w765-command-core-convergence.test.mjs",
+    " M tests/unit/w760-w765-runtime-integration.test.mjs",
+    " M tests/unit/w765r8-command-hub-final-integrity.test.mjs",
+    "?? docs/institutional/a15/evidence/A15_C03_OPEN_WORLD_DESTINATION_RECEIPT.json",
+    "?? scripts/a15-c03-open-world-destination-gate.mjs",
+    "?? tests/unit/a15-c03-open-world-destination.test.mjs"
+  ],
+  "digest": "77fdc2b1ed6e6984e1eaac15758fa5e3421e0615dfe91ac4890cca0dfc5a8488"
+}

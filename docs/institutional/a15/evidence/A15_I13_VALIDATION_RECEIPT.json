@@ -1,0 +1,110 @@
+{
+  "schema": "eonapp.a15.i13.validation-receipt.v1",
+  "generatedAt": "2026-08-05T00:32:49+05:30",
+  "wave": "I13",
+  "baselineCommit": "71d3e7edf061ca992630e962703cb615f01c562a",
+  "title": "Voice and AI Language Modes",
+  "decision": "source-wave-ready-to-commit",
+  "verification": {
+    "institutionalGate": {
+      "passed": true,
+      "command": "npm run qa:a15-i13-voice-language",
+      "focusedTests": 16
+    },
+    "maintainedSourceSuite": {
+      "passed": true,
+      "maintainedFiles": 381,
+      "runnableFilesPassed": 368,
+      "dependencyBlockedFiles": 13,
+      "tests": 1468,
+      "testsPassed": 1421,
+      "testsSkipped": 47,
+      "testsFailed": 0,
+      "blockedContract": "exact Babylon dependencies"
+    },
+    "w766ir2SourceCertification": {
+      "passed": true,
+      "criteriaPassed": 10,
+      "criteriaTotal": 10,
+      "browserCertified": false,
+      "authenticatedOfflineCertified": false
+    },
+    "repositoryAuthority": {
+      "passed": true,
+      "trackedFiles": 5502,
+      "activeModules": 535,
+      "quarantinedMissingImportFiles": 194,
+      "deterministicHtmlInputs": 31
+    },
+    "secretScan": {
+      "passed": true,
+      "textFilesScanned": 5179
+    },
+    "syntaxAndDiff": {
+      "passed": true
+    }
+  },
+  "authority": {
+    "schema": "eonapp.voice-session-authority.a15.v1",
+    "dictateAutoSend": false,
+    "dictateEditableBeforeSend": true,
+    "voiceConversationBeta": true,
+    "voiceConversationAutoSendDisclosed": true,
+    "voiceConversationConsentScope": "sessionStorage-bounded",
+    "activeMicrophonePersisted": false,
+    "transcriptPersisted": false,
+    "audioPersisted": false,
+    "microphoneRequiresUserAction": true,
+    "typedFallbackPermanent": true,
+    "stopClearsConsent": true
+  },
+  "invariants": [
+    "Dictate requires an explicit user action, creates editable text and never auto-sends.",
+    "Voice Conversation is a labelled Beta and requires a per-session review of automatic sending and continuous listening before microphone access.",
+    "Voice Conversation consent is sessionStorage-bounded, expires after 30 minutes and stores no audio, transcript, active microphone state, prompt, reply or credential.",
+    "Stopping voice immediately clears the session authority; an expired or mismatched token leaves text editable and unsent.",
+    "Persistent interaction preferences cannot start a microphone or grant automatic-send authority.",
+    "Unsupported browser speech always preserves typed Chat and operating-system dictation/read-aloud fallbacks.",
+    "Core and City remain connected by versioned contracts only."
+  ],
+  "sourceDigests": {
+    "assets/js/chat/eon-voice-session-authority.js": "1913c2fe34a998d383345d3ca6303ce1bcdb01ddb6390ea0e05ace77ef57ce29",
+    "assets/js/chat/eon-voice-fallback-strategy.js": "49a17cab6cfe2df55682365d0abd2cda1fccfda4732f23a90faf2267fc6630da",
+    "assets/js/chat/eonbot-voice-capability-gateway.js": "971724c66d7104f02f4b9906a6429d4a36f28e8ba18cdd8714a70677b7522e53",
+    "assets/js/chat/eonbot-interaction-preferences.js": "0d712c5b5d2a039eebd103afb9cec82c5bd063e212b7f0ce6e9315d946f9f56e",
+    "assets/js/chat-page.js": "e10f97ffafa099093991b6f057068cd43bf9d8b90be615be87713fe54c1ccdd6",
+    "assets/css/chat.css": "06151c5f9617e558b4191b56738d7f4fae3d5f12752d0a1a7417a2834434c71e",
+    "index.html": "63a90950ee1e9f2e74cebe065a1a3fa06ed8a90c862fc45c6ecb43caf28eac29",
+    "chat.html": "b020f056e7c589f5554430cb53c929824208a1401440d32c4cbc721684784f38",
+    "scripts/a15-i13-voice-language-modes-gate.mjs": "723020bf08df7c0c9b3482ad378f727eb1a6862c9ca3a802d201d136483b0039",
+    "scripts/w394b-multilingual-voice-gate.mjs": "d7b2370e42714c281a49ce0987da49c382528b8303c449042ab8b912027b5638",
+    "scripts/w479v-eonbot-voice-gate.mjs": "f262c6dab4184e6d310a6479f0db0dd57bc848171dc91f4cd5319a6804fcf0eb",
+    "tests/unit/a15-i13-voice-language-modes.test.mjs": "3e913e48075741ea2bb9b395f0f4d035bebe0b76aae20ebb32877694674d7464",
+    "docs/institutional/a15/evidence/A15_I13_VOICE_LANGUAGE_GATE_RECEIPT.json": "d89886ebeb77fba41ec7f2f42dc1a1837101d63ab5c2c9bdce62840ad4d594d3"
+  },
+  "externalBlockers": [
+    "Private npm registry returns 404 for locked ws@7.5.11.",
+    "Installed npm is 10.9.2 while the repository requires 11.12.1.",
+    "Exact Babylon-dependent maintained tests remain deferred until the locked dependency set is restored.",
+    "Production build, authenticated browser voice, Preview and Production certification remain pending."
+  ],
+  "workingTreeAtReceipt": [
+    " M assets/css/chat.css",
+    " M assets/js/chat-page.js",
+    " M assets/js/chat/eon-voice-fallback-strategy.js",
+    " M assets/js/chat/eonbot-interaction-preferences.js",
+    " M assets/js/chat/eonbot-voice-capability-gateway.js",
+    " M chat.html",
+    " M config/generated/a15-system-disposition-registry.json",
+    " M docs/institutional/a15/evidence/A15_I01_SYSTEM_DISPOSITION_RECEIPT.json",
+    " M index.html",
+    " M package.json",
+    " M scripts/w394b-multilingual-voice-gate.mjs",
+    " M scripts/w479v-eonbot-voice-gate.mjs",
+    "?? assets/js/chat/eon-voice-session-authority.js",
+    "?? docs/institutional/a15/evidence/A15_I13_VOICE_LANGUAGE_GATE_RECEIPT.json",
+    "?? scripts/a15-i13-voice-language-modes-gate.mjs",
+    "?? tests/unit/a15-i13-voice-language-modes.test.mjs"
+  ],
+  "receiptDigest": "sha256:e1bbe2f40c70ae59ed9bf07b2c698178f6227615088b7c5b212b1bd19670c265"
+}

@@ -1,0 +1,52 @@
+{
+  "schema": "eonapp.w271.accessibility-i18n-source-readiness.v1",
+  "decision": "SOURCE_READY_EXTERNAL_EVIDENCE_PENDING",
+  "scope": "source-only",
+  "requiredExternalEvidence": [
+    {
+      "id": "keyboard-desktop",
+      "status": "pending-independent-review",
+      "owner": "release owner",
+      "evidence": "Keyboard-only task pass on canonical desktop routes.",
+      "required": true,
+      "evidenceRefs": []
+    },
+    {
+      "id": "screen-reader",
+      "status": "pending-independent-review",
+      "owner": "accessibility reviewer",
+      "evidence": "NVDA/VoiceOver reading, focus and live-region review.",
+      "required": true,
+      "evidenceRefs": []
+    },
+    {
+      "id": "locale-content",
+      "status": "pending-content-owner",
+      "owner": "content owner",
+      "evidence": "Human review of supported locale copy, RTL flow and fallback language.",
+      "required": true,
+      "evidenceRefs": []
+    },
+    {
+      "id": "mobile-assistive-tech",
+      "status": "pending-independent-review",
+      "owner": "device reviewer",
+      "evidence": "Android TalkBack and iOS VoiceOver task pass.",
+      "required": true,
+      "evidenceRefs": []
+    },
+    {
+      "id": "contrast-motion",
+      "status": "pending-independent-review",
+      "owner": "design reviewer",
+      "evidence": "Contrast, zoom, reduced-motion and forced-colors review.",
+      "required": true,
+      "evidenceRefs": []
+    }
+  ],
+  "claimFence": [
+    "This board records source-only readiness and does not prove browser, device, provider, account, legal, privacy, security or production behavior.",
+    "No external evidence reference is collected in this source freeze.",
+    "This board cannot approve beta, launch, payment, trading, prediction-market or provider activation."
+  ]
+}

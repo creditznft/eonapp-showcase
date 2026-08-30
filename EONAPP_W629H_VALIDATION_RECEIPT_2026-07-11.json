@@ -1,0 +1,69 @@
+{
+  "schema": "eonapp.validation-receipt.w629h.2026-07-11.v1",
+  "wave": "W629H-source-batch",
+  "ok": true,
+  "sourceRevision": "548cfbd1b39b9f63f294528a821c6eacaeac20b4",
+  "sourceFingerprint": {
+    "algorithm": "sha256",
+    "digest": "7c92e6e1c8ad8b8e08b175037f9103ab2f51473cc89dab3a9e420234fae63127",
+    "fileCount": 3672
+  },
+  "permanentCommand": [
+    "npm ci",
+    "npm run verify:codex-predeploy"
+  ],
+  "predeployStages": {
+    "passed": 63,
+    "total": 63
+  },
+  "maintainedSuite": {
+    "testFiles": 268,
+    "tests": 953,
+    "passed": 906,
+    "failed": 0,
+    "skipped": 47,
+    "cancelled": 0,
+    "todo": 0
+  },
+  "focusedGates": {
+    "W629A": "8/8",
+    "W629B": "8/8",
+    "W629C": "8/8",
+    "W629D": "8/8",
+    "W629E": "8/8",
+    "W629F": "8/8",
+    "W629G": "8/8",
+    "W629H": "9/9"
+  },
+  "secretScan": {
+    "textFiles": 3774,
+    "findings": 0
+  },
+  "reachability": {
+    "reachableFiles": 386,
+    "importEdges": 674,
+    "quarantinedReachable": 0
+  },
+  "build": {
+    "distFiles": 466,
+    "sourceRevision": "548cfbd1b39b9f63f294528a821c6eacaeac20b4",
+    "distributionSha256": "26f4931d2b72ca97a688a184320f4109a711107af2541444f9ffdcbcc15e2851"
+  },
+  "sourceDelta": {
+    "files": 36,
+    "insertions": 949,
+    "deletions": 60
+  },
+  "realEvidence": {
+    "twoDistinctAccounts": "pending",
+    "serverMilestoneReceipt": "pending",
+    "retainedPaidDodo": "pending",
+    "yearlyCapAndRace": "pending",
+    "refundDisputeSupportReversal": "pending",
+    "redeemedUnlockRevocation": "pending",
+    "vaultRevealMigration": "pending",
+    "privacyAudit": "pending"
+  },
+  "publicReferralCertification": "no-go-real-referral-evidence-pending",
+  "nextWave": "W630"
+}

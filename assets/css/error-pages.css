@@ -1,0 +1,127 @@
+/* 404 Page — extracted from inline styles */
+
+.not-found-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 2rem 1rem;
+}
+
+.not-found-card {
+  width: min(840px, 100%);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 28px;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  background: rgba(8, 16, 32, 0.84);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+}
+
+.not-found-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: start;
+}
+
+.not-found-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  border-radius: 999px;
+  padding: .35rem .75rem;
+  background: rgba(120, 210, 255, 0.12);
+  color: #9edcff;
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  font-size: .72rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.not-found-badge {
+  width: 72px;
+  height: 72px;
+  border-radius: 22px;
+  display: grid;
+  place-items: center;
+  font-size: 1.8rem;
+  background: linear-gradient(135deg, rgba(124,141,255,.18), rgba(120,210,255,.16));
+  border: 1px solid rgba(255,255,255,0.12);
+  margin-bottom: 1rem;
+}
+
+.not-found-card h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  line-height: 1.03;
+}
+
+.not-found-card p {
+  margin: 0 0 .95rem;
+  color: rgba(233,240,255,0.84);
+  line-height: 1.7;
+  font-size: 1.02rem;
+}
+
+.not-found-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-top: 1.5rem;
+}
+
+.not-found-actions a {
+  min-height: 44px;
+}
+
+.not-found-surface {
+  border-radius: 22px;
+  padding: 1rem;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.03);
+}
+
+.not-found-surface h2 {
+  margin: 0 0 .75rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: #9edcff;
+}
+
+.not-found-links {
+  display: grid;
+  gap: .65rem;
+}
+
+.not-found-links a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: .75rem;
+  padding: .85rem 1rem;
+  border-radius: 16px;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.04);
+  color: #eef4ff;
+  transition: transform .18s ease, border-color .18s ease, background .18s ease;
+}
+
+.not-found-links a:hover {
+  transform: translateY(-1px);
+  border-color: rgba(120,210,255,0.35);
+  background: rgba(120,210,255,0.08);
+}
+
+.not-found-links small {
+  color: rgba(233,240,255,0.66);
+  display: block;
+  margin-top: .15rem;
+}
+
+@media (max-width: 880px) {
+  .not-found-grid { grid-template-columns: 1fr; }
+}

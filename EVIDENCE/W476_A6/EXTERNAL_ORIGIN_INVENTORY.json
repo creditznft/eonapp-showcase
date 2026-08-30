@@ -1,0 +1,2620 @@
+{
+  "schema": "eonapp.w476.a6.external-origin-inventory.v1",
+  "generatedAt": "2026-07-10T20:35:26.195Z",
+  "scope": "active browser/runtime source only; excludes docs, archives, tests, build scripts and dependencies",
+  "originCount": 294,
+  "origins": [
+    {
+      "origin": "http://127.0.0.1",
+      "classification": "legacy-local-literal",
+      "purpose": "Observed local literal outside the reviewed W476 Local AI loopback contract; cleanup or explicit separate adapter review is required.",
+      "sources": [
+        "404.html",
+        "assets/js/services/LocalRuntimeDetector.js"
+      ]
+    },
+    {
+      "origin": "http://127.0.0.1:10000",
+      "classification": "legacy-local-literal",
+      "purpose": "Observed local literal outside the reviewed W476 Local AI loopback contract; cleanup or explicit separate adapter review is required.",
+      "sources": [
+        "assets/js/free-ai-power-page.js"
+      ]
+    },
+    {
+      "origin": "http://127.0.0.1:11434",
+      "classification": "approved-local-loopback",
+      "purpose": "Approved W476 Local AI text runtime loopback origin; browser/device proof remains required.",
+      "sources": [
+        "_headers",
+        "assets/js/chat-page.js",
+        "assets/js/components/ProviderStatusBadge.js",
+        "assets/js/free-ai-power-page.js",
+        "assets/js/local-ai/local-ai-page.js",
+        "assets/js/services/LocalRuntimeDetector.js",
+        "assets/js/utils/ai-model-discovery.js",
+        "assets/js/utils/provider-orchestrator.js",
+        "assets/js/workbench-ai.js"
+      ]
+    },
+    {
+      "origin": "http://127.0.0.1:1234",
+      "classification": "approved-local-loopback",
+      "purpose": "Approved W476 Local AI text runtime loopback origin; browser/device proof remains required.",
+      "sources": [
+        "_headers",
+        "assets/js/components/ProviderStatusBadge.js",
+        "assets/js/free-ai-power-page.js",
+        "assets/js/services/LocalRuntimeDetector.js",
+        "assets/js/utils/ai-model-discovery.js",
+        "assets/js/utils/provider-orchestrator.js",
+        "assets/js/workbench-ai.js"
+      ]
+    },
+    {
+      "origin": "http://127.0.0.1:1337",
+      "classification": "approved-local-loopback",
+      "purpose": "Approved W476 Local AI text runtime loopback origin; browser/device proof remains required.",
+      "sources": [
+        "_headers",
+        "assets/js/components/ProviderStatusBadge.js",
+        "assets/js/free-ai-power-page.js",
+        "assets/js/services/LocalRuntimeDetector.js",
+        "assets/js/utils/ai-model-discovery.js",
+        "assets/js/utils/provider-orchestrator.js",
+        "assets/js/workbench-ai.js"
+      ]
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "classification": "legacy-local-literal",
+      "purpose": "Observed local literal outside the reviewed W476 Local AI loopback contract; cleanup or explicit separate adapter review is required.",
+      "sources": [
+        "assets/js/utils/w266-visual-proof-lab.js"
+      ]
+    },
+    {
+      "origin": "http://127.0.0.1:4891",
+      "classification": "legacy-local-literal",
+      "purpose": "Observed local literal outside the reviewed W476 Local AI loopback contract; cleanup or explicit separate adapter review is required.",
+      "sources": [
+        "assets/js/free-ai-power-page.js"
+      ]
+    },
+    {
+      "origin": "http://127.0.0.1:5000",
+      "classification": "legacy-local-literal",
+      "purpose": "Observed local literal outside the reviewed W476 Local AI loopback contract; cleanup or explicit separate adapter review is required.",
+      "sources": [
+        "assets/js/free-ai-power-page.js"
+      ]
+    },
+    {
+      "origin": "http://127.0.0.1:6767",
+      "classification": "approved-local-loopback",
+      "purpose": "Approved W476 Local AI text runtime loopback origin; browser/device proof remains required.",
+      "sources": [
+        "_headers"
+      ]
+    },
+    {
+      "origin": "http://127.0.0.1:8000",
+      "classification": "legacy-local-literal",
+      "purpose": "Observed local literal outside the reviewed W476 Local AI loopback contract; cleanup or explicit separate adapter review is required.",
+      "sources": [
+        "_headers",
+        "assets/js/utils/security-hardening.js"
+      ]
+    },
+    {
+      "origin": "http://127.0.0.1:8080",
+      "classification": "legacy-local-literal",
+      "purpose": "Observed local literal outside the reviewed W476 Local AI loopback contract; cleanup or explicit separate adapter review is required.",
+      "sources": [
+        "assets/js/free-ai-power-page.js"
+      ]
+    },
+    {
+      "origin": "http://127.0.0.1:8188",
+      "classification": "legacy-local-literal",
+      "purpose": "Observed local literal outside the reviewed W476 Local AI loopback contract; cleanup or explicit separate adapter review is required.",
+      "sources": [
+        "_headers",
+        "assets/js/local-ai/comfyui-local-media.js"
+      ]
+    },
+    {
+      "origin": "http://127.0.0.1:8189",
+      "classification": "legacy-local-literal",
+      "purpose": "Observed local literal outside the reviewed W476 Local AI loopback contract; cleanup or explicit separate adapter review is required.",
+      "sources": [
+        "_headers"
+      ]
+    },
+    {
+      "origin": "http://localhost",
+      "classification": "legacy-local-literal",
+      "purpose": "Observed local literal outside the reviewed W476 Local AI loopback contract; cleanup or explicit separate adapter review is required.",
+      "sources": [
+        "404.html"
+      ]
+    },
+    {
+      "origin": "http://localhost:11434",
+      "classification": "approved-local-loopback",
+      "purpose": "Approved W476 Local AI text runtime loopback origin; browser/device proof remains required.",
+      "sources": [
+        "_headers",
+        "assets/js/components/ProviderStatusBadge.js",
+        "assets/js/services/LocalRuntimeDetector.js",
+        "assets/js/utils/ai-model-discovery.js",
+        "assets/js/workbench-ai.js"
+      ]
+    },
+    {
+      "origin": "http://localhost:1234",
+      "classification": "approved-local-loopback",
+      "purpose": "Approved W476 Local AI text runtime loopback origin; browser/device proof remains required.",
+      "sources": [
+        "_headers",
+        "assets/js/components/ProviderStatusBadge.js",
+        "assets/js/services/LocalRuntimeDetector.js",
+        "assets/js/utils/ai-model-discovery.js",
+        "assets/js/workbench-ai.js"
+      ]
+    },
+    {
+      "origin": "http://localhost:1337",
+      "classification": "approved-local-loopback",
+      "purpose": "Approved W476 Local AI text runtime loopback origin; browser/device proof remains required.",
+      "sources": [
+        "_headers",
+        "assets/js/components/ProviderStatusBadge.js",
+        "assets/js/services/LocalRuntimeDetector.js",
+        "assets/js/utils/ai-model-discovery.js",
+        "assets/js/workbench-ai.js"
+      ]
+    },
+    {
+      "origin": "http://localhost:6767",
+      "classification": "approved-local-loopback",
+      "purpose": "Approved W476 Local AI text runtime loopback origin; browser/device proof remains required.",
+      "sources": [
+        "_headers"
+      ]
+    },
+    {
+      "origin": "http://localhost:8000",
+      "classification": "legacy-local-literal",
+      "purpose": "Observed local literal outside the reviewed W476 Local AI loopback contract; cleanup or explicit separate adapter review is required.",
+      "sources": [
+        "_headers"
+      ]
+    },
+    {
+      "origin": "http://localhost:8188",
+      "classification": "legacy-local-literal",
+      "purpose": "Observed local literal outside the reviewed W476 Local AI loopback contract; cleanup or explicit separate adapter review is required.",
+      "sources": [
+        "_headers"
+      ]
+    },
+    {
+      "origin": "http://localhost:8189",
+      "classification": "legacy-local-literal",
+      "purpose": "Observed local literal outside the reviewed W476 Local AI loopback contract; cleanup or explicit separate adapter review is required.",
+      "sources": [
+        "_headers"
+      ]
+    },
+    {
+      "origin": "http://www.w3.org",
+      "classification": "non-network-namespace",
+      "purpose": "Static SVG/XML namespace literal; not a network endpoint.",
+      "sources": [
+        "assets/css/creator-studio.css",
+        "assets/js/nft-engine/engine.js",
+        "assets/js/utils/avatar.js",
+        "assets/js/utils/nft-visuals.js",
+        "assets/vendor/three.core.min.js"
+      ]
+    },
+    {
+      "origin": "https://accounts.google.com",
+      "classification": "reviewed-external",
+      "purpose": "Optional Google OAuth authorization endpoint.",
+      "sources": [
+        "_headers",
+        "assets/js/local-first/eon-google-drive-snapshot-connector.js",
+        "assets/js/utils/social-publisher.js",
+        "functions/_shared/eon-auth.js",
+        "functions/api/auth/google/start.js"
+      ]
+    },
+    {
+      "origin": "https://ai.google.dev",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://aistudio.google.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/free-ai-power-page.js",
+        "assets/js/onboarding-page.js"
+      ]
+    },
+    {
+      "origin": "https://api.anthropic.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/chat/ai-provider-catalog.js",
+        "assets/js/chat/model-policy-router.js",
+        "chat.html"
+      ]
+    },
+    {
+      "origin": "https://api.cerebras.ai",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/chat/ai-provider-catalog.js",
+        "assets/js/utils/ai-model-discovery.js"
+      ]
+    },
+    {
+      "origin": "https://api.cohere.ai",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/ai-model-discovery.js"
+      ]
+    },
+    {
+      "origin": "https://api.cohere.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/chat/ai-provider-catalog.js"
+      ]
+    },
+    {
+      "origin": "https://api.deepseek.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/chat/ai-provider-catalog.js",
+        "assets/js/utils/ai-model-discovery.js"
+      ]
+    },
+    {
+      "origin": "https://api.eonapp.ch",
+      "classification": "first-party",
+      "purpose": "EONAPP first-party origin or API subdomain.",
+      "sources": [
+        "chat.html"
+      ]
+    },
+    {
+      "origin": "https://api.fireworks.ai",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/chat/ai-provider-catalog.js",
+        "assets/js/utils/ai-model-discovery.js"
+      ]
+    },
+    {
+      "origin": "https://api.groq.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/chat/ai-provider-catalog.js",
+        "assets/js/chat/model-policy-router.js",
+        "assets/js/utils/ai-model-discovery.js"
+      ]
+    },
+    {
+      "origin": "https://api.mistral.ai",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/chat/ai-provider-catalog.js",
+        "assets/js/utils/ai-model-discovery.js"
+      ]
+    },
+    {
+      "origin": "https://api.openai.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/chat/ai-provider-catalog.js",
+        "assets/js/chat/model-policy-router.js",
+        "assets/js/utils/ai-model-discovery.js",
+        "chat.html"
+      ]
+    },
+    {
+      "origin": "https://api.perplexity.ai",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/chat/ai-provider-catalog.js",
+        "assets/js/utils/ai-model-discovery.js"
+      ]
+    },
+    {
+      "origin": "https://api.sambanova.ai",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/chat/ai-provider-catalog.js"
+      ]
+    },
+    {
+      "origin": "https://api.telegram.org",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/social-publisher.js"
+      ]
+    },
+    {
+      "origin": "https://api.together.ai",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/free-ai-power-page.js"
+      ]
+    },
+    {
+      "origin": "https://api.together.xyz",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/chat/ai-provider-catalog.js",
+        "assets/js/chat/model-policy-router.js",
+        "assets/js/onboarding-page.js",
+        "assets/js/utils/ai-model-discovery.js"
+      ]
+    },
+    {
+      "origin": "https://api.x.ai",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/chat/ai-provider-catalog.js",
+        "assets/js/utils/ai-model-discovery.js"
+      ]
+    },
+    {
+      "origin": "https://app.slack.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/eon-browser.js"
+      ]
+    },
+    {
+      "origin": "https://app.uniswap.org",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/eon-browser.js"
+      ]
+    },
+    {
+      "origin": "https://ar-io.dev",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/fallback-service.js"
+      ]
+    },
+    {
+      "origin": "https://ar-io.net",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/gateway-fallback.js"
+      ]
+    },
+    {
+      "origin": "https://arweave.live",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/gateway-fallback.js"
+      ]
+    },
+    {
+      "origin": "https://arweave.net",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/fallback-service.js",
+        "assets/js/utils/gateway-fallback.js"
+      ]
+    },
+    {
+      "origin": "https://asana.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://aws.amazon.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://azure.microsoft.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://basecamp.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://bird.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://bitbucket.org",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://bsky.app",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js",
+        "assets/js/utils/eon-browser.js",
+        "assets/js/utils/social-publisher.js"
+      ]
+    },
+    {
+      "origin": "https://buffer.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://build.nvidia.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/free-ai-power-page.js",
+        "assets/js/onboarding-page.js",
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://business.whatsapp.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://calendly.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://cdn.jsdelivr.net",
+      "classification": "reviewed-external",
+      "purpose": "Explicit browser library/font CDN allowlist.",
+      "sources": [
+        "404.html",
+        "_headers",
+        "assets/js/code-maker-page.js"
+      ]
+    },
+    {
+      "origin": "https://cdnjs.cloudflare.com",
+      "classification": "reviewed-external",
+      "purpose": "Explicit browser library CDN allowlist.",
+      "sources": [
+        "404.html",
+        "_headers"
+      ]
+    },
+    {
+      "origin": "https://chat.openai.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/eon-browser.js"
+      ]
+    },
+    {
+      "origin": "https://claude.ai",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/eon-browser.js"
+      ]
+    },
+    {
+      "origin": "https://clickup.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://cloud.cerebras.ai",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/free-ai-power-page.js",
+        "assets/js/onboarding-page.js"
+      ]
+    },
+    {
+      "origin": "https://cloud.google.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://cloud.sambanova.ai",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/free-ai-power-page.js",
+        "assets/js/onboarding-page.js",
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://coda.io",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://cohere.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://coingecko.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/eon-browser.js"
+      ]
+    },
+    {
+      "origin": "https://comfy.org",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/local-ai/local-creator-media-setup.js",
+        "assets/js/utils/local-model-source-registry.js"
+      ]
+    },
+    {
+      "origin": "https://console.anthropic.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/onboarding-page.js"
+      ]
+    },
+    {
+      "origin": "https://console.groq.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/free-ai-power-page.js",
+        "assets/js/onboarding-page.js"
+      ]
+    },
+    {
+      "origin": "https://console.mistral.ai",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/onboarding-page.js"
+      ]
+    },
+    {
+      "origin": "https://console.x.ai",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/onboarding-page.js"
+      ]
+    },
+    {
+      "origin": "https://customer.io",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://dashboard.cohere.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/free-ai-power-page.js"
+      ]
+    },
+    {
+      "origin": "https://dashboard.twitch.tv",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/social-publisher.js"
+      ]
+    },
+    {
+      "origin": "https://dashscope-intl.aliyuncs.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/chat/ai-provider-catalog.js",
+        "assets/js/utils/ai-model-discovery.js"
+      ]
+    },
+    {
+      "origin": "https://deepgram.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://defillama.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/eon-browser.js"
+      ]
+    },
+    {
+      "origin": "https://dev.to",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js",
+        "assets/js/utils/eon-browser.js",
+        "assets/js/utils/social-publisher.js"
+      ]
+    },
+    {
+      "origin": "https://developer.mozilla.org",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://developer.x.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://developers.cloudflare.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://developers.pinterest.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://developers.tiktok.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://discord.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js",
+        "assets/js/utils/eon-browser.js",
+        "assets/js/utils/social-publisher.js"
+      ]
+    },
+    {
+      "origin": "https://discordapp.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/social-publisher.js"
+      ]
+    },
+    {
+      "origin": "https://docs.anthropic.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/onboarding-page.js"
+      ]
+    },
+    {
+      "origin": "https://docs.api.nvidia.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/onboarding-page.js"
+      ]
+    },
+    {
+      "origin": "https://docs.cohere.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/free-ai-power-page.js"
+      ]
+    },
+    {
+      "origin": "https://docs.fireworks.ai",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/free-ai-power-page.js",
+        "assets/js/onboarding-page.js"
+      ]
+    },
+    {
+      "origin": "https://docs.google.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/eon-browser.js"
+      ]
+    },
+    {
+      "origin": "https://docs.mistral.ai",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/onboarding-page.js"
+      ]
+    },
+    {
+      "origin": "https://docs.perplexity.ai",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/onboarding-page.js"
+      ]
+    },
+    {
+      "origin": "https://docs.qwencloud.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/onboarding-page.js"
+      ]
+    },
+    {
+      "origin": "https://docs.sambanova.ai",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/free-ai-power-page.js",
+        "assets/js/onboarding-page.js"
+      ]
+    },
+    {
+      "origin": "https://docs.together.ai",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/onboarding-page.js"
+      ]
+    },
+    {
+      "origin": "https://docs.together.xyz",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/free-ai-power-page.js"
+      ]
+    },
+    {
+      "origin": "https://docs.x.ai",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/onboarding-page.js"
+      ]
+    },
+    {
+      "origin": "https://dribbble.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/social-publisher.js"
+      ]
+    },
+    {
+      "origin": "https://drive.google.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/cloud-backup-connectors.js"
+      ]
+    },
+    {
+      "origin": "https://duckduckgo.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/eon-browser.js"
+      ]
+    },
+    {
+      "origin": "https://elevenlabs.io",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://en.wikipedia.org",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/tool-registry.js"
+      ]
+    },
+    {
+      "origin": "https://eon.creditznft.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/security-hardening.js"
+      ]
+    },
+    {
+      "origin": "https://eon.hub",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/local-first/eon-workspace-capsule-page.js"
+      ]
+    },
+    {
+      "origin": "https://eonapp.ch",
+      "classification": "first-party",
+      "purpose": "EONAPP first-party origin or API subdomain.",
+      "sources": [
+        "404.html",
+        "_headers",
+        "about.html",
+        "apps.html",
+        "archive.html",
+        "assets/js/chat-page-deferred.js",
+        "assets/js/city/eon-city-route-canonicalizer.js",
+        "assets/js/eon-browser-page.js",
+        "assets/js/games/challenge-links.js",
+        "assets/js/launch/eon-launch-master-plan.js",
+        "assets/js/local-first/eon-workspace-capsule-page.js",
+        "assets/js/share/eon-share-pack.js",
+        "assets/js/tools-page-deferred.js",
+        "assets/js/tools/defs/budget-burndown.js",
+        "assets/js/utils/agent-executor.js",
+        "assets/js/utils/ai-model-discovery.js",
+        "assets/js/utils/automation-provider-registry.js",
+        "assets/js/utils/deploy-proof-plan.js",
+        "assets/js/utils/eon-share-sheet.js",
+        "assets/js/utils/fallback-service.js",
+        "assets/js/utils/gateway-fallback.js",
+        "assets/js/utils/privacy-telemetry.js",
+        "assets/js/utils/referral-par.js",
+        "assets/js/utils/security-hardening.js",
+        "assets/js/utils/share-attribution.js",
+        "assets/js/utils/signed-share-link.js",
+        "assets/js/utils/support-tools-footer-proof.js",
+        "assets/js/utils/telegram-growth-rewards.js",
+        "assets/js/utils/user-approved-social-scheduler.js",
+        "automations.html",
+        "billing.html",
+        "capsule.html",
+        "chat.html",
+        "eon-keys.html",
+        "eoncity-3d.html",
+        "eoncity-lite.html",
+        "eoncity-play.html",
+        "eoncity.html",
+        "forge.html",
+        "functions/csp-report.js",
+        "help.html",
+        "index.html",
+        "install.html",
+        "legal.html",
+        "library.html",
+        "local-ai.html",
+        "market.html",
+        "offline.html",
+        "privacy.html",
+        "profile.html",
+        "projects.html",
+        "realm-studio.html",
+        "referral.html",
+        "rewards.html",
+        "settings.html",
+        "support.html",
+        "telegram.html",
+        "terms.html",
+        "trade.html",
+        "vault-backup.html",
+        "vault.html",
+        "workspace.html"
+      ]
+    },
+    {
+      "origin": "https://eonapp.invalid",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/account/eon-identity-onboarding.js",
+        "assets/js/capabilities/capability-truth-registry.js",
+        "assets/js/chat/eonbot-action-cards.js",
+        "assets/js/chat/eonbot-action-proposals.js",
+        "assets/js/chat/eonbot-action-receipts.js",
+        "assets/js/chat/eonbot-command-hub.js",
+        "assets/js/city/city-mode-transition.js",
+        "assets/js/local-first/eon-local-action-seal.js",
+        "functions/_shared/eon-auth.js"
+      ]
+    },
+    {
+      "origin": "https://eonapp.local",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/qr-code.js"
+      ]
+    },
+    {
+      "origin": "https://etherscan.io",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/eon-browser.js"
+      ]
+    },
+    {
+      "origin": "https://evernote.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://example.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/share/eon-remix-card-workspace.js",
+        "assets/js/share/eon-share-pack-workspace.js"
+      ]
+    },
+    {
+      "origin": "https://fal.ai",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://figma.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/eon-browser.js"
+      ]
+    },
+    {
+      "origin": "https://firebase.google.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://fireworks.ai",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/free-ai-power-page.js",
+        "assets/js/onboarding-page.js",
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://front.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://future-reviewed-eonapp-origin.invalid",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/local-first/eon-workspace-capsule-page.js"
+      ]
+    },
+    {
+      "origin": "https://gateway.irys.xyz",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/fallback-service.js"
+      ]
+    },
+    {
+      "origin": "https://gemini.google.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/eon-browser.js"
+      ]
+    },
+    {
+      "origin": "https://generativelanguage.googleapis.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/chat/ai-provider-catalog.js",
+        "assets/js/chat/model-policy-router.js",
+        "assets/js/utils/ai-model-discovery.js",
+        "chat.html"
+      ]
+    },
+    {
+      "origin": "https://ghost.org",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js",
+        "assets/js/utils/social-publisher.js"
+      ]
+    },
+    {
+      "origin": "https://gist.github.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/social-publisher.js"
+      ]
+    },
+    {
+      "origin": "https://github.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js",
+        "assets/js/utils/eon-browser.js",
+        "assets/js/utils/pq-hybrid-kem.js",
+        "assets/js/utils/pq-signing.js",
+        "assets/js/utils/social-publisher.js"
+      ]
+    },
+    {
+      "origin": "https://gitlab.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://graphql.org",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://groq.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://hooks.slack.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/social-publisher.js"
+      ]
+    },
+    {
+      "origin": "https://hub.eonapp.ch",
+      "classification": "first-party",
+      "purpose": "EONAPP first-party origin or API subdomain.",
+      "sources": [
+        "assets/js/utils/gateway-fallback.js"
+      ]
+    },
+    {
+      "origin": "https://huggingface.co",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/free-ai-power-page.js",
+        "assets/js/onboarding-page.js",
+        "assets/js/utils/automation-provider-registry.js",
+        "assets/js/utils/local-model-source-registry.js"
+      ]
+    },
+    {
+      "origin": "https://ifttt.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://image.pollinations.ai",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/agent-executor.js"
+      ]
+    },
+    {
+      "origin": "https://inference-docs.cerebras.ai",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/free-ai-power-page.js",
+        "assets/js/onboarding-page.js"
+      ]
+    },
+    {
+      "origin": "https://integrate.api.nvidia.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/chat/ai-provider-catalog.js"
+      ]
+    },
+    {
+      "origin": "https://jan.ai",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/free-ai-power-page.js",
+        "assets/js/onboarding-page.js",
+        "assets/js/services/LocalRuntimeDetector.js",
+        "assets/js/utils/automation-provider-registry.js",
+        "assets/js/utils/local-model-source-registry.js"
+      ]
+    },
+    {
+      "origin": "https://jcgt.org",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/vendor/three.module.min.js"
+      ]
+    },
+    {
+      "origin": "https://jina.ai",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://joinmastodon.org",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://kit.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://learn.microsoft.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://linear.app",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://linkedin.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/eon-browser.js"
+      ]
+    },
+    {
+      "origin": "https://live.dodopayments.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/billing/eon-dodo-live-runtime.js"
+      ]
+    },
+    {
+      "origin": "https://lmstudio.ai",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/free-ai-power-page.js",
+        "assets/js/onboarding-page.js",
+        "assets/js/services/LocalRuntimeDetector.js",
+        "assets/js/utils/automation-provider-registry.js",
+        "assets/js/utils/local-model-source-registry.js"
+      ]
+    },
+    {
+      "origin": "https://lucid.co",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://mail.google.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/eon-browser.js"
+      ]
+    },
+    {
+      "origin": "https://mailchimp.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://marketingplatform.google.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://mastodon.social",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/eon-browser.js"
+      ]
+    },
+    {
+      "origin": "https://medium.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js",
+        "assets/js/utils/eon-browser.js",
+        "assets/js/utils/social-publisher.js"
+      ]
+    },
+    {
+      "origin": "https://midjourney.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/eon-browser.js"
+      ]
+    },
+    {
+      "origin": "https://miro.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://mistral.ai",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://mixpanel.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://modelcontextprotocol.io",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://monday.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://n8n.io",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://news.ycombinator.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/eon-browser.js"
+      ]
+    },
+    {
+      "origin": "https://notion.so",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/eon-browser.js"
+      ]
+    },
+    {
+      "origin": "https://nvlpubs.nist.gov",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/pq-hybrid-kem.js",
+        "assets/js/utils/pq-signing.js"
+      ]
+    },
+    {
+      "origin": "https://oauth2.googleapis.com",
+      "classification": "reviewed-external",
+      "purpose": "Server-side Google OAuth token exchange endpoint.",
+      "sources": [
+        "functions/_shared/eon-auth.js"
+      ]
+    },
+    {
+      "origin": "https://ollama.ai",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/free-ai-power-page.js",
+        "assets/js/services/LocalRuntimeDetector.js"
+      ]
+    },
+    {
+      "origin": "https://ollama.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/local-ai/local-ai-catalog.js",
+        "assets/js/local-ai/local-ai-page.js",
+        "assets/js/onboarding-page.js",
+        "assets/js/utils/automation-provider-registry.js",
+        "assets/js/utils/local-model-source-registry.js"
+      ]
+    },
+    {
+      "origin": "https://onedrive.live.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/cloud-backup-connectors.js"
+      ]
+    },
+    {
+      "origin": "https://openai.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://openrouter.ai",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/chat/ai-provider-catalog.js",
+        "assets/js/chat/model-policy-router.js",
+        "assets/js/free-ai-power-page.js",
+        "assets/js/onboarding-page.js",
+        "assets/js/utils/ai-model-discovery.js",
+        "assets/js/utils/automation-provider-registry.js",
+        "chat.html"
+      ]
+    },
+    {
+      "origin": "https://opensea.io",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/eon-browser.js"
+      ]
+    },
+    {
+      "origin": "https://perplexity.ai",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/eon-browser.js"
+      ]
+    },
+    {
+      "origin": "https://pinterest.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/share.js"
+      ]
+    },
+    {
+      "origin": "https://pipedream.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://platform.deepseek.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/free-ai-power-page.js",
+        "assets/js/onboarding-page.js"
+      ]
+    },
+    {
+      "origin": "https://platform.openai.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/onboarding-page.js",
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://polygon-mainnet.g.alchemy.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/tool-registry.js"
+      ]
+    },
+    {
+      "origin": "https://polygon-rpc.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/polygon-verify.js",
+        "assets/js/utils/tool-registry.js"
+      ]
+    },
+    {
+      "origin": "https://postmarkapp.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://producthunt.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/eon-browser.js"
+      ]
+    },
+    {
+      "origin": "https://publisher.example",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/local-ai/local-ai-page.js"
+      ]
+    },
+    {
+      "origin": "https://qwen.ai",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://r.jina.ai",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/eon-browser-page.js",
+        "assets/js/utils/tool-registry.js"
+      ]
+    },
+    {
+      "origin": "https://reddit.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/eon-browser.js",
+        "assets/js/utils/social-publisher.js"
+      ]
+    },
+    {
+      "origin": "https://region1.google-analytics.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "about.html",
+        "billing.html",
+        "privacy.html",
+        "support.html"
+      ]
+    },
+    {
+      "origin": "https://replicate.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://resend.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://router.huggingface.co",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/chat/ai-provider-catalog.js"
+      ]
+    },
+    {
+      "origin": "https://rpc-mainnet.matic.network",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/polygon-verify.js"
+      ]
+    },
+    {
+      "origin": "https://rpc-mainnet.maticvigil.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/polygon-verify.js"
+      ]
+    },
+    {
+      "origin": "https://s.jina.ai",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/tool-registry.js"
+      ]
+    },
+    {
+      "origin": "https://schema.org",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "404.html",
+        "about.html",
+        "archive.html",
+        "assets/js/chat-page-deferred.js",
+        "assets/js/tools-page-deferred.js",
+        "billing.html",
+        "chat.html",
+        "help.html",
+        "index.html",
+        "install.html",
+        "legal.html",
+        "offline.html",
+        "privacy.html",
+        "settings.html",
+        "support.html",
+        "terms.html",
+        "vault.html"
+      ]
+    },
+    {
+      "origin": "https://segment.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://sendgrid.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://sentry.io",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://slack.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://stability.ai",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://studio.youtube.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/social-publisher.js"
+      ]
+    },
+    {
+      "origin": "https://substack.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js",
+        "assets/js/utils/social-publisher.js"
+      ]
+    },
+    {
+      "origin": "https://supabase.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://t.me",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/social/social-platform-adapters.js",
+        "assets/js/utils/button-truth-registry.js",
+        "assets/js/utils/support-tools-footer-proof.js",
+        "assets/js/utils/telegram-growth-rewards.js",
+        "assets/js/utils/user-approved-social-scheduler.js",
+        "telegram.html"
+      ]
+    },
+    {
+      "origin": "https://tally.so",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://tasks.google.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://telegram.org",
+      "classification": "reviewed-external",
+      "purpose": "Telegram Mini App script host.",
+      "sources": [
+        "_headers",
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://todoist.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://tradingview.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/eon-browser.js"
+      ]
+    },
+    {
+      "origin": "https://tray.ai",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://trello.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js",
+        "assets/js/utils/eon-browser.js"
+      ]
+    },
+    {
+      "origin": "https://twitch.tv",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/eon-browser.js"
+      ]
+    },
+    {
+      "origin": "https://twitter.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/eon-browser.js"
+      ]
+    },
+    {
+      "origin": "https://unpkg.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/mp4-export.js"
+      ]
+    },
+    {
+      "origin": "https://vercel.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://vimeo.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js",
+        "assets/js/utils/eon-browser.js",
+        "assets/js/utils/social-publisher.js"
+      ]
+    },
+    {
+      "origin": "https://wa.me",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/social/social-platform-adapters.js",
+        "assets/js/utils/user-approved-social-scheduler.js"
+      ]
+    },
+    {
+      "origin": "https://web.telegram.org",
+      "classification": "reviewed-external",
+      "purpose": "Telegram Web embedding allowlist.",
+      "sources": [
+        "_headers",
+        "assets/js/utils/eon-browser.js"
+      ]
+    },
+    {
+      "origin": "https://webflow.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://webk.telegram.org",
+      "classification": "reviewed-external",
+      "purpose": "Telegram Web embedding allowlist.",
+      "sources": [
+        "_headers"
+      ]
+    },
+    {
+      "origin": "https://webz.telegram.org",
+      "classification": "reviewed-external",
+      "purpose": "Telegram Web embedding allowlist.",
+      "sources": [
+        "_headers"
+      ]
+    },
+    {
+      "origin": "https://wikipedia.org",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/eon-browser.js"
+      ]
+    },
+    {
+      "origin": "https://wordpress.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/social-publisher.js"
+      ]
+    },
+    {
+      "origin": "https://wordpress.org",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://workspace.google.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.activepieces.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.ai21.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.airtable.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.anthropic.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.artstation.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/social-publisher.js"
+      ]
+    },
+    {
+      "origin": "https://www.assemblyai.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.atlassian.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.bamboohr.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.behance.net",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/social-publisher.js"
+      ]
+    },
+    {
+      "origin": "https://www.box.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.brevo.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.canva.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.cerebras.ai",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.cloudflare.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.comfy.org",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/local-ai/comfyui-image-lab.js"
+      ]
+    },
+    {
+      "origin": "https://www.contentful.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.datadoghq.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.deepseek.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.docusign.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.dropbox.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js",
+        "assets/js/utils/cloud-backup-connectors.js"
+      ]
+    },
+    {
+      "origin": "https://www.facebook.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/social/social-platform-adapters.js",
+        "assets/js/utils/automation-provider-registry.js",
+        "assets/js/utils/social-publisher.js",
+        "assets/js/utils/user-approved-social-scheduler.js"
+      ]
+    },
+    {
+      "origin": "https://www.figma.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.freshworks.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.google-analytics.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "about.html",
+        "billing.html",
+        "privacy.html",
+        "support.html"
+      ]
+    },
+    {
+      "origin": "https://www.google.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/eon-browser-page.js",
+        "assets/js/utils/eon-browser.js",
+        "assets/js/utils/social-publisher.js"
+      ]
+    },
+    {
+      "origin": "https://www.googleapis.com",
+      "classification": "reviewed-external",
+      "purpose": "Server-side Google public JWKS endpoint.",
+      "sources": [
+        "_headers",
+        "assets/js/local-first/eon-google-drive-backup-foundation.js",
+        "assets/js/local-first/eon-google-drive-snapshot-connector.js",
+        "functions/_shared/eon-auth.js"
+      ]
+    },
+    {
+      "origin": "https://www.googletagmanager.com",
+      "classification": "reviewed-external",
+      "purpose": "Optional Google Analytics script host; network proof remains required.",
+      "sources": [
+        "404.html",
+        "_headers",
+        "about.html",
+        "archive.html",
+        "assets/js/utils/analytics-bridge.js",
+        "billing.html",
+        "legal.html",
+        "privacy.html",
+        "support.html",
+        "terms.html"
+      ]
+    },
+    {
+      "origin": "https://www.gorgias.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.helpscout.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.hootsuite.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.hubspot.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.icloud.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/cloud-backup-connectors.js"
+      ]
+    },
+    {
+      "origin": "https://www.instagram.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/social-publisher.js"
+      ]
+    },
+    {
+      "origin": "https://www.intercom.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.jotform.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.linkedin.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/social/social-platform-adapters.js",
+        "assets/js/utils/automation-provider-registry.js",
+        "assets/js/utils/social-publisher.js",
+        "assets/js/utils/user-approved-social-scheduler.js"
+      ]
+    },
+    {
+      "origin": "https://www.mailgun.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.make.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.microsoft.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.mongodb.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.mysql.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.netlify.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.notion.so",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.onenote.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.pagerduty.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.pandadoc.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.perplexity.ai",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.pinterest.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/social-publisher.js"
+      ]
+    },
+    {
+      "origin": "https://www.pipedrive.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.postgresql.org",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.reddit.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/social/social-platform-adapters.js",
+        "assets/js/utils/automation-provider-registry.js",
+        "assets/js/utils/user-approved-social-scheduler.js"
+      ]
+    },
+    {
+      "origin": "https://www.ringcentral.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.rssboard.org",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.salesforce.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.sanity.io",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.smartsheet.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.snowflake.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.threads.net",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/share.js",
+        "assets/js/utils/social-publisher.js"
+      ]
+    },
+    {
+      "origin": "https://www.tiktok.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/social-publisher.js"
+      ]
+    },
+    {
+      "origin": "https://www.together.ai",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.twilio.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.typeform.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.voyageai.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.webex.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.workato.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.workday.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.youtube.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.zendesk.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://www.zoho.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://x.ai",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://x.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/social/social-platform-adapters.js",
+        "assets/js/utils/social-publisher.js",
+        "assets/js/utils/support-tools-footer-proof.js",
+        "assets/js/utils/user-approved-social-scheduler.js"
+      ]
+    },
+    {
+      "origin": "https://yourblog.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/social-publisher.js"
+      ]
+    },
+    {
+      "origin": "https://youtube.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/eon-browser.js"
+      ]
+    },
+    {
+      "origin": "https://zapier.com",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    },
+    {
+      "origin": "https://zoom.us",
+      "classification": "unreviewed-observed-literal",
+      "purpose": "Observed in active source but not yet an approved runtime origin. It blocks release approval until route/runtime and browser-network review classify or remove it.",
+      "sources": [
+        "assets/js/utils/automation-provider-registry.js"
+      ]
+    }
+  ],
+  "broadCspSchemes": [
+    "connect-src",
+    "frame-src",
+    "img-src"
+  ],
+  "unreviewedOriginCount": 259,
+  "legacyLocalLiteralCount": 13,
+  "releaseBoundary": "A static inventory is not production network proof. Broad CSP https: scheme allowances, unreviewed observed literals and legacy local literals require W476-B/W477 browser-network and cleanup review."
+}

@@ -1,0 +1,60 @@
+/* KPI Token Dashboard — extracted from inline styles */
+
+body[data-page-type="kpi-token-dashboard"] {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #e2e8f0;
+}
+
+.kpi-token-dash .page-title {
+  font-size: 32px;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #0fe9a8 0%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.kpi-token-dash .page-subtitle {
+  color: #94a3b8;
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+
+.kpi-token-dash .view-toggle {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.kpi-token-dash .view-btn {
+  background: rgba(15, 233, 168, 0.1);
+  border: 1px solid rgba(15, 233, 168, 0.3);
+  color: #0fe9a8;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.kpi-token-dash .view-btn:hover,
+.kpi-token-dash .view-btn.active {
+  background: linear-gradient(135deg, #0fe9a8 0%, #06b6d4 100%);
+  color: #0f172a;
+  border-color: transparent;
+}
+
+.kpi-token-dash .main-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .kpi-token-dash .view-toggle {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .kpi-token-dash .page-title {
+    font-size: 24px;
+  }
+}

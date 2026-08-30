@@ -1,0 +1,7 @@
+gate,decision,status,blocking_reason
+Implementation waves,GO,38/38,Source programme complete
+Source boundary,GO,PASS,Zero two-way implementation imports
+Source regression,GO,PASS,Maintained runnable suite required
+External certification,NO-GO,PENDING,V01-V10 evidence incomplete
+Preview deployment,NO-GO,PENDING,Exact built candidate and rollback rehearsal required
+Production deployment,NO-GO,PENDING,Explicit owner authorization and seven-day stabilization required

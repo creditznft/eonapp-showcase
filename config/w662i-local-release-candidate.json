@@ -1,0 +1,70 @@
+{
+  "schema": "eonapp.w662i.local-release-candidate.2026-07-23.v1",
+  "generatedAt": "2026-07-23T14:20:29.589Z",
+  "authority": {
+    "localRepositoryPath": "/mnt/data/eonapp_w662_release_work",
+    "localBranch": "local/w662-9.5-reconciliation",
+    "localBaselineTag": "w662-local-baseline-0c478804",
+    "upstreamLineageCommit": "ac81b7b748590ae9819930c0cf1e3081aaf35043",
+    "productionSourceCommit": "063552ccc72b21cb1b8c73512039d29d4dff58cf",
+    "productionDeployment": "57758b16-f1a9-476c-855b-5d3de8f1444c",
+    "githubChangedByLocalCandidate": true,
+    "previewChangedByLocalCandidate": false,
+    "productionChangedByLocalCandidate": false,
+    "githubCandidateBranch": "agent/w662-nexus-city-reconciliation"
+  },
+  "programme": {
+    "W662A": "source-and-automated-gate-complete",
+    "W662B": "source-and-automated-gate-complete-human-proof-required",
+    "W662C": "source-and-automated-gate-complete-human-proof-required",
+    "W662D": "source-and-automated-gate-complete-human-proof-required",
+    "W662E": "source-and-automated-gate-complete-human-proof-required",
+    "W662F": "source-and-automated-gate-complete-human-proof-required",
+    "W662G": "source-and-automated-gate-complete-human-proof-required",
+    "W662H": "source-and-automated-gate-complete-human-proof-required",
+    "W662I": "immutable-source-build-certified-preview-pending"
+  },
+  "verification": {
+    "focusedRegression": {
+      "tests": 66,
+      "passed": 66,
+      "failed": 0
+    },
+    "maintainedSourceSuite": {
+      "maintainedFiles": 334,
+      "passedFiles": 334,
+      "dependencyBlockedFiles": 0,
+      "genuineFailedFiles": 0
+    },
+    "ledgerGate": "pass-31-components",
+    "castGate": "pass-15-assets-30-variants-39877452-bytes",
+    "wholeAppGate": "pass-17-findings",
+    "secretScan": "pass-4234-text-files",
+    "securityPrivacyAbuseGate": "pass-21-of-21",
+    "currentContractAlignment": "pass-17-of-17",
+    "productTruthGate": "evidence-blocked-two-external-launch-board-files",
+    "npmInstall": "pass-exact-lockfile-node-22-artifact-free-runner",
+    "fullDependencySuite": "pass-334-of-334-maintained-files",
+    "productionBuild": "pass-permanent-predeploy-smoke-site-audit",
+    "browserDeviceMatrix": "not-run-authenticated-preview-required",
+    "ownerAcceptance": "not-requested-yet",
+    "buildRun": "30015088427"
+  },
+  "dependencyBlockedFiles": [],
+  "authorization": {
+    "localSourceCandidateReady": true,
+    "dependencyRestoredBuildRequired": false,
+    "immutablePreviewRequired": true,
+    "authenticatedBrowserMatrixRequired": true,
+    "ownerAcceptanceRequired": true,
+    "mergeAuthorized": false,
+    "previewAuthorized": false,
+    "productionAuthorized": false,
+    "ninePointFiveClaimAuthorized": false
+  },
+  "nextActions": [
+    "Deploy only to a governed immutable Preview; do not merge or change production.",
+    "Capture the authenticated desktop, mobile, controller, City, Expanse, Realm, audio and round-trip human-proof matrix.",
+    "Request owner acceptance before any merge or production action."
+  ]
+}

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <script src="/assets/js/eon-theme-bootstrap.js?release=w722-2026-07-27"></script>
+  <meta name="robots" content="index, follow" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta property="og:site_name" content="EONAPP" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="EONBOT Chat — EONAPP" />
+  <meta property="og:description" content="One continuous EONBOT conversation for planning, creating and continuing real work." />
+  <meta property="og:url" content="https://eonapp.ch/chat" />
+  <meta property="og:image" content="https://eonapp.ch/assets/media/social/eonapp-home-1200x630-social-v1.png?v=social-v1" />
+  <meta property="og:image:secure_url" content="https://eonapp.ch/assets/media/social/eonapp-home-1200x630-social-v1.png?v=social-v1" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="EONBOT Chat — EONAPP social preview" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="EONBOT Chat — EONAPP" />
+  <meta name="twitter:description" content="One continuous EONBOT conversation for planning, creating and continuing real work." />
+  <meta name="twitter:image" content="https://eonapp.ch/assets/media/social/eonapp-home-1200x630-social-v1.png?v=social-v1" />
+  <meta name="twitter:image:alt" content="EONBOT Chat — EONAPP social preview" />
+  <meta name="eon:social-square" content="https://eonapp.ch/assets/media/social/eonapp-home-1080x1080-social-v1.png?v=social-v1" />
+<title>Chat — EONAPP.ch</title>
+  <meta name="description" content="Talk to EONBOT with tested local runtimes or securely configured provider connections, while keeping a deterministic guide fallback for tools and Vault-safe setup." />
+  <link rel="canonical" href="https://eonapp.ch/chat" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/favicon.ico" />
+  <link rel="preconnect" href="https://api.openai.com" crossorigin />
+  <link rel="preconnect" href="https://openrouter.ai" crossorigin />
+  <link rel="preconnect" href="https://api.anthropic.com" crossorigin />
+  <link rel="preconnect" href="https://generativelanguage.googleapis.com" crossorigin />
+  <link rel="preconnect" href="https://api.eonapp.ch" crossorigin />
+  <link rel="dns-prefetch" href="//api.openai.com" />
+  <link rel="dns-prefetch" href="//openrouter.ai" />
+  <link rel="dns-prefetch" href="//api.anthropic.com" />
+  <link rel="dns-prefetch" href="//generativelanguage.googleapis.com" />
+  <link rel="dns-prefetch" href="//api.eonapp.ch" />
+  <link rel="preload" href="/assets/css/base.css" as="style" />
+  <link rel="preload" href="/assets/css/layout.css" as="style" />
+  <link rel="preload" href="/assets/css/components.css" as="style" />
+  <link rel="preload" href="/assets/css/chat.css" as="style" />
+  <style>
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      padding: .6rem 1.25rem;
+      border-radius: 1rem;
+      font-weight: 600;
+      font-size: .95rem;
+      border: 2px solid transparent;
+      text-decoration: none;
+      box-sizing: border-box;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      color: #fff;
+    }
+    .btn-outline {
+      border-color: rgba(148, 163, 184, .24);
+      color: #e2e8f0;
+      background: transparent;
+    }
+    .btn-sm {
+      padding: .35rem .8rem;
+      font-size: .82rem;
+    }
+    .page-shell-pending .chat-container {
+      visibility: hidden;
+    }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(9, 13, 26, 0.97);
+      border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+    }
+    .header-inner {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) minmax(24rem, 30rem);
+      align-items: center;
+      min-height: 124px;
+      gap: 1rem;
+    }
+    .nav {
+      display: flex;
+      gap: 1rem;
+      min-width: 0;
+      justify-content: center;
+      flex-wrap: nowrap;
+      white-space: nowrap;
+      align-items: center;
+    }
+    .nav a { white-space: nowrap; }
+    .shell-utility-rail {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: .45rem;
+      min-width: 30rem;
+      flex-wrap: nowrap;
+    }
+    .sub-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 1.5rem;
+      min-width: 5.5rem;
+    }
+    .shell-lang-picker {
+      min-width: 15rem;
+      justify-content: flex-start;
+    }
+    .shell-lang-picker .shell-lang-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.1rem;
+      flex: 0 0 1.1rem;
+    }
+    .shell-lang-picker .shell-lang-label {
+      font-size: .82rem;
+      font-weight: 600;
+      color: #cbd5e1;
+      white-space: nowrap;
+    }
+    .shell-lang-picker .shell-lang-select {
+      min-width: 8.5rem;
+      min-height: 1.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      background: rgba(15, 23, 42, 0.92);
+      color: #e2e8f0;
+      padding: .2rem .55rem;
+      font: inherit;
+    }
+    body[data-page-type="chat"] {
+      display: flex;
+      flex-direction: column;
+      min-height: 100dvh;
+      margin: 0;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+    body[data-page-type="chat"] .site-header { flex-shrink: 0; }
+    .chat-page-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: visible;
+      min-height: 0;
+    }
+    .chat-container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 720px;
+      min-height: 36rem;
+      margin: 0 auto;
+      flex: 1;
+      height: 100%;
+    }
+    .chat-inner-header {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      padding: .875rem 1.25rem;
+      border-bottom: 1px solid rgba(148, 163, 184, .18);
+      flex-shrink: 0;
+      min-height: 4.75rem;
+    }
+    .chat-controls-panel {
+      padding: .9rem 1.25rem;
+      border-bottom: 1px solid rgba(148, 163, 184, .18);
+      flex-shrink: 0;
+      height: 28rem;
+      min-height: 28rem;
+      overflow: auto;
+    }
+    .chat-control-grid {
+      display: grid;
+      gap: .75rem;
+      min-height: 22rem;
+    }
+    .chat-control-card {
+      min-height: 12rem;
+      border: 1px solid rgba(148, 163, 184, .16);
+      border-radius: .9rem;
+      padding: .8rem;
+    }
+    @media (max-width: 720px) {
+    }
+  </style>
+  <link rel="stylesheet" href="/assets/css/base.css" />
+  <link rel="stylesheet" href="/assets/css/layout.css" />
+  <link rel="stylesheet" href="/assets/css/components.css" />
+  <link rel="stylesheet" href="/assets/css/chat.css" />
+  <link rel="stylesheet" href="/assets/css/eon-app-shell.css" />
+  <link rel="stylesheet" href="/assets/css/eon-chat-first.css" />
+  <link rel="stylesheet" href="/assets/css/eon-continue.css" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <script type="module" src="/assets/js/localStorage-shim.js"></script>
+  <!-- EONBOT AI Operator schema -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"EONBOT AI Operator","applicationCategory":"AIApplication","operatingSystem":"Web","url":"https://eonapp.ch/chat","description":"EONBOT is the EONAPP AI operator for chat, local AI discovery, voice input, and Workspace routing."}</script>
+</head>
+<body data-page-type="chat" data-eon-app-shell="1" data-eon-app-page="chat" class="page-shell-pending" data-eon-analytics="off">
+<a href="#main" class="skip-to-content" data-runtime-i18n="Skip to main content">Skip to main content</a>
+
+
+
+<main id="main" class="chat-page-main">
+  <h1 class="eon-chat-page-title">EONBOT Chat</h1>
+
+
+
+  <div class="chat-container">
+
+    <!-- Inner chat header -->
+    <div class="chat-inner-header">
+      <div class="chat-bot-avatar-large">🤖</div>
+      <div class="chat-inner-header-info">
+        <strong id="chat-runtime-name">EONBOT</strong>
+        <div class="chat-status-line">
+          <div class="chat-status-dot"></div>
+          <span id="chat-runtime-label" data-runtime-i18n="Ready to help">Ready to help</span>
+        </div>
+      </div>
+      <div id="chat-provider-badge" class="di-provider-badge"></div>
+      <a class="chat-model-settings-link" href="/local-ai">Model &amp; local AI settings</a>
+      <button type="button" id="chat-voice-toggle" class="chat-voice-btn" aria-label="Use Voice — have a live conversation with EONBOT" title="Use Voice — have a live conversation with EONBOT" data-runtime-i18n-aria-label="Use Voice — have a live conversation with EONBOT">🎤</button>
+      <button type="button" id="chat-voice-mode" class="chat-voice-btn" aria-label="Toggle continuous voice mode" data-runtime-i18n-aria-label="Toggle continuous voice mode" aria-pressed="false">∞</button>
+      <button type="button" id="chat-tts-toggle" class="chat-voice-btn" aria-label="Toggle voice output" data-runtime-i18n-aria-label="Toggle voice output" aria-pressed="true">🔊</button>
+    </div>
+
+    <div id="eonbot-emotion-strip" class="eonbot-emotion-strip" data-emotion-state="ready" aria-live="polite" aria-label="EONBOT operational mood">
+      <div class="eonbot-emotion-main">
+        <span id="eonbot-emotion-emoji" class="eonbot-emotion-emoji" aria-hidden="true">🤖</span>
+        <div>
+          <strong id="eonbot-emotion-label">Ready</strong>
+          <span id="eonbot-emotion-detail">EONBOT is awake and ready to help.</span>
+        </div>
+      </div>
+      <div class="eonbot-emotion-chips" aria-label="EONBOT runtime status">
+        <span id="eonbot-voice-chip" class="eonbot-status-chip">🎙️ Voice: checking</span>
+        <span id="eonbot-model-chip" class="eonbot-status-chip">🧠 Models: scanning</span>
+        <span id="eonbot-mission-chip" class="eonbot-status-chip">✨ Mission: ready</span>
+      </div>
+    </div>
+
+
+    <section class="chat-controls-panel" id="chat-controls" data-ready="0" aria-label="AI runtime controls" data-runtime-i18n-aria-label="AI runtime controls"></section>
+
+    <section class="eon-chat-account-onboarding" data-eon-chat-account-onboarding aria-label="Guest mode, optional Google Login and encrypted Capsule">
+      <div><p class="eon-chat-account-kicker">Getting started</p><h2>Use EONAPP as a guest. Add Google Login only when you want account access.</h2><p>Google Login can later help with account access and verified purchases, but it never backs up local Chat, Vault, projects, files, Realm setup, City progress, provider keys or settings.</p></div>
+      <div class="eon-chat-account-actions"><a href="/profile?returnTo=%2Fchat#eon-profile-account-foundation">Account &amp; backup</a><a href="/capsule">Create encrypted Capsule</a></div>
+    </section>
+
+    <!-- Messages -->
+    <div class="chat-messages" id="chat-messages" role="log" aria-live="polite" aria-label="Chat messages" data-runtime-i18n-aria-label="Chat messages"><p class="eon-chat-welcome">What can I help you work on?</p></div>
+
+    <!-- Input bar -->
+    <div class="chat-input-bar">
+      <button type="button" id="chat-voice-send" class="chat-voice-btn" aria-label="Dictate — turn speech into editable text" title="Dictate — turn speech into editable text" data-runtime-i18n-aria-label="Dictate — turn speech into editable text">🎙️</button>
+      <textarea
+        id="chat-input"
+        class="chat-input-field"
+        placeholder="Message EONBOT…"
+        maxlength="4000"
+        rows="1"
+        autocomplete="off"
+        spellcheck="true"
+        aria-label="Chat input" data-runtime-i18n-aria-label="Chat input"
+      ></textarea>
+      <button type="button" id="chat-send" class="chat-send-btn" aria-label="Send message" data-runtime-i18n-aria-label="Send message">➤</button>
+    </div>
+    <p class="chat-voice-route-note" data-eon-voice-route role="status" aria-live="polite" hidden></p>
+
+  </div>
+</main>
+
+  <dialog class="eon-voice-review-dialog" data-eon-voice-review aria-labelledby="eon-voice-review-title">
+    <div class="eon-voice-review-head">
+      <div><p class="eon-voice-review-kicker">Browser-assisted voice</p><h2 id="eon-voice-review-title">Voice Conversation (Beta)</h2></div>
+      <button type="button" class="eon-voice-review-close" data-eon-voice-review-cancel aria-label="Cancel Voice Conversation">×</button>
+    </div>
+    <p>Voice Conversation listens only after you choose Start. Each final spoken turn is sent automatically to the selected AI route, and listening continues after the reply until you tap Stop.</p>
+    <p class="eon-voice-review-route"><strong>Current route:</strong> <span data-eon-voice-review-route>Checking…</span></p>
+    <p class="eon-voice-review-privacy" data-eon-voice-review-privacy>Browser speech support varies by device.</p>
+    <label class="eon-voice-review-ack"><input type="checkbox" data-eon-voice-review-ack /> <span>I understand that final spoken turns send automatically and the microphone can restart for the next turn until I tap Stop.</span></label>
+    <p class="eon-voice-review-alternative"><strong>Prefer review first?</strong> Use Dictate. It places editable text in the composer and never sends by itself.</p>
+    <div class="eon-voice-review-actions"><button type="button" data-eon-voice-review-cancel>Cancel</button><button type="button" class="is-primary" data-eon-voice-review-start disabled>Start Voice Conversation</button></div>
+  </dialog>
+
+<script type="module" src="/assets/js/eon-app-shell.js"></script>
+<script type="module" src="/assets/js/chat-page.js"></script>
+
+
+
+<script type="module" src="/assets/js/chat-page-deferred.js"></script>
+
+</body>
+</html>

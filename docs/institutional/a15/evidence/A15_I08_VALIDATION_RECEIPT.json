@@ -1,0 +1,101 @@
+{
+  "schema": "eonapp.a15.i08.validation-receipt.v1",
+  "generatedAt": "2026-08-04T23:03:36+05:30",
+  "wave": "I08",
+  "baselineCommit": "818bb256e063c60680bb8e5bbb96409eb9d6b928",
+  "title": "Identity, Profile Migration and Credential Custody",
+  "decision": "source-wave-ready-to-commit",
+  "verification": {
+    "institutionalGate": {
+      "passed": true,
+      "command": "npm run qa:a15-i08-credentials",
+      "tests": 28
+    },
+    "maintainedSourceSuite": {
+      "passed": true,
+      "maintainedFiles": 381,
+      "runnableFilesPassed": 372,
+      "dependencyBlockedFiles": 9,
+      "tests": 1491,
+      "testsPassed": 1444,
+      "testsSkipped": 47,
+      "testsFailed": 0,
+      "blockedPackage": "@babylonjs/core"
+    },
+    "w766ir2SourceCertification": {
+      "passed": true,
+      "criteriaPassed": 10,
+      "criteriaTotal": 10,
+      "browserCertified": false,
+      "authenticatedOfflineCertified": false
+    },
+    "secretScan": {
+      "passed": true,
+      "textFilesScanned": 5152
+    },
+    "syntaxAndDiff": {
+      "passed": true
+    }
+  },
+  "custody": {
+    "sessionOnlyByDefault": true,
+    "durableRecoveryRequiresExplicitPassphrase": true,
+    "passphrasePersisted": false,
+    "deviceSecretCreated": false,
+    "identityPrivateKeyLookup": false,
+    "automaticLegacySecretRead": false,
+    "verifiedEncryptedWrites": true,
+    "rollbackOnWriteFailure": true
+  },
+  "migration": {
+    "explicitConfirmationRequired": true,
+    "legacySourceAllowlisted": true,
+    "malformedOrAmbiguousSourcesPreserved": true,
+    "profileCanonicalWriteVerified": true,
+    "profileRollbackVerified": true,
+    "rawSecretsInReceipts": false
+  },
+  "invariants": [
+    "Ordinary BYOK provider keys remain session-only by default.",
+    "Durable browser recovery requires an explicit user passphrase that is never persisted with ciphertext.",
+    "No Date, Math.random, device-secret or identity-private-key fallback can derive a recovery key.",
+    "Encrypted writes verify exact storage bytes and a decrypt round-trip before success.",
+    "Persistence failure restores the exact previous encrypted record.",
+    "Legacy plaintext migration requires explicit review and confirmation and fails atomically.",
+    "Status discovery enumerates legacy key names without reading legacy secret values.",
+    "Duplicate profile authority is removed only after a verified canonical write and receipt.",
+    "Provider keys and recovery passphrases are absent from receipts, logs and exports.",
+    "Core and City retain contract-only boundaries."
+  ],
+  "externalBlockers": [
+    "Private npm registry returns 404 for locked ws@7.5.11.",
+    "Installed npm is 10.9.2 while the repository requires 11.12.1.",
+    "Nine maintained City test files remain dependency-blocked by unavailable @babylonjs/core.",
+    "Production build and built-artifact validation remain blocked by unavailable exact dependencies.",
+    "Authenticated browser, Preview and Production certification remain pending."
+  ],
+  "workingTreeAtReceipt": [
+    "M assets/js/free-ai-power-page.js",
+    " M assets/js/onboarding-page.js",
+    " M assets/js/utils/api-key-vault.js",
+    " M assets/js/utils/automation-os-store.js",
+    " M assets/js/utils/profile.js",
+    " M assets/js/utils/skill-tree.js",
+    " M assets/js/vault/eon-vault-lifecycle.js",
+    " M assets/js/vault/eon-vault-page.js",
+    " M assets/js/vault/eon-vault-security.js",
+    " M assets/js/workbench-ai.js",
+    " M config/generated/a15-system-disposition-registry.json",
+    " M docs/institutional/a15/evidence/A15_I01_SYSTEM_DISPOSITION_RECEIPT.json",
+    " M package.json",
+    " M tests/unit/w196-vault-security.test.mjs",
+    " M tests/unit/w209-vault-account-boundary.test.mjs",
+    " M tests/unit/w646-api-key-vault-restore.test.mjs",
+    " M tests/unit/w726-w727-productivity-simplification.test.mjs",
+    " M vault.html",
+    "?? docs/institutional/a15/evidence/A15_I08_CREDENTIAL_CUSTODY_GATE_RECEIPT.json",
+    "?? scripts/a15-i08-credential-custody-gate.mjs",
+    "?? tests/unit/a15-i08-credential-custody.test.mjs"
+  ],
+  "receiptDigest": "sha256:b902c0226ee6c40c6304132d8f5527cc3a1e25b3560342eb2c9b5ff67aa2fb91"
+}

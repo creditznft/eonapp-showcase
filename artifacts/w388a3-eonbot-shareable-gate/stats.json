@@ -1,0 +1,52 @@
+{
+  "schema": "eonapp.w388a3.eonbot-shareable-gate.v1",
+  "wave": "W388A.3",
+  "status": "pass",
+  "checkCount": 8,
+  "checks": [
+    {
+      "id": "contract-valid",
+      "pass": true,
+      "detail": "W388A.3 contract has no internal violations"
+    },
+    {
+      "id": "canonical-command",
+      "pass": true,
+      "detail": "EONBOT recognizes explicit shareable/remix requests and routes to canonical Workspace"
+    },
+    {
+      "id": "local-intent-only",
+      "pass": true,
+      "detail": "command prepares a local draft and never marks a task complete"
+    },
+    {
+      "id": "cta-required",
+      "pass": true,
+      "detail": "chat intent is written only from the visible user CTA handler"
+    },
+    {
+      "id": "no-private-transfer",
+      "pass": true,
+      "detail": "intent excludes attachments, chat history, credentials, media and accounts"
+    },
+    {
+      "id": "session-expiry",
+      "pass": true,
+      "detail": "intent is bounded to browser session storage and expires"
+    },
+    {
+      "id": "no-connector-or-value-claim",
+      "pass": true,
+      "detail": "intent creates no connection, publishing, tracking, or referral value"
+    },
+    {
+      "id": "secret-protection",
+      "pass": true,
+      "detail": "secret-looking requests are rejected from the handoff"
+    }
+  ],
+  "limitations": [
+    "Static source verification only.",
+    "No model output is made public, no social platform is connected, no content is posted, no recipient account is created, and no referral reward or measurement is enabled."
+  ]
+}

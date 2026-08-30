@@ -1,0 +1,11 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const trust = fs.readFileSync('assets/js/utils/public-trust-polish.js', 'utf8');
+const pages = ['support.html','legal.html','privacy.html','terms.html','billing.html'];
+pages.forEach((file) => assert.equal(fs.existsSync(file), true, `${file} missing`));
+assert.match(trust, /No guaranteed income language/);
+assert.match(trust, /No payment, wallet, reward, or referral-value entitlement is active/);
+assert.match(trust, /not financial advice/);
+assert.match(trust, /No universal voice-recognition promise/);
+assert.match(trust, /Experimental City, provider, and local-runtime limitations/);
+console.log('W174 public trust polish gate passed');

@@ -1,0 +1,100 @@
+:root.eoncity-mobile-ux-ready {
+  --eoncity-safe-bottom: max(env(safe-area-inset-bottom), 12px);
+  --eoncity-safe-top: max(env(safe-area-inset-top), 8px);
+}
+
+.eoncity-ux-dock {
+  position: fixed;
+  left: max(env(safe-area-inset-left), 10px);
+  right: max(env(safe-area-inset-right), 10px);
+  bottom: calc(var(--eoncity-safe-bottom, 12px) + 58px);
+  z-index: 1200;
+  display: flex;
+  gap: .45rem;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.eoncity-ux-btn {
+  pointer-events: auto;
+  border: 1px solid rgba(148, 163, 184, .45);
+  border-radius: 999px;
+  padding: .5rem .72rem;
+  background: rgba(15, 23, 42, .84);
+  color: #e5f6ff;
+  font-weight: 800;
+  font-size: .78rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .36);
+  backdrop-filter: blur(14px);
+}
+
+.eoncity-panel-collapsed,
+.eoncity-ui-collapsed .rw-side-panel,
+.eoncity-ui-collapsed [data-world-panel],
+.eoncity-ui-collapsed #eon-widget-panel,
+.eoncity-ui-collapsed .eon-chat-widget {
+  max-height: 0 !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+@media (max-width: 768px) {
+  body[data-page-type="realmworld"] .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 900;
+  }
+
+  body[data-page-type="realmworld"] .rw-hero {
+    padding-top: calc(var(--eoncity-safe-top, 8px) + .75rem);
+  }
+
+  body[data-page-type="realmworld"] .rw-actions,
+  body[data-page-type="realmworld"] .rw-mode-bar,
+  body[data-page-type="realmworld"] .rw-visual-toolbar,
+  body[data-page-type="realmworld"] .rw-camera-toolbar {
+    display: flex;
+    max-width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body[data-page-type="realmworld"] .rw-map-panel {
+    min-height: min(72vh, 620px);
+  }
+
+  body[data-page-type="realmworld"] .rw-map {
+    min-height: min(66vh, 560px);
+    touch-action: pan-x pan-y pinch-zoom;
+  }
+
+  body[data-page-type="realmworld"] .rw-side-panel {
+    border-radius: 20px 20px 0 0;
+    max-height: 34vh;
+    overflow: auto;
+    margin-bottom: calc(var(--eoncity-safe-bottom, 12px) + 7.5rem);
+  }
+
+  body[data-page-type="realmworld"] .reward-gate-card,
+  body[data-page-type="realmworld"] [data-eon-sponsor-boost-panel] {
+    max-height: 42vh;
+    overflow: auto;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 520px) {
+  .eoncity-ux-dock {
+    right: max(env(safe-area-inset-right), 10px);
+    left: auto;
+    bottom: calc(var(--eoncity-safe-bottom, 8px) + 8px);
+    flex-direction: column;
+    width: max-content;
+  }
+
+  body[data-page-type="realmworld"] .rw-side-panel {
+    max-height: 24vh;
+  }
+}

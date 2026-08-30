@@ -1,0 +1,31 @@
+{
+  "schema": "eonapp.w476-a4.source-manifest.v1",
+  "title": "W476-A4 Aggregate Analytics and Release Gate Source",
+  "scope": [
+    "preference-gated aggregate analytics bridge",
+    "logical route-only analytics payloads",
+    "Profile and Privacy truth repair",
+    "static shell CSP alignment for reviewed pages",
+    "release-scoped service-worker update handshake",
+    "current-contract regression gate repairs"
+  ],
+  "local_quality_gates": {
+    "lint": "pass",
+    "unit": "pass (523 tests)",
+    "build": "pass",
+    "smoke_build": "pass",
+    "release_verify": "pass"
+  },
+  "not_claimed": [
+    "production deployment",
+    "GA DebugView or Tag Assistant proof",
+    "production network payload evidence",
+    "physical-device testing",
+    "service-worker update and rollback survival proof",
+    "Local AI production browser proof",
+    "OAuth lifecycle proof",
+    "payment readiness"
+  ],
+  "archive_exclusions": ["node_modules", "dist"],
+  "payment_scope": "No payment, Dodo, wallet, token, NFT, reward or referral-payout behavior changed."
+}

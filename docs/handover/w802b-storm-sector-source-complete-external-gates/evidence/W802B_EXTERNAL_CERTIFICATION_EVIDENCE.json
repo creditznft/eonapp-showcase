@@ -1,0 +1,86 @@
+{
+  "generatedAt": "2026-08-04T18:12:00+05:30",
+  "branch": "chatgpt/w767-expanse-companion-clarity",
+  "codeAuthority": "eb12dbec9fc3d073a8c46783808cbf8f72d2622b",
+  "node": "v22.16.0",
+  "npmInstalled": "10.9.2",
+  "npmRequired": "11.12.1",
+  "configuredRegistry": "private OpenAI CAAS npm mirror",
+  "systemChromium": "144.0.7559.96",
+  "sourceCertification": {
+    "passed": true,
+    "criteriaPassed": 10,
+    "criteriaTotal": 10
+  },
+  "dependencyFreeRegression": {
+    "testFiles": 203,
+    "passed": 770,
+    "failed": 0
+  },
+  "secretScan": {
+    "passed": true,
+    "textFilesScanned": 5046
+  },
+  "externalCertification": {
+    "schema": "eon.expanse.external-certification-gates.w801a.v1",
+    "gates": [
+      {
+        "id": "locked-dependency-install",
+        "label": "Locked dependency install",
+        "passed": false,
+        "reason": "Private npm registry returned 404 for locked ws@7.5.11."
+      },
+      {
+        "id": "production-build",
+        "label": "Production build",
+        "passed": false,
+        "reason": "blocked by locked dependency install"
+      },
+      {
+        "id": "built-artifact-gate",
+        "label": "Built artifact gate",
+        "passed": false,
+        "reason": "blocked by production build"
+      },
+      {
+        "id": "authenticated-browser-matrix",
+        "label": "Authenticated Chrome, Edge and mobile landscape",
+        "passed": false,
+        "reason": "System Chromium exists, but no authenticated owner session; bounded source-shell smoke timed out. Edge and mobile landscape evidence are unavailable."
+      },
+      {
+        "id": "foreground-performance-and-soak",
+        "label": "Lite, Balanced and Cinematic foreground performance and soak",
+        "passed": false,
+        "reason": "blocked by authenticated browser evidence"
+      },
+      {
+        "id": "owner-playthrough-and-region-certification",
+        "label": "Owner playthrough and exact region certification",
+        "passed": false,
+        "reason": "blocked by build or foreground evidence"
+      },
+      {
+        "id": "preview-deployment-and-rollback",
+        "label": "Preview deployment and rollback rehearsal",
+        "passed": false,
+        "reason": "blocked by owner certification"
+      },
+      {
+        "id": "production-deployment-and-rollback-proof",
+        "label": "Explicit Production deployment and rollback proof",
+        "passed": false,
+        "reason": "blocked by Preview certification"
+      }
+    ],
+    "passedCount": 0,
+    "requiredCount": 8,
+    "complete": false,
+    "status": "external-certification-blocked",
+    "sourceProgrammeComplete": true,
+    "automaticCertification": false,
+    "automaticDeployment": false,
+    "productionActivated": false,
+    "privateContentStored": false
+  }
+}

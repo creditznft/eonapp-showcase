@@ -1,0 +1,146 @@
+name: CI
+
+on:
+  push:
+    branches: [main, codex/rt92-vexrail-profit-privacy-guard, codex/rt92-vexrail-profitability-opt, codex/rt93-local-companion, codex/rt94-adaptive-local-lite, codex/rt95-profitability-observability, codex/rt97-release-candidate-2026-08-30]
+  pull_request:
+    branches: [main, codex/rt92-vexrail-profit-privacy-guard, codex/rt92-vexrail-profitability-opt, codex/rt93-local-companion, codex/rt94-adaptive-local-lite, codex/rt95-profitability-observability, codex/rt97-release-candidate-2026-08-30]
+
+permissions:
+  contents: read
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+
+jobs:
+  rt92-monetization-policy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - name: Install exact dependencies
+        run: npm ci --include=dev --no-audit --no-fund --prefer-offline
+      - name: RT92 ordinary display policy regression
+        run: node --test tests/unit/rt92-monetization-guest-display-policy.test.mjs
+      - name: RT92 monetization source syntax
+        run: node --check functions/_shared/eon-monetization-eligibility.js
+
+  rt97-release-policy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - name: Install exact dependencies
+        run: npm ci --include=dev --no-audit --no-fund --prefer-offline
+      - name: RT97 release-specific code and policy certification
+        run: npm run verify:rt97-release
+
+  permanent-predeploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - name: Configure npm reliability
+        run: |
+          npm config set registry https://registry.npmjs.org/
+          npm config set fetch-retries 5
+          npm config set fetch-retry-mintimeout 20000
+          npm config set fetch-retry-maxtimeout 120000
+          npm config set fetch-timeout 300000
+          npm config set audit false
+          npm config set fund false
+      - name: Install exact dependencies
+        run: npm ci --include=dev --no-audit --no-fund --prefer-offline
+      - name: Permanent source, test, security and build certification
+        run: npm run verify:codex-predeploy
+      - name: Build immutable candidate from the certified dist
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: npm run release:candidate -- --commit "$GITHUB_SHA"
+      - name: Verify immutable candidate locally without artifact storage
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: npm run release:candidate:verify -- artifacts/w641-release-candidate
+
+  legacy-boundary:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - run: npm ci --include=dev --no-audit --no-fund --prefer-offline
+      - name: Verify archived token, reward and legacy campaign code cannot ship
+        run: npm run qa:w228-ceo-red-team
+
+  exact-source-backup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: [rt92-monetization-policy, rt97-release-policy, permanent-predeploy, legacy-boundary]
+    steps:
+      - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Build and verify exact tracked-source archive ephemerally
+        shell: bash
+        run: |
+          set -euo pipefail
+          source_sha="$(git rev-parse HEAD)"
+          tree_sha="$(git rev-parse "${source_sha}^{tree}")"
+          tracked_files="$(git ls-tree -r --name-only "$source_sha" | wc -l | tr -d ' ')"
+          mkdir -p artifacts/rt92-source-backup
+          archive="artifacts/rt92-source-backup/EONAPP_RT92_EXACT_SOURCE_${source_sha}.zip"
+          git archive --format=zip --output="$archive" "$source_sha"
+          archive_sha="$(sha256sum "$archive" | awk '{print $1}')"
+          archived_files="$(unzip -Z1 "$archive" | grep -v '/$' | wc -l | tr -d ' ')"
+          printf '%s  %s\n' "$archive_sha" "$(basename "$archive")" > artifacts/rt92-source-backup/SHA256SUMS.txt
+          cat > artifacts/rt92-source-backup/AUTHORITY.txt <<EOF
+          EONAPP RT92 EXACT TRACKED-SOURCE BACKUP
+          commit=${source_sha}
+          tree=${tree_sha}
+          tracked_files=${tracked_files}
+          archived_files=${archived_files}
+          archive_sha256=${archive_sha}
+          source_ref=${GITHUB_REF}
+          event=${GITHUB_EVENT_NAME}
+          storage=ephemeral-runner-only
+          EOF
+          test "$archived_files" = "$tracked_files"
+          cat artifacts/rt92-source-backup/AUTHORITY.txt
+          cat artifacts/rt92-source-backup/SHA256SUMS.txt
+          echo 'Exact-source verification PASS; no GitHub Actions artifact was uploaded.'
+
+  lighthouse-advisory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs: permanent-predeploy
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - run: npm ci --include=dev --no-audit --no-fund --prefer-offline
+      - run: npm run lighthouse -- --upload.target=temporary-public-storage

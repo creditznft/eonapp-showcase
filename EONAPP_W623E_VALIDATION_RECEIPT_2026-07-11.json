@@ -1,0 +1,126 @@
+{
+  "schema": "eonapp.w623e.validation-receipt.v1",
+  "recordedAt": "2026-07-11T04:20:20+05:30",
+  "wave": "W623E",
+  "status": "pass-source-and-build",
+  "nextWave": "W623F",
+  "informationArchitecture": {
+    "primaryNavigation": [
+      "EONBOT",
+      "Create",
+      "Projects",
+      "Library",
+      "EON City"
+    ],
+    "createModes": [
+      "image",
+      "video",
+      "website",
+      "project",
+      "automation",
+      "guide"
+    ],
+    "redirectedLegacyAliases": 10,
+    "predictableAccountSupportDestinations": [
+      "Profile",
+      "Billing & plan",
+      "EON Keys",
+      "Vault",
+      "Settings",
+      "Help",
+      "Install",
+      "Support"
+    ],
+    "marketLifecycle": "compatibility-hidden"
+  },
+  "validation": {
+    "w623eTests": {
+      "passed": 5,
+      "failed": 0
+    },
+    "w623cCommercialTruth": {
+      "passed": 64,
+      "failed": 0
+    },
+    "w623dReachability": {
+      "passed": 5,
+      "failed": 0,
+      "reachableFiles": 339,
+      "importEdges": 574,
+      "quarantinedReachable": 0
+    },
+    "focusedShellRegression": {
+      "passed": 9,
+      "failed": 0
+    },
+    "targetedEslint": {
+      "errors": 0,
+      "warnings": 0
+    },
+    "productionBuild": {
+      "passed": true,
+      "distFiles": 450,
+      "minifiedFiles": 288,
+      "savedPercent": 41.33,
+      "distributionSha256": "43146ccc06c162c9894de15f90f31aa8da0fdd843b3791105a3b68fa77ce6481"
+    }
+  },
+  "visualReview": {
+    "desktopStaticCapture": "reports/w623e-information-architecture/screenshots/create-desktop-static-review.png",
+    "mobileStaticCapture": "reports/w623e-information-architecture/screenshots/create-mobile-static-review.png",
+    "result": "pass-static-layout-review",
+    "boundary": "The environment Chromium policy blocked loopback navigation with ERR_BLOCKED_BY_ADMINISTRATOR, so no claim of live-route browser proof is made. Static captures use the real W623E catalog and production CSS."
+  },
+  "localVideo": {
+    "runbook": "program/EONAPP_W625E_CODEX_REAL_LOCAL_AI_VIDEO_RUNBOOK_2026-07-11.md",
+    "proofState": "runbook-ready-real-video-pending",
+    "mandatoryModes": [
+      "image-to-video",
+      "optional-text-to-video"
+    ],
+    "ownerFourGbFallbackRequired": true
+  },
+  "changedFiles": {
+    "modified": [
+      "404.html",
+      "EONAPP_MASTER_LAUNCH_LEDGER_W623_W640_2026-07-11.json",
+      "EONAPP_MASTER_LAUNCH_ROADMAP_W623_W640_2026-07-11.md",
+      "_redirects",
+      "assets/css/eon-app-shell.css",
+      "assets/js/eon-app-shell.js",
+      "assets/js/market/eon-market-page.js",
+      "assets/js/shell/eon-shell-navigation.js",
+      "config/route-contract.mjs",
+      "config/w477-route-seo-legacy-contract.mjs",
+      "market.html",
+      "package.json",
+      "public/_redirects",
+      "public/sitemap.xml",
+      "reports/w623d-production-reachability/graph.json",
+      "scripts/build-production.mjs",
+      "sitemap.xml",
+      "workspace.html"
+    ],
+    "added": [
+      "assets/css/eon-create-hub.css",
+      "assets/js/create/eon-create-catalog.js",
+      "assets/js/create/eon-create-hub.js",
+      "config/w623e-information-architecture-contract.mjs",
+      "create.html",
+      "program/EONAPP_W625E_CODEX_REAL_LOCAL_AI_VIDEO_RUNBOOK_2026-07-11.md",
+      "reports/w623e-information-architecture/receipt.json",
+      "reports/w623e-information-architecture/screenshots/create-desktop-static-review.png",
+      "reports/w623e-information-architecture/screenshots/create-mobile-static-review.png",
+      "scripts/w623e-information-architecture-gate.mjs",
+      "tests/unit/w623e-information-architecture.test.mjs"
+    ],
+    "removed": []
+  },
+  "evidenceBoundary": [
+    "No real local image output was generated in W623E.",
+    "No real local video output was generated in W623E.",
+    "No live deployed-route or real-device browser certification was performed.",
+    "No giant archived historical suite was rerun.",
+    "The unrelated historical W353 fixture remains outside this certification."
+  ]
+}

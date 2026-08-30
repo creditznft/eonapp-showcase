@@ -1,0 +1,74 @@
+Command: npm ci --ignore-scripts --registry=https://registry.npmjs.org
+Result: BLOCKED
+Reason: public registry DNS requests failed with EAI_AGAIN; configured internal registry returned 404 for required packages.
+node_modules: absent
+Vite executable: unavailable
+Node Playwright executable: unavailable
+Browser/build evidence: not produced
+
+Latest npm debug excerpt:
+0 verbose cli /opt/nvm/versions/node/v22.16.0/bin/node /opt/nvm/versions/node/v22.16.0/bin/npm
+1 info using npm@10.9.2
+2 info using node@v22.16.0
+3 silly config load:file:/opt/nvm/versions/node/v22.16.0/lib/node_modules/npm/npmrc
+4 silly config load:file:/mnt/data/eon_w747_work/repo/.npmrc
+5 silly config load:file:/home/oai/.npmrc
+6 silly config load:file:/opt/nvm/versions/node/v22.16.0/etc/npmrc
+7 verbose title npm ci
+8 verbose argv "ci" "--ignore-scripts" "--no-audit" "--no-fund"
+9 verbose logfile logs-max:10 dir:/home/oai/.npm/_logs/2026-07-29T11_03_00_436Z-
+10 verbose logfile /home/oai/.npm/_logs/2026-07-29T11_03_00_436Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:2197815296 maxSize:549453824 maxEntrySize:274726912
+13 silly idealTree buildDeps
+14 silly fetch manifest ws@7.5.11
+15 silly packumentCache full:https://packages.applied-caas-gateway1.internal.api.openai.org/artifactory/api/npm/npm-public/ws cache-miss
+16 http fetch GET 404 https://packages.applied-caas-gateway1.internal.api.openai.org/artifactory/api/npm/npm-public/ws 223ms (cache skip)
+17 silly placeDep node_modules/puppeteer-core ws@ REPLACE for: puppeteer-core@24.43.1 want: 7.5.11
+18 verbose stack HttpErrorGeneral: 404 Not Found - GET https://packages.applied-caas-gateway1.internal.api.openai.org/artifactory/api/npm/npm-public/ws
+18 verbose stack     at /opt/nvm/versions/node/v22.16.0/lib/node_modules/npm/node_modules/npm-registry-fetch/lib/check-response.js:103:15
+18 verbose stack     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+18 verbose stack     at async RegistryFetcher.packument (/opt/nvm/versions/node/v22.16.0/lib/node_modules/npm/node_modules/pacote/lib/registry.js:90:19)
+18 verbose stack     at async RegistryFetcher.manifest (/opt/nvm/versions/node/v22.16.0/lib/node_modules/npm/node_modules/pacote/lib/registry.js:128:23)
+18 verbose stack     at async #fetchManifest (/opt/nvm/versions/node/v22.16.0/lib/node_modules/npm/node_modules/@npmcli/arborist/lib/arborist/build-ideal-tree.js:1202:20)
+18 verbose stack     at async #nodeFromEdge (/opt/nvm/versions/node/v22.16.0/lib/node_modules/npm/node_modules/@npmcli/arborist/lib/arborist/build-ideal-tree.js:1040:19)
+18 verbose stack     at async #buildDepStep (/opt/nvm/versions/node/v22.16.0/lib/node_modules/npm/node_modules/@npmcli/arborist/lib/arborist/build-ideal-tree.js:904:11)
+18 verbose stack     at async Arborist.buildIdealTree (/opt/nvm/versions/node/v22.16.0/lib/node_modules/npm/node_modules/@npmcli/arborist/lib/arborist/build-ideal-tree.js:181:7)
+18 verbose stack     at async CI.exec (/opt/nvm/versions/node/v22.16.0/lib/node_modules/npm/lib/commands/ci.js:63:5)
+18 verbose stack     at async Npm.exec (/opt/nvm/versions/node/v22.16.0/lib/node_modules/npm/lib/npm.js:207:9)
+19 verbose statusCode 404
+20 verbose pkgid ws@7.5.11
+21 error code E404
+22 error 404 Not Found - GET https://packages.applied-caas-gateway1.internal.api.openai.org/artifactory/api/npm/npm-public/ws
+23 error 404
+24 error 404  'ws@7.5.11' is not in this registry.
+25 error 404
+26 error 404 Note that you can also install from a
+27 error 404 tarball, folder, http url, or git url.
+28 verbose cwd /mnt/data/eon_w747_work/repo
+29 verbose os Linux 6.12.13
+30 verbose node v22.16.0
+31 verbose npm  v10.9.2
+32 verbose exit 1
+33 verbose code 1
+34 error A complete log of this run can be found in: /home/oai/.npm/_logs/2026-07-29T11_03_00_436Z-debug-0.log
+
+Public registry retry excerpt:
+0 verbose cli /opt/nvm/versions/node/v22.16.0/bin/node /opt/nvm/versions/node/v22.16.0/bin/npm
+1 info using npm@10.9.2
+2 info using node@v22.16.0
+3 silly config load:file:/opt/nvm/versions/node/v22.16.0/lib/node_modules/npm/npmrc
+4 silly config load:file:/mnt/data/eon_w747_work/repo/.npmrc
+5 silly config load:file:/home/oai/.npmrc
+6 silly config load:file:/opt/nvm/versions/node/v22.16.0/etc/npmrc
+7 verbose title npm ci
+8 verbose argv "ci" "--ignore-scripts" "--registry" "https://registry.npmjs.org"
+9 verbose logfile logs-max:10 dir:/home/oai/.npm/_logs/2026-07-29T11_01_07_304Z-
+10 verbose logfile /home/oai/.npm/_logs/2026-07-29T11_01_07_304Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:2197815296 maxSize:549453824 maxEntrySize:274726912
+13 silly idealTree buildDeps
+14 silly fetch manifest ws@7.5.11
+15 silly packumentCache full:https://registry.npmjs.org/ws cache-miss
+16 http fetch GET https://registry.npmjs.org/ws attempt 1 failed with EAI_AGAIN
+17 http fetch GET https://registry.npmjs.org/ws attempt 2 failed with EAI_AGAIN

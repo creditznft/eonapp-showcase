@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="/assets/js/eon-theme-bootstrap.js?release=w722-2026-07-27"></script>
+  <meta name="theme-color" content="#111411" />
+  <meta property="og:site_name" content="EONAPP" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Local AI — EONAPP" />
+  <meta property="og:description" content="Private AI made simple: use Local Lite or supported desktop AI without learning ports, CORS, or runtime plumbing." />
+  <meta property="og:url" content="https://eonapp.ch/local-ai" />
+  <meta property="og:image" content="https://eonapp.ch/assets/media/social/eonapp-ai-1200x630-social-v1.png?v=social-v1" />
+  <meta property="og:image:secure_url" content="https://eonapp.ch/assets/media/social/eonapp-ai-1200x630-social-v1.png?v=social-v1" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Local AI — EONAPP social preview" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Local AI — EONAPP" />
+  <meta name="twitter:description" content="Private AI made simple: use Local Lite or supported desktop AI without learning ports, CORS, or runtime plumbing." />
+  <meta name="twitter:image" content="https://eonapp.ch/assets/media/social/eonapp-ai-1200x630-social-v1.png?v=social-v1" />
+  <meta name="twitter:image:alt" content="Local AI — EONAPP social preview" />
+  <meta name="eon:social-square" content="https://eonapp.ch/assets/media/social/eonapp-ai-1080x1080-social-v1.png?v=social-v1" />
+  <title>Local AI setup · EONAPP</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="stylesheet" href="/assets/css/base.css" />
+  <link rel="stylesheet" href="/assets/css/layout.css" />
+  <link rel="stylesheet" href="/assets/css/eon-app-shell.css" />
+  <link rel="stylesheet" href="/assets/css/eon-hubs.css" />
+  <link rel="stylesheet" href="/assets/css/eon-feature-locks.css" />
+  <link rel="stylesheet" href="/assets/css/local-ai.css" />
+  <script type="module" src="/assets/js/localStorage-shim.js"></script>
+  <link rel="canonical" href="https://eonapp.ch/local-ai" />
+  <meta name="robots" content="index, follow" />
+</head>
+<body data-page-type="local-ai" data-eon-app-shell="1" data-eon-app-page="local-ai" data-eon-analytics="off">
+  <a href="#main" class="skip-to-content">Skip to main content</a>
+  <main id="main" class="eon-hub-main">
+    <header class="eon-hub-top local-ai-hero">
+      <div>
+        <p class="eon-hub-kicker">Private, optional, device-aware</p>
+        <h1 class="eon-hub-title">Private AI, made simple</h1>
+        <p class="eon-hub-subtitle">Tap once to make Local AI ready. EON reuses supported AI already on this device, offers a small browser-local model when that is the easier path, and keeps technical setup out of the way. Downloads and operating-system permissions stay visible and under your control.</p>
+      </div>
+      <div class="local-ai-hero-actions"><a class="eon-hub-primary" href="#eonbot-local-ai-setup">Make Local AI ready</a><a class="local-ai-secondary" href="/">Back to EONBOT</a></div>
+    </header>
+    <p class="local-ai-note">Chat, images and video are checked separately. Basic devices can use Local Lite for private text where supported; capable desktops can use Ollama, LM Studio, Jan and local Creator engines through EON’s protected local connection path.</p>
+
+    <section class="eon-hub-grid" aria-label="How EONAPP Local AI works">
+      <article class="eon-hub-card">
+        <p class="eon-hub-kicker">Local-first choice</p>
+        <h2>What “Local AI” means in EONAPP</h2>
+        <p>Local AI is an optional route for people who want compatible AI work to stay on their own device. EONAPP checks what the browser and device can support before offering a local route. It does not assume that every phone or computer can run the same model, and it does not silently turn a cloud conversation into a local one.</p>
+        <p>When a supported local route is active, EONBOT labels that route so you can see what is being used. Local text, image and video capabilities are assessed independently because a device that can handle a small text model may still be unsuitable for local image or video generation.</p>
+      </article>
+      <article class="eon-hub-card">
+        <p class="eon-hub-kicker">Browser-local text</p>
+        <h2>Local Lite for compatible devices</h2>
+        <p>Local Lite is designed as the lighter browser-based option. EONAPP first checks practical device capabilities such as browser support, available graphics features and storage conditions. If the device is not a good match, EONAPP can keep Local Lite unavailable rather than forcing a large download or creating an unreliable experience.</p>
+        <p>Model downloads remain visible to you and can be cached by the browser where supported. Availability can vary between browsers, operating systems and device classes, so EONAPP treats local readiness as a capability check instead of a promise that every device will run the same workload.</p>
+      </article>
+      <article class="eon-hub-card">
+        <p class="eon-hub-kicker">Desktop runtimes</p>
+        <h2>Use AI you already run on your computer</h2>
+        <p>On supported desktops, EONAPP can work with compatible local runtimes such as Ollama, LM Studio and Jan. The setup flow is intended to hide unnecessary networking detail while still making the connection explicit. EONAPP checks the local connection before presenting it as ready, and a failed check does not silently fall back to a different provider.</p>
+        <p>This makes it possible to use models you choose and manage on your own computer while keeping EONAPP as the workspace around them. Model availability, speed and memory use depend on your local runtime, the model you installed and the hardware available to that runtime.</p>
+      </article>
+      <article class="eon-hub-card">
+        <p class="eon-hub-kicker">Control and privacy</p>
+        <h2>You choose when data leaves the device</h2>
+        <p>EONAPP separates local routes from connected AI providers. Files can be previewed locally, and attached text or code is included with a model request only when you choose to send the message. Connecting a hosted provider is a separate action and does not make Local AI a cloud feature.</p>
+        <p>Local processing also has practical limits: browser speech services can have their own device or browser behavior, local models can require significant memory, and clearing browser storage can remove downloaded model data. EONAPP therefore shows capability and setup state instead of presenting “local” as a blanket guarantee for every browser feature.</p>
+      </article>
+    </section>
+
+    <section class="eon-hub-card" aria-labelledby="local-ai-choose-title">
+      <p class="eon-hub-kicker">Choose the right route</p>
+      <h2 id="local-ai-choose-title">Local when privacy and control matter; connected when you choose it</h2>
+      <p>You do not need Local AI to use EONAPP. The normal AI setup can show the routes available to you, while Local AI remains an optional path. A lighter device can stay with supported hosted options, a capable browser can use Local Lite, and a desktop user can connect a local runtime. The goal is to make the trade-off understandable before work begins rather than hiding it behind automatic provider switching.</p>
+      <p>If you are unsure, use the readiness check below. It reports what this device can support and keeps model downloads or operating-system permissions visible. You can return to EONBOT at any time and change the selected route from AI setup.</p>
+    </section>
+
+    <section id="local-ai-root" aria-live="polite"></section>
+  </main>
+  <script type="module" src="/assets/js/eon-app-shell.js"></script>
+  <script type="module" src="/assets/js/local-ai/local-ai-page.js"></script>
+</body>
+</html>

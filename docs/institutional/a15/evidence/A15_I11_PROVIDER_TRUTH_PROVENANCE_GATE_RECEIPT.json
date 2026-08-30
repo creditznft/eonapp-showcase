@@ -1,0 +1,129 @@
+{
+  "schema": "eonapp.a15.i11.provider-truth-provenance-gate-receipt.v1",
+  "generatedAt": "2026-08-04T18:24:39.496Z",
+  "wave": "I11",
+  "status": "pass",
+  "providerAuthority": {
+    "schema": "eonapp.provider-execution-contract.a15.v1",
+    "providerCount": 22,
+    "ordinaryProviderSearchDefault": "disabled",
+    "explicitSearchConsentRequired": true,
+    "oneProviderAttempt": true,
+    "hiddenRetryAllowed": false,
+    "crossProviderFallback": "none"
+  },
+  "perplexitySimulation": {
+    "ordinary": {
+      "state": "disabled-for-ordinary-request",
+      "disableSearch": true
+    },
+    "blockedWithoutConsent": {
+      "state": "blocked-missing-explicit-search-consent",
+      "enabled": false
+    },
+    "explicit": {
+      "state": "explicit-provider-search",
+      "disableSearch": false,
+      "stream": true
+    }
+  },
+  "provenanceSimulation": {
+    "schema": "eonapp.ai-provenance-receipt.a15.v1",
+    "requestId": "ai-a15-i11-gate",
+    "providerId": "perplexity",
+    "protocol": "perplexity-sonar",
+    "context": {
+      "inputChars": 512,
+      "systemPromptIncluded": true,
+      "historyRequested": 18,
+      "historyIncluded": 12,
+      "historyOmitted": 6,
+      "attachments": {
+        "total": 3,
+        "includedText": 1,
+        "omitted": 2,
+        "byKind": {
+          "text": 1,
+          "image": 1,
+          "pdf": 1
+        },
+        "omissions": [
+          {
+            "kind": "image",
+            "count": 1,
+            "reason": "local-image-preview-only"
+          },
+          {
+            "kind": "pdf",
+            "count": 1,
+            "reason": "local-pdf-preview-only"
+          }
+        ],
+        "containsNames": false,
+        "containsContent": false
+      },
+      "clientResearchSources": 0,
+      "clientResearchIncluded": false,
+      "forgeIsolation": false
+    },
+    "search": {
+      "requested": false,
+      "enabled": false,
+      "state": "disabled-for-ordinary-request",
+      "disableSearchSent": true,
+      "citations": [
+        {
+          "index": 1,
+          "title": "Returned source",
+          "url": "https://example.com/source",
+          "capturedAt": "",
+          "source": "provider-response"
+        }
+      ],
+      "searchResults": [
+        {
+          "index": 1,
+          "title": "Returned result",
+          "url": "https://example.com/result",
+          "date": ""
+        }
+      ],
+      "citationCount": 1,
+      "searchResultCount": 1,
+      "evidenceUnexpectedWhileDisabled": true
+    },
+    "usage": {
+      "status": "provider-reported",
+      "inputTokens": 120,
+      "outputTokens": 40,
+      "totalTokens": 160,
+      "costStatus": "not-reported-by-provider",
+      "providerCost": null,
+      "currency": "",
+      "estimatedByEonapp": false
+    },
+    "cost": {
+      "billingAuthority": "user-provider-account",
+      "status": "not-reported-by-provider",
+      "amount": null,
+      "currency": "",
+      "estimatedByEonapp": false,
+      "hiddenRetryCostPossible": false
+    },
+    "containsPrompt": false,
+    "containsReply": false,
+    "containsApiKey": false,
+    "containsAttachmentNames": false,
+    "containsAttachmentContent": false,
+    "containsResearchExtracts": false
+  },
+  "sourceFiles": [
+    "assets/js/chat/ai-runtime.js",
+    "assets/js/chat-page.js",
+    "assets/js/chat/local-attachments.js",
+    "assets/js/ai-kernel/eon-provider-execution-contract.js",
+    "assets/js/ai-kernel/eon-ai-provenance-receipt.js"
+  ],
+  "errors": [],
+  "digest": "a171164831afb70c64b4ead61b30cb6c996bc67723e8d926177d42d983357a4f"
+}

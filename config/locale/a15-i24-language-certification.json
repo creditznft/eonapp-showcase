@@ -1,0 +1,510 @@
+{
+  "schema": "eonapp.a15.i24.locale-accessibility-certification.v1",
+  "generatedAt": "2026-08-05T00:00:00.000Z",
+  "launchLanguage": "en",
+  "publishedInterfaceLanguages": [
+    "en"
+  ],
+  "chatGuideLanguages": [
+    "en",
+    "es",
+    "zh",
+    "ja",
+    "ko",
+    "fr",
+    "de",
+    "pt",
+    "ru",
+    "ar",
+    "hi"
+  ],
+  "browserSpeechLanguages": [
+    "en",
+    "es",
+    "zh",
+    "ja",
+    "ko",
+    "fr",
+    "de",
+    "pt",
+    "ru",
+    "ar",
+    "hi"
+  ],
+  "routes": [
+    {
+      "id": "preview-studio",
+      "path": "/preview-studio",
+      "file": "market.html",
+      "lifecycle": "local-preview",
+      "language": "en",
+      "sourceComplete": true,
+      "legalStateIncluded": false,
+      "externalBrowserStatus": "pending"
+    },
+    {
+      "id": "chat",
+      "path": "/",
+      "file": "index.html",
+      "lifecycle": "live",
+      "language": "en",
+      "sourceComplete": true,
+      "legalStateIncluded": false,
+      "externalBrowserStatus": "pending"
+    },
+    {
+      "id": "create",
+      "path": "/create",
+      "file": "create.html",
+      "lifecycle": "live",
+      "language": "en",
+      "sourceComplete": true,
+      "legalStateIncluded": false,
+      "externalBrowserStatus": "pending"
+    },
+    {
+      "id": "projects",
+      "path": "/projects",
+      "file": "projects.html",
+      "lifecycle": "live",
+      "language": "en",
+      "sourceComplete": true,
+      "legalStateIncluded": false,
+      "externalBrowserStatus": "pending"
+    },
+    {
+      "id": "library",
+      "path": "/library",
+      "file": "library.html",
+      "lifecycle": "live",
+      "language": "en",
+      "sourceComplete": true,
+      "legalStateIncluded": false,
+      "externalBrowserStatus": "pending"
+    },
+    {
+      "id": "workspace",
+      "path": "/workspace",
+      "file": "workspace.html",
+      "lifecycle": "live",
+      "language": "en",
+      "sourceComplete": true,
+      "legalStateIncluded": false,
+      "externalBrowserStatus": "pending"
+    },
+    {
+      "id": "forge",
+      "path": "/forge",
+      "file": "forge.html",
+      "lifecycle": "local-first-builder",
+      "language": "en",
+      "sourceComplete": true,
+      "legalStateIncluded": false,
+      "externalBrowserStatus": "pending"
+    },
+    {
+      "id": "eoncity",
+      "path": "/eoncity",
+      "file": "eoncity.html",
+      "lifecycle": "direct-babylon-city",
+      "language": "en",
+      "sourceComplete": true,
+      "legalStateIncluded": false,
+      "externalBrowserStatus": "pending"
+    },
+    {
+      "id": "insights",
+      "path": "/insights",
+      "file": "trade.html",
+      "lifecycle": "local-research",
+      "language": "en",
+      "sourceComplete": true,
+      "legalStateIncluded": false,
+      "externalBrowserStatus": "pending"
+    },
+    {
+      "id": "automations",
+      "path": "/automations",
+      "file": "automations.html",
+      "lifecycle": "live",
+      "language": "en",
+      "sourceComplete": true,
+      "legalStateIncluded": false,
+      "externalBrowserStatus": "pending"
+    },
+    {
+      "id": "profile",
+      "path": "/profile",
+      "file": "profile.html",
+      "lifecycle": "live",
+      "language": "en",
+      "sourceComplete": true,
+      "legalStateIncluded": false,
+      "externalBrowserStatus": "pending"
+    },
+    {
+      "id": "vault",
+      "path": "/vault",
+      "file": "vault.html",
+      "lifecycle": "live",
+      "language": "en",
+      "sourceComplete": true,
+      "legalStateIncluded": false,
+      "externalBrowserStatus": "pending"
+    },
+    {
+      "id": "capsule",
+      "path": "/capsule",
+      "file": "capsule.html",
+      "lifecycle": "local-only",
+      "language": "en",
+      "sourceComplete": true,
+      "legalStateIncluded": false,
+      "externalBrowserStatus": "pending"
+    },
+    {
+      "id": "local-ai",
+      "path": "/local-ai",
+      "file": "local-ai.html",
+      "lifecycle": "local-only",
+      "language": "en",
+      "sourceComplete": true,
+      "legalStateIncluded": false,
+      "externalBrowserStatus": "pending"
+    },
+    {
+      "id": "realm-studio",
+      "path": "/realm-studio",
+      "file": "realm-studio.html",
+      "lifecycle": "local-only",
+      "language": "en",
+      "sourceComplete": true,
+      "legalStateIncluded": false,
+      "externalBrowserStatus": "pending"
+    },
+    {
+      "id": "about",
+      "path": "/about",
+      "file": "about.html",
+      "lifecycle": "live",
+      "language": "en",
+      "sourceComplete": true,
+      "legalStateIncluded": false,
+      "externalBrowserStatus": "pending"
+    },
+    {
+      "id": "privacy",
+      "path": "/privacy",
+      "file": "privacy.html",
+      "lifecycle": "live",
+      "language": "en",
+      "sourceComplete": true,
+      "legalStateIncluded": true,
+      "externalBrowserStatus": "pending"
+    },
+    {
+      "id": "terms",
+      "path": "/terms",
+      "file": "terms.html",
+      "lifecycle": "live",
+      "language": "en",
+      "sourceComplete": true,
+      "legalStateIncluded": true,
+      "externalBrowserStatus": "pending"
+    },
+    {
+      "id": "legal",
+      "path": "/legal",
+      "file": "legal.html",
+      "lifecycle": "live",
+      "language": "en",
+      "sourceComplete": true,
+      "legalStateIncluded": true,
+      "externalBrowserStatus": "pending"
+    },
+    {
+      "id": "settings",
+      "path": "/settings",
+      "file": "settings.html",
+      "lifecycle": "live",
+      "language": "en",
+      "sourceComplete": true,
+      "legalStateIncluded": false,
+      "externalBrowserStatus": "pending"
+    },
+    {
+      "id": "help",
+      "path": "/help",
+      "file": "help.html",
+      "lifecycle": "live",
+      "language": "en",
+      "sourceComplete": true,
+      "legalStateIncluded": false,
+      "externalBrowserStatus": "pending"
+    },
+    {
+      "id": "status",
+      "path": "/status",
+      "file": "status.html",
+      "lifecycle": "live-operational",
+      "language": "en",
+      "sourceComplete": true,
+      "legalStateIncluded": true,
+      "externalBrowserStatus": "pending"
+    },
+    {
+      "id": "install",
+      "path": "/install",
+      "file": "install.html",
+      "lifecycle": "live",
+      "language": "en",
+      "sourceComplete": true,
+      "legalStateIncluded": false,
+      "externalBrowserStatus": "pending"
+    },
+    {
+      "id": "billing",
+      "path": "/billing",
+      "file": "billing.html",
+      "lifecycle": "live-sensitive",
+      "language": "en",
+      "sourceComplete": true,
+      "legalStateIncluded": true,
+      "externalBrowserStatus": "pending"
+    },
+    {
+      "id": "eon-keys",
+      "path": "/eon-keys",
+      "file": "eon-keys.html",
+      "lifecycle": "proof-gated-referral",
+      "language": "en",
+      "sourceComplete": true,
+      "legalStateIncluded": true,
+      "externalBrowserStatus": "pending"
+    }
+  ],
+  "languages": [
+    {
+      "code": "en",
+      "name": "English",
+      "dir": "ltr",
+      "publishedFullUi": true,
+      "chatGuide": true,
+      "browserSpeech": true,
+      "routeCoverage": 25,
+      "requiredRouteCount": 25,
+      "legalCoverage": "source-complete",
+      "accessibilityCoverage": "source-complete",
+      "externalCertification": "pending"
+    },
+    {
+      "code": "es",
+      "name": "Spanish",
+      "dir": "ltr",
+      "publishedFullUi": false,
+      "chatGuide": true,
+      "browserSpeech": true,
+      "routeCoverage": 0,
+      "requiredRouteCount": 25,
+      "legalCoverage": "pending",
+      "accessibilityCoverage": "pending",
+      "externalCertification": "pending"
+    },
+    {
+      "code": "zh",
+      "name": "Chinese (Simplified)",
+      "dir": "ltr",
+      "publishedFullUi": false,
+      "chatGuide": true,
+      "browserSpeech": true,
+      "routeCoverage": 0,
+      "requiredRouteCount": 25,
+      "legalCoverage": "pending",
+      "accessibilityCoverage": "pending",
+      "externalCertification": "pending"
+    },
+    {
+      "code": "ja",
+      "name": "Japanese",
+      "dir": "ltr",
+      "publishedFullUi": false,
+      "chatGuide": true,
+      "browserSpeech": true,
+      "routeCoverage": 0,
+      "requiredRouteCount": 25,
+      "legalCoverage": "pending",
+      "accessibilityCoverage": "pending",
+      "externalCertification": "pending"
+    },
+    {
+      "code": "ko",
+      "name": "Korean",
+      "dir": "ltr",
+      "publishedFullUi": false,
+      "chatGuide": true,
+      "browserSpeech": true,
+      "routeCoverage": 0,
+      "requiredRouteCount": 25,
+      "legalCoverage": "pending",
+      "accessibilityCoverage": "pending",
+      "externalCertification": "pending"
+    },
+    {
+      "code": "fr",
+      "name": "French",
+      "dir": "ltr",
+      "publishedFullUi": false,
+      "chatGuide": true,
+      "browserSpeech": true,
+      "routeCoverage": 0,
+      "requiredRouteCount": 25,
+      "legalCoverage": "pending",
+      "accessibilityCoverage": "pending",
+      "externalCertification": "pending"
+    },
+    {
+      "code": "de",
+      "name": "German",
+      "dir": "ltr",
+      "publishedFullUi": false,
+      "chatGuide": true,
+      "browserSpeech": true,
+      "routeCoverage": 0,
+      "requiredRouteCount": 25,
+      "legalCoverage": "pending",
+      "accessibilityCoverage": "pending",
+      "externalCertification": "pending"
+    },
+    {
+      "code": "pt",
+      "name": "Portuguese (Brazil)",
+      "dir": "ltr",
+      "publishedFullUi": false,
+      "chatGuide": true,
+      "browserSpeech": true,
+      "routeCoverage": 0,
+      "requiredRouteCount": 25,
+      "legalCoverage": "pending",
+      "accessibilityCoverage": "pending",
+      "externalCertification": "pending"
+    },
+    {
+      "code": "ru",
+      "name": "Russian",
+      "dir": "ltr",
+      "publishedFullUi": false,
+      "chatGuide": true,
+      "browserSpeech": true,
+      "routeCoverage": 0,
+      "requiredRouteCount": 25,
+      "legalCoverage": "pending",
+      "accessibilityCoverage": "pending",
+      "externalCertification": "pending"
+    },
+    {
+      "code": "ar",
+      "name": "Arabic",
+      "dir": "rtl",
+      "publishedFullUi": false,
+      "chatGuide": true,
+      "browserSpeech": true,
+      "routeCoverage": 0,
+      "requiredRouteCount": 25,
+      "legalCoverage": "pending",
+      "accessibilityCoverage": "pending",
+      "externalCertification": "pending"
+    },
+    {
+      "code": "hi",
+      "name": "Hindi",
+      "dir": "ltr",
+      "publishedFullUi": false,
+      "chatGuide": true,
+      "browserSpeech": true,
+      "routeCoverage": 0,
+      "requiredRouteCount": 25,
+      "legalCoverage": "pending",
+      "accessibilityCoverage": "pending",
+      "externalCertification": "pending"
+    }
+  ],
+  "accessibility": {
+    "standardTarget": "WCAG 2.2 AA",
+    "minimumTargetPx": 48,
+    "sourceLanes": [
+      {
+        "id": "keyboard",
+        "status": "pass"
+      },
+      {
+        "id": "focus-visible",
+        "status": "pass"
+      },
+      {
+        "id": "reduced-motion",
+        "status": "pass"
+      },
+      {
+        "id": "semantic-alternatives",
+        "status": "pass"
+      },
+      {
+        "id": "touch-targets",
+        "status": "pass"
+      },
+      {
+        "id": "language-of-page",
+        "status": "pass"
+      },
+      {
+        "id": "reflow-source",
+        "status": "pass"
+      }
+    ],
+    "externalLanes": [
+      {
+        "id": "chrome-keyboard",
+        "status": "pending"
+      },
+      {
+        "id": "edge-keyboard",
+        "status": "pending"
+      },
+      {
+        "id": "nvda-chrome",
+        "status": "pending"
+      },
+      {
+        "id": "zoom-200",
+        "status": "pending"
+      },
+      {
+        "id": "zoom-400",
+        "status": "pending"
+      },
+      {
+        "id": "forced-colors",
+        "status": "pending"
+      },
+      {
+        "id": "mobile-touch",
+        "status": "pending"
+      },
+      {
+        "id": "rtl-browser",
+        "status": "pending"
+      },
+      {
+        "id": "pwa-installed",
+        "status": "pending"
+      }
+    ]
+  },
+  "claims": {
+    "wcagConformanceCertified": false,
+    "assistiveTechnologyCertified": false,
+    "physicalDeviceCertified": false,
+    "externalBrowserCertified": false,
+    "automaticCertification": false
+  }
+}
