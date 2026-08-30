@@ -115,6 +115,14 @@ test('RT98 policy makes MyLead primary and EONKEYS noncash/server-authoritative 
   ]);
 });
 
+test('RT98 protected Preview verifies completed upstream CI jobs without waiting on its own final workflow conclusion', () => {
+  const workflow = fs.readFileSync(path.join(root, '.github', 'workflows', 'rt98-preview-release.yml'), 'utf8');
+  assert.match(workflow, /actions\/runs\/\$RUN_ID\/jobs\?per_page=100/);
+  for (const job of ['permanent-predeploy', 'rt98-reward-center', 'rt92-monetization-policy', 'rt97-release-policy', 'legacy-boundary', 'exact-source-backup', 'rt98-preview-authority']) assert.match(workflow, new RegExp(job));
+  assert.doesNotMatch(workflow, /actions\/runs\?head_sha=/);
+  assert.doesNotMatch(workflow, /workflow_dispatch:/);
+});
+
 test('MyLead configuration fails closed and public config never exposes secret, URL, or allowlisted IPs', () => {
   assert.equal(getMyLeadConfig({}).configured, false);
   assert.equal(getMyLeadConfig({ EON_REWARD_MYLEAD_ENABLED: 'true', EON_REWARD_MYLEAD_OFFERWALL_URL: 'http://bad.test', EON_REWARD_MYLEAD_POSTBACK_SECRET: SECRET }).configured, false);

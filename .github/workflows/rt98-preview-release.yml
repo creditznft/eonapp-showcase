@@ -11,16 +11,6 @@ on:
         description: Exact RT98 source tree SHA
         required: true
         type: string
-  workflow_dispatch:
-    inputs:
-      source_commit:
-        description: Exact RT98 source commit SHA (must equal RT98 branch tip)
-        required: true
-        type: string
-      source_tree:
-        description: Exact RT98 source tree SHA
-        required: true
-        type: string
 
 permissions:
   actions: read
@@ -50,6 +40,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           REPO: ${{ github.repository }}
+          RUN_ID: ${{ github.run_id }}
           SOURCE: ${{ inputs.source_commit }}
           TREE: ${{ inputs.source_tree }}
         shell: bash
@@ -65,9 +56,14 @@ jobs:
           test "$TIP" = "$SOURCE"
           ACTUAL_TREE="$(git rev-parse "${SOURCE}^{tree}")"
           test "$ACTUAL_TREE" = "$TREE"
-          gh api "repos/$REPO/actions/runs?head_sha=$SOURCE&per_page=100" > /tmp/source-runs.json
-          CI_RUN="$(jq -r --arg sha "$SOURCE" '[.workflow_runs[] | select(.head_sha == $sha and .name == "CI" and .event == "push" and .conclusion == "success")] | sort_by(.created_at) | last | .id // empty' /tmp/source-runs.json)"
-          printf '%s' "$CI_RUN" | grep -Eq '^[0-9]{1,20}$'
+          # This reusable job is itself part of the current CI run, so waiting
+          # for that enclosing run's final conclusion would be circular. Verify
+          # the completed upstream certification jobs from this exact run instead.
+          gh api "repos/$REPO/actions/runs/$RUN_ID/jobs?per_page=100" > /tmp/source-jobs.json
+          for required in permanent-predeploy rt98-reward-center rt92-monetization-policy rt97-release-policy legacy-boundary exact-source-backup rt98-preview-authority; do
+            jq -e --arg name "$required" '[.jobs[] | select(.name == $name and .conclusion == "success")] | length > 0' /tmp/source-jobs.json > /dev/null
+          done
+          CI_RUN="$RUN_ID"
           echo "source=$SOURCE" >> "$GITHUB_OUTPUT"
           echo "tree=$TREE" >> "$GITHUB_OUTPUT"
           echo "ci_run=$CI_RUN" >> "$GITHUB_OUTPUT"
