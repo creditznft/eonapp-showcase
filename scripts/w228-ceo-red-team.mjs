@@ -92,8 +92,11 @@ export function verifyW228CeoRedTeam(root = ROOT) {
   assertRule(errors, !/(monetag|nowpayments|telegram-growth|reward-launch|token-dashboard|lootbox|ipfs-ipns|arweave|social-missions)/i.test(commandNames), 'Package scripts still expose retired commercial/token/ad deployment commands.');
   assertRule(errors, /test:e2e:current/.test(commandNames) && /qa:browser-proof:current/.test(commandNames), 'Package scripts do not expose the current browser-proof matrix.');
   assertRule(errors, Array.isArray(RETIRED_REDIRECTS) && RETIRED_REDIRECTS.length >= 80, 'Route contract lost retired alias coverage.');
-  for (const directory of ['functions/api/rewards', 'functions/api/nowpayments', 'functions/api/evm', 'functions/api/referrals', 'functions/api/ad-rewards', 'functions/api/social', 'functions/api/telegram']) {
+  for (const directory of ['functions/api/nowpayments', 'functions/api/evm', 'functions/api/referrals', 'functions/api/ad-rewards', 'functions/api/social', 'functions/api/telegram']) {
     assertRule(errors, !fs.existsSync(path.join(root, directory)), `Inactive commercial handler remains under active Pages Functions: ${directory}`);
+  }
+  for (const file of ['functions/api/rewards/index.js', 'functions/api/rewards/launch.js', 'functions/api/rewards/postback.js']) {
+    assertRule(errors, fs.existsSync(path.join(root, file)), `Current MyLead Reward Center authority is missing: ${file}`);
   }
   assertRule(errors, fs.existsSync(path.join(root, 'archive/w228-retired-pages-functions/README.md')), 'Archived Pages Functions boundary is missing.');
   assertRule(errors, !/agent-executor|runAgentJob|mirrorToRelay|decentralized relays|downloadMissionNode|eon:entitlements/.test(chat), 'Canonical Chat still advertises/imports background execution, or reads inactive entitlement state.');

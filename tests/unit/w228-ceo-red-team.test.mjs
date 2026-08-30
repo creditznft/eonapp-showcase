@@ -39,9 +39,10 @@ test('W228 keeps approval scheduling as a local review queue rather than auto-po
   assert.doesNotMatch(scheduler, /fetch\s*\(|XMLHttpRequest|webhook|access[_-]?token/i);
 });
 
-test('W228 removes commercial Cloudflare handlers and keeps canonical referral links browser-local only', () => {
-  const forbidden = ['functions/api/rewards', 'functions/api/nowpayments', 'functions/api/evm', 'functions/api/referrals', 'functions/api/ad-rewards', 'functions/api/social', 'functions/api/telegram'];
+test('W228 removes retired commercial Cloudflare handlers and keeps the RT98 reward authority bounded', () => {
+  const forbidden = ['functions/api/nowpayments', 'functions/api/evm', 'functions/api/referrals', 'functions/api/ad-rewards', 'functions/api/social', 'functions/api/telegram'];
   for (const relative of forbidden) assert.equal(fs.existsSync(path.join(root, relative)), false, relative);
+  for (const relative of ['functions/api/rewards/index.js', 'functions/api/rewards/launch.js', 'functions/api/rewards/postback.js']) assert.equal(fs.existsSync(path.join(root, relative)), true, relative);
   const referral = fs.readFileSync(path.join(root, 'assets/js/utils/referral-par.js'), 'utf8');
   assert.doesNotMatch(referral, /captureReferralCloud|\/api\/referrals/);
 });

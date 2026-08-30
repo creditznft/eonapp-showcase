@@ -14,8 +14,11 @@ const sponsored = getSponsoredDiscoveryStatus();
 assert(monetization.active === false, 'Monetization decision must remain inactive.');
 assert(milestones.active === false && milestones.killSwitch.engaged === true, 'Access Milestones must remain disabled.');
 assert(sponsored.active === false, 'Sponsored Discovery must remain disabled.');
-for (const directory of ['functions/api/rewards', 'functions/api/nowpayments', 'functions/api/evm', 'functions/api/referrals', 'functions/api/ad-rewards', 'functions/api/social', 'functions/api/telegram']) {
+for (const directory of ['functions/api/nowpayments', 'functions/api/evm', 'functions/api/referrals', 'functions/api/ad-rewards', 'functions/api/social', 'functions/api/telegram']) {
   assert(!fs.existsSync(directory), `${directory} must not be present in active Pages Functions while commercial paths are disabled`);
+}
+for (const file of ['functions/api/rewards/index.js', 'functions/api/rewards/launch.js', 'functions/api/rewards/postback.js']) {
+  assert(fs.existsSync(file), `RT98 MyLead Reward Center authority is missing: ${file}`);
 }
 for (const file of ['rewards.html', 'telegram.html', 'reward-access.html']) {
   if (!fs.existsSync(file)) continue;

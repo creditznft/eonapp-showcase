@@ -19,9 +19,12 @@ test('W215 decision remains disabled at every public commercial boundary', () =>
   assert.equal(canRenderSponsoredDiscovery('/chat').ok, false);
 });
 
-test('W215 legacy campaign rails stay disabled while RT92 Sponsor Keys remain server-authoritative', () => {
-  for (const directory of ['functions/api/rewards', 'functions/api/nowpayments', 'functions/api/evm', 'functions/api/referrals', 'functions/api/ad-rewards', 'functions/api/social', 'functions/api/telegram']) {
+test('W215 legacy campaign rails stay disabled while RT98 MyLead remains server-authoritative', () => {
+  for (const directory of ['functions/api/nowpayments', 'functions/api/evm', 'functions/api/referrals', 'functions/api/ad-rewards', 'functions/api/social', 'functions/api/telegram']) {
     assert.equal(fs.existsSync(path.join(root, directory)), false, directory);
+  }
+  for (const relative of ['functions/api/rewards/index.js', 'functions/api/rewards/launch.js', 'functions/api/rewards/postback.js']) {
+    assert.equal(fs.existsSync(path.join(root, relative)), true, relative);
   }
   const page = fs.readFileSync(path.join(root, 'assets/js/access/rewards-status-page.js'), 'utf8');
   assert.match(page, /Rewarded Sponsor Terminal/);

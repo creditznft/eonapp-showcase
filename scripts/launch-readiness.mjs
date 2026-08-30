@@ -27,7 +27,6 @@ const shareProtocolFiles = [
 const prohibitedCommercialFunctions = [
   'functions/api/social',
   'functions/api/referrals',
-  'functions/api/rewards',
   'functions/api/payments',
   'functions/api/nowpayments',
   'functions/api/token',
@@ -76,6 +75,9 @@ if (exists('assets/js/utils/signed-share-link.js')) {
 }
 for (const rel of prohibitedCommercialFunctions) {
   if (exists(rel)) blockers.push(`inactive commercial handler must not be deploy-discovered: ${rel}`);
+}
+for (const rel of ['functions/api/rewards/index.js', 'functions/api/rewards/launch.js', 'functions/api/rewards/postback.js']) {
+  if (!exists(rel)) blockers.push(`RT98 MyLead Reward Center authority missing: ${rel}`);
 }
 if (exists('dist')) {
   // chat.html is retained as a source compatibility document but is intentionally

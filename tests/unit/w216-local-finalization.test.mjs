@@ -86,7 +86,7 @@ test('sponsor boundary is a current-status surface while Sponsor Key grants stay
 });
 
 
-test('W216 current public trust surfaces separate live Dodo subscriptions, ordinary ads and bounded rewarded Sponsor Keys', () => {
+test('W216 current public trust surfaces separate live Dodo subscriptions, ordinary ads and bounded MyLead rewards', () => {
   const publicDocs = {
     about: read('about.html'),
     privacy: read('privacy.html'),
@@ -94,17 +94,17 @@ test('W216 current public trust surfaces separate live Dodo subscriptions, ordin
     help: read('help.html'),
     rewards: read('rewards.html')
   };
-  for (const [name, source] of Object.entries(publicDocs)) {
-    assert.doesNotMatch(source, /monetag|mylead|cpagrip|watch rewarded|rewarded-only|postback pending|nowpayments email subscription|direct evm fallback/i, `${name} contains retired campaign copy`);
-  }
+  for (const [name, source] of Object.entries(publicDocs)) assert.doesNotMatch(source, /monetag|cpagrip|watch rewarded|rewarded-only|postback pending|nowpayments email subscription|direct evm fallback/i, `${name} contains retired campaign copy`);
+  for (const name of ['about', 'billing']) assert.doesNotMatch(publicDocs[name], /mylead[^.]{0,120}subscription/i, `${name} must not present MyLead as a subscription rail`);
   for (const name of ['about', 'privacy', 'billing', 'help']) assert.match(publicDocs[name], /data-monetization="subscription"/, `${name} declares the canonical subscription state`);
   assert.match(publicDocs.rewards, /data-monetization="enabled"/);
   assert.match(publicDocs.about, /subscriptions are available through Dodo Payments hosted checkout/i);
   assert.match(publicDocs.privacy, /eon2<\/code> referral and <code>eon3<\/code> Realm links/);
   assert.match(publicDocs.billing, /Plus, Studio, Power, Max, Pro and Ultra are monthly subscriptions with the same seven-day trial/);
   assert.match(publicDocs.help, /subscriptions are available only through the hosted Dodo checkout/i);
-  assert.match(publicDocs.rewards, /each qualifying server-validated completion grants exactly one consumable Sponsor Key/i);
-  assert.match(publicDocs.privacy, /signed server session and validates the required ordered VAST playback events/i);
+  assert.match(publicDocs.rewards, /Rewards are server-authoritative and never created by clicks, redirects, iframe closes or ordinary ad playback/i);
+  assert.match(publicDocs.privacy, /trusted MyLead server postback confirms an eligible conversion/i);
+  assert.match(publicDocs.rewards, /MyLead Sponsored Missions/i);
   assert.match(publicDocs.about, /neither reward system grants a free subscription tier or payment credit/i);
   assert.match(publicDocs.billing, /never create a free subscription tier, first-month discount, renewal credit/i);
 });
