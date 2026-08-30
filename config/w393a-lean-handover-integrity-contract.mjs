@@ -62,7 +62,6 @@ export const W393A_REQUIRED_ABSENT_ACTIVE_PATHS = Object.freeze([
   'assets/js/utils/admin-wallets.js',
   'assets/js/utils/nowpayments-config.js',
   'assets/js/ads',
-  'assets/js/rewards',
   'assets/js/realm3d',
   'assets/js/reward-access-page.js',
   'assets/js/subscription-page.js',

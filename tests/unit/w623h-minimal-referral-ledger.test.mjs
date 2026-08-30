@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
 import test from 'node:test';
 import { DatabaseSync } from 'node:sqlite';
 import { applyBillingMigrations, applyReferralMigrations } from '../helpers/eon-d1-test-migrations.mjs';
@@ -87,6 +88,7 @@ test('W623H contract is subscription-only, stateless and minimal', () => {
   assert.equal(active.rewardedSponsorKeysOutsideReferral, true);
   assert.equal(active.referralAdViewRewards, false);
   assert.equal(active.monetization, 'separate-commercial-rails');
+  assert.match(fs.readFileSync(new URL('../../assets/js/referrals/eon-keys-page.js', import.meta.url), 'utf8'), /MyLead Sponsored Missions/);
   assert.equal(active.storage.rawTokens, false);
   assert.equal(active.storage.clicks, false);
   assert.equal(active.storage.media, false);

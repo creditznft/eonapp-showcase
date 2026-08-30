@@ -66,3 +66,7 @@ test('Production builds enforce W623D before Vite emits files', () => {
   assert.match(build, /w623d-production-reachability-gate\.mjs/);
   assert.match(pkg.scripts['qa:w623d-production-reachability'], /w623d-production-reachability-gate/);
 });
+
+test('W623D keeps protocol-relative approved provider scripts external to the repository graph', () => {
+  assert.equal(report.missing.includes('resources.infolinks.com/js/infolinks_main.js'), false);
+});

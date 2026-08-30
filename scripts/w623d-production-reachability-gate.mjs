@@ -43,6 +43,7 @@ function scriptEntriesFromHtml(htmlFiles) {
     let match;
     while ((match = expression.exec(source))) {
       const specifier = String(match[1] || '').split(/[?#]/)[0];
+      if (specifier.startsWith('//') || /^[a-z][a-z0-9+.-]*:\/\//i.test(specifier)) continue;
       let resolved = null;
       if (specifier.startsWith('/')) resolved = path.join(ROOT, specifier.slice(1));
       else if (specifier.startsWith('.')) resolved = path.resolve(path.dirname(absolute), specifier);

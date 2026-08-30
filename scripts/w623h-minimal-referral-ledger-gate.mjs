@@ -31,7 +31,7 @@ const viral = read('assets/js/share/eon-viral-share-kit.js');
 check('contract-valid', contract.ok, contract.errors.join(', '));
 check('runtime-valid', runtime.ok, runtime.errors.join(', '));
 check('rollout-controlled', publicActive.active && publicActive.referralGrantsActive && publicActive.keyRedemptionActive && !publicDisabled.active, 'testing/production + D1 required');
-check('separate-monetization-rails', publicActive.monetization === 'separate-commercial-rails' && publicActive.ordinaryAdsOutsideReferral === true && publicActive.rewardedSponsorKeysOutsideReferral === true && publicActive.referralAdViewRewards === false && /Sponsor Keys/.test(keyPage), 'referrals never treat ads/views as referral milestones');
+check('separate-monetization-rails', publicActive.monetization === 'separate-commercial-rails' && publicActive.ordinaryAdsOutsideReferral === true && publicActive.rewardedSponsorKeysOutsideReferral === true && publicActive.referralAdViewRewards === false && /MyLead Sponsored Missions/.test(keyPage), 'referrals never treat ads, Sponsor actions, or MyLead conversions as referral milestones');
 check('minimal-cloudflare-load', publicActive.cloudflareLoadModel === 'event-driven-and-lazy-no-polling-no-cron' && W623H_MINIMAL_REFERRAL_CONTRACT.newDatabaseRequired === false, 'existing dedicated D1 only');
 check('privacy-safe-growth-metrics', publicActive.measurement === 'ledger-derived-aggregates-only-no-click-impression-or-social-post-tracking' && /Verified sharing progress/.test(keyPage), 'existing qualified ledger counts only');
 check('api-actions', ['request_bind_challenge', 'bind_identity', 'enroll', 'qualify_activation', 'redeem'].every((action) => api.includes(`'${action}'`)), 'five explicit actions including proof challenge');

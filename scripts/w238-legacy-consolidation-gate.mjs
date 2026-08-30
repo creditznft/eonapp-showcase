@@ -25,8 +25,11 @@ if (archiveManifestPresent) {
 } else {
   assert(leanHandover.historicArchiveVerification === 'not-certified-by-this-handover', 'Lean handover must disclose omitted historical archive evidence.');
 }
-for (const directory of ['assets/js/ads', 'assets/js/rewards', 'assets/js/realm3d']) {
+for (const directory of ['assets/js/ads', 'assets/js/realm3d']) {
   assert(!exists(directory), `${directory} must be absent from active source after W238.`);
+}
+for (const file of ['assets/js/rewards/eon-reward-policy.js', 'assets/js/rewards/eon-rewards-page.js']) {
+  assert(exists(file), `${file} must remain the current RT98 Reward Center source.`);
 }
 for (const retiredSource of [
   'assets/js/reward-access-page.js', 'assets/js/subscription-page.js', 'assets/js/nowpayments-status-page.js',
