@@ -36,6 +36,7 @@ function makeD1() {
   sqlite.exec(readFileSync(new URL('../../migrations/trust/0001_trust_support_incident_authority.sql', import.meta.url), 'utf8'));
   sqlite.exec(readFileSync(new URL('../../migrations/trust/0002_vexrail_economic_aggregate.sql', import.meta.url), 'utf8'));
   sqlite.exec(readFileSync(new URL('../../migrations/trust/0003_growth_profitability_authority.sql', import.meta.url), 'utf8'));
+  sqlite.exec(readFileSync(new URL('../../migrations/trust/0004_growth_operational_events.sql', import.meta.url), 'utf8'));
   return { sqlite, prepare(sql) { return new Statement(sqlite, sql); }, async batch(rows) { sqlite.exec('BEGIN'); try { const result = rows.map((row) => row.run()); sqlite.exec('COMMIT'); return result; } catch (error) { sqlite.exec('ROLLBACK'); throw error; } } };
 }
 const caseInput = { categoryId: 'billing', subject: 'Duplicate subscription charge', description: 'A verified Dodo receipt appears to show the same monthly charge twice. I request manual review.', routePath: '/billing' };

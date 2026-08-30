@@ -129,7 +129,7 @@ function renderFeatureDecisionCard(featureId = '', options = {}) {
     <p>${escapeHtml(feature.userBenefit)}</p>
     <p class="eon-feature-lock-copy">${escapeHtml(copy.primary)}</p>
     ${copy.ai ? `<p class="eon-feature-lock-muted">${escapeHtml(copy.ai)}</p>` : ''}
-    <div class="eon-feature-lock-actions">${subscribe}${trial}${useKey}<a class="eon-feature-lock-action" data-eon-lock-action="keys" href="/eon-keys">Referral EONKEYS</a><a class="eon-feature-lock-action" data-eon-lock-action="sponsor" href="/rewards">Sponsor Keys</a></div>
+    <div class="eon-feature-lock-actions">${subscribe}${trial}${useKey}<a class="eon-feature-lock-action" data-eon-lock-action="keys" href="/eon-keys">Referral EONKEYS</a><a class="eon-feature-lock-action" data-eon-lock-action="sponsor" href="/rewards?surface=locked-feature">Sponsored Missions</a></div>
     <p class="eon-feature-lock-muted">Current referral-key inventory hint: ${escapeHtml(keyLabels)}. Paid plans use Billing; verified referral and Sponsor unlocks are reflected only through the signed server capability snapshot. No browser-only entitlement grant is accepted.</p>
   </article>`;
 }

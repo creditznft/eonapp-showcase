@@ -2,7 +2,7 @@
 export const EON_D1_SCHEMA_AUTHORITY = Object.freeze({
   identity: Object.freeze({ binding: 'EON_IDENTITY_DB', version: 6, migrationsDir: 'identity/migrations' }),
   billing: Object.freeze({ binding: 'EON_BILLING_DB', version: 2, migrationsDir: 'migrations/billing' }),
-  referrals: Object.freeze({ binding: 'EON_REFERRALS_DB', version: 5, migrationsDir: 'migrations/referrals' }),
+  referrals: Object.freeze({ binding: 'EON_REFERRALS_DB', version: 6, migrationsDir: 'migrations/referrals' }),
   trust: Object.freeze({ binding: 'EON_TRUST_DB', version: 4, migrationsDir: 'migrations/trust' })
 });
 

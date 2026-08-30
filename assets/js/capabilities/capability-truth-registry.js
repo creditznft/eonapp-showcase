@@ -204,10 +204,10 @@ const RECORDS = [
     truthfulUserFacingNote: 'The local release board is intentionally fail-closed. It cannot certify, approve, deploy, or release EONAPP; authoritative evidence recovery, Git-history remediation, real-device proof, and independent review remain required.'
   },
   {
-    id: 'rt92-rewarded-sponsor-keys', label: 'Rewarded Sponsor Keys', lifecycle: 'active-connected', canonicalSurface: 'Rewards', routes: ['/rewards'],
+    id: 'rt92-rewarded-sponsor-keys', label: 'Sponsored Mission EONKEYS', lifecycle: 'active-connected', canonicalSurface: 'Reward Center', routes: ['/rewards'],
     requiresConnection: true, requiresApproval: true, externalEffect: true,
-    evidenceOwner: 'RT92 monetization hardening', evidenceTest: 'rt92 monetization + rewarded sponsor runtime suites',
-    truthfulUserFacingNote: 'Signed-in users may voluntarily start an ExoClick rewarded-video session. EONAPP issues exactly one consumable Sponsor Key only after the server validates the signed VAST event sequence, timing, expiry, cooldown and replay controls. Sponsor Keys unlock only bounded one-use or short-duration features; they never grant a paid subscription, cash value, hosted AI credit or permanent high-value access.'
+    evidenceOwner: 'RT98 monetization hardening', evidenceTest: 'rt98 MyLead reward-center assurance + D1 lifecycle suites',
+    truthfulUserFacingNote: 'Signed-in users may voluntarily open MyLead Sponsored Missions from the Reward Center. EONAPP credits numeric non-cash EONKEYS only after a trusted provider server postback confirms an eligible conversion; browser actions never mint. EONKEYS redeem only for bounded temporary software unlocks and never grant a paid subscription, cash value, hosted AI credit or permanent high-value access.'
   },
   {
     id: 'referral-commercial-reentry', label: 'Commercial referral re-entry', lifecycle: 'blocked', canonicalSurface: 'Disabled status only', routes: ['/workspace', '/rewards'],

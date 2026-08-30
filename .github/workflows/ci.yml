@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [main, codex/rt92-vexrail-profit-privacy-guard, codex/rt92-vexrail-profitability-opt, codex/rt93-local-companion, codex/rt94-adaptive-local-lite, codex/rt95-profitability-observability, codex/rt97-release-candidate-2026-08-30]
+    branches: [main, codex/rt92-vexrail-profit-privacy-guard, codex/rt92-vexrail-profitability-opt, codex/rt93-local-companion, codex/rt94-adaptive-local-lite, codex/rt95-profitability-observability, codex/rt97-release-candidate-2026-08-30, codex/rt98-monetization-mylead-zyntent-2026-08-30]
   pull_request:
-    branches: [main, codex/rt92-vexrail-profit-privacy-guard, codex/rt92-vexrail-profitability-opt, codex/rt93-local-companion, codex/rt94-adaptive-local-lite, codex/rt95-profitability-observability, codex/rt97-release-candidate-2026-08-30]
+    branches: [main, codex/rt92-vexrail-profit-privacy-guard, codex/rt92-vexrail-profitability-opt, codex/rt93-local-companion, codex/rt94-adaptive-local-lite, codex/rt95-profitability-observability, codex/rt97-release-candidate-2026-08-30, codex/rt98-monetization-mylead-zyntent-2026-08-30]
 
 permissions:
   contents: read
@@ -44,6 +44,21 @@ jobs:
         run: npm ci --include=dev --no-audit --no-fund --prefer-offline
       - name: RT97 release-specific code and policy certification
         run: npm run verify:rt97-release
+
+  rt98-reward-center:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - name: Install exact dependencies
+        run: npm ci --include=dev --no-audit --no-fund --prefer-offline
+      - name: RT98 complete monetization, rewards, D1 and partner certification
+        run: npm run verify:rt98-monetization
 
   permanent-predeploy:
     runs-on: ubuntu-latest
@@ -129,6 +144,40 @@ jobs:
           cat artifacts/rt92-source-backup/AUTHORITY.txt
           cat artifacts/rt92-source-backup/SHA256SUMS.txt
           echo 'Exact-source verification PASS; no GitHub Actions artifact was uploaded.'
+
+  rt98-preview-authority:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/codex/rt98-monetization-mylead-zyntent-2026-08-30'
+    runs-on: ubuntu-latest
+    needs: [rt98-reward-center, exact-source-backup]
+    outputs:
+      source: ${{ steps.authority.outputs.source }}
+      tree: ${{ steps.authority.outputs.tree }}
+    steps:
+      - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+        with:
+          fetch-depth: 0
+      - name: Freeze RT98 Preview source authority after required CI gates
+        id: authority
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git branch --show-current)" = 'codex/rt98-monetization-mylead-zyntent-2026-08-30'
+          echo "source=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          echo "tree=$(git rev-parse 'HEAD^{tree}')" >> "$GITHUB_OUTPUT"
+
+  rt98-protected-preview:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/codex/rt98-monetization-mylead-zyntent-2026-08-30'
+    needs: rt98-preview-authority
+    permissions:
+      actions: read
+      contents: read
+      deployments: write
+      statuses: write
+    uses: ./.github/workflows/rt98-preview-release.yml
+    with:
+      source_commit: ${{ needs.rt98-preview-authority.outputs.source }}
+      source_tree: ${{ needs.rt98-preview-authority.outputs.tree }}
+    secrets: inherit
 
   lighthouse-advisory:
     runs-on: ubuntu-latest

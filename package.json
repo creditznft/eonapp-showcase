@@ -862,7 +862,12 @@
     "qa:rt91-phase-h": "node scripts/rt91-phase-h-institutional-red-team-gate.mjs && node --test tests/unit/rt91-phase-h-institutional-red-team.test.mjs",
     "qa:rt92-grand-art-foundation": "node scripts/rt92-grand-art-foundation-gate.mjs && node --test tests/unit/rt92-grand-art-foundation.test.mjs",
     "qa:rt92-grand-art": "node scripts/rt92-grand-art-foundation-gate.mjs && node scripts/rt92-art-performance-sharpness-gate.mjs && node scripts/rt92-final-visual-source-gate.mjs && node --test tests/unit/rt92-*.test.mjs tests/unit/w770d-my-frontier-building-composition-integration.test.mjs",
-    "qa:rt97-partner-monetization": "node scripts/rt97-partner-monetization-readiness-gate.mjs && node --test tests/unit/rt97-partner-monetization.test.mjs tests/unit/rt97-zyntent-sponsored-discovery.test.mjs"
+    "qa:rt97-partner-monetization": "node scripts/rt97-partner-monetization-readiness-gate.mjs && node --test tests/unit/rt97-partner-monetization.test.mjs tests/unit/rt97-zyntent-sponsored-discovery.test.mjs",
+    "qa:rt98-mylead": "node --test tests/unit/rt98-mylead-reward-center.test.mjs",
+    "qa:rt98-assurance": "node scripts/rt98-mylead-reward-center-assurance-gate.mjs",
+    "verify:rt98-rewards": "npm run qa:rt98-assurance && npm run qa:rt98-mylead",
+    "qa:rt98-monetization-surface": "node scripts/rt98-monetization-surface-readiness-gate.mjs",
+    "verify:rt98-monetization": "npm run verify:rt98-rewards && npm run qa:rt98-monetization-surface && npm run qa:a15-i21-cloudflare-d1 && npm run qa:rt97-partner-monetization && node --test tests/unit/rt97-sponsored-discovery-boundary.test.mjs tests/unit/rt97-1-sponsored-default-repair.test.mjs tests/unit/rt92-monetization-guest-display-policy.test.mjs tests/unit/rt92-production-release-provider-contract.test.mjs tests/unit/rt97-rewarded-provider-contract.test.mjs"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",

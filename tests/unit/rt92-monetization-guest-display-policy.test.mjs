@@ -160,16 +160,16 @@ test('RT96 legacy display component remains non-mounted archival code while prod
   assert.equal(forced.display.provider, 'none');
 });
 
-test('RT92 rewards UI exposes a real server-authoritative Sponsor Key wallet and never client-mints', () => {
+test('RT98 Reward Center exposes MyLead server-authoritative EONKEYS and keeps legacy Sponsor Terminal non-minting', () => {
   const html = read('rewards.html');
-  const page = read('assets/js/access/rewards-status-page.js');
-  assert.match(html, /Ordinary display ads are disabled in EONAPP/);
-  assert.match(html, /each qualifying server-validated completion grants exactly one consumable Sponsor Key/);
-  assert.match(page, /One qualifying completed video adds exactly one consumable Sponsor Key/);
-  assert.match(page, /One or several videos unlock short feature sessions/);
-  assert.match(page, /Ordinary display advertising is disabled across EONAPP and EON City/);
-  assert.match(page, /\/api\/monetization\/rewarded/);
-  assert.doesNotMatch(page, /SAFE-OFF until a provider-specific server completion verifier exists/);
+  const page = read('assets/js/rewards/eon-rewards-page.js');
+  assert.match(html, /MyLead Sponsored Missions/);
+  assert.match(html, /Rewards are server-authoritative/);
+  assert.match(page, /trusted MyLead server postback/);
+  assert.match(page, /\/api\/rewards\/launch/);
+  assert.match(page, /\/api\/rewards/);
+  assert.match(page, /browser has no mint authority/i);
+  assert.doesNotMatch(html, /eon-sponsor-terminal\.js|cdn\.fluidplayer\.com|a\.magsrv\.com/);
   const terminal = read('assets/js/monetization/eon-sponsor-terminal.js');
   assert.match(terminal, /cdn\.fluidplayer\.com/);
   assert.match(terminal, /clientCompletionCanReward: false/);
@@ -180,13 +180,13 @@ test('RT92 rewards UI exposes a real server-authoritative Sponsor Key wallet and
 
 
 
-test('RT92 capability grounding routes Rewards to the live server-authoritative Sponsor Key flow', async () => {
+test('RT98 capability grounding routes Rewards to the live MyLead server-postback EONKEY flow', async () => {
   const { getCapabilityTruthForRoute } = await import('../../assets/js/capabilities/capability-truth-registry.js');
   const rewards = getCapabilityTruthForRoute('/rewards');
   assert.equal(rewards?.id, 'rt92-rewarded-sponsor-keys');
   assert.equal(rewards?.lifecycle, 'active-connected');
-  assert.match(rewards?.truthfulUserFacingNote || '', /exactly one consumable Sponsor Key/);
-  assert.match(rewards?.truthfulUserFacingNote || '', /server validates the signed VAST event sequence/);
+  assert.match(rewards?.truthfulUserFacingNote || '', /MyLead Sponsored Missions/);
+  assert.match(rewards?.truthfulUserFacingNote || '', /trusted provider server postback/);
   assert.match(rewards?.truthfulUserFacingNote || '', /never grant a paid subscription/);
 });
 
@@ -207,9 +207,9 @@ test('RT96 Production config disables ordinary ExoClick inventory while retainin
   assert.equal(Object.hasOwn(env, 'EON_REWARDED_SIGNING_KEY'), false, 'reward signing secret must not be stored in source vars');
 });
 
-test('RT92 EON City exposes Sponsor Terminal by explicit navigation only', () => {
+test('RT98 EON City exposes Reward Center by explicit navigation only', () => {
   const plans = read('assets/js/work-surface/adapters/eon-plans-panel.js');
-  assert.match(plans, /href="\/rewards" data-eon-city-sponsor-terminal/);
+  assert.match(plans, /href="\/rewards\?surface=workspace" data-eon-city-sponsor-terminal/);
   assert.match(plans, /explicit-navigation-only/);
   const city = read('eoncity.html');
   assert.doesNotMatch(city, /data-eon-sponsored-slot|a\.magsrv\.com|cdn\.fluidplayer\.com/);

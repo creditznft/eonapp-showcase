@@ -1,0 +1,247 @@
+name: RT98 Protected MyLead Preview
+
+on:
+  workflow_call:
+    inputs:
+      source_commit:
+        description: Exact RT98 source commit SHA (must equal RT98 branch tip)
+        required: true
+        type: string
+      source_tree:
+        description: Exact RT98 source tree SHA
+        required: true
+        type: string
+  workflow_dispatch:
+    inputs:
+      source_commit:
+        description: Exact RT98 source commit SHA (must equal RT98 branch tip)
+        required: true
+        type: string
+      source_tree:
+        description: Exact RT98 source tree SHA
+        required: true
+        type: string
+
+permissions:
+  actions: read
+  contents: read
+  deployments: write
+  statuses: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+  SOURCE_BRANCH: codex/rt98-monetization-mylead-zyntent-2026-08-30
+  PROJECT_NAME: eonapp-ch
+  PREVIEW_BRANCH: rt98-mylead-gate
+
+concurrency:
+  group: cloudflare-pages-rt98-mylead-preview
+  cancel-in-progress: true
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    environment:
+      name: preview
+    steps:
+      - name: Validate exact source inputs and successful CI authority
+        id: authority
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          SOURCE: ${{ inputs.source_commit }}
+          TREE: ${{ inputs.source_tree }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          printf '%s' "$SOURCE" | grep -Eq '^[a-f0-9]{40}$'
+          printf '%s' "$TREE" | grep -Eq '^[a-f0-9]{40}$'
+          git init -q .source-authority
+          cd .source-authority
+          git remote add origin "https://github.com/$REPO.git"
+          git fetch origin "$SOURCE_BRANCH" --quiet
+          TIP="$(git rev-parse "origin/$SOURCE_BRANCH")"
+          test "$TIP" = "$SOURCE"
+          ACTUAL_TREE="$(git rev-parse "${SOURCE}^{tree}")"
+          test "$ACTUAL_TREE" = "$TREE"
+          gh api "repos/$REPO/actions/runs?head_sha=$SOURCE&per_page=100" > /tmp/source-runs.json
+          CI_RUN="$(jq -r --arg sha "$SOURCE" '[.workflow_runs[] | select(.head_sha == $sha and .name == "CI" and .event == "push" and .conclusion == "success")] | sort_by(.created_at) | last | .id // empty' /tmp/source-runs.json)"
+          printf '%s' "$CI_RUN" | grep -Eq '^[0-9]{1,20}$'
+          echo "source=$SOURCE" >> "$GITHUB_OUTPUT"
+          echo "tree=$TREE" >> "$GITHUB_OUTPUT"
+          echo "ci_run=$CI_RUN" >> "$GITHUB_OUTPUT"
+
+      - name: Check out exact certified source
+        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+        with:
+          ref: ${{ steps.authority.outputs.source }}
+          fetch-depth: 0
+
+      - name: Use Node 22
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install exact dependencies
+        run: npm ci --include=dev --no-audit --no-fund --prefer-offline
+
+      - name: Re-run permanent and RT98 certification on exact source
+        env:
+          EONAPP_SOURCE_REVISION: ${{ steps.authority.outputs.source }}
+        run: |
+          npm run verify:codex-predeploy
+          npm run verify:rt97-release
+          npm run verify:rt98-monetization
+
+      - name: Inspect Preview MyLead bindings without blocking the first protected Preview
+        id: mylead
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$CLOUDFLARE_API_TOKEN"
+          test -n "$CLOUDFLARE_ACCOUNT_ID"
+          curl --fail --silent --show-error \
+            -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/$PROJECT_NAME" \
+            -o /tmp/pages-project.json
+          test "$(jq -r '.success' /tmp/pages-project.json)" = true
+          jq -r '.result.deployment_configs.preview.env_vars // {} | keys[]' /tmp/pages-project.json | sort -u > /tmp/preview-env-names.txt
+          required=(EON_REWARD_MYLEAD_ENABLED EON_REWARD_MYLEAD_OFFERWALL_URL EON_REWARD_MYLEAD_POSTBACK_SECRET)
+          missing=()
+          for name in "${required[@]}"; do grep -Fxq "$name" /tmp/preview-env-names.txt || missing+=("$name"); done
+          enabled="$(jq -r '.result.deployment_configs.preview.env_vars.EON_REWARD_MYLEAD_ENABLED.value // empty' /tmp/pages-project.json)"
+          offerwall="$(jq -r '.result.deployment_configs.preview.env_vars.EON_REWARD_MYLEAD_OFFERWALL_URL.value // empty' /tmp/pages-project.json)"
+          ready=false
+          if [ "${#missing[@]}" -eq 0 ] && [ "$enabled" = true ] && printf '%s' "$offerwall" | grep -Eq '^https://'; then ready=true; fi
+          echo "ready=$ready" >> "$GITHUB_OUTPUT"
+          echo "missing_count=${#missing[@]}" >> "$GITHUB_OUTPUT"
+          if [ "$ready" = true ]; then
+            echo 'Preview MyLead configuration names are ready. Secret value was not read or printed.'
+          else
+            echo 'Preview will deploy fail-closed before MyLead activation, as intended for the first protected Preview.'
+            if [ "${#missing[@]}" -ne 0 ]; then printf 'Missing/non-active binding name: %s\n' "${missing[@]}"; fi
+          fi
+
+      - name: Apply and verify Preview referral migration 0006
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          npx --yes wrangler@4 d1 migrations apply eonapp-referrals-rt92-preview --remote --env preview --config wrangler.jsonc
+          npx --yes wrangler@4 d1 execute eonapp-referrals-rt92-preview --remote --env preview --config wrangler.jsonc \
+            --command "SELECT domain, schema_version, migration_name FROM eon_schema_authority WHERE domain='referrals'" --json > /tmp/referrals-schema.json
+          grep -Eq '"schema_version"[[:space:]]*:[[:space:]]*6' /tmp/referrals-schema.json
+          grep -Fq '0006_mylead_reward_center.sql' /tmp/referrals-schema.json
+
+      - name: Build and verify immutable candidate
+        id: candidate
+        env:
+          SOURCE: ${{ steps.authority.outputs.source }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm run release:candidate -- --commit "$SOURCE"
+          npm run release:candidate:verify -- artifacts/w641-release-candidate
+          ROOT="$(realpath artifacts/w641-release-candidate)"
+          DIGEST="$(jq -r .candidateDigest "$ROOT/candidate-provenance.json")"
+          test "$(jq -r .commitSha "$ROOT/candidate-provenance.json")" = "$SOURCE"
+          printf '%s' "$DIGEST" | grep -Eq '^[a-f0-9]{64}$'
+          echo "root=$ROOT" >> "$GITHUB_OUTPUT"
+          echo "digest=$DIGEST" >> "$GITHUB_OUTPUT"
+
+      - name: Stage complete Pages root
+        id: stage
+        env:
+          CANDIDATE_ROOT: ${{ steps.candidate.outputs.root }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          DEPLOY_ROOT="$RUNNER_TEMP/eonapp-rt98-preview-root"
+          node scripts/w660l-stage-pages-deploy-root.mjs --candidate "$CANDIDATE_ROOT" --output "$DEPLOY_ROOT"
+          test -f "$DEPLOY_ROOT/_routes.json"
+          test -f "$DEPLOY_ROOT/release/candidate-provenance.json"
+          test -f "$DEPLOY_ROOT/functions/api/rewards/index.js"
+          test -f "$DEPLOY_ROOT/functions/api/rewards/launch.js"
+          test -f "$DEPLOY_ROOT/functions/api/rewards/postback.js"
+          test -f "$DEPLOY_ROOT/rewards/index.html"
+          if grep -R -E -q 'EON_REWARD_MYLEAD_POSTBACK_SECRET[[:space:]]*[:=][[:space:]]*["'"'][^"'"']+' "$DEPLOY_ROOT"; then
+            echo 'BLOCKED: source bundle appears to contain an inline MyLead postback secret.' >&2
+            exit 1
+          fi
+          echo "root=$DEPLOY_ROOT" >> "$GITHUB_OUTPUT"
+
+      - name: Deploy exact RT98 bytes to protected Preview only
+        id: deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          DEPLOY_ROOT: ${{ steps.stage.outputs.root }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          STARTED_AT="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          echo "started_at=$STARTED_AT" >> "$GITHUB_OUTPUT"
+          cd "$DEPLOY_ROOT"
+          npx --yes wrangler@4 pages deploy . --project-name="$PROJECT_NAME" --branch="$PREVIEW_BRANCH"
+
+      - name: Prove Preview provenance and RT98 surface without minting a reward
+        id: proof
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          STARTED_AT: ${{ steps.deploy.outputs.started_at }}
+          SOURCE: ${{ steps.authority.outputs.source }}
+          DIGEST: ${{ steps.candidate.outputs.digest }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          URL=''
+          for attempt in $(seq 1 40); do
+            curl --fail --silent --show-error -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+              "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/$PROJECT_NAME/deployments" -o /tmp/deployments.json
+            URL="$(jq -r --arg branch "$PREVIEW_BRANCH" --arg started "$STARTED_AT" '[.result[] | select(.environment == "preview" and .deployment_trigger.metadata.branch == $branch and .created_on >= $started and .latest_stage.status == "success")] | sort_by(.created_on) | last | .url // empty' /tmp/deployments.json)"
+            [ -n "$URL" ] && break
+            sleep 5
+          done
+          test -n "$URL"
+          curl --fail --retry 20 --retry-delay 3 --silent --show-error "$URL/release/candidate-provenance.json" -o /tmp/provenance.json
+          test "$(jq -r .commitSha /tmp/provenance.json)" = "$SOURCE"
+          test "$(jq -r .candidateDigest /tmp/provenance.json)" = "$DIGEST"
+          curl --fail --retry 20 --retry-delay 3 --silent --show-error "$URL/rewards" -o /tmp/rewards.html
+          grep -Fq 'EON Reward Center' /tmp/rewards.html
+          grep -Fq 'MyLead Sponsored Missions' /tmp/rewards.html
+          if grep -Eq 'Sponsor Terminal|ExoClick|VAST playback' /tmp/rewards.html; then
+            echo 'BLOCKED: legacy rewarded-video product truth leaked onto RT98 Reward Center.' >&2
+            exit 1
+          fi
+          code="$(curl --silent --show-error -o /tmp/reward-config.json -w '%{http_code}' -H 'Accept: application/json' "$URL/api/rewards/config")"
+          test "$code" = 401 -o "$code" = 503
+          jq -e '.ok == false and (.error == "sign_in_required" or .error == "identity_unavailable")' /tmp/reward-config.json >/dev/null
+          echo "url=$URL" >> "$GITHUB_OUTPUT"
+          echo 'RT98 Preview proof PASS. No provider postback was fired and no reward was minted by this workflow.'
+
+      - name: Write ephemeral Preview receipt and stop before Production
+        env:
+          SOURCE: ${{ steps.authority.outputs.source }}
+          TREE: ${{ steps.authority.outputs.tree }}
+          CI_RUN: ${{ steps.authority.outputs.ci_run }}
+          DIGEST: ${{ steps.candidate.outputs.digest }}
+          PREVIEW_URL: ${{ steps.proof.outputs.url }}
+          MYLEAD_READY: ${{ steps.mylead.outputs.ready }}
+        shell: bash
+        run: |
+          mkdir -p artifacts/rt98-preview-release
+          jq -n --arg schema eonapp.rt98.mylead-preview.v1 --arg commit "$SOURCE" --arg tree "$TREE" \
+            --arg ciRun "$CI_RUN" --arg candidateDigest "$DIGEST" --arg previewUrl "$PREVIEW_URL" --arg myleadReady "$MYLEAD_READY" \
+            --arg nextGate 'configure/rotate MyLead Preview secret directly in Cloudflare if needed, rerun this same source Preview, then manual signed-in launch + trusted test/real postback + duplicate + reversal/debt proof; then Zyntent live-contract validation; Production remains blocked' \
+            '{schema:$schema,ok:true,productionChanged:false,commit:$commit,tree:$tree,ciRun:$ciRun,candidateDigest:$candidateDigest,previewUrl:$previewUrl,myleadConfigReady:($myleadReady=="true"),nextGate:$nextGate,createdAt:(now|todate)}' \
+            | tee artifacts/rt98-preview-release/receipt.json
+          echo 'RT98 protected Preview complete. Production was not deployed or modified.'

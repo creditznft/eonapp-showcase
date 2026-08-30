@@ -37,7 +37,7 @@ const definitions = freeze({
   'missions-rewards-terminal': freeze({ label: 'Missions & Rewards Terminal', purpose: 'Show only verified City progress and non-crypto product unlocks.', actions: freeze([
     action('orientation-progress', 'Review City progress', { panel: 'missions-rewards', purpose: 'Inspect verified mission, XP, EONKEY and Vault Reveal status.' }),
     action('orientation-eonkeys', 'Open EONKEYs', { route: '/eon-keys', purpose: 'Review server-issued product unlocks; EONKEYs are not cryptocurrency.' }),
-    action('orientation-sponsor-terminal', 'Open Sponsor Terminal', { route: '/rewards', purpose: 'Voluntarily watch rewarded ExoClick video. Only a qualifying server-validated completion can issue one consumable Sponsor Key.' })
+    action('orientation-sponsor-terminal', 'Open Reward Center', { route: '/rewards?surface=city-command-hub', purpose: 'Voluntarily open MyLead Sponsored Missions. Only a trusted provider server postback for an eligible conversion can credit numeric EONKEYS; City and browser actions never mint.' })
   ]) }),
   'district-route-console': freeze({ label: 'District Route Console', purpose: 'Choose a City destination through a separate review and confirmation.', actions: freeze([
     action('transit-map', 'Choose a district', { panel: 'travel-map', purpose: 'Review one of the nine City destinations before confirming local travel.' }),

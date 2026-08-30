@@ -138,7 +138,7 @@ export const EON_CITY_COMMAND_WORLD_ROADMAP = freeze([
   freeze({
     id: 'rt92-live',
     title: 'RT92 live commercial and reward authority',
-    deliverable: 'Keep City useful for Free users while paid access, referral EONKEYS and voluntary Sponsor Keys are resolved only by signed server authorities. City/browser state never mints entitlement or reward value.',
+    deliverable: 'Keep City useful for Free users while paid access, referral EONKEYS and voluntary Sponsored Mission EONKEYS are resolved only by server authorities. City/browser state never mints entitlement or reward value.',
     codingNow: true,
     blocksLaunchUntilDone: false
   })
@@ -167,7 +167,7 @@ export function buildEonCityCommandWorldPlan({ includeScores = true } = {}) {
     layers: includeScores ? layers : layers.map(({ productivityScore: _p, entertainmentScore: _e, cuttingEdgeScore: _c, launchFeasibilityScore: _l, ...layer }) => layer),
     districts,
     roadmap,
-    launchRule: 'Billing, referral EONKEYS and rewarded Sponsor Keys may be live only through their signed server authorities. City and browser state never grant entitlement, referral value or Sponsor Keys.'
+    launchRule: 'Billing, referral EONKEYS and Sponsored Mission EONKEYS may be live only through their trusted server authority. City and browser state never grant entitlement, referral value or Sponsored Mission EONKEYS.'
   });
 }
 

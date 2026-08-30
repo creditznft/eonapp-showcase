@@ -35,7 +35,8 @@ export function applyReferralMigrations(sqlite) {
     'migrations/referrals/0002_referral_operational_views.sql',
     'migrations/referrals/0003_referral_schema_authority.sql',
     'migrations/referrals/0004_rewarded_sponsor_eonkeys.sql',
-    'migrations/referrals/0005_rewarded_sponsor_runtime.sql'
+    'migrations/referrals/0005_rewarded_sponsor_runtime.sql',
+    'migrations/referrals/0006_mylead_reward_center.sql'
   ]);
 }
 
@@ -43,6 +44,7 @@ export function applyTrustMigrations(sqlite) {
   return applyMigrations(sqlite, [
     'migrations/trust/0001_trust_support_incident_authority.sql',
     'migrations/trust/0002_vexrail_economic_aggregate.sql',
-    'migrations/trust/0003_growth_profitability_authority.sql'
+    'migrations/trust/0003_growth_profitability_authority.sql',
+    'migrations/trust/0004_growth_operational_events.sql'
   ]);
 }
