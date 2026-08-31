@@ -26,18 +26,21 @@ test('RT97 Sponsored Discovery rejects private context, missing review and secre
   assert.equal(safe.guestOneShotUsed, false);
 });
 
-test('RT97 Sponsored Discovery uses configured Zyntent structured results before the protected Vexrail fallback', () => {
+test('RT97 Sponsored Discovery keeps Vexrail primary with configured Zyntent companion inventory', () => {
   const config = getSponsoredDiscoveryRuntimeConfig({
     EON_ZYNTENT_ENABLED: 'true', EON_ZYNTENT_API_KEY: 'a'.repeat(64), EON_ZYNTENT_SOURCE_ID: '12345678-1234-4234-8234-123456789abc'
   });
-  assert.equal(EON_SPONSORED_DISCOVERY_PROVIDER, 'zyntent-first-vexrail-fallback');
-  assert.equal(config.provider, 'zyntent-first-vexrail-fallback');
-  assert.equal(config.zyntentFirst, true);
+  assert.equal(EON_SPONSORED_DISCOVERY_PROVIDER, 'vexrail-primary-zyntent-companion');
+  assert.equal(config.provider, 'vexrail-primary-zyntent-companion');
+  assert.equal(config.zyntentCompanion, true);
   assert.equal(config.requiresSignedIn, true);
   assert.equal(config.requiresExplicitReview, true);
   assert.equal(config.usesVexrailAuthority, true);
   assert.equal(config.usesSeparateProviderCredential, true);
   assert.equal(config.usesSeparateProviderEndpoint, true);
+  const runtime = read('functions/_shared/eon-sponsored-discovery-runtime.js');
+  assert.match(runtime, /Promise\.all/);
+  assert.match(runtime, /zyntentResults/);
 });
 
 test('RT97 Sponsored Discovery builds only a bounded reviewed one-turn Vexrail request', () => {

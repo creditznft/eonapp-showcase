@@ -9,7 +9,7 @@ import { getPartnerMonetizationRuntimeConfig } from './rt97-partner-monetization
  * not accepted by this contract.
  */
 export const EON_SPONSORED_DISCOVERY_SCHEMA = 'eonapp.sponsored-discovery.rt97.v2';
-export const EON_SPONSORED_DISCOVERY_PROVIDER = 'zyntent-first-vexrail-fallback';
+export const EON_SPONSORED_DISCOVERY_PROVIDER = 'vexrail-primary-zyntent-companion';
 export const EON_SPONSORED_DISCOVERY_CATEGORIES = Object.freeze([
   'general', 'software', 'business', 'travel', 'shopping'
 ]);
@@ -65,7 +65,7 @@ export function getSponsoredDiscoveryRuntimeConfig(env = {}) {
     schema: EON_SPONSORED_DISCOVERY_SCHEMA,
     active: true,
     provider: zyntentReady ? EON_SPONSORED_DISCOVERY_PROVIDER : 'vexrail-one-turn',
-    zyntentFirst: zyntentReady,
+    zyntentCompanion: zyntentReady,
     requiresSignedIn: true,
     requiresExplicitReview: true,
     usesVexrailAuthority: true,
@@ -79,7 +79,7 @@ export function getSponsoredDiscoveryRuntimeConfig(env = {}) {
     localAnswerForwarded: false,
     privateMemoryForwarded: false,
     providerKeysForwarded: false,
-    reason: zyntentReady ? 'zyntent_structured_results_then_vexrail_fallback' : 'delegated_to_vexrail_one_turn_authority'
+    reason: zyntentReady ? 'vexrail_primary_with_zyntent_companion_inventory' : 'delegated_to_vexrail_one_turn_authority'
   });
 }
 

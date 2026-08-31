@@ -82,40 +82,27 @@ export async function runSponsoredDiscovery({ env = {}, request = null, input = 
   if (!capped.ok) return capped;
   try { await recordGrowthOperationalEvent(env.EON_TRUST_DB, 'sponsored_discovery_requested', request, env, now); } catch {}
 
-  // Zyntent receives only the already-reviewed commercial intent plus coarse
-  // country/language context. No-fill and provider errors deliberately fall
-  // through to the existing Vexrail authority rather than degrading privacy
-  // boundaries or manufacturing sponsored content.
-  try {
-    const zyntentResponse = await zyntentFetcher({ env, request, intent: sanitized.intent });
-    if (zyntentResponse?.ok && !zyntentResponse.noFill && Array.isArray(zyntentResponse.results) && zyntentResponse.results.length) {
-      try { await recordGrowthOperationalEvent(env.EON_TRUST_DB, 'sponsored_discovery_result_present', request, env, now); } catch {}
-      return freeze({
-        ok: true,
-        status: 200,
-        schema: EON_SPONSORED_DISCOVERY_SCHEMA,
-        sponsored: true,
-        disclosure: zyntentResponse.disclosure,
-        answer: '',
-        results: zyntentResponse.results,
-        provider: 'zyntent',
-        model: '',
-        routing: 'structured_discovery',
-        economicsState: 'provider_ready',
-        outbound: zyntentResponse.outbound
-      });
-    }
-  } catch {}
-
   const vexrailInput = buildVexrailSponsoredDiscoveryInput(sanitized, input?.turnstileToken || '');
 
-  let vexrailResponse;
-  try {
-    vexrailResponse = await vexrailExecutor({ env, request }, vexrailInput, {
+  // Both providers receive the same reviewed, bounded commercial intent only.
+  // They are independent: Zyntent inventory never replaces or delays the
+  // primary Vexrail response, and a Vexrail outage can still leave a genuine
+  // structured sponsored offer available to the user.
+  const zyntentPromise = Promise.resolve().then(() => zyntentFetcher({ env, request, intent: sanitized.intent })).catch(() => null);
+  const vexrailPromise = Promise.resolve().then(() => vexrailExecutor({ env, request }, vexrailInput, {
       requireSignedIn: true,
       profitabilityCohort: 'local_byok_discovery'
-    });
-  } catch {
+    })).catch(() => null);
+  const [zyntentResponse, vexrailResponse] = await Promise.all([zyntentPromise, vexrailPromise]);
+  const zyntentResults = zyntentResponse?.ok && !zyntentResponse.noFill && Array.isArray(zyntentResponse.results)
+    ? zyntentResponse.results.slice(0, 3)
+    : freeze([]);
+
+  if (!vexrailResponse) {
+    if (zyntentResults.length) {
+      try { await recordGrowthOperationalEvent(env.EON_TRUST_DB, 'sponsored_discovery_result_present', request, env, now); } catch {}
+      return freeze({ ok: true, status: 200, schema: EON_SPONSORED_DISCOVERY_SCHEMA, sponsored: true, disclosure: zyntentResponse.disclosure, answer: '', results: zyntentResults, provider: 'zyntent', model: '', routing: 'structured_discovery', economicsState: 'provider_ready', outbound: zyntentResponse.outbound });
+    }
     try { await recordGrowthOperationalEvent(env.EON_TRUST_DB, 'sponsored_discovery_provider_error', request, env, now); } catch {}
     return freeze({ ok: false, status: 502, reason: 'sponsored_discovery_provider_unavailable' });
   }
@@ -123,6 +110,10 @@ export async function runSponsoredDiscovery({ env = {}, request = null, input = 
   const payload = await vexrailResponse.json().catch(() => ({}));
   if (!vexrailResponse.ok) {
     const providerReason = String(payload?.error || 'sponsored_discovery_provider_error').slice(0, 120);
+    if (zyntentResults.length) {
+      try { await recordGrowthOperationalEvent(env.EON_TRUST_DB, 'sponsored_discovery_result_present', request, env, now); } catch {}
+      return freeze({ ok: true, status: 200, schema: EON_SPONSORED_DISCOVERY_SCHEMA, sponsored: true, disclosure: zyntentResponse.disclosure, answer: '', results: zyntentResults, provider: 'zyntent', model: '', routing: 'structured_discovery', economicsState: 'provider_ready', outbound: zyntentResponse.outbound });
+    }
     try { await recordGrowthOperationalEvent(env.EON_TRUST_DB, 'sponsored_discovery_provider_error', request, env, now); } catch {}
     return freeze({ ok: false, status: vexrailResponse.status || 502, reason: providerReason });
   }
@@ -139,7 +130,7 @@ export async function runSponsoredDiscovery({ env = {}, request = null, input = 
     sponsored: true,
     disclosure: 'Sponsored Discovery · separate one-turn Vexrail request',
     answer,
-    results: freeze([]),
+    results: freeze(zyntentResults),
     provider: 'vexrail',
     model: String(vexrailResponse.headers.get('x-eon-vexrail-model') || '').slice(0, 160),
     routing: String(vexrailResponse.headers.get('x-eon-vexrail-routing') || '').slice(0, 80),

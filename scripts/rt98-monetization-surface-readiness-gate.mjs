@@ -55,8 +55,8 @@ const discoveryRuntime = read('functions/_shared/eon-sponsored-discovery-runtime
 check(EON_ZYNTENT.enabledByDefault === false, 'Zyntent must remain disabled by default before live credential proof.');
 check(EON_ZYNTENT.adsSearchPath === '/public_api/v1/ads/search/', 'Zyntent adapter endpoint drifted from the current public test-bench path.');
 check(zyntentAdapter.includes('source_id') && zyntentAdapter.includes('ads_limit'), 'Zyntent bounded server payload adapter is incomplete.');
-check(EON_SPONSORED_DISCOVERY_PROVIDER === 'zyntent-first-vexrail-fallback' && getSponsoredDiscoveryRuntimeConfig().usesVexrailAuthority === true, 'Sponsored Discovery must preserve protected Vexrail fallback authority.');
-check(discoveryRuntime.includes('fetchZyntentSponsoredDiscovery') && discoveryRuntime.includes('executeVexrailRequest'), 'Sponsored Discovery runtime must use Zyntent structured discovery before its protected Vexrail fallback.');
+check(EON_SPONSORED_DISCOVERY_PROVIDER === 'vexrail-primary-zyntent-companion' && getSponsoredDiscoveryRuntimeConfig().usesVexrailAuthority === true, 'Sponsored Discovery must preserve primary Vexrail authority.');
+check(discoveryRuntime.includes('Promise.all') && discoveryRuntime.includes('fetchZyntentSponsoredDiscovery') && discoveryRuntime.includes('executeVexrailRequest'), 'Sponsored Discovery runtime must execute primary Vexrail and companion Zyntent inventory independently.');
 
 // Backup/experimental rails are present but safe by default.
 check(EON_BIDVERTISER.publisherAdsEnabledByDefault === false && EON_BIDVERTISER.automaticRedirectAllowed === false, 'BidVertiser must remain verification/backup only by default.');
@@ -82,7 +82,7 @@ const report = {
   },
   sponsoredDiscovery: {
     currentAuthority: EON_SPONSORED_DISCOVERY_PROVIDER,
-    zyntent: 'server-configured-structured-first-with-protected-vexrail-fallback-live-endpoint-proof-required'
+    zyntent: 'server-configured-structured-companion-to-primary-vexrail-live-endpoint-proof-required'
   },
   ordinaryAppDisplay: 'disabled-by-product-policy',
   bidvertiser: 'verification-backup-disabled-by-default',
