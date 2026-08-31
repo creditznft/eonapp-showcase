@@ -85,7 +85,7 @@ test('RT97 Local AI UI keeps Sponsored Discovery separate, signed-in, reviewed, 
   assert.match(client, /guest one-shot/);
   assert.match(client, /acquireVexrailTurnstileToken/);
   assert.match(client, /action:\s*'sponsored_gemini'/);
-  assert.match(client, /rel = 'sponsored noopener noreferrer'/);
+  assert.match(client, /rel = 'sponsored nofollow noopener noreferrer'/);
   assert.match(client, /Local AI or BYOK answer stays private and ad-free/);
   assert.match(client, /fetch\('\/api\/discovery\/sponsored'/);
   assert.match(page, /renderSponsoredDiscoveryPanel\(state\.sponsoredDiscovery\)/);

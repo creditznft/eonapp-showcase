@@ -92,7 +92,7 @@ function appendSafeTextWithLinks(target, text = '') {
       const link = document.createElement('a');
       link.href = parsed.toString();
       link.target = '_blank';
-      link.rel = 'sponsored noopener noreferrer';
+      link.rel = 'sponsored nofollow noopener noreferrer';
       link.textContent = label || rawUrl;
       target.appendChild(link);
     } catch {
@@ -120,7 +120,7 @@ function renderSponsoredResults(results = []) {
     const merchant = escapeHtml(String(item.merchant || '').slice(0, 120));
     const description = escapeHtml(String(item.description || '').slice(0, 300));
     const price = escapeHtml(String(item.price || '').slice(0, 80));
-    return `<article class="eon-sponsored-offer-card"><a href="${escapeHtml(url)}" target="_blank" rel="sponsored noopener noreferrer"><strong>${title}</strong>${merchant ? `<span>${merchant}</span>` : ''}${description ? `<p>${description}</p>` : ''}${price ? `<b>${price}</b>` : ''}</a></article>`;
+    return `<article class="eon-sponsored-offer-card"><a href="${escapeHtml(url)}" target="_blank" rel="sponsored nofollow noopener noreferrer"><strong>${title}</strong>${merchant ? `<span>${merchant}</span>` : ''}${description ? `<p>${description}</p>` : ''}${price ? `<b>${price}</b>` : ''}</a></article>`;
   }).filter(Boolean) : [];
   return cards.length ? `<section class="eon-sponsored-offers" aria-label="Sponsored offers"><div class="eon-sponsored-badge">Sponsored offers · Zyntent</div><div class="eon-sponsored-offer-strip">${cards.join('')}</div></section>` : '';
 }
