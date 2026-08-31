@@ -1,0 +1,520 @@
+name: RT98 Exact Production Release
+
+on:
+  push:
+    branches: [release/rt98-production]
+    paths: [.github/rt98-production-request.json]
+
+permissions:
+  actions: read
+  contents: read
+  deployments: write
+  statuses: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+  SOURCE_BRANCH: codex/rt98-monetization-mylead-zyntent-2026-08-30
+  PROJECT_NAME: eonapp-ch
+  PREVIEW_BRANCH: rt98-production-gate
+
+concurrency:
+  group: cloudflare-pages-production
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    environment:
+      name: production
+      url: https://eonapp.ch
+    steps:
+      - name: Read explicit release request
+        id: request
+        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+        with:
+          fetch-depth: 0
+
+      - name: Validate exact source and successful CI authority
+        id: authority
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          REQUEST=.github/rt98-production-request.json
+          SOURCE="$(jq -r '.sourceCommit // empty' "$REQUEST")"
+          TREE="$(jq -r '.sourceTree // empty' "$REQUEST")"
+          REQUEST_DIGEST="$(jq -r '.candidateDigest // empty' "$REQUEST")"
+          REQUEST_CI_RUN="$(jq -r '.ciRun // empty' "$REQUEST")"
+          PREVIEW_URL="$(jq -r '.previewUrl // empty' "$REQUEST")"
+          test "$(jq -r '.schema // empty' "$REQUEST")" = 'eonapp.rt98.production-request.v1'
+          test "$(jq -r '.releaseBranch // empty' "$REQUEST")" = 'release/rt98-production'
+          test "$(jq -r '.sourceBranch // empty' "$REQUEST")" = "$SOURCE_BRANCH"
+          printf '%s' "$SOURCE" | grep -Eq '^[a-f0-9]{40}$'
+          printf '%s' "$TREE" | grep -Eq '^[a-f0-9]{40}$'
+          printf '%s' "$REQUEST_DIGEST" | grep -Eq '^[a-f0-9]{64}$'
+          printf '%s' "$REQUEST_CI_RUN" | grep -Eq '^[0-9]{1,20}$'
+          printf '%s' "$PREVIEW_URL" | grep -Eq '^https://[a-z0-9]+\.eonapp-ch\.pages\.dev$'
+          git fetch origin "$SOURCE_BRANCH" --quiet
+          TIP="$(git rev-parse "origin/$SOURCE_BRANCH")"
+          test "$SOURCE" = "$TIP"
+          ACTUAL_TREE="$(git rev-parse "${SOURCE}^{tree}")"
+          test "$TREE" = "$ACTUAL_TREE"
+          gh api "repos/$REPO/actions/runs/$REQUEST_CI_RUN" > /tmp/source-run.json
+          test "$(jq -r .head_sha /tmp/source-run.json)" = "$SOURCE"
+          test "$(jq -r .name /tmp/source-run.json)" = 'CI'
+          test "$(jq -r .event /tmp/source-run.json)" = 'push'
+          test "$(jq -r .conclusion /tmp/source-run.json)" = 'success'
+          gh api "repos/$REPO/actions/runs/$REQUEST_CI_RUN/jobs?per_page=100" > /tmp/source-jobs.json
+          for required in permanent-predeploy rt98-reward-center rt92-monetization-policy rt97-release-policy legacy-boundary exact-source-backup rt98-preview-authority 'rt98-protected-preview / preview'; do
+            jq -e --arg name "$required" '[.jobs[] | select(.name == $name and .conclusion == "success")] | length > 0' /tmp/source-jobs.json > /dev/null
+          done
+          curl --fail --silent --show-error "$PREVIEW_URL/release/candidate-provenance.json" -o /tmp/preview-request-provenance.json
+          test "$(jq -r .commitSha /tmp/preview-request-provenance.json)" = "$SOURCE"
+          test "$(jq -r .candidateDigest /tmp/preview-request-provenance.json)" = "$REQUEST_DIGEST"
+          CI_RUN="$REQUEST_CI_RUN"
+          echo "source=$SOURCE" >> "$GITHUB_OUTPUT"
+          echo "tree=$TREE" >> "$GITHUB_OUTPUT"
+          echo "ci_run=$CI_RUN" >> "$GITHUB_OUTPUT"
+          echo "expected_digest=$REQUEST_DIGEST" >> "$GITHUB_OUTPUT"
+          echo "preview_url=$PREVIEW_URL" >> "$GITHUB_OUTPUT"
+          printf 'Authorized source commit: %s\nAuthorized source tree: %s\nCertified CI run: %s\n' "$SOURCE" "$TREE" "$CI_RUN"
+
+      - name: Check out exact certified source
+        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+        with:
+          ref: ${{ steps.authority.outputs.source }}
+          fetch-depth: 0
+
+      - name: Use Node 22
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install exact dependencies
+        run: npm ci --include=dev --no-audit --no-fund --prefer-offline
+
+      - name: Re-run permanent predeploy on exact source
+        env:
+          EONAPP_SOURCE_REVISION: ${{ steps.authority.outputs.source }}
+        run: npm run verify:codex-predeploy
+
+      - name: Re-run RT98 release-specific policy gates
+        run: npm run verify:rt97-release && npm run verify:rt98-monetization
+
+      - name: Validate Cloudflare credentials and Production binding names
+        id: cloudflare_preflight
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$CLOUDFLARE_API_TOKEN"
+          test -n "$CLOUDFLARE_ACCOUNT_ID"
+          curl --fail --silent --show-error \
+            -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/$PROJECT_NAME" \
+            -o /tmp/pages-project.json
+          test "$(jq -r '.success' /tmp/pages-project.json)" = true
+          jq -r '.result.deployment_configs.production.env_vars // {} | keys[]' /tmp/pages-project.json | sort -u > /tmp/production-env-names.txt
+          required=(
+            APP_ORIGIN EON_ENVIRONMENT
+            EON_MONETIZATION_ROLLOUT EON_MONETIZATION_ENABLED EON_DISPLAY_ADS_ENABLED
+            EON_EXOCLICK_ENABLED EON_EXOCLICK_NATIVE_ENABLED EON_EXOCLICK_MULTIFORMAT_ENABLED EON_EXOCLICK_OUTSTREAM_ENABLED
+            EON_SPONSOR_VIDEO_ENABLED EON_REWARDED_ADS_ENABLED EON_REWARDED_PROVIDER EON_REWARDED_PROVIDER_VERIFIED EON_REWARDED_SIGNING_KEY
+            DODO_PRODUCT_PLUS DODO_PRODUCT_STUDIO DODO_PRODUCT_POWER DODO_PRODUCT_MAX DODO_PRODUCT_PRO DODO_PRODUCT_ULTRA DODO_PRODUCT_ULTIMATE EON_PREMIUM_CHECKOUT_ROLLOUT
+            EON_VEXRAIL_ROLLOUT EON_VEXRAIL_GEO_MODE EON_VEXRAIL_COUNTRIES EON_VEXRAIL_REQUIRE_CF_METADATA EON_VEXRAIL_TURNSTILE_MODE
+            VEXRAIL_SECRET_KEY VEXRAIL_PUBLISHABLE_KEY EON_VEXRAIL_MODEL_ECONOMICS_JSON
+            EON_VEXRAIL_TURNSTILE_SITE_KEY EON_VEXRAIL_TURNSTILE_SECRET EON_VEXRAIL_TURNSTILE_HOSTNAMES
+            EON_TRUST_RATE_LIMIT_SALT
+            EON_REWARD_MYLEAD_ENABLED EON_REWARD_MYLEAD_OFFERWALL_URL EON_REWARD_MYLEAD_POSTBACK_ALLOWED_IPS EON_REWARD_MYLEAD_POSTBACK_SECRET
+            EON_ZYNTENT_ENABLED EON_ZYNTENT_API_KEY EON_ZYNTENT_SOURCE_ID
+          )
+          missing=()
+          for name in "${required[@]}"; do
+            grep -Fxq "$name" /tmp/production-env-names.txt || missing+=("$name")
+          done
+          if [ "${#missing[@]}" -ne 0 ]; then
+            printf 'Missing required Production binding name(s):\n' >&2
+            printf ' - %s\n' "${missing[@]}" >&2
+            exit 1
+          fi
+          # Non-secret production values are deployment authority and may be checked safely.
+          prod_value() { jq -r --arg key "$1" '.result.deployment_configs.production.env_vars[$key].value // empty' /tmp/pages-project.json; }
+          test "$(prod_value EON_VEXRAIL_ROLLOUT)" = production
+          test "$(prod_value EON_VEXRAIL_GEO_MODE)" = selected_countries
+          COUNTRIES="$(prod_value EON_VEXRAIL_COUNTRIES)"
+          printf ',%s,' "$COUNTRIES" | grep -Eq ',IN,'
+          test "$(prod_value EON_VEXRAIL_REQUIRE_CF_METADATA)" = true
+          test "$(prod_value EON_VEXRAIL_TURNSTILE_MODE)" = required
+          test "$(prod_value EON_DISPLAY_ADS_ENABLED)" = false
+          test "$(prod_value EON_EXOCLICK_ENABLED)" = false
+          test "$(prod_value EON_SPONSOR_VIDEO_ENABLED)" = true
+          test "$(prod_value EON_REWARDED_ADS_ENABLED)" = true
+          test "$(prod_value EON_REWARD_MYLEAD_ENABLED)" = true
+          test "$(prod_value EON_REWARD_MYLEAD_OFFERWALL_URL)" = 'https://reward-me.eu/76de5208-6e71-11f1-9761-129a1c289511'
+          test "$(prod_value EON_REWARD_MYLEAD_POSTBACK_ALLOWED_IPS)" = '159.65.61.13'
+          test "$(prod_value EON_ZYNTENT_ENABLED)" = true
+          test "$(prod_value EON_ZYNTENT_SOURCE_ID)" = '591b633f-2b9d-47de-942e-622f060af8a6'
+          echo 'Cloudflare Production binding/value preflight PASS: MyLead and Zyntent configuration is present; secret values were not read or printed.'
+
+      - name: Best-effort Dodo webhook WAF IP audit
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          NEW_DODO_IP='34.14.159.139'
+          if ! curl --silent --show-error --fail \
+            -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            'https://api.cloudflare.com/client/v4/zones?name=eonapp.ch&status=active' \
+            -o /tmp/zones.json; then
+            echo 'Dodo WAF audit unavailable with this API token; application webhook remains signature-authoritative.'
+            exit 0
+          fi
+          ZONE_ID="$(jq -r '.result | if length == 1 then .[0].id else empty end' /tmp/zones.json)"
+          if [ -z "$ZONE_ID" ]; then
+            echo 'Dodo WAF audit could not resolve one active eonapp.ch zone; application webhook remains signature-authoritative.'
+            exit 0
+          fi
+          if ! curl --silent --show-error --fail \
+            -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/rulesets" \
+            -o /tmp/rulesets.json; then
+            echo 'Dodo WAF ruleset audit unavailable with this API token; application webhook remains signature-authoritative.'
+            exit 0
+          fi
+          : > /tmp/dodo-ip-rules.txt
+          while read -r RULESET_ID; do
+            [ -n "$RULESET_ID" ] || continue
+            if curl --silent --show-error --fail \
+              -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+              "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/rulesets/$RULESET_ID" \
+              -o /tmp/ruleset.json; then
+              jq -r '.result.rules[]? | select(.enabled != false) | .expression // empty' /tmp/ruleset.json \
+                | grep -Ei '(billing|webhook|dodo)' \
+                | grep -Ei 'ip\.src' >> /tmp/dodo-ip-rules.txt || true
+            fi
+          done < <(jq -r '.result[]? | select(.phase == "http_request_firewall_custom") | .id' /tmp/rulesets.json)
+          if [ -s /tmp/dodo-ip-rules.txt ]; then
+            if ! grep -Fq "$NEW_DODO_IP" /tmp/dodo-ip-rules.txt; then
+              echo "BLOCKED: an enabled Dodo/billing/webhook source-IP WAF rule was found without the new Dodo IP $NEW_DODO_IP." >&2
+              exit 1
+            fi
+            echo 'Dodo webhook WAF source-IP restriction found and new IP is present.'
+          else
+            echo 'No enabled Dodo/billing/webhook source-IP WAF rule detected; no Dodo IP allowlist change is required.'
+          fi
+
+      - name: Apply and verify gated Production D1 migrations
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          for database in eonapp-identity-prod eonapp-billing EONAPP_REFERRALS_DB eonapp-trust; do
+            echo "Applying unapplied migrations to $database"
+            npx --yes wrangler@4 d1 migrations apply "$database" --remote --env production --config wrangler.jsonc
+          done
+          npx --yes wrangler@4 d1 execute eonapp-identity-prod --remote --env production --config wrangler.jsonc --command "SELECT domain, schema_version FROM eon_schema_authority WHERE domain='identity'" --json > /tmp/identity-schema.json
+          npx --yes wrangler@4 d1 execute eonapp-billing --remote --env production --config wrangler.jsonc --command "SELECT domain, schema_version FROM eon_schema_authority WHERE domain IN ('billing','premium_billing') ORDER BY domain" --json > /tmp/billing-schema.json
+          npx --yes wrangler@4 d1 execute EONAPP_REFERRALS_DB --remote --env production --config wrangler.jsonc --command "SELECT domain, schema_version FROM eon_schema_authority WHERE domain='referrals'" --json > /tmp/referrals-schema.json
+          npx --yes wrangler@4 d1 execute eonapp-trust --remote --env production --config wrangler.jsonc --command "SELECT domain, schema_version FROM eon_schema_authority WHERE domain='trust'" --json > /tmp/trust-schema.json
+          grep -Eq '"domain"[[:space:]]*:[[:space:]]*"identity"' /tmp/identity-schema.json
+          grep -Eq '"schema_version"[[:space:]]*:[[:space:]]*6' /tmp/identity-schema.json
+          grep -Eq '"domain"[[:space:]]*:[[:space:]]*"billing"' /tmp/billing-schema.json
+          grep -Eq '"schema_version"[[:space:]]*:[[:space:]]*2' /tmp/billing-schema.json
+          grep -Eq '"domain"[[:space:]]*:[[:space:]]*"premium_billing"' /tmp/billing-schema.json
+          grep -Eq '"schema_version"[[:space:]]*:[[:space:]]*1' /tmp/billing-schema.json
+          grep -Eq '"schema_version"[[:space:]]*:[[:space:]]*6' /tmp/referrals-schema.json
+          test -f migrations/0006_mylead_reward_center.sql
+          grep -Eq '"schema_version"[[:space:]]*:[[:space:]]*4' /tmp/trust-schema.json
+          echo 'Production D1 migration/schema proof PASS.'
+
+      - name: Build and verify immutable RT98 candidate
+        id: candidate
+        env:
+          SOURCE: ${{ steps.authority.outputs.source }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm run release:candidate -- --commit "$SOURCE"
+          npm run release:candidate:verify -- artifacts/w641-release-candidate
+          ROOT="$(realpath artifacts/w641-release-candidate)"
+          DIGEST="$(jq -r .candidateDigest "$ROOT/candidate-provenance.json")"
+          test "$(jq -r .commitSha "$ROOT/candidate-provenance.json")" = "$SOURCE"
+          test "$DIGEST" = "${{ steps.authority.outputs.expected_digest }}"
+          printf '%s' "$DIGEST" | grep -Eq '^[a-f0-9]{64}$'
+          echo "root=$ROOT" >> "$GITHUB_OUTPUT"
+          echo "digest=$DIGEST" >> "$GITHUB_OUTPUT"
+
+      - name: Stage complete Pages root
+        id: stage
+        env:
+          CANDIDATE_ROOT: ${{ steps.candidate.outputs.root }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          DEPLOY_ROOT="$RUNNER_TEMP/eonapp-rt98-production-root"
+          node scripts/w660l-stage-pages-deploy-root.mjs --candidate "$CANDIDATE_ROOT" --output "$DEPLOY_ROOT"
+          test -f "$DEPLOY_ROOT/_routes.json"
+          test -f "$DEPLOY_ROOT/release/candidate-provenance.json"
+          test -f "$DEPLOY_ROOT/functions/api/monetization/status.js"
+          test -f "$DEPLOY_ROOT/functions/api/ai/vexrail.js"
+          test -f "$DEPLOY_ROOT/functions/api/ai/vexrail-readiness.js"
+          test -f "$DEPLOY_ROOT/functions/api/billing/webhooks/dodo.js"
+          test -f "$DEPLOY_ROOT/rewards/index.html"
+          test -f "$DEPLOY_ROOT/assets/media/sponsor-terminal/eonapp-sponsor-terminal-tail.mp4"
+          grep -R -F -q --include='*.js' 'eonapp.monetization.sponsor-terminal.rt92.v2' "$DEPLOY_ROOT/assets"
+          echo "root=$DEPLOY_ROOT" >> "$GITHUB_OUTPUT"
+
+      - name: Capture rollback Production deployment
+        id: rollback
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --silent --show-error \
+            -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/$PROJECT_NAME/deployments" \
+            -o /tmp/production-before.json
+          ROW="$(jq -c '[.result[] | select(.environment == "production" and .latest_stage.status == "success")] | sort_by(.created_on) | last' /tmp/production-before.json)"
+          test "$ROW" != null
+          ID="$(jq -r .id <<<"$ROW")"
+          URL="$(jq -r .url <<<"$ROW")"
+          printf '%s' "$ID" > /tmp/eonapp-rollback-id
+          echo "id=$ID" >> "$GITHUB_OUTPUT"
+          echo "url=$URL" >> "$GITHUB_OUTPUT"
+
+      - name: Deploy identical bytes to RT92 gate Preview
+        id: preview_deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          DEPLOY_ROOT: ${{ steps.stage.outputs.root }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          STARTED_AT="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          echo "started_at=$STARTED_AT" >> "$GITHUB_OUTPUT"
+          cd "$DEPLOY_ROOT"
+          npx --yes wrangler@4 pages deploy . --project-name="$PROJECT_NAME" --branch="$PREVIEW_BRANCH"
+
+      - name: Verify gate Preview provenance
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          STARTED_AT: ${{ steps.preview_deploy.outputs.started_at }}
+          SOURCE: ${{ steps.authority.outputs.source }}
+          DIGEST: ${{ steps.candidate.outputs.digest }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          URL=''
+          for attempt in $(seq 1 30); do
+            curl --fail --silent --show-error -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+              "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/$PROJECT_NAME/deployments" -o /tmp/deployments.json
+            URL="$(jq -r --arg branch "$PREVIEW_BRANCH" --arg started "$STARTED_AT" '[.result[] | select(.environment == "preview" and .deployment_trigger.metadata.branch == $branch and .created_on >= $started and .latest_stage.status == "success")] | sort_by(.created_on) | last | .url // empty' /tmp/deployments.json)"
+            [ -n "$URL" ] && break
+            sleep 5
+          done
+          test -n "$URL"
+          curl --fail --retry 20 --retry-delay 3 --silent --show-error "$URL/release/candidate-provenance.json" -o /tmp/preview-provenance.json
+          test "$(jq -r .commitSha /tmp/preview-provenance.json)" = "$SOURCE"
+          test "$(jq -r .candidateDigest /tmp/preview-provenance.json)" = "$DIGEST"
+          curl --fail --retry 20 --retry-delay 3 --silent --show-error "$URL/api/monetization/status" -o /tmp/preview-monetization.json
+          test "$(jq -r '.display.chatSurfaceAllowed' /tmp/preview-monetization.json)" = false
+          test "$(jq -r '.display.activeCityGameplayAllowed' /tmp/preview-monetization.json)" = false
+          test "$(jq -r '.rewarded.available' /tmp/preview-monetization.json)" = false
+          test "$(jq -r '.sponsorVideo.rewardsEnabled' /tmp/preview-monetization.json)" = false
+
+      - name: Promote identical staged bytes to Production
+        id: production_deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          DEPLOY_ROOT: ${{ steps.stage.outputs.root }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          STARTED_AT="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          echo "started_at=$STARTED_AT" >> "$GITHUB_OUTPUT"
+          cd "$DEPLOY_ROOT"
+          npx --yes wrangler@4 pages deploy . --project-name="$PROJECT_NAME" --branch=main
+          touch /tmp/eonapp-production-deployed
+
+      - name: Prove Production authority and monetization contracts
+        id: proof
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          STARTED_AT: ${{ steps.production_deploy.outputs.started_at }}
+          SOURCE: ${{ steps.authority.outputs.source }}
+          DIGEST: ${{ steps.candidate.outputs.digest }}
+          ROLLBACK_ID: ${{ steps.rollback.outputs.id }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROW='null'
+          for attempt in $(seq 1 40); do
+            curl --fail --silent --show-error -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+              "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/$PROJECT_NAME/deployments" -o /tmp/production-after.json
+            ROW="$(jq -c --arg started "$STARTED_AT" --arg rollback "$ROLLBACK_ID" '[.result[] | select(.environment == "production" and .created_on >= $started and .id != $rollback and .latest_stage.status == "success")] | sort_by(.created_on) | last' /tmp/production-after.json)"
+            [ "$ROW" != null ] && break
+            sleep 5
+          done
+          test "$ROW" != null
+          DEPLOYMENT_ID="$(jq -r .id <<<"$ROW")"
+          DEPLOYMENT_URL="$(jq -r .url <<<"$ROW")"
+          echo "deployment_id=$DEPLOYMENT_ID" >> "$GITHUB_OUTPUT"
+          echo "deployment_url=$DEPLOYMENT_URL" >> "$GITHUB_OUTPUT"
+          for BASE in "$DEPLOYMENT_URL" https://eonapp.ch; do
+            OK=false
+            for attempt in $(seq 1 40); do
+              if curl --fail --silent --show-error "$BASE/release/candidate-provenance.json" -o /tmp/provenance.json \
+                && [ "$(jq -r .commitSha /tmp/provenance.json)" = "$SOURCE" ] \
+                && [ "$(jq -r .candidateDigest /tmp/provenance.json)" = "$DIGEST" ]; then
+                OK=true; break
+              fi
+              sleep 5
+            done
+            test "$OK" = true
+          done
+          curl --fail --silent --show-error https://eonapp.ch/api/monetization/status -o /tmp/live-monetization.json
+          test "$(jq -r '.ordinaryAdsAllowed' /tmp/live-monetization.json)" = false
+          test "$(jq -r '.display.eligible' /tmp/live-monetization.json)" = false
+          test "$(jq -r '.display.provider' /tmp/live-monetization.json)" = none
+          test "$(jq -r '.display.chatSurfaceAllowed' /tmp/live-monetization.json)" = false
+          test "$(jq -r '.display.activeCityGameplayAllowed' /tmp/live-monetization.json)" = false
+          test "$(jq -r '.display.exoclick.enabled' /tmp/live-monetization.json)" = false
+          test "$(jq -r '.display.exoclick.multiformat' /tmp/live-monetization.json)" = false
+          test "$(jq -r '.display.exoclick.outstream' /tmp/live-monetization.json)" = false
+          test "$(jq -r '.rewarded.available' /tmp/live-monetization.json)" = false
+          test "$(jq -r '.rewarded.configuredEnabled' /tmp/live-monetization.json)" = true
+          test "$(jq -r '.rewarded.configuredProvider' /tmp/live-monetization.json)" = exoclick
+          test "$(jq -r '.rewarded.providerVerified' /tmp/live-monetization.json)" = true
+          test "$(jq -r '.rewarded.serverVerifierReady' /tmp/live-monetization.json)" = true
+          test "$(jq -r '.rewarded.verificationMode' /tmp/live-monetization.json)" = server-validated-vast-wrapper-sequence
+          test "$(jq -r '.rewarded.providerSignedCompletion' /tmp/live-monetization.json)" = false
+          test "$(jq -r '.rewarded.rewardClass' /tmp/live-monetization.json)" = bounded-sponsor-unlock
+          test "$(jq -r '.rewarded.permanentValueAllowed' /tmp/live-monetization.json)" = false
+          test "$(jq -r '.rewarded.keysPerCompletion' /tmp/live-monetization.json)" = 1
+          test "$(jq -r '.sponsorVideo.configured' /tmp/live-monetization.json)" = true
+          test "$(jq -r '.sponsorVideo.rewardsEnabled' /tmp/live-monetization.json)" = true
+          curl --fail --silent --show-error https://eonapp.ch/api/ai/vexrail -o /tmp/live-vexrail.json
+          test "$(jq -r '.configured' /tmp/live-vexrail.json)" = true
+          test "$(jq -r '.dynamicModelRouting' /tmp/live-vexrail.json)" = true
+          test "$(jq -r '.modelSelection' /tmp/live-vexrail.json)" = server_dynamic
+          test "$(jq -r '.routingMode' /tmp/live-vexrail.json)" = verified_cheapest_qualified
+          test "$(jq -r '.economicsVerified' /tmp/live-vexrail.json)" = true
+          test "$(jq -r '.economicsModelCount' /tmp/live-vexrail.json)" -gt 0
+          test "$(jq -r '.serverRateLimitReady' /tmp/live-vexrail.json)" = true
+          jq -e 'has("model") | not' /tmp/live-vexrail.json >/dev/null
+          test "$(jq -r '.signedInRequired' /tmp/live-vexrail.json)" = true
+          test "$(jq -r '.signedInRequiredForContinuedUse' /tmp/live-vexrail.json)" = true
+          test "$(jq -r '.guestOneShotEnabled' /tmp/live-vexrail.json)" = true
+          test "$(jq -r '.sensitiveDataGuard' /tmp/live-vexrail.json)" = true
+          test "$(jq -r '.economicsLedgerRequired' /tmp/live-vexrail.json)" = true
+          test "$(jq -r '.aiCoverageTarget' /tmp/live-vexrail.json)" = 1.25
+          test "$(jq -r '.byokCredentialAccepted' /tmp/live-vexrail.json)" = false
+          curl --fail --silent --show-error https://eonapp.ch/api/billing/status -o /tmp/live-billing.json
+          test "$(jq -r '.rollout' /tmp/live-billing.json)" = production
+          test "$(jq -r '.checkoutActive' /tmp/live-billing.json)" = true
+          test "$(jq -r '.dodoWebhookAdapterLive' /tmp/live-billing.json)" = true
+          test "$(jq -r '.entitlementLedgerWriteEnabled' /tmp/live-billing.json)" = true
+          test "$(jq -r '.lifecycleLedgerWriteEnabled' /tmp/live-billing.json)" = true
+          test "$(jq -r '.configured.products.plus' /tmp/live-billing.json)" = true
+          test "$(jq -r '.configured.products.studio' /tmp/live-billing.json)" = true
+          test "$(jq -r '.configured.products.power' /tmp/live-billing.json)" = true
+          test "$(jq -r '.configured.products.max' /tmp/live-billing.json)" = true
+          test "$(jq -r '.configured.products.pro' /tmp/live-billing.json)" = true
+          test "$(jq -r '.configured.products.ultra' /tmp/live-billing.json)" = true
+          test "$(jq -r '[.plans[].id] | sort | join(",")' /tmp/live-billing.json)" = max,plus,power,pro,studio,ultra
+          test "$(jq -r '.premium.rollout' /tmp/live-billing.json)" = production
+          test "$(jq -r '.premium.checkoutActive' /tmp/live-billing.json)" = true
+          test "$(jq -r '.premium.apiEnvironment' /tmp/live-billing.json)" = live
+          test "$(jq -r '.premium.schemaReady' /tmp/live-billing.json)" = true
+          test "$(jq -r '.premium.configured.products.ultimate' /tmp/live-billing.json)" = true
+          test "$(jq -r '[.premium.plans[].id] | join(",")' /tmp/live-billing.json)" = ultimate
+          test "$(jq -r '.premium.plans[] | select(.id=="ultimate") | .priceUsd' /tmp/live-billing.json)" = 1299
+          test "$(jq -r '.premium.plans[] | select(.id=="ultimate") | .pricingType' /tmp/live-billing.json)" = one-time
+          curl --fail --silent --show-error -I https://eonapp.ch/create -o /tmp/create-headers.txt
+          if grep -Eq 'a\.magsrv\.com|cdn\.fluidplayer\.com' /tmp/create-headers.txt; then
+            echo 'BLOCKED: ordinary display/reward player authority leaked onto Create.' >&2
+            exit 1
+          fi
+          curl --fail --silent --show-error -I https://eonapp.ch/rewards -o /tmp/rewards-headers.txt
+          grep -Fq 'https://cdn.fluidplayer.com' /tmp/rewards-headers.txt
+          curl --fail --silent --show-error -I https://eonapp.ch/ -o /tmp/root-headers.txt
+          if grep -Eq 'a\.magsrv\.com|cdn\.fluidplayer\.com' /tmp/root-headers.txt; then
+            echo 'BLOCKED: third-party ad/player script authority leaked onto root/chat surface.' >&2
+            exit 1
+          fi
+          curl --fail --silent --show-error https://eonapp.ch/ads.txt -o /tmp/ads.txt
+          test "$(tr -d '\r\n' < /tmp/ads.txt)" = 'google.com, pub-6759380023085970, DIRECT, f08c47fec0942fa0'
+          curl --fail --silent --show-error https://eonapp.ch/guides/ai-api-cost-calculator -o /tmp/adsense-guide.html
+          grep -Fq 'google-adsense-account' /tmp/adsense-guide.html
+          grep -Fq 'ca-pub-6759380023085970' /tmp/adsense-guide.html
+          grep -Fq 'data-adsense-exclusion-area="interactive-tool"' /tmp/adsense-guide.html
+          if grep -Fq 'data-ad-slot=' /tmp/adsense-guide.html; then
+            echo 'BLOCKED: unissued manual AdSense slot found on guide.' >&2
+            exit 1
+          fi
+
+      - name: Publish release receipt
+        if: success()
+        env:
+          SOURCE: ${{ steps.authority.outputs.source }}
+          TREE: ${{ steps.authority.outputs.tree }}
+          CI_RUN: ${{ steps.authority.outputs.ci_run }}
+          DIGEST: ${{ steps.candidate.outputs.digest }}
+          DEPLOYMENT_ID: ${{ steps.proof.outputs.deployment_id }}
+          DEPLOYMENT_URL: ${{ steps.proof.outputs.deployment_url }}
+          ROLLBACK_ID: ${{ steps.rollback.outputs.id }}
+        shell: bash
+        run: |
+          mkdir -p artifacts/rt98-production-release
+          jq -n \
+            --arg schema eonapp.rt98.production-release.v1 \
+            --arg commit "$SOURCE" --arg tree "$TREE" --arg ciRun "$CI_RUN" \
+            --arg candidateDigest "$DIGEST" --arg deploymentId "$DEPLOYMENT_ID" \
+            --arg deploymentUrl "$DEPLOYMENT_URL" --arg rollbackDeploymentId "$ROLLBACK_ID" \
+            --arg productionUrl https://eonapp.ch --arg deployedAt "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+            '{schema:$schema,ok:true,commit:$commit,tree:$tree,ciRun:$ciRun,candidateDigest:$candidateDigest,deploymentId:$deploymentId,deploymentUrl:$deploymentUrl,rollbackDeploymentId:$rollbackDeploymentId,productionUrl:$productionUrl,deployedAt:$deployedAt}' \
+            | tee artifacts/rt98-production-release/receipt.json
+
+      - name: Confirm release receipt without artifact storage
+        if: success()
+        shell: bash
+        run: |
+          test -s artifacts/rt98-production-release/receipt.json
+          cat artifacts/rt98-production-release/receipt.json
+          echo 'RT98 release receipt verified on ephemeral runner; no GitHub Actions artifact was uploaded.'
+
+      - name: Roll back Production after failed post-deploy proof
+        if: failure()
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ ! -f /tmp/eonapp-production-deployed ] || [ ! -f /tmp/eonapp-rollback-id ]; then
+            echo 'Production was not changed; rollback is not required.'
+            exit 0
+          fi
+          ROLLBACK_ID="$(cat /tmp/eonapp-rollback-id)"
+          curl --fail --silent --show-error -X POST \
+            -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/$PROJECT_NAME/deployments/$ROLLBACK_ID/rollback" \
+            -o /tmp/rollback.json
+          test "$(jq -r .success /tmp/rollback.json)" = true
+          echo "Production rollback requested to deployment $ROLLBACK_ID."

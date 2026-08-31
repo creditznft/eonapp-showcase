@@ -1,0 +1,11 @@
+{
+  "schema": "eonapp.rt98.production-request.v1",
+  "sourceCommit": "f0b8e93b62d908fa7eefeb48ffe76794c7bf0000",
+  "sourceTree": "c7663c0b56b845507451ebcabdf184de4fce07f4",
+  "candidateDigest": "8bcc5f5807d21a37ab996507e0d4279c4957e16752df99161ac7e64c110c66cb",
+  "ciRun": "33416638488",
+  "previewUrl": "https://ea6d6ed5.eonapp-ch.pages.dev",
+  "requestedFor": "eonapp.ch",
+  "releaseBranch": "release/rt98-production",
+  "sourceBranch": "codex/rt98-monetization-mylead-zyntent-2026-08-30"
+}
