@@ -209,19 +209,26 @@ jobs:
             sleep 5
           done
           test -n "$URL"
-          curl --fail --retry 20 --retry-delay 3 --silent --show-error "$URL/release/candidate-provenance.json" -o /tmp/provenance.json
-          test "$(jq -r .commitSha /tmp/provenance.json)" = "$SOURCE"
-          test "$(jq -r .candidateDigest /tmp/provenance.json)" = "$DIGEST"
-          curl --fail --retry 20 --retry-delay 3 --silent --show-error "$URL/rewards" -o /tmp/rewards.html
-          grep -Fq 'EON Reward Center' /tmp/rewards.html
-          grep -Fq 'MyLead Sponsored Missions' /tmp/rewards.html
-          if grep -Eq 'Sponsor Terminal|ExoClick|VAST playback' /tmp/rewards.html; then
-            echo 'BLOCKED: legacy rewarded-video product truth leaked onto RT98 Reward Center.' >&2
-            exit 1
-          fi
-          code="$(curl --silent --show-error -o /tmp/reward-config.json -w '%{http_code}' -H 'Accept: application/json' "$URL/api/rewards/config")"
-          test "$code" = 401 -o "$code" = 503
-          jq -e '.ok == false and (.error == "sign_in_required" or .error == "identity_unavailable")' /tmp/reward-config.json >/dev/null
+          proven=false
+          for proof_attempt in $(seq 1 20); do
+            if curl --fail --silent --show-error "$URL/release/candidate-provenance.json" -o /tmp/provenance.json \
+              && [ "$(jq -r .commitSha /tmp/provenance.json)" = "$SOURCE" ] \
+              && [ "$(jq -r .candidateDigest /tmp/provenance.json)" = "$DIGEST" ] \
+              && curl --fail --silent --show-error "$URL/rewards" -o /tmp/rewards.html \
+              && grep -Fq 'EON Reward Center' /tmp/rewards.html \
+              && grep -Fq 'MyLead Sponsored Missions' /tmp/rewards.html \
+              && ! grep -Eq 'Sponsor Terminal|ExoClick|VAST playback' /tmp/rewards.html; then
+              code="$(curl --silent --show-error -o /tmp/reward-config.json -w '%{http_code}' -H 'Accept: application/json' "$URL/api/rewards/config")"
+              if { [ "$code" = 401 ] || [ "$code" = 503 ]; } \
+                && jq -e '.ok == false and (.error == "sign_in_required" or .error == "identity_unavailable")' /tmp/reward-config.json >/dev/null; then
+                proven=true
+                break
+              fi
+            fi
+            echo "Preview proof pending (attempt $proof_attempt/20)."
+            sleep 3
+          done
+          test "$proven" = true
           echo "url=$URL" >> "$GITHUB_OUTPUT"
           echo 'RT98 Preview proof PASS. No provider postback was fired and no reward was minted by this workflow.'
 

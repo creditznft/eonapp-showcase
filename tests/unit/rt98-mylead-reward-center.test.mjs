@@ -123,6 +123,8 @@ test('RT98 protected Preview verifies completed upstream CI jobs without waiting
   assert.doesNotMatch(workflow, /workflow_dispatch:/);
   assert.match(workflow, /secret_pattern="EON_REWARD_MYLEAD_POSTBACK_SECRET/);
   assert.doesNotMatch(workflow, /\["'"'\]/);
+  assert.match(workflow, /for proof_attempt in \$\(seq 1 20\)/);
+  assert.match(workflow, /Preview proof pending/);
 });
 
 test('MyLead configuration fails closed and public config never exposes secret, URL, or allowlisted IPs', () => {
