@@ -7,5 +7,7 @@
   "previewUrl": "https://ea6d6ed5.eonapp-ch.pages.dev",
   "requestedFor": "eonapp.ch",
   "releaseBranch": "release/rt98-production",
-  "sourceBranch": "codex/rt98-monetization-mylead-zyntent-2026-08-30"
+  "sourceBranch": "codex/rt98-monetization-mylead-zyntent-2026-08-30",
+  "requestRevision": "2",
+  "reason": "retry after correcting the release-control referral migration path"
 }
