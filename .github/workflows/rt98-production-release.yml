@@ -233,7 +233,7 @@ jobs:
           grep -Eq '"domain"[[:space:]]*:[[:space:]]*"premium_billing"' /tmp/billing-schema.json
           grep -Eq '"schema_version"[[:space:]]*:[[:space:]]*1' /tmp/billing-schema.json
           grep -Eq '"schema_version"[[:space:]]*:[[:space:]]*6' /tmp/referrals-schema.json
-          test -f migrations/0006_mylead_reward_center.sql
+          test -f migrations/referrals/0006_mylead_reward_center.sql
           grep -Eq '"schema_version"[[:space:]]*:[[:space:]]*4' /tmp/trust-schema.json
           echo 'Production D1 migration/schema proof PASS.'
 
@@ -294,7 +294,7 @@ jobs:
           echo "id=$ID" >> "$GITHUB_OUTPUT"
           echo "url=$URL" >> "$GITHUB_OUTPUT"
 
-      - name: Deploy identical bytes to RT92 gate Preview
+      - name: Deploy identical bytes to RT98 gate Preview
         id: preview_deploy
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
