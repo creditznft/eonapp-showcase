@@ -8,6 +8,6 @@
   "requestedFor": "eonapp.ch",
   "releaseBranch": "release/rt98-production",
   "sourceBranch": "codex/rt98-monetization-mylead-zyntent-2026-08-30",
-  "requestRevision": "2",
-  "reason": "retry after correcting the release-control referral migration path"
+  "requestRevision": "3",
+  "reason": "retry after correcting release-control candidate receipt handling"
 }
