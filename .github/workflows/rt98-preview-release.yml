@@ -168,7 +168,8 @@ jobs:
           test -f "$DEPLOY_ROOT/functions/api/rewards/launch.js"
           test -f "$DEPLOY_ROOT/functions/api/rewards/postback.js"
           test -f "$DEPLOY_ROOT/rewards/index.html"
-          if grep -R -E -q 'EON_REWARD_MYLEAD_POSTBACK_SECRET[[:space:]]*[:=][[:space:]]*["'"'][^"'"']+' "$DEPLOY_ROOT"; then
+          secret_pattern="EON_REWARD_MYLEAD_POSTBACK_SECRET[[:space:]]*[:=][[:space:]]*[\"'][^\"']+"
+          if grep -R -E -q -- "$secret_pattern" "$DEPLOY_ROOT"; then
             echo 'BLOCKED: source bundle appears to contain an inline MyLead postback secret.' >&2
             exit 1
           fi

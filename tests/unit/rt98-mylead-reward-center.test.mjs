@@ -121,6 +121,8 @@ test('RT98 protected Preview verifies completed upstream CI jobs without waiting
   for (const job of ['permanent-predeploy', 'rt98-reward-center', 'rt92-monetization-policy', 'rt97-release-policy', 'legacy-boundary', 'exact-source-backup', 'rt98-preview-authority']) assert.match(workflow, new RegExp(job));
   assert.doesNotMatch(workflow, /actions\/runs\?head_sha=/);
   assert.doesNotMatch(workflow, /workflow_dispatch:/);
+  assert.match(workflow, /secret_pattern="EON_REWARD_MYLEAD_POSTBACK_SECRET/);
+  assert.doesNotMatch(workflow, /\["'"'\]/);
 });
 
 test('MyLead configuration fails closed and public config never exposes secret, URL, or allowlisted IPs', () => {
