@@ -8,6 +8,6 @@
   "requestedFor": "eonapp.ch",
   "releaseBranch": "release/rt98-production",
   "sourceBranch": "codex/rt98-monetization-mylead-zyntent-2026-08-30",
-  "requestRevision": "5",
-  "reason": "retry after aligning Sponsor Terminal staging proof to its compatibility-media contract"
+  "requestRevision": "6",
+  "reason": "retry after validating Preview's intentional fail-closed identity status"
 }

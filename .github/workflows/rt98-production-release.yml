@@ -332,7 +332,26 @@ jobs:
           curl --fail --retry 20 --retry-delay 3 --silent --show-error "$URL/release/candidate-provenance.json" -o /tmp/preview-provenance.json
           test "$(jq -r .commitSha /tmp/preview-provenance.json)" = "$SOURCE"
           test "$(jq -r .candidateDigest /tmp/preview-provenance.json)" = "$DIGEST"
-          curl --fail --retry 20 --retry-delay 3 --silent --show-error "$URL/api/monetization/status" -o /tmp/preview-monetization.json
+          # Preview intentionally has no Production identity binding.  Its public
+          # status endpoint may therefore return structured 503 identity_unavailable;
+          # validate that fail-closed contract rather than treating it as transport
+          # failure.  A configured Preview may return the same safe body with 200.
+          MONETIZATION_STATUS=""
+          for attempt in $(seq 1 20); do
+            MONETIZATION_STATUS="$(curl --silent --show-error --output /tmp/preview-monetization.json --write-out '%{http_code}' "$URL/api/monetization/status" || true)"
+            case "$MONETIZATION_STATUS" in
+              200|503) break ;;
+            esac
+            sleep 3
+          done
+          case "$MONETIZATION_STATUS" in
+            200) test "$(jq -r .ok /tmp/preview-monetization.json)" = true ;;
+            503)
+              test "$(jq -r .ok /tmp/preview-monetization.json)" = false
+              test "$(jq -r .reason /tmp/preview-monetization.json)" = identity_unavailable
+              ;;
+            *) echo "Unexpected Preview monetization HTTP status: $MONETIZATION_STATUS" >&2; exit 1 ;;
+          esac
           test "$(jq -r '.display.chatSurfaceAllowed' /tmp/preview-monetization.json)" = false
           test "$(jq -r '.display.activeCityGameplayAllowed' /tmp/preview-monetization.json)" = false
           test "$(jq -r '.rewarded.available' /tmp/preview-monetization.json)" = false
