@@ -26,15 +26,18 @@ test('RT97 Sponsored Discovery rejects private context, missing review and secre
   assert.equal(safe.guestOneShotUsed, false);
 });
 
-test('RT97 Sponsored Discovery is explicitly Vexrail one-turn and reuses Vexrail authority instead of a second provider', () => {
-  const config = getSponsoredDiscoveryRuntimeConfig();
-  assert.equal(EON_SPONSORED_DISCOVERY_PROVIDER, 'vexrail-one-turn');
-  assert.equal(config.provider, 'vexrail-one-turn');
+test('RT97 Sponsored Discovery uses configured Zyntent structured results before the protected Vexrail fallback', () => {
+  const config = getSponsoredDiscoveryRuntimeConfig({
+    EON_ZYNTENT_ENABLED: 'true', EON_ZYNTENT_API_KEY: 'a'.repeat(64), EON_ZYNTENT_SOURCE_ID: '12345678-1234-4234-8234-123456789abc'
+  });
+  assert.equal(EON_SPONSORED_DISCOVERY_PROVIDER, 'zyntent-first-vexrail-fallback');
+  assert.equal(config.provider, 'zyntent-first-vexrail-fallback');
+  assert.equal(config.zyntentFirst, true);
   assert.equal(config.requiresSignedIn, true);
   assert.equal(config.requiresExplicitReview, true);
   assert.equal(config.usesVexrailAuthority, true);
-  assert.equal(config.usesSeparateProviderCredential, false);
-  assert.equal(config.usesSeparateProviderEndpoint, false);
+  assert.equal(config.usesSeparateProviderCredential, true);
+  assert.equal(config.usesSeparateProviderEndpoint, true);
 });
 
 test('RT97 Sponsored Discovery builds only a bounded reviewed one-turn Vexrail request', () => {

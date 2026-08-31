@@ -1,3 +1,5 @@
+import { getPartnerMonetizationRuntimeConfig } from './rt97-partner-monetization-contract.mjs';
+
 /**
  * RT97 — explicit Sponsored Discovery boundary for Local AI / BYOK users.
  *
@@ -7,7 +9,7 @@
  * not accepted by this contract.
  */
 export const EON_SPONSORED_DISCOVERY_SCHEMA = 'eonapp.sponsored-discovery.rt97.v2';
-export const EON_SPONSORED_DISCOVERY_PROVIDER = 'vexrail-one-turn';
+export const EON_SPONSORED_DISCOVERY_PROVIDER = 'zyntent-first-vexrail-fallback';
 export const EON_SPONSORED_DISCOVERY_CATEGORIES = Object.freeze([
   'general', 'software', 'business', 'travel', 'shopping'
 ]);
@@ -56,16 +58,19 @@ export function sanitizeSponsoredDiscoveryIntent(input = {}) {
   });
 }
 
-export function getSponsoredDiscoveryRuntimeConfig() {
+export function getSponsoredDiscoveryRuntimeConfig(env = {}) {
+  const partner = getPartnerMonetizationRuntimeConfig(env);
+  const zyntentReady = partner.zyntent.ready === true;
   return Object.freeze({
     schema: EON_SPONSORED_DISCOVERY_SCHEMA,
     active: true,
-    provider: EON_SPONSORED_DISCOVERY_PROVIDER,
+    provider: zyntentReady ? EON_SPONSORED_DISCOVERY_PROVIDER : 'vexrail-one-turn',
+    zyntentFirst: zyntentReady,
     requiresSignedIn: true,
     requiresExplicitReview: true,
     usesVexrailAuthority: true,
-    usesSeparateProviderCredential: false,
-    usesSeparateProviderEndpoint: false,
+    usesSeparateProviderCredential: zyntentReady,
+    usesSeparateProviderEndpoint: zyntentReady,
     maxResults: 5,
     hourlyNetworkCap: 12,
     hourlyAccountCap: 8,
@@ -74,7 +79,7 @@ export function getSponsoredDiscoveryRuntimeConfig() {
     localAnswerForwarded: false,
     privateMemoryForwarded: false,
     providerKeysForwarded: false,
-    reason: 'delegated_to_vexrail_one_turn_authority'
+    reason: zyntentReady ? 'zyntent_structured_results_then_vexrail_fallback' : 'delegated_to_vexrail_one_turn_authority'
   });
 }
 

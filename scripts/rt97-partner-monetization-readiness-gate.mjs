@@ -1,10 +1,11 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { EON_BIDVERTISER, EON_INFOLINKS, EON_SMARTLINK_PARTNERS, EON_ZYNTENT, getPartnerMonetizationRuntimeConfig } from '../config/rt97-partner-monetization-contract.mjs';
 import { buildZyntentSponsoredDiscoveryPayload } from '../functions/_shared/eon-zyntent-sponsored-discovery.js';
 import { EON_GUIDE_ROUTES } from '../config/eon-guide-catalog.mjs';
 
-const root = path.resolve(new URL('..', import.meta.url).pathname);
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
 const failures = [];
 const check = (ok, message) => { if (!ok) failures.push(message); };

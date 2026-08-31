@@ -103,21 +103,44 @@ function appendSafeTextWithLinks(target, text = '') {
   if (cursor < source.length) target.appendChild(document.createTextNode(source.slice(cursor)));
 }
 
+function safeSponsoredUrl(value = '') {
+  try {
+    const parsed = new URL(String(value || '').trim());
+    return parsed.protocol === 'https:' && !parsed.username && !parsed.password ? parsed.toString() : '';
+  } catch {
+    return '';
+  }
+}
+
+function renderSponsoredResults(results = []) {
+  const cards = Array.isArray(results) ? results.slice(0, 5).map((item = {}) => {
+    const url = safeSponsoredUrl(item.url);
+    const title = escapeHtml(String(item.title || '').slice(0, 160));
+    if (!url || !title) return '';
+    const merchant = escapeHtml(String(item.merchant || '').slice(0, 120));
+    const description = escapeHtml(String(item.description || '').slice(0, 300));
+    const price = escapeHtml(String(item.price || '').slice(0, 80));
+    return `<article class="eon-sponsored-offer-card"><a href="${escapeHtml(url)}" target="_blank" rel="sponsored noopener noreferrer"><strong>${title}</strong>${merchant ? `<span>${merchant}</span>` : ''}${description ? `<p>${description}</p>` : ''}${price ? `<b>${price}</b>` : ''}</a></article>`;
+  }).filter(Boolean) : [];
+  return cards.length ? `<section class="eon-sponsored-offers" aria-label="Sponsored offers"><div class="eon-sponsored-badge">Sponsored offers · Zyntent</div><div class="eon-sponsored-offer-strip">${cards.join('')}</div></section>` : '';
+}
+
 export function renderSponsoredDiscoveryPanel(state = {}) {
   const review = state.review || null;
   const answer = String(state.answer || '');
   const meta = state.meta && typeof state.meta === 'object' ? state.meta : {};
+  const results = Array.isArray(state.results) ? state.results : [];
   const answerHtml = answer
-    ? `<div class="eon-sponsored-discovery-answer"><div class="eon-sponsored-badge">Sponsored Discovery</div><div data-eon-sponsored-answer></div>${meta.model ? `<p class="local-ai-disclosure">Vexrail · ${escapeHtml(meta.model)}${meta.economicsState ? ` · economics ${escapeHtml(meta.economicsState)}` : ''}</p>` : ''}</div>`
-    : state.completed ? '<p class="local-ai-disclosure">No Sponsored Discovery answer was returned. Your Local AI/BYOK session was not changed.</p>' : '';
+    ? `<div class="eon-sponsored-discovery-answer"><div class="eon-sponsored-badge">Sponsored Discovery</div><div data-eon-sponsored-answer></div>${meta.model ? `<p class="local-ai-disclosure">${escapeHtml(meta.provider || 'Vexrail')} · ${escapeHtml(meta.model)}${meta.economicsState ? ` · economics ${escapeHtml(meta.economicsState)}` : ''}</p>` : ''}</div>`
+    : state.completed && !results.length ? '<p class="local-ai-disclosure">No Sponsored Discovery answer was returned. Your Local AI/BYOK session was not changed.</p>' : '';
   return `<section class="local-ai-truth-card eon-sponsored-discovery" data-eon-sponsored-discovery aria-labelledby="eon-sponsored-discovery-title">
-    <p class="local-ai-eyebrow">Optional · explicit one-turn Sponsored Vexrail request</p><h2 id="eon-sponsored-discovery-title">Sponsored Discovery</h2>
-    <p>Your Local AI or BYOK answer stays private and ad-free. This separate tool sends only the short commercial intent you review below in a new one-turn Vexrail request. It never sends chat history, the Local/BYOK answer, saved memory, provider keys, files or attachments.</p>
-    <p class="local-ai-disclosure">Signed-in users only. Paid plans remain ad-free by default; pressing <strong>Send this reviewed intent</strong> is an explicit sponsored exception for this discovery request only. Vexrail may weave a contextual promoted recommendation into the answer when relevant inventory exists.</p>
-    <div class="eon-sponsored-discovery-form"><label>What do you want to find?<input data-eon-sponsored-query maxlength="180" value="${escapeHtml(state.query || '')}" placeholder="Example: lightweight CRM for a two-person studio" autocomplete="off" /></label><label>Category<select data-eon-sponsored-category><option value="general">General</option><option value="software">Software</option><option value="business">Business</option><option value="travel">Travel</option><option value="shopping">Shopping</option></select></label><div class="local-ai-actions"><button type="button" class="local-ai-secondary" data-eon-sponsored-review>Review outbound intent</button></div></div>
-    ${review ? `<div class="eon-sponsored-review"><strong>Review before sending</strong><p><code>${escapeHtml(review.query)}</code></p><p class="local-ai-disclosure">Outbound user fields: query, category and requested result count only. Trusted geo, Turnstile, rate limits and economics are enforced server-side. The Turnstile token is verified by EONAPP/Cloudflare and is not forwarded to Vexrail.</p><div class="local-ai-actions"><button type="button" class="eon-hub-primary" data-eon-sponsored-send${state.busy ? ' disabled' : ''}>${state.busy ? 'Searching…' : 'Send this reviewed intent'}</button><button type="button" class="local-ai-secondary is-quiet" data-eon-sponsored-cancel>Cancel</button></div></div>` : ''}
+    <p class="local-ai-eyebrow">Optional · explicit Sponsored Discovery</p><h2 id="eon-sponsored-discovery-title">Sponsored Discovery</h2>
+    <p>Your Local AI or BYOK answer stays private and ad-free. This separate tool sends only the short commercial intent you review below. It never sends chat history, the Local/BYOK answer, saved memory, provider keys, files or attachments.</p>
+    <p class="local-ai-disclosure">Signed-in users only. Paid plans remain ad-free by default; pressing <strong>Send this reviewed intent</strong> is an explicit sponsored exception for this discovery request only. EONAPP first seeks a structured sponsored offer; Vexrail is used only if that provider has no suitable result.</p>
+    <div class="eon-sponsored-discovery-form"><label>What do you want to find?<input id="eon-sponsored-discovery-query" data-eon-sponsored-query maxlength="180" value="${escapeHtml(state.query || '')}" placeholder="Example: lightweight CRM for a two-person studio" autocomplete="off" /></label><label>Category<select data-eon-sponsored-category><option value="general">General</option><option value="software">Software</option><option value="business">Business</option><option value="travel">Travel</option><option value="shopping">Shopping</option></select></label><div class="local-ai-actions"><button type="button" class="local-ai-secondary" data-eon-sponsored-review>Review outbound intent</button></div></div>
+    ${review ? `<div class="eon-sponsored-review"><strong>Review before sending</strong><p><code>${escapeHtml(review.query)}</code></p><p class="local-ai-disclosure">Outbound user fields: query, category and requested result count only. Trusted geo, rate limits and economics are enforced server-side. If the protected Vexrail fallback is needed, its Turnstile token is verified by EONAPP/Cloudflare and is not forwarded to Vexrail.</p><div class="local-ai-actions"><button type="button" class="eon-hub-primary" data-eon-sponsored-send${state.busy ? ' disabled' : ''}>${state.busy ? 'Searching…' : 'Send this reviewed intent'}</button><button type="button" class="local-ai-secondary is-quiet" data-eon-sponsored-cancel>Cancel</button></div></div>` : ''}
     ${state.signInRequired ? '<p class="local-ai-disclosure"><a class="local-ai-inline-link" href="/api/auth/google/start?returnTo=%2Flocal-ai">Sign in with Google to use Sponsored Discovery</a></p>' : ''}
-    <p class="local-ai-result" data-eon-sponsored-status aria-live="polite">${escapeHtml(state.message || 'Nothing is sent until you review and confirm the intent.')}</p>${answerHtml}
+    <p class="local-ai-result" data-eon-sponsored-status aria-live="polite">${escapeHtml(state.message || 'Nothing is sent until you review and confirm the intent.')}</p>${answerHtml}${renderSponsoredResults(results)}
   </section>`;
 }
 
@@ -136,34 +159,32 @@ export function bindSponsoredDiscoveryPanel(root, state, { rerender = () => {}, 
     if (!candidate.ok) {
       state.review = null; state.message = candidate.reason === 'secret_like_intent_rejected' ? 'This intent looks like it may contain a credential or secret. Remove it before using Sponsored Discovery.' : 'Enter a short search intent before reviewing.'; rerender(); return;
     }
-    state.query = candidate.intent.query; state.category = candidate.intent.category; state.review = candidate.intent; state.message = 'Review the exact outbound intent, then confirm if you want to send this separate sponsored request.'; state.answer = ''; state.meta = {}; state.completed = false; state.signInRequired = false; rerender();
+    state.query = candidate.intent.query; state.category = candidate.intent.category; state.review = candidate.intent; state.message = 'Review the exact outbound intent, then confirm if you want to send this separate sponsored request.'; state.answer = ''; state.results = []; state.meta = {}; state.completed = false; state.signInRequired = false; rerender();
   });
   host.querySelector('[data-eon-sponsored-cancel]')?.addEventListener('click', () => { state.review = null; state.message = 'Cancelled. Nothing was sent.'; rerender(); });
   host.querySelector('[data-eon-sponsored-send]')?.addEventListener('click', async () => {
     if (!state.review || state.busy) return;
-    state.busy = true; state.message = 'Checking Vexrail eligibility and human verification…'; state.signInRequired = false; rerender();
-    let status = {};
-    try { status = await readVexrailStatus(environment); } catch {}
-    if (status?.signedIn !== true) {
-      state.busy = false; state.completed = false; state.signInRequired = true; state.message = 'Sponsored Discovery is signed-in only and never consumes the guest one-shot. Sign in, then review and send the intent again.'; rerender(); return;
-    }
-    if (status?.configured !== true || (status?.eligible !== true && status?.eligibleByOptIn !== true)) {
-      state.busy = false; state.completed = false; state.message = 'Sponsored Discovery is not currently available for this account, market, network or economic state. Your private AI session was not changed.'; rerender(); return;
-    }
-    let turnstileToken = '';
-    try { turnstileToken = await acquireVexrailTurnstileToken(status, environment); }
-    catch {
-      state.busy = false; state.completed = false; state.message = 'Human verification is required before Sponsored Discovery can contact Vexrail. No discovery request was sent.'; rerender(); return;
-    }
-    state.message = 'Sending only the reviewed one-turn intent to Sponsored Vexrail…'; rerender();
+    state.busy = true; state.message = 'Sending only the reviewed commercial intent to Sponsored Discovery…'; state.signInRequired = false; rerender();
     let response = null; let body = {};
     try {
-      response = await environment.fetch('/api/discovery/sponsored', { method: 'POST', credentials: 'same-origin', headers: { 'content-type': 'application/json', accept: 'application/json' }, body: JSON.stringify({ query: state.review.query, category: state.review.category, maxResults: state.review.maxResults || 4, explicitReview: true, ...(turnstileToken ? { turnstileToken } : {}) }) });
+      response = await environment.fetch('/api/discovery/sponsored', { method: 'POST', credentials: 'same-origin', headers: { 'content-type': 'application/json', accept: 'application/json' }, body: JSON.stringify({ query: state.review.query, category: state.review.category, maxResults: state.review.maxResults || 4, explicitReview: true }) });
       body = await response.json().catch(() => ({}));
     } catch {}
+    if (body?.error === 'vexrail_human_verification_required') {
+      let status = {};
+      try { status = await readVexrailStatus(environment); } catch {}
+      if (status?.signedIn !== true) { state.busy = false; state.completed = false; state.signInRequired = true; state.message = 'Sponsored Discovery is signed-in only and never consumes the guest one-shot. Sign in, then review and send the intent again.'; rerender(); return; }
+      let turnstileToken = '';
+      try { turnstileToken = await acquireVexrailTurnstileToken(status, environment); }
+      catch { state.busy = false; state.completed = false; state.message = 'Human verification is required before the protected Vexrail fallback can run. No discovery request completed.'; rerender(); return; }
+      try {
+        response = await environment.fetch('/api/discovery/sponsored', { method: 'POST', credentials: 'same-origin', headers: { 'content-type': 'application/json', accept: 'application/json' }, body: JSON.stringify({ query: state.review.query, category: state.review.category, maxResults: state.review.maxResults || 4, explicitReview: true, turnstileToken }) });
+        body = await response.json().catch(() => ({}));
+      } catch {}
+    }
     state.busy = false; state.completed = true; state.review = null;
     if (!response?.ok || body?.ok !== true) {
-      state.answer = ''; state.meta = {};
+      state.answer = ''; state.results = []; state.meta = {};
       state.message = body?.error === 'sponsored_discovery_sign_in_required' || body?.error === 'vexrail_sign_in_required'
         ? 'Sign in is required for Sponsored Discovery. The guest one-shot was not used.'
         : body?.error === 'vexrail_human_verification_required'
@@ -174,8 +195,9 @@ export function bindSponsoredDiscoveryPanel(root, state, { rerender = () => {}, 
       rerender(); return;
     }
     state.answer = String(body.answer || '').slice(0, 12000);
+    state.results = Array.isArray(body.results) ? body.results.slice(0, 5) : [];
     state.meta = { provider: String(body.provider || 'vexrail'), model: String(body.model || ''), routing: String(body.routing || ''), economicsState: String(body.economicsState || '') };
-    state.message = 'Sponsored Discovery completed as a separate one-turn Vexrail request. Any promoted recommendation is part of that sponsored response; your private AI session remains unchanged.';
+    state.message = body.provider === 'zyntent' ? 'Sponsored offers were returned by Zyntent. Your private AI session was not changed.' : 'Sponsored Discovery completed as a separate one-turn Vexrail fallback request. Your private AI session remains unchanged.';
     rerender();
   });
   return freeze({ ok: true, schema: EON_SPONSORED_DISCOVERY_CLIENT_SCHEMA });

@@ -1,11 +1,12 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { EON_GUIDE_ROUTES } from '../config/eon-guide-catalog.mjs';
 import { EON_BIDVERTISER, EON_INFOLINKS, EON_SMARTLINK_PARTNERS, EON_ZYNTENT } from '../config/rt97-partner-monetization-contract.mjs';
 import { EON_SPONSORED_DISCOVERY_PROVIDER, getSponsoredDiscoveryRuntimeConfig } from '../config/rt97-sponsored-discovery-contract.mjs';
 import { EON_ORDINARY_DISPLAY_PRODUCT_ENABLED, EON_STANDARD_AD_SLOTS_PER_VIEW } from '../assets/js/monetization/eon-monetization-policy.js';
 
-const root = path.resolve(new URL('..', import.meta.url).pathname);
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
 const exists = (file) => fs.existsSync(path.join(root, file));
 const failures = [];
@@ -47,14 +48,15 @@ for (const appFile of ['index.html','chat.html','local-ai.html','vault.html','bi
 // Ordinary app display remains intentionally off; legacy VAST is compatibility, not the RT98 reward authority.
 check(EON_ORDINARY_DISPLAY_PRODUCT_ENABLED === false && EON_STANDARD_AD_SLOTS_PER_VIEW === 0, 'Ordinary app display ads must remain disabled by product policy.');
 
-// Zyntent stays adapter-ready/fail-closed until a real token/source-id request proves the live endpoint/response contract.
+// Zyntent is only selected when its explicit server configuration is valid;
+// otherwise Sponsored Discovery keeps the existing protected Vexrail fallback.
 const zyntentAdapter = read('functions/_shared/eon-zyntent-sponsored-discovery.js');
 const discoveryRuntime = read('functions/_shared/eon-sponsored-discovery-runtime.js');
 check(EON_ZYNTENT.enabledByDefault === false, 'Zyntent must remain disabled by default before live credential proof.');
 check(EON_ZYNTENT.adsSearchPath === '/public_api/v1/ads/search/', 'Zyntent adapter endpoint drifted from the current public test-bench path.');
 check(zyntentAdapter.includes('source_id') && zyntentAdapter.includes('ads_limit'), 'Zyntent bounded server payload adapter is incomplete.');
-check(EON_SPONSORED_DISCOVERY_PROVIDER === 'vexrail-one-turn' && getSponsoredDiscoveryRuntimeConfig().usesVexrailAuthority === true, 'Current Sponsored Discovery fallback must remain Vexrail one-turn until Zyntent live proof.');
-check(discoveryRuntime.includes('executeVexrailOneTurn') || discoveryRuntime.includes('vexrail'), 'Sponsored Discovery runtime must retain its current Vexrail authority before Zyntent activation.');
+check(EON_SPONSORED_DISCOVERY_PROVIDER === 'zyntent-first-vexrail-fallback' && getSponsoredDiscoveryRuntimeConfig().usesVexrailAuthority === true, 'Sponsored Discovery must preserve protected Vexrail fallback authority.');
+check(discoveryRuntime.includes('fetchZyntentSponsoredDiscovery') && discoveryRuntime.includes('executeVexrailRequest'), 'Sponsored Discovery runtime must use Zyntent structured discovery before its protected Vexrail fallback.');
 
 // Backup/experimental rails are present but safe by default.
 check(EON_BIDVERTISER.publisherAdsEnabledByDefault === false && EON_BIDVERTISER.automaticRedirectAllowed === false, 'BidVertiser must remain verification/backup only by default.');
@@ -80,7 +82,7 @@ const report = {
   },
   sponsoredDiscovery: {
     currentAuthority: EON_SPONSORED_DISCOVERY_PROVIDER,
-    zyntent: 'adapter-ready-disabled-until-live-token-source-id-endpoint-response-proof'
+    zyntent: 'server-configured-structured-first-with-protected-vexrail-fallback-live-endpoint-proof-required'
   },
   ordinaryAppDisplay: 'disabled-by-product-policy',
   bidvertiser: 'verification-backup-disabled-by-default',

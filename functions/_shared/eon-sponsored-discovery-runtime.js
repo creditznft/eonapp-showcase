@@ -7,6 +7,7 @@ import { getIdentityConfig, readSession } from './eon-auth.js';
 import { consumeTrustRateLimit, trustRateLimitSubject } from './eon-trust-rate-limit.js';
 import { recordGrowthOperationalEvent } from './eon-growth-attribution.js';
 import { executeVexrailRequest } from '../api/ai/vexrail.js';
+import { fetchZyntentSponsoredDiscovery } from './eon-zyntent-sponsored-discovery.js';
 
 const freeze = (value) => Object.freeze(value);
 
@@ -69,7 +70,7 @@ function readVexrailAnswer(payload = {}) {
   return '';
 }
 
-export async function runSponsoredDiscovery({ env = {}, request = null, input = {}, now = Date.now(), vexrailExecutor = executeVexrailRequest } = {}) {
+export async function runSponsoredDiscovery({ env = {}, request = null, input = {}, now = Date.now(), vexrailExecutor = executeVexrailRequest, zyntentFetcher = fetchZyntentSponsoredDiscovery } = {}) {
   const config = getSponsoredDiscoveryRuntimeConfig(env);
   const sanitized = sanitizeSponsoredDiscoveryIntent(input);
   if (!sanitized.ok) return freeze({ ok: false, status: 400, reason: sanitized.reason });
@@ -80,6 +81,31 @@ export async function runSponsoredDiscovery({ env = {}, request = null, input = 
   const capped = await consumeDiscoveryCaps({ env, request, accountId, config, now });
   if (!capped.ok) return capped;
   try { await recordGrowthOperationalEvent(env.EON_TRUST_DB, 'sponsored_discovery_requested', request, env, now); } catch {}
+
+  // Zyntent receives only the already-reviewed commercial intent plus coarse
+  // country/language context. No-fill and provider errors deliberately fall
+  // through to the existing Vexrail authority rather than degrading privacy
+  // boundaries or manufacturing sponsored content.
+  try {
+    const zyntentResponse = await zyntentFetcher({ env, request, intent: sanitized.intent });
+    if (zyntentResponse?.ok && !zyntentResponse.noFill && Array.isArray(zyntentResponse.results) && zyntentResponse.results.length) {
+      try { await recordGrowthOperationalEvent(env.EON_TRUST_DB, 'sponsored_discovery_result_present', request, env, now); } catch {}
+      return freeze({
+        ok: true,
+        status: 200,
+        schema: EON_SPONSORED_DISCOVERY_SCHEMA,
+        sponsored: true,
+        disclosure: zyntentResponse.disclosure,
+        answer: '',
+        results: zyntentResponse.results,
+        provider: 'zyntent',
+        model: '',
+        routing: 'structured_discovery',
+        economicsState: 'provider_ready',
+        outbound: zyntentResponse.outbound
+      });
+    }
+  } catch {}
 
   const vexrailInput = buildVexrailSponsoredDiscoveryInput(sanitized, input?.turnstileToken || '');
 
@@ -113,6 +139,7 @@ export async function runSponsoredDiscovery({ env = {}, request = null, input = 
     sponsored: true,
     disclosure: 'Sponsored Discovery · separate one-turn Vexrail request',
     answer,
+    results: freeze([]),
     provider: 'vexrail',
     model: String(vexrailResponse.headers.get('x-eon-vexrail-model') || '').slice(0, 160),
     routing: String(vexrailResponse.headers.get('x-eon-vexrail-routing') || '').slice(0, 80),

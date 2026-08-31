@@ -15,7 +15,7 @@ export async function onRequestPost(context) {
   const result = await runSponsoredDiscovery({ env: context.env, request: context.request, input: parsed.value });
   if (!result.ok) return response({ ok: false, error: result.reason }, result.status || 503);
   return response({
-    ok: true, sponsored: true, disclosure: result.disclosure, answer: result.answer,
+    ok: true, sponsored: true, disclosure: result.disclosure, answer: result.answer, results: result.results,
     provider: result.provider, model: result.model, routing: result.routing, economicsState: result.economicsState,
     outbound: result.outbound
   }, 200);

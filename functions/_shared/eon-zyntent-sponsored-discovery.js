@@ -74,7 +74,7 @@ export function normalizeZyntentSponsoredResults(payload = {}, maxResults = 5) {
     const imageUrl = safeHttpsUrl(raw.image_url || raw.imageUrl || raw.image || raw.thumbnail_url || raw.thumbnailUrl);
     results.push(freeze({
       title,
-      description: cleanText(raw.description || raw.subtitle || raw.text, 300),
+      description: cleanText(raw.description || raw.short_description || raw.subtitle || raw.text, 300),
       merchant: cleanText(raw.merchant_name || raw.merchantName || merchantObject.name, 120),
       price: cleanText(raw.price?.formatted || raw.price_text || raw.priceText || (typeof raw.price === 'string' || typeof raw.price === 'number' ? raw.price : ''), 80),
       imageUrl,

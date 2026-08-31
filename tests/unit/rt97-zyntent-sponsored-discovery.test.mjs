@@ -29,8 +29,8 @@ test('Zyntent payload contains reviewed intent and coarse request context only',
 });
 
 test('Zyntent result normalizer keeps only safe HTTPS sponsored destinations', () => {
-  const results = normalizeZyntentSponsoredResults({ results: [
-    { title: 'Good product', tracking_url: 'https://merchant.example/click?id=1', description: 'Useful option', price: '$99' },
+  const results = normalizeZyntentSponsoredResults({ ads: [
+    { title: 'Good product', link: 'https://merchant.example/click?id=1', short_description: 'Useful option', price: '$99' },
     { title: 'Unsafe product', tracking_url: 'javascript:alert(1)' },
     { title: 'Credential URL', tracking_url: 'https://user:pass@merchant.example/click' }
   ]});

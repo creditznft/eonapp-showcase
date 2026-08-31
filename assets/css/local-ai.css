@@ -52,3 +52,9 @@
 .eon-sponsored-discovery-results a { display: inline-block; margin-left: .5rem; font-weight: 700; }
 .eon-sponsored-discovery-results small, .eon-sponsored-discovery-results p { display: block; margin-top: .35rem; }
 .eon-sponsored-badge { display: inline-flex; padding: .16rem .45rem; border: 1px solid currentColor; border-radius: 999px; font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .04em; }
+.eon-sponsored-offers { margin-top: 1rem; }
+.eon-sponsored-offer-strip { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(14rem, 20rem); gap: .75rem; overflow-x: auto; padding: .65rem 0 .35rem; overscroll-behavior-inline: contain; scroll-snap-type: inline mandatory; }
+.eon-sponsored-offer-card { min-width: 0; scroll-snap-align: start; border: 1px solid rgba(103,232,249,.25); border-radius: 14px; background: rgba(2,6,23,.32); }
+.eon-sponsored-offer-card a { display: grid; gap: .35rem; min-height: 100%; padding: .85rem; color: var(--eon-text,#e2e8f0); text-decoration: none; }
+.eon-sponsored-offer-card a:focus-visible,.eon-sponsored-offer-card a:hover { outline: none; border-radius: inherit; background: rgba(8,47,73,.28); }
+.eon-sponsored-offer-card strong { font-size: .9rem; }.eon-sponsored-offer-card span,.eon-sponsored-offer-card p { color: var(--eon-muted,#94a3b8); font-size: .8rem; line-height: 1.42; }.eon-sponsored-offer-card p { margin: 0; }.eon-sponsored-offer-card b { color: #a5f3fc; font-size: .84rem; }
